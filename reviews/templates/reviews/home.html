@@ -1,0 +1,26 @@
+{% extends "reviews/base.html" %}
+{% block content %}
+<h1>Find out what a class is really like before you enroll.</h1>
+<form class="search" method="get">
+  <input type="search" name="q" value="{{ q }}" placeholder="Professor name or department" aria-label="Search professors">
+  <select name="school" aria-label="School">
+    <option value="">All schools</option>
+    {% for s in schools %}<option value="{{ s.slug }}"{% if s.slug == school %} selected{% endif %}>{{ s.name }}</option>{% endfor %}
+  </select>
+  <button>Search</button>
+</form>
+<ol class="rows">
+  {% for r in results %}
+  <li>
+    <a class="row" href="{% url 'professor' r.prof.slug %}">
+      <span class="tile {{ r.stats.tone }}">{% if r.stats.count %}{{ r.stats.overall|floatformat:1 }}{% else %}-{% endif %}</span>
+      <span class="who"><strong>{{ r.prof.full_name }}</strong><span>{{ r.prof.department }} at {{ r.school.name }}</span></span>
+      <span class="meta">{{ r.stats.count }} rating{{ r.stats.count|pluralize }}</span>
+      <span class="meta">Difficulty {% if r.stats.count %}{{ r.stats.difficulty|floatformat:1 }}{% else %}-{% endif %}</span>
+    </a>
+  </li>
+  {% empty %}
+  <li class="empty">No professors match. Try a shorter name or another school.</li>
+  {% endfor %}
+</ol>
+{% endblock %}

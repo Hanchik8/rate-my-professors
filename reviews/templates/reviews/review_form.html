@@ -1,0 +1,17 @@
+{% extends "reviews/base.html" %}
+{% block title %}Rate {{ prof.full_name }} - ProfLens{% endblock %}
+{% block content %}
+<h1>Rate {{ prof.full_name }}</h1>
+<form method="post" class="form">{% csrf_token %}
+  {% for field in form %}
+  <div class="field">
+    <label for="{{ field.id_for_label }}"><strong>{{ field.label }}</strong></label>
+    {% if field.help_text %}<small>{{ field.help_text }}</small>{% endif %}
+    <div{% if field.field.widget.input_type == "radio" or field.field.widget.input_type == "checkbox" %} class="choices"{% endif %}>{{ field }}</div>
+    {{ field.errors }}
+  </div>
+  {% endfor %}
+  <button>Post rating</button>
+  <a href="{% url 'professor' prof.slug %}">Cancel</a>
+</form>
+{% endblock %}
