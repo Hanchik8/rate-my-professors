@@ -38,6 +38,14 @@ class Tag(models.Model):
         return self.name
 
 
+class Profile(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="profile")
+    email_confirmed = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"Profile({self.user_id}, confirmed={self.email_confirmed})"
+
+
 class Professor(models.Model):
     STATUS_CHOICES = [("pending", "pending"), ("approved", "approved"), ("rejected", "rejected")]
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
