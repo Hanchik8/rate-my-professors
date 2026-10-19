@@ -10,4 +10,3 @@ urlpatterns = [
 
 # Map PermissionDenied from ratelimit (Ratelimited) to 429
 handler403 = "reviews.views.permission_denied"
-handler429 = "reviews.views.ratelimited"
