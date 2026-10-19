@@ -441,20 +441,6 @@ msgstr "You can delete your account:"
 msgid "отзывы останутся анонимными, учётная запись будет удалена."
 msgstr "reviews will remain anonymous, the account will be deleted."
 
-#: .\reviews\templates\reviews\privacy.html:8
-msgid ""
-"Данные хранятся на сервере в Кыргызстане. Для удаления данных напишите на"
-msgstr ""
-"Data is stored on a server in Kyrgyzstan. To request data deletion, write "
-"to"
-
-#: .\reviews\templates\reviews\privacy.html:9
-msgid ""
-"Закон КР «О персональных данных»: отзывы публикуются только после модерации."
-msgstr ""
-"Law of the Kyrgyz Republic \"On Personal Data\": reviews are published "
-"only after moderation."
-
 #: .\reviews\templates\reviews\professor.html:14
 msgid "Пойдут снова"
 msgstr "Would take again"
@@ -758,3 +744,13 @@ msgstr "A professor with this name already exists at this school."
 #: .\reviews\views.py:344
 msgid "Преподаватель отправлен на модерацию."
 msgstr "Professor submitted for moderation."
+
+msgid "Для защиты от перебора паролей и спама мы временно храним IP-адрес и "
+"User-Agent: журнал неудачных входов (django-axes) и счётчики лимитов "
+"запросов. Записи старше 30 дней удаляются автоматически."
+msgstr "To protect against password brute-forcing and spam we temporarily "
+"store the IP address and User-Agent: the failed-login log (django-axes) and "
+"rate-limit counters. Records older than 30 days are deleted automatically."
+
+msgid "Для удаления данных напишите на"
+msgstr "To request data deletion, write to"

@@ -327,8 +327,13 @@ class FailSafeTests(TestCase):
         self.assertNotEqual(proc.returncode, 0)
         self.assertIn("DATABASE_URL", proc.stderr + proc.stdout)
 
+    def test_missing_contact_email_fails(self):
+        proc = self._run({"DEBUG": "False", "SECRET_KEY": self._GOOD_KEY, "ALLOWED_HOSTS": "example.kg", "REPO_BACKEND": "django", "DATABASE_URL": "postgres://proflens:proflens@localhost:5432/proflens", "ADMIN_URL": "admin-secret-xyz/", "CONTACT_EMAIL": ""})
+        self.assertNotEqual(proc.returncode, 0)
+        self.assertIn("CONTACT_EMAIL", proc.stderr + proc.stdout)
+
     def test_full_prod_check_zero(self):
-        proc = self._run({"DEBUG": "False", "SECRET_KEY": self._GOOD_KEY, "ALLOWED_HOSTS": "example.kg", "REPO_BACKEND": "django", "DATABASE_URL": "postgres://proflens:proflens@localhost:5432/proflens", "ADMIN_URL": "admin-secret-xyz/"})
+        proc = self._run({"DEBUG": "False", "SECRET_KEY": self._GOOD_KEY, "ALLOWED_HOSTS": "example.kg", "REPO_BACKEND": "django", "DATABASE_URL": "postgres://proflens:proflens@localhost:5432/proflens", "ADMIN_URL": "admin-secret-xyz/", "CONTACT_EMAIL": "support@example.kg"})
         self.assertEqual(proc.returncode, 0, f"stderr: {proc.stderr}")
 
 # ------------------------------------------------------------------

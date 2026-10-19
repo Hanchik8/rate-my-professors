@@ -17,6 +17,7 @@ jobs:
       REPO_BACKEND: django
       ALLOWED_HOSTS: example.kg,localhost,127.0.0.1,testserver
       ADMIN_URL: ci-panel-7f3k/
+      CONTACT_EMAIL: support@example.kg
       DEBUG: "False"
     steps:
       - uses: actions/checkout@v4

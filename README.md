@@ -42,6 +42,7 @@ python manage.py setup_admin_totp <email>   # печатает otpauth://... URL
 | `DATABASE_URL` | `postgres://user:pass@host:5432/db` | SQLite если пусто. |
 | `REPO_BACKEND` | `django` | `memory` или `django`; при `DATABASE_URL` по умолчанию `django`. В prod `memory` запрещён. |
 | `ADMIN_URL` | `admin-CHANGE-ME-123/` | Путь админки (2FA TOTP обязателен для staff). |
+| `CONTACT_EMAIL` | `support@example.kg` | Адрес поддержки на `/privacy/` (через context processor). **Обязательна в prod.** |
 | `EMAIL_BACKEND` | `console`/`smtp` | В prod SMTP; `DEFAULT_FROM_EMAIL`, `EMAIL_HOST*`. |
 | `REDIS_URL`/`CACHE_URL` | `redis://...` | В prod Redis для ratelimit/axes; без него `locmem` (в тестах `locmem`). |
 | `CSRF_TRUSTED_ORIGINS` | `https://example.kg` | Через запятую; по умолчанию `https://ALLOWED_HOSTS`. |
@@ -57,6 +58,7 @@ export ALLOWED_HOSTS="example.kg,www.example.kg"
 export DATABASE_URL="postgres://..."
 export REPO_BACKEND=django
 export ADMIN_URL="admin-$(openssl rand -hex 6)/"
+export CONTACT_EMAIL="support@example.kg"
 export EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
 export REDIS_URL="redis://..."
 
@@ -67,6 +69,18 @@ gunicorn config.wsgi:application  # behind TLS-terminating proxy (set SECURE_PRO
 ```
 
 Security headers: `X-Frame-Options: DENY`, `nosniff`, `same-origin` referrer/COOP, `SameSite=Lax`, `HttpOnly`, `SESSION_COOKIE_AGE=2 weeks`, `PASSWORD_RESET_TIMEOUT=24h`. CSP: `default-src 'self'`, `script-src 'self'` без `unsafe-inline`.
+
+### Хранение логов и чистка (cron)
+
+Для защиты от перебора паролей и спама пишутся ограниченные данные: журнал неудачных входов `django-axes` (IP-адрес, User-Agent) и счётчики лимитов `django-ratelimit`. Об этом честно сказано на `/privacy/`. Счётчики лимитов лежат в кэше (`RATELIMIT_USE_CACHE`) и истекают сами по TTL окна, а журналы axes нужно чистить по расписанию — добавьте ежедневный cron:
+
+```cron
+# каждый день в 04:00 — удалить записи журналов старше 30 дней
+0 4 * * * cd /srv/proflens && .venv/bin/python manage.py axes_reset_logs --age 30
+0 4 * * * cd /srv/proflens && .venv/bin/python manage.py axes_reset_failure_logs --age 30
+```
+
+`axes_reset_logs` чистит `AccessLog`, `axes_reset_failure_logs` — журнал неудачных входов `AccessFailureLog` (обе команды принимают `--age <дни>`). Это удаление исторических записей: действующие блокировки хранятся отдельно (в попытках `AccessAttempt`), поэтому чистка их не снимает — `AXES_RESET_COOL_OFF_ON_FAILURE_DURING_LOCKOUT` не трогаем.
 
 ### i18n
 

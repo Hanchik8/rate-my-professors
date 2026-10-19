@@ -30,6 +30,9 @@ ADMIN_URL = os.environ.get("ADMIN_URL", "admin/").strip("/")
 if not ADMIN_URL.endswith("/"):
     ADMIN_URL = ADMIN_URL + "/"
 
+# Support address shown on the privacy page; no fallback in production.
+CONTACT_EMAIL = os.environ.get("CONTACT_EMAIL", "")
+
 # Strict fail-safe: when not testing and DEBUG=False, require env vars
 if not DEBUG and not _is_test:
     from django.core.exceptions import ImproperlyConfigured
@@ -47,6 +50,8 @@ if not DEBUG and not _is_test:
         raise ImproperlyConfigured("DATABASE_URL must be set (SQLite is not allowed) when DEBUG=False")
     if ADMIN_URL == "admin/":
         raise ImproperlyConfigured("ADMIN_URL must be changed from default 'admin/' when DEBUG=False")
+    if not CONTACT_EMAIL:
+        raise ImproperlyConfigured("CONTACT_EMAIL must be set when DEBUG=False")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -109,6 +114,7 @@ TEMPLATES = [{
         "django.contrib.auth.context_processors.auth",
         "django.contrib.messages.context_processors.messages",
         "django.template.context_processors.i18n",
+        "reviews.context_processors.contact_email",
     ]},
 }]
 
