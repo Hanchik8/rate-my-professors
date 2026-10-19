@@ -1,5 +1,5 @@
-{% load static %}<!doctype html>
-<html lang="en">
+{% load static i18n %}<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,8 +10,34 @@
 <link rel="stylesheet" href="{% static 'reviews/style.css' %}">
 </head>
 <body>
-<header class="top"><a class="brand" href="{% url 'home' %}">ProfLens</a></header>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="{% url 'home' %}">ProfLens</a>
+    <nav class="nav">
+      <a href="{% url 'rules' %}">{% translate "Правила" %}</a>
+      <a href="{% url 'add_professor' %}">{% translate "Добавить преподавателя" %}</a>
+      {% if user.is_authenticated %}
+        <span class="muted">{{ user.email|default:user.username }}</span>
+        <form method="post" action="{% url 'logout' %}" class="inline">{% csrf_token %}<button class="link-btn" type="submit">{% translate "Выйти" %}</button></form>
+      {% else %}
+        <a href="{% url 'login' %}">{% translate "Вход" %}</a>
+        <a href="{% url 'signup' %}">{% translate "Регистрация" %}</a>
+      {% endif %}
+      <form action="{% url 'set_language' %}" method="post" class="lang-switch">{% csrf_token %}
+        <input name="next" type="hidden" value="{{ request.get_full_path }}">
+        <select name="language" onchange="this.form.submit()" aria-label="{% translate 'Язык' %}">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% for code, name in LANGUAGES %}<option value="{{ code }}"{% if code == LANGUAGE_CODE %} selected{% endif %}>{{ name }}</option>{% endfor %}
+        </select>
+      </form>
+    </nav>
+  </div>
+</header>
+{% if messages %}<ul class="messages">{% for m in messages %}<li class="{{ m.tags }}">{{ m }}</li>{% endfor %}</ul>{% endif %}
 <main>{% block content %}{% endblock %}</main>
-<footer>Demo data resets whenever the server restarts.</footer>
+<footer>
+  <a href="{% url 'rules' %}">{% translate "Правила" %}</a> · {% translate "Демо-данные сбрасываются при рестарте (memory-режим)." %}
+</footer>
 </body>
 </html>

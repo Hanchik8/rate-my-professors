@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# English — source strings are Russian, so map minimally. Untranslated strings fallback to Russian.
+# Keeping file so `compilemessages` finds it.
+
+msgid "Узнайте, какие занятия на самом деле — до записи на курс."
+msgstr "Find out what a class is really like before you enroll."
+
+msgid "Имя преподавателя или кафедра"
+msgstr "Professor name or department"
+
+msgid "Город"
+msgstr "City"
+
+msgid "Все города"
+msgstr "All cities"
+
+msgid "Вуз"
+msgstr "School"
+
+msgid "Все вузы"
+msgstr "All schools"
+
+msgid "отзывов"
+msgstr "ratings"
+
+msgid "Сложность"
+msgstr "Difficulty"
+
+msgid "Пойдут снова"
+msgstr "Would take again"
+
+msgid "Отзывов"
+msgstr "Ratings"
+
+msgid "Студенты отмечают:"
+msgstr "Students say:"
+
+msgid "Оценить преподавателя"
+msgstr "Rate this professor"
+
+msgid "Отзывы"
+msgstr "Reviews"
+
+msgid "сначала новые"
+msgstr "newest"
+
+msgid "сначала полезные"
+msgstr "most helpful"
+
+msgid "Предмет"
+msgstr "Subject"
+
+msgid "Семестр"
+msgstr "Term"
+
+msgid "Правила"
+msgstr "Rules"
+
+msgid "Добавить преподавателя"
+msgstr "Add professor"
+
+msgid "Вход"
+msgstr "Log in"
+
+msgid "Регистрация"
+msgstr "Sign up"
+
+msgid "Язык"
+msgstr "Language"
+
+msgid "Преподавателей"
+msgstr "Professors"
+
+msgid "Средний рейтинг"
+msgstr "Average rating"
+
+msgid "Преподаватели"
+msgstr "Professors"

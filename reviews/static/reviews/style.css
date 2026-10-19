@@ -4,7 +4,23 @@ body{margin:0;background:var(--bg);color:var(--ink);font:1.0625rem/1.55 "Atkinso
 h1,h2,.brand,.tile{font-family:"Bricolage Grotesque","Atkinson Hyperlegible",system-ui,sans-serif}
 main,.top,footer{max-width:58rem;margin:0 auto;padding-left:1.25rem;padding-right:1.25rem}
 .top{padding-top:1.25rem;padding-bottom:.5rem}
+.top-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .brand{font-weight:800;font-size:1.4rem;color:var(--ink);text-decoration:none}
+.nav{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;font-size:.95rem}
+.nav a{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent}
+.nav a:hover{border-color:var(--ink)}
+.muted{color:var(--muted)}
+.inline{display:inline}
+.link-btn{background:none;border:none;padding:0;color:var(--ink);text-decoration:underline;cursor:pointer;font:inherit;font-weight:400}
+.lang-switch select{padding:.3rem .5rem}
+.messages{list-style:none;max-width:58rem;margin:.5rem auto;padding:0 1.25rem}
+.messages li{padding:.6rem .8rem;border-radius:.4rem;margin:.3rem 0}
+.messages .success{background:#dff5df;border:1px solid #7bd389}
+.messages .warning{background:#fff4cc;border:1px solid #ffd23f}
+.messages .error{background:#ffe0dd;border:1px solid #ff8c82}
+.notice{background:var(--surface);border:1px solid var(--line);padding:.6rem .8rem;border-radius:.4rem}
+.prose{max-width:42rem}
+.prose ul{margin:0 0 1rem 1.2rem}
 h1{font-size:clamp(1.8rem,4.5vw,2.8rem);line-height:1.1;margin:1rem 0 1.25rem;max-width:22ch}
 h2{margin:2rem 0 .5rem}
 a{color:var(--ink)}
@@ -37,11 +53,13 @@ input,select,textarea{font:inherit;color:var(--ink);background:var(--surface);bo
 .bar i{display:block;height:100%;background:var(--ink)}
 .tags{color:var(--muted);margin:.4rem 0}
 .sort{color:var(--muted)}
+.pagination{display:flex;gap:1rem;align-items:center;justify-content:center;margin:1.5rem 0}
+.pagination a{border:1px solid var(--ink);padding:.3rem .7rem;border-radius:.4rem;text-decoration:none;background:var(--surface)}
 .review{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line);max-width:46rem}
 .review p{margin:.3rem 0}
 .facts-line{color:var(--muted)}
 .facts-line strong{color:var(--ink)}
-.votes{display:flex;gap:.5rem;margin-top:.6rem}
+.votes{display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap}
 .votes button{background:transparent;border-width:1px;font-weight:400;padding:.2rem .7rem;font-size:.95rem}
 .form{max-width:36rem}
 .field{margin:1.4rem 0}
@@ -52,4 +70,4 @@ input,select,textarea{font:inherit;color:var(--ink);background:var(--surface);bo
 .choices label{display:inline-flex;gap:.4rem;align-items:center;border:1px solid var(--ink);background:var(--surface);padding:.4rem .8rem;border-radius:.4rem;cursor:pointer;font-weight:400}
 .choices label:has(input:checked){background:var(--hl)}
 .errorlist{color:#a1281c;list-style:none;padding:0;margin:.3rem 0;font-weight:700}
-@media(max-width:36rem){.row{grid-template-columns:3.5rem 1fr}.row .meta{display:none}.headline{align-items:flex-start}}
+@media(max-width:42rem){.row{grid-template-columns:3.5rem 1fr}.row .meta{display:none}.headline{align-items:flex-start}.top-inner{flex-direction:column;align-items:flex-start}}

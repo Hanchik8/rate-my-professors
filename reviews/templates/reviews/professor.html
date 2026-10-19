@@ -1,53 +1,65 @@
-{% extends "reviews/base.html" %}
-{% block title %}{{ prof.full_name }} - ProfLens{% endblock %}
+{% extends "reviews/base.html" %}{% load i18n %}
+{% block title %}{{ prof.full_name }} — ProfLens{% endblock %}
 {% block content %}
 <div class="headline">
   <div class="tile big {{ stats.tone }}">{% if stats.count %}{{ stats.overall|floatformat:1 }}{% else %}-{% endif %}</div>
   <div>
     <h1>{{ prof.full_name }}</h1>
-    <p class="sub">{{ prof.title }} in {{ prof.department }} at {{ school.name }}</p>
+    <p class="sub">{{ prof.title }} — {{ prof.department }}, <a href="{% url 'school_detail' school.slug %}">{{ school.name }}</a></p>
   </div>
 </div>
 
 {% if stats.count %}
 <dl class="facts">
-  <div><dt>Would take again</dt><dd>{{ stats.wta_pct }}%</dd></div>
-  <div><dt>Difficulty</dt><dd>{{ stats.difficulty|floatformat:1 }} out of 5</dd></div>
-  <div><dt>Ratings</dt><dd>{{ stats.count }}</dd></div>
+  <div><dt>{% translate "Пойдут снова" %}</dt><dd>{{ stats.wta_pct }}%</dd></div>
+  <div><dt>{% translate "Сложность" %}</dt><dd>{{ stats.difficulty|floatformat:1 }} / 5</dd></div>
+  <div><dt>{% translate "Отзывов" %}</dt><dd>{{ stats.count }}</dd></div>
 </dl>
-<ul class="dist" aria-label="Rating distribution">
+<ul class="dist" aria-label="{% translate 'Распределение оценок' %}">
   {% for d in stats.distribution %}
   <li><span>{{ d.score }}</span><span class="bar"><i style="width:{{ d.pct }}%"></i></span><span>{{ d.count }}</span></li>
   {% endfor %}
 </ul>
-{% if stats.top_tags %}<p class="tags">Students say: {{ stats.top_tags|join:", " }}</p>{% endif %}
+{% if stats.top_tags %}<p class="tags">{% translate "Студенты отмечают:" %} {{ stats.top_tags|join:", " }}</p>{% endif %}
 {% endif %}
 
-<p><a class="btn" href="{% url 'review_new' prof.slug %}">Rate this professor</a></p>
+<p><a class="btn" href="{% url 'review_new' prof.slug %}">{% translate "Оценить преподавателя" %}</a></p>
 
-<h2>Reviews</h2>
+<h2>{% translate "Отзывы" %}</h2>
 {% if reviews %}
-<p class="sort">Sort by
-  {% if sort == "newest" %}<strong>newest</strong>{% else %}<a href="?sort=newest">newest</a>{% endif %},
-  {% if sort == "helpful" %}<strong>most helpful</strong>{% else %}<a href="?sort=helpful">most helpful</a>{% endif %}
+<p class="sort">{% translate "Сортировка:" %}
+  {% if sort == "newest" %}<strong>{% translate "сначала новые" %}</strong>{% else %}<a href="?sort=newest">{% translate "сначала новые" %}</a>{% endif %},
+  {% if sort == "helpful" %}<strong>{% translate "сначала полезные" %}</strong>{% else %}<a href="?sort=helpful">{% translate "сначала полезные" %}</a>{% endif %}
 </p>
 {% for r in reviews %}
 <article class="review" id="review-{{ r.id }}">
   <div class="tile small {% if r.overall >= 4 %}good{% elif r.overall >= 3 %}mid{% else %}bad{% endif %}">{{ r.overall }}</div>
   <div>
     <p class="facts-line"><strong>{{ r.course }}</strong>{% if r.term %}, {{ r.term }}{% endif %}.
-      Difficulty {{ r.difficulty }}. {% if r.would_take_again %}Would take again.{% else %}Would not take again.{% endif %}
-      {% if r.grade %}Grade: {{ r.grade }}.{% endif %}</p>
+      {% translate "Сложность" %} {{ r.difficulty }}. {% if r.would_take_again %}{% translate "Пойду снова." %}{% else %}{% translate "Не пойду снова." %}{% endif %}
+      {% if r.grade %}{% translate "Оценка:" %} {{ r.grade }}.{% endif %}</p>
     <p>{{ r.comment }}</p>
     {% if r.tags %}<p class="tags">{{ r.tags|join:", " }}</p>{% endif %}
-    <form method="post" action="{% url 'review_vote' r.id %}" class="votes">{% csrf_token %}
-      <button name="vote" value="up">Helpful {{ r.helpful }}</button>
-      <button name="vote" value="down">Not helpful {{ r.not_helpful }}</button>
-    </form>
+    <div class="votes">
+      <form method="post" action="{% url 'review_vote' r.id %}">{% csrf_token %}
+        <button name="vote" value="up">{% translate "Полезно" %} {{ r.helpful }}</button>
+        <button name="vote" value="down">{% translate "Бесполезно" %} {{ r.not_helpful }}</button>
+      </form>
+      <form method="post" action="{% url 'review_report' r.id %}">{% csrf_token %}
+        <button class="link-btn" type="submit">{% translate "Пожаловаться" %}</button>
+      </form>
+    </div>
   </div>
 </article>
 {% endfor %}
+{% if page_obj %}
+<div class="pagination">
+  {% if page_obj.has_previous %}<a href="?sort={{ sort }}&page={{ page_obj.previous_page_number }}">{% translate "Назад" %}</a>{% endif %}
+  <span>{% blocktranslate with n=page_obj.number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}</span>
+  {% if page_obj.has_next %}<a href="?sort={{ sort }}&page={{ page_obj.next_page_number }}">{% translate "Вперёд" %}</a>{% endif %}
+</div>
+{% endif %}
 {% else %}
-<p class="empty">No reviews yet. Be the first to rate {{ prof.full_name }}.</p>
+<p class="empty">{% blocktranslate with name=prof.full_name %}Пока нет отзывов. Станьте первым, кто оценит {{ name }}.{% endblocktranslate %}</p>
 {% endif %}
 {% endblock %}

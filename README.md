@@ -1,21 +1,48 @@
-# ProfLens (Django MVP, no database)
+# ProfLens — отзывы о преподавателях вузов Кыргызстана
 
-    pip install -r requirements.txt
-    python manage.py runserver      # http://127.0.0.1:8000
-    python manage.py test           # smoke tests, no DB needed
+Аналог RateMyProfessors для вузов КР. Интерфейс на русском, кыргызском и английском (по умолчанию `ru`).
 
-Data lives in memory (`reviews/repository.py`), seeded with fictional demo data
-(`reviews/seed.py`). Everything resets on restart.
+## Локальный запуск
 
-## Connecting PostgreSQL later
-1. Write Django models mirroring your schema (schools, departments, professors,
-   courses, reviews, tags...) and `pip install psycopg[binary]`.
-2. Fill in `DATABASES` in `config/settings.py` (ENGINE `django.db.backends.postgresql`).
-3. Run `makemigrations` and `migrate`.
-4. Add a `DjangoRepository` with the same methods as `InMemoryRepository`
-   (`search`, `stats`, `reviews_for`, `add_review`, `vote`, ...) and switch
-   `reviews/store.py` to use it. Views and templates stay as they are.
-5. Then add `django.contrib.auth`, `sessions` and `admin` for real accounts and moderation.
+```bash
+cp .env.example .env          # при необходимости поправьте значения
+pip install -r requirements.txt
 
-## Not in the MVP
-Accounts, one-vote-per-user, add-professor form, moderation/reports, school pages.
+# вариант A — без БД (in-memory, данные сбрасываются при рестарте)
+python manage.py runserver     # http://127.0.0.1:8000
+python manage.py test
+
+# вариант B — с PostgreSQL (данные сохраняются)
+docker compose up -d           # поднимет Postgres (или см. DATABASE_URL в .env)
+python manage.py migrate
+python manage.py seed_kg       # залить демо-данные КР
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+### Переменные окружения (.env)
+
+| Переменная | По умолчанию | Описание |
+|---|---|---|
+| `SECRET_KEY` | `dev-only-change-me` | Секрет Django |
+| `DEBUG` | `True` | `False` в проде |
+| `ALLOWED_HOSTS` | `*` | Через запятую, напр. `example.com,127.0.0.1` |
+| `DATABASE_URL` | _(пусто — SQLite)_ | `postgres://user:pass@host:port/db` |
+| `REPO_BACKEND` | `memory` | `memory` или `django` (ORM). При `DATABASE_URL` по умолчанию `django` |
+
+### i18n
+
+```bash
+python manage.py makemessages -l ky -l ru   # собрать строки
+python manage.py compilemessages             # скомпилировать .mo
+```
+
+Язык переключается формой `POST /i18n/setlang/` (cookie `django_language`, без сессий).
+
+## Архитектура
+
+`reviews/repository.py` — `InMemoryRepository`, `reviews/models.py` + `reviews/django_repo.py` — `DjangoRepository`, выбор в `reviews/store.py` по `REPO_BACKEND`/`DATABASE_URL`. Views (`reviews/views.py`) работают только через `repo`.
+
+## Правила и модерация
+
+Отзывы и новые преподаватели попадают на модерацию (`pending` → `approved`). Правила: ` /rules/`.

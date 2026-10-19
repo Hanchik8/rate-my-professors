@@ -1,0 +1,21 @@
+{% extends "reviews/base.html" %}{% load i18n %}
+{% block title %}{{ school.name }} — ProfLens{% endblock %}
+{% block content %}
+<h1>{{ school.name }}</h1>
+<p class="sub">{{ school.city }}</p>
+{% if stats.prof_count %}
+<dl class="facts">
+  <div><dt>{% translate "Преподавателей" %}</dt><dd>{{ stats.prof_count }}</dd></div>
+  <div><dt>{% translate "Отзывов" %}</dt><dd>{{ stats.review_count }}</dd></div>
+  {% if stats.avg_overall %}<div><dt>{% translate "Средний рейтинг" %}</dt><dd>{{ stats.avg_overall }}</dd></div>{% endif %}
+</dl>
+{% endif %}
+<h2>{% translate "Кафедры" %}</h2>
+{% if departments %}<p class="tags">{{ departments|join:", " }}</p>{% else %}<p class="empty">{% translate "Пока нет кафедр." %}</p>{% endif %}
+<h2>{% translate "Преподаватели" %}</h2>
+<ol class="rows">
+  {% for r in results %}
+  <li><a class="row" href="{% url 'professor' r.prof.slug %}"><span class="tile {{ r.stats.tone }}">{% if r.stats.count %}{{ r.stats.overall|floatformat:1 }}{% else %}-{% endif %}</span><span class="who"><strong>{{ r.prof.full_name }}</strong><span>{{ r.prof.department }}</span></span><span class="meta">{{ r.stats.count }} {% translate "отзывов" %}</span></a></li>
+  {% empty %}<li class="empty">{% translate "Пока нет преподавателей." %}</li>{% endfor %}
+</ol>
+{% endblock %}
