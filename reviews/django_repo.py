@@ -48,7 +48,6 @@ class DjangoRepository:
         course = (data.get("course") or "").strip()
         if status is None:
             status = "pending" if user is not None else "approved"
-        # html stripped in model save; validate via full_clean for range
         r = Review(
             professor=prof, course=course, term=data.get("term", ""),
             overall=data["overall"], difficulty=data["difficulty"],
@@ -59,9 +58,7 @@ class DjangoRepository:
             r.full_clean(exclude=["id", "professor", "author", "tags"])
         except ValidationError as e:
             raise ValueError(str(e))
-        # duplicate per prof+Lower(course)+author (DB functional unique would also catch)
         if user is not None and course:
-            # Check in Python to give nice error before DB
             if Review.objects.filter(professor=prof, author=user).filter(course__iexact=course).exists():
                 raise ValueError("duplicate review")
         r.save()
@@ -78,7 +75,6 @@ class DjangoRepository:
                     Vote.objects.create(review=r, user=user, helpful=helpful)
                 except IntegrityError:
                     raise ValueError("already voted")
-            # atomic counters via F()
             if helpful:
                 Review.objects.filter(pk=review_id).update(helpful=F("helpful") + 1)
             else:
@@ -93,7 +89,6 @@ class DjangoRepository:
                 except IntegrityError:
                     raise ValueError("already reported")
             new_reported = Report.objects.filter(review=r).count()
-            # update reported denormalized + auto-pending at 3+
             upd = {"reported": new_reported}
             if new_reported >= 3 and r.status == "approved":
                 upd["status"] = "pending"
@@ -107,7 +102,10 @@ class DjangoRepository:
 
     def update_school(self, school_id, **kwargs):
         try:
-            School.objects.filter(pk=school_id).update(**{k: v for k, v in kwargs.items() if k in ["name","short_name","city","region","type","website","slug"]})
+            allowed = {k: v for k, v in kwargs.items() if k in ["name", "short_name", "city", "region", "type", "website", "slug"]}
+            if not allowed:
+                return self.school(str(school_id))
+            School.objects.filter(pk=school_id).update(**allowed)
             return self.school(str(school_id))
         except (ValueError, TypeError):
             return None
@@ -172,7 +170,6 @@ class DjangoRepository:
             qs = qs.filter(status="approved")
         qs = qs.prefetch_related("tags")
         if sort == "helpful":
-            # annotate helpful score to avoid python sort if desired, but keep python for stability
             items = list(qs)
             items.sort(key=lambda r: (r.helpful - r.not_helpful, r.created_at.timestamp() if hasattr(r.created_at, 'timestamp') else r.created_at), reverse=True)
             return [self._review_to_dc(r) for r in items]
@@ -186,7 +183,6 @@ class DjangoRepository:
         return [self._review_to_dc(r) for r in qs]
 
     def stats(self, professor_id):
-        from django.db.models import Avg, Count
         qs = Review.objects.filter(professor_id=professor_id, status="approved")
         agg = qs.aggregate(
             cnt=Count("id"),
@@ -203,7 +199,6 @@ class DjangoRepository:
         overall = round(agg["avg_overall"], 1)
         diff = round(agg["avg_diff"], 1)
         wta = round(100 * agg["wta_cnt"] / n)
-        # top tags via DB
         tag_counts = Tag.objects.filter(review__professor_id=professor_id, review__status="approved").annotate(cnt=Count("review")).order_by("-cnt")[:3]
         top_tags = [t.name for t in tag_counts]
         return {"count": n, "overall": overall, "difficulty": diff, "wta_pct": wta, "tone": _tone(overall), "distribution": distribution, "top_tags": top_tags}
@@ -213,7 +208,6 @@ class DjangoRepository:
         n = profs.count()
         if not n:
             return {"prof_count": 0, "review_count": 0, "avg_overall": 0}
-        from django.db.models import Avg
         total = Review.objects.filter(professor__school_id=school_id, status="approved").count()
         if not total:
             return {"prof_count": n, "review_count": 0, "avg_overall": 0}
@@ -228,33 +222,12 @@ class DjangoRepository:
             qs = qs.filter(school__city=city)
         if q:
             q = q.strip()[:100]
-            # Use icontains on DB to avoid loading all
             qs = qs.filter(Q(first_name__icontains=q) | Q(last_name__icontains=q) | Q(department__icontains=q))
-        # Limit queryset pagination responsibility to view, but limit search to reasonable size
         qs = qs[:200]
-        # Batch stats: one query for counts/avg per professor
-        from django.db.models import Avg, Count
-        prof_ids = [str(p.pk) for p in qs]
-        stats_map = {}
-        if prof_ids:
-            rows = Review.objects.filter(professor_id__in=prof_ids, status="approved").values("professor_id").annotate(cnt=Count("id"), avg=Avg("overall"))
-            for row in rows:
-                stats_map[str(row["professor_id"])] = row
         out = []
         for p in qs:
             dc = self._prof_to_dc(p)
             school = self._school_to_dc(p.school)
-            s = stats_map.get(str(p.pk))
-            if s:
-                # full stats via method for tone etc, but use cached cnt/avg for sort key
-                full = self.stats(str(p.pk))
-            else:
-                full = {"count": 0, "overall": 0, "difficulty": 0, "wta_pct": None, "tone": "none", "distribution": [{"score": s, "count": 0, "pct": 0} for s in range(5,0,-1)], "top_tags": []}
-                if str(p.pk) not in stats_map:
-                    full = self.stats(str(p.pk))
-                else:
-                    full = self.stats(str(p.pk))
-            # Instead of double query, just call stats (small overhead) - keep sort key
             full = self.stats(str(p.pk))
             out.append({"prof": dc, "school": school, "stats": full})
         out.sort(key=lambda x: (-x["stats"]["overall"], x["prof"].last_name))
