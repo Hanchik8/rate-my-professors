@@ -25,21 +25,4 @@
   <button>{% translate "Отправить на модерацию" %}</button>
   <a href="{% url 'home' %}">{% translate "Отмена" %}</a>
 </form>
-<script>
-(function(){
-  var search = document.getElementById('school_search');
-  var select = document.getElementById('id_school');
-  if(!search || !select) return;
-  select.style.display = '';
-  var opts = Array.from(select.options);
-  function filter(){
-    var q = search.value.toLowerCase();
-    opts.forEach(function(o){
-      if(!q || o.text.toLowerCase().indexOf(q) !== -1) o.hidden = false; else o.hidden = true;
-    });
-  }
-  search.addEventListener('input', filter);
-  select.addEventListener('change', function(){ search.value = select.options[select.selectedIndex].text; });
-})();
-</script>
 {% endblock %}
