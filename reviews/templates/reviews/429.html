@@ -1,0 +1,7 @@
+{% extends "reviews/base.html" %}{% load i18n %}
+{% block title %}{% translate "Слишком много запросов" %} — ProfLens{% endblock %}
+{% block content %}
+<h1>{% translate "Слишком много запросов (429)" %}</h1>
+<p class="muted">{% translate "Вы превысили лимит. Попробуйте позже." %}</p>
+<p><a href="{% url 'home' %}">{% translate "На главную" %}</a></p>
+{% endblock %}

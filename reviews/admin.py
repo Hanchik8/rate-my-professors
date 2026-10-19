@@ -1,8 +1,21 @@
 from django.contrib import admin
-from .models import School, Professor, Review, Tag, Vote, Report
+from django.contrib.auth.admin import GroupAdmin, UserAdmin
+from django.contrib.auth.models import Group, User
+
+from .admin_site import admin_site
+from .models import Professor, Report, Review, School, Tag, Vote
+
+try:
+    admin_site.register(User, UserAdmin)
+except admin.sites.AlreadyRegistered:
+    pass
+try:
+    admin_site.register(Group, GroupAdmin)
+except admin.sites.AlreadyRegistered:
+    pass
 
 
-@admin.register(School)
+@admin.register(School, site=admin_site)
 class SchoolAdmin(admin.ModelAdmin):
     list_display = ["name", "short_name", "city", "region", "type", "website"]
     list_filter = ["city", "region", "type"]
@@ -10,7 +23,7 @@ class SchoolAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ["name"]}
 
 
-@admin.register(Tag)
+@admin.register(Tag, site=admin_site)
 class TagAdmin(admin.ModelAdmin):
     list_display = ["name"]
 
@@ -22,7 +35,7 @@ class ReviewInline(admin.TabularInline):
     readonly_fields = ["created_at"]
 
 
-@admin.register(Professor)
+@admin.register(Professor, site=admin_site)
 class ProfessorAdmin(admin.ModelAdmin):
     list_display = ["full_name", "school", "department", "title", "status", "created_at"]
     list_filter = ["status", "school", "department"]
@@ -38,7 +51,7 @@ class ProfessorAdmin(admin.ModelAdmin):
     full_name.short_description = "ФИО"
 
 
-@admin.register(Review)
+@admin.register(Review, site=admin_site)
 class ReviewAdmin(admin.ModelAdmin):
     list_display = ["professor", "course", "overall", "difficulty", "grade", "status", "reported", "created_at"]
     list_filter = ["status", "overall", "grade"]
@@ -55,12 +68,12 @@ class ReviewAdmin(admin.ModelAdmin):
         queryset.update(status="rejected")
 
 
-@admin.register(Vote)
+@admin.register(Vote, site=admin_site)
 class VoteAdmin(admin.ModelAdmin):
     list_display = ["review", "user", "helpful", "created_at"]
     list_filter = ["helpful"]
 
 
-@admin.register(Report)
+@admin.register(Report, site=admin_site)
 class ReportAdmin(admin.ModelAdmin):
     list_display = ["review", "user", "created_at"]

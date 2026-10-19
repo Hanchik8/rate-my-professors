@@ -1,0 +1,8 @@
+{% extends "reviews/base.html" %}{% load i18n %}
+{% block title %}{% translate "Удалить аккаунт" %} — ProfLens{% endblock %}
+{% block content %}
+<h1>{% translate "Удалить аккаунт" %}</h1>
+<p class="muted">{% translate "Отзывы останутся анонимными. Аккаунт будет безвозвратно удалён." %}</p>
+<form method="post" class="form">{% csrf_token %}<button class="error">{% translate "Удалить навсегда" %}</button> <a href="{% url 'home' %}">{% translate "Отмена" %}</a></form>
+<p><a href="{% url 'privacy' %}">{% translate "Политика конфиденциальности" %}</a></p>
+{% endblock %}

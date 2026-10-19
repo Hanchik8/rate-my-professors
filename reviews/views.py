@@ -2,20 +2,27 @@ from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError
+from django.core.mail import send_mail
 from django.core.paginator import Paginator
-from django.http import Http404
-from django.shortcuts import redirect, render
+from django.http import Http404, HttpResponse, HttpResponseForbidden
+from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse
+from django.utils.encoding import force_bytes, force_str
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.translation import gettext as _
 from django.views.decorators.http import require_POST
 from django import forms
+from django.conf import settings
 
 from .forms import ProfessorForm, ReviewForm
 from .store import repo
+from .tokens import email_confirm_token
 
 
 def home(request):
-    q = request.GET.get("q", "")
+    q = request.GET.get("q", "")[:100]
     school = request.GET.get("school", "")
     city = request.GET.get("city", "")
     results = repo.search(q, school, city)
@@ -27,7 +34,6 @@ def home(request):
         page_obj = None
     else:
         page_results = page_obj.object_list
-    # group schools by city for optgroup
     schools = repo.schools()
     from collections import defaultdict
     by_city = defaultdict(list)
@@ -71,7 +77,6 @@ def professor_detail(request, slug):
 
 def school_list(request):
     schools = repo.schools()
-    # filters
     region = request.GET.get("region", "")
     type_ = request.GET.get("type", "")
     filtered = schools
@@ -107,8 +112,40 @@ def rules(request):
     return render(request, "reviews/rules.html")
 
 
+def privacy(request):
+    return render(request, "reviews/privacy.html")
+
+
+@login_required
+def delete_account(request):
+    if request.method == "POST":
+        user = request.user
+        # anonymize reviews: set author to None
+        try:
+            from .models import Review
+            Review.objects.filter(author=user).update(author=None)
+        except Exception:
+            pass
+        from django.contrib.auth import logout
+        logout(request)
+        user.delete()
+        messages.success(request, _("Аккаунт удалён. Отзывы остались анонимными."))
+        return redirect("home")
+    return render(request, "reviews/delete_account.html")
+
+
 @login_required
 def review_new(request, slug):
+    if not request.user.is_active or not request.user.email:
+        # require confirmed email; check via is_active (confirmed) or separate flag
+        # Users with is_active=False cannot leave reviews
+        if not request.user.is_active:
+            messages.warning(request, _("Подтвердите email, прежде чем оставлять отзывы."))
+            return redirect("home")
+    # Additional check: if user was created inactive pending confirmation
+    if not request.user.is_active:
+        messages.warning(request, _("Подтвердите email."))
+        return redirect("home")
     prof = _professor_or_404(slug)
     if request.method == "POST":
         form = ReviewForm(request.POST)
@@ -139,6 +176,10 @@ def review_vote(request, review_id):
     review = repo.review(review_id)
     if review is None:
         raise Http404("Review not found")
+    if getattr(review, 'status', 'approved') != 'approved':
+        raise Http404("Review not found")
+    if getattr(review, 'author_id', None) == request.user.id:
+        return HttpResponseForbidden(_("Нельзя голосовать за свой отзыв."))
     try:
         repo.vote(review_id, helpful=request.POST.get("vote") == "up", user=request.user)
     except ValueError:
@@ -155,6 +196,10 @@ def review_report(request, review_id):
     review = repo.review(review_id)
     if review is None:
         raise Http404("Review not found")
+    if getattr(review, 'status', 'approved') != 'approved':
+        raise Http404("Review not found")
+    if getattr(review, 'author_id', None) == request.user.id:
+        return HttpResponseForbidden(_("Нельзя жаловаться на свой отзыв."))
     if hasattr(repo, "report"):
         try:
             repo.report(review_id, user=request.user)
@@ -177,10 +222,7 @@ class EmailSignupForm(forms.Form):
     password2 = forms.CharField(label=_("Повторите пароль"), widget=forms.PasswordInput)
 
     def clean_email(self):
-        email = self.cleaned_data["email"].lower().strip()
-        if User.objects.filter(email__iexact=email).exists() or User.objects.filter(username__iexact=email).exists():
-            raise forms.ValidationError(_("Пользователь с таким email уже существует."))
-        return email
+        return self.cleaned_data["email"].lower().strip()
 
     def clean(self):
         cleaned = super().clean()
@@ -188,13 +230,26 @@ class EmailSignupForm(forms.Form):
         p2 = cleaned.get("password2")
         if p1 and p2 and p1 != p2:
             raise forms.ValidationError(_("Пароли не совпадают."))
-        if p1 and len(p1) < 8:
-            raise forms.ValidationError(_("Пароль должен быть не менее 8 символов."))
+        if p1:
+            try:
+                validate_password(p1)
+            except ValidationError as e:
+                raise forms.ValidationError(e.messages)
         return cleaned
 
-    def save(self):
+    def save(self, request=None, commit=True):
         email = self.cleaned_data["email"].lower().strip()
-        user = User.objects.create_user(username=email, email=email, password=self.cleaned_data["password1"])
+        user = User.objects.create_user(username=email, email=email, password=self.cleaned_data["password1"], is_active=False)
+        # send confirmation email
+        token = email_confirm_token.make_token(user)
+        uid = urlsafe_base64_encode(force_bytes(user.pk))
+        confirm_url = request.build_absolute_uri(reverse("confirm_email", args=[uid, token])) if request else f"/accounts/confirm/{uid}/{token}/"
+        subject = _("Подтвердите email — ProfLens")
+        body = _("Перейдите по ссылке для подтверждения (24 часа): %(url)s") % {"url": confirm_url}
+        try:
+            send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [email], fail_silently=True)
+        except Exception:
+            pass
         return user
 
 
@@ -204,13 +259,41 @@ def signup(request):
     if request.method == "POST":
         form = EmailSignupForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)
-            messages.success(request, _("Регистрация выполнена. Добро пожаловать!"))
-            return redirect("home")
+            email = form.cleaned_data["email"].lower().strip()
+            # anti-enum: if exists, send "already registered" email
+            existing = User.objects.filter(email__iexact=email).first() or User.objects.filter(username__iexact=email).first()
+            if existing:
+                try:
+                    send_mail(
+                        _("Вы уже зарегистрированы — ProfLens"),
+                        _("Кто-то попытался зарегистрироваться с вашим email. Если это были не вы — проигнорируйте письмо."),
+                        settings.DEFAULT_FROM_EMAIL, [email], fail_silently=True
+                    )
+                except Exception:
+                    pass
+                messages.success(request, _("Если email существует, мы отправили письмо. Проверьте почту."))
+                return render(request, "registration/signup.html", {"form": form, "sent": True})
+            user = form.save(request=request)
+            messages.success(request, _("Проверьте почту — мы отправили ссылку для подтверждения (24 часа)."))
+            return render(request, "registration/signup.html", {"form": form, "sent": True})
     else:
         form = EmailSignupForm()
     return render(request, "registration/signup.html", {"form": form})
+
+
+def confirm_email(request, uidb64, token):
+    try:
+        uid = force_str(urlsafe_base64_decode(uidb64))
+        user = User.objects.get(pk=uid)
+    except Exception:
+        user = None
+    if user and email_confirm_token.check_token(user, token):
+        user.is_active = True
+        user.save(update_fields=["is_active"])
+        messages.success(request, _("Email подтверждён. Войдите."))
+        return redirect("login")
+    messages.error(request, _("Ссылка недействительна или просрочена."))
+    return redirect("signup")
 
 
 @login_required
@@ -241,3 +324,7 @@ def add_professor(request):
         "login_url": reverse("login"),
         "signup_url": reverse("signup"),
     })
+
+
+def ratelimited(request, exception=None):
+    return render(request, "reviews/429.html", status=429)
