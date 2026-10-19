@@ -20,6 +20,18 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
+### Первый админ
+
+```bash
+python manage.py createsuperuser
+python manage.py setup_admin_totp <email>   # печатает otpauth://... URL
+```
+
+1. Отсканируйте `otpauth://` ссылку (или QR, построенный из неё) в Google Authenticator.
+2. Зайдите по адресу `/<ADMIN_URL>` (путь из переменной `ADMIN_URL`, по умолчанию в dev — `/admin/`) и введите код из приложения.
+
+Без подтверждённого TOTP-устройства staff/superuser не попадёт в админку (см. `Admin2FATests`).
+
 ### Переменные окружения (.env)
 
 | Переменная | Пример / примечание | Описание |
