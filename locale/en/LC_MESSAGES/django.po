@@ -1,113 +1,760 @@
 msgid ""
 msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-20 02:24+0600\n"
 "Language: en\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# English — source strings are Russian, so map minimally. Untranslated strings fallback to Russian.
-# Keeping file so `compilemessages` finds it.
-
-msgid "Узнайте, какие занятия на самом деле — до записи на курс."
-msgstr "Find out what a class is really like before you enroll."
-
-msgid "Имя преподавателя или кафедра"
-msgstr "Professor name or department"
-
-msgid "Город"
-msgstr "City"
-
-msgid "Все города"
-msgstr "All cities"
-
-msgid "Вуз"
-msgstr "School"
-
-msgid "Все вузы"
-msgstr "All schools"
-
-msgid "отзывов"
-msgstr "ratings"
-
-msgid "Сложность"
-msgstr "Difficulty"
-
-msgid "Пойдут снова"
-msgstr "Would take again"
-
-msgid "Отзывов"
-msgstr "Ratings"
-
-msgid "Студенты отмечают:"
-msgstr "Students say:"
-
-msgid "Оценить преподавателя"
-msgstr "Rate this professor"
-
-msgid "Отзывы"
-msgstr "Reviews"
-
-msgid "сначала новые"
-msgstr "newest"
-
-msgid "сначала полезные"
-msgstr "most helpful"
-
+#: .\reviews\forms.py:18
 msgid "Предмет"
 msgstr "Subject"
 
+#: .\reviews\forms.py:19
+msgid "Например: Алгоритмы, Общая физика, Микроэкономика"
+msgstr "e.g.: Algorithms, General Physics, Microeconomics"
+
+#: .\reviews\forms.py:23
 msgid "Семестр"
 msgstr "Term"
 
-msgid "Правила"
-msgstr "Rules"
+#: .\reviews\forms.py:24
+msgid "Например: Осень 2025 или Весна 2025"
+msgstr "e.g.: Fall 2025 or Spring 2025"
 
-msgid "Добавить преподавателя"
-msgstr "Add professor"
+#: .\reviews\forms.py:28
+msgid "Общее качество (5 — лучше всего)"
+msgstr "Overall quality (5 — best)"
 
+#: .\reviews\forms.py:32
+msgid "Сложность (5 — очень сложно)"
+msgstr "Difficulty (5 — very hard)"
+
+#: .\reviews\forms.py:35
+msgid "Да"
+msgstr "Yes"
+
+#: .\reviews\forms.py:35
+msgid "Нет"
+msgstr "No"
+
+#: .\reviews\forms.py:37
+msgid "Пошли бы снова к этому преподавателю?"
+msgstr "Would you take this professor again?"
+
+#: .\reviews\forms.py:40
+msgid "Предпочитаю не указывать"
+msgstr "Prefer not to say"
+
+#: .\reviews\forms.py:41
+msgid "Полученная оценка"
+msgstr "Grade received"
+
+#: .\reviews\forms.py:46
+msgid "Теги"
+msgstr "Tags"
+
+#: .\reviews\forms.py:46
+msgid "Выберите до 3"
+msgstr "Choose up to 3"
+
+#: .\reviews\forms.py:51
+msgid "Ваш отзыв"
+msgstr "Your review"
+
+#: .\reviews\forms.py:52
+msgid ""
+"Не менее 20 символов. Пишите только об учёбе, без оскорблений и личных "
+"данных."
+msgstr ""
+"At least 20 characters. Write only about academics, no insults or "
+"personal data."
+
+#: .\reviews\forms.py:62
+msgid "Ссылки запрещены."
+msgstr "Links are not allowed."
+
+#: .\reviews\forms.py:64
+msgid "Email в отзыве запрещён."
+msgstr "Email addresses are not allowed in reviews."
+
+#: .\reviews\forms.py:69
+msgid "Номера телефонов запрещены."
+msgstr "Phone numbers are not allowed."
+
+#: .\reviews\forms.py:75
+msgid "Выберите не более 3 тегов."
+msgstr "Choose no more than 3 tags."
+
+#: .\reviews\forms.py:83 .\reviews\templates\reviews\add_professor.html:11
+#: .\reviews\templates\reviews\home.html:10
+msgid "Вуз"
+msgstr "School"
+
+#: .\reviews\forms.py:84
+msgid "Имя"
+msgstr "First name"
+
+#: .\reviews\forms.py:85
+msgid "Фамилия"
+msgstr "Last name"
+
+#: .\reviews\forms.py:86
+msgid "Кафедра"
+msgstr "Department"
+
+#: .\reviews\forms.py:88
+msgid "Должность"
+msgstr "Title"
+
+#: .\reviews\forms.py:90
+msgid "профессор"
+msgstr "professor"
+
+#: .\reviews\forms.py:91
+msgid "доцент"
+msgstr "associate professor"
+
+#: .\reviews\forms.py:92
+msgid "старший преподаватель"
+msgstr "senior lecturer"
+
+#: .\reviews\forms.py:93
+msgid "преподаватель"
+msgstr "lecturer"
+
+#: .\reviews\repository.py:17
+msgid "Строго оценивает"
+msgstr "Grades strictly"
+
+#: .\reviews\repository.py:18
+msgid "Понятные критерии"
+msgstr "Clear criteria"
+
+#: .\reviews\repository.py:19
+msgid "Интересные лекции"
+msgstr "Engaging lectures"
+
+#: .\reviews\repository.py:20
+msgid "Много домашних заданий"
+msgstr "Lots of homework"
+
+#: .\reviews\repository.py:21
+msgid "Много тестов"
+msgstr "Lots of tests"
+
+#: .\reviews\repository.py:22
+msgid "Групповые проекты"
+msgstr "Group projects"
+
+#: .\reviews\repository.py:23
+msgid "Доступен вне занятий"
+msgstr "Available outside class"
+
+#: .\reviews\repository.py:24
+msgid "Даёт полезную обратную связь"
+msgstr "Gives useful feedback"
+
+#: .\reviews\repository.py:25
+msgid "Важна посещаемость"
+msgstr "Attendance matters"
+
+#: .\reviews\repository.py:26
+msgid "Вдохновляет"
+msgstr "Inspiring"
+
+#: .\reviews\repository.py:29
+msgid "Зачёт"
+msgstr "Pass"
+
+#: .\reviews\repository.py:29
+msgid "Незачёт"
+msgstr "Fail"
+
+#: .\reviews\repository.py:29
+msgid "Ещё не знаю"
+msgstr "Don't know yet"
+
+#: .\reviews\templates\registration\login.html:2
+#: .\reviews\templates\registration\login.html:4
+#: .\reviews\templates\reviews\base.html:25
 msgid "Вход"
 msgstr "Log in"
 
+#: .\reviews\templates\registration\login.html:5
+#: .\reviews\templates\registration\password_reset_complete.html:1
+msgid "Войти"
+msgstr "Log in"
+
+#: .\reviews\templates\registration\login.html:6
+msgid "Нет аккаунта? Зарегистрируйтесь"
+msgstr "No account? Sign up"
+
+#: .\reviews\templates\registration\password_change.html:1
+msgid "Смена пароля"
+msgstr "Change password"
+
+#: .\reviews\templates\registration\password_change.html:1
+#: .\reviews\templates\registration\password_reset_confirm.html:5
+msgid "Сохранить"
+msgstr "Save"
+
+#: .\reviews\templates\registration\password_change_done.html:1
+#: .\reviews\templates\registration\password_reset_complete.html:1
+msgid "Пароль изменён."
+msgstr "Password changed."
+
+#: .\reviews\templates\registration\password_reset.html:2
+#: .\reviews\templates\registration\password_reset.html:4
+msgid "Восстановление пароля"
+msgstr "Password recovery"
+
+#: .\reviews\templates\registration\password_reset.html:5
+msgid "Укажите email — пришлём ссылку для сброса."
+msgstr "Enter your email — we'll send a reset link."
+
+#: .\reviews\templates\registration\password_reset.html:6
+msgid "Отправить"
+msgstr "Send"
+
+#: .\reviews\templates\registration\password_reset_confirm.html:2
+#: .\reviews\templates\registration\password_reset_confirm.html:4
+msgid "Новый пароль"
+msgstr "New password"
+
+#: .\reviews\templates\registration\password_reset_done.html:3
+msgid ""
+"Если email существует, мы отправили письмо со ссылкой для сброса пароля."
+msgstr ""
+"If that email exists, we've sent a message with a password reset link."
+
+#: .\reviews\templates\registration\signup.html:2
+#: .\reviews\templates\registration\signup.html:4
+#: .\reviews\templates\reviews\base.html:26
 msgid "Регистрация"
 msgstr "Sign up"
 
-msgid "Язык"
-msgstr "Language"
+#: .\reviews\templates\registration\signup.html:5
+msgid "Зарегистрироваться"
+msgstr "Sign up"
 
-msgid "Преподавателей"
-msgstr "Professors"
+#: .\reviews\templates\registration\signup.html:6
+msgid "Уже есть аккаунт? Войдите"
+msgstr "Already have an account? Log in"
 
-msgid "Средний рейтинг"
-msgstr "Average rating"
+#: .\reviews\templates\reviews\429.html:2
+msgid "Слишком много запросов"
+msgstr "Too many requests"
 
-msgid "Преподаватели"
-msgstr "Professors"
+#: .\reviews\templates\reviews\429.html:4
+msgid "Слишком много запросов (429)"
+msgstr "Too many requests (429)"
 
+#: .\reviews\templates\reviews\429.html:5
+msgid "Вы превысили лимит. Попробуйте позже."
+msgstr "You've exceeded the limit. Please try again later."
+
+#: .\reviews\templates\reviews\429.html:6
+msgid "На главную"
+msgstr "Back to home"
+
+#: .\reviews\templates\reviews\add_professor.html:2
+#: .\reviews\templates\reviews\add_professor.html:4
+#: .\reviews\templates\reviews\base.html:19
+msgid "Добавить преподавателя"
+msgstr "Add professor"
+
+#: .\reviews\templates\reviews\add_professor.html:5
+msgid ""
+"Новый преподаватель появится после проверки модератором. Дубликаты по "
+"ФИО+вуз не принимаются."
+msgstr ""
+"A new professor will appear after moderator review. Duplicates by full "
+"name + school are not accepted."
+
+#: .\reviews\templates\reviews\add_professor.html:7
+msgid "Чтобы добавить преподавателя,"
+msgstr "To add a professor,"
+
+#: .\reviews\templates\reviews\add_professor.html:7
+#: .\reviews\templates\reviews\review_form.html:7
+msgid "войдите"
+msgstr "log in"
+
+#: .\reviews\templates\reviews\add_professor.html:7
+#: .\reviews\templates\reviews\review_form.html:7
+msgid "или"
+msgstr "or"
+
+#: .\reviews\templates\reviews\add_professor.html:7
+#: .\reviews\templates\reviews\review_form.html:7
+msgid "зарегистрируйтесь"
+msgstr "sign up"
+
+#: .\reviews\templates\reviews\add_professor.html:12
+msgid "Начните вводить название вуза..."
+msgstr "Start typing a school name..."
+
+#: .\reviews\templates\reviews\add_professor.html:14
+msgid "Выберите вуз из списка"
+msgstr "Choose a school from the list"
+
+#: .\reviews\templates\reviews\add_professor.html:25
+#: .\reviews\templates\reviews\review_form.html:18
+msgid "Отправить на модерацию"
+msgstr "Submit for moderation"
+
+#: .\reviews\templates\reviews\add_professor.html:26
+#: .\reviews\templates\reviews\delete_account.html:6
+#: .\reviews\templates\reviews\review_form.html:19
+msgid "Отмена"
+msgstr "Cancel"
+
+#: .\reviews\templates\reviews\base.html:17
+#: .\reviews\templates\reviews\base.html:42
+#: .\reviews\templates\reviews\schools.html:2
+#: .\reviews\templates\reviews\schools.html:4
 msgid "Вузы"
 msgstr "Universities"
 
-msgid "Все области"
-msgstr "All regions"
+#: .\reviews\templates\reviews\base.html:18
+#: .\reviews\templates\reviews\base.html:42
+#: .\reviews\templates\reviews\review_form.html:5
+#: .\reviews\templates\reviews\rules.html:2
+#: .\reviews\templates\reviews\rules.html:4
+msgid "Правила"
+msgstr "Rules"
 
-msgid "Все типы"
-msgstr "All types"
+#: .\reviews\templates\reviews\base.html:22
+#: .\reviews\templates\reviews\delete_account.html:2
+#: .\reviews\templates\reviews\delete_account.html:4
+#: .\reviews\templates\reviews\privacy.html:7
+msgid "Удалить аккаунт"
+msgstr "Delete account"
 
-msgid "Область"
-msgstr "Region"
+#: .\reviews\templates\reviews\base.html:23
+msgid "Выйти"
+msgstr "Log out"
 
-msgid "Тип"
-msgstr "Type"
+#: .\reviews\templates\reviews\base.html:30
+msgid "Язык"
+msgstr "Language"
 
-msgid "Фильтр"
-msgstr "Filter"
+#: .\reviews\templates\reviews\base.html:42
+msgid "Конфиденциальность"
+msgstr "Privacy"
 
-msgid "Сбросить"
-msgstr "Reset"
+#: .\reviews\templates\reviews\base.html:42
+msgid "Демо-данные сбрасываются при рестарте (memory-режим)."
+msgstr "Demo data resets on restart (memory mode)."
 
-msgid "Ничего не нашлось."
-msgstr "No results."
+#: .\reviews\templates\reviews\delete_account.html:5
+msgid "Отзывы останутся анонимными. Аккаунт будет безвозвратно удалён."
+msgstr "Reviews will remain anonymous. The account will be permanently deleted."
 
+#: .\reviews\templates\reviews\delete_account.html:6
+msgid "Удалить навсегда"
+msgstr "Delete permanently"
+
+#: .\reviews\templates\reviews\delete_account.html:7
+#: .\reviews\templates\reviews\privacy.html:2
+#: .\reviews\templates\reviews\privacy.html:4
+msgid "Политика конфиденциальности"
+msgstr "Privacy policy"
+
+# English — source strings are Russian, so map minimally. Untranslated strings fallback to Russian.
+# Keeping file so `compilemessages` finds it.
+#: .\reviews\templates\reviews\home.html:3
+msgid "Узнайте, какие занятия на самом деле — до записи на курс."
+msgstr "Find out what a class is really like before you enroll."
+
+#: .\reviews\templates\reviews\home.html:5
+msgid "Имя преподавателя или кафедра"
+msgstr "Professor name or department"
+
+#: .\reviews\templates\reviews\home.html:5
+msgid "Поиск"
+msgstr "Search"
+
+#: .\reviews\templates\reviews\home.html:6
+msgid "Город"
+msgstr "City"
+
+#: .\reviews\templates\reviews\home.html:7
+msgid "Все города"
+msgstr "All cities"
+
+#: .\reviews\templates\reviews\home.html:11
+msgid "Все вузы"
+msgstr "All schools"
+
+#: .\reviews\templates\reviews\home.html:18
+msgid "Найти"
+msgstr "Find"
+
+#: .\reviews\templates\reviews\home.html:26
+#: .\reviews\templates\reviews\school.html:19
+msgid "отзывов"
+msgstr "ratings"
+
+#: .\reviews\templates\reviews\home.html:27
+#: .\reviews\templates\reviews\professor.html:15
+#: .\reviews\templates\reviews\professor.html:39
+msgid "Сложность"
+msgstr "Difficulty"
+
+#: .\reviews\templates\reviews\home.html:31
+msgid "Ничего не нашлось. Попробуйте короче запрос или другой вуз/город."
+msgstr "No results. Try a shorter query or a different school/city."
+
+#: .\reviews\templates\reviews\home.html:36
+#: .\reviews\templates\reviews\professor.html:57
+msgid "Назад"
+msgstr "Previous"
+
+#: .\reviews\templates\reviews\home.html:37
+#: .\reviews\templates\reviews\professor.html:58
+#, python-format
+msgid "Страница %(n)s из %(t)s"
+msgstr "Page %(n)s of %(t)s"
+
+#: .\reviews\templates\reviews\home.html:38
+#: .\reviews\templates\reviews\professor.html:59
+msgid "Вперёд"
+msgstr "Next"
+
+#: .\reviews\templates\reviews\privacy.html:6
+msgid ""
+"Мы храним: email и хеш пароля, отзывы и голоса. Email используется только "
+"для подтверждения аккаунта и восстановления пароля. Отзывы публикуются "
+"анонимно — автор не показывается."
+msgstr ""
+"We store: email and password hash, reviews and votes. Email is used only "
+"for account confirmation and password recovery. Reviews are published "
+"anonymously — the author is not shown."
+
+#: .\reviews\templates\reviews\privacy.html:7
+msgid "Вы можете удалить аккаунт:"
+msgstr "You can delete your account:"
+
+#: .\reviews\templates\reviews\privacy.html:7
+msgid "отзывы останутся анонимными, учётная запись будет удалена."
+msgstr "reviews will remain anonymous, the account will be deleted."
+
+#: .\reviews\templates\reviews\privacy.html:8
+msgid ""
+"Данные хранятся на сервере в Кыргызстане. Для удаления данных напишите на"
+msgstr ""
+"Data is stored on a server in Kyrgyzstan. To request data deletion, write "
+"to"
+
+#: .\reviews\templates\reviews\privacy.html:9
+msgid ""
+"Закон КР «О персональных данных»: отзывы публикуются только после модерации."
+msgstr ""
+"Law of the Kyrgyz Republic \"On Personal Data\": reviews are published "
+"only after moderation."
+
+#: .\reviews\templates\reviews\professor.html:14
+msgid "Пойдут снова"
+msgstr "Would take again"
+
+#: .\reviews\templates\reviews\professor.html:16
+#: .\reviews\templates\reviews\school.html:10
+msgid "Отзывов"
+msgstr "Ratings"
+
+#: .\reviews\templates\reviews\professor.html:18
+msgid "Распределение оценок"
+msgstr "Rating distribution"
+
+#: .\reviews\templates\reviews\professor.html:23
+msgid "Студенты отмечают:"
+msgstr "Students say:"
+
+#: .\reviews\templates\reviews\professor.html:26
+msgid "Оценить преподавателя"
+msgstr "Rate this professor"
+
+#: .\reviews\templates\reviews\professor.html:28
+msgid "Отзывы"
+msgstr "Reviews"
+
+#: .\reviews\templates\reviews\professor.html:30
+msgid "Сортировка:"
+msgstr "Sort by:"
+
+#: .\reviews\templates\reviews\professor.html:31
+msgid "сначала новые"
+msgstr "newest"
+
+#: .\reviews\templates\reviews\professor.html:32
+msgid "сначала полезные"
+msgstr "most helpful"
+
+#: .\reviews\templates\reviews\professor.html:39
+msgid "Пойду снова."
+msgstr "Would take again."
+
+#: .\reviews\templates\reviews\professor.html:39
+msgid "Не пойду снова."
+msgstr "Would not take again."
+
+#: .\reviews\templates\reviews\professor.html:40
+msgid "Оценка:"
+msgstr "Grade:"
+
+#: .\reviews\templates\reviews\professor.html:45
+msgid "Полезно"
+msgstr "Helpful"
+
+#: .\reviews\templates\reviews\professor.html:46
+msgid "Бесполезно"
+msgstr "Not helpful"
+
+#: .\reviews\templates\reviews\professor.html:49
+msgid "Пожаловаться"
+msgstr "Report"
+
+#: .\reviews\templates\reviews\professor.html:63
+#, python-format
+msgid "Пока нет отзывов. Станьте первым, кто оценит %(name)s."
+msgstr "No reviews yet. Be the first to rate %(name)s."
+
+#: .\reviews\templates\reviews\review_form.html:2
+#: .\reviews\templates\reviews\review_form.html:4
+#, python-format
+msgid "Оценить %(name)s"
+msgstr "Rate %(name)s"
+
+#: .\reviews\templates\reviews\review_form.html:5
+msgid "Отзыв появится после проверки модератором."
+msgstr "The review will appear after moderator review."
+
+#: .\reviews\templates\reviews\review_form.html:7
+msgid "Чтобы оставить отзыв,"
+msgstr "To leave a review,"
+
+#: .\reviews\templates\reviews\rules.html:6
+msgid ""
+"ProfLens — отзывы только об учёбе: как преподаватель объясняет, оценивает, "
+"ведёт занятия. Сайт не для сведения счётов."
+msgstr ""
+"ProfLens — reviews about academics only: how a professor explains, "
+"grades, and runs classes. The site is not for settling scores."
+
+#: .\reviews\templates\reviews\rules.html:8
+msgid "Только об учёбе — без оскорблений, угроз, дискриминации."
+msgstr "Academics only — no insults, threats, or discrimination."
+
+#: .\reviews\templates\reviews\rules.html:9
+msgid "Без личных данных: не публикуйте телефоны, адреса, фото, переписку."
+msgstr "No personal data: don't post phone numbers, addresses, photos, or chats."
+
+#: .\reviews\templates\reviews\rules.html:10
+msgid "Пишите честно и по делу — отзыв должен помочь другим студентам."
+msgstr "Be honest and to the point — a review should help other students."
+
+#: .\reviews\templates\reviews\rules.html:11
+msgid ""
+"Отзывы о реальных людях — зона риска (закон КР о персональных данных). Всё, "
+"что нарушает закон или правила, будет скрыто."
+msgstr ""
+"Reviews about real people are a risk area (Kyrgyz Republic law on "
+"personal data). Anything that violates the law or the rules will be "
+"hidden."
+
+#: .\reviews\templates\reviews\rules.html:12
+msgid "Отзывы и новые преподаватели проходят модерацию перед публикацией."
+msgstr "Reviews and new professors go through moderation before publishing."
+
+#: .\reviews\templates\reviews\rules.html:13
+msgid "За нарушение — удаление отзыва и блокировка аккаунта."
+msgstr "Violations result in review removal and account suspension."
+
+#: .\reviews\templates\reviews\rules.html:15
+msgid "Увидели нарушение?"
+msgstr "Noticed a violation?"
+
+#: .\reviews\templates\reviews\rules.html:15
+msgid "нажмите «Пожаловаться» под отзывом."
+msgstr "click \"Report\" under the review."
+
+#: .\reviews\templates\reviews\school.html:5
+#: .\reviews\templates\reviews\schools.html:12
+#: .\reviews\templates\reviews\schools.html:20
 msgid "государственный"
 msgstr "public"
 
+#: .\reviews\templates\reviews\school.html:5
+#: .\reviews\templates\reviews\schools.html:13
+#: .\reviews\templates\reviews\schools.html:20
 msgid "частный"
 msgstr "private"
+
+#: .\reviews\templates\reviews\school.html:9
+msgid "Преподавателей"
+msgstr "Professors"
+
+#: .\reviews\templates\reviews\school.html:11
+msgid "Средний рейтинг"
+msgstr "Average rating"
+
+#: .\reviews\templates\reviews\school.html:14
+msgid "Кафедры"
+msgstr "Departments"
+
+#: .\reviews\templates\reviews\school.html:15
+msgid "Пока нет кафедр."
+msgstr "No departments yet."
+
+#: .\reviews\templates\reviews\school.html:16
+msgid "Преподаватели"
+msgstr "Professors"
+
+#: .\reviews\templates\reviews\school.html:20
+msgid "Пока нет преподавателей."
+msgstr "No professors yet."
+
+#: .\reviews\templates\reviews\schools.html:6
+msgid "Область"
+msgstr "Region"
+
+#: .\reviews\templates\reviews\schools.html:7
+msgid "Все области"
+msgstr "All regions"
+
+#: .\reviews\templates\reviews\schools.html:10
+msgid "Тип"
+msgstr "Type"
+
+#: .\reviews\templates\reviews\schools.html:11
+msgid "Все типы"
+msgstr "All types"
+
+#: .\reviews\templates\reviews\schools.html:15
+msgid "Фильтр"
+msgstr "Filter"
+
+#: .\reviews\templates\reviews\schools.html:16
+msgid "Сбросить"
+msgstr "Reset"
+
+#: .\reviews\templates\reviews\schools.html:21
+msgid "Ничего не нашлось."
+msgstr "No results."
+
+#: .\reviews\templates\reviews\schools.html:23
+#, python-format
+msgid "Всего %(n)s вузов."
+msgstr "%(n)s schools total."
+
+# Legacy msgid kept for ru-completeness parity; not currently referenced in code.
+msgid "Всего"
+msgstr "Total"
+
+msgid "Пользователь с таким email уже существует."
+msgstr "A user with this email already exists."
+
+msgid "Пароль должен быть не менее 8 символов."
+msgstr "Password must be at least 8 characters."
+
+msgid "Регистрация выполнена. Добро пожаловать!"
+msgstr "Registration complete. Welcome!"
+
+#: .\reviews\views.py:146
+msgid "Аккаунт удалён. Отзывы остались анонимными."
+msgstr "Account deleted. Reviews remained anonymous."
+
+#: .\reviews\views.py:161
+msgid "Подтвердите email, прежде чем оставлять отзывы."
+msgstr "Confirm your email before leaving reviews."
+
+#: .\reviews\views.py:171
+msgid "Вы уже оставляли отзыв для этого предмета у этого преподавателя."
+msgstr "You've already reviewed this professor for this course."
+
+#: .\reviews\views.py:175
+msgid "Отзыв отправлен на модерацию. Спасибо!"
+msgstr "Review submitted for moderation. Thank you!"
+
+#: .\reviews\views.py:197
+msgid "Нельзя голосовать за свой отзыв."
+msgstr "You can't vote on your own review."
+
+#: .\reviews\views.py:201
+msgid "Вы уже голосовали за этот отзыв."
+msgstr "You've already voted on this review."
+
+#: .\reviews\views.py:218
+msgid "Нельзя жаловаться на свой отзыв."
+msgstr "You can't report your own review."
+
+#: .\reviews\views.py:223
+msgid "Вы уже жаловались на этот отзыв."
+msgstr "You've already reported this review."
+
+#: .\reviews\views.py:228
+msgid "Жалоба отправлена модератору."
+msgstr "Report sent to the moderator."
+
+#: .\reviews\views.py:236
+msgid "Email"
+msgstr "Email"
+
+#: .\reviews\views.py:237
+msgid "Пароль"
+msgstr "Password"
+
+#: .\reviews\views.py:238
+msgid "Повторите пароль"
+msgstr "Repeat password"
+
+#: .\reviews\views.py:248
+msgid "Пароли не совпадают."
+msgstr "Passwords do not match."
+
+#: .\reviews\views.py:264
+msgid "Подтвердите email — ProfLens"
+msgstr "Confirm your email — ProfLens"
+
+#: .\reviews\views.py:265
+#, python-format
+msgid "Перейдите по ссылке для подтверждения (24 часа): %(url)s"
+msgstr "Follow this link to confirm (valid 24 hours): %(url)s"
+
+#: .\reviews\views.py:285
+msgid "Вы уже зарегистрированы — ProfLens"
+msgstr "You're already registered — ProfLens"
+
+#: .\reviews\views.py:286
+msgid ""
+"Кто-то попытался зарегистрироваться с вашим email. Если это были не вы — "
+"проигнорируйте письмо."
+msgstr ""
+"Someone tried to sign up with your email. If it wasn't you, please "
+"ignore this message."
+
+#: .\reviews\views.py:291
+msgid "Если email существует, мы отправили письмо. Проверьте почту."
+msgstr "If that email exists, we've sent a message. Please check your inbox."
+
+#: .\reviews\views.py:294
+msgid "Проверьте почту — мы отправили ссылку для подтверждения (24 часа)."
+msgstr "Check your inbox — we've sent a confirmation link (valid 24 hours)."
+
+#: .\reviews\views.py:312 .\reviews\views.py:320
+msgid "Ссылка недействительна или просрочена."
+msgstr "The link is invalid or has expired."
+
+#: .\reviews\views.py:318
+msgid "Email подтверждён. Войдите."
+msgstr "Email confirmed. Please log in."
+
+#: .\reviews\views.py:342
+msgid "Преподаватель с таким ФИО уже есть в этом вузе."
+msgstr "A professor with this name already exists at this school."
+
+#: .\reviews\views.py:344
+msgid "Преподаватель отправлен на модерацию."
+msgstr "Professor submitted for moderation."
