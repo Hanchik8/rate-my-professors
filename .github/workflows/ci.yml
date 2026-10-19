@@ -15,8 +15,9 @@ jobs:
     env:
       DATABASE_URL: postgres://proflens:proflens@localhost:5432/proflens
       REPO_BACKEND: django
-      SECRET_KEY: ci-secret-key-1234567890-abcdefghijklmnopqrstuvwxyz-12345
+      SECRET_KEY: edu5RYdTu4LcqKS2N0uzr6k_kcx4PP7PidAM6ZrRDAiFYL5YlWDDQ182Tml4aSJPNKYzCdNYWImuBcfTUjACJQ
       ALLOWED_HOSTS: example.kg,localhost,127.0.0.1,testserver
+      ADMIN_URL: ci-panel-7f3k/
       DEBUG: "False"
     steps:
       - uses: actions/checkout@v4
@@ -44,6 +45,6 @@ jobs:
       - name: check --deploy (prod env)
         run: python manage.py check --deploy
       - name: pip-audit
-        run: pip-audit --disable-pip --local || true
+        run: pip-audit -r requirements.txt
       - name: bandit
-        run: bandit -r reviews config -q || true
+        run: bandit -r reviews config -x reviews/tests -ll
