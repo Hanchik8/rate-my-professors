@@ -37,10 +37,14 @@ if not DEBUG and not _is_test:
     _ah = os.environ.get("ALLOWED_HOSTS", "")
     if not _sk or len(_sk) < 50:
         raise ImproperlyConfigured("SECRET_KEY must be set and >=50 chars when DEBUG=False")
+    if len(set(_sk)) < 5:
+        raise ImproperlyConfigured("SECRET_KEY must contain at least 5 distinct characters when DEBUG=False")
     if not _ah or "*" in [h.strip() for h in _ah.split(",")]:
         raise ImproperlyConfigured("ALLOWED_HOSTS must be set and not contain '*' when DEBUG=False")
     if REPO_BACKEND == "memory":
         raise ImproperlyConfigured("REPO_BACKEND=memory is not allowed when DEBUG=False")
+    if not _db_url:
+        raise ImproperlyConfigured("DATABASE_URL must be set (SQLite is not allowed) when DEBUG=False")
     if ADMIN_URL == "admin/":
         raise ImproperlyConfigured("ADMIN_URL must be changed from default 'admin/' when DEBUG=False")
 
