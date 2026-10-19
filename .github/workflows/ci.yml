@@ -1,0 +1,49 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: proflens
+          POSTGRES_USER: proflens
+          POSTGRES_PASSWORD: proflens
+        ports: ["5432:5432"]
+        options: --health-cmd "pg_isready -U proflens" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgres://proflens:proflens@localhost:5432/proflens
+      REPO_BACKEND: django
+      SECRET_KEY: ci-secret-key-1234567890-abcdefghijklmnopqrstuvwxyz-12345
+      ALLOWED_HOSTS: example.kg,localhost,127.0.0.1,testserver
+      DEBUG: "False"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: System deps (gettext)
+        run: sudo apt-get update && sudo apt-get install -y gettext
+      - name: Install deps
+        run: |
+          pip install -r requirements.txt -r requirements-dev.txt
+      - name: compilemessages
+        run: python manage.py compilemessages
+      - name: makemigrations --check
+        run: python manage.py makemigrations --check --dry-run
+      - name: migrate
+        run: python manage.py migrate --noinput
+      - name: test (memory)
+        env:
+          REPO_BACKEND: memory
+          DATABASE_URL: ""
+        run: python manage.py test --verbosity=1
+      - name: test (django/Postgres)
+        run: python manage.py test --verbosity=1
+      - name: check --deploy (prod env)
+        run: python manage.py check --deploy
+      - name: pip-audit
+        run: pip-audit --disable-pip --local || true
+      - name: bandit
+        run: bandit -r reviews config -q || true

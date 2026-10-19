@@ -13,9 +13,13 @@ from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.translation import gettext as _
 from django.views.decorators.http import require_POST
+import logging
+
 from django import forms
 from django.conf import settings
 from django_ratelimit.decorators import ratelimit
+
+logger = logging.getLogger(__name__)
 
 from .forms import ProfessorForm, ReviewForm
 from .store import repo
@@ -125,8 +129,8 @@ def delete_account(request):
         try:
             from .models import Review
             Review.objects.filter(author=user).update(author=None)
-        except Exception:
-            pass
+        except Exception:  # keep anonymization best-effort on delete  # nosec B110
+            logger.exception("delete_account anonymize failed for user %s", user.pk)
         from django.contrib.auth import logout
         logout(request)
         user.delete()
@@ -252,8 +256,8 @@ class EmailSignupForm(forms.Form):
         body = _("Перейдите по ссылке для подтверждения (24 часа): %(url)s") % {"url": confirm_url}
         try:
             send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [email], fail_silently=True)
-        except Exception:
-            pass
+        except Exception:  # email backend may be misconfigured  # nosec B110
+            logger.exception("send confirmation email failed for %s", email)
         return user
 
 
@@ -274,8 +278,8 @@ def signup(request):
                         _("Кто-то попытался зарегистрироваться с вашим email. Если это были не вы — проигнорируйте письмо."),
                         settings.DEFAULT_FROM_EMAIL, [email], fail_silently=True
                     )
-                except Exception:
-                    pass
+                except Exception:  # nosec B110
+                    logger.exception("send already-registered email failed for %s", email)
                 messages.success(request, _("Если email существует, мы отправили письмо. Проверьте почту."))
                 return render(request, "registration/signup.html", {"form": form, "sent": True})
             user = form.save(request=request)

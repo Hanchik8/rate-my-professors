@@ -57,7 +57,7 @@ class MemorySmokeTests(TestCase):
         prof = self.repo.search("Айбек")[0]["prof"]
         r = self.client.post(reverse("review_new", args=[prof.slug]), _valid())
         self.assertIn(r.status_code, (302, 200))
-        user = User.objects.create_user(username="tester@example.com", email="tester@example.com", password="pass12345")
+        user = User.objects.create_user(username="tester@example.com", email="tester@example.com", password="pass12345")  # nosec B106
         self.client.force_login(user)
         r2 = self.client.post(reverse("review_new", args=[prof.slug]), _valid())
         self.assertEqual(r2.status_code, 302)
@@ -68,7 +68,7 @@ class MemorySmokeTests(TestCase):
         review = self.repo.reviews_for(prof.id)[0]
         r = self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
         self.assertIn(r.status_code, (302, 200))
-        user = User.objects.create_user(username="voter@example.com", email="voter@example.com", password="pass12345")
+        user = User.objects.create_user(username="voter@example.com", email="voter@example.com", password="pass12345")  # nosec B106
         self.client.force_login(user)
         before = review.helpful
         r2 = self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
@@ -79,7 +79,7 @@ class MemorySmokeTests(TestCase):
         self.assertEqual(review.helpful, before + 1)
 
     def test_course_not_uppercased_and_max_80(self):
-        user = User.objects.create_user(username="c@example.com", email="c@example.com", password="pass12345")
+        user = User.objects.create_user(username="c@example.com", email="c@example.com", password="pass12345")  # nosec B106
         self.client.force_login(user)
         prof = self.repo.search("Айбек")[0]["prof"]
         self.client.post(reverse("review_new", args=[prof.slug]), _valid({"course": "  Микроэкономика  "}))
@@ -124,7 +124,7 @@ class MemorySmokeTests(TestCase):
         school = self.repo.schools()[0]
         r = self.client.get(reverse("add_professor"))
         self.assertIn(r.status_code, (302, 200))
-        user = User.objects.create_user(username="addp@example.com", email="addp@example.com", password="pass12345")
+        user = User.objects.create_user(username="addp@example.com", email="addp@example.com", password="pass12345")  # nosec B106
         self.client.force_login(user)
         r2 = self.client.get(reverse("add_professor"))
         self.assertEqual(r2.status_code, 200)
@@ -180,7 +180,7 @@ class DjangoSmokeTests(TestCase):
 
     def test_review_pending_not_visible(self):
         prof = self.repo.search("Айбек")[0]["prof"]
-        user = User.objects.create_user(username="django_tester@example.com", email="django_tester@example.com", password="pass12345")
+        user = User.objects.create_user(username="django_tester@example.com", email="django_tester@example.com", password="pass12345")  # nosec B106
         self.client.force_login(user)
         before = len(self.repo.reviews_for(prof.id))
         self.client.post(reverse("review_new", args=[prof.slug]), _valid())

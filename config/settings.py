@@ -15,8 +15,8 @@ else:
 # SECRET_KEY handling: required in prod, 50+ chars
 _raw_secret = os.environ.get("SECRET_KEY", "")
 if not _raw_secret and _is_test:
-    _raw_secret = "test-secret-key-for-ci-must-be-long-enough-50-chars-1234567890"
-SECRET_KEY = _raw_secret or "dev-only-change-me-please-set-SECRET_KEY-env-1234567890"
+    _raw_secret = "test-secret-key-for-ci-must-be-long-enough-50-chars-1234567890"  # nosec B105
+SECRET_KEY = _raw_secret or "dev-only-change-me-please-set-SECRET_KEY-env-1234567890"  # nosec B105
 
 _raw_hosts = os.environ.get("ALLOWED_HOSTS", "")
 if not _raw_hosts and _is_test:
