@@ -1,10 +1,9 @@
-from collections import Counter
 from django.db import IntegrityError, transaction
-from django.db.models import Avg, Count, F, Q, Value
-from django.db.models.functions import Lower
+from django.db.models import Avg, Count, F, Q
+from django.db.models.functions import Coalesce
 from django.utils.text import slugify
 
-from .models import Professor, Review, Report, School, Tag, Vote
+from .models import Professor, Report, Review, School, Tag, Vote
 
 
 def _tone(overall):
@@ -12,8 +11,6 @@ def _tone(overall):
 
 
 class DjangoRepository:
-    """ORM-backed repository with same API as InMemoryRepository; hardened."""
-
     def add_school(self, name, city, short_name="", region="", type="", website=""):
         slug = slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
         base, i = slug, 1
@@ -215,7 +212,12 @@ class DjangoRepository:
         return {"prof_count": n, "review_count": total, "avg_overall": round(avg, 1) if avg else 0}
 
     def search(self, q="", school_slug="", city=""):
-        qs = Professor.objects.filter(status="approved").select_related("school")
+        qs = Professor.objects.filter(status="approved").select_related("school").annotate(
+            _avg_overall=Avg("reviews__overall", filter=Q(reviews__status="approved")),
+            _avg_difficulty=Avg("reviews__difficulty", filter=Q(reviews__status="approved")),
+            _cnt=Count("reviews", filter=Q(reviews__status="approved")),
+            _wta=Count("reviews", filter=Q(reviews__status="approved", reviews__would_take_again=True)),
+        )
         if school_slug:
             qs = qs.filter(school__slug=school_slug)
         if city:
@@ -223,14 +225,18 @@ class DjangoRepository:
         if q:
             q = q.strip()[:100]
             qs = qs.filter(Q(first_name__icontains=q) | Q(last_name__icontains=q) | Q(department__icontains=q))
-        qs = qs[:200]
+        qs = qs.order_by(F("_avg_overall").desc(nulls_last=True), "last_name", "first_name")
         out = []
         for p in qs:
             dc = self._prof_to_dc(p)
             school = self._school_to_dc(p.school)
-            full = self.stats(str(p.pk))
-            out.append({"prof": dc, "school": school, "stats": full})
-        out.sort(key=lambda x: (-x["stats"]["overall"], x["prof"].last_name))
+            n = p._cnt or 0
+            avg = round(p._avg_overall, 1) if p._avg_overall is not None else 0
+            diff = round(p._avg_difficulty, 1) if p._avg_difficulty is not None else 0
+            wta = round(100 * p._wta / n) if n else None
+            tone = _tone(avg) if n else "none"
+            stats = {"count": n, "overall": avg, "difficulty": diff, "wta_pct": wta, "tone": tone, "distribution": [], "top_tags": []}
+            out.append({"prof": dc, "school": school, "stats": stats})
         return out
 
     def has_user_reviewed(self, professor_id, course, user):

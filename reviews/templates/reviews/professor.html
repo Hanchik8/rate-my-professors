@@ -17,7 +17,7 @@
 </dl>
 <ul class="dist" aria-label="{% translate 'Распределение оценок' %}">
   {% for d in stats.distribution %}
-  <li><span>{{ d.score }}</span><span class="bar"><i style="width:{{ d.pct }}%"></i></span><span>{{ d.count }}</span></li>
+  <li><span>{{ d.score }}</span><span class="bar"><progress max="100" value="{{ d.pct }}"></progress></span><span>{{ d.count }}</span></li>
   {% endfor %}
 </ul>
 {% if stats.top_tags %}<p class="tags">{% translate "Студенты отмечают:" %} {{ stats.top_tags|join:", " }}</p>{% endif %}

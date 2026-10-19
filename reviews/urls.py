@@ -1,9 +1,13 @@
 from django.contrib.auth import views as auth_views
 from django.urls import path
+from django.utils.decorators import method_decorator
+from django_ratelimit.decorators import ratelimit
 
 from . import views
+from .net import client_ip as _client_ip
 
-handler429 = "reviews.views.ratelimited"
+def _login_ip(group, request):
+    return _client_ip(request)
 
 urlpatterns = [
     path("", views.home, name="home"),
@@ -19,7 +23,7 @@ urlpatterns = [
     path("reviews/<str:review_id>/vote/", views.review_vote, name="review_vote"),
     path("reviews/<str:review_id>/report/", views.review_report, name="review_report"),
     path("accounts/signup/", views.signup, name="signup"),
-    path("accounts/login/", auth_views.LoginView.as_view(template_name="registration/login.html"), name="login"),
+    path("accounts/login/", method_decorator(ratelimit(key=_login_ip, rate="30/h", method="POST", block=True), name="dispatch")(auth_views.LoginView).as_view(template_name="registration/login.html"), name="login"),
     path("accounts/logout/", auth_views.LogoutView.as_view(), name="logout"),
     path("accounts/password-reset/", auth_views.PasswordResetView.as_view(template_name="registration/password_reset.html"), name="password_reset"),
     path("accounts/password-reset/done/", auth_views.PasswordResetDoneView.as_view(template_name="registration/password_reset_done.html"), name="password_reset_done"),

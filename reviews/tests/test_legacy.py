@@ -58,6 +58,9 @@ class MemorySmokeTests(TestCase):
         r = self.client.post(reverse("review_new", args=[prof.slug]), _valid())
         self.assertIn(r.status_code, (302, 200))
         user = User.objects.create_user(username="tester@example.com", email="tester@example.com", password="pass12345")  # nosec B106
+        from reviews.models import Profile
+        Profile.objects.get_or_create(user=user, defaults={"email_confirmed": True})
+        Profile.objects.filter(user=user).update(email_confirmed=True)
         self.client.force_login(user)
         r2 = self.client.post(reverse("review_new", args=[prof.slug]), _valid())
         self.assertEqual(r2.status_code, 302)
@@ -80,6 +83,9 @@ class MemorySmokeTests(TestCase):
 
     def test_course_not_uppercased_and_max_80(self):
         user = User.objects.create_user(username="c@example.com", email="c@example.com", password="pass12345")  # nosec B106
+        from reviews.models import Profile
+        Profile.objects.get_or_create(user=user, defaults={"email_confirmed": True})
+        Profile.objects.filter(user=user).update(email_confirmed=True)
         self.client.force_login(user)
         prof = self.repo.search("Айбек")[0]["prof"]
         self.client.post(reverse("review_new", args=[prof.slug]), _valid({"course": "  Микроэкономика  "}))
@@ -181,6 +187,9 @@ class DjangoSmokeTests(TestCase):
     def test_review_pending_not_visible(self):
         prof = self.repo.search("Айбек")[0]["prof"]
         user = User.objects.create_user(username="django_tester@example.com", email="django_tester@example.com", password="pass12345")  # nosec B106
+        from reviews.models import Profile
+        Profile.objects.get_or_create(user=user, defaults={"email_confirmed": True})
+        Profile.objects.filter(user=user).update(email_confirmed=True)
         self.client.force_login(user)
         before = len(self.repo.reviews_for(prof.id))
         self.client.post(reverse("review_new", args=[prof.slug]), _valid())
