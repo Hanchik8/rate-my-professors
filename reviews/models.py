@@ -1,6 +1,10 @@
 import uuid
 from django.conf import settings
+from django.core.validators import MaxValueValidator, MinValueValidator, URLValidator
 from django.db import models
+from django.db.models import Q
+from django.db.models.functions import Lower
+from django.utils.html import strip_tags
 from django.utils.text import slugify
 
 
@@ -13,7 +17,7 @@ class School(models.Model):
     city = models.CharField(max_length=80)
     region = models.CharField(max_length=80, blank=True, default="")
     type = models.CharField(max_length=10, choices=TYPE_CHOICES, blank=True, default="")
-    website = models.URLField(blank=True, default="")
+    website = models.URLField(blank=True, default="", validators=[URLValidator(schemes=["http", "https"])])
 
     class Meta:
         ordering = ["name"]
@@ -78,8 +82,8 @@ class Review(models.Model):
     professor = models.ForeignKey(Professor, on_delete=models.CASCADE, related_name="reviews")
     course = models.CharField(max_length=80)
     term = models.CharField(max_length=20, blank=True)
-    overall = models.IntegerField()
-    difficulty = models.IntegerField()
+    overall = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    difficulty = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     would_take_again = models.BooleanField()
     grade = models.CharField(max_length=20, blank=True)
     comment = models.TextField()
@@ -94,12 +98,27 @@ class Review(models.Model):
     class Meta:
         ordering = ["-created_at"]
         constraints = [
-            # one review per professor+course per user is enforced in repository, not DB (author can be null)
+            models.UniqueConstraint(
+                Lower("course"), "professor", "author",
+                name="uniq_review_prof_author_course",
+                condition=Q(author__isnull=False),
+            ),
+            models.CheckConstraint(condition=Q(overall__gte=1, overall__lte=5), name="check_overall_range"),
+            models.CheckConstraint(condition=Q(difficulty__gte=1, difficulty__lte=5), name="check_difficulty_range"),
         ]
+
+    def save(self, *args, **kwargs):
+        # strip HTML from comment
+        if self.comment:
+            self.comment = strip_tags(self.comment)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.professor} {self.course} {self.overall}"
 
+
+# Functional unique on Lower(course) can't be expressed via fields; add via migrations.RunSQL or extra constraint
+# We'll add the real Lower constraint in migration 0003
 
 class Vote(models.Model):
     review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name="votes")
@@ -108,7 +127,9 @@ class Vote(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = [("review", "user")]
+        constraints = [
+            models.UniqueConstraint(fields=["review", "user"], name="uniq_vote_review_user"),
+        ]
 
 
 class Report(models.Model):
@@ -117,4 +138,6 @@ class Report(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = [("review", "user")]
+        constraints = [
+            models.UniqueConstraint(fields=["review", "user"], name="uniq_report_review_user"),
+        ]

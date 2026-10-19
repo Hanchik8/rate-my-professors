@@ -19,6 +19,7 @@
       <a href="{% url 'add_professor' %}">{% translate "Добавить преподавателя" %}</a>
       {% if user.is_authenticated %}
         <span class="muted">{{ user.email|default:user.username }}</span>
+        <a href="{% url 'delete_account' %}">{% translate "Удалить аккаунт" %}</a>
         <form method="post" action="{% url 'logout' %}" class="inline">{% csrf_token %}<button class="link-btn" type="submit">{% translate "Выйти" %}</button></form>
       {% else %}
         <a href="{% url 'login' %}">{% translate "Вход" %}</a>
@@ -38,7 +39,7 @@
 {% if messages %}<ul class="messages">{% for m in messages %}<li class="{{ m.tags }}">{{ m }}</li>{% endfor %}</ul>{% endif %}
 <main>{% block content %}{% endblock %}</main>
 <footer>
-  <a href="{% url 'school_list' %}">{% translate "Вузы" %}</a> · <a href="{% url 'rules' %}">{% translate "Правила" %}</a> · {% translate "Демо-данные сбрасываются при рестарте (memory-режим)." %}
+  <a href="{% url 'school_list' %}">{% translate "Вузы" %}</a> · <a href="{% url 'rules' %}">{% translate "Правила" %}</a> · <a href="{% url 'privacy' %}">{% translate "Конфиденциальность" %}</a> · {% translate "Демо-данные сбрасываются при рестарте (memory-режим)." %}
 </footer>
 <script src="{% static 'reviews/app.js' %}"></script>
 </body>

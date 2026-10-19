@@ -15,6 +15,7 @@ from django.utils.translation import gettext as _
 from django.views.decorators.http import require_POST
 from django import forms
 from django.conf import settings
+from django_ratelimit.decorators import ratelimit
 
 from .forms import ProfessorForm, ReviewForm
 from .store import repo
@@ -134,6 +135,7 @@ def delete_account(request):
     return render(request, "reviews/delete_account.html")
 
 
+@ratelimit(key="user", rate="5/d", block=True)
 @login_required
 def review_new(request, slug):
     if not request.user.is_active or not request.user.email:
@@ -170,6 +172,7 @@ def review_new(request, slug):
     })
 
 
+@ratelimit(key="user", rate="60/h", block=True)
 @require_POST
 @login_required
 def review_vote(request, review_id):
@@ -190,6 +193,7 @@ def review_vote(request, review_id):
     return redirect("home")
 
 
+@ratelimit(key="user", rate="20/h", block=True)
 @require_POST
 @login_required
 def review_report(request, review_id):
@@ -253,6 +257,7 @@ class EmailSignupForm(forms.Form):
         return user
 
 
+@ratelimit(key="ip", rate="5/h", block=True)
 def signup(request):
     if request.user.is_authenticated:
         return redirect("home")
@@ -296,6 +301,7 @@ def confirm_email(request, uidb64, token):
     return redirect("signup")
 
 
+@ratelimit(key="user", rate="5/d", block=True)
 @login_required
 def add_professor(request):
     schools = repo.schools()
@@ -328,3 +334,8 @@ def add_professor(request):
 
 def ratelimited(request, exception=None):
     return render(request, "reviews/429.html", status=429)
+
+
+# Make ratelimit 403 render 429
+def _ratelimit_403(request, exception):
+    return ratelimited(request, exception)

@@ -1,9 +1,15 @@
+import re
 from django import forms
+from django.utils.html import strip_tags
 from django.utils.translation import gettext_lazy as _
 
 from .repository import GRADES, TAGS
 
 SCORES = [(5, "5"), (4, "4"), (3, "3"), (2, "2"), (1, "1")]
+
+_URL_RE = re.compile(r"https?://|www\.")
+_EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+_PHONE_RE = re.compile(r"(\+?\d[\d\s\-()]{7,}\d)")
 
 
 class ReviewForm(forms.Form):
@@ -47,8 +53,21 @@ class ReviewForm(forms.Form):
     )
 
     def clean_course(self):
-        # свободный текст, до 80 символов, без upper-case нормализации — только trim
         return self.cleaned_data["course"].strip()
+
+    def clean_comment(self):
+        raw = self.cleaned_data["comment"]
+        text = strip_tags(raw).strip()
+        if _URL_RE.search(text):
+            raise forms.ValidationError(_("Ссылки запрещены."))
+        if _EMAIL_RE.search(text):
+            raise forms.ValidationError(_("Email в отзыве запрещён."))
+        if _PHONE_RE.search(text):
+            # avoid false positives but block typical phone patterns
+            digits = re.sub(r"\D", "", text)
+            if len(digits) >= 9 and _PHONE_RE.search(text):
+                raise forms.ValidationError(_("Номера телефонов запрещены."))
+        return text
 
     def clean_tags(self):
         tags = self.cleaned_data["tags"]
@@ -78,5 +97,4 @@ class ProfessorForm(forms.Form):
     def __init__(self, *args, schools=None, **kwargs):
         super().__init__(*args, **kwargs)
         if schools is not None:
-            # label as short_name — searchable
             self.fields["school"].choices = [(str(s.id), s.short_name or s.name) for s in schools]
