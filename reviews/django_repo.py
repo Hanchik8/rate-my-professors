@@ -45,10 +45,15 @@ class DjangoRepository:
         course = (data.get("course") or "").strip()
         if status is None:
             status = "pending" if user is not None else "approved"
+        raw_wta = data["would_take_again"]
+        if isinstance(raw_wta, str):
+            wta = raw_wta.lower() in ("yes", "true", "1", "да")
+        else:
+            wta = bool(raw_wta)
         r = Review(
             professor=prof, course=course, term=data.get("term", ""),
             overall=data["overall"], difficulty=data["difficulty"],
-            would_take_again=data["would_take_again"], grade=data.get("grade", ""),
+            would_take_again=wta, grade=data.get("grade", ""),
             comment=data["comment"], status=status, author=user,
         )
         try:

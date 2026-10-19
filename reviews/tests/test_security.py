@@ -239,6 +239,21 @@ class SearchPerformanceTests(TransactionTestCase):
             Review.objects.create(professor=prof, course="Algo", overall=5 if i == n-1 else 3, difficulty=3, would_take_again=True, comment="ok ok ok ok ok ok ok ok", status="approved")
         return school
 
+    def setUp(self):
+        from reviews import store as store_mod
+        import reviews.views as v
+        self.repo = DjangoRepository()
+        self._orig = store_mod.repo
+        self._orig_v = v.repo
+        store_mod.repo = self.repo
+        v.repo = self.repo
+
+    def tearDown(self):
+        from reviews import store as store_mod
+        import reviews.views as v
+        store_mod.repo = self._orig
+        v.repo = self._orig_v
+
     def test_query_count_stable(self):
         cache.clear()
         self._setup_profs(5)
@@ -260,8 +275,8 @@ class SearchPerformanceTests(TransactionTestCase):
         r = self.client.get(reverse("home"))
         self.assertEqual(r.status_code, 200)
         content = r.content.decode()
-        m = re.search(r"/professors/([^/]+)/", content)
-        self.assertIsNotNone(m)
+        m = re.search(r"/professors/(a-zname-[^\"]+)/", content)
+        self.assertIsNotNone(m, "no professor link found; got: " + content[:1500])
         self.assertEqual(m.group(1), "a-zname-249")
 
 # ------------------------------------------------------------------
@@ -384,9 +399,16 @@ class SignupBehaviorTests(TestCase):
 
 class VoteReportPermissionTests(TestCase):
     def setUp(self):
+        cache.clear()
         from reviews.management.commands.seed_kg import Command as SeedCmd
         SeedCmd().handle(clear=True)
+        from reviews import store as store_mod
+        import reviews.views as v
         self.repo = DjangoRepository()
+        self._orig = store_mod.repo
+        self._orig_v = v.repo
+        store_mod.repo = self.repo
+        v.repo = self.repo
         self.prof = self.repo.search("Айбек")[0]["prof"]
         author = _make_confirmed_user("author_perm@example.com")
         self.author = author
@@ -399,6 +421,12 @@ class VoteReportPermissionTests(TestCase):
         rv2 = self.repo.add_review(self.prof.id, data2, user=author, status="approved")
         R.objects.filter(pk=rv2.id).update(status="approved")
         self.own_approved_id = rv2.id
+
+    def tearDown(self):
+        from reviews import store as store_mod
+        import reviews.views as v
+        store_mod.repo = self._orig
+        v.repo = self._orig_v
 
     def test_vote_pending_404(self):
         user = _make_confirmed_user("voter_pending@example.com")
@@ -464,12 +492,25 @@ class DbConstraintTests(TransactionTestCase):
 
 class CommentValidationTests(TestCase):
     def setUp(self):
+        cache.clear()
         from reviews.management.commands.seed_kg import Command as SeedCmd
         SeedCmd().handle(clear=True)
+        from reviews import store as store_mod
+        import reviews.views as v
         self.repo = DjangoRepository()
+        self._orig = store_mod.repo
+        self._orig_v = v.repo
+        store_mod.repo = self.repo
+        v.repo = self.repo
         self.prof = self.repo.search("Айбек")[0]["prof"]
         self.user = _make_confirmed_user("commenter@example.com")
         self.client.force_login(self.user)
+
+    def tearDown(self):
+        from reviews import store as store_mod
+        import reviews.views as v
+        store_mod.repo = self._orig
+        v.repo = self._orig_v
 
     def test_link_rejected(self):
         data = _valid({"comment": "Смотрите https://example.com очень полезно"})
@@ -504,11 +545,27 @@ class CommentValidationTests(TestCase):
         self.assertNotIn("<script>", rev.comment)
 
 class DeleteAccountTests(TestCase):
+    def setUp(self):
+        cache.clear()
+        from reviews import store as store_mod
+        import reviews.views as v
+        self.repo = DjangoRepository()
+        self._orig = store_mod.repo
+        self._orig_v = v.repo
+        store_mod.repo = self.repo
+        v.repo = self.repo
+
+    def tearDown(self):
+        from reviews import store as store_mod
+        import reviews.views as v
+        store_mod.repo = self._orig
+        v.repo = self._orig_v
+
     def test_delete_leaves_reviews_anonymous(self):
         from reviews.models import Review as R
         from reviews.management.commands.seed_kg import Command as SeedCmd
         SeedCmd().handle(clear=True)
-        repo = DjangoRepository()
+        repo = self.repo
         prof = repo.search("Айбек")[0]["prof"]
         user = _make_confirmed_user("deleter@example.com")
         self.client.force_login(user)

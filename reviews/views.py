@@ -307,7 +307,7 @@ def confirm_email(request, uidb64, token):
     if user and email_confirm_token.check_token(user, token):
         # one-time: only activate if email not yet confirmed
         from .models import Profile
-        profile, _ = Profile.objects.get_or_create(user=user, defaults={"email_confirmed": False})
+        profile, _created = Profile.objects.get_or_create(user=user, defaults={"email_confirmed": False})
         if profile.email_confirmed:
             messages.error(request, _("Ссылка недействительна или просрочена."))
             return redirect("signup")
@@ -354,3 +354,13 @@ def add_professor(request):
 
 def ratelimited(request, exception=None):
     return render(request, "reviews/429.html", status=429)
+
+
+def permission_denied(request, exception=None):
+    from django_ratelimit.exceptions import Ratelimited
+
+    if isinstance(exception, Ratelimited):
+        return render(request, "reviews/429.html", status=429)
+    from django.views.defaults import permission_denied as _pd
+
+    return _pd(request, exception)

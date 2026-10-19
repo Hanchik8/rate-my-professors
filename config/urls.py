@@ -7,3 +7,7 @@ urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
     path("", include("reviews.urls")),
 ]
+
+# Map PermissionDenied from ratelimit (Ratelimited) to 429
+handler403 = "reviews.views.permission_denied"
+handler429 = "reviews.views.ratelimited"
