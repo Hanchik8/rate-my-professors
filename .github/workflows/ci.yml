@@ -15,7 +15,6 @@ jobs:
     env:
       DATABASE_URL: postgres://proflens:proflens@localhost:5432/proflens
       REPO_BACKEND: django
-      SECRET_KEY: edu5RYdTu4LcqKS2N0uzr6k_kcx4PP7PidAM6ZrRDAiFYL5YlWDDQ182Tml4aSJPNKYzCdNYWImuBcfTUjACJQ
       ALLOWED_HOSTS: example.kg,localhost,127.0.0.1,testserver
       ADMIN_URL: ci-panel-7f3k/
       DEBUG: "False"
@@ -24,6 +23,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Generate SECRET_KEY
+        run: echo "SECRET_KEY=$(python -c 'import secrets;print(secrets.token_urlsafe(64))')" >> "$GITHUB_ENV"
       - name: System deps (gettext)
         run: sudo apt-get update && sudo apt-get install -y gettext
       - name: Install deps
