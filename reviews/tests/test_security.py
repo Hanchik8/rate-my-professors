@@ -39,27 +39,11 @@ def _make_confirmed_user(username, password="StrongPass123", email=None):
 # 1. i18n
 # ------------------------------------------------------------------
 class I18nTests(TestCase):
-    @classmethod
-    def setUpClass(cls):
-        try:
-            from django.core.management import call_command
-            call_command("compilemessages", verbosity=0)
-        except Exception:
-            try:
-                import polib
-                base = Path(__file__).resolve().parent.parent.parent
-                for lang in ["ky", "en", "ru"]:
-                    po = base / "locale" / lang / "LC_MESSAGES" / "django.po"
-                    mo = base / "locale" / lang / "LC_MESSAGES" / "django.mo"
-                    if po.exists():
-                        try:
-                            pofile = polib.pofile(str(po))
-                            pofile.save_as_mofile(str(mo))
-                        except Exception:
-                            pass
-            except Exception:
-                pass
-        super().setUpClass()
+    def setUp(self):
+        base = Path(__file__).resolve().parent.parent.parent
+        mo = base / "locale" / "ky" / "LC_MESSAGES" / "django.mo"
+        if not mo.exists():
+            self.fail("Сначала выполни python manage.py compilemessages")
 
     def test_ky_accept_language(self):
         r = self.client.get(reverse("home"), HTTP_ACCEPT_LANGUAGE="ky")
@@ -308,6 +292,10 @@ class CspInlineTests(TestCase):
 # 8. Fail-safe via subprocess
 # ------------------------------------------------------------------
 class FailSafeTests(TestCase):
+    # distinct-enough key reused across fixtures so each test isolates the ONE
+    # fail-safe condition it targets (passes the SECRET_KEY checks by default).
+    _GOOD_KEY = "dgkFZhpRnkdLzI9waia_wCaUR6DzaDeTQLtljCpsJN8yb41mkoge85JLWivAnwhJvNY"
+
     def _run(self, env):
         base = Path(__file__).resolve().parent.parent.parent
         full_env = os.environ.copy()
@@ -319,18 +307,28 @@ class FailSafeTests(TestCase):
         self.assertNotEqual(proc.returncode, 0)
         self.assertIn("SECRET_KEY", proc.stderr + proc.stdout)
 
+    def test_low_entropy_secret_key_fails(self):
+        proc = self._run({"DEBUG": "False", "SECRET_KEY": "a" * 60, "ALLOWED_HOSTS": "example.kg", "DATABASE_URL": "postgres://proflens:proflens@localhost:5432/proflens"})
+        self.assertNotEqual(proc.returncode, 0)
+        self.assertIn("SECRET_KEY", proc.stderr + proc.stdout)
+
     def test_wildcard_hosts_fails(self):
-        proc = self._run({"DEBUG": "False", "SECRET_KEY": "a"*60, "ALLOWED_HOSTS": "*", "DATABASE_URL": ""})
+        proc = self._run({"DEBUG": "False", "SECRET_KEY": self._GOOD_KEY, "ALLOWED_HOSTS": "*", "DATABASE_URL": "postgres://proflens:proflens@localhost:5432/proflens"})
         self.assertNotEqual(proc.returncode, 0)
         self.assertIn("ALLOWED_HOSTS", proc.stderr + proc.stdout)
 
     def test_memory_backend_fails(self):
-        proc = self._run({"DEBUG": "False", "SECRET_KEY": "a"*60, "ALLOWED_HOSTS": "example.kg", "REPO_BACKEND": "memory", "DATABASE_URL": ""})
+        proc = self._run({"DEBUG": "False", "SECRET_KEY": self._GOOD_KEY, "ALLOWED_HOSTS": "example.kg", "REPO_BACKEND": "memory", "DATABASE_URL": "postgres://proflens:proflens@localhost:5432/proflens"})
         self.assertNotEqual(proc.returncode, 0)
         self.assertIn("REPO_BACKEND", proc.stderr + proc.stdout)
 
+    def test_missing_database_url_fails(self):
+        proc = self._run({"DEBUG": "False", "SECRET_KEY": self._GOOD_KEY, "ALLOWED_HOSTS": "example.kg", "REPO_BACKEND": "django", "DATABASE_URL": ""})
+        self.assertNotEqual(proc.returncode, 0)
+        self.assertIn("DATABASE_URL", proc.stderr + proc.stdout)
+
     def test_full_prod_check_zero(self):
-        proc = self._run({"DEBUG": "False", "SECRET_KEY": "a"*64, "ALLOWED_HOSTS": "example.kg", "REPO_BACKEND": "django", "DATABASE_URL": "postgres://proflens:proflens@localhost:5432/proflens", "ADMIN_URL": "admin-secret-xyz/"})
+        proc = self._run({"DEBUG": "False", "SECRET_KEY": self._GOOD_KEY, "ALLOWED_HOSTS": "example.kg", "REPO_BACKEND": "django", "DATABASE_URL": "postgres://proflens:proflens@localhost:5432/proflens", "ADMIN_URL": "admin-secret-xyz/"})
         self.assertEqual(proc.returncode, 0, f"stderr: {proc.stderr}")
 
 # ------------------------------------------------------------------
