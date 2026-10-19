@@ -2,8 +2,9 @@
 {% block title %}{{ school.name }} — ProfLens{% endblock %}
 {% block content %}
 <h1>{{ school.name }}</h1>
-<p class="sub">{{ school.city }}</p>
-{% if stats.prof_count %}
+<p class="sub">{{ school.city }}{% if school.region %} · {{ school.region }}{% endif %}{% if school.type %} · {% if school.type == "state" %}{% translate "государственный" %}{% elif school.type == "private" %}{% translate "частный" %}{% else %}{{ school.type }}{% endif %}{% endif %}{% if school.website %} · <a href="{{ school.website }}" target="_blank" rel="noopener">{{ school.website }}</a>{% endif %}</p>
+{% if school.short_name and school.short_name != school.name %}<p class="muted">{{ school.short_name }}</p>{% endif %}
+{% if stats.prof_count or stats.review_count %}
 <dl class="facts">
   <div><dt>{% translate "Преподавателей" %}</dt><dd>{{ stats.prof_count }}</dd></div>
   <div><dt>{% translate "Отзывов" %}</dt><dd>{{ stats.review_count }}</dd></div>

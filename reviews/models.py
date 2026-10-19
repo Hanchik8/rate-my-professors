@@ -5,16 +5,21 @@ from django.utils.text import slugify
 
 
 class School(models.Model):
+    TYPE_CHOICES = [("state", "state"), ("private", "private")]
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=200)
+    short_name = models.CharField(max_length=80, blank=True, default="")
     slug = models.SlugField(max_length=220, unique=True, allow_unicode=True)
     city = models.CharField(max_length=80)
+    region = models.CharField(max_length=80, blank=True, default="")
+    type = models.CharField(max_length=10, choices=TYPE_CHOICES, blank=True, default="")
+    website = models.URLField(blank=True, default="")
 
     class Meta:
         ordering = ["name"]
 
     def __str__(self):
-        return self.name
+        return self.short_name or self.name
 
     def save(self, *args, **kwargs):
         if not self.slug:

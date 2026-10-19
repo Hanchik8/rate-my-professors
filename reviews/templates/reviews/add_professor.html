@@ -7,14 +7,39 @@
 <p class="notice">{% translate "Чтобы добавить преподавателя," %} <a href="{{ login_url }}">{% translate "войдите" %}</a> {% translate "или" %} <a href="{{ signup_url }}">{% translate "зарегистрируйтесь" %}</a>.</p>
 {% endif %}
 <form method="post" class="form">{% csrf_token %}
+  <div class="field">
+    <label for="id_school"><strong>{% translate "Вуз" %}</strong></label>
+    <input type="text" id="school_search" placeholder="{% translate 'Начните вводить название вуза...' %}" autocomplete="off">
+    {{ form.school }}{{ form.school.errors }}
+    <small class="muted">{% translate "Выберите вуз из списка" %}</small>
+  </div>
   {% for field in form %}
+    {% if field.name != "school" %}
   <div class="field">
     <label for="{{ field.id_for_label }}"><strong>{{ field.label }}</strong></label>
     {% if field.help_text %}<small>{{ field.help_text }}</small>{% endif %}
     {{ field }}{{ field.errors }}
   </div>
+    {% endif %}
   {% endfor %}
   <button>{% translate "Отправить на модерацию" %}</button>
   <a href="{% url 'home' %}">{% translate "Отмена" %}</a>
 </form>
+<script>
+(function(){
+  var search = document.getElementById('school_search');
+  var select = document.getElementById('id_school');
+  if(!search || !select) return;
+  select.style.display = '';
+  var opts = Array.from(select.options);
+  function filter(){
+    var q = search.value.toLowerCase();
+    opts.forEach(function(o){
+      if(!q || o.text.toLowerCase().indexOf(q) !== -1) o.hidden = false; else o.hidden = true;
+    });
+  }
+  search.addEventListener('input', filter);
+  select.addEventListener('change', function(){ search.value = select.options[select.selectedIndex].text; });
+})();
+</script>
 {% endblock %}

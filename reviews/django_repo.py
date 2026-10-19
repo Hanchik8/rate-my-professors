@@ -1,6 +1,5 @@
 from collections import Counter
 from statistics import mean
-from django.db.models import Count
 from django.utils.text import slugify
 
 from .models import Professor, Review, School, Tag, Vote, Report
@@ -14,20 +13,18 @@ class DjangoRepository:
     """ORM-backed repository with the same API as InMemoryRepository."""
 
     # writes
-    def add_school(self, name, city):
+    def add_school(self, name, city, short_name="", region="", type="", website=""):
         slug = slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
-        # ensure unique
         base, i = slug, 1
         while School.objects.filter(slug=slug).exists():
             slug = f"{base}-{i}"
             i += 1
-        s = School.objects.create(name=name, slug=slug, city=city)
+        s = School.objects.create(name=name, slug=slug, city=city, short_name=short_name, region=region, type=type, website=website)
         return self._school_to_dc(s)
 
     def add_professor(self, school_id, first, last, department, title, status="approved", user=None):
         school = School.objects.get(pk=school_id)
         if Professor.objects.filter(school=school, first_name__iexact=first.strip(), last_name__iexact=last.strip()).exclude(status="rejected").exists():
-            # fallback case-insensitive python check for SQLite
             for p in Professor.objects.filter(school=school).exclude(status="rejected"):
                 if p.full_name.lower() == f"{first} {last}".lower():
                     raise ValueError("duplicate professor")
@@ -91,12 +88,22 @@ class DjangoRepository:
     def approve_professor(self, professor_id):
         Professor.objects.filter(pk=professor_id).update(status="approved")
 
+    def update_school(self, school_id, **kwargs):
+        try:
+            School.objects.filter(pk=school_id).update(**{k: v for k, v in kwargs.items() if k in ["name","short_name","city","region","type","website","slug"]})
+            return self.school(str(school_id))
+        except Exception:
+            return None
+
     # reads
     def schools(self):
         return [self._school_to_dc(s) for s in School.objects.all()]
 
     def cities(self):
         return sorted(School.objects.values_list("city", flat=True).distinct())
+
+    def regions(self):
+        return sorted(v for v in School.objects.values_list("region", flat=True).distinct() if v)
 
     def school(self, school_id):
         try:
@@ -107,6 +114,12 @@ class DjangoRepository:
     def school_by_slug(self, slug):
         try:
             return self._school_to_dc(School.objects.get(slug=slug))
+        except School.DoesNotExist:
+            return None
+
+    def school_by_short_name(self, short_name):
+        try:
+            return self._school_to_dc(School.objects.get(short_name=short_name))
         except School.DoesNotExist:
             return None
 
@@ -143,7 +156,6 @@ class DjangoRepository:
             qs = qs.filter(status="approved")
         qs = qs.prefetch_related("tags")
         if sort == "helpful":
-            # sort in python by helpful - not_helpful
             items = list(qs)
             items.sort(key=lambda r: (r.helpful - r.not_helpful, r.created_at), reverse=True)
             return [self._review_to_dc(r) for r in items]
@@ -166,7 +178,6 @@ class DjangoRepository:
         overall = round(mean(qs.values_list("overall", flat=True)), 1)
         diff = round(mean(qs.values_list("difficulty", flat=True)), 1)
         wta = round(100 * qs.filter(would_take_again=True).count() / n)
-        # top tags
         tag_counts = Counter()
         for r in qs.prefetch_related("tags"):
             for t in r.tags.all():
@@ -198,7 +209,6 @@ class DjangoRepository:
             qs = qs.filter(school__city=city)
         if q:
             q = q.lower().strip()
-            # fetch and filter in python for case-insensitive unicode
             items = []
             for p in qs:
                 if q and q not in f"{p.full_name} {p.department}".lower():
@@ -229,10 +239,9 @@ class DjangoRepository:
             return False
         return Vote.objects.filter(review_id=review_id, user=user).exists()
 
-    # helpers: ORM object -> dataclass-like used by views/templates (duck typing)
     def _school_to_dc(self, s):
         from .repository import School as DCSchool
-        return DCSchool(id=str(s.pk), name=s.name, slug=s.slug, city=s.city)
+        return DCSchool(id=str(s.pk), name=s.name, slug=s.slug, city=s.city, short_name=s.short_name or "", region=s.region or "", type=s.type or "", website=s.website or "")
 
     def _prof_to_dc(self, p):
         from .repository import Professor as DCProf

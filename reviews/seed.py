@@ -1,17 +1,75 @@
-"""Демо-данные для Кыргызстана. Сбрасываются при каждом перезапуске в memory-режиме."""
+"""Демо-данные для Кыргызстана. В memory-режиме читает вузы из data/kg_universities.json."""
+import json
+from pathlib import Path
 
-SCHOOLS = [
-    ("Кыргызский национальный университет им. Ж. Баласагына", "Бишкек"),
-    ("Кыргызско-Российский Славянский университет им. Б. Ельцина", "Бишкек"),
-    ("Американский университет в Центральной Азии", "Бишкек"),
-    ("Кыргызско-Турецкий университет «Манас»", "Бишкек"),
-    ("Кыргызский государственный технический университет им. И. Раззакова", "Бишкек"),
-    ("Бишкекский государственный университет им. К. Карасаева", "Бишкек"),
-    ("Кыргызская государственная медицинская академия им. И. Ахунбаева", "Бишкек"),
-    ("Ошский государственный университет", "Ош"),
+
+def _load_schools_from_json(repo):
+    """Пытается загрузить вузы из JSON, idempotent."""
+    try:
+        from django.conf import settings
+        base = Path(settings.BASE_DIR)
+    except Exception:
+        base = Path(__file__).resolve().parent.parent
+    path = base / "data" / "kg_universities.json"
+    if not path.exists():
+        return None
+    data = json.loads(path.read_text(encoding="utf-8"))
+    schools = []
+    from django.utils.text import slugify
+    for item in data:
+        name = item["name"].strip()
+        short_name = item.get("short_name", "").strip()
+        city = item.get("city", "").strip()
+        region = item.get("region", "").strip()
+        type_ = item.get("type", "").strip()
+        website = item.get("website", "").strip()
+        slug = slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
+        existing = None
+        for s in repo.schools():
+            if s.slug == slug or (short_name and s.short_name == short_name):
+                existing = s
+                break
+        if existing:
+            # update if missing fields
+            for k, v in [("short_name", short_name), ("region", region), ("type", type_), ("website", website)]:
+                if v and not getattr(existing, k, ""):
+                    setattr(existing, k, v)
+            schools.append(existing)
+        else:
+            s = repo.add_school(name, city, short_name=short_name, region=region, type=type_, website=website)
+            schools.append(s)
+    return schools
+
+
+# fallback 8 вузов if JSON not present
+SCHOOLS_FALLBACK = [
+    ("Кыргызский национальный университет им. Ж. Баласагына", "Бишкек", "КНУ", "г. Бишкек", "state", "https://knu.kg"),
+    ("Кыргызско-Российский Славянский университет им. Б. Ельцина", "Бишкек", "КРСУ", "г. Бишкек", "state", "https://krsu.edu.kg"),
+    ("Американский университет в Центральной Азии", "Бишкек", "АУЦА", "г. Бишкек", "private", "https://auca.kg"),
+    ("Кыргызско-Турецкий университет «Манас»", "Бишкек", "Манас", "г. Бишкек", "state", "https://manas.edu.kg"),
+    ("Кыргызский государственный технический университет им. И. Раззакова", "Бишкек", "КГТУ", "г. Бишкек", "state", "https://kstu.kg"),
+    ("Бишкекский гуманитарный университет им. К. Карасаева", "Бишкек", "БГУ", "г. Бишкек", "state", "https://bhu.kg"),
+    ("Кыргызская государственная медицинская академия им. И. Ахунбаева", "Бишкек", "КГМА", "г. Бишкек", "state", "https://kgma.kg"),
+    ("Ошский государственный университет", "Ош", "ОшГУ", "г. Ош", "state", "https://oshsu.kg"),
 ]
-# ТОЛЬКО вымышленные имена и фамилии
-PROFESSORS = [  # (school index, first, last, department, title)
+# ТОЛЬКО вымышленные имена и фамилии — indices refer to schools list order in JSON; we map by short_name below
+# Professors as dicts with school short_name for robust mapping
+PROFESSORS_BY_SCHOOL = [
+    ("КНУ", "Айбек", "Токтогулов", "Информатика", "доцент"),
+    ("КНУ", "Елена", "Смирнова", "Математика", "профессор"),
+    ("КНУ", "Гульнара", "Асанова", "Биология", "старший преподаватель"),
+    ("КРСУ", "Азамат", "Исаков", "История", "профессор"),
+    ("КРСУ", "Ольга", "Петрова", "Психология", "доцент"),
+    ("АУЦА", "Эрмек", "Касымов", "Экономика", "профессор"),
+    ("Манас", "Айжан", "Садыкова", "Международные отношения", "доцент"),
+    ("КГТУ", "Дмитрий", "Волков", "Физика", "профессор"),
+    ("КГТУ", "Чолпон", "Жумалиева", "Экономика", "старший преподаватель"),
+    ("БГУ", "Нурлан", "Бекбоев", "Лингвистика", "доцент"),
+    ("КГМА", "Светлана", "Ким", "Терапия", "профессор"),
+    ("ОшГУ", "Бакыт", "Маматов", "Информатика", "старший преподаватель"),
+]
+# For backward compat, keep old PROFESSORS indices for tests that use 0..7
+PROFESSORS = [
     (0, "Айбек", "Токтогулов", "Информатика", "доцент"),
     (0, "Елена", "Смирнова", "Математика", "профессор"),
     (0, "Гульнара", "Асанова", "Биология", "старший преподаватель"),
@@ -87,8 +145,26 @@ REVIEWS = [  # (prof index, course, term, overall, difficulty, take again, grade
 
 
 def seed(repo):
-    schools = [repo.add_school(n, c) for n, c in SCHOOLS]
-    profs = [repo.add_professor(schools[s].id, f, l, d, t) for s, f, l, d, t in PROFESSORS]
+    schools = _load_schools_from_json(repo)
+    if schools is None:
+        schools = [repo.add_school(n, c, short_name=sn, region=r, type=t, website=w) for n, c, sn, r, t, w in SCHOOLS_FALLBACK]
+        profs = [repo.add_professor(schools[s].id, f, l, d, t) for s, f, l, d, t in PROFESSORS]
+    else:
+        # map professors by short_name
+        by_short = {s.short_name: s for s in schools if s.short_name}
+        by_name = {s.name: s for s in schools}
+        profs = []
+        for short, f, l, d, t in PROFESSORS_BY_SCHOOL:
+            school = by_short.get(short) or by_name.get(short)
+            if not school:
+                # fallback: find by name contains
+                for s in schools:
+                    if short in s.name or short in s.short_name:
+                        school = s
+                        break
+            if not school:
+                school = schools[0]
+            profs.append(repo.add_professor(school.id, f, l, d, t))
     for pi, course, term, overall, diff, wta, grade, comment, tags in REVIEWS:
         repo.add_review(profs[pi].id, {
             "course": course, "term": term, "overall": overall, "difficulty": diff,

@@ -78,4 +78,5 @@ class ProfessorForm(forms.Form):
     def __init__(self, *args, schools=None, **kwargs):
         super().__init__(*args, **kwargs)
         if schools is not None:
-            self.fields["school"].choices = [(str(s.id), s.name) for s in schools]
+            # label as short_name — searchable
+            self.fields["school"].choices = [(str(s.id), s.short_name or s.name) for s in schools]

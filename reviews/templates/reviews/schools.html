@@ -1,0 +1,24 @@
+{% extends "reviews/base.html" %}{% load i18n %}
+{% block title %}{% translate "Вузы" %} — ProfLens{% endblock %}
+{% block content %}
+<h1>{% translate "Вузы" %}</h1>
+<form class="search" method="get">
+  <select name="region" aria-label="{% translate 'Область' %}">
+    <option value="">{% translate "Все области" %}</option>
+    {% for r in regions %}<option value="{{ r }}"{% if r == region %} selected{% endif %}>{{ r }}</option>{% endfor %}
+  </select>
+  <select name="type" aria-label="{% translate 'Тип' %}">
+    <option value="">{% translate "Все типы" %}</option>
+    <option value="state"{% if type == "state" %} selected{% endif %}>{% translate "государственный" %}</option>
+    <option value="private"{% if type == "private" %} selected{% endif %}>{% translate "частный" %}</option>
+  </select>
+  <button>{% translate "Фильтр" %}</button>
+  {% if region or type %}<a href="{% url 'school_list' %}">{% translate "Сбросить" %}</a>{% endif %}
+</form>
+<ol class="rows">
+  {% for s in schools %}
+  <li><a class="row" href="{% url 'school_detail' s.slug %}"><span class="who"><strong>{{ s.short_name|default:s.name }}</strong><span>{{ s.name }}{% if s.name != s.short_name and s.short_name %} — {{ s.short_name }}{% endif %} · {{ s.city }}{% if s.region %} · {{ s.region }}{% endif %} · {% if s.type == "state" %}{% translate "государственный" %}{% elif s.type == "private" %}{% translate "частный" %}{% else %}{{ s.type }}{% endif %}</span></span></a></li>
+  {% empty %}<li class="empty">{% translate "Ничего не нашлось." %}</li>{% endfor %}
+</ol>
+<p class="muted">{% blocktranslate with n=schools|length %}Всего {{ n }} вузов.{% endblocktranslate %}</p>
+{% endblock %}

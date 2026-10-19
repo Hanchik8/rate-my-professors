@@ -1,13 +1,13 @@
 from django.core.management.base import BaseCommand
-from reviews.seed import SCHOOLS, PROFESSORS, REVIEWS
 from reviews.models import School, Professor, Tag, Review
 
 
 class Command(BaseCommand):
-    help = "Заливает демо-данные из reviews/seed.py в БД (удаляет старые демо-данные)"
+    help = "Заливает вузы + демо-преподавателей в БД (idempotent для вузов)"
 
     def add_arguments(self, parser):
-        parser.add_argument("--clear", action="store_true", help="Очистить существующие школы/преподавателей/отзывы перед заливкой")
+        parser.add_argument("--clear", action="store_true", help="Очистить существующие данные перед заливкой")
+        parser.add_argument("--file", default="data/kg_universities.json", help="Путь к JSON с вузами")
 
     def handle(self, *args, **opts):
         if opts["clear"]:
@@ -16,25 +16,33 @@ class Command(BaseCommand):
             School.objects.all().delete()
             Tag.objects.all().delete()
 
-        # avoid duplicates if run twice
-        if School.objects.exists() and not opts["clear"]:
-            self.stdout.write(self.style.WARNING("В БД уже есть данные. Используйте --clear для перезаливки."))
+        # 1) вузы — idempotent
+        from reviews.management.commands.load_universities import Command as LoadCmd
+        load = LoadCmd()
+        load.handle(file=opts.get("file") or "data/kg_universities.json")
+
+        # 2) преподаватели/отзывы — только если их нет (или после --clear)
+        if Professor.objects.exists() and not opts["clear"]:
+            self.stdout.write(self.style.WARNING("Преподаватели уже есть. Используйте --clear для перезаливки."))
+            self.stdout.write(self.style.SUCCESS(f"Вузов: {School.objects.count()}, преподавателей: {Professor.objects.count()}, отзывов: {Review.objects.count()}"))
             return
 
         from django.utils.text import slugify
-        schools = []
-        for name, city in SCHOOLS:
-            slug = slugify(name, allow_unicode=True) or slugify(name)
-            base, i = slug, 1
-            while School.objects.filter(slug=slug).exists():
-                slug = f"{base}-{i}"
-                i += 1
-            s = School.objects.create(name=name, city=city, slug=slug)
-            schools.append(s)
+        from reviews.seed import PROFESSORS_BY_SCHOOL, REVIEWS
 
+        # map schools by short_name
+        schools_by_short = {s.short_name: s for s in School.objects.all() if s.short_name}
+        schools_by_name = {s.name: s for s in School.objects.all()}
         profs = []
-        for si, first, last, dept, title in PROFESSORS:
-            school = schools[si]
+        for short, first, last, dept, title in PROFESSORS_BY_SCHOOL:
+            school = schools_by_short.get(short) or schools_by_name.get(short)
+            if not school:
+                for s in School.objects.all():
+                    if short in s.name or short in (s.short_name or ""):
+                        school = s
+                        break
+            if not school:
+                school = School.objects.first()
             base = slugify(f"{first} {last}", allow_unicode=True) or slugify(f"{first} {last}")
             slug = base
             i = 1
@@ -53,4 +61,4 @@ class Command(BaseCommand):
                 tag, _ = Tag.objects.get_or_create(name=t)
                 r.tags.add(tag)
 
-        self.stdout.write(self.style.SUCCESS(f"Готово: {len(schools)} вузов, {len(profs)} преподавателей, {len(REVIEWS)} отзывов."))
+        self.stdout.write(self.style.SUCCESS(f"Готово: вузов {School.objects.count()}, преподавателей {len(profs)}, отзывов {len(REVIEWS)}."))

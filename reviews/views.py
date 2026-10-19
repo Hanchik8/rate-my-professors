@@ -1,7 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.http import Http404
@@ -28,10 +27,18 @@ def home(request):
         page_obj = None
     else:
         page_results = page_obj.object_list
+    # group schools by city for optgroup
+    schools = repo.schools()
+    from collections import defaultdict
+    by_city = defaultdict(list)
+    for s in schools:
+        by_city[s.city].append(s)
+    grouped = sorted(by_city.items())
     return render(request, "reviews/home.html", {
         "q": q, "school": school, "city": city,
-        "schools": repo.schools(),
-        "cities": repo.cities() if hasattr(repo, "cities") else sorted({s.city for s in repo.schools()}),
+        "schools": schools,
+        "grouped_schools": grouped,
+        "cities": repo.cities() if hasattr(repo, "cities") else sorted({s.city for s in schools}),
         "results": page_results,
         "page_obj": page_obj,
     })
@@ -62,12 +69,30 @@ def professor_detail(request, slug):
     })
 
 
+def school_list(request):
+    schools = repo.schools()
+    # filters
+    region = request.GET.get("region", "")
+    type_ = request.GET.get("type", "")
+    filtered = schools
+    if region:
+        filtered = [s for s in filtered if getattr(s, 'region', '') == region]
+    if type_:
+        filtered = [s for s in filtered if getattr(s, 'type', '') == type_]
+    regions = sorted({getattr(s, 'region', '') for s in schools if getattr(s, 'region', '')})
+    return render(request, "reviews/schools.html", {
+        "schools": filtered,
+        "regions": regions,
+        "region": region,
+        "type": type_,
+    })
+
+
 def school_detail(request, slug):
     school = repo.school_by_slug(slug) if hasattr(repo, "school_by_slug") else next((s for s in repo.schools() if s.slug == slug), None)
     if school is None:
         raise Http404("School not found")
     results = [r for r in repo.search("", school_slug=school.slug)]
-    # stats for school
     if hasattr(repo, "school_stats"):
         stats = repo.school_stats(school.id)
     else:
@@ -201,7 +226,6 @@ def add_professor(request):
                     user=request.user if hasattr(repo, "add_professor") and "user" in repo.add_professor.__code__.co_varnames else None,
                 )
             except TypeError:
-                # InMemoryRepository fallback without user param
                 try:
                     repo.add_professor(
                         form.cleaned_data["school"],
@@ -211,7 +235,7 @@ def add_professor(request):
                         form.cleaned_data["title"],
                         status="pending",
                     )
-                except ValueError as e:
+                except ValueError:
                     form.add_error(None, _("Преподаватель с таким ФИО уже есть в этом вузе."))
                 else:
                     messages.success(request, _("Преподаватель отправлен на модерацию."))

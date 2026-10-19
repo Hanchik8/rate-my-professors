@@ -35,6 +35,10 @@ class School:
     name: str
     slug: str
     city: str
+    short_name: str = ""
+    region: str = ""
+    type: str = ""
+    website: str = ""
 
 
 @dataclass
@@ -86,15 +90,19 @@ class InMemoryRepository:
         self._review_keys = set()
 
     # writes
-    def add_school(self, name, city):
+    def add_school(self, name, city, short_name="", region="", type="", website=""):
         slug = slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
-        s = School(str(uuid.uuid4()), name, slug, city)
+        # ensure unique slug
+        base, i = slug, 1
+        while any(s.slug == slug for s in self._schools.values()):
+            slug = f"{base}-{i}"
+            i += 1
+        s = School(str(uuid.uuid4()), name, slug, city, short_name=short_name, region=region, type=type, website=website)
         self._schools[s.id] = s
         return s
 
     def add_professor(self, school_id, first, last, department, title, status="approved"):
         # защита от дубля ФИО+вуз (case-insensitive)
-        key = (school_id, f"{first} {last}".strip().lower())
         for p in self._professors.values():
             if p.school_id == school_id and p.full_name.lower() == f"{first} {last}".lower() and p.status != "rejected":
                 raise ValueError("duplicate professor")
@@ -154,6 +162,14 @@ class InMemoryRepository:
         if professor_id in self._professors:
             self._professors[professor_id].status = "approved"
 
+    def update_school(self, school_id, **kwargs):
+        s = self._schools.get(school_id)
+        if s:
+            for k, v in kwargs.items():
+                if hasattr(s, k):
+                    setattr(s, k, v)
+        return s
+
     # reads
     def schools(self):
         return sorted(self._schools.values(), key=lambda s: s.name)
@@ -161,11 +177,17 @@ class InMemoryRepository:
     def cities(self):
         return sorted({s.city for s in self._schools.values()})
 
+    def regions(self):
+        return sorted({s.region for s in self._schools.values() if s.region})
+
     def school(self, school_id):
         return self._schools.get(school_id)
 
     def school_by_slug(self, slug):
         return next((s for s in self._schools.values() if s.slug == slug), None)
+
+    def school_by_short_name(self, short_name):
+        return next((s for s in self._schools.values() if s.short_name == short_name), None)
 
     def professor(self, slug):
         return next((p for p in self._professors.values() if p.slug == slug and p.status == "approved"), None)

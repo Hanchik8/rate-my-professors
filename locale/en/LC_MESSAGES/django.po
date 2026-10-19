@@ -81,3 +81,33 @@ msgstr "Average rating"
 
 msgid "Преподаватели"
 msgstr "Professors"
+
+msgid "Вузы"
+msgstr "Universities"
+
+msgid "Все области"
+msgstr "All regions"
+
+msgid "Все типы"
+msgstr "All types"
+
+msgid "Область"
+msgstr "Region"
+
+msgid "Тип"
+msgstr "Type"
+
+msgid "Фильтр"
+msgstr "Filter"
+
+msgid "Сбросить"
+msgstr "Reset"
+
+msgid "Ничего не нашлось."
+msgstr "No results."
+
+msgid "государственный"
+msgstr "public"
+
+msgid "частный"
+msgstr "private"

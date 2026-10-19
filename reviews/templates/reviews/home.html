@@ -9,7 +9,11 @@
   </select>
   <select name="school" aria-label="{% translate 'Вуз' %}">
     <option value="">{% translate "Все вузы" %}</option>
-    {% for s in schools %}<option value="{{ s.slug }}"{% if s.slug == school %} selected{% endif %}>{{ s.name }}</option>{% endfor %}
+    {% for city_name, slist in grouped_schools %}
+      <optgroup label="{{ city_name }}">
+        {% for s in slist %}<option value="{{ s.slug }}"{% if s.slug == school %} selected{% endif %}>{{ s.short_name|default:s.name }}</option>{% endfor %}
+      </optgroup>
+    {% endfor %}
   </select>
   <button>{% translate "Найти" %}</button>
 </form>
@@ -18,7 +22,7 @@
   <li>
     <a class="row" href="{% url 'professor' r.prof.slug %}">
       <span class="tile {{ r.stats.tone }}">{% if r.stats.count %}{{ r.stats.overall|floatformat:1 }}{% else %}-{% endif %}</span>
-      <span class="who"><strong>{{ r.prof.full_name }}</strong><span>{{ r.prof.department }} — {{ r.school.name }}</span></span>
+      <span class="who"><strong>{{ r.prof.full_name }}</strong><span>{{ r.prof.department }} — {{ r.school.short_name|default:r.school.name }}</span></span>
       <span class="meta">{{ r.stats.count }} {% translate "отзывов" %}</span>
       <span class="meta">{% translate "Сложность" %} {% if r.stats.count %}{{ r.stats.difficulty|floatformat:1 }}{% else %}-{% endif %}</span>
     </a>

@@ -1,10 +1,9 @@
 from django.contrib.auth.models import User
-from django.test import TestCase, override_settings
+from django.test import TestCase
 from django.urls import reverse
 
 from .repository import InMemoryRepository
 from .seed import seed
-from .store import repo as global_repo
 from .django_repo import DjangoRepository
 
 
@@ -20,13 +19,11 @@ def _valid(overrides=None):
 class MemorySmokeTests(TestCase):
     """Smoke against InMemoryRepository (no DB) via isolated repo."""
     def setUp(self):
-        # use isolated in-memory repo for predictable slugs
         from reviews import store as store_mod
         self.repo = InMemoryRepository()
         seed(self.repo)
         self._orig = store_mod.repo
         store_mod.repo = self.repo
-        # also patch views' repo reference
         import reviews.views as v
         self._orig_v = v.repo
         v.repo = self.repo
@@ -44,11 +41,9 @@ class MemorySmokeTests(TestCase):
         self.assertNotContains(r, "Айбек")
 
     def test_filter_city_and_school(self):
-        # filter by city Osh should show only Osh prof
         r = self.client.get(reverse("home"), {"city": "Ош"})
         self.assertContains(r, "Бакыт")
         self.assertNotContains(r, "Айбек")
-        # filter by school slug
         school = next(s for s in self.repo.schools() if "Ошский" in s.name)
         r2 = self.client.get(reverse("home"), {"school": school.slug})
         self.assertContains(r2, "Бакыт")
@@ -59,22 +54,18 @@ class MemorySmokeTests(TestCase):
         self.assertEqual(self.client.get(reverse("professor", args=["nobody"])).status_code, 404)
 
     def test_post_review_requires_login_and_pending(self):
-        # anonymous redirected to login
         prof = self.repo.search("Айбек")[0]["prof"]
         r = self.client.post(reverse("review_new", args=[prof.slug]), _valid())
         self.assertIn(r.status_code, (302, 200))
-        # login and post
         user = User.objects.create_user(username="tester@example.com", email="tester@example.com", password="pass12345")
         self.client.force_login(user)
         r2 = self.client.post(reverse("review_new", args=[prof.slug]), _valid())
         self.assertEqual(r2.status_code, 302)
-        # pending, not visible yet
-        self.assertEqual(len(self.repo.reviews_for(prof.id)), 3)  # seed has 3 for first prof
+        self.assertEqual(len(self.repo.reviews_for(prof.id)), 3)
 
     def test_vote_requires_login_and_one_vote(self):
         prof = self.repo.search("Айбек")[0]["prof"]
         review = self.repo.reviews_for(prof.id)[0]
-        # anonymous redirected
         r = self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
         self.assertIn(r.status_code, (302, 200))
         user = User.objects.create_user(username="voter@example.com", email="voter@example.com", password="pass12345")
@@ -83,7 +74,6 @@ class MemorySmokeTests(TestCase):
         r2 = self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
         self.assertEqual(r2.status_code, 302)
         self.assertEqual(review.helpful, before + 1)
-        # second vote by same user not counted twice
         r3 = self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
         self.assertEqual(r3.status_code, 302)
         self.assertEqual(review.helpful, before + 1)
@@ -92,9 +82,7 @@ class MemorySmokeTests(TestCase):
         user = User.objects.create_user(username="c@example.com", email="c@example.com", password="pass12345")
         self.client.force_login(user)
         prof = self.repo.search("Айбек")[0]["prof"]
-        # course with mixed case preserved (trim only)
         self.client.post(reverse("review_new", args=[prof.slug]), _valid({"course": "  Микроэкономика  "}))
-        # fetch pending review
         pending = [r for r in self.repo.reviews_for(prof.id, include_pending=True) if r.course == "Микроэкономика"]
         self.assertTrue(pending)
 
@@ -123,35 +111,59 @@ class MemorySmokeTests(TestCase):
         self.assertEqual(r.status_code, 200)
         self.assertContains(r, school.name)
 
+    def test_school_without_professors(self):
+        # JSON has many schools without professors — pick one
+        schools_with = {r["school"].id for r in self.repo.search("")}
+        without = [s for s in self.repo.schools() if s.id not in schools_with]
+        self.assertTrue(without, "expected schools without professors from JSON")
+        r = self.client.get(reverse("school_detail", args=[without[0].slug]))
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, "Пока нет преподавателей")
+
     def test_add_professor_requires_login_and_duplicate_check(self):
         school = self.repo.schools()[0]
         r = self.client.get(reverse("add_professor"))
-        # login required
         self.assertIn(r.status_code, (302, 200))
         user = User.objects.create_user(username="addp@example.com", email="addp@example.com", password="pass12345")
         self.client.force_login(user)
         r2 = self.client.get(reverse("add_professor"))
         self.assertEqual(r2.status_code, 200)
-        # add new prof
         data = {"school": str(school.id), "first_name": "Тест", "last_name": "Тестов", "department": "Кафедра теста", "title": "доцент"}
         r3 = self.client.post(reverse("add_professor"), data)
         self.assertEqual(r3.status_code, 302)
-        # duplicate
         r4 = self.client.post(reverse("add_professor"), data)
         self.assertEqual(r4.status_code, 200)
 
+    def test_home_grouped_schools_and_short_name(self):
+        r = self.client.get(reverse("home"))
+        # grouped optgroup and short_name rendered
+        self.assertContains(r, "<optgroup")
+        # short_name of KNU should appear
+        self.assertContains(r, "КНУ")
 
-# Django ORM backend — same smoke with DB
+    def test_schools_list_page(self):
+        r = self.client.get(reverse("school_list"))
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, "Всего")
+
+    def test_schools_list_filter_region_and_type(self):
+        r = self.client.get(reverse("school_list"), {"region": "г. Бишкек"})
+        self.assertEqual(r.status_code, 200)
+        r2 = self.client.get(reverse("school_list"), {"type": "private"})
+        self.assertEqual(r2.status_code, 200)
+
+    def test_memory_has_64_schools(self):
+        self.assertEqual(len(self.repo.schools()), 64)
+
+
 class DjangoSmokeTests(TestCase):
     def setUp(self):
         from reviews import store as store_mod
         import reviews.views as v
         self.repo = DjangoRepository()
-        # seed via models helper
         from reviews.management.commands.seed_kg import Command as SeedCmd
         cmd = SeedCmd()
         cmd.handle(clear=True)
-        # use DjangoRepository for views
         self._orig = store_mod.repo
         self._orig_v = v.repo
         store_mod.repo = self.repo
@@ -174,3 +186,28 @@ class DjangoSmokeTests(TestCase):
         self.client.post(reverse("review_new", args=[prof.slug]), _valid())
         self.assertEqual(len(self.repo.reviews_for(prof.id)), before)
         self.assertEqual(len(self.repo.reviews_for(prof.id, include_pending=True)), before + 1)
+
+    def test_load_universities_idempotent(self):
+        from reviews.models import School
+        from reviews.management.commands.load_universities import Command as LoadCmd
+        before = School.objects.count()
+        self.assertEqual(before, 64)
+        cmd = LoadCmd()
+        cmd.handle(file="data/kg_universities.json")
+        self.assertEqual(School.objects.count(), 64)
+        cmd.handle(file="data/kg_universities.json")
+        self.assertEqual(School.objects.count(), 64)
+
+    def test_schools_list_i18n(self):
+        for lang in ["ru", "ky", "en"]:
+            r = self.client.get(reverse("school_list"), HTTP_ACCEPT_LANGUAGE=lang)
+            self.assertEqual(r.status_code, 200)
+
+    def test_school_detail_shows_extra_fields(self):
+        # pick school with website
+        from reviews.models import School
+        s = School.objects.exclude(website="").first()
+        self.assertIsNotNone(s)
+        r = self.client.get(reverse("school_detail", args=[s.slug]))
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, s.city)
