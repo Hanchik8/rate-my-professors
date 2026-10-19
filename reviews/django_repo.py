@@ -92,7 +92,7 @@ class DjangoRepository:
         try:
             School.objects.filter(pk=school_id).update(**{k: v for k, v in kwargs.items() if k in ["name","short_name","city","region","type","website","slug"]})
             return self.school(str(school_id))
-        except Exception:
+        except (ValueError, TypeError):
             return None
 
     # reads

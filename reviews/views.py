@@ -158,8 +158,12 @@ def review_report(request, review_id):
     if hasattr(repo, "report"):
         try:
             repo.report(review_id, user=request.user)
-        except Exception:
-            pass
+        except ValueError:
+            messages.warning(request, _("Вы уже жаловались на этот отзыв."))
+            prof2 = repo.professor_by_id(review.professor_id)
+            if prof2:
+                return redirect(reverse("professor", args=[prof2.slug]) + f"#review-{review.id}")
+            return redirect("home")
     messages.success(request, _("Жалоба отправлена модератору."))
     prof = repo.professor_by_id(review.professor_id)
     if prof:
@@ -223,23 +227,8 @@ def add_professor(request):
                     form.cleaned_data["department"].strip(),
                     form.cleaned_data["title"],
                     status="pending",
-                    user=request.user if hasattr(repo, "add_professor") and "user" in repo.add_professor.__code__.co_varnames else None,
+                    user=request.user,
                 )
-            except TypeError:
-                try:
-                    repo.add_professor(
-                        form.cleaned_data["school"],
-                        form.cleaned_data["first_name"].strip(),
-                        form.cleaned_data["last_name"].strip(),
-                        form.cleaned_data["department"].strip(),
-                        form.cleaned_data["title"],
-                        status="pending",
-                    )
-                except ValueError:
-                    form.add_error(None, _("Преподаватель с таким ФИО уже есть в этом вузе."))
-                else:
-                    messages.success(request, _("Преподаватель отправлен на модерацию."))
-                    return redirect("home")
             except ValueError:
                 form.add_error(None, _("Преподаватель с таким ФИО уже есть в этом вузе."))
             else:

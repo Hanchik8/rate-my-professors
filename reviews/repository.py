@@ -101,7 +101,7 @@ class InMemoryRepository:
         self._schools[s.id] = s
         return s
 
-    def add_professor(self, school_id, first, last, department, title, status="approved"):
+    def add_professor(self, school_id, first, last, department, title, status="approved", user=None):
         # защита от дубля ФИО+вуз (case-insensitive)
         for p in self._professors.values():
             if p.school_id == school_id and p.full_name.lower() == f"{first} {last}".lower() and p.status != "rejected":
