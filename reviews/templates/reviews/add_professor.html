@@ -1,0 +1,20 @@
+{% extends "reviews/base.html" %}{% load i18n %}
+{% block title %}{% translate "Добавить преподавателя" %} — ProfLens{% endblock %}
+{% block content %}
+<h1>{% translate "Добавить преподавателя" %}</h1>
+<p class="muted">{% translate "Новый преподаватель появится после проверки модератором. Дубликаты по ФИО+вуз не принимаются." %}</p>
+{% if not user.is_authenticated %}
+<p class="notice">{% translate "Чтобы добавить преподавателя," %} <a href="{{ login_url }}">{% translate "войдите" %}</a> {% translate "или" %} <a href="{{ signup_url }}">{% translate "зарегистрируйтесь" %}</a>.</p>
+{% endif %}
+<form method="post" class="form">{% csrf_token %}
+  {% for field in form %}
+  <div class="field">
+    <label for="{{ field.id_for_label }}"><strong>{{ field.label }}</strong></label>
+    {% if field.help_text %}<small>{{ field.help_text }}</small>{% endif %}
+    {{ field }}{{ field.errors }}
+  </div>
+  {% endfor %}
+  <button>{% translate "Отправить на модерацию" %}</button>
+  <a href="{% url 'home' %}">{% translate "Отмена" %}</a>
+</form>
+{% endblock %}

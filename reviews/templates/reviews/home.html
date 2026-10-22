@@ -1,26 +1,37 @@
-{% extends "reviews/base.html" %}
+{% extends "reviews/base.html" %}{% load i18n %}
 {% block content %}
-<h1>Find out what a class is really like before you enroll.</h1>
+<h1>{% translate "Узнайте, какие занятия на самом деле — до записи на курс." %}</h1>
 <form class="search" method="get">
-  <input type="search" name="q" value="{{ q }}" placeholder="Professor name or department" aria-label="Search professors">
-  <select name="school" aria-label="School">
-    <option value="">All schools</option>
+  <input type="search" name="q" value="{{ q }}" placeholder="{% translate 'Имя преподавателя или кафедра' %}" aria-label="{% translate 'Поиск' %}">
+  <select name="city" aria-label="{% translate 'Город' %}">
+    <option value="">{% translate "Все города" %}</option>
+    {% for c in cities %}<option value="{{ c }}"{% if c == city %} selected{% endif %}>{{ c }}</option>{% endfor %}
+  </select>
+  <select name="school" aria-label="{% translate 'Вуз' %}">
+    <option value="">{% translate "Все вузы" %}</option>
     {% for s in schools %}<option value="{{ s.slug }}"{% if s.slug == school %} selected{% endif %}>{{ s.name }}</option>{% endfor %}
   </select>
-  <button>Search</button>
+  <button>{% translate "Найти" %}</button>
 </form>
 <ol class="rows">
   {% for r in results %}
   <li>
     <a class="row" href="{% url 'professor' r.prof.slug %}">
       <span class="tile {{ r.stats.tone }}">{% if r.stats.count %}{{ r.stats.overall|floatformat:1 }}{% else %}-{% endif %}</span>
-      <span class="who"><strong>{{ r.prof.full_name }}</strong><span>{{ r.prof.department }} at {{ r.school.name }}</span></span>
-      <span class="meta">{{ r.stats.count }} rating{{ r.stats.count|pluralize }}</span>
-      <span class="meta">Difficulty {% if r.stats.count %}{{ r.stats.difficulty|floatformat:1 }}{% else %}-{% endif %}</span>
+      <span class="who"><strong>{{ r.prof.full_name }}</strong><span>{{ r.prof.department }} — {{ r.school.name }}</span></span>
+      <span class="meta">{{ r.stats.count }} {% translate "отзывов" %}</span>
+      <span class="meta">{% translate "Сложность" %} {% if r.stats.count %}{{ r.stats.difficulty|floatformat:1 }}{% else %}-{% endif %}</span>
     </a>
   </li>
   {% empty %}
-  <li class="empty">No professors match. Try a shorter name or another school.</li>
+  <li class="empty">{% translate "Ничего не нашлось. Попробуйте короче запрос или другой вуз/город." %}</li>
   {% endfor %}
 </ol>
+{% if page_obj %}
+<div class="pagination">
+  {% if page_obj.has_previous %}<a href="?q={{ q }}&school={{ school }}&city={{ city }}&page={{ page_obj.previous_page_number }}">{% translate "Назад" %}</a>{% endif %}
+  <span>{% blocktranslate with n=page_obj.number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}</span>
+  {% if page_obj.has_next %}<a href="?q={{ q }}&school={{ school }}&city={{ city }}&page={{ page_obj.next_page_number }}">{% translate "Вперёд" %}</a>{% endif %}
+</div>
+{% endif %}
 {% endblock %}
