@@ -1,3 +1,8 @@
+"""Forms for creating reviews and professors.
+
+All user-supplied free text is passed through ``sanitize.clean_text`` so the
+form layer and the repositories agree on what "clean" input looks like.
+"""
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
@@ -7,7 +12,21 @@ from .sanitize import MAX_COMMENT_LENGTH, MIN_COMMENT_LENGTH, clean_text
 SCORES = [(5, "5"), (4, "4"), (3, "3"), (2, "2"), (1, "1")]
 
 
+def _ensure_length(value, minimum, maximum, too_short, too_long):
+    """Raise a validation error when ``value`` falls outside the allowed range.
+
+    ``too_short``/``too_long`` are translation templates expecting an ``n``
+    placeholder for the bound that was violated.
+    """
+    if len(value) < minimum:
+        raise forms.ValidationError(too_short % {"n": minimum})
+    if len(value) > maximum:
+        raise forms.ValidationError(too_long % {"n": maximum})
+
+
 class ReviewForm(forms.Form):
+    """Student review form with sanitization and length limits."""
+
     course = forms.CharField(
         max_length=80,
         label=_("Предмет"),
@@ -48,37 +67,42 @@ class ReviewForm(forms.Form):
     )
 
     def clean_course(self):
-        # свободный текст, до 80 символов, без upper-case нормализации — только trim
+        """Trim the free-text course name (no case normalization)."""
         return clean_text(self.cleaned_data["course"])
 
     def clean_term(self):
+        """Trim the optional term string."""
         return clean_text(self.cleaned_data.get("term", ""))
 
     def clean_comment(self):
-        # Контрольные символы удаляются, после чего длина проверяется повторно:
-        # «мусорные» символы не должны помогать обойти минимум.
+        """Sanitize the body and enforce the min/max length on the clean text.
+
+        Control characters are removed first: "junk" characters must not help
+        a comment slip past the minimum length requirement.
+        """
         comment = clean_text(self.cleaned_data["comment"])
-        if len(comment) < MIN_COMMENT_LENGTH:
-            raise forms.ValidationError(
-                _("Отзыв должен содержать не менее %(n)d символов.") % {"n": MIN_COMMENT_LENGTH}
-            )
-        if len(comment) > MAX_COMMENT_LENGTH:
-            raise forms.ValidationError(
-                _("Отзыв должен содержать не более %(n)d символов.") % {"n": MAX_COMMENT_LENGTH}
-            )
+        _ensure_length(
+            comment, MIN_COMMENT_LENGTH, MAX_COMMENT_LENGTH,
+            too_short=_("Отзыв должен содержать не менее %(n)d символов."),
+            too_long=_("Отзыв должен содержать не более %(n)d символов."),
+        )
         return comment
 
     def clean_tags(self):
+        """Sanitize tags and cap them at three."""
         tags = [clean_text(t) for t in self.cleaned_data["tags"]]
         if len(tags) > 3:
             raise forms.ValidationError(_("Выберите не более 3 тегов."))
         return tags
 
     def clean_would_take_again(self):
+        """Convert the radio choice into a boolean."""
         return self.cleaned_data["would_take_again"] == "yes"
 
 
 class ProfessorForm(forms.Form):
+    """Submission form for a new professor (goes through moderation)."""
+
     school = forms.ChoiceField(label=_("Вуз"))
     first_name = forms.CharField(max_length=40, label=_("Имя"))
     last_name = forms.CharField(max_length=40, label=_("Фамилия"))
@@ -94,15 +118,19 @@ class ProfessorForm(forms.Form):
     )
 
     def __init__(self, *args, schools=None, **kwargs):
+        """Populate the school choices from the provided ``schools`` list."""
         super().__init__(*args, **kwargs)
         if schools is not None:
             self.fields["school"].choices = [(str(s.id), s.name) for s in schools]
 
     def clean_first_name(self):
+        """Sanitize the first name."""
         return clean_text(self.cleaned_data["first_name"])
 
     def clean_last_name(self):
+        """Sanitize the last name."""
         return clean_text(self.cleaned_data["last_name"])
 
     def clean_department(self):
+        """Sanitize the department name."""
         return clean_text(self.cleaned_data["department"])
