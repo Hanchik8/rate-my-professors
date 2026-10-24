@@ -133,24 +133,29 @@ class DjangoRepository:
 
     def professor(self, slug):
         try:
-            return self._prof_to_dc(Professor.objects.get(slug=slug, status="approved"))
+            return self._prof_to_dc(
+                Professor.objects.select_related("school").get(slug=slug, status="approved")
+            )
         except Professor.DoesNotExist:
             return None
 
     def professor_any(self, slug):
         try:
-            return self._prof_to_dc(Professor.objects.get(slug=slug))
+            return self._prof_to_dc(Professor.objects.select_related("school").get(slug=slug))
         except Professor.DoesNotExist:
             return None
 
     def professor_by_id(self, professor_id):
         try:
-            return self._prof_to_dc(Professor.objects.get(pk=professor_id))
+            return self._prof_to_dc(
+                Professor.objects.select_related("school").get(pk=professor_id)
+            )
         except Professor.DoesNotExist:
             return None
 
     def professors_for_school(self, school_id):
-        return [self._prof_to_dc(p) for p in Professor.objects.filter(school_id=school_id, status="approved")]
+        qs = Professor.objects.filter(school_id=school_id, status="approved").select_related("school")
+        return [self._prof_to_dc(p) for p in qs]
 
     def review(self, review_id):
         try:

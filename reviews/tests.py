@@ -1305,6 +1305,25 @@ class QueryEfficiencyTests(TestCase):
         with self.assertNumQueries(2):
             self.repo.reviews_for(prof.id)
 
+    def test_professor_detail_reads_use_select_related(self):
+        """Detail-page reads join school in one query (no per-professor lookup)."""
+        from django.db import connection
+        from django.test.utils import CaptureQueriesContext
+        prof = self.repo.search("Айбек")[0]["prof"]
+        for read in (
+            lambda: self.repo.professor(prof.slug),
+            lambda: self.repo.professor_any(prof.slug),
+            lambda: self.repo.professor_by_id(prof.id),
+        ):
+            with self.assertNumQueries(1):
+                read()
+            with CaptureQueriesContext(connection) as ctx:
+                read()
+            self.assertEqual(len(ctx.captured_queries), 1)
+            sql = ctx.captured_queries[0]["sql"].lower()
+            self.assertIn("join", sql)
+            self.assertIn("school", sql)
+
     def test_school_stats_query_count_is_constant(self):
         school = self.repo.schools()[0]
         with self.assertNumQueries(4):
