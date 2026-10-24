@@ -812,6 +812,16 @@ class DesignAssetsTests(TestCase):
         self.assertIn(":focus-visible", css)
         self.assertIn("color-scheme", css)  # declared in base.html meta + tokens
 
+    def test_css_has_form_error_state_styles(self):
+        css = STATIC_CSS.read_text(encoding="utf-8")
+        self.assertIn(".form-actions", css)
+        self.assertIn(".has-error", css)
+        self.assertIn(".errorlist.nonfield", css)
+
+    def test_css_empty_card_spans_full_grid(self):
+        css = STATIC_CSS.read_text(encoding="utf-8")
+        self.assertRegex(css, r"\.cards\s+\.empty\s*\{[^}]*grid-column")
+
 
 class DesignContrastTests(TestCase):
     """WCAG 2.1 AA contrast checks for the CSS design tokens."""
@@ -932,6 +942,51 @@ class ProfessorCardsTests(_MemoryRepoTestCase):
         p = self.repo.add_professor(school.id, "Тихон", "Безотзывов", "Физика", "доцент")
         r = self.client.get(reverse("professor", args=[p.slug]))
         self.assertContains(r, 'aria-label="Нет оценок"')
+
+
+class FormStatesDesignTests(_MemoryRepoTestCase):
+    """UX: unified form markup, visible error states (field + non-field)."""
+
+    def test_review_form_uses_shared_field_markup_and_actions(self):
+        self.login()
+        r = self.client.get(reverse("review_new", args=[self.prof().slug]))
+        self.assertContains(r, 'class="form-actions"')
+        self.assertContains(r, 'class="cancel"')
+        self.assertContains(r, 'class="req"')  # required marker on obligatory fields
+
+    def test_review_form_marks_invalid_fields(self):
+        self.login()
+        prof = self.prof()
+        r = self.client.post(reverse("review_new", args=[prof.slug]), _valid({"comment": "коротко"}))
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, "has-error")
+        self.assertContains(r, "errorlist")
+
+    def test_add_professor_duplicate_error_is_visible(self):
+        # Non-field errors must render: duplicate-professor rejection
+        # is attached via form.add_error(None, ...).
+        self.login()
+        school = self.repo.schools()[0]
+        data = {"school": str(school.id), "first_name": "Тест", "last_name": "Тестов",
+                "department": "Кафедра теста", "title": "доцент"}
+        self.assertEqual(self.client.post(reverse("add_professor"), data).status_code, 302)
+        r = self.client.post(reverse("add_professor"), data)
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, "уже есть в этом вузе")
+        self.assertContains(r, "errorlist nonfield")
+
+    def test_login_uses_unified_fields_and_shows_nonfield_error(self):
+        r = self.client.get(reverse("login"))
+        self.assertContains(r, 'class="field"')
+        User.objects.create_user(username="u@example.com", email="u@example.com", password="pass12345")
+        r2 = self.client.post(reverse("login"), {"username": "u@example.com", "password": "wrongpass1"})
+        self.assertEqual(r2.status_code, 200)
+        self.assertContains(r2, "errorlist nonfield")
+
+    def test_signup_uses_unified_fields(self):
+        r = self.client.get(reverse("signup"))
+        self.assertContains(r, 'class="field"')
+        self.assertContains(r, 'class="form-actions"')
 
 
 class LanguageSwitchTests(TestCase):
