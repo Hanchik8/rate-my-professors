@@ -77,6 +77,13 @@ def _tone(overall):
     return "good" if overall >= 4 else "mid" if overall >= 3 else "bad"
 
 
+def _search_sort_key(sort):
+    """Sort key for professor search results: by rating (default) or review count."""
+    if sort == "reviews":
+        return lambda x: (-x["stats"]["count"], -x["stats"]["overall"], x["prof"].last_name)
+    return lambda x: (-x["stats"]["overall"], x["prof"].last_name)
+
+
 class InMemoryRepository:
     def __init__(self):
         self._schools, self._professors, self._reviews = {}, {}, {}
@@ -161,6 +168,9 @@ class InMemoryRepository:
     def cities(self):
         return sorted({s.city for s in self._schools.values()})
 
+    def departments(self):
+        return sorted({p.department for p in self._professors.values() if p.status == "approved"})
+
     def school(self, school_id):
         return self._schools.get(school_id)
 
@@ -219,8 +229,9 @@ class InMemoryRepository:
         avg = round(mean([self.stats(p.id)["overall"] for p in profs if self.stats(p.id)["count"]]), 1) if total_reviews else 0
         return {"prof_count": len(profs), "review_count": total_reviews, "avg_overall": avg}
 
-    def search(self, q="", school_slug="", city=""):
+    def search(self, q="", school_slug="", city="", department="", sort="rating"):
         q = q.lower().strip()
+        department = department.strip()
         out = []
         for p in self._professors.values():
             if p.status != "approved":
@@ -230,10 +241,12 @@ class InMemoryRepository:
                 continue
             if city and school.city != city:
                 continue
+            if department and p.department != department:
+                continue
             if q and q not in f"{p.full_name} {p.department}".lower():
                 continue
             out.append({"prof": p, "school": school, "stats": self.stats(p.id)})
-        out.sort(key=lambda x: (-x["stats"]["overall"], x["prof"].last_name))
+        out.sort(key=_search_sort_key(sort))
         return out
 
     def has_user_reviewed(self, professor_id, course, user):

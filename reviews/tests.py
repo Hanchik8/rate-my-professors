@@ -247,6 +247,24 @@ class RepositoryContractMixin:
         self.assertEqual(len(self.repo.search("", city="Бишкек")), 1)
         self.assertEqual(len(self.repo.search("", school_slug=s.slug)), 1)
 
+    def test_search_department_filter_and_sort(self):
+        s = self._school()
+        p1 = self.repo.add_professor(s.id, "Иван", "Петров", "Физика", "доцент")
+        p2 = self.repo.add_professor(s.id, "Пётр", "Сидоров", "Математика", "доцент")
+        self.repo.add_review(p1.id, _repo_review(course="К1", overall=4), status="approved")
+        self.repo.add_review(p1.id, _repo_review(course="К2", overall=4), status="approved")
+        self.repo.add_review(p2.id, _repo_review(course="К3", overall=5), status="approved")
+        # department filter
+        self.assertEqual([x["prof"].id for x in self.repo.search("", department="Физика")], [p1.id])
+        self.assertEqual([x["prof"].id for x in self.repo.search("", department="Математика")], [p2.id])
+        # sort by review count: p1 (2 reviews) comes first
+        by_reviews = self.repo.search("", sort="reviews")
+        self.assertEqual(by_reviews[0]["prof"].id, p1.id)
+        # sort by rating: p2 (overall 5) comes first
+        by_rating = self.repo.search("", sort="rating")
+        self.assertEqual(by_rating[0]["prof"].id, p2.id)
+        self.assertIn("Физика", self.repo.departments())
+
     def test_add_review_pending_then_approve_and_stats(self):
         s = self._school()
         p = self._prof(s.id)
@@ -411,6 +429,32 @@ class HomeViewTests(_MemoryRepoTestCase):
         r2 = self.client.get(reverse("home"), {"page": 2})
         self.assertEqual(r2.status_code, 200)
         self.assertLessEqual(len(r2.context["results"]), 10)
+
+    def test_home_department_filter(self):
+        r = self.client.get(reverse("home"), {"department": "Информатика"})
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, "Айбек")
+        self.assertContains(r, "Бакыт")
+        self.assertNotContains(r, "Волков")
+        self.assertIn("Информатика", r.context["departments"])
+
+    def test_home_sort_by_reviews(self):
+        r = self.client.get(reverse("home"), {"sort": "reviews"})
+        self.assertEqual(r.context["sort"], "reviews")
+        self.assertEqual(r.context["results"][0]["prof"].full_name, "Айбек Токтогулов")
+        self.assertGreaterEqual(r.context["results"][0]["stats"]["count"],
+                                r.context["results"][1]["stats"]["count"])
+
+    def test_home_sort_defaults_and_invalid(self):
+        self.assertEqual(self.client.get(reverse("home")).context["sort"], "rating")
+        self.assertEqual(self.client.get(reverse("home"), {"sort": "bogus"}).context["sort"], "rating")
+
+    def test_home_renders_department_and_sort_controls(self):
+        r = self.client.get(reverse("home"))
+        self.assertContains(r, 'name="department"')
+        self.assertContains(r, 'name="sort"')
+        self.assertContains(r, "По рейтингу")
+        self.assertContains(r, "По числу отзывов")
 
 
 class SchoolViewTests(_MemoryRepoTestCase):
