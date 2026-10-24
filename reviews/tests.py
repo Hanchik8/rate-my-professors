@@ -662,3 +662,72 @@ class DjangoViewCoverageTests(TestCase):
         self.assertEqual(self.repo.review(review.id).helpful, 1)
         self.client.post(reverse("review_report", args=[review.id]))
         self.assertEqual(Report.objects.filter(review_id=review.id).count(), 1)
+
+
+# ---------------------------------------------------------------------------
+# Security settings hardening
+# ---------------------------------------------------------------------------
+class SecuritySettingsTests(TestCase):
+    def test_x_frame_options_deny(self):
+        from django.conf import settings
+        self.assertEqual(settings.X_FRAME_OPTIONS, "DENY")
+
+    def test_password_validators_configured(self):
+        from django.conf import settings
+        names = [v["NAME"] for v in settings.AUTH_PASSWORD_VALIDATORS]
+        self.assertIn("django.contrib.auth.password_validation.MinimumLengthValidator", names)
+        self.assertIn("django.contrib.auth.password_validation.CommonPasswordValidator", names)
+        self.assertIn("django.contrib.auth.password_validation.NumericPasswordValidator", names)
+        self.assertIn(
+            "django.contrib.auth.password_validation.UserAttributeSimilarityValidator", names
+        )
+
+    def test_security_switches_off_when_debug(self):
+        from config import settings as site
+        sec = site._security_settings(debug=True)
+        self.assertFalse(sec["SECURE_SSL_REDIRECT"])
+        self.assertEqual(sec["SECURE_HSTS_SECONDS"], 0)
+        self.assertFalse(sec["SECURE_HSTS_INCLUDE_SUBDOMAINS"])
+        self.assertFalse(sec["SECURE_HSTS_PRELOAD"])
+        self.assertFalse(sec["SESSION_COOKIE_SECURE"])
+        self.assertFalse(sec["CSRF_COOKIE_SECURE"])
+        self.assertIsNone(sec["SECURE_PROXY_SSL_HEADER"])
+
+    def test_security_switches_on_in_production(self):
+        from config import settings as site
+        sec = site._security_settings(debug=False)
+        self.assertTrue(sec["SECURE_SSL_REDIRECT"])
+        self.assertGreater(sec["SECURE_HSTS_SECONDS"], 0)
+        self.assertTrue(sec["SECURE_HSTS_INCLUDE_SUBDOMAINS"])
+        self.assertTrue(sec["SECURE_HSTS_PRELOAD"])
+        self.assertTrue(sec["SESSION_COOKIE_SECURE"])
+        self.assertTrue(sec["CSRF_COOKIE_SECURE"])
+        self.assertEqual(sec["SECURE_PROXY_SSL_HEADER"], ("HTTP_X_FORWARDED_PROTO", "https"))
+
+    def test_nosniff_always_enabled(self):
+        from config import settings as site
+        self.assertTrue(site._security_settings(debug=True)["SECURE_CONTENT_TYPE_NOSNIFF"])
+        self.assertTrue(site._security_settings(debug=False)["SECURE_CONTENT_TYPE_NOSNIFF"])
+
+    def test_default_secret_key_rejected_in_production(self):
+        from django.core.exceptions import ImproperlyConfigured
+        from config import settings as site
+        with self.assertRaises(ImproperlyConfigured):
+            site._validate_secret_key(site.DEFAULT_SECRET_KEY, debug=False)
+
+    def test_custom_secret_key_accepted_in_production(self):
+        from config import settings as site
+        # must not raise
+        site._validate_secret_key("a-strong-unique-production-key", debug=False)
+
+    def test_default_secret_key_allowed_in_debug(self):
+        from config import settings as site
+        site._validate_secret_key(site.DEFAULT_SECRET_KEY, debug=True)
+
+    def test_current_secure_values_match_import_debug_flag(self):
+        from config import settings as site
+        # Module-level switches are derived at import from the DEBUG env value
+        # (Django later forces settings.DEBUG=False for the test run).
+        self.assertEqual(site.SECURE_SSL_REDIRECT, not site.DEBUG)
+        self.assertEqual(site.SESSION_COOKIE_SECURE, not site.DEBUG)
+        self.assertEqual(site.CSRF_COOKIE_SECURE, not site.DEBUG)
