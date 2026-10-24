@@ -12,6 +12,8 @@ from statistics import mean
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
+from .sanitize import MAX_COMMENT_LENGTH, clean_text
+
 # Теги адаптированы под вузы Кыргызстана — без упоминаний коррупции
 TAGS = [
     _("Строго оценивает"),
@@ -116,7 +118,10 @@ class InMemoryRepository:
 
     def add_review(self, professor_id, data, user=None, status=None):
         # limit one review per professor+course per user
-        course = data.get("course", "").strip()
+        course = clean_text(data.get("course") or "")
+        comment = clean_text(data.get("comment") or "")
+        if len(comment) > MAX_COMMENT_LENGTH:
+            raise ValueError("comment too long")
         if user is not None and course:
             key = (professor_id, course.lower(), getattr(user, 'id', user))
             if key in self._review_keys:
@@ -126,10 +131,10 @@ class InMemoryRepository:
             # новые отзывы от залогиненных — pending, анонимные/seed — approved
             status = "pending" if user is not None else "approved"
         r = Review(
-            professor_id=professor_id, course=course, term=data.get("term", ""),
+            professor_id=professor_id, course=course, term=clean_text(data.get("term") or ""),
             overall=data["overall"], difficulty=data["difficulty"],
             would_take_again=data["would_take_again"], grade=data.get("grade", ""),
-            comment=data["comment"], tags=list(data.get("tags", [])),
+            comment=comment, tags=list(data.get("tags", [])),
             status=status, author_id=getattr(user, 'id', None) if user else None,
         )
         self._reviews[r.id] = r

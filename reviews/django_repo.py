@@ -7,6 +7,7 @@ from django.utils.text import slugify
 
 from .models import Professor, Report, Review, School, Tag, Vote
 from .repository import _search_sort_key
+from .sanitize import MAX_COMMENT_LENGTH, clean_text
 
 
 def _tone(overall):
@@ -54,7 +55,10 @@ class DjangoRepository:
 
     def add_review(self, professor_id, data, user=None, status=None):
         prof = Professor.objects.get(pk=professor_id)
-        course = (data.get("course") or "").strip()
+        course = clean_text(data.get("course") or "")
+        comment = clean_text(data.get("comment") or "")
+        if len(comment) > MAX_COMMENT_LENGTH:
+            raise ValueError("comment too long")
         if status is None:
             status = "pending" if user is not None else "approved"
         try:
@@ -64,10 +68,10 @@ class DjangoRepository:
                     if exists:
                         raise ValueError("duplicate review")
                 r = Review.objects.create(
-                    professor=prof, course=course, term=data.get("term", ""),
+                    professor=prof, course=course, term=clean_text(data.get("term") or ""),
                     overall=data["overall"], difficulty=data["difficulty"],
                     would_take_again=data["would_take_again"], grade=data.get("grade", ""),
-                    comment=data["comment"], status=status, author=user,
+                    comment=comment, status=status, author=user,
                 )
                 for t in data.get("tags", []):
                     tag, _ = Tag.objects.get_or_create(name=str(t))

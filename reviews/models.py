@@ -6,6 +6,8 @@ from django.db.models import F, Q
 from django.db.models.functions import Lower
 from django.utils.text import slugify
 
+from .sanitize import MAX_COMMENT_LENGTH, clean_text
+
 
 class School(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -81,7 +83,7 @@ class Review(models.Model):
     difficulty = models.IntegerField()
     would_take_again = models.BooleanField()
     grade = models.CharField(max_length=20, blank=True)
-    comment = models.TextField()
+    comment = models.TextField(max_length=MAX_COMMENT_LENGTH)
     tags = models.ManyToManyField(Tag, blank=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="pending")
     author = models.ForeignKey(
@@ -104,6 +106,11 @@ class Review(models.Model):
                 condition=Q(author__isnull=False),
             ),
         ]
+
+    def clean(self):
+        # Defence in depth for admin/ORM writers: drop control characters and
+        # normalise line endings before validation.
+        self.comment = clean_text(self.comment)
 
     def __str__(self):
         return f"{self.professor} {self.course} {self.overall}"

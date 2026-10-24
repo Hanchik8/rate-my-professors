@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 
 from django.contrib.auth.models import User
-from django.test import TestCase
+from django.test import Client, TestCase
 from django.urls import reverse
 from django.utils import translation
 from django.utils.formats import localize
@@ -1296,3 +1296,199 @@ class ErrorPageTests(TestCase):
             with self.subTest(template=name):
                 text = (TEMPLATES_DIR / name).read_text(encoding="utf-8")
                 self.assertIn('extends "reviews/base.html"', text)
+
+
+# ---------------------------------------------------------------------------
+# Security: review-text sanitisation (control chars + length)
+# ---------------------------------------------------------------------------
+class TextSanitisationTests(TestCase):
+    def test_clean_text_strips_control_chars_and_normalises_newlines(self):
+        from .sanitize import clean_text
+        dirty = "  Первая\x00 строка\x07\r\nВторая\tстрока\x1b  "
+        cleaned = clean_text(dirty)
+        self.assertEqual(cleaned, "Первая строка\nВторая\tстрока")
+        self.assertFalse(any(ord(ch) < 32 and ch not in "\n\t" for ch in cleaned))
+
+    def test_comment_field_length_matches_shared_constant(self):
+        from .forms import ReviewForm
+        from .sanitize import MAX_COMMENT_LENGTH, MIN_COMMENT_LENGTH
+        field = ReviewForm().fields["comment"]
+        self.assertEqual(field.max_length, MAX_COMMENT_LENGTH)
+        self.assertEqual(field.min_length, MIN_COMMENT_LENGTH)
+
+    def test_model_comment_has_max_length(self):
+        from .models import Review
+        from .sanitize import MAX_COMMENT_LENGTH
+        self.assertEqual(Review._meta.get_field("comment").max_length, MAX_COMMENT_LENGTH)
+
+    def test_form_strips_control_chars_from_comment(self):
+        from .forms import ReviewForm
+        data = _valid({"comment": "Хороший курс\x07 с примерами\x1b и практикой."})
+        form = ReviewForm(data)
+        self.assertTrue(form.is_valid(), form.errors)
+        self.assertNotIn("\x07", form.cleaned_data["comment"])
+        self.assertNotIn("\x1b", form.cleaned_data["comment"])
+
+    def test_form_rejects_null_byte(self):
+        # Django's ProhibitNullCharactersValidator rejects NUL outright; that is
+        # even stricter than stripping, so the payload must never reach storage.
+        from .forms import ReviewForm
+        form = ReviewForm(_valid({"comment": "Нормальный отзыв\x00 с нулевым байтом."}))
+        self.assertFalse(form.is_valid())
+        self.assertIn("comment", form.errors)
+
+    def test_form_strips_control_chars_from_course_and_term(self):
+        from .forms import ReviewForm
+        form = ReviewForm(_valid({"course": "Ал\x07горитмы", "term": "Осен\x1bь 2025"}))
+        self.assertTrue(form.is_valid(), form.errors)
+        self.assertEqual(form.cleaned_data["course"], "Алгоритмы")
+        self.assertEqual(form.cleaned_data["term"], "Осень 2025")
+
+    def test_form_rejects_overlong_comment(self):
+        from .forms import ReviewForm
+        from .sanitize import MAX_COMMENT_LENGTH
+        form = ReviewForm(_valid({"comment": "я" * (MAX_COMMENT_LENGTH + 1)}))
+        self.assertFalse(form.is_valid())
+        self.assertIn("comment", form.errors)
+
+    def test_form_rejects_comment_too_short_after_cleaning(self):
+        from .forms import ReviewForm
+        from .sanitize import MIN_COMMENT_LENGTH
+        # 19 visible chars + padding controls pass the raw min_length check
+        form = ReviewForm(_valid({"comment": "х" * (MIN_COMMENT_LENGTH - 1) + "\x07\x07"}))
+        self.assertFalse(form.is_valid())
+        self.assertIn("comment", form.errors)
+
+    def test_repository_strips_control_chars(self):
+        repo = InMemoryRepository()
+        school = repo.add_school("Тестовый вуз", "Бишкек")
+        prof = repo.add_professor(school.id, "Иван", "Петров", "Физика", "доцент")
+        review = repo.add_review(prof.id, _repo_review(comment="Курс с\x00 примерами и практикой."))
+        self.assertNotIn("\x00", review.comment)
+
+    def test_repository_rejects_overlong_comment(self):
+        from .sanitize import MAX_COMMENT_LENGTH
+        repo = InMemoryRepository()
+        school = repo.add_school("Тестовый вуз", "Бишкек")
+        prof = repo.add_professor(school.id, "Иван", "Петров", "Физика", "доцент")
+        with self.assertRaises(ValueError):
+            repo.add_review(
+                prof.id,
+                _repo_review(course="Другой курс", comment="я" * (MAX_COMMENT_LENGTH + 1)),
+            )
+
+
+# ---------------------------------------------------------------------------
+# Security: XSS — user text must be HTML-escaped, never rendered raw
+# ---------------------------------------------------------------------------
+class ReviewEscapingTests(_MemoryRepoTestCase):
+    def test_comment_is_html_escaped_on_professor_page(self):
+        prof = self.prof()
+        payload = '<script>alert("xss")</script> и ещё текст'
+        self.repo.add_review(prof.id, _repo_review(comment=payload), status="approved")
+        r = self.client.get(reverse("professor", args=[prof.slug]))
+        self.assertNotContains(r, payload)
+        self.assertContains(r, "&lt;script&gt;alert")
+
+    def test_course_is_html_escaped_on_professor_page(self):
+        prof = self.prof()
+        self.repo.add_review(prof.id, _repo_review(course="<img src=x onerror=alert(1)>"), status="approved")
+        r = self.client.get(reverse("professor", args=[prof.slug]))
+        self.assertNotContains(r, "<img src=x onerror=alert(1)>")
+        self.assertContains(r, "&lt;img")
+
+    def test_search_query_is_html_escaped(self):
+        payload = "<script>alert(1)</script>"
+        r = self.client.get(reverse("home"), {"q": payload})
+        self.assertNotContains(r, payload)
+
+
+# ---------------------------------------------------------------------------
+# Security: CSRF — state-changing endpoints require a valid token
+# ---------------------------------------------------------------------------
+class CSRFProtectionTests(_MemoryRepoTestCase):
+    def _csrf_client_with_user(self, email="csrf@example.com"):
+        user = User.objects.create_user(username=email, email=email, password="pass12345")
+        client = Client(enforce_csrf_checks=True)
+        client.force_login(user)
+        return client
+
+    def test_vote_without_csrf_token_is_rejected(self):
+        review = self.repo.reviews_for(self.prof().id)[0]
+        client = self._csrf_client_with_user()
+        r = client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
+        self.assertEqual(r.status_code, 403)
+
+    def test_report_without_csrf_token_is_rejected(self):
+        review = self.repo.reviews_for(self.prof().id)[0]
+        client = self._csrf_client_with_user()
+        r = client.post(reverse("review_report", args=[review.id]))
+        self.assertEqual(r.status_code, 403)
+
+    def test_post_only_view_rejects_get(self):
+        review = self.repo.reviews_for(self.prof().id)[0]
+        self.login()
+        r = self.client.get(reverse("review_vote", args=[review.id]))
+        self.assertEqual(r.status_code, 405)
+
+    def test_review_form_renders_csrf_token(self):
+        self.login()
+        r = self.client.get(reverse("review_new", args=[self.prof().slug]))
+        self.assertContains(r, "csrfmiddlewaretoken")
+
+
+# ---------------------------------------------------------------------------
+# Security: open redirect — the `next` parameter must stay on this host
+# ---------------------------------------------------------------------------
+class OpenRedirectTests(TestCase):
+    def _user(self):
+        return User.objects.create_user(
+            username="redir@example.com", email="redir@example.com", password="pass12345",
+        )
+
+    def test_login_rejects_absolute_external_next(self):
+        self._user()
+        r = self.client.post(reverse("login"), {
+            "username": "redir@example.com", "password": "pass12345",
+            "next": "https://evil.example.com/phishing",
+        })
+        self.assertEqual(r.status_code, 302)
+        self.assertNotIn("evil.example.com", r.url)
+        self.assertEqual(r.url, reverse("home"))
+
+    def test_login_rejects_protocol_relative_next(self):
+        self._user()
+        r = self.client.post(reverse("login"), {
+            "username": "redir@example.com", "password": "pass12345",
+            "next": "//evil.example.com/x",
+        })
+        self.assertEqual(r.status_code, 302)
+        self.assertNotIn("evil.example.com", r.url)
+
+    def test_login_allows_same_host_next(self):
+        self._user()
+        r = self.client.post(reverse("login"), {
+            "username": "redir@example.com", "password": "pass12345",
+            "next": reverse("rules"),
+        })
+        self.assertEqual(r.status_code, 302)
+        self.assertEqual(r.url, reverse("rules"))
+
+    def test_login_page_does_not_render_unsafe_next(self):
+        r = self.client.get(reverse("login"), {"next": "https://evil.example.com"})
+        self.assertEqual(r.status_code, 200)
+        self.assertNotIn('value="https://evil.example.com"', r.content.decode())
+
+    def test_set_language_rejects_external_next(self):
+        r = self.client.post(reverse("set_language"), {
+            "language": "en", "next": "https://evil.example.com/phishing",
+        })
+        self.assertEqual(r.status_code, 302)
+        self.assertNotIn("evil.example.com", r.url)
+
+    def test_set_language_allows_same_host_next(self):
+        r = self.client.post(reverse("set_language"), {
+            "language": "en", "next": reverse("rules"),
+        })
+        self.assertEqual(r.status_code, 302)
+        self.assertIn(reverse("rules"), r.url)

@@ -2,6 +2,7 @@ from django import forms
 from django.utils.translation import gettext_lazy as _
 
 from .repository import GRADES, TAGS
+from .sanitize import MAX_COMMENT_LENGTH, MIN_COMMENT_LENGTH, clean_text
 
 SCORES = [(5, "5"), (4, "4"), (3, "3"), (2, "2"), (1, "1")]
 
@@ -40,7 +41,7 @@ class ReviewForm(forms.Form):
         label=_("Теги"), help_text=_("Выберите до 3"),
     )
     comment = forms.CharField(
-        min_length=20, max_length=1000,
+        min_length=MIN_COMMENT_LENGTH, max_length=MAX_COMMENT_LENGTH,
         widget=forms.Textarea(attrs={"rows": 6}),
         label=_("Ваш отзыв"),
         help_text=_("Не менее 20 символов. Пишите только об учёбе, без оскорблений и личных данных."),
@@ -48,10 +49,27 @@ class ReviewForm(forms.Form):
 
     def clean_course(self):
         # свободный текст, до 80 символов, без upper-case нормализации — только trim
-        return self.cleaned_data["course"].strip()
+        return clean_text(self.cleaned_data["course"])
+
+    def clean_term(self):
+        return clean_text(self.cleaned_data.get("term", ""))
+
+    def clean_comment(self):
+        # Контрольные символы удаляются, после чего длина проверяется повторно:
+        # «мусорные» символы не должны помогать обойти минимум.
+        comment = clean_text(self.cleaned_data["comment"])
+        if len(comment) < MIN_COMMENT_LENGTH:
+            raise forms.ValidationError(
+                _("Отзыв должен содержать не менее %(n)d символов.") % {"n": MIN_COMMENT_LENGTH}
+            )
+        if len(comment) > MAX_COMMENT_LENGTH:
+            raise forms.ValidationError(
+                _("Отзыв должен содержать не более %(n)d символов.") % {"n": MAX_COMMENT_LENGTH}
+            )
+        return comment
 
     def clean_tags(self):
-        tags = self.cleaned_data["tags"]
+        tags = [clean_text(t) for t in self.cleaned_data["tags"]]
         if len(tags) > 3:
             raise forms.ValidationError(_("Выберите не более 3 тегов."))
         return tags
@@ -79,3 +97,12 @@ class ProfessorForm(forms.Form):
         super().__init__(*args, **kwargs)
         if schools is not None:
             self.fields["school"].choices = [(str(s.id), s.name) for s in schools]
+
+    def clean_first_name(self):
+        return clean_text(self.cleaned_data["first_name"])
+
+    def clean_last_name(self):
+        return clean_text(self.cleaned_data["last_name"])
+
+    def clean_department(self):
+        return clean_text(self.cleaned_data["department"])
