@@ -55,7 +55,7 @@ def home(request):
 def _professor_or_404(slug):
     prof = repo.professor(slug)
     if prof is None:
-        raise Http404("Professor not found")
+        raise Http404(_("Professor not found"))
     return prof
 
 
@@ -84,7 +84,7 @@ def school_detail(request, slug):
         else next((s for s in repo.schools() if s.slug == slug), None)
     )
     if school is None:
-        raise Http404("School not found")
+        raise Http404(_("School not found"))
     results = [r for r in repo.search("", school_slug=school.slug)]
     # stats for school
     if hasattr(repo, "school_stats"):
@@ -149,7 +149,7 @@ def review_new(request, slug):
 def review_vote(request, review_id):
     review = repo.review(review_id)
     if review is None:
-        raise Http404("Review not found")
+        raise Http404(_("Review not found"))
     try:
         repo.vote(review_id, helpful=request.POST.get("vote") == "up", user=request.user)
     except ValueError:
@@ -165,7 +165,7 @@ def review_vote(request, review_id):
 def review_report(request, review_id):
     review = repo.review(review_id)
     if review is None:
-        raise Http404("Review not found")
+        raise Http404(_("Review not found"))
     if hasattr(repo, "report"):
         try:
             repo.report(review_id, user=request.user)

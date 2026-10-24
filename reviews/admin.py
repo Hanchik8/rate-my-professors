@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 from .models import Professor, Report, Review, School, Tag, Vote
 
@@ -30,13 +31,13 @@ class ProfessorAdmin(admin.ModelAdmin):
     search_fields = ["first_name", "last_name", "department"]
     actions = ["approve_selected"]
 
-    @admin.action(description="Одобрить выбранных преподавателей")
+    @admin.action(description=_("Одобрить выбранных преподавателей"))
     def approve_selected(self, request, queryset):
         queryset.update(status="approved")
 
     def full_name(self, obj):
         return obj.full_name
-    full_name.short_description = "ФИО"
+    full_name.short_description = _("ФИО")
 
 
 @admin.register(Review)
@@ -47,11 +48,11 @@ class ReviewAdmin(admin.ModelAdmin):
     actions = ["approve_selected", "reject_selected"]
     filter_horizontal = ["tags"]
 
-    @admin.action(description="Одобрить выбранные отзывы")
+    @admin.action(description=_("Одобрить выбранные отзывы"))
     def approve_selected(self, request, queryset):
         queryset.update(status="approved")
 
-    @admin.action(description="Отклонить выбранные отзывы")
+    @admin.action(description=_("Отклонить выбранные отзывы"))
     def reject_selected(self, request, queryset):
         queryset.update(status="rejected")
 

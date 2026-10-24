@@ -1115,6 +1115,65 @@ class LanguageSwitchTests(TestCase):
         r = self.client.get(reverse("home"))
         self.assertContains(r, "Правила")
 
+    def test_404_page_renders_in_selected_language(self):
+        self._switch("en")
+        r = self.client.get("/definitely-not-a-real-page/")
+        self.assertEqual(r.status_code, 404)
+        self.assertContains(r, "Page not found", status_code=404)
+        self.assertNotContains(r, "Страница не найдена", status_code=404)
+        self._switch("ky")
+        r2 = self.client.get("/definitely-not-a-real-page/")
+        self.assertContains(r2, "Барак табылган жок", status_code=404)
+
+
+class CatalogTranslationTests(TestCase):
+    """Previously untranslated views/forms/error-page strings now resolve."""
+
+    def test_error_page_strings(self):
+        with translation.override("en"):
+            self.assertEqual(translation.gettext("Страница не найдена"), "Page not found")
+            self.assertEqual(translation.gettext("Ошибка сервера"), "Server error")
+            self.assertEqual(translation.gettext("Вернуться на главную"), "Back to home")
+        with translation.override("ky"):
+            self.assertEqual(translation.gettext("Страница не найдена"), "Барак табылган жок")
+            self.assertEqual(translation.gettext("Ошибка сервера"), "Сервер катасы")
+
+    def test_form_length_validation_messages(self):
+        with translation.override("en"):
+            self.assertEqual(
+                translation.gettext("Отзыв должен содержать не менее %(n)d символов.") % {"n": 5},
+                "The review must contain at least 5 characters.",
+            )
+            self.assertEqual(
+                translation.gettext("Отзыв должен содержать не более %(n)d символов.") % {"n": 900},
+                "The review must not exceed 900 characters.",
+            )
+
+    def test_duplicate_review_message_uses_current_source_string(self):
+        with translation.override("en"):
+            self.assertEqual(
+                translation.gettext("Вы уже оставляли отзыв по этому предмету у этого преподавателя."),
+                "You have already left a review for this subject with this professor.",
+            )
+
+    def test_admin_action_labels_are_translated(self):
+        with translation.override("en"):
+            self.assertEqual(translation.gettext("ФИО"), "Full name")
+            self.assertEqual(
+                translation.gettext("Одобрить выбранных преподавателей"),
+                "Approve selected professors",
+            )
+            self.assertEqual(
+                translation.gettext("Отклонить выбранные отзывы"),
+                "Reject selected reviews",
+            )
+
+    def test_view_not_found_messages_are_translated(self):
+        with translation.override("ky"):
+            self.assertEqual(translation.gettext("Professor not found"), "Окутуучу табылган жок")
+            self.assertEqual(translation.gettext("School not found"), "ЖОЖ табылган жок")
+            self.assertEqual(translation.gettext("Review not found"), "Сын-пикир табылган жок")
+
 
 # ---------------------------------------------------------------------------
 # Anti-duplication / anti-race: DB constraints + atomic votes

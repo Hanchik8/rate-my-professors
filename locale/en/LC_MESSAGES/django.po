@@ -385,9 +385,6 @@ msgstr "Professors"
 msgid "Пока нет преподавателей."
 msgstr "No professors yet."
 
-msgid "Вы уже оставляли отзыв для этого предмета у этого преподавателя."
-msgstr "You have already left a review for this subject with this professor."
-
 msgid "Отзыв отправлен на модерацию. Спасибо!"
 msgstr "Review submitted for moderation. Thank you!"
 
@@ -424,3 +421,51 @@ msgstr "A professor with this full name already exists at this school."
 #| msgid "Имя преподавателя или кафедра"
 msgid "Преподаватель отправлен на модерацию."
 msgstr "Professor submitted for moderation."
+
+msgid "Вернуться на главную"
+msgstr "Back to home"
+
+msgid "Возможно, ссылка устарела или страница была удалена."
+msgstr "The link may be outdated or the page may have been removed."
+
+msgid "Вы уже оставляли отзыв по этому предмету у этого преподавателя."
+msgstr "You have already left a review for this subject with this professor."
+
+#, python-format
+msgid "Отзыв должен содержать не более %(n)d символов."
+msgstr "The review must not exceed %(n)d characters."
+
+#, python-format
+msgid "Отзыв должен содержать не менее %(n)d символов."
+msgstr "The review must contain at least %(n)d characters."
+
+msgid "Ошибка сервера"
+msgstr "Server error"
+
+msgid "Страница не найдена"
+msgstr "Page not found"
+
+msgid "Что-то пошло не так. Мы уже работаем над этим — попробуйте позже."
+msgstr ""
+"Something went wrong. We are already working on it — please try again later."
+
+msgid "Одобрить выбранных преподавателей"
+msgstr "Approve selected professors"
+
+msgid "Одобрить выбранные отзывы"
+msgstr "Approve selected reviews"
+
+msgid "Отклонить выбранные отзывы"
+msgstr "Reject selected reviews"
+
+msgid "ФИО"
+msgstr "Full name"
+
+msgid "Professor not found"
+msgstr "Professor not found"
+
+msgid "School not found"
+msgstr "School not found"
+
+msgid "Review not found"
+msgstr "Review not found"
