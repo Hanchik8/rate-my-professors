@@ -279,6 +279,7 @@ class DjangoRepository:
             qs = qs.filter(school__slug=school_slug)
         if city:
             qs = qs.filter(school__city=city)
+        department = department.strip()
         if department:
             qs = qs.filter(department=department)
         q = q.lower().strip()
