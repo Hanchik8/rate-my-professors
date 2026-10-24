@@ -1,4 +1,5 @@
 import uuid
+
 from django.conf import settings
 from django.db import models
 from django.db.models import F, Q
@@ -59,7 +60,8 @@ class Professor(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            base = slugify(f"{self.first_name} {self.last_name}", allow_unicode=True) or slugify(f"{self.first_name} {self.last_name}")
+            full = f"{self.first_name} {self.last_name}"
+            base = slugify(full, allow_unicode=True) or slugify(full)
             slug = base
             i = 1
             while Professor.objects.filter(slug=slug).exclude(pk=self.pk).exists():
@@ -82,7 +84,10 @@ class Review(models.Model):
     comment = models.TextField()
     tags = models.ManyToManyField(Tag, blank=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="pending")
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL, related_name="reviews")
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL, null=True, blank=True,
+        on_delete=models.SET_NULL, related_name="reviews",
+    )
     helpful = models.IntegerField(default=0)
     not_helpful = models.IntegerField(default=0)
     reported = models.IntegerField(default=0)

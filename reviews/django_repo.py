@@ -1,10 +1,11 @@
 from collections import Counter
 from statistics import mean
+
 from django.db import IntegrityError, transaction
-from django.db.models import Count, F
+from django.db.models import F
 from django.utils.text import slugify
 
-from .models import Professor, Review, School, Tag, Vote, Report
+from .models import Professor, Report, Review, School, Tag, Vote
 from .repository import _search_sort_key
 
 
@@ -28,7 +29,12 @@ class DjangoRepository:
 
     def add_professor(self, school_id, first, last, department, title, status="approved", user=None):
         school = School.objects.get(pk=school_id)
-        if Professor.objects.filter(school=school, first_name__iexact=first.strip(), last_name__iexact=last.strip()).exclude(status="rejected").exists():
+        dup_qs = Professor.objects.filter(
+            school=school,
+            first_name__iexact=first.strip(),
+            last_name__iexact=last.strip(),
+        ).exclude(status="rejected")
+        if dup_qs.exists():
             # fallback case-insensitive python check for SQLite
             for p in Professor.objects.filter(school=school).exclude(status="rejected"):
                 if p.full_name.lower() == f"{first} {last}".lower():
@@ -171,9 +177,15 @@ class DjangoRepository:
         qs = Review.objects.filter(professor_id=professor_id, status="approved")
         n = qs.count()
         dist = Counter(qs.values_list("overall", flat=True))
-        distribution = [{"score": s, "count": dist[s], "pct": round(100 * dist[s] / n) if n else 0} for s in range(5, 0, -1)]
+        distribution = [
+            {"score": s, "count": dist[s], "pct": round(100 * dist[s] / n) if n else 0}
+            for s in range(5, 0, -1)
+        ]
         if not n:
-            return {"count": 0, "overall": 0, "difficulty": 0, "wta_pct": None, "tone": "none", "distribution": distribution, "top_tags": []}
+            return {
+                "count": 0, "overall": 0, "difficulty": 0, "wta_pct": None,
+                "tone": "none", "distribution": distribution, "top_tags": [],
+            }
         overall = round(mean(qs.values_list("overall", flat=True)), 1)
         diff = round(mean(qs.values_list("difficulty", flat=True)), 1)
         wta = round(100 * qs.filter(would_take_again=True).count() / n)
@@ -183,7 +195,10 @@ class DjangoRepository:
             for t in r.tags.all():
                 tag_counts[str(t.name)] += 1
         top_tags = [t for t, _ in tag_counts.most_common(3)]
-        return {"count": n, "overall": overall, "difficulty": diff, "wta_pct": wta, "tone": _tone(overall), "distribution": distribution, "top_tags": top_tags}
+        return {
+            "count": n, "overall": overall, "difficulty": diff, "wta_pct": wta,
+            "tone": _tone(overall), "distribution": distribution, "top_tags": top_tags,
+        }
 
     def school_stats(self, school_id):
         profs = Professor.objects.filter(school_id=school_id, status="approved")
@@ -238,7 +253,11 @@ class DjangoRepository:
 
     def _prof_to_dc(self, p):
         from .repository import Professor as DCProf
-        return DCProf(id=str(p.pk), school_id=str(p.school_id), first_name=p.first_name, last_name=p.last_name, slug=p.slug, department=p.department, title=p.title, status=p.status)
+        return DCProf(
+            id=str(p.pk), school_id=str(p.school_id), first_name=p.first_name,
+            last_name=p.last_name, slug=p.slug, department=p.department,
+            title=p.title, status=p.status,
+        )
 
     def _review_to_dc(self, r):
         from .repository import Review as DCReview

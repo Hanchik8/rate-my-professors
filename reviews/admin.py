@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import School, Professor, Review, Tag, Vote, Report
+
+from .models import Professor, Report, Review, School, Tag, Vote
 
 
 @admin.register(School)

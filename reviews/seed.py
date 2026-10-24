@@ -88,7 +88,7 @@ REVIEWS = [  # (prof index, course, term, overall, difficulty, take again, grade
 
 def seed(repo):
     schools = [repo.add_school(n, c) for n, c in SCHOOLS]
-    profs = [repo.add_professor(schools[s].id, f, l, d, t) for s, f, l, d, t in PROFESSORS]
+    profs = [repo.add_professor(schools[s].id, f, last, d, t) for s, f, last, d, t in PROFESSORS]
     for pi, course, term, overall, diff, wta, grade, comment, tags in REVIEWS:
         repo.add_review(profs[pi].id, {
             "course": course, "term": term, "overall": overall, "difficulty": diff,

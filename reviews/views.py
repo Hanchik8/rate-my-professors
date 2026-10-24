@@ -1,7 +1,7 @@
+from django import forms
 from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.http import Http404
@@ -9,7 +9,6 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.decorators.http import require_POST
-from django import forms
 
 from .forms import ProfessorForm, ReviewForm
 from .store import repo
@@ -36,8 +35,14 @@ def home(request):
         "q": q, "school": school, "city": city,
         "department": department, "sort": sort,
         "schools": repo.schools(),
-        "cities": repo.cities() if hasattr(repo, "cities") else sorted({s.city for s in repo.schools()}),
-        "departments": repo.departments() if hasattr(repo, "departments") else sorted({r["prof"].department for r in repo.search()}),
+        "cities": (
+            repo.cities() if hasattr(repo, "cities")
+            else sorted({s.city for s in repo.schools()})
+        ),
+        "departments": (
+            repo.departments() if hasattr(repo, "departments")
+            else sorted({r["prof"].department for r in repo.search()})
+        ),
         "results": page_results,
         "page_obj": page_obj,
     })
@@ -69,7 +74,11 @@ def professor_detail(request, slug):
 
 
 def school_detail(request, slug):
-    school = repo.school_by_slug(slug) if hasattr(repo, "school_by_slug") else next((s for s in repo.schools() if s.slug == slug), None)
+    school = (
+        repo.school_by_slug(slug)
+        if hasattr(repo, "school_by_slug")
+        else next((s for s in repo.schools() if s.slug == slug), None)
+    )
     if school is None:
         raise Http404("School not found")
     results = [r for r in repo.search("", school_slug=school.slug)]
@@ -77,7 +86,11 @@ def school_detail(request, slug):
     if hasattr(repo, "school_stats"):
         stats = repo.school_stats(school.id)
     else:
-        stats = {"prof_count": len(results), "review_count": sum(x["stats"]["count"] for x in results), "avg_overall": 0}
+        stats = {
+            "prof_count": len(results),
+            "review_count": sum(x["stats"]["count"] for x in results),
+            "avg_overall": 0,
+        }
     departments = sorted({r["prof"].department for r in results})
     return render(request, "reviews/school.html", {
         "school": school, "results": results, "stats": stats, "departments": departments,
@@ -200,6 +213,8 @@ def add_professor(request):
     if request.method == "POST":
         form = ProfessorForm(request.POST, schools=schools)
         if form.is_valid():
+            repo_add = repo.add_professor
+            accepts_user = hasattr(repo_add, "__code__") and "user" in repo_add.__code__.co_varnames
             try:
                 repo.add_professor(
                     form.cleaned_data["school"],
@@ -208,7 +223,7 @@ def add_professor(request):
                     form.cleaned_data["department"].strip(),
                     form.cleaned_data["title"],
                     status="pending",
-                    user=request.user if hasattr(repo, "add_professor") and "user" in repo.add_professor.__code__.co_varnames else None,
+                    user=request.user if accepts_user else None,
                 )
             except TypeError:
                 # InMemoryRepository fallback without user param
@@ -221,7 +236,7 @@ def add_professor(request):
                         form.cleaned_data["title"],
                         status="pending",
                     )
-                except ValueError as e:
+                except ValueError:
                     form.add_error(None, _("Преподаватель с таким ФИО уже есть в этом вузе."))
                 else:
                     messages.success(request, _("Преподаватель отправлен на модерацию."))

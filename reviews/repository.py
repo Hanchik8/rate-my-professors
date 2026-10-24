@@ -101,7 +101,6 @@ class InMemoryRepository:
 
     def add_professor(self, school_id, first, last, department, title, status="approved"):
         # защита от дубля ФИО+вуз (case-insensitive)
-        key = (school_id, f"{first} {last}".strip().lower())
         for p in self._professors.values():
             if p.school_id == school_id and p.full_name.lower() == f"{first} {last}".lower() and p.status != "rejected":
                 raise ValueError("duplicate professor")
@@ -193,7 +192,10 @@ class InMemoryRepository:
         return self._reviews.get(review_id)
 
     def reviews_for(self, professor_id, sort="newest", include_pending=False):
-        rs = [r for r in self._reviews.values() if r.professor_id == professor_id and (include_pending or r.status == "approved")]
+        rs = [
+            r for r in self._reviews.values()
+            if r.professor_id == professor_id and (include_pending or r.status == "approved")
+        ]
         key = (lambda r: r.helpful - r.not_helpful) if sort == "helpful" else (lambda r: r.created_at)
         return sorted(rs, key=key, reverse=True)
 
@@ -226,7 +228,8 @@ class InMemoryRepository:
         if not profs:
             return {"prof_count": 0, "review_count": 0, "avg_overall": 0}
         total_reviews = sum(self.stats(p.id)["count"] for p in profs)
-        avg = round(mean([self.stats(p.id)["overall"] for p in profs if self.stats(p.id)["count"]]), 1) if total_reviews else 0
+        rated = [self.stats(p.id)["overall"] for p in profs if self.stats(p.id)["count"]]
+        avg = round(mean(rated), 1) if total_reviews else 0
         return {"prof_count": len(profs), "review_count": total_reviews, "avg_overall": avg}
 
     def search(self, q="", school_slug="", city="", department="", sort="rating"):

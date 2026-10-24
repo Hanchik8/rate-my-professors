@@ -2,15 +2,14 @@ import re
 from pathlib import Path
 
 from django.contrib.auth.models import User
-from django.test import TestCase, override_settings
+from django.test import TestCase
 from django.urls import reverse
 from django.utils import translation
 from django.utils.formats import localize
 
+from .django_repo import DjangoRepository
 from .repository import InMemoryRepository
 from .seed import seed
-from .store import repo as global_repo
-from .django_repo import DjangoRepository
 
 TEMPLATES_DIR = Path(__file__).parent / "templates"
 STATIC_CSS = Path(__file__).parent / "static" / "reviews" / "style.css"
@@ -48,8 +47,8 @@ class MemorySmokeTests(TestCase):
         v.repo = self.repo
 
     def tearDown(self):
-        from reviews import store as store_mod
         import reviews.views as v
+        from reviews import store as store_mod
         store_mod.repo = self._orig
         v.repo = self._orig_v
 
@@ -149,7 +148,10 @@ class MemorySmokeTests(TestCase):
         r2 = self.client.get(reverse("add_professor"))
         self.assertEqual(r2.status_code, 200)
         # add new prof
-        data = {"school": str(school.id), "first_name": "Тест", "last_name": "Тестов", "department": "Кафедра теста", "title": "доцент"}
+        data = {
+            "school": str(school.id), "first_name": "Тест", "last_name": "Тестов",
+            "department": "Кафедра теста", "title": "доцент",
+        }
         r3 = self.client.post(reverse("add_professor"), data)
         self.assertEqual(r3.status_code, 302)
         # duplicate
@@ -160,8 +162,8 @@ class MemorySmokeTests(TestCase):
 # Django ORM backend — same smoke with DB
 class DjangoSmokeTests(TestCase):
     def setUp(self):
-        from reviews import store as store_mod
         import reviews.views as v
+        from reviews import store as store_mod
         self.repo = DjangoRepository()
         # seed via models helper
         from reviews.management.commands.seed_kg import Command as SeedCmd
@@ -174,8 +176,8 @@ class DjangoSmokeTests(TestCase):
         v.repo = self.repo
 
     def tearDown(self):
-        from reviews import store as store_mod
         import reviews.views as v
+        from reviews import store as store_mod
         store_mod.repo = self._orig
         v.repo = self._orig_v
 
@@ -184,7 +186,11 @@ class DjangoSmokeTests(TestCase):
 
     def test_review_pending_not_visible(self):
         prof = self.repo.search("Айбек")[0]["prof"]
-        user = User.objects.create_user(username="django_tester@example.com", email="django_tester@example.com", password="pass12345")
+        user = User.objects.create_user(
+            username="django_tester@example.com",
+            email="django_tester@example.com",
+            password="pass12345",
+        )
         self.client.force_login(user)
         before = len(self.repo.reviews_for(prof.id))
         self.client.post(reverse("review_new", args=[prof.slug]), _valid())
@@ -387,8 +393,8 @@ class DjangoRepositoryContractTests(RepositoryContractMixin, TestCase):
 # ---------------------------------------------------------------------------
 class _MemoryRepoTestCase(TestCase):
     def setUp(self):
-        from reviews import store as store_mod
         import reviews.views as v
+        from reviews import store as store_mod
         self.repo = InMemoryRepository()
         seed(self.repo)
         self._orig = store_mod.repo
@@ -397,8 +403,8 @@ class _MemoryRepoTestCase(TestCase):
         v.repo = self.repo
 
     def tearDown(self):
-        from reviews import store as store_mod
         import reviews.views as v
+        from reviews import store as store_mod
         store_mod.repo = self._orig
         v.repo = self._orig_v
 
@@ -484,7 +490,11 @@ class ProfessorViewTests(_MemoryRepoTestCase):
     def test_professor_pending_review_not_shown(self):
         prof = self.prof()
         u = self.login()
-        self.repo.add_review(prof.id, _repo_review(course="Скрытый курс", comment="Скрытый комментарий достаточной длины."), user=u)
+        self.repo.add_review(
+            prof.id,
+            _repo_review(course="Скрытый курс", comment="Скрытый комментарий достаточной длины."),
+            user=u,
+        )
         r = self.client.get(reverse("professor", args=[prof.slug]))
         self.assertNotContains(r, "Скрытый комментарий достаточной длины.")
 
@@ -646,8 +656,8 @@ class AuthViewTests(TestCase):
 # ---------------------------------------------------------------------------
 class DjangoViewCoverageTests(TestCase):
     def setUp(self):
-        from reviews import store as store_mod
         import reviews.views as v
+        from reviews import store as store_mod
         self.repo = DjangoRepository()
         from reviews.management.commands.seed_kg import Command as SeedCmd
         SeedCmd().handle(clear=True)
@@ -657,8 +667,8 @@ class DjangoViewCoverageTests(TestCase):
         v.repo = self.repo
 
     def tearDown(self):
-        from reviews import store as store_mod
         import reviews.views as v
+        from reviews import store as store_mod
         store_mod.repo = self._orig
         v.repo = self._orig_v
 
@@ -763,6 +773,7 @@ class SecuritySettingsTests(TestCase):
 
     def test_default_secret_key_rejected_in_production(self):
         from django.core.exceptions import ImproperlyConfigured
+
         from config import settings as site
         with self.assertRaises(ImproperlyConfigured):
             site._validate_secret_key(site.DEFAULT_SECRET_KEY, debug=False)
@@ -918,7 +929,7 @@ class ProfessorCardsTests(_MemoryRepoTestCase):
 
     def test_home_card_without_reviews_shows_empty_stars(self):
         school = self.repo.schools()[0]
-        p = self.repo.add_professor(school.id, "Тихон", "Безотзывов", "Физика", "доцент")
+        self.repo.add_professor(school.id, "Тихон", "Безотзывов", "Физика", "доцент")
         r = self.client.get(reverse("home"), {"q": "Безотзывов"})
         self.assertContains(r, 'aria-label="Нет оценок"')
         self.assertNotContains(r, 'class="s-fill"')
@@ -1035,8 +1046,8 @@ class ReviewDeduplicationTests(TestCase):
     """One review per (professor, course, user) and one vote per (review, user)."""
 
     def setUp(self):
-        from reviews import store as store_mod
         import reviews.views as v
+        from reviews import store as store_mod
         self.repo = DjangoRepository()
         from reviews.management.commands.seed_kg import Command as SeedCmd
         SeedCmd().handle(clear=True)
@@ -1046,8 +1057,8 @@ class ReviewDeduplicationTests(TestCase):
         v.repo = self.repo
 
     def tearDown(self):
-        from reviews import store as store_mod
         import reviews.views as v
+        from reviews import store as store_mod
         store_mod.repo = self._orig
         v.repo = self._orig_v
 
@@ -1065,6 +1076,7 @@ class ReviewDeduplicationTests(TestCase):
 
     def test_duplicate_review_blocked_by_db_constraint(self):
         from django.db import IntegrityError, transaction
+
         from .models import Review
         prof = self._prof()
         u = self._user("dedup@example.com")
@@ -1094,6 +1106,7 @@ class ReviewDeduplicationTests(TestCase):
 
     def test_vote_is_unique_per_user_and_counted_once(self):
         from django.db import IntegrityError, transaction
+
         from .models import Vote
         prof = self._prof()
         review = self.repo.reviews_for(prof.id)[0]
