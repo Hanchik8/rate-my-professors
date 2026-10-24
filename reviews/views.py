@@ -94,16 +94,20 @@ def review_new(request, slug):
     if request.method == "POST":
         form = ReviewForm(request.POST)
         if form.is_valid():
-            try:
-                repo.add_review(prof.id, form.cleaned_data, user=request.user)
-            except ValueError as e:
-                if "duplicate" in str(e).lower():
-                    form.add_error("course", _("Вы уже оставляли отзыв для этого предмета у этого преподавателя."))
-                else:
-                    form.add_error(None, str(e))
+            course = form.cleaned_data["course"]
+            if repo.has_user_reviewed(prof.id, course, request.user):
+                form.add_error("course", _("Вы уже оставляли отзыв по этому предмету у этого преподавателя."))
             else:
-                messages.success(request, _("Отзыв отправлен на модерацию. Спасибо!"))
-                return redirect("professor", slug=prof.slug)
+                try:
+                    repo.add_review(prof.id, form.cleaned_data, user=request.user)
+                except ValueError as e:
+                    if "duplicate" in str(e).lower():
+                        form.add_error("course", _("Вы уже оставляли отзыв по этому предмету у этого преподавателя."))
+                    else:
+                        form.add_error(None, str(e))
+                else:
+                    messages.success(request, _("Отзыв отправлен на модерацию. Спасибо!"))
+                    return redirect("professor", slug=prof.slug)
     else:
         form = ReviewForm()
     return render(request, "reviews/review_form.html", {

@@ -1,6 +1,7 @@
 from collections import Counter
 from statistics import mean
-from django.db.models import Count
+from django.db import IntegrityError, transaction
+from django.db.models import Count, F
 from django.utils.text import slugify
 
 from .models import Professor, Review, School, Tag, Vote, Report
@@ -48,43 +49,49 @@ class DjangoRepository:
     def add_review(self, professor_id, data, user=None, status=None):
         prof = Professor.objects.get(pk=professor_id)
         course = (data.get("course") or "").strip()
-        if user is not None and course:
-            exists = Review.objects.filter(professor=prof, course__iexact=course, author=user).exists()
-            if exists:
-                raise ValueError("duplicate review")
         if status is None:
             status = "pending" if user is not None else "approved"
-        r = Review.objects.create(
-            professor=prof, course=course, term=data.get("term", ""),
-            overall=data["overall"], difficulty=data["difficulty"],
-            would_take_again=data["would_take_again"], grade=data.get("grade", ""),
-            comment=data["comment"], status=status, author=user,
-        )
-        for t in data.get("tags", []):
-            tag, _ = Tag.objects.get_or_create(name=str(t))
-            r.tags.add(tag)
+        try:
+            with transaction.atomic():
+                if user is not None and course:
+                    exists = Review.objects.filter(professor=prof, course__iexact=course, author=user).exists()
+                    if exists:
+                        raise ValueError("duplicate review")
+                r = Review.objects.create(
+                    professor=prof, course=course, term=data.get("term", ""),
+                    overall=data["overall"], difficulty=data["difficulty"],
+                    would_take_again=data["would_take_again"], grade=data.get("grade", ""),
+                    comment=data["comment"], status=status, author=user,
+                )
+                for t in data.get("tags", []):
+                    tag, _ = Tag.objects.get_or_create(name=str(t))
+                    r.tags.add(tag)
+        except IntegrityError:
+            raise ValueError("duplicate review")
         return self._review_to_dc(r)
 
     def vote(self, review_id, helpful, user=None):
-        r = Review.objects.get(pk=review_id)
-        if user is not None:
-            if Vote.objects.filter(review=r, user=user).exists():
-                raise ValueError("already voted")
-            Vote.objects.create(review=r, user=user, helpful=helpful)
-        if helpful:
-            r.helpful = r.helpful + 1
-        else:
-            r.not_helpful = r.not_helpful + 1
-        r.save(update_fields=["helpful", "not_helpful"])
+        with transaction.atomic():
+            r = Review.objects.select_for_update().get(pk=review_id)
+            if user is not None:
+                _, created = Vote.objects.get_or_create(
+                    review=r, user=user, defaults={"helpful": helpful}
+                )
+                if not created:
+                    raise ValueError("already voted")
+            if helpful:
+                Review.objects.filter(pk=review_id).update(helpful=F("helpful") + 1)
+            else:
+                Review.objects.filter(pk=review_id).update(not_helpful=F("not_helpful") + 1)
 
     def report(self, review_id, user=None):
-        r = Review.objects.get(pk=review_id)
-        if user is not None and Report.objects.filter(review=r, user=user).exists():
-            return
-        if user is not None:
-            Report.objects.create(review=r, user=user)
-        r.reported = r.reported + 1
-        r.save(update_fields=["reported"])
+        with transaction.atomic():
+            r = Review.objects.select_for_update().get(pk=review_id)
+            if user is not None:
+                _, created = Report.objects.get_or_create(review=r, user=user)
+                if not created:
+                    return
+            Review.objects.filter(pk=review_id).update(reported=F("reported") + 1)
 
     def approve_review(self, review_id):
         Review.objects.filter(pk=review_id).update(status="approved")

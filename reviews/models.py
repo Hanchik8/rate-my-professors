@@ -1,6 +1,8 @@
 import uuid
 from django.conf import settings
 from django.db import models
+from django.db.models import F, Q
+from django.db.models.functions import Lower
 from django.utils.text import slugify
 
 
@@ -89,7 +91,13 @@ class Review(models.Model):
     class Meta:
         ordering = ["-created_at"]
         constraints = [
-            # one review per professor+course per user is enforced in repository, not DB (author can be null)
+            # Один отзыв от одного пользователя на предмет у преподавателя.
+            # Условие author__isnull=False оставляет анонимные/seed-отзывы без ограничения.
+            models.UniqueConstraint(
+                Lower("course"), F("professor"), F("author"),
+                name="uniq_review_prof_author_course",
+                condition=Q(author__isnull=False),
+            ),
         ]
 
     def __str__(self):
@@ -103,7 +111,9 @@ class Vote(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = [("review", "user")]
+        constraints = [
+            models.UniqueConstraint(fields=["review", "user"], name="uniq_vote_review_user"),
+        ]
 
 
 class Report(models.Model):
@@ -112,4 +122,6 @@ class Report(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = [("review", "user")]
+        constraints = [
+            models.UniqueConstraint(fields=["review", "user"], name="uniq_report_review_user"),
+        ]

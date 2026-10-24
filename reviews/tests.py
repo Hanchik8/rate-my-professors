@@ -1026,3 +1026,95 @@ class LanguageSwitchTests(TestCase):
         self._switch("de")
         r = self.client.get(reverse("home"))
         self.assertContains(r, "Правила")
+
+
+# ---------------------------------------------------------------------------
+# Anti-duplication / anti-race: DB constraints + atomic votes
+# ---------------------------------------------------------------------------
+class ReviewDeduplicationTests(TestCase):
+    """One review per (professor, course, user) and one vote per (review, user)."""
+
+    def setUp(self):
+        from reviews import store as store_mod
+        import reviews.views as v
+        self.repo = DjangoRepository()
+        from reviews.management.commands.seed_kg import Command as SeedCmd
+        SeedCmd().handle(clear=True)
+        self._orig = store_mod.repo
+        self._orig_v = v.repo
+        store_mod.repo = self.repo
+        v.repo = self.repo
+
+    def tearDown(self):
+        from reviews import store as store_mod
+        import reviews.views as v
+        store_mod.repo = self._orig
+        v.repo = self._orig_v
+
+    def _user(self, email):
+        return User.objects.create_user(username=email, email=email, password="pass12345")
+
+    def _prof(self):
+        return self.repo.search("Айбек")[0]["prof"]
+
+    def test_models_declare_named_unique_constraints(self):
+        from .models import Report, Review, Vote
+        self.assertIn("uniq_review_prof_author_course", {c.name for c in Review._meta.constraints})
+        self.assertIn("uniq_vote_review_user", {c.name for c in Vote._meta.constraints})
+        self.assertIn("uniq_report_review_user", {c.name for c in Report._meta.constraints})
+
+    def test_duplicate_review_blocked_by_db_constraint(self):
+        from django.db import IntegrityError, transaction
+        from .models import Review
+        prof = self._prof()
+        u = self._user("dedup@example.com")
+        self.repo.add_review(prof.id, _repo_review(course="Algorithms"), user=u)
+        # Bypass repository guard: the DB constraint must reject the duplicate.
+        with self.assertRaises(IntegrityError):
+            with transaction.atomic():
+                Review.objects.create(
+                    professor_id=prof.id, course="algorithms", overall=4, difficulty=3,
+                    would_take_again=True, comment="Достаточно длинный тестовый комментарий.",
+                    status="pending", author=u,
+                )
+
+    def test_anonymous_reviews_are_not_constrained(self):
+        from .models import Review
+        prof = self._prof()
+        Review.objects.create(
+            professor_id=prof.id, course="Алгоритмы и структуры данных", overall=5, difficulty=3,
+            would_take_again=True, comment="Анонимный отзыв.", status="approved", author=None,
+        )
+        self.assertGreaterEqual(
+            Review.objects.filter(
+                professor_id=prof.id, course="Алгоритмы и структуры данных", author__isnull=True
+            ).count(),
+            2,
+        )
+
+    def test_vote_is_unique_per_user_and_counted_once(self):
+        from django.db import IntegrityError, transaction
+        from .models import Vote
+        prof = self._prof()
+        review = self.repo.reviews_for(prof.id)[0]
+        u = self._user("atomic_vote@example.com")
+        self.repo.vote(review.id, helpful=True, user=u)
+        self.assertEqual(self.repo.review(review.id).helpful, 1)
+        with self.assertRaises(ValueError):
+            self.repo.vote(review.id, helpful=True, user=u)
+        self.assertEqual(self.repo.review(review.id).helpful, 1)
+        with self.assertRaises(IntegrityError):
+            with transaction.atomic():
+                Vote.objects.create(review_id=review.id, user=u, helpful=True)
+
+    def test_duplicate_review_view_shows_message(self):
+        from .models import Review
+        prof = self._prof()
+        u = self._user("dupview@example.com")
+        self.client.force_login(u)
+        url = reverse("review_new", args=[prof.slug])
+        self.assertEqual(self.client.post(url, _valid()).status_code, 302)
+        r = self.client.post(url, _valid())
+        self.assertEqual(r.status_code, 200)
+        self.assertIn("course", r.context["form"].errors)
+        self.assertEqual(Review.objects.filter(professor_id=prof.id, course="Алгоритмы", author=u).count(), 1)
