@@ -7,6 +7,11 @@
     <h1>{{ prof.full_name }}</h1>
     <p class="sub">{{ prof.title }} — {{ prof.department }}, <a href="{% url 'school_detail' school.slug %}">{{ school.name }}</a></p>
   </div>
+  {% if stats.count %}
+  <span class="stars" role="img" aria-label="{% blocktranslate with rating=stats.overall %}Рейтинг {{ rating }} из 5{% endblocktranslate %}"><span aria-hidden="true">★★★★★</span><span class="s-fill" aria-hidden="true" style="width:{% widthratio stats.overall 5 100 %}%">★★★★★</span></span>
+  {% else %}
+  <span class="stars" role="img" aria-label="{% translate 'Нет оценок' %}"><span aria-hidden="true">★★★★★</span></span>
+  {% endif %}
 </div>
 
 {% if stats.count %}

@@ -1,11 +1,19 @@
+import re
+from pathlib import Path
+
 from django.contrib.auth.models import User
 from django.test import TestCase, override_settings
 from django.urls import reverse
+from django.utils import translation
+from django.utils.formats import localize
 
 from .repository import InMemoryRepository
 from .seed import seed
 from .store import repo as global_repo
 from .django_repo import DjangoRepository
+
+TEMPLATES_DIR = Path(__file__).parent / "templates"
+STATIC_CSS = Path(__file__).parent / "static" / "reviews" / "style.css"
 
 
 def _valid(overrides=None):
@@ -731,3 +739,152 @@ class SecuritySettingsTests(TestCase):
         self.assertEqual(site.SECURE_SSL_REDIRECT, not site.DEBUG)
         self.assertEqual(site.SESSION_COOKIE_SECURE, not site.DEBUG)
         self.assertEqual(site.CSRF_COOKIE_SECURE, not site.DEBUG)
+
+
+# ---------------------------------------------------------------------------
+# UX design: responsive layout, professor cards, rating stars, a11y
+# ---------------------------------------------------------------------------
+class DesignAssetsTests(TestCase):
+    """Static design assets: no external CDNs, responsive + a11y primitives."""
+
+    def _templates(self):
+        return [p for p in TEMPLATES_DIR.rglob("*.html")]
+
+    def test_templates_have_no_external_resources(self):
+        for path in self._templates():
+            with self.subTest(template=path.name):
+                self.assertNotRegex(path.read_text(encoding="utf-8"), r"https?://")
+
+    def test_css_has_no_external_urls(self):
+        css = STATIC_CSS.read_text(encoding="utf-8")
+        self.assertNotRegex(css, r"url\(\s*['\"]?https?://")
+        self.assertNotIn("@import", css)
+        self.assertNotIn("fonts.googleapis", css)
+
+    def test_css_is_responsive_and_motion_safe(self):
+        css = STATIC_CSS.read_text(encoding="utf-8")
+        self.assertIn("@media", css)
+        self.assertIn("prefers-reduced-motion", css)
+        self.assertIn(":focus-visible", css)
+        self.assertIn("color-scheme", css)  # declared in base.html meta + tokens
+
+
+class DesignContrastTests(TestCase):
+    """WCAG 2.1 AA contrast checks for the CSS design tokens."""
+
+    @classmethod
+    def _tokens(cls):
+        css = STATIC_CSS.read_text(encoding="utf-8")
+        root = re.search(r":root\s*\{([^}]*)\}", css).group(1)
+        return dict(re.findall(r"--([a-z0-9-]+)\s*:\s*(#[0-9a-fA-F]{6})", root))
+
+    @staticmethod
+    def _luminance(hex_color):
+        def channel(v):
+            v = v / 255
+            return v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4
+        r, g, b = (int(hex_color[i:i + 2], 16) for i in (1, 3, 5))
+        return 0.2126 * channel(r) + 0.7152 * channel(g) + 0.0722 * channel(b)
+
+    @classmethod
+    def _ratio(cls, fg, bg):
+        l1, l2 = sorted((cls._luminance(fg), cls._luminance(bg)), reverse=True)
+        return (l1 + 0.05) / (l2 + 0.05)
+
+    def test_text_pairs_meet_aa_4_5(self):
+        t = self._tokens()
+        pairs = [
+            ("ink", "bg"), ("ink", "surface"),
+            ("muted", "bg"), ("muted", "surface"),
+            ("accent", "surface"), ("accent", "bg"),
+            ("good-ink", "good-bg"), ("mid-ink", "mid-bg"),
+            ("bad-ink", "bad-bg"), ("none-ink", "none-bg"),
+        ]
+        for fg, bg in pairs:
+            with self.subTest(pair=f"{fg} on {bg}"):
+                self.assertGreaterEqual(self._ratio(t[fg], t[bg]), 4.5)
+
+    def test_star_graphic_meets_3_to_1(self):
+        t = self._tokens()
+        self.assertGreaterEqual(self._ratio(t["star"], t["surface"]), 3.0)
+
+    def test_white_text_on_accent_button_meets_aa(self):
+        t = self._tokens()
+        self.assertGreaterEqual(self._ratio("#ffffff", t["accent"]), 4.5)
+        self.assertGreaterEqual(self._ratio("#ffffff", t["accent-strong"]), 4.5)
+
+
+class HeaderLayoutTests(_MemoryRepoTestCase):
+    """Modern header: skip link, burger toggle, i18n language switch."""
+
+    def test_header_has_skip_link_and_target(self):
+        r = self.client.get(reverse("home"))
+        self.assertContains(r, 'class="skip-link"')
+        self.assertContains(r, 'href="#main-content"')
+        self.assertContains(r, 'id="main-content"')
+
+    def test_header_has_burger_toggle(self):
+        r = self.client.get(reverse("home"))
+        self.assertContains(r, 'class="nav-toggle"')
+        self.assertContains(r, 'aria-expanded="false"')
+        self.assertContains(r, 'aria-controls="site-nav"')
+        self.assertContains(r, 'id="site-nav"')
+        self.assertContains(r, 'aria-label="Меню"')
+        # inline toggle script (no external JS)
+        self.assertContains(r, "nav-toggle")
+
+    def test_header_keeps_language_switch(self):
+        r = self.client.get(reverse("home"))
+        self.assertContains(r, 'name="language"')
+        self.assertContains(r, 'aria-label="Язык"')
+
+    def test_header_logged_in_shows_logout(self):
+        self.login()
+        r = self.client.get(reverse("home"))
+        self.assertContains(r, "Выйти")
+        self.assertNotContains(r, ">Регистрация</a>")
+
+
+class ProfessorCardsTests(_MemoryRepoTestCase):
+    """Professor list renders as cards with star ratings."""
+
+    def test_home_renders_cards_with_stars(self):
+        r = self.client.get(reverse("home"))
+        self.assertContains(r, 'class="card"')
+        self.assertContains(r, 'class="card-name"')
+        self.assertContains(r, "★★★★★")
+        self.assertContains(r, 'class="s-fill"')
+
+    def test_home_card_star_aria_label_matches_rating(self):
+        r = self.client.get(reverse("home"))
+        first = r.context["results"][0]["stats"]
+        with translation.override("ru"):
+            self.assertContains(r, f'aria-label="Рейтинг {localize(first["overall"])} из 5"')
+        self.assertContains(r, 'class="s-fill" aria-hidden="true" style="width:')
+
+    def test_home_card_without_reviews_shows_empty_stars(self):
+        school = self.repo.schools()[0]
+        p = self.repo.add_professor(school.id, "Тихон", "Безотзывов", "Физика", "доцент")
+        r = self.client.get(reverse("home"), {"q": "Безотзывов"})
+        self.assertContains(r, 'aria-label="Нет оценок"')
+        self.assertNotContains(r, 'class="s-fill"')
+
+    def test_school_page_renders_cards_with_stars(self):
+        school = self.repo.schools()[0]
+        r = self.client.get(reverse("school_detail", args=[school.slug]))
+        self.assertContains(r, 'class="card"')
+        self.assertContains(r, "★★★★★")
+
+    def test_professor_page_shows_stars(self):
+        prof = self.prof()
+        stats = self.repo.stats(prof.id)
+        r = self.client.get(reverse("professor", args=[prof.slug]))
+        self.assertContains(r, "★★★★★")
+        with translation.override("ru"):
+            self.assertContains(r, f'aria-label="Рейтинг {localize(stats["overall"])} из 5"')
+
+    def test_professor_page_without_reviews_shows_empty_stars(self):
+        school = self.repo.schools()[0]
+        p = self.repo.add_professor(school.id, "Тихон", "Безотзывов", "Физика", "доцент")
+        r = self.client.get(reverse("professor", args=[p.slug]))
+        self.assertContains(r, 'aria-label="Нет оценок"')

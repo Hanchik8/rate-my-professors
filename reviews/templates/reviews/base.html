@@ -3,21 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>{% block title %}ProfLens{% endblock %}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'reviews/style.css' %}">
 </head>
 <body>
+<a class="skip-link" href="#main-content">{% translate "Перейти к содержимому" %}</a>
 <header class="top">
   <div class="top-inner">
-    <a class="brand" href="{% url 'home' %}">ProfLens</a>
-    <nav class="nav">
+    <a class="brand" href="{% url 'home' %}"><span class="brand-mark" aria-hidden="true">P</span>ProfLens</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="{% translate 'Меню' %}">
+      <span class="burger" aria-hidden="true"></span>
+    </button>
+    <nav class="nav" id="site-nav" aria-label="{% translate 'Основная навигация' %}">
       <a href="{% url 'rules' %}">{% translate "Правила" %}</a>
       <a href="{% url 'add_professor' %}">{% translate "Добавить преподавателя" %}</a>
       {% if user.is_authenticated %}
-        <span class="muted">{{ user.email|default:user.username }}</span>
+        <span class="muted nav-user">{{ user.email|default:user.username }}</span>
         <form method="post" action="{% url 'logout' %}" class="inline">{% csrf_token %}<button class="link-btn" type="submit">{% translate "Выйти" %}</button></form>
       {% else %}
         <a href="{% url 'login' %}">{% translate "Вход" %}</a>
@@ -34,10 +36,31 @@
     </nav>
   </div>
 </header>
-{% if messages %}<ul class="messages">{% for m in messages %}<li class="{{ m.tags }}">{{ m }}</li>{% endfor %}</ul>{% endif %}
-<main>{% block content %}{% endblock %}</main>
+{% if messages %}<ul class="messages" role="list">{% for m in messages %}<li class="{{ m.tags }}" role="status">{{ m }}</li>{% endfor %}</ul>{% endif %}
+<main id="main-content">{% block content %}{% endblock %}</main>
 <footer>
   <a href="{% url 'rules' %}">{% translate "Правила" %}</a> · {% translate "Демо-данные сбрасываются при рестарте (memory-режим)." %}
 </footer>
+<script>
+(function () {
+  "use strict";
+  var toggle = document.querySelector(".nav-toggle");
+  if (!toggle) { return; }
+  toggle.addEventListener("click", function () {
+    var open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+    var nav = document.getElementById(toggle.getAttribute("aria-controls"));
+    if (nav) { nav.classList.toggle("open", !open); }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+      toggle.setAttribute("aria-expanded", "false");
+      var nav = document.getElementById(toggle.getAttribute("aria-controls"));
+      if (nav) { nav.classList.remove("open"); }
+      toggle.focus();
+    }
+  });
+})();
+</script>
 </body>
 </html>
