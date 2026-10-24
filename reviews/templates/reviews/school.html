@@ -32,4 +32,11 @@
   </li>
   {% empty %}<li class="empty">{% translate "Пока нет преподавателей." %}</li>{% endfor %}
 </ol>
+{% if page_obj %}
+<div class="pagination">
+  {% if page_obj.has_previous %}<a href="?page={{ page_obj.previous_page_number }}">{% translate "Назад" %}</a>{% endif %}
+  <span>{% blocktranslate with n=page_obj.number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}</span>
+  {% if page_obj.has_next %}<a href="?page={{ page_obj.next_page_number }}">{% translate "Вперёд" %}</a>{% endif %}
+</div>
+{% endif %}
 {% endblock %}

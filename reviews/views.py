@@ -92,8 +92,17 @@ def school_detail(request, slug):
             "avg_overall": 0,
         }
     departments = sorted({r["prof"].department for r in results})
+    paginator = Paginator(results, 10)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    if paginator.num_pages <= 1:
+        page_obj = None
+        page_results = results
+    else:
+        page_results = page_obj.object_list
     return render(request, "reviews/school.html", {
-        "school": school, "results": results, "stats": stats, "departments": departments,
+        "school": school, "results": page_results, "stats": stats,
+        "departments": departments, "page_obj": page_obj,
     })
 
 

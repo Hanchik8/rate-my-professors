@@ -2,7 +2,7 @@ from collections import Counter
 from statistics import mean
 
 from django.db import IntegrityError, transaction
-from django.db.models import F
+from django.db.models import Avg, Count, F, Q
 from django.utils.text import slugify
 
 from .models import Professor, Report, Review, School, Tag, Vote
@@ -173,47 +173,95 @@ class DjangoRepository:
             qs = qs.filter(status="approved")
         return [self._review_to_dc(r) for r in qs]
 
-    def stats(self, professor_id):
-        qs = Review.objects.filter(professor_id=professor_id, status="approved")
-        n = qs.count()
-        dist = Counter(qs.values_list("overall", flat=True))
-        distribution = [
-            {"score": s, "count": dist[s], "pct": round(100 * dist[s] / n) if n else 0}
-            for s in range(5, 0, -1)
-        ]
-        if not n:
-            return {
-                "count": 0, "overall": 0, "difficulty": 0, "wta_pct": None,
-                "tone": "none", "distribution": distribution, "top_tags": [],
-            }
-        overall = round(mean(qs.values_list("overall", flat=True)), 1)
-        diff = round(mean(qs.values_list("difficulty", flat=True)), 1)
-        wta = round(100 * qs.filter(would_take_again=True).count() / n)
-        # top tags
-        tag_counts = Counter()
-        for r in qs.prefetch_related("tags"):
-            for t in r.tags.all():
-                tag_counts[str(t.name)] += 1
-        top_tags = [t for t, _ in tag_counts.most_common(3)]
+    @staticmethod
+    def _empty_stats():
         return {
-            "count": n, "overall": overall, "difficulty": diff, "wta_pct": wta,
-            "tone": _tone(overall), "distribution": distribution, "top_tags": top_tags,
+            "count": 0, "overall": 0, "difficulty": 0, "wta_pct": None,
+            "tone": "none",
+            "distribution": [{"score": s, "count": 0, "pct": 0} for s in range(5, 0, -1)],
+            "top_tags": [],
         }
 
+    def _stats_map(self, professor_ids):
+        """Stats for many professors in a constant number of queries (no N+1)."""
+        ids = [str(i) for i in professor_ids]
+        out = {pid: self._empty_stats() for pid in ids}
+        if not ids:
+            return out
+
+        # 1) aggregates per professor
+        aggregates = (
+            Review.objects.filter(professor_id__in=ids, status="approved")
+            .values("professor_id")
+            .annotate(
+                n=Count("id"),
+                avg_overall=Avg("overall"),
+                avg_difficulty=Avg("difficulty"),
+                wta=Count("id", filter=Q(would_take_again=True)),
+            )
+            .order_by()
+        )
+        for row in aggregates:
+            pid = str(row["professor_id"])
+            n = row["n"]
+            overall = round(row["avg_overall"], 1)
+            out[pid].update({
+                "count": n,
+                "overall": overall,
+                "difficulty": round(row["avg_difficulty"], 1),
+                "wta_pct": round(100 * row["wta"] / n) if n else None,
+                "tone": _tone(overall),
+            })
+
+        # 2) rating distribution per professor
+        dist_map = {}
+        for row in (
+            Review.objects.filter(professor_id__in=ids, status="approved")
+            .values("professor_id", "overall")
+            .annotate(c=Count("id"))
+            .order_by()
+        ):
+            dist_map.setdefault(str(row["professor_id"]), {})[row["overall"]] = row["c"]
+        for pid, counts in dist_map.items():
+            n = out[pid]["count"]
+            out[pid]["distribution"] = [
+                {"score": s, "count": counts.get(s, 0),
+                 "pct": round(100 * counts.get(s, 0) / n) if n else 0}
+                for s in range(5, 0, -1)
+            ]
+
+        # 3) top tags per professor
+        tag_map = {}
+        for row in (
+            Review.objects.filter(professor_id__in=ids, status="approved")
+            .exclude(tags__isnull=True)
+            .values("professor_id", "tags__name")
+            .annotate(c=Count("id"))
+            .order_by()
+        ):
+            tag_map.setdefault(str(row["professor_id"]), Counter())[str(row["tags__name"])] += row["c"]
+        for pid, counter in tag_map.items():
+            out[pid]["top_tags"] = [t for t, _ in counter.most_common(3)]
+
+        return out
+
+    def stats(self, professor_id):
+        return self._stats_map([professor_id])[str(professor_id)]
+
     def school_stats(self, school_id):
-        profs = Professor.objects.filter(school_id=school_id, status="approved")
-        n = profs.count()
+        prof_ids = list(
+            Professor.objects.filter(school_id=school_id, status="approved")
+            .values_list("pk", flat=True)
+        )
+        n = len(prof_ids)
         if not n:
             return {"prof_count": 0, "review_count": 0, "avg_overall": 0}
-        total = Review.objects.filter(professor__school_id=school_id, status="approved").count()
+        stats_map = self._stats_map(prof_ids)
+        total = sum(s["count"] for s in stats_map.values())
         if not total:
             return {"prof_count": n, "review_count": 0, "avg_overall": 0}
-        avgs = []
-        for p in profs:
-            s = self.stats(str(p.pk))
-            if s["count"]:
-                avgs.append(s["overall"])
-        avg = round(mean(avgs), 1) if avgs else 0
+        rated = [s["overall"] for s in stats_map.values() if s["count"]]
+        avg = round(mean(rated), 1) if rated else 0
         return {"prof_count": n, "review_count": total, "avg_overall": avg}
 
     def search(self, q="", school_slug="", city="", department="", sort="rating"):
@@ -225,14 +273,16 @@ class DjangoRepository:
         if department:
             qs = qs.filter(department=department)
         q = q.lower().strip()
+        # filter in python for case-insensitive unicode
+        profs = [p for p in qs if not q or q in f"{p.full_name} {p.department}".lower()]
+        stats_map = self._stats_map(p.pk for p in profs)
         out = []
-        for p in qs:
-            # filter in python for case-insensitive unicode
-            if q and q not in f"{p.full_name} {p.department}".lower():
-                continue
-            dc = self._prof_to_dc(p)
-            school = self._school_to_dc(p.school)
-            out.append({"prof": dc, "school": school, "stats": self.stats(str(p.pk))})
+        for p in profs:
+            out.append({
+                "prof": self._prof_to_dc(p),
+                "school": self._school_to_dc(p.school),
+                "stats": stats_map[str(p.pk)],
+            })
         out.sort(key=_search_sort_key(sort))
         return out
 

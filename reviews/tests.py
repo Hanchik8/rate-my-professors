@@ -1131,3 +1131,134 @@ class ReviewDeduplicationTests(TestCase):
         self.assertEqual(r.status_code, 200)
         self.assertIn("course", r.context["form"].errors)
         self.assertEqual(Review.objects.filter(professor_id=prof.id, course="Алгоритмы", author=u).count(), 1)
+
+
+# ---------------------------------------------------------------------------
+# Pagination of professor lists and review lists
+# ---------------------------------------------------------------------------
+class PaginationTests(_MemoryRepoTestCase):
+    """Professor lists (school page) and review lists (professor page) paginate."""
+
+    def test_school_page_paginates_professors(self):
+        school = self.repo.schools()[0]
+        for i in range(12):
+            self.repo.add_professor(school.id, f"Пагин{i}", f"Тестов{i}", "Кафедра", "доцент")
+        r = self.client.get(reverse("school_detail", args=[school.slug]))
+        self.assertIsNotNone(r.context["page_obj"])
+        self.assertEqual(r.context["page_obj"].paginator.num_pages, 2)
+        self.assertLessEqual(len(r.context["results"]), 10)
+        r2 = self.client.get(reverse("school_detail", args=[school.slug]), {"page": 2})
+        self.assertEqual(r2.status_code, 200)
+        self.assertLessEqual(len(r2.context["results"]), 10)
+
+    def test_school_single_page_has_no_widget(self):
+        school = next(s for s in self.repo.schools() if "Ошский" in s.name)
+        r = self.client.get(reverse("school_detail", args=[school.slug]))
+        self.assertIsNone(r.context["page_obj"])
+
+    def test_professor_page_paginates_reviews(self):
+        prof = self.prof()
+        for i in range(12):
+            self.repo.add_review(prof.id, _repo_review(course=f"Пагин{i}"), status="approved")
+        r = self.client.get(reverse("professor", args=[prof.slug]))
+        self.assertIsNotNone(r.context["page_obj"])
+        self.assertEqual(r.context["page_obj"].paginator.num_pages, 2)
+        self.assertLessEqual(len(r.context["reviews"]), 10)
+        r2 = self.client.get(reverse("professor", args=[prof.slug]), {"page": 2})
+        self.assertEqual(r2.status_code, 200)
+        self.assertLessEqual(len(r2.context["reviews"]), 10)
+
+
+# ---------------------------------------------------------------------------
+# Performance: no N+1 queries in DjangoRepository list pages
+# ---------------------------------------------------------------------------
+class QueryEfficiencyTests(TestCase):
+    """DjangoRepository uses select_related/prefetch_related/annotate.
+
+    Each read path must run a constant number of queries regardless of how
+    many professors/reviews exist.
+    """
+
+    def setUp(self):
+        import reviews.views as v
+        from reviews import store as store_mod
+        self.repo = DjangoRepository()
+        from reviews.management.commands.seed_kg import Command as SeedCmd
+        SeedCmd().handle(clear=True)
+        self._orig = store_mod.repo
+        self._orig_v = v.repo
+        store_mod.repo = self.repo
+        v.repo = self.repo
+
+    def tearDown(self):
+        import reviews.views as v
+        from reviews import store as store_mod
+        store_mod.repo = self._orig
+        v.repo = self._orig_v
+
+    def _add_load(self, professors=8, reviews_each=3):
+        school = self.repo.schools()[0]
+        for i in range(professors):
+            p = self.repo.add_professor(school.id, f"Нагруз{i}", f"Проф{i}", "Кафедра", "доцент")
+            for j in range(reviews_each):
+                self.repo.add_review(p.id, _repo_review(course=f"Курс {i}-{j}"), status="approved")
+
+    def test_search_query_count_is_constant(self):
+        with self.assertNumQueries(4):
+            self.repo.search()
+        self._add_load()
+        with self.assertNumQueries(4):
+            self.repo.search()
+
+    def test_stats_query_count_is_constant(self):
+        prof = self.repo.search("Айбек")[0]["prof"]
+        with self.assertNumQueries(3):
+            self.repo.stats(prof.id)
+        for i in range(10):
+            self.repo.add_review(prof.id, _repo_review(course=f"Ещё {i}"), status="approved")
+        with self.assertNumQueries(3):
+            self.repo.stats(prof.id)
+
+    def test_reviews_for_prefetches_tags(self):
+        prof = self.repo.search("Айбек")[0]["prof"]
+        with self.assertNumQueries(2):
+            self.repo.reviews_for(prof.id)
+        for i in range(10):
+            self.repo.add_review(prof.id, _repo_review(course=f"Тег {i}"), status="approved")
+        with self.assertNumQueries(2):
+            self.repo.reviews_for(prof.id)
+
+    def test_school_stats_query_count_is_constant(self):
+        school = self.repo.schools()[0]
+        with self.assertNumQueries(4):
+            self.repo.school_stats(school.id)
+        self._add_load()
+        with self.assertNumQueries(4):
+            self.repo.school_stats(school.id)
+
+    def test_home_view_query_count_is_constant(self):
+        self.client.get(reverse("home"))
+        with self.assertNumQueries(7):
+            self.client.get(reverse("home"))
+        self._add_load()
+        with self.assertNumQueries(7):
+            self.client.get(reverse("home"))
+
+    def test_professor_view_query_count_is_constant(self):
+        prof = self.repo.search("Айбек")[0]["prof"]
+        self.client.get(reverse("professor", args=[prof.slug]))
+        with self.assertNumQueries(7):
+            self.client.get(reverse("professor", args=[prof.slug]))
+        for i in range(12):
+            self.repo.add_review(prof.id, _repo_review(course=f"Отзыв {i}"), status="approved")
+        with self.assertNumQueries(7):
+            self.client.get(reverse("professor", args=[prof.slug]))
+
+    def test_school_view_query_count_is_constant(self):
+        school = self.repo.schools()[0]
+        self.client.get(reverse("school_detail", args=[school.slug]))
+        with self.assertNumQueries(9):
+            self.client.get(reverse("school_detail", args=[school.slug]))
+        self._add_load()
+        with self.assertNumQueries(9):
+            self.client.get(reverse("school_detail", args=[school.slug]))
