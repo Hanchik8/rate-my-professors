@@ -1,24 +1,56 @@
 /* ProfLens — design system (no external assets, system fonts only).
-   Contrast pairs verified against WCAG 2.1 AA (see reviews/tests.py: DesignContrastTests). */
+   Contrast pairs verified against WCAG 2.1 AA in BOTH light and dark themes
+   (see reviews/tests.py: DesignContrastTests). */
 :root{
-  color-scheme:light;
+  color-scheme:light dark;
   --bg:#f3f5f9;
   --surface:#ffffff;
   --ink:#101828;
   --muted:#475467;
   --line:#e3e8ef;
+  --line-strong:#98a2b3;
   --accent:#3538cd;
   --accent-strong:#2b31b0;
+  --on-accent:#ffffff;
   --good-bg:#d3f8df; --good-ink:#05603a;
   --mid-bg:#fef0c7;  --mid-ink:#93370d;
   --bad-bg:#fee4e2;  --bad-ink:#b42318;
   --none-bg:#eef2f6; --none-ink:#475467;
   --star:#b54708;
   --star-empty:#cdd5df;
+  --focus:#3538cd;
+  --focus-ring:rgb(53 56 205 / .35);
+  --top-bg:rgb(255 255 255 / .88);
   --shadow:0 1px 2px rgb(16 24 40 / .06),0 1px 3px rgb(16 24 40 / .1);
   --shadow-lg:0 12px 24px -6px rgb(16 24 40 / .12);
   --radius:.75rem;
   --radius-lg:1.25rem;
+}
+
+/* Dark theme: follows the OS/browser preference, no toggle or JS needed. */
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0b1220;
+    --surface:#141d31;
+    --ink:#e8ecf4;
+    --muted:#a8b3c7;
+    --line:#2b3850;
+    --line-strong:#5b6b8c;
+    --accent:#a5b4fc;
+    --accent-strong:#c3c9fd;
+    --on-accent:#101828;
+    --good-bg:#0d3b23; --good-ink:#6ee7b7;
+    --mid-bg:#422a06;  --mid-ink:#fcd34d;
+    --bad-bg:#4c1210;  --bad-ink:#fca5a5;
+    --none-bg:#1e2938; --none-ink:#a8b3c7;
+    --star:#fbbf24;
+    --star-empty:#3c4a63;
+    --focus:#a5b4fc;
+    --focus-ring:rgb(165 180 252 / .45);
+    --top-bg:rgb(20 29 49 / .88);
+    --shadow:0 1px 2px rgb(0 0 0 / .4),0 1px 3px rgb(0 0 0 / .5);
+    --shadow-lg:0 12px 24px -6px rgb(0 0 0 / .6);
+  }
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -29,7 +61,9 @@ h1{font-size:clamp(1.9rem,4.5vw,2.75rem);line-height:1.12;letter-spacing:-.02em;
 h2{font-size:1.35rem;letter-spacing:-.01em;margin:2.25rem 0 .75rem}
 a{color:var(--accent)}
 a:hover{color:var(--accent-strong)}
-:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:.25rem}
+/* High-visibility keyboard focus: solid 3px outline + soft outer ring. */
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:.25rem;
+  box-shadow:0 0 0 5px var(--focus-ring)}
 
 /* Skip link (a11y) */
 .skip-link{position:absolute;left:1rem;top:-3rem;z-index:100;background:var(--surface);color:var(--accent);
@@ -38,12 +72,12 @@ a:hover{color:var(--accent-strong)}
 
 /* Header */
 .top{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--line)}
-@supports (backdrop-filter:blur(1px)){.top{background:rgb(255 255 255 / .88);backdrop-filter:blur(12px)}}
+@supports (backdrop-filter:blur(1px)){.top{background:var(--top-bg);backdrop-filter:blur(12px)}}
 .top-inner{max-width:64rem;margin:0 auto;padding:.6rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .brand{display:inline-flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.35rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
 .brand:hover{color:var(--ink)}
 .brand-mark{display:grid;place-items:center;width:2.1rem;height:2.1rem;border-radius:.65rem;
-  background:var(--accent);color:#fff;font-size:1.1rem;font-weight:800;flex:none}
+  background:var(--accent);color:var(--on-accent);font-size:1.1rem;font-weight:800;flex:none}
 .nav{display:flex;align-items:center;gap:.35rem;flex-wrap:wrap;font-size:.95rem}
 .nav a{color:var(--ink);text-decoration:none;padding:.45rem .7rem;border-radius:.55rem}
 .nav a:hover{background:var(--bg);color:var(--ink)}
@@ -79,14 +113,14 @@ footer{color:var(--muted);font-size:.9rem;padding-top:2.5rem;padding-bottom:2.5r
 .muted{color:var(--muted)}
 
 /* Buttons */
-.btn,button{font:inherit;font-weight:600;background:var(--accent);color:#fff;border:1px solid transparent;
+.btn,button{font:inherit;font-weight:600;background:var(--accent);color:var(--on-accent);border:1px solid transparent;
   border-radius:.65rem;padding:.6rem 1.15rem;cursor:pointer;text-decoration:none;display:inline-block;
   box-shadow:var(--shadow);transition:background .15s ease,transform .15s ease,box-shadow .15s ease}
-.btn:hover,button:hover{background:var(--accent-strong);color:#fff;transform:translateY(-1px)}
+.btn:hover,button:hover{background:var(--accent-strong);color:var(--on-accent);transform:translateY(-1px)}
 .btn:active,button:active{transform:translateY(0)}
 input,select,textarea{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);
   border-radius:.65rem;padding:.6rem .75rem;transition:border-color .15s ease}
-input:hover,select:hover,textarea:hover{border-color:#98a2b3}
+input:hover,select:hover,textarea:hover{border-color:var(--line-strong)}
 
 /* Search */
 .search{display:flex;gap:.6rem;flex-wrap:wrap;margin:0 0 .5rem}
@@ -99,7 +133,7 @@ input:hover,select:hover,textarea:hover{border-color:#98a2b3}
 .card{display:flex;gap:1rem;align-items:flex-start;background:var(--surface);color:inherit;text-decoration:none;
   border:1px solid var(--line);border-radius:var(--radius-lg);padding:1.1rem 1.2rem;box-shadow:var(--shadow);
   transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
-.card:hover{color:inherit;border-color:#c7cfe0;box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.card:hover{color:inherit;border-color:var(--line-strong);box-shadow:var(--shadow-lg);transform:translateY(-3px)}
 .card-body{display:flex;flex-direction:column;gap:.3rem;min-width:0}
 .card-name{font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
 .card-sub{color:var(--muted);font-size:.93rem;line-height:1.4}
@@ -152,7 +186,7 @@ input:hover,select:hover,textarea:hover{border-color:#98a2b3}
 .votes{display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap;align-items:center}
 .votes button{background:var(--surface);color:var(--muted);border:1px solid var(--line);font-weight:500;
   padding:.3rem .8rem;font-size:.92rem;box-shadow:none}
-.votes button:hover{background:var(--bg);color:var(--ink);transform:none;border-color:#98a2b3}
+.votes button:hover{background:var(--bg);color:var(--ink);transform:none;border-color:var(--line-strong)}
 
 /* Forms */
 .form{max-width:36rem;margin-top:1.5rem}
@@ -164,8 +198,8 @@ input:hover,select:hover,textarea:hover{border-color:#98a2b3}
 .choices>div{display:flex;gap:.5rem;flex-wrap:wrap}
 .choices label{display:inline-flex;gap:.4rem;align-items:center;border:1px solid var(--line);background:var(--surface);
   padding:.45rem .9rem;border-radius:999px;cursor:pointer;font-weight:500;margin-bottom:0}
-.choices label:hover{border-color:#98a2b3}
-.choices label:has(input:checked){background:var(--accent);border-color:var(--accent);color:#fff}
+.choices label:hover{border-color:var(--line-strong)}
+.choices label:has(input:checked){background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .choices input{accent-color:var(--accent)}
 textarea{resize:vertical}
 
