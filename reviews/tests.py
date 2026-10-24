@@ -956,6 +956,99 @@ class DesignContrastTests(TestCase):
                     )
 
 
+class MobileLayoutDesignTests(TestCase):
+    """Mobile layout guards: 360px-safe professor page and review cards."""
+
+    @staticmethod
+    def _media_block(css, query):
+        """Return the body of `@media (max-width:query){...}` (nested rules)."""
+        marker = f"@media (max-width:{query})"
+        start = css.find(marker)
+        assert start != -1, f"media query {marker} not found in style.css"
+        i = css.index("{", start)
+        depth = 0
+        for j in range(i, len(css)):
+            if css[j] == "{":
+                depth += 1
+            elif css[j] == "}":
+                depth -= 1
+                if depth == 0:
+                    return css[i + 1:j]
+        raise AssertionError(f"unbalanced braces after {marker}")
+
+    def test_mobile_breakpoints_cover_360px_phones(self):
+        css = STATIC_CSS.read_text(encoding="utf-8")
+        # 26rem = 416px, so the small-phone block also matches 360px viewports.
+        self.assertIn("@media (max-width:26rem)", css)
+        self.assertIn("@media (max-width:50rem)", css)
+
+    def test_review_cards_stack_single_column_on_phones(self):
+        block = self._media_block(STATIC_CSS.read_text(encoding="utf-8"), "26rem")
+        self.assertRegex(block, r"\.review\{[^}]*grid-template-columns:1fr")
+
+    def test_professor_cards_single_column_on_narrow_screens(self):
+        block = self._media_block(STATIC_CSS.read_text(encoding="utf-8"), "50rem")
+        self.assertRegex(block, r"\.cards\{[^}]*grid-template-columns:1fr")
+
+    def test_no_horizontal_scroll_guards(self):
+        css = STATIC_CSS.read_text(encoding="utf-8")
+        self.assertIn("overflow-x:clip", css)  # page-level safety net
+        for selector in (".review", ".headline", ".card-body"):
+            with self.subTest(selector=selector):
+                rule = re.search(re.escape(selector) + r"\{([^}]*)\}", css)
+                self.assertIsNotNone(rule)
+                self.assertIn("overflow-wrap:break-word", rule.group(1))
+        # Grid/flex children must be allowed to shrink below content width.
+        self.assertIn(".review>div{min-width:0}", css)
+        self.assertIn(".headline>div{min-width:0}", css)
+
+    def test_pagination_and_vote_forms_wrap_on_mobile(self):
+        css = STATIC_CSS.read_text(encoding="utf-8")
+        for selector in (".pagination", ".votes", ".votes form"):
+            with self.subTest(selector=selector):
+                rule = re.search(re.escape(selector) + r"\{([^}]*)\}", css)
+                self.assertIsNotNone(rule)
+                self.assertIn("flex-wrap:wrap", rule.group(1))
+
+    def test_form_controls_have_persistent_focus_border(self):
+        css = STATIC_CSS.read_text(encoding="utf-8")
+        rule = re.search(r"input:focus,select:focus,textarea:focus\{([^}]*)\}", css)
+        self.assertIsNotNone(rule)
+        self.assertIn("border-color:var(--focus)", rule.group(1))
+
+    def test_focus_outline_fallback_without_focus_visible_support(self):
+        css = STATIC_CSS.read_text(encoding="utf-8")
+        fallback = re.search(
+            r"@supports not selector\(:focus-visible\)\{\s*:focus\{([^}]*)\}", css
+        )
+        self.assertIsNotNone(fallback)
+        self.assertIn("outline:3px solid var(--focus)", fallback.group(1))
+
+    def test_choice_chips_promote_focus_ring_to_whole_label(self):
+        css = STATIC_CSS.read_text(encoding="utf-8")
+        rule = re.search(r"\.choices label:has\(input:focus-visible\)\{([^}]*)\}", css)
+        self.assertIsNotNone(rule)
+        self.assertIn("outline:3px solid var(--focus)", rule.group(1))
+
+
+class ProfessorMobileMarkupTests(_MemoryRepoTestCase):
+    """Professor page markup that the mobile CSS hooks onto (reviews, votes)."""
+
+    def test_professor_page_renders_review_card_structure(self):
+        prof = self.prof()
+        r = self.client.get(reverse("professor", args=[prof.slug]))
+        self.assertContains(r, 'class="headline"')
+        self.assertContains(r, 'class="review" id="review-')
+        self.assertContains(r, 'class="votes"')
+        self.assertContains(r, 'class="facts-line"')
+
+    def test_professor_page_uses_shared_stylesheet_and_viewport_meta(self):
+        prof = self.prof()
+        r = self.client.get(reverse("professor", args=[prof.slug]))
+        self.assertContains(r, "reviews/style.css")
+        self.assertContains(r, 'name="viewport" content="width=device-width, initial-scale=1"')
+
+
 class HeaderLayoutTests(_MemoryRepoTestCase):
     """Modern header: skip link, burger toggle, i18n language switch."""
 

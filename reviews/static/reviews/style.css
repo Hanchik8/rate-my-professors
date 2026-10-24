@@ -56,7 +56,7 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);
   font:1.0625rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  -webkit-text-size-adjust:100%}
+  -webkit-text-size-adjust:100%;overflow-x:clip}
 h1{font-size:clamp(1.9rem,4.5vw,2.75rem);line-height:1.12;letter-spacing:-.02em;margin:1.25rem 0 1.25rem;max-width:24ch}
 h2{font-size:1.35rem;letter-spacing:-.01em;margin:2.25rem 0 .75rem}
 a{color:var(--accent)}
@@ -64,6 +64,11 @@ a:hover{color:var(--accent-strong)}
 /* High-visibility keyboard focus: solid 3px outline + soft outer ring. */
 :focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:.25rem;
   box-shadow:0 0 0 5px var(--focus-ring)}
+/* Fallback for browsers without :focus-visible (e.g. Safari < 15.4):
+   keyboard users must never lose the focus indicator. */
+@supports not selector(:focus-visible){
+  :focus{outline:3px solid var(--focus);outline-offset:2px}
+}
 
 /* Skip link (a11y) */
 .skip-link{position:absolute;left:1rem;top:-3rem;z-index:100;background:var(--surface);color:var(--accent);
@@ -121,6 +126,9 @@ footer{color:var(--muted);font-size:.9rem;padding-top:2.5rem;padding-bottom:2.5r
 input,select,textarea{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);
   border-radius:.65rem;padding:.6rem .75rem;transition:border-color .15s ease}
 input:hover,select:hover,textarea:hover{border-color:var(--line-strong)}
+/* Persistent focus affordance on form controls (mouse and keyboard alike),
+   complements the global :focus-visible outline. */
+input:focus,select:focus,textarea:focus{border-color:var(--focus)}
 
 /* Search */
 .search{display:flex;gap:.6rem;flex-wrap:wrap;margin:0 0 .5rem}
@@ -134,7 +142,7 @@ input:hover,select:hover,textarea:hover{border-color:var(--line-strong)}
   border:1px solid var(--line);border-radius:var(--radius-lg);padding:1.1rem 1.2rem;box-shadow:var(--shadow);
   transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
 .card:hover{color:inherit;border-color:var(--line-strong);box-shadow:var(--shadow-lg);transform:translateY(-3px)}
-.card-body{display:flex;flex-direction:column;gap:.3rem;min-width:0}
+.card-body{display:flex;flex-direction:column;gap:.3rem;min-width:0;overflow-wrap:break-word}
 .card-name{font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
 .card-sub{color:var(--muted);font-size:.93rem;line-height:1.4}
 .card-meta{color:var(--muted);font-size:.9rem;margin-top:.15rem}
@@ -157,7 +165,9 @@ input:hover,select:hover,textarea:hover{border-color:var(--line-strong)}
 
 /* Professor page */
 .headline{display:flex;gap:1.4rem;align-items:center;margin:1.25rem 0 0;background:var(--surface);
-  border:1px solid var(--line);border-radius:var(--radius-lg);padding:1.4rem 1.5rem;box-shadow:var(--shadow);flex-wrap:wrap}
+  border:1px solid var(--line);border-radius:var(--radius-lg);padding:1.4rem 1.5rem;box-shadow:var(--shadow);
+  flex-wrap:wrap;overflow-wrap:break-word}
+.headline>div{min-width:0}
 .headline h1{margin:0}
 .sub{margin:.3rem 0 0;color:var(--muted)}
 .headline .stars{font-size:1.3rem}
@@ -172,18 +182,21 @@ input:hover,select:hover,textarea:hover{border-color:var(--line-strong)}
 .bar i{display:block;height:100%;background:var(--accent)}
 .tags{color:var(--muted);margin:.4rem 0}
 .sort{color:var(--muted)}
-.pagination{display:flex;gap:1rem;align-items:center;justify-content:center;margin:1.5rem 0}
+.pagination{display:flex;gap:1rem;align-items:center;justify-content:center;margin:1.5rem 0;flex-wrap:wrap}
 .pagination a{border:1px solid var(--line);padding:.35rem .8rem;border-radius:.65rem;text-decoration:none;
   background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
 .pagination a:hover{border-color:var(--accent);color:var(--accent)}
 
 /* Reviews */
-.review{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--line);max-width:46rem}
+.review{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--line);
+  max-width:46rem;overflow-wrap:break-word}
+.review>div{min-width:0}
 .review:last-of-type{border-bottom:none;padding-bottom:.25rem}
 .review p{margin:.3rem 0}
 .facts-line{color:var(--muted)}
 .facts-line strong{color:var(--ink)}
 .votes{display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap;align-items:center}
+.votes form{display:flex;gap:.5rem;flex-wrap:wrap}
 .votes button{background:var(--surface);color:var(--muted);border:1px solid var(--line);font-weight:500;
   padding:.3rem .8rem;font-size:.92rem;box-shadow:none}
 .votes button:hover{background:var(--bg);color:var(--ink);transform:none;border-color:var(--line-strong)}
@@ -200,6 +213,9 @@ input:hover,select:hover,textarea:hover{border-color:var(--line-strong)}
   padding:.45rem .9rem;border-radius:999px;cursor:pointer;font-weight:500;margin-bottom:0}
 .choices label:hover{border-color:var(--line-strong)}
 .choices label:has(input:checked){background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+/* Move the keyboard focus ring from the tiny radio/checkbox to the whole chip. */
+.choices label:has(input:focus-visible){outline:3px solid var(--focus);outline-offset:2px;
+  box-shadow:0 0 0 5px var(--focus-ring)}
 .choices input{accent-color:var(--accent)}
 textarea{resize:vertical}
 
@@ -231,11 +247,15 @@ textarea{resize:vertical}
   .form-actions button{width:100%}
   .form-actions .cancel{display:block;text-align:center}
 }
+/* Phones down to 360px (22.5rem): review tile stacks above the text so the
+   comment column gets the full content width and never overflows. */
 @media (max-width:26rem){
   .tile{width:3rem;height:3rem;font-size:1.15rem}
   .tile.big{width:4.5rem;height:4.5rem;font-size:2rem}
   .card{padding:.9rem 1rem}
   .headline{padding:1rem 1.1rem;gap:1rem}
+  .review{grid-template-columns:1fr;gap:.5rem}
+  .facts div{flex:1 1 8rem}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important}
