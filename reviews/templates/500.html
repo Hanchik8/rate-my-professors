@@ -1,0 +1,9 @@
+{% extends "reviews/base.html" %}{% load i18n %}
+{% block title %}{% translate "Ошибка сервера" %} — ProfLens{% endblock %}
+{% block content %}
+<div class="prose">
+<h1>500 — {% translate "Ошибка сервера" %}</h1>
+<p>{% translate "Что-то пошло не так. Мы уже работаем над этим — попробуйте позже." %}</p>
+<p><a href="{% url 'home' %}">{% translate "Вернуться на главную" %}</a></p>
+</div>
+{% endblock %}

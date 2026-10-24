@@ -4,7 +4,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
-from django.http import Http404
+from django.http import Http404, JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils.translation import gettext as _
@@ -12,6 +12,10 @@ from django.views.decorators.http import require_POST
 
 from .forms import ProfessorForm, ReviewForm
 from .store import repo
+
+
+def health(request):
+    return JsonResponse({"status": "ok"})
 
 
 def home(request):

@@ -1262,3 +1262,37 @@ class QueryEfficiencyTests(TestCase):
         self._add_load()
         with self.assertNumQueries(9):
             self.client.get(reverse("school_detail", args=[school.slug]))
+
+
+# ---------------------------------------------------------------------------
+# Health endpoint and custom error pages
+# ---------------------------------------------------------------------------
+class HealthEndpointTests(TestCase):
+    def test_health_returns_json_ok(self):
+        r = self.client.get(reverse("health"))
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r["Content-Type"], "application/json")
+        self.assertJSONEqual(r.content, {"status": "ok"})
+
+
+class ErrorPageTests(TestCase):
+    def test_404_uses_custom_template(self):
+        r = self.client.get("/definitely-not-a-real-page/")
+        self.assertEqual(r.status_code, 404)
+        self.assertTemplateUsed(r, "404.html")
+        self.assertContains(r, "Страница не найдена", status_code=404)
+        self.assertContains(r, "Вернуться на главную", status_code=404)
+
+    def test_500_uses_custom_template(self):
+        from django.test import RequestFactory
+        from django.views.defaults import server_error
+        request = RequestFactory().get("/boom/")
+        r = server_error(request)
+        self.assertEqual(r.status_code, 500)
+        self.assertIn("Ошибка сервера", r.content.decode())
+
+    def test_error_templates_extend_base(self):
+        for name in ("404.html", "500.html"):
+            with self.subTest(template=name):
+                text = (TEMPLATES_DIR / name).read_text(encoding="utf-8")
+                self.assertIn('extends "reviews/base.html"', text)

@@ -1,0 +1,9 @@
+{% extends "reviews/base.html" %}{% load i18n %}
+{% block title %}{% translate "Страница не найдена" %} — ProfLens{% endblock %}
+{% block content %}
+<div class="prose">
+<h1>404 — {% translate "Страница не найдена" %}</h1>
+<p>{% translate "Возможно, ссылка устарела или страница была удалена." %}</p>
+<p><a href="{% url 'home' %}">{% translate "Вернуться на главную" %}</a></p>
+</div>
+{% endblock %}
