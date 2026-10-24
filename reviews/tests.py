@@ -932,3 +932,42 @@ class ProfessorCardsTests(_MemoryRepoTestCase):
         p = self.repo.add_professor(school.id, "Тихон", "Безотзывов", "Физика", "доцент")
         r = self.client.get(reverse("professor", args=[p.slug]))
         self.assertContains(r, 'aria-label="Нет оценок"')
+
+
+class LanguageSwitchTests(TestCase):
+    """POST /i18n/setlang/ changes the language the templates render in."""
+
+    def _switch(self, code):
+        return self.client.post(
+            reverse("set_language"), {"language": code, "next": reverse("home")}
+        )
+
+    def test_default_language_is_russian(self):
+        r = self.client.get(reverse("home"))
+        self.assertContains(r, "Правила")
+        self.assertContains(r, 'lang="ru"')
+
+    def test_switch_to_english_then_back_to_russian(self):
+        self.assertEqual(self._switch("en").status_code, 302)
+        r = self.client.get(reverse("home"))
+        self.assertContains(r, "Rules")
+        self.assertContains(r, "Add professor")
+        self.assertNotContains(r, "Правила")
+        self.assertContains(r, 'lang="en"')
+        # switch back
+        self._switch("ru")
+        r2 = self.client.get(reverse("home"))
+        self.assertContains(r2, "Правила")
+        self.assertNotContains(r2, "Rules")
+
+    def test_switch_to_kyrgyz(self):
+        self.assertEqual(self._switch("ky").status_code, 302)
+        r = self.client.get(reverse("home"))
+        self.assertContains(r, "Эрежелер")
+        self.assertContains(r, "Окутуучу кошуу")
+        self.assertContains(r, 'lang="ky"')
+
+    def test_invalid_language_falls_back_to_default(self):
+        self._switch("de")
+        r = self.client.get(reverse("home"))
+        self.assertContains(r, "Правила")

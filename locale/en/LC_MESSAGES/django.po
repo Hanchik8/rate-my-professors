@@ -1,17 +1,217 @@
+#
 msgid ""
 msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-24 23:03+0600\n"
 "Language: en\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# English — source strings are Russian, so map minimally. Untranslated strings fallback to Russian.
-# Keeping file so `compilemessages` finds it.
+msgid "Предмет"
+msgstr "Subject"
 
+msgid "Например: Алгоритмы, Общая физика, Микроэкономика"
+msgstr "For example: Algorithms, General Physics, Microeconomics"
+
+msgid "Семестр"
+msgstr "Term"
+
+msgid "Например: Осень 2025 или Весна 2025"
+msgstr "For example: Fall 2025 or Spring 2025"
+
+msgid "Общее качество (5 — лучше всего)"
+msgstr "Overall quality (5 — best)"
+
+msgid "Сложность (5 — очень сложно)"
+msgstr "Difficulty (5 — very hard)"
+
+msgid "Да"
+msgstr "Yes"
+
+msgid "Нет"
+msgstr "No"
+
+#| msgid "Добавить преподавателя"
+msgid "Пошли бы снова к этому преподавателю?"
+msgstr "Would you take this professor again?"
+
+msgid "Предпочитаю не указывать"
+msgstr "Prefer not to say"
+
+msgid "Полученная оценка"
+msgstr "Grade received"
+
+msgid "Теги"
+msgstr "Tags"
+
+msgid "Выберите до 3"
+msgstr "Choose up to 3"
+
+#| msgid "отзывов"
+msgid "Ваш отзыв"
+msgstr "Your review"
+
+msgid ""
+"Не менее 20 символов. Пишите только об учёбе, без оскорблений и личных "
+"данных."
+msgstr ""
+"At least 20 characters. Write only about academics, with no insults or "
+"personal data."
+
+msgid "Выберите не более 3 тегов."
+msgstr "Choose no more than 3 tags."
+
+msgid "Вуз"
+msgstr "School"
+
+msgid "Имя"
+msgstr "First name"
+
+msgid "Фамилия"
+msgstr "Last name"
+
+msgid "Кафедра"
+msgstr "Department"
+
+#| msgid "Сложность"
+msgid "Должность"
+msgstr "Position"
+
+msgid "профессор"
+msgstr "professor"
+
+msgid "доцент"
+msgstr "associate professor"
+
+#| msgid "Оценить преподавателя"
+msgid "старший преподаватель"
+msgstr "senior lecturer"
+
+#| msgid "Преподаватели"
+msgid "преподаватель"
+msgstr "lecturer"
+
+msgid "Строго оценивает"
+msgstr "Grades strictly"
+
+msgid "Понятные критерии"
+msgstr "Clear criteria"
+
+msgid "Интересные лекции"
+msgstr "Interesting lectures"
+
+msgid "Много домашних заданий"
+msgstr "Lots of homework"
+
+msgid "Много тестов"
+msgstr "Lots of tests"
+
+msgid "Групповые проекты"
+msgstr "Group projects"
+
+msgid "Доступен вне занятий"
+msgstr "Available outside class"
+
+msgid "Даёт полезную обратную связь"
+msgstr "Gives useful feedback"
+
+msgid "Важна посещаемость"
+msgstr "Attendance matters"
+
+msgid "Вдохновляет"
+msgstr "Inspiring"
+
+msgid "Зачёт"
+msgstr "Pass"
+
+msgid "Незачёт"
+msgstr "Fail"
+
+msgid "Ещё не знаю"
+msgstr "Not sure yet"
+
+msgid "Вход"
+msgstr "Log in"
+
+msgid "Войти"
+msgstr "Log in"
+
+msgid "Нет аккаунта? Зарегистрируйтесь"
+msgstr "No account? Sign up"
+
+msgid "Регистрация"
+msgstr "Sign up"
+
+#| msgid "Регистрация"
+msgid "Зарегистрироваться"
+msgstr "Sign up"
+
+msgid "Уже есть аккаунт? Войдите"
+msgstr "Already have an account? Log in"
+
+msgid "Добавить преподавателя"
+msgstr "Add professor"
+
+msgid ""
+"Новый преподаватель появится после проверки модератором. Дубликаты по "
+"ФИО+вуз не принимаются."
+msgstr ""
+"The new professor will appear after a moderator approves it. Duplicates by "
+"full name + school are not accepted."
+
+#| msgid "Добавить преподавателя"
+msgid "Чтобы добавить преподавателя,"
+msgstr "To add a professor,"
+
+msgid "войдите"
+msgstr "log in"
+
+msgid "или"
+msgstr "or"
+
+#| msgid "Регистрация"
+msgid "зарегистрируйтесь"
+msgstr "sign up"
+
+#| msgid "Добавить преподавателя"
+msgid "Отправить на модерацию"
+msgstr "Submit for moderation"
+
+msgid "Отмена"
+msgstr "Cancel"
+
+msgid "Перейти к содержимому"
+msgstr "Skip to content"
+
+msgid "Меню"
+msgstr "Menu"
+
+msgid "Основная навигация"
+msgstr "Main navigation"
+
+msgid "Правила"
+msgstr "Rules"
+
+msgid "Выйти"
+msgstr "Log out"
+
+msgid "Язык"
+msgstr "Language"
+
+msgid "Демо-данные сбрасываются при рестарте (memory-режим)."
+msgstr "Demo data resets on restart (memory mode)."
+
+# English — source strings are Russian, so map minimally. Untranslated strings
+# fallback to Russian.
+# Keeping file so `compilemessages` finds it.
 msgid "Узнайте, какие занятия на самом деле — до записи на курс."
 msgstr "Find out what a class is really like before you enroll."
 
 msgid "Имя преподавателя или кафедра"
 msgstr "Professor name or department"
+
+msgid "Поиск"
+msgstr "Search"
 
 msgid "Город"
 msgstr "City"
@@ -19,11 +219,33 @@ msgstr "City"
 msgid "Все города"
 msgstr "All cities"
 
-msgid "Вуз"
-msgstr "School"
-
 msgid "Все вузы"
 msgstr "All schools"
+
+#| msgid "Все вузы"
+msgid "Все кафедры"
+msgstr "All departments"
+
+msgid "Сортировка"
+msgstr "Sort"
+
+#| msgid "Средний рейтинг"
+msgid "По рейтингу"
+msgstr "By rating"
+
+#| msgid "отзывов"
+msgid "По числу отзывов"
+msgstr "By number of reviews"
+
+msgid "Найти"
+msgstr "Find"
+
+#, python-format
+msgid "Рейтинг %(rating)s из 5"
+msgstr "Rating %(rating)s out of 5"
+
+msgid "Нет оценок"
+msgstr "No ratings"
 
 msgid "отзывов"
 msgstr "ratings"
@@ -31,11 +253,27 @@ msgstr "ratings"
 msgid "Сложность"
 msgstr "Difficulty"
 
+msgid "Ничего не нашлось. Попробуйте короче запрос или другой вуз/город."
+msgstr "Nothing found. Try a shorter query or another school/city."
+
+msgid "Назад"
+msgstr "Previous"
+
+#, python-format
+msgid "Страница %(n)s из %(t)s"
+msgstr "Page %(n)s of %(t)s"
+
+msgid "Вперёд"
+msgstr "Next"
+
 msgid "Пойдут снова"
 msgstr "Would take again"
 
 msgid "Отзывов"
 msgstr "Ratings"
+
+msgid "Распределение оценок"
+msgstr "Rating distribution"
 
 msgid "Студенты отмечают:"
 msgstr "Students say:"
@@ -46,32 +284,87 @@ msgstr "Rate this professor"
 msgid "Отзывы"
 msgstr "Reviews"
 
+msgid "Сортировка:"
+msgstr "Sort:"
+
 msgid "сначала новые"
 msgstr "newest"
 
 msgid "сначала полезные"
 msgstr "most helpful"
 
-msgid "Предмет"
-msgstr "Subject"
+#| msgid "Пойдут снова"
+msgid "Пойду снова."
+msgstr "Would take again."
 
-msgid "Семестр"
-msgstr "Term"
+#| msgid "Пойдут снова"
+msgid "Не пойду снова."
+msgstr "Would not take again."
 
-msgid "Правила"
-msgstr "Rules"
+msgid "Оценка:"
+msgstr "Grade:"
 
-msgid "Добавить преподавателя"
-msgstr "Add professor"
+msgid "Полезно"
+msgstr "Helpful"
 
-msgid "Вход"
-msgstr "Log in"
+#| msgid "сначала полезные"
+msgid "Бесполезно"
+msgstr "Not helpful"
 
-msgid "Регистрация"
-msgstr "Sign up"
+msgid "Пожаловаться"
+msgstr "Report"
 
-msgid "Язык"
-msgstr "Language"
+#, python-format
+msgid "Пока нет отзывов. Станьте первым, кто оценит %(name)s."
+msgstr "No reviews yet. Be the first to rate %(name)s."
+
+#, python-format
+msgid "Оценить %(name)s"
+msgstr "Rate %(name)s"
+
+msgid "Отзыв появится после проверки модератором."
+msgstr "The review will appear after a moderator approves it."
+
+msgid "Чтобы оставить отзыв,"
+msgstr "To leave a review,"
+
+msgid ""
+"ProfLens — отзывы только об учёбе: как преподаватель объясняет, оценивает, "
+"ведёт занятия. Сайт не для сведения счётов."
+msgstr ""
+"ProfLens — reviews about academics only: how a professor explains, grades, "
+"and teaches. This site is not for settling scores."
+
+msgid "Только об учёбе — без оскорблений, угроз, дискриминации."
+msgstr "Only about academics — no insults, threats, or discrimination."
+
+msgid "Без личных данных: не публикуйте телефоны, адреса, фото, переписку."
+msgstr ""
+"No personal data: do not publish phone numbers, addresses, photos, or "
+"private messages."
+
+msgid "Пишите честно и по делу — отзыв должен помочь другим студентам."
+msgstr ""
+"Write honestly and to the point — your review should help other students."
+
+msgid ""
+"Отзывы о реальных людях — зона риска (закон КР о персональных данных). Всё, "
+"что нарушает закон или правила, будет скрыто."
+msgstr ""
+"Reviews about real people are a risk area (Kyrgyz law on personal data). "
+"Anything that breaks the law or the rules will be hidden."
+
+msgid "Отзывы и новые преподаватели проходят модерацию перед публикацией."
+msgstr "Reviews and new professors are moderated before publication."
+
+msgid "За нарушение — удаление отзыва и блокировка аккаунта."
+msgstr "Violations lead to review removal and account blocking."
+
+msgid "Увидели нарушение?"
+msgstr "Spotted a violation?"
+
+msgid "нажмите «Пожаловаться» под отзывом."
+msgstr "click “Report” under the review."
 
 msgid "Преподавателей"
 msgstr "Professors"
@@ -79,5 +372,55 @@ msgstr "Professors"
 msgid "Средний рейтинг"
 msgstr "Average rating"
 
+msgid "Кафедры"
+msgstr "Departments"
+
+msgid "Пока нет кафедр."
+msgstr "No departments yet."
+
 msgid "Преподаватели"
 msgstr "Professors"
+
+#| msgid "Добавить преподавателя"
+msgid "Пока нет преподавателей."
+msgstr "No professors yet."
+
+msgid "Вы уже оставляли отзыв для этого предмета у этого преподавателя."
+msgstr "You have already left a review for this subject with this professor."
+
+msgid "Отзыв отправлен на модерацию. Спасибо!"
+msgstr "Review submitted for moderation. Thank you!"
+
+msgid "Вы уже голосовали за этот отзыв."
+msgstr "You have already voted on this review."
+
+msgid "Жалоба отправлена модератору."
+msgstr "Report sent to a moderator."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Пароль"
+msgstr "Password"
+
+msgid "Повторите пароль"
+msgstr "Repeat password"
+
+msgid "Пользователь с таким email уже существует."
+msgstr "A user with this email already exists."
+
+msgid "Пароли не совпадают."
+msgstr "Passwords do not match."
+
+msgid "Пароль должен быть не менее 8 символов."
+msgstr "Password must be at least 8 characters."
+
+msgid "Регистрация выполнена. Добро пожаловать!"
+msgstr "Registration complete. Welcome!"
+
+msgid "Преподаватель с таким ФИО уже есть в этом вузе."
+msgstr "A professor with this full name already exists at this school."
+
+#| msgid "Имя преподавателя или кафедра"
+msgid "Преподаватель отправлен на модерацию."
+msgstr "Professor submitted for moderation."
