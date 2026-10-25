@@ -1095,6 +1095,65 @@ class ProfessorMobileMarkupTests(_MemoryRepoTestCase):
         self.assertContains(r, 'name="viewport" content="width=device-width, initial-scale=1"')
 
 
+class ProfessorA11yTests(_MemoryRepoTestCase):
+    """Professor page a11y: vote/report context labels, pagination semantics."""
+
+    def test_vote_and_report_buttons_have_context_aria_labels(self):
+        prof = self.prof()
+        r = self.client.get(reverse("professor", args=[prof.slug]))
+        # Buttons must name the review they act on (course + count), so the
+        # repeated "Полезно N" buttons are distinguishable for screen readers.
+        course = self.repo.reviews_for(prof.id)[0].course
+        self.assertContains(r, f'aria-label="Полезно: {course} (')
+        self.assertContains(r, f'aria-label="Бесполезно: {course} (')
+        self.assertContains(r, f'aria-label="Пожаловаться: {course}"')
+
+    def test_pagination_uses_page_aria_labels_and_aria_current(self):
+        prof = self.prof()
+        for i in range(12):
+            self.repo.add_review(prof.id, _repo_review(course=f"Пагин{i}"), status="approved")
+        r = self.client.get(reverse("professor", args=[prof.slug]), {"page": 2})
+        self.assertContains(r, 'aria-current="page"')
+        # "Назад"/"Вперёд" get unambiguous page-number accessible names.
+        self.assertContains(r, 'aria-label="Страница 1 из 2"')
+        # last page: no forward link at all
+        self.assertNotContains(r, ">Вперёд</a>")
+
+    def test_warning_message_is_announced_as_polite_status(self):
+        user = self.login()
+        review = self.repo.add_review(
+            self.prof().id, _repo_review(course="Свой курс"), user=user
+        )
+        self.repo.approve_review(review.id)
+        r = self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"}, follow=True)
+        self.assertContains(r, "Нельзя голосовать за свой отзыв")
+        self.assertContains(r, 'role="status"')
+        self.assertNotContains(r, 'role="alert"')
+
+
+class TouchTargetDesignTests(TestCase):
+    """Compact controls keep comfortable touch targets (WCAG 2.5.5, 44px)."""
+
+    def test_burger_toggle_is_44px(self):
+        css = STATIC_CSS.read_text(encoding="utf-8")
+        rule = re.search(r"\.nav-toggle\{([^}]*)\}", css)
+        self.assertIsNotNone(rule)
+        # 2.75rem = 44px at the default 16px root font size.
+        self.assertIn("width:2.75rem", rule.group(1))
+        self.assertIn("height:2.75rem", rule.group(1))
+
+    def test_compact_vote_and_pagination_buttons_are_enlarged(self):
+        css = STATIC_CSS.read_text(encoding="utf-8")
+        self.assertIn("padding:.45rem .85rem", css)  # .votes button
+        self.assertIn("padding:.5rem .9rem", css)    # .pagination a
+
+    def test_error_messages_are_assertive_alerts(self):
+        html = (TEMPLATES_DIR / "reviews" / "base.html").read_text(encoding="utf-8")
+        self.assertIn(
+            """role="{% if m.tags == 'error' %}alert{% else %}status{% endif %}\"""", html
+        )
+
+
 class HeaderLayoutTests(_MemoryRepoTestCase):
     """Modern header: skip link, burger toggle, i18n language switch."""
 

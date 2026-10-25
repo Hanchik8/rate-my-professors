@@ -47,11 +47,11 @@
     {% if r.tags %}<p class="tags">{{ r.tags|join:", " }}</p>{% endif %}
     <div class="votes">
       <form method="post" action="{% url 'review_vote' r.id %}">{% csrf_token %}
-        <button name="vote" value="up">{% translate "Полезно" %} {{ r.helpful }}</button>
-        <button name="vote" value="down">{% translate "Бесполезно" %} {{ r.not_helpful }}</button>
+        <button name="vote" value="up" aria-label="{% translate 'Полезно' %}: {{ r.course }} ({{ r.helpful }})">{% translate "Полезно" %} {{ r.helpful }}</button>
+        <button name="vote" value="down" aria-label="{% translate 'Бесполезно' %}: {{ r.course }} ({{ r.not_helpful }})">{% translate "Бесполезно" %} {{ r.not_helpful }}</button>
       </form>
       <form method="post" action="{% url 'review_report' r.id %}">{% csrf_token %}
-        <button class="link-btn" type="submit">{% translate "Пожаловаться" %}</button>
+        <button class="link-btn" type="submit" aria-label="{% translate 'Пожаловаться' %}: {{ r.course }}">{% translate "Пожаловаться" %}</button>
       </form>
     </div>
   </div>
@@ -59,9 +59,9 @@
 {% endfor %}
 {% if page_obj %}
 <div class="pagination">
-  {% if page_obj.has_previous %}<a href="?sort={{ sort }}&page={{ page_obj.previous_page_number }}">{% translate "Назад" %}</a>{% endif %}
-  <span>{% blocktranslate with n=page_obj.number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}</span>
-  {% if page_obj.has_next %}<a href="?sort={{ sort }}&page={{ page_obj.next_page_number }}">{% translate "Вперёд" %}</a>{% endif %}
+  {% if page_obj.has_previous %}<a href="?sort={{ sort }}&page={{ page_obj.previous_page_number }}" aria-label="{% blocktranslate with n=page_obj.previous_page_number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{% translate "Назад" %}</a>{% endif %}
+  <span aria-current="page">{% blocktranslate with n=page_obj.number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}</span>
+  {% if page_obj.has_next %}<a href="?sort={{ sort }}&page={{ page_obj.next_page_number }}" aria-label="{% blocktranslate with n=page_obj.next_page_number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{% translate "Вперёд" %}</a>{% endif %}
 </div>
 {% endif %}
 {% else %}

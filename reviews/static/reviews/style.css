@@ -92,9 +92,9 @@ a:hover{color:var(--accent-strong)}
 .link-btn:hover{background:var(--bg);color:var(--ink)}
 .lang-switch select{padding:.4rem .6rem;border-radius:.55rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:.95rem}
 
-/* Burger (mobile) */
+/* Burger (mobile) — 2.75rem = 44px: comfortable touch target (WCAG 2.5.5). */
 .nav-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:0;
-  width:2.6rem;height:2.6rem;padding:0;background:transparent;border:1px solid var(--line);border-radius:.65rem;cursor:pointer}
+  width:2.75rem;height:2.75rem;padding:0;background:transparent;border:1px solid var(--line);border-radius:.65rem;cursor:pointer}
 .nav-toggle:hover{background:var(--bg)}
 .burger{position:relative;display:block;width:1.2rem;height:2px;background:var(--ink);border-radius:999px;transition:background .15s ease}
 .burger::before,.burger::after{content:"";position:absolute;left:0;width:100%;height:2px;background:var(--ink);border-radius:999px;transition:transform .18s ease,top .18s ease}
@@ -183,8 +183,8 @@ input:focus,select:focus,textarea:focus{border-color:var(--focus)}
 .tags{color:var(--muted);margin:.4rem 0}
 .sort{color:var(--muted)}
 .pagination{display:flex;gap:1rem;align-items:center;justify-content:center;margin:1.5rem 0;flex-wrap:wrap}
-.pagination a{border:1px solid var(--line);padding:.35rem .8rem;border-radius:.65rem;text-decoration:none;
-  background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.pagination a{border:1px solid var(--line);padding:.5rem .9rem;border-radius:.65rem;text-decoration:none;
+  background:var(--surface);color:var(--ink);box-shadow:var(--shadow);display:inline-flex;align-items:center}
 .pagination a:hover{border-color:var(--accent);color:var(--accent)}
 
 /* Reviews */
@@ -198,7 +198,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--focus)}
 .votes{display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap;align-items:center}
 .votes form{display:flex;gap:.5rem;flex-wrap:wrap}
 .votes button{background:var(--surface);color:var(--muted);border:1px solid var(--line);font-weight:500;
-  padding:.3rem .8rem;font-size:.92rem;box-shadow:none}
+  padding:.45rem .85rem;font-size:.92rem;box-shadow:none}
 .votes button:hover{background:var(--bg);color:var(--ink);transform:none;border-color:var(--line-strong)}
 
 /* Forms */
