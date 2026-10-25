@@ -39,7 +39,11 @@
     </a>
   </li>
   {% empty %}
-  <li class="empty">{% translate "Ничего не нашлось. Попробуйте короче запрос или другой вуз/город." %}</li>
+  <li class="empty empty-state" role="status">
+    <strong class="empty-state-title">{% translate "Ничего не нашлось" %}</strong>
+    <p>{% translate "Попробуйте сократить запрос или изменить фильтры." %}</p>
+    <a class="empty-state-action" href="{% url 'home' %}">{% translate "Сбросить фильтры" %}</a>
+  </li>
   {% endfor %}
 </ol>
 {% if page_obj %}

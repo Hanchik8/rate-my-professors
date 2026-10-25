@@ -256,6 +256,15 @@ msgstr "Difficulty"
 msgid "Ничего не нашлось. Попробуйте короче запрос или другой вуз/город."
 msgstr "Nothing found. Try a shorter query or another school/city."
 
+msgid "Ничего не нашлось"
+msgstr "Nothing found"
+
+msgid "Попробуйте сократить запрос или изменить фильтры."
+msgstr "Try a shorter query or change the filters."
+
+msgid "Сбросить фильтры"
+msgstr "Reset filters"
+
 msgid "Назад"
 msgstr "Previous"
 
