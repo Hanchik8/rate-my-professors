@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 
 from django.core.exceptions import ImproperlyConfigured
+from django.utils.csp import CSP
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -136,6 +137,21 @@ X_FRAME_OPTIONS = "DENY"
 # is a safe, privacy-preserving default that can be tightened per deployment.
 SECURE_REFERRER_POLICY = os.environ.get("SECURE_REFERRER_POLICY", "same-origin")
 
+# Minimal Content-Security-Policy: only same-origin resources are allowed and
+# objects/framing/base-uri/form targets are locked down. Inline script/style
+# stay permitted because the shipped templates rely on them (nav toggle, star
+# widths); an empty dict disables the header.
+SECURE_CSP = {
+    "default-src": [CSP.SELF],
+    "script-src": [CSP.SELF, CSP.UNSAFE_INLINE],
+    "style-src": [CSP.SELF, CSP.UNSAFE_INLINE],
+    "img-src": [CSP.SELF, "data:"],
+    "object-src": [CSP.NONE],
+    "base-uri": [CSP.SELF],
+    "frame-ancestors": [CSP.NONE],
+    "form-action": [CSP.SELF],
+}
+
 # Cookies must never be readable from JavaScript and stay same-site by default.
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SAMESITE = "Lax"
@@ -163,6 +179,7 @@ MIDDLEWARE = [
     "django.middleware.gzip.GZipMiddleware",
     "django.middleware.http.ConditionalGetMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "django.middleware.csp.ContentSecurityPolicyMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -225,6 +242,7 @@ RATELIMIT_ENABLE = _parse_bool(os.environ.get("RATELIMIT_ENABLE"), default=not _
 # action -> (max hits, window in seconds)
 RATELIMIT = {
     "login": (10, 60),
+    "signup": (5, 600),
     "review": (10, 600),
     "vote": (60, 60),
 }

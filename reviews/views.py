@@ -271,6 +271,7 @@ class EmailSignupForm(forms.Form):
         return user
 
 
+@rate_limit("signup")
 def signup(request):
     """Register a new user and log them in immediately."""
     if request.user.is_authenticated:

@@ -8,6 +8,7 @@ from django.core.cache import cache
 from django.test import Client, TestCase, override_settings
 from django.urls import reverse
 from django.utils import translation
+from django.utils.csp import CSP
 from django.utils.formats import localize
 
 from .django_repo import DjangoRepository
@@ -812,6 +813,23 @@ class SecuritySettingsTests(TestCase):
         self.assertEqual(response.headers.get("X-Content-Type-Options"), "nosniff")
         self.assertEqual(response.headers.get("X-Frame-Options"), "DENY")
         self.assertEqual(response.headers.get("Referrer-Policy"), "same-origin")
+
+    def test_csp_header_is_emitted(self):
+        response = self.client.get(reverse("home"))
+        csp = response.headers.get("Content-Security-Policy", "")
+        self.assertIn("default-src 'self'", csp)
+        self.assertIn("object-src 'none'", csp)
+        self.assertIn("frame-ancestors 'none'", csp)
+
+    def test_csp_can_be_overridden(self):
+        with override_settings(SECURE_CSP={"default-src": [CSP.SELF]}):
+            response = self.client.get(reverse("home"))
+            self.assertEqual(response.headers.get("Content-Security-Policy"), "default-src 'self'")
+
+    def test_empty_csp_disables_header(self):
+        with override_settings(SECURE_CSP={}):
+            response = self.client.get(reverse("home"))
+            self.assertNotIn("Content-Security-Policy", response.headers)
 
     def test_secure_cookies_default_to_debug_flag(self):
         from config import settings as site
@@ -2237,7 +2255,7 @@ class OpenRedirectTests(TestCase):
 # ---------------------------------------------------------------------------
 _THROTTLE_SETTINGS = override_settings(
     RATELIMIT_ENABLE=True,
-    RATELIMIT={"login": (2, 60), "review": (1, 60), "vote": (1, 60)},
+    RATELIMIT={"login": (2, 60), "review": (1, 60), "vote": (1, 60), "signup": (2, 60)},
 )
 
 
@@ -2266,6 +2284,40 @@ class LoginRateLimitTests(TestCase):
         self.assertEqual(self._post(ip="10.0.0.1").status_code, 429)
         self.assertEqual(self._post(ip="10.0.0.2").status_code, 200)
 
+
+@_THROTTLE_SETTINGS
+class SignupRateLimitTests(TestCase):
+    def setUp(self):
+        cache.clear()
+
+    def _post(self, ip="127.0.0.1", password2="totally-different"):
+        # A password mismatch keeps the client anonymous, so the per-IP
+        # counter remains the active subject across repeated submissions.
+        return self.client.post(
+            reverse("signup"),
+            {"email": "new@example.com", "password1": "password12345", "password2": password2},
+            REMOTE_ADDR=ip,
+        )
+
+    def test_signup_budget_is_spent_then_returns_429(self):
+        for _ in range(2):
+            self.assertEqual(self._post().status_code, 200)
+        self.assertEqual(self._post().status_code, 429)
+
+    def test_signup_limits_are_isolated_per_ip(self):
+        for _ in range(2):
+            self._post(ip="10.0.0.1")
+        self.assertEqual(self._post(ip="10.0.0.1").status_code, 429)
+        self.assertEqual(self._post(ip="10.0.0.2").status_code, 200)
+
+    def test_signup_get_page_is_not_limited(self):
+        for _ in range(3):
+            self._post()
+        self.assertEqual(self.client.get(reverse("signup")).status_code, 200)
+
+    def test_first_valid_signup_is_allowed(self):
+        self.assertEqual(self._post(password2="password12345").status_code, 302)
+        self.assertTrue(User.objects.filter(email="new@example.com").exists())
 
 @_THROTTLE_SETTINGS
 class SubmissionRateLimitTests(_MemoryRepoTestCase):
