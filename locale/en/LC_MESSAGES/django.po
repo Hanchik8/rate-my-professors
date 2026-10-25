@@ -469,3 +469,12 @@ msgstr "School not found"
 
 msgid "Review not found"
 msgstr "Review not found"
+
+msgid "Нельзя голосовать за свой отзыв."
+msgstr "You cannot vote on your own review."
+
+msgid "Слишком много запросов. Попробуйте позже."
+msgstr "Too many requests. Please try again later."
+
+msgid "Слишком много попыток входа. Попробуйте позже."
+msgstr "Too many login attempts. Please try again later."
