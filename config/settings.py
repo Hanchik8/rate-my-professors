@@ -189,3 +189,26 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+
+# Rate limiting: simple fixed-window counters kept in the Django cache.
+# Disabled by default while running the test suite so unrelated tests cannot
+# exhaust a shared per-user/per-IP budget; the throttle tests re-enable it.
+RATELIMIT_ENABLE = _parse_bool(os.environ.get("RATELIMIT_ENABLE"), default=not _is_test)
+# action -> (max hits, window in seconds)
+RATELIMIT = {
+    "login": (10, 60),
+    "review": (10, 600),
+    "vote": (60, 60),
+}
+
+# Shared cache used by the rate limiter (and available for future use). A real
+# multi-process deployment should point CACHE_BACKEND at Redis/Memcached so the
+# limit is enforced globally instead of per worker.
+CACHES = {
+    "default": {
+        "BACKEND": os.environ.get(
+            "CACHE_BACKEND", "django.core.cache.backends.locmem.LocMemCache"
+        ),
+        "LOCATION": os.environ.get("CACHE_LOCATION", "proflens"),
+    }
+}

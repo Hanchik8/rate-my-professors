@@ -8,10 +8,11 @@ live in small private helpers below.
 from django import forms
 from django.contrib import messages
 from django.contrib.auth import login
+from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
-from django.http import Http404, JsonResponse
+from django.http import Http404, HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils.translation import gettext as _
@@ -19,6 +20,7 @@ from django.views.decorators.http import require_POST
 
 from .forms import ProfessorForm, ReviewForm
 from .store import repo
+from .throttle import is_rate_limited, rate_limit
 
 PAGE_SIZE = 10
 
@@ -133,6 +135,7 @@ def _save_review(form, prof, request):
 
 
 @login_required
+@rate_limit("review")
 def review_new(request, slug):
     """Create a review for a professor; new reviews await moderation."""
     prof = _professor_or_404(slug)
@@ -160,6 +163,7 @@ def _redirect_to_review(review):
 
 @require_POST
 @login_required
+@rate_limit("vote")
 def review_vote(request, review_id):
     """Record a helpful / not-helpful vote on a review."""
     review = repo.review(review_id)
@@ -188,6 +192,17 @@ def review_report(request, review_id):
         pass
     messages.success(request, _("Жалоба отправлена модератору."))
     return _redirect_to_review(review)
+
+
+class ThrottledLoginView(auth_views.LoginView):
+    """Login view with a simple per-IP attempt limit backed by the cache."""
+
+    def post(self, request, *args, **kwargs):
+        if is_rate_limited(request, "login"):
+            return HttpResponse(
+                _("Слишком много попыток входа. Попробуйте позже."), status=429
+            )
+        return super().post(request, *args, **kwargs)
 
 
 class EmailSignupForm(forms.Form):

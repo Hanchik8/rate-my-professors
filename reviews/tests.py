@@ -2,7 +2,8 @@ import re
 from pathlib import Path
 
 from django.contrib.auth.models import User
-from django.test import Client, TestCase
+from django.core.cache import cache
+from django.test import Client, TestCase, override_settings
 from django.urls import reverse
 from django.utils import translation
 from django.utils.formats import localize
@@ -1859,3 +1860,103 @@ class OpenRedirectTests(TestCase):
         })
         self.assertEqual(r.status_code, 302)
         self.assertIn(reverse("rules"), r.url)
+
+
+# ---------------------------------------------------------------------------
+# Security: rate limiting (cache-backed fixed windows)
+# ---------------------------------------------------------------------------
+_THROTTLE_SETTINGS = override_settings(
+    RATELIMIT_ENABLE=True,
+    RATELIMIT={"login": (2, 60), "review": (1, 60), "vote": (1, 60)},
+)
+
+
+@_THROTTLE_SETTINGS
+class LoginRateLimitTests(TestCase):
+    def setUp(self):
+        cache.clear()
+
+    def _post(self, ip="127.0.0.1", password="wrong-pass"):
+        return self.client.post(
+            reverse("login"),
+            {"username": "rl@example.com", "password": password},
+            REMOTE_ADDR=ip,
+        )
+
+    def test_budget_is_spent_then_returns_429(self):
+        User.objects.create_user(username="rl@example.com", email="rl@example.com", password="pass12345")
+        for _ in range(2):
+            self.assertEqual(self._post().status_code, 200)
+        self.assertEqual(self._post().status_code, 429)
+
+    def test_limits_are_isolated_per_ip(self):
+        User.objects.create_user(username="rl@example.com", email="rl@example.com", password="pass12345")
+        for _ in range(2):
+            self._post(ip="10.0.0.1")
+        self.assertEqual(self._post(ip="10.0.0.1").status_code, 429)
+        self.assertEqual(self._post(ip="10.0.0.2").status_code, 200)
+
+
+@_THROTTLE_SETTINGS
+class SubmissionRateLimitTests(_MemoryRepoTestCase):
+    def setUp(self):
+        super().setUp()
+        cache.clear()
+
+    def test_review_submissions_are_limited(self):
+        self.login()
+        url = reverse("review_new", args=[self.prof().slug])
+        self.assertEqual(self.client.post(url, _valid()).status_code, 302)
+        self.assertEqual(self.client.post(url, _valid({"course": "Другой курс"})).status_code, 429)
+
+    def test_review_page_get_is_not_limited(self):
+        self.login()
+        url = reverse("review_new", args=[self.prof().slug])
+        self.client.post(url, _valid())
+        self.client.post(url, _valid({"course": "Другой курс"}))
+        self.assertEqual(self.client.get(url).status_code, 200)
+
+    def test_votes_are_limited(self):
+        self.login()
+        review = self.repo.reviews_for(self.prof().id)[0]
+        url = reverse("review_vote", args=[review.id])
+        self.assertEqual(self.client.post(url, {"vote": "up"}).status_code, 302)
+        self.assertEqual(self.client.post(url, {"vote": "up"}).status_code, 429)
+
+
+class RateLimitDisabledTests(_MemoryRepoTestCase):
+    """RATELIMIT_ENABLE=False is a kill switch that always allows requests."""
+
+    @override_settings(RATELIMIT_ENABLE=False, RATELIMIT={"login": (0, 60), "review": (0, 60)})
+    def test_disabled_limiter_allows_repeated_posts(self):
+        cache.clear()
+        self.login()
+        url = reverse("review_new", args=[self.prof().slug])
+        self.assertEqual(self.client.post(url, _valid()).status_code, 302)
+        self.assertEqual(self.client.post(url, _valid({"course": "Другой курс"})).status_code, 302)
+
+
+class RateLimiterUnitTests(TestCase):
+    def setUp(self):
+        cache.clear()
+
+    @override_settings(RATELIMIT_ENABLE=True, RATELIMIT={"thing": (2, 60)})
+    def test_is_rate_limited_counts_per_subject(self):
+        from django.test import RequestFactory
+
+        from .throttle import is_rate_limited
+        request = RequestFactory().post("/thing/", REMOTE_ADDR="1.2.3.4")
+        self.assertFalse(is_rate_limited(request, "thing"))
+        self.assertFalse(is_rate_limited(request, "thing"))
+        self.assertTrue(is_rate_limited(request, "thing"))
+        other = RequestFactory().post("/thing/", REMOTE_ADDR="5.6.7.8")
+        self.assertFalse(is_rate_limited(other, "thing"))
+
+    @override_settings(RATELIMIT_ENABLE=False)
+    def test_disabled_is_never_limited(self):
+        from django.test import RequestFactory
+
+        from .throttle import is_rate_limited
+        request = RequestFactory().post("/thing/", REMOTE_ADDR="1.2.3.4")
+        for _ in range(50):
+            self.assertFalse(is_rate_limited(request, "thing"))

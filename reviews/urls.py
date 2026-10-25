@@ -2,6 +2,7 @@ from django.contrib.auth import views as auth_views
 from django.urls import path
 
 from . import views
+from .views import ThrottledLoginView
 
 urlpatterns = [
     path("", views.home, name="home"),
@@ -14,6 +15,6 @@ urlpatterns = [
     path("reviews/<str:review_id>/vote/", views.review_vote, name="review_vote"),
     path("reviews/<str:review_id>/report/", views.review_report, name="review_report"),
     path("accounts/signup/", views.signup, name="signup"),
-    path("accounts/login/", auth_views.LoginView.as_view(template_name="registration/login.html"), name="login"),
+    path("accounts/login/", ThrottledLoginView.as_view(template_name="registration/login.html"), name="login"),
     path("accounts/logout/", auth_views.LogoutView.as_view(), name="logout"),
 ]
