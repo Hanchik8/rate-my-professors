@@ -477,6 +477,11 @@ class HomeViewTests(_MemoryRepoTestCase):
         self.assertContains(r, "По рейтингу")
         self.assertContains(r, "По числу отзывов")
 
+    def test_home_uses_shared_stylesheet_and_viewport_meta(self):
+        r = self.client.get(reverse("home"))
+        self.assertContains(r, "reviews/style.css")
+        self.assertContains(r, 'name="viewport" content="width=device-width, initial-scale=1"')
+
 
 class SchoolViewTests(_MemoryRepoTestCase):
     def test_school_detail_stats_and_departments(self):
@@ -1091,6 +1096,46 @@ class MobileLayoutDesignTests(TestCase):
                 rule = re.search(re.escape(selector) + r"\{([^}]*)\}", css)
                 self.assertIsNotNone(rule)
                 self.assertIn("flex-wrap:wrap", rule.group(1))
+
+    def test_search_filters_stack_full_width_on_phones(self):
+        """Home search form must become a single full-width column at 360px."""
+        block = self._media_block(STATIC_CSS.read_text(encoding="utf-8"), "26rem")
+        self.assertRegex(block, r"\.search\{[^}]*flex-direction:column")
+        self.assertRegex(
+            block, r"\.search input,\.search select,\.search button\{[^}]*width:100%"
+        )
+
+    def test_professor_headline_stacks_on_phones(self):
+        """Rating tile, name and stars stack vertically on narrow screens."""
+        block = self._media_block(STATIC_CSS.read_text(encoding="utf-8"), "26rem")
+        self.assertRegex(block, r"\.headline\{[^}]*flex-direction:column")
+
+    def test_phone_gutters_shrink_to_leave_more_content_width(self):
+        block = self._media_block(STATIC_CSS.read_text(encoding="utf-8"), "26rem")
+        rule = re.search(r"\.top-inner,main,\.messages,footer\{([^}]*)\}", block)
+        self.assertIsNotNone(rule)
+        self.assertIn("padding-left:1rem", rule.group(1))
+        self.assertIn("padding-right:1rem", rule.group(1))
+
+    def test_mobile_nav_links_are_full_width_44px_targets(self):
+        block = self._media_block(STATIC_CSS.read_text(encoding="utf-8"), "50rem")
+        rule = re.search(r"\.nav a,\.nav \.link-btn\{([^}]*)\}", block)
+        self.assertIsNotNone(rule)
+        self.assertIn("width:100%", rule.group(1))
+        # 2.75rem = 44px at the default 16px root font size (WCAG 2.5.5).
+        self.assertIn("min-height:2.75rem", rule.group(1))
+
+    def test_compact_controls_get_44px_tap_targets_on_mobile(self):
+        """Vote buttons, pagination and search controls reach 44px on mobile."""
+        block = self._media_block(STATIC_CSS.read_text(encoding="utf-8"), "50rem")
+        for pattern in (
+            r"\.votes button[^{]*\{[^}]*min-height:2\.75rem",
+            r"\.pagination a\{[^}]*min-height:2\.75rem",
+            r"\.search input,\.search select,\.search button\{[^}]*min-height:2\.75rem",
+            r"\.choices label\{[^}]*min-height:2\.75rem",
+        ):
+            with self.subTest(pattern=pattern):
+                self.assertRegex(block, pattern)
 
     def test_form_controls_have_persistent_focus_border(self):
         css = STATIC_CSS.read_text(encoding="utf-8")

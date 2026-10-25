@@ -238,12 +238,21 @@ textarea{resize:vertical}
   .nav{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:.15rem;
     padding:.4rem 0 1rem;font-size:1rem}
   .nav.open{display:flex}
-  .nav a,.link-btn{padding:.65rem .75rem;border-radius:.6rem}
-  .nav a:hover,.link-btn:hover{background:var(--bg)}
-  .nav-user{max-width:100%}
+  /* Opened burger menu: full-width rows with 44px+ tap targets (WCAG 2.5.5). */
+  .nav a,.nav .link-btn{display:flex;align-items:center;width:100%;min-height:2.75rem;
+    padding:.65rem .75rem;border-radius:.6rem}
+  .nav a:hover,.nav .link-btn:hover{background:var(--bg)}
+  .nav-user{max-width:100%;padding:.65rem .75rem}
   .lang-switch{margin-top:.4rem}
+  .lang-switch select{width:100%;min-height:2.75rem}
   .cards{grid-template-columns:1fr}
   .search button{flex:1 1 100%}
+  /* Touch-first sizing: every interactive control is at least 44px tall. */
+  .search input,.search select,.search button{min-height:2.75rem}
+  .btn,button{min-height:2.75rem}
+  .votes button,.votes .link-btn{min-height:2.75rem}
+  .pagination a{min-height:2.75rem}
+  .choices label{min-height:2.75rem}
   .form-actions button{width:100%}
   .form-actions .cancel{display:block;text-align:center}
 }
@@ -253,7 +262,12 @@ textarea{resize:vertical}
   .tile{width:3rem;height:3rem;font-size:1.15rem}
   .tile.big{width:4.5rem;height:4.5rem;font-size:2rem}
   .card{padding:.9rem 1rem}
-  .headline{padding:1rem 1.1rem;gap:1rem}
+  /* Reclaim horizontal room: 1rem gutters leave 328px of content on 360px. */
+  .top-inner,main,.messages,footer{padding-left:1rem;padding-right:1rem}
+  /* Professor header and search filters stack into a single column. */
+  .headline{padding:1rem 1.1rem;gap:1rem;flex-direction:column;align-items:flex-start}
+  .search{flex-direction:column;align-items:stretch}
+  .search input,.search select,.search button{flex:1 1 100%;width:100%}
   .review{grid-template-columns:1fr;gap:.5rem}
   .facts div{flex:1 1 8rem}
 }
