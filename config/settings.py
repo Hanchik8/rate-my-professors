@@ -87,19 +87,33 @@ def _validate_allowed_hosts(hosts, debug):
         raise ImproperlyConfigured("ALLOWED_HOSTS must not contain '*' when DEBUG=False.")
 
 
-def _security_settings(debug):
+def _get_secure_cookie(raw, default):
+    """Resolve a secure-cookie flag from the environment.
+
+    An unset variable falls back to ``default`` (``not DEBUG``), so secure
+    cookies stay on in production while remaining explicitly overridable by
+    ``SESSION_COOKIE_SECURE`` / ``CSRF_COOKIE_SECURE``.
+    """
+    if raw is None:
+        return default
+    return _parse_bool(raw, default=default)
+
+
+def _security_settings(debug, session_secure=None, csrf_secure=None):
     """HTTPS/cookie hardening switches, enabled only when DEBUG=False.
 
-    Kept as a pure function so the production branch can be unit-tested
-    without mutating the process environment.
+    ``session_secure``/``csrf_secure`` let the environment override the
+    debug-derived default; when left as ``None`` the secure value tracks
+    ``not debug``.  Kept as a pure function so the production branch can be
+    unit-tested without mutating the process environment.
     """
     return {
         "SECURE_SSL_REDIRECT": not debug,
         "SECURE_HSTS_SECONDS": 0 if debug else 31536000,
         "SECURE_HSTS_INCLUDE_SUBDOMAINS": not debug,
         "SECURE_HSTS_PRELOAD": not debug,
-        "SESSION_COOKIE_SECURE": not debug,
-        "CSRF_COOKIE_SECURE": not debug,
+        "SESSION_COOKIE_SECURE": not debug if session_secure is None else session_secure,
+        "CSRF_COOKIE_SECURE": not debug if csrf_secure is None else csrf_secure,
         "SECURE_CONTENT_TYPE_NOSNIFF": True,
         "SECURE_PROXY_SSL_HEADER": ("HTTP_X_FORWARDED_PROTO", "https") if not debug else None,
     }
@@ -107,10 +121,20 @@ def _security_settings(debug):
 
 _validate_secret_key(SECRET_KEY, DEBUG)
 _validate_allowed_hosts(ALLOWED_HOSTS, DEBUG)
-globals().update(_security_settings(DEBUG))
+globals().update(
+    _security_settings(
+        DEBUG,
+        session_secure=_get_secure_cookie(os.environ.get("SESSION_COOKIE_SECURE"), not DEBUG),
+        csrf_secure=_get_secure_cookie(os.environ.get("CSRF_COOKIE_SECURE"), not DEBUG),
+    )
+)
 
 # Clickjacking protection is safe to enable in every environment.
 X_FRAME_OPTIONS = "DENY"
+
+# Referrer-Policy limits how much of our URLs leak to third parties; "same-origin"
+# is a safe, privacy-preserving default that can be tightened per deployment.
+SECURE_REFERRER_POLICY = os.environ.get("SECURE_REFERRER_POLICY", "same-origin")
 
 # Cookies must never be readable from JavaScript and stay same-site by default.
 SESSION_COOKIE_HTTPONLY = True
@@ -136,6 +160,7 @@ INSTALLED_APPS = [
 ]
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.locale.LocaleMiddleware",

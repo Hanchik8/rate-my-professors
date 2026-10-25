@@ -785,6 +785,41 @@ class SecuritySettingsTests(TestCase):
         self.assertTrue(site._security_settings(debug=True)["SECURE_CONTENT_TYPE_NOSNIFF"])
         self.assertTrue(site._security_settings(debug=False)["SECURE_CONTENT_TYPE_NOSNIFF"])
 
+    def test_referrer_policy_configured(self):
+        from django.conf import settings
+        self.assertEqual(settings.SECURE_REFERRER_POLICY, "same-origin")
+
+    def test_security_headers_are_emitted(self):
+        """Middleware must actually send the hardening response headers."""
+        response = self.client.get(reverse("home"))
+        self.assertEqual(response.headers.get("X-Content-Type-Options"), "nosniff")
+        self.assertEqual(response.headers.get("X-Frame-Options"), "DENY")
+        self.assertEqual(response.headers.get("Referrer-Policy"), "same-origin")
+
+    def test_secure_cookies_default_to_debug_flag(self):
+        from config import settings as site
+        self.assertFalse(site._security_settings(debug=True)["SESSION_COOKIE_SECURE"])
+        self.assertFalse(site._security_settings(debug=True)["CSRF_COOKIE_SECURE"])
+        self.assertTrue(site._security_settings(debug=False)["SESSION_COOKIE_SECURE"])
+        self.assertTrue(site._security_settings(debug=False)["CSRF_COOKIE_SECURE"])
+
+    def test_secure_cookies_can_be_overridden_by_env(self):
+        from config import settings as site
+        forced_on = site._security_settings(debug=True, session_secure=True, csrf_secure=True)
+        self.assertTrue(forced_on["SESSION_COOKIE_SECURE"])
+        self.assertTrue(forced_on["CSRF_COOKIE_SECURE"])
+        forced_off = site._security_settings(debug=False, session_secure=False, csrf_secure=False)
+        self.assertFalse(forced_off["SESSION_COOKIE_SECURE"])
+        self.assertFalse(forced_off["CSRF_COOKIE_SECURE"])
+
+    def test_get_secure_cookie_parses_env(self):
+        from config import settings as site
+        self.assertTrue(site._get_secure_cookie("true", default=False))
+        self.assertTrue(site._get_secure_cookie("1", default=False))
+        self.assertTrue(site._get_secure_cookie("on", default=False))
+        self.assertFalse(site._get_secure_cookie("no", default=True))
+        self.assertTrue(site._get_secure_cookie(None, default=True))
+
     def test_default_secret_key_rejected_in_production(self):
         from django.core.exceptions import ImproperlyConfigured
 
