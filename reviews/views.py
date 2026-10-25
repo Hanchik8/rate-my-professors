@@ -98,19 +98,35 @@ def professor_detail(request, slug):
     })
 
 
-def school_detail(request, slug):
-    """Show a school page: its professors, aggregate stats and departments."""
+def _school_or_404(slug):
+    """Fetch a school by slug or raise ``Http404``."""
     school = repo.school_by_slug(slug)
     if school is None:
         raise Http404(_("School not found"))
-    results = [r for r in repo.search("", school_slug=school.slug)]
-    stats = repo.school_stats(school.id)
-    departments = sorted({r["prof"].department for r in results})
-    page_results, page_obj = _paginate(results, request.GET.get("page"))
-    return render(request, "reviews/school.html", {
-        "school": school, "results": page_results, "stats": stats,
-        "departments": departments, "page_obj": page_obj,
-    })
+    return school
+
+
+def _school_context(school, page_number):
+    """Build the template context for a school page."""
+    results = repo.search("", school_slug=school.slug)
+    page_results, page_obj = _paginate(results, page_number)
+    return {
+        "school": school,
+        "results": page_results,
+        "stats": repo.school_stats(school.id),
+        "departments": sorted({r["prof"].department for r in results}),
+        "page_obj": page_obj,
+    }
+
+
+def school_detail(request, slug):
+    """Show a school page: its professors, aggregate stats and departments."""
+    school = _school_or_404(slug)
+    return render(
+        request,
+        "reviews/school.html",
+        _school_context(school, request.GET.get("page")),
+    )
 
 
 def rules(request):
@@ -210,6 +226,7 @@ class ThrottledLoginView(auth_views.LoginView):
     """Login view with a simple per-IP attempt limit backed by the cache."""
 
     def post(self, request, *args, **kwargs):
+        """Reject the request when the per-IP login rate limit is exceeded."""
         if is_rate_limited(request, "login"):
             return HttpResponse(
                 _("Слишком много попыток входа. Попробуйте позже."), status=429
@@ -270,25 +287,36 @@ def signup(request):
     return render(request, "registration/signup.html", {"form": form})
 
 
-def _submit_professor(form, user):
-    """Submit a new professor for moderation, returning ``True`` on success.
-
-    The user is only forwarded to ``repo.add_professor`` when the active
-    backend accepts that keyword (the in-memory repository does not), so the
-    same view works against both repositories.
-    """
+def _professor_args(form):
+    """Return positional arguments for ``repo.add_professor`` from ``form``."""
     data = form.cleaned_data
-    add = repo.add_professor
-    supports_user = hasattr(add, "__code__") and "user" in add.__code__.co_varnames
-    args = (
+    return (
         data["school"], data["first_name"].strip(), data["last_name"].strip(),
         data["department"].strip(), data["title"],
     )
+
+
+def _add_professor(add, args, user):
+    """Call ``add`` with the optional ``user`` keyword when supported.
+
+    The in-memory repository does not accept ``user`` while the ORM backend
+    does, so support is detected from the callable's signature.
+    """
+    supports_user = hasattr(add, "__code__") and "user" in add.__code__.co_varnames
+    if supports_user:
+        add(*args, status="pending", user=user)
+    else:
+        add(*args, status="pending")
+
+
+def _submit_professor(form, user):
+    """Submit a new professor for moderation, returning ``True`` on success.
+
+    A repository conflict (same full name in the same school) is attached to
+    the form as a non-field error and reported as failure.
+    """
     try:
-        if supports_user:
-            add(*args, status="pending", user=user)
-        else:
-            add(*args, status="pending")
+        _add_professor(repo.add_professor, _professor_args(form), user)
     except ValueError:
         form.add_error(None, _("Преподаватель с таким ФИО уже есть в этом вузе."))
         return False
