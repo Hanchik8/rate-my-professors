@@ -165,6 +165,9 @@ def review_vote(request, review_id):
     review = repo.review(review_id)
     if review is None:
         raise Http404(_("Review not found"))
+    if review.author_id is not None and str(review.author_id) == str(request.user.id):
+        messages.warning(request, _("Нельзя голосовать за свой отзыв."))
+        return _redirect_to_review(review)
     try:
         repo.vote(review_id, helpful=request.POST.get("vote") == "up", user=request.user)
     except ValueError:

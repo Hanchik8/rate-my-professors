@@ -1,6 +1,7 @@
 from collections import Counter
 from statistics import mean
 
+from django.core.exceptions import ValidationError
 from django.db import IntegrityError, transaction
 from django.db.models import Avg, Count, F, Q
 from django.utils.text import slugify
@@ -160,7 +161,8 @@ class DjangoRepository:
     def review(self, review_id):
         try:
             return self._review_to_dc(Review.objects.get(pk=review_id))
-        except Review.DoesNotExist:
+        except (Review.DoesNotExist, ValidationError, ValueError):
+            # ValidationError: malformed UUID coming straight from the URL.
             return None
 
     def reviews_for(self, professor_id, sort="newest", include_pending=False):
