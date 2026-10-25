@@ -1,16 +1,76 @@
 import os
+import sys
 from pathlib import Path
 
 from django.core.exceptions import ImproperlyConfigured
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEFAULT_SECRET_KEY = "dev-only-change-me"
 
-SECRET_KEY = os.environ.get("SECRET_KEY", DEFAULT_SECRET_KEY)
-DEBUG = os.environ.get("DEBUG", "True").lower() in ("1", "true", "yes", "on")
-_allowed = os.environ.get("ALLOWED_HOSTS", "*")
-ALLOWED_HOSTS = [h.strip() for h in _allowed.split(",") if h.strip()] or ["*"]
+def _load_dotenv(path):
+    """Minimal stdlib .env loader so local dev works without extra deps.
+
+    Existing environment variables always win so real deployments can override
+    the file. Missing files are ignored.
+    """
+    try:
+        content = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError):
+        return
+    for line in content.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        if key:
+            os.environ.setdefault(key, value)
+
+
+_load_dotenv(BASE_DIR / ".env")
+
+# Django's test command runs with DEBUG off by default; force a safe dev mode so
+# `manage.py test` never requires production secrets or strict HTTPS flags.
+_is_test = sys.argv[1:2] == ["test"]
+
+DEFAULT_SECRET_KEY = "dev-only-change-me"
+# Used only while running the test suite; never valid for production boot.
+TEST_SECRET_KEY = "test-secret-key-for-ci-only-must-not-be-used-in-production-0123456789"
+# Safe fallback that works for local development without exposing the app to
+# Host-header attacks the way a bare "*" would.
+DEFAULT_ALLOWED_HOSTS = ["localhost", "127.0.0.1", "[::1]"]
+TEST_ALLOWED_HOSTS = ["testserver", "localhost", "127.0.0.1"]
+
+
+def _parse_bool(value, default=False):
+    """Parse common truthy/falsy strings; fall back to `default` when unset."""
+    if value is None:
+        return default
+    return value.strip().lower() in ("1", "true", "yes", "on")
+
+
+def _get_debug(is_test, raw):
+    """DEBUG comes from the environment, defaulting to False (prod-safe)."""
+    if is_test:
+        return True
+    return _parse_bool(raw, default=False)
+
+
+def _get_allowed_hosts(raw, is_test=False):
+    """Parse ALLOWED_HOSTS, falling back to safe localhost-only defaults."""
+    hosts = [h.strip() for h in (raw or "").split(",") if h.strip()]
+    if hosts:
+        return hosts
+    return list(TEST_ALLOWED_HOSTS if is_test else DEFAULT_ALLOWED_HOSTS)
+
+
+DEBUG = _get_debug(_is_test, os.environ.get("DEBUG"))
+if _is_test:
+    SECRET_KEY = os.environ.get("SECRET_KEY") or TEST_SECRET_KEY
+else:
+    SECRET_KEY = os.environ.get("SECRET_KEY") or DEFAULT_SECRET_KEY
+ALLOWED_HOSTS = _get_allowed_hosts(os.environ.get("ALLOWED_HOSTS"), _is_test)
 
 
 def _validate_secret_key(secret_key, debug):
@@ -19,6 +79,12 @@ def _validate_secret_key(secret_key, debug):
         raise ImproperlyConfigured(
             "SECRET_KEY must be set to a unique, unpredictable value when DEBUG=False."
         )
+
+
+def _validate_allowed_hosts(hosts, debug):
+    """Wildcard hosts are a dev convenience only; reject them in production."""
+    if not debug and "*" in hosts:
+        raise ImproperlyConfigured("ALLOWED_HOSTS must not contain '*' when DEBUG=False.")
 
 
 def _security_settings(debug):
@@ -40,10 +106,16 @@ def _security_settings(debug):
 
 
 _validate_secret_key(SECRET_KEY, DEBUG)
+_validate_allowed_hosts(ALLOWED_HOSTS, DEBUG)
 globals().update(_security_settings(DEBUG))
 
 # Clickjacking protection is safe to enable in every environment.
 X_FRAME_OPTIONS = "DENY"
+
+# Cookies must never be readable from JavaScript and stay same-site by default.
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = "Lax"
+CSRF_COOKIE_SAMESITE = "Lax"
 
 # Password strength requirements enforced by Django auth / password reset.
 AUTH_PASSWORD_VALIDATORS = [

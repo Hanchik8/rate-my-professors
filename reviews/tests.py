@@ -795,6 +795,38 @@ class SecuritySettingsTests(TestCase):
         self.assertEqual(site.SESSION_COOKIE_SECURE, not site.DEBUG)
         self.assertEqual(site.CSRF_COOKIE_SECURE, not site.DEBUG)
 
+    def test_session_cookie_httponly_enabled(self):
+        from django.conf import settings
+        self.assertTrue(settings.SESSION_COOKIE_HTTPONLY)
+
+    def test_debug_defaults_to_false_off_tests(self):
+        from config import settings as site
+        self.assertFalse(site._get_debug(is_test=False, raw=None))
+        self.assertFalse(site._get_debug(is_test=False, raw="0"))
+        self.assertTrue(site._get_debug(is_test=False, raw="true"))
+        # The suite itself must keep running in a developer-friendly mode.
+        self.assertTrue(site._get_debug(is_test=True, raw=None))
+
+    def test_allowed_hosts_default_is_safe(self):
+        from config import settings as site
+        hosts = site._get_allowed_hosts(None)
+        self.assertNotIn("*", hosts)
+        self.assertIn("localhost", hosts)
+        self.assertIn("127.0.0.1", hosts)
+
+    def test_allowed_hosts_parses_comma_separated_env(self):
+        from config import settings as site
+        self.assertEqual(site._get_allowed_hosts("a.example, b.example"), ["a.example", "b.example"])
+
+    def test_wildcard_hosts_rejected_in_production(self):
+        from django.core.exceptions import ImproperlyConfigured
+
+        from config import settings as site
+        with self.assertRaises(ImproperlyConfigured):
+            site._validate_allowed_hosts(["*"], debug=False)
+        # wildcard remains usable locally with DEBUG=True
+        site._validate_allowed_hosts(["*"], debug=True)
+
 
 # ---------------------------------------------------------------------------
 # UX design: responsive layout, professor cards, rating stars, a11y

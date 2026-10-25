@@ -24,9 +24,9 @@ python manage.py runserver
 
 | Переменная | По умолчанию | Описание |
 |---|---|---|
-| `SECRET_KEY` | `dev-only-change-me` | Секрет Django |
-| `DEBUG` | `True` | `False` в проде |
-| `ALLOWED_HOSTS` | `*` | Через запятую, напр. `example.com,127.0.0.1` |
+| `SECRET_KEY` | `dev-only-change-me` | Секрет Django (в проде обязателен свой) |
+| `DEBUG` | `False` | `True` только для локальной разработки |
+| `ALLOWED_HOSTS` | `localhost,127.0.0.1,[::1]` | Через запятую, напр. `example.com,127.0.0.1`. `*` запрещён в проде |
 | `DATABASE_URL` | _(пусто — SQLite)_ | `postgres://user:pass@host:port/db` |
 | `REPO_BACKEND` | `memory` | `memory` или `django` (ORM). При `DATABASE_URL` по умолчанию `django` |
 
