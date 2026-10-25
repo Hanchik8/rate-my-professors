@@ -200,6 +200,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--focus)}
 .review p{margin:.3rem 0}
 .facts-line{color:var(--muted)}
 .facts-line strong{color:var(--ink)}
+.review-date{color:var(--muted);font-size:.9rem}
 .votes{display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap;align-items:center}
 .votes form{display:flex;gap:.5rem;flex-wrap:wrap}
 .votes button{background:var(--surface);color:var(--muted);border:1px solid var(--line);font-weight:500;

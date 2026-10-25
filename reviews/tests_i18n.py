@@ -9,6 +9,7 @@ tags and grades).
 """
 import ast
 import re
+from datetime import datetime, timezone
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -206,7 +207,7 @@ class RenderedTemplateTranslationTests(TestCase):
         school = SimpleNamespace(name="Test School", slug="test-school")
         stats = {
             "count": 1,
-            "overall": 5,
+            "overall": 4.5,
             "difficulty": 3,
             "wta_pct": 100,
             "tone": "good",
@@ -225,6 +226,7 @@ class RenderedTemplateTranslationTests(TestCase):
             tags=["Понятные критерии"],
             helpful=1,
             not_helpful=0,
+            created_at=datetime(2025, 10, 25, 12, 0, tzinfo=timezone.utc),
         )
         request = RequestFactory().get("/professors/test-professor/")
         with translation.override(lang):
@@ -278,3 +280,17 @@ class RenderedTemplateTranslationTests(TestCase):
                     self.assertIn(value, html)
                 for value in forbidden.get(lang, []):
                     self.assertNotIn(value, html)
+
+    def test_ratings_and_review_dates_use_locale_formats(self):
+        expected = {
+            "ru": ("4,5", "25 октября 2025 г.", "Дата отзыва:"),
+            "ky": ("4.5", "25 Октябрь 2025 ж.", "Сын-пикирдин күнү:"),
+            "en": ("4.5", "Oct. 25, 2025", "Review date:"),
+        }
+        for lang, (rating, review_date, label) in expected.items():
+            with self.subTest(lang=lang):
+                html = self._render(lang)
+                self.assertIn(f">{rating}</div>", html)
+                self.assertIn(label, html)
+                self.assertIn(f">{review_date}</time>", html)
+                self.assertIn('<time datetime="2025-10-25T', html)

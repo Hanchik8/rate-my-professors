@@ -542,3 +542,6 @@ msgstr "Contact"
 
 msgid "По всем вопросам и предложениям пишите на proflens@proton.me"
 msgstr "For all questions and suggestions, write to proflens@proton.me"
+
+msgid "Дата отзыва:"
+msgstr "Review date:"

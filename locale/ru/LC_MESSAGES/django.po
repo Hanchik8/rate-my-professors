@@ -523,3 +523,6 @@ msgstr "Контакты"
 
 msgid "По всем вопросам и предложениям пишите на proflens@proton.me"
 msgstr "По всем вопросам и предложениям пишите на proflens@proton.me"
+
+msgid "Дата отзыва:"
+msgstr "Дата отзыва:"

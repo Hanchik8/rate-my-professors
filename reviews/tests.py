@@ -1270,6 +1270,20 @@ class HeaderLayoutTests(_MemoryRepoTestCase):
         self.assertContains(r, 'name="language"')
         self.assertContains(r, 'aria-label="Язык"')
 
+    def test_language_switch_highlights_current_language(self):
+        for code in ("ru", "ky", "en"):
+            with self.subTest(language=code):
+                self.client.post(
+                    reverse("set_language"),
+                    {"language": code, "next": reverse("home")},
+                )
+                r = self.client.get(reverse("home"))
+                html = r.content.decode()
+                start = html.index('<select name="language"')
+                switch = html[start:html.index("</select>", start)]
+                self.assertIn(f'<option value="{code}" selected>', switch)
+                self.assertEqual(switch.count(" selected>"), 1)
+
     def test_header_logged_in_shows_logout(self):
         self.login()
         r = self.client.get(reverse("home"))

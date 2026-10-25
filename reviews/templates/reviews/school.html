@@ -1,13 +1,13 @@
-{% extends "reviews/base.html" %}{% load i18n %}
+{% extends "reviews/base.html" %}{% load i18n l10n %}
 {% block title %}{{ school.name }} — ProfLens{% endblock %}
 {% block content %}
 <h1>{{ school.name }}</h1>
 <p class="sub">{{ school.city }}</p>
 {% if stats.prof_count %}
 <dl class="facts">
-  <div><dt>{% translate "Преподавателей" %}</dt><dd>{{ stats.prof_count }}</dd></div>
-  <div><dt>{% translate "Отзывов" %}</dt><dd>{{ stats.review_count }}</dd></div>
-  {% if stats.avg_overall %}<div><dt>{% translate "Средний рейтинг" %}</dt><dd>{{ stats.avg_overall }}</dd></div>{% endif %}
+  <div><dt>{% translate "Преподавателей" %}</dt><dd>{{ stats.prof_count|localize }}</dd></div>
+  <div><dt>{% translate "Отзывов" %}</dt><dd>{{ stats.review_count|localize }}</dd></div>
+  {% if stats.avg_overall %}<div><dt>{% translate "Средний рейтинг" %}</dt><dd>{{ stats.avg_overall|floatformat:1|localize }}</dd></div>{% endif %}
 </dl>
 {% endif %}
 <h2>{% translate "Кафедры" %}</h2>
@@ -17,7 +17,7 @@
   {% for r in results %}
   <li>
     <a class="card" href="{% url 'professor' r.prof.slug %}">
-      <span class="tile {{ r.stats.tone }}">{% if r.stats.count %}{{ r.stats.overall|floatformat:1 }}{% else %}-{% endif %}</span>
+      <span class="tile {{ r.stats.tone }}">{% if r.stats.count %}{{ r.stats.overall|floatformat:1|localize }}{% else %}-{% endif %}</span>
       <span class="card-body">
         <span class="card-name">{{ r.prof.full_name }}</span>
         <span class="card-sub">{{ r.prof.department }}</span>
@@ -26,7 +26,7 @@
         {% else %}
         <span class="stars" role="img" aria-label="{% translate 'Нет оценок' %}"><span aria-hidden="true">★★★★★</span></span>
         {% endif %}
-        <span class="card-meta">{{ r.stats.count }} {% translate "отзывов" %}</span>
+        <span class="card-meta">{{ r.stats.count|localize }} {% translate "отзывов" %}</span>
       </span>
     </a>
   </li>

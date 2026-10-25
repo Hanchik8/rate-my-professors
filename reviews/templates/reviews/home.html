@@ -1,4 +1,4 @@
-{% extends "reviews/base.html" %}{% load i18n %}
+{% extends "reviews/base.html" %}{% load i18n l10n %}
 {% block content %}
 <h1>{% translate "Узнайте, какие занятия на самом деле — до записи на курс." %}</h1>
 <form class="search" method="get">
@@ -25,7 +25,7 @@
   {% for r in results %}
   <li>
     <a class="card" href="{% url 'professor' r.prof.slug %}">
-      <span class="tile {{ r.stats.tone }}">{% if r.stats.count %}{{ r.stats.overall|floatformat:1 }}{% else %}-{% endif %}</span>
+      <span class="tile {{ r.stats.tone }}">{% if r.stats.count %}{{ r.stats.overall|floatformat:1|localize }}{% else %}-{% endif %}</span>
       <span class="card-body">
         <span class="card-name">{{ r.prof.full_name }}</span>
         <span class="card-sub">{{ r.prof.department }} — {{ r.school.name }}</span>
@@ -34,7 +34,7 @@
         {% else %}
         <span class="stars" role="img" aria-label="{% translate 'Нет оценок' %}"><span aria-hidden="true">★★★★★</span></span>
         {% endif %}
-        <span class="card-meta">{{ r.stats.count }} {% translate "отзывов" %} · {% translate "Сложность" %} {% if r.stats.count %}{{ r.stats.difficulty|floatformat:1 }}{% else %}-{% endif %}</span>
+        <span class="card-meta">{{ r.stats.count|localize }} {% translate "отзывов" %} · {% translate "Сложность" %} {% if r.stats.count %}{{ r.stats.difficulty|floatformat:1|localize }}{% else %}-{% endif %}</span>
       </span>
     </a>
   </li>
