@@ -167,7 +167,10 @@ class DjangoRepository:
 
     def review(self, review_id):
         try:
-            return self._review_to_dc(Review.objects.get(pk=review_id))
+            # Fetch tags eagerly: ``_review_to_dc`` always reads them, so a lazy
+            # lookup here would add one query per call and N+1 in any batch use.
+            qs = Review.objects.prefetch_related("tags")
+            return self._review_to_dc(qs.get(pk=review_id))
         except (Review.DoesNotExist, ValidationError, ValueError):
             # ValidationError: malformed UUID coming straight from the URL.
             return None

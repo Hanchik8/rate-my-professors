@@ -1643,6 +1643,65 @@ class QueryEfficiencyTests(TestCase):
         with self.assertNumQueries(2):
             self.repo.reviews_for(prof.id)
 
+    def test_single_review_read_prefetches_tags(self):
+        """``review()`` loads tags eagerly so a batch caller can't N+1."""
+        prof = self.repo.search("Айбек")[0]["prof"]
+        review = self.repo.reviews_for(prof.id)[0]
+        with self.assertNumQueries(2):
+            got = self.repo.review(review.id)
+        self.assertEqual(got.tags, review.tags)
+        # Growing the number of tagged reviews must not change the count.
+        for i in range(10):
+            self.repo.add_review(
+                prof.id,
+                _repo_review(course=f"Тег {i}", tags=["Строго оценивает", "Много тестов"]),
+                status="approved",
+            )
+        with self.assertNumQueries(2):
+            self.repo.review(review.id)
+
+    def _post_query_count(self, url, data=None):
+        from django.db import connection
+        from django.test.utils import CaptureQueriesContext
+        with CaptureQueriesContext(connection) as ctx:
+            self.client.post(url, data or {})
+        return len(ctx.captured_queries)
+
+    def test_vote_and_report_views_query_count_is_constant(self):
+        """Voting/reporting must not query once per stored vote/report."""
+        prof = self.repo.search("Айбек")[0]["prof"]
+        user = User.objects.create_user(
+            username="perfvoter@example.com", email="perfvoter@example.com", password="pass12345"
+        )
+        self.client.force_login(user)
+
+        def fresh_review(tag):
+            return self.repo.add_review(
+                prof.id, _repo_review(course=f"Перф {tag}"), status="approved"
+            )
+
+        # Warm session/messages storage on the first request.
+        warm = fresh_review("warm")
+        self._post_query_count(reverse("review_vote", args=[warm.id]), {"vote": "up"})
+
+        vote_before = self._post_query_count(
+            reverse("review_vote", args=[fresh_review("before").id]), {"vote": "up"}
+        )
+        report_before = self._post_query_count(
+            reverse("review_report", args=[fresh_review("before2").id])
+        )
+
+        self._add_load()
+
+        vote_after = self._post_query_count(
+            reverse("review_vote", args=[fresh_review("after").id]), {"vote": "up"}
+        )
+        report_after = self._post_query_count(
+            reverse("review_report", args=[fresh_review("after2").id])
+        )
+        self.assertEqual(vote_after, vote_before)
+        self.assertEqual(report_after, report_before)
+
     def test_professor_detail_reads_use_select_related(self):
         """Detail-page reads join school in one query (no per-professor lookup)."""
         from django.db import connection
@@ -1770,6 +1829,32 @@ class AdminQueryEfficiencyTests(TestCase):
             )
             Vote.objects.create(review_id=review.id, user=user, helpful=True)
             Report.objects.create(review_id=review.id, user=user)
+
+
+# ---------------------------------------------------------------------------
+# Performance: hot filter/sort columns are backed by database indexes
+# ---------------------------------------------------------------------------
+class PerfIndexDeclarationTests(TestCase):
+    """Indexes used by the read paths are declared on the models.
+
+    Migration ``0004`` adds them to the schema; keeping the model declarations
+    in sync is what ``makemigrations --check`` guards.
+    """
+
+    def test_hot_path_indexes_are_declared(self):
+        from .models import Professor, Review, School
+
+        expected = {
+            School: {"school_city_idx", "school_name_idx"},
+            Professor: {"prof_status_idx", "prof_school_status_idx", "prof_dept_idx"},
+            Review: {"review_prof_status_idx", "review_status_created_idx"},
+        }
+        for model, names in expected.items():
+            declared = {idx.name for idx in model._meta.indexes}
+            with self.subTest(model=model.__name__):
+                self.assertTrue(
+                    names.issubset(declared), f"{model.__name__} missing {names - declared}"
+                )
 
 
 # ---------------------------------------------------------------------------

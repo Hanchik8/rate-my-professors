@@ -17,6 +17,12 @@ class School(models.Model):
 
     class Meta:
         ordering = ["name"]
+        indexes = [
+            # `cities()` filters/distincts on this column for the home filters.
+            models.Index(fields=["city"], name="school_city_idx"),
+            # Default ordering and catalog lookups sort by name.
+            models.Index(fields=["name"], name="school_name_idx"),
+        ]
 
     def __str__(self):
         return self.name
@@ -51,6 +57,14 @@ class Professor(models.Model):
         ordering = ["last_name", "first_name"]
         constraints = [
             models.UniqueConstraint(fields=["school", "first_name", "last_name"], name="uniq_prof_school_name"),
+        ]
+        indexes = [
+            # `search()`/`departments()` filter the approved catalog.
+            models.Index(fields=["status"], name="prof_status_idx"),
+            # `professors_for_school()`/`school_stats()` scope by school first.
+            models.Index(fields=["school", "status"], name="prof_school_status_idx"),
+            # Department filter + values_list(distinct) on the home page.
+            models.Index(fields=["department"], name="prof_dept_idx"),
         ]
 
     @property
@@ -105,6 +119,12 @@ class Review(models.Model):
                 name="uniq_review_prof_author_course",
                 condition=Q(author__isnull=False),
             ),
+        ]
+        indexes = [
+            # `reviews_for()` and every stats aggregate filter by this pair.
+            models.Index(fields=["professor", "status"], name="review_prof_status_idx"),
+            # `all_reviews()` filters by status and the default order is -created_at.
+            models.Index(fields=["status", "-created_at"], name="review_status_created_idx"),
         ]
 
     def clean(self):
