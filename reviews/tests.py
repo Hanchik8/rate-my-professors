@@ -1,4 +1,5 @@
 import re
+from contextlib import contextmanager
 from pathlib import Path
 from unittest import mock
 
@@ -1621,12 +1622,30 @@ class QueryEfficiencyTests(TestCase):
         store_mod.repo = self._orig
         v.repo = self._orig_v
 
+    @contextmanager
+    def assertNumQueriesLessThan(self, limit):
+        """Assert the wrapped block issues fewer than ``limit`` DB queries."""
+        from django.db import connection
+        from django.test.utils import CaptureQueriesContext
+        with CaptureQueriesContext(connection) as ctx:
+            yield
+        count = len(ctx.captured_queries)
+        self.assertLess(
+            count, limit,
+            f"Expected fewer than {limit} queries, got {count}",
+        )
+
     def _add_load(self, professors=8, reviews_each=3):
         school = self.repo.schools()[0]
         for i in range(professors):
             p = self.repo.add_professor(school.id, f"Нагруз{i}", f"Проф{i}", "Кафедра", "доцент")
             for j in range(reviews_each):
                 self.repo.add_review(p.id, _repo_review(course=f"Курс {i}-{j}"), status="approved")
+
+    def _add_schools(self, count=5):
+        for i in range(count):
+            s = self.repo.add_school(f"Перф вуз {i}", f"Перф город {i}")
+            self.repo.add_professor(s.id, f"Перф{i}", f"Вуз{i}", "Кафедра перф", "доцент")
 
     def test_search_query_count_is_constant(self):
         with self.assertNumQueries(4):
@@ -1765,6 +1784,52 @@ class QueryEfficiencyTests(TestCase):
         self._add_load()
         with self.assertNumQueries(9):
             self.client.get(reverse("school_detail", args=[school.slug]))
+
+    def test_home_view_query_count_stays_bounded_as_catalog_grows(self):
+        self.client.get(reverse("home"))  # warm session/messages storage
+        self._add_schools(6)
+        self._add_load(professors=12, reviews_each=2)
+        with self.assertNumQueriesLessThan(10):
+            self.client.get(reverse("home"))
+
+    def test_school_view_query_count_stays_bounded_as_professors_grow(self):
+        school = self.repo.schools()[0]
+        self.client.get(reverse("school_detail", args=[school.slug]))
+        self._add_schools(3)
+        self._add_load(professors=12, reviews_each=2)
+        with self.assertNumQueriesLessThan(12):
+            self.client.get(reverse("school_detail", args=[school.slug]))
+
+    def test_professor_view_query_count_stays_bounded_as_reviews_grow(self):
+        prof = self.repo.search("Айбек")[0]["prof"]
+        self.client.get(reverse("professor", args=[prof.slug]))
+        for i in range(20):
+            self.repo.add_review(
+                prof.id,
+                _repo_review(
+                    course=f"Много {i}",
+                    tags=["Строго оценивает", "Много тестов"],
+                ),
+                status="approved",
+            )
+        with self.assertNumQueriesLessThan(10):
+            self.client.get(reverse("professor", args=[prof.slug]))
+
+    def test_search_with_filters_keeps_query_count_bounded(self):
+        self._add_schools(4)
+        self._add_load(professors=8, reviews_each=2)
+        for filters in ({}, {"city": "Бишкек"}, {"sort": "reviews"}):
+            with self.subTest(filters=filters):
+                with self.assertNumQueriesLessThan(6):
+                    self.repo.search(**filters)
+
+    def test_filter_option_lists_do_not_scale_with_rows(self):
+        self._add_schools(10)
+        self._add_load(professors=10, reviews_each=1)
+        for read in (self.repo.schools, self.repo.cities, self.repo.departments):
+            with self.subTest(read=read.__name__):
+                with self.assertNumQueriesLessThan(2):
+                    read()
 
 
 # ---------------------------------------------------------------------------

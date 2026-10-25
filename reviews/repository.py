@@ -233,8 +233,10 @@ class InMemoryRepository:
         profs = self.professors_for_school(school_id)
         if not profs:
             return {"prof_count": 0, "review_count": 0, "avg_overall": 0}
-        total_reviews = sum(self.stats(p.id)["count"] for p in profs)
-        rated = [self.stats(p.id)["overall"] for p in profs if self.stats(p.id)["count"]]
+        # Compute each professor's stats once instead of three times per row.
+        stats = [self.stats(p.id) for p in profs]
+        total_reviews = sum(s["count"] for s in stats)
+        rated = [s["overall"] for s in stats if s["count"]]
         avg = round(mean(rated), 1) if total_reviews else 0
         return {"prof_count": len(profs), "review_count": total_reviews, "avg_overall": avg}
 
