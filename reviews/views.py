@@ -12,6 +12,7 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
+from django.db import connection
 from django.http import Http404, HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
@@ -27,6 +28,12 @@ PAGE_SIZE = 10
 
 def health(request):
     """Liveness endpoint used by the container orchestrator."""
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT 1")
+            cursor.fetchone()
+    except Exception:
+        return JsonResponse({"status": "error"}, status=503)
     return JsonResponse({"status": "ok"})
 
 

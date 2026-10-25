@@ -1,5 +1,6 @@
 import re
 from pathlib import Path
+from unittest import mock
 
 from django.contrib.auth.models import User
 from django.core.cache import cache
@@ -1736,6 +1737,26 @@ class HealthEndpointTests(TestCase):
         self.assertEqual(r["Content-Type"], "application/json")
         self.assertJSONEqual(r.content, {"status": "ok"})
 
+    def test_health_pings_the_database(self):
+        from django.db import connection
+        from django.test.utils import CaptureQueriesContext
+
+        with CaptureQueriesContext(connection) as ctx:
+            self.client.get(reverse("health"))
+        self.assertTrue(
+            any("SELECT 1" in q["sql"] for q in ctx.captured_queries),
+            "health must run a trivial query against the configured database",
+        )
+
+    def test_health_reports_db_failure_as_503(self):
+        from django.db import OperationalError
+
+        with mock.patch("reviews.views.connection") as conn:
+            conn.cursor.side_effect = OperationalError("db is down")
+            r = self.client.get(reverse("health"))
+        self.assertEqual(r.status_code, 503)
+        self.assertJSONEqual(r.content, {"status": "error"})
+
 
 class ErrorPageTests(TestCase):
     def test_404_uses_custom_template(self):
@@ -1745,19 +1766,55 @@ class ErrorPageTests(TestCase):
         self.assertContains(r, "Страница не найдена", status_code=404)
         self.assertContains(r, "Вернуться на главную", status_code=404)
 
+    def test_404_page_links_to_home(self):
+        r = self.client.get("/definitely-not-a-real-page/")
+        self.assertContains(r, f'<a href="{reverse("home")}">', status_code=404)
+
     def test_500_uses_custom_template(self):
         from django.test import RequestFactory
         from django.views.defaults import server_error
         request = RequestFactory().get("/boom/")
         r = server_error(request)
         self.assertEqual(r.status_code, 500)
-        self.assertIn("Ошибка сервера", r.content.decode())
+        self.assertContains(r, "Ошибка сервера", status_code=500)
+
+    def test_500_page_is_russian_with_home_link(self):
+        from django.test import RequestFactory
+        from django.views.defaults import server_error
+        request = RequestFactory().get("/boom/")
+        r = server_error(request)
+        self.assertContains(r, "Что-то пошло не так", status_code=500)
+        self.assertContains(r, "Вернуться на главную", status_code=500)
+        self.assertContains(r, f'<a href="{reverse("home")}">', status_code=500)
 
     def test_error_templates_extend_base(self):
         for name in ("404.html", "500.html"):
             with self.subTest(template=name):
                 text = (TEMPLATES_DIR / name).read_text(encoding="utf-8")
                 self.assertIn('extends "reviews/base.html"', text)
+
+
+class EmptyStateTests(_MemoryRepoTestCase):
+    """List pages render a friendly empty state instead of a blank area."""
+
+    def test_professor_without_reviews_shows_empty_state(self):
+        school = self.repo.schools()[0]
+        p = self.repo.add_professor(school.id, "Тихон", "Безотзывов", "Физика", "доцент")
+        r = self.client.get(reverse("professor", args=[p.slug]))
+        self.assertContains(r, "Пока нет отзывов")
+        self.assertNotContains(r, 'class="review"')
+
+    def test_school_without_professors_shows_empty_states(self):
+        school = self.repo.add_school("Пустой вуз", "Бишкек")
+        r = self.client.get(reverse("school_detail", args=[school.slug]))
+        self.assertContains(r, "Пока нет преподавателей")
+        self.assertContains(r, "Пока нет кафедр")
+        self.assertNotContains(r, 'class="card"')
+
+    def test_home_without_matches_shows_empty_state(self):
+        r = self.client.get(reverse("home"), {"q": "неттакого"})
+        self.assertContains(r, "Ничего не нашлось")
+        self.assertNotContains(r, 'class="card"')
 
 
 # ---------------------------------------------------------------------------
