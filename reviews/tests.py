@@ -291,6 +291,16 @@ class RepositoryContractMixin:
         self.assertEqual(st["tone"], "good")
         self.assertIn("Интересные лекции", st["top_tags"])
 
+    def test_stats_tone_thresholds_are_shared_between_backends(self):
+        s = self._school()
+        cases = [(5, "good"), (4, "good"), (3, "mid"), (2, "bad"), (1, "bad")]
+        for index, (score, tone) in enumerate(cases):
+            p = self.repo.add_professor(
+                s.id, f"Имя{index}", f"Фамилия{index}", "Физика", "доцент"
+            )
+            self.repo.add_review(p.id, _repo_review(overall=score), status="approved")
+            self.assertEqual(self.repo.stats(p.id)["tone"], tone)
+
     def test_anonymous_review_auto_approved(self):
         s = self._school()
         p = self._prof(s.id)

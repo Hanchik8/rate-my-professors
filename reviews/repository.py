@@ -76,6 +76,7 @@ class Review:
 
 
 def _tone(overall):
+    """Map an average overall score to the CSS tone token used by templates."""
     return "good" if overall >= 4 else "mid" if overall >= 3 else "bad"
 
 

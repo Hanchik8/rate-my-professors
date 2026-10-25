@@ -7,12 +7,8 @@ from django.db.models import Avg, Count, F, Q
 from django.utils.text import slugify
 
 from .models import Professor, Report, Review, School, Tag, Vote
-from .repository import _search_sort_key
+from .repository import _search_sort_key, _tone
 from .sanitize import MAX_COMMENT_LENGTH, clean_text
-
-
-def _tone(overall):
-    return "good" if overall >= 4 else "mid" if overall >= 3 else "bad"
 
 
 class DjangoRepository:
