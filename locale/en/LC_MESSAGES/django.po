@@ -478,3 +478,58 @@ msgstr "Too many requests. Please try again later."
 
 msgid "Слишком много попыток входа. Попробуйте позже."
 msgstr "Too many login attempts. Please try again later."
+
+msgid "О проекте"
+msgstr "About"
+
+msgid ""
+"ProfLens — независимый сайт отзывов о преподавателях вузов Кыргызстана. Мы "
+"собираем честные мнения студентов, чтобы помочь выбрать курсы и "
+"преподавателей осознанно."
+msgstr ""
+"ProfLens is an independent review site for university professors in "
+"Kyrgyzstan. We collect honest student opinions to help you choose courses "
+"and professors wisely."
+
+msgid "Наша миссия — сделать учебный процесс прозрачнее, а выбор преподавателя — информированным."
+msgstr "Our mission is to make the education process more transparent and the choice of a professor informed."
+
+msgid "Как это работает"
+msgstr "How it works"
+
+msgid ""
+"Студенты оставляют отзывы о преподавателях — оценивают качество, сложность, "
+"указывают предмет и семестр."
+msgstr ""
+"Students leave reviews about professors — rating quality, difficulty, and "
+"indicating the subject and term."
+
+msgid ""
+"Каждый отзыв проверяется модератором перед публикацией: мы не пропускаем "
+"оскорбления, спам и личные данные."
+msgstr ""
+"Every review is checked by a moderator before publication: we do not allow "
+"insults, spam, or personal data."
+
+msgid ""
+"Отзывы доступны всем — без регистрации, бесплатно, на трёх языках (русский, "
+"кыргызский, английский)."
+msgstr ""
+"Reviews are available to everyone — no registration, free of charge, in three "
+"languages (Russian, Kyrgyz, English)."
+
+msgid "Конфиденциальность"
+msgstr "Privacy"
+
+msgid ""
+"Мы не публикуем имена авторов отзывов. Ваш email используется только для "
+"входа и не передаётся третьим лицам."
+msgstr ""
+"We do not publish the names of review authors. Your email is used only for "
+"login and is not shared with third parties."
+
+msgid "Контакты"
+msgstr "Contact"
+
+msgid "По всем вопросам и предложениям пишите на proflens@proton.me"
+msgstr "For all questions and suggestions, write to proflens@proton.me"

@@ -118,6 +118,11 @@ def rules(request):
     return render(request, "reviews/rules.html")
 
 
+def about(request):
+    """Render the about page."""
+    return render(request, "reviews/about.html")
+
+
 def _save_review(form, prof, request):
     """Persist a validated review, returning ``True`` on success.
 
