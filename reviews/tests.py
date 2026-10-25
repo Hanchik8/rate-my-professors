@@ -358,6 +358,19 @@ class RepositoryContractMixin:
         self.assertEqual(st["review_count"], 1)
         self.assertEqual(st["avg_overall"], 5.0)
 
+    def test_cities_and_departments_are_deduplicated(self):
+        """Filter lists must not repeat a city/department once per row."""
+        s1 = self.repo.add_school("Вуз А", "Бишкек")
+        self.repo.add_school("Вуз Б", "Бишкек")
+        self.repo.add_professor(s1.id, "Иван", "Петров", "Физика", "доцент")
+        self.repo.add_professor(s1.id, "Пётр", "Сидоров", "Физика", "доцент")
+        cities = self.repo.cities()
+        departments = self.repo.departments()
+        self.assertEqual(len(cities), len(set(cities)))
+        self.assertEqual(len(departments), len(set(departments)))
+        self.assertEqual(cities.count("Бишкек"), 1)
+        self.assertEqual(departments.count("Физика"), 1)
+
     def test_all_reviews_visibility(self):
         s = self._school()
         p = self._prof(s.id)
@@ -1542,6 +1555,80 @@ class QueryEfficiencyTests(TestCase):
         self._add_load()
         with self.assertNumQueries(9):
             self.client.get(reverse("school_detail", args=[school.slug]))
+
+
+# ---------------------------------------------------------------------------
+# Performance: admin changelists must not issue one query per row
+# ---------------------------------------------------------------------------
+class AdminQueryEfficiencyTests(TestCase):
+    """FK columns in admin ``list_display`` use ``list_select_related``.
+
+    Without it the changelist runs an extra lookup for every row (the classic
+    N+1), so the query count must stay flat while the number of rows grows.
+    """
+
+    def setUp(self):
+        from django.contrib.auth.models import Permission
+
+        from reviews.management.commands.seed_kg import Command as SeedCmd
+        SeedCmd().handle(clear=True)
+        self.repo = DjangoRepository()
+        moderator = User.objects.create_user(
+            username="adminperf@example.com", email="adminperf@example.com",
+            password="pass12345", is_staff=True,
+        )
+        for codename in ("change_professor", "change_review", "change_vote", "change_report"):
+            moderator.user_permissions.add(Permission.objects.get(codename=codename))
+        self.client.force_login(moderator)
+
+    def _count(self, url_name):
+        from django.db import connection
+        from django.test.utils import CaptureQueriesContext
+        with CaptureQueriesContext(connection) as ctx:
+            self.client.get(reverse(url_name))
+        return len(ctx.captured_queries)
+
+    def _load(self, professors=12, reviews_each=1):
+        school = self.repo.schools()[0]
+        for i in range(professors):
+            p = self.repo.add_professor(school.id, f"Админ{i}", f"Нагруз{i}", "Кафедра перф", "доцент")
+            for j in range(reviews_each):
+                self.repo.add_review(p.id, _repo_review(course=f"Перф {i}-{j}"), status="approved")
+
+    def _assert_constant(self, url_name):
+        self.client.get(reverse(url_name))  # warm session/permission caches
+        before = self._count(url_name)
+        self._load()
+        self.assertEqual(self._count(url_name), before)
+
+    def test_professor_changelist_query_count_is_constant(self):
+        self._assert_constant("admin:reviews_professor_changelist")
+
+    def test_review_changelist_query_count_is_constant(self):
+        self._assert_constant("admin:reviews_review_changelist")
+
+    def test_vote_and_report_changelists_query_count_is_constant(self):
+        self._add_votes_and_reports(0, 3)
+        for n, url_name in enumerate(
+            ("admin:reviews_vote_changelist", "admin:reviews_report_changelist")
+        ):
+            with self.subTest(changelist=url_name):
+                self.client.get(reverse(url_name))  # warm session/permission caches
+                before = self._count(url_name)
+                self._add_votes_and_reports(100 + n * 100, 8)
+                self.assertEqual(self._count(url_name), before)
+
+    def _add_votes_and_reports(self, offset, n):
+        from reviews.models import Report, Vote
+        prof = self.repo.search("Айбек")[0]["prof"]
+        review = self.repo.reviews_for(prof.id)[0]
+        for i in range(n):
+            user = User.objects.create_user(
+                username=f"fx{offset + i}@example.com", email=f"fx{offset + i}@example.com",
+                password="pass12345",
+            )
+            Vote.objects.create(review_id=review.id, user=user, helpful=True)
+            Report.objects.create(review_id=review.id, user=user)
 
 
 # ---------------------------------------------------------------------------

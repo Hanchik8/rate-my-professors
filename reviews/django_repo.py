@@ -115,10 +115,17 @@ class DjangoRepository:
         return [self._school_to_dc(s) for s in School.objects.all()]
 
     def cities(self):
-        return sorted(School.objects.values_list("city", flat=True).distinct())
+        # clear model ordering, otherwise DISTINCT silently includes it and the
+        # same city shows up once per school.
+        return sorted(School.objects.order_by().values_list("city", flat=True).distinct())
 
     def departments(self):
-        return sorted(Professor.objects.filter(status="approved").values_list("department", flat=True).distinct())
+        return sorted(
+            Professor.objects.filter(status="approved")
+            .order_by()
+            .values_list("department", flat=True)
+            .distinct()
+        )
 
     def school(self, school_id):
         try:
