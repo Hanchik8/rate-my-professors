@@ -2241,3 +2241,13 @@ class RateLimiterUnitTests(TestCase):
         request = RequestFactory().post("/thing/", REMOTE_ADDR="1.2.3.4")
         for _ in range(50):
             self.assertFalse(is_rate_limited(request, "thing"))
+
+
+class GZipMiddlewareTests(TestCase):
+    def test_home_accepts_gzip(self):
+        response = self.client.get(
+            reverse("home"), HTTP_ACCEPT_ENCODING="gzip"
+        )
+        self.assertEqual(response.status_code, 200)
+        if response.has_header("Content-Encoding"):
+            self.assertEqual(response["Content-Encoding"], "gzip")
