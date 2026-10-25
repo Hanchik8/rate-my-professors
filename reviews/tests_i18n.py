@@ -1,15 +1,19 @@
-"""Completeness checks for the ky/ru translation catalogs.
+"""Completeness checks for the ky/ru/en translation catalogs.
 
-Forms, view messages and validators must all have entries in
-``locale/<lang>/LC_MESSAGES/django.po`` so the UI never silently falls back to
-another language.  These tests parse the catalogs directly (no gettext binary
-required) and also resolve a few strings through Django's translation layer.
+Forms, view messages, validators and every template string (including
+``blocktranslate``) must have entries in ``locale/<lang>/LC_MESSAGES/django.po``
+so the UI never silently falls back to another language.  These tests parse the
+catalogs directly (no gettext binary required) and also resolve strings through
+Django's translation layer, including values loaded from the repository (titles,
+tags and grades).
 """
 import ast
 import re
 from pathlib import Path
+from types import SimpleNamespace
 
-from django.test import TestCase
+from django.template.loader import render_to_string
+from django.test import RequestFactory, TestCase
 from django.utils import translation
 
 APP_DIR = Path(__file__).parent
@@ -84,8 +88,32 @@ def template_translatable_strings():
     return found
 
 
+def template_blocktranslate_strings():
+    """``{% blocktranslate %}`` strings converted to gettext ``%(var)s`` form."""
+    found = set()
+    pattern = re.compile(
+        r"\{%\s*blocktranslate(?:[^%]*)%\}(.*?)\{%\s*endblocktranslate\s*%\}",
+        re.DOTALL,
+    )
+    for path in TEMPLATES_DIR.rglob("*.html"):
+        text = path.read_text(encoding="utf-8")
+        for match in pattern.finditer(text):
+            body = " ".join(match.group(1).split())
+            found.add(re.sub(r"\{\{\s*(\w+)\s*\}\}", r"%(\1)s", body))
+    return found
+
+
+def all_translatable_strings():
+    """Every gettext string referenced by Python modules and templates."""
+    return (
+        python_translatable_strings()
+        | template_translatable_strings()
+        | template_blocktranslate_strings()
+    )
+
+
 class CatalogCompletenessTests(TestCase):
-    """Every form/message/validator string is present in ky and ru catalogs."""
+    """Every source string is present and translated in all three catalogs."""
 
     @classmethod
     def setUpClass(cls):
@@ -95,11 +123,8 @@ class CatalogCompletenessTests(TestCase):
             for lang in ("ky", "ru", "en")
         }
 
-    def _required_strings(self):
-        return python_translatable_strings() | template_translatable_strings()
-
     def test_python_source_strings_present_with_translation(self):
-        for lang in ("ky", "ru"):
+        for lang in ("ky", "ru", "en"):
             catalog = self.catalogs[lang]
             for msgid in sorted(python_translatable_strings()):
                 with self.subTest(lang=lang, msgid=msgid):
@@ -107,12 +132,19 @@ class CatalogCompletenessTests(TestCase):
                     self.assertTrue(catalog[msgid], f"empty translation for {msgid!r}")
 
     def test_template_strings_present_with_translation(self):
-        for lang in ("ky", "ru"):
+        for lang in ("ky", "ru", "en"):
             catalog = self.catalogs[lang]
-            for msgid in sorted(template_translatable_strings()):
+            for msgid in sorted(template_translatable_strings() | template_blocktranslate_strings()):
                 with self.subTest(lang=lang, msgid=msgid):
                     self.assertIn(msgid, catalog)
                     self.assertTrue(catalog[msgid], f"empty translation for {msgid!r}")
+
+    def test_all_catalogs_cover_the_same_msgids(self):
+        expected = set(all_translatable_strings())
+        for lang in ("ky", "ru", "en"):
+            missing = expected - set(self.catalogs[lang])
+            with self.subTest(lang=lang):
+                self.assertEqual(missing, set(), f"missing from {lang} catalog")
 
     def test_catalogs_have_no_empty_translations(self):
         for lang in ("ky", "ru", "en"):
@@ -159,3 +191,90 @@ class FormAndMessageTranslationTests(TestCase):
             for msgid, value in expected.items():
                 with self.subTest(msgid=msgid):
                     self.assertEqual(translation.gettext(msgid), value)
+
+
+class RenderedTemplateTranslationTests(TestCase):
+    """Repository values shown in templates are translated, not left in Russian."""
+
+    def _render(self, lang):
+        prof = SimpleNamespace(
+            full_name="Test Professor",
+            title="старший преподаватель",
+            department="Computer Science",
+            slug="test-professor",
+        )
+        school = SimpleNamespace(name="Test School", slug="test-school")
+        stats = {
+            "count": 1,
+            "overall": 5,
+            "difficulty": 3,
+            "wta_pct": 100,
+            "tone": "good",
+            "distribution": [{"score": 5, "count": 1, "pct": 100}],
+            "top_tags": ["Интересные лекции", "Вдохновляет"],
+        }
+        review = SimpleNamespace(
+            id="review-1",
+            overall=5,
+            course="Algorithms",
+            term="",
+            difficulty=3,
+            would_take_again=True,
+            grade="Ещё не знаю",
+            comment="Great course.",
+            tags=["Понятные критерии"],
+            helpful=1,
+            not_helpful=0,
+        )
+        request = RequestFactory().get("/professors/test-professor/")
+        with translation.override(lang):
+            return render_to_string(
+                "reviews/professor.html",
+                {
+                    "prof": prof,
+                    "school": school,
+                    "stats": stats,
+                    "reviews": [review],
+                    "sort": "newest",
+                },
+                request=request,
+            )
+
+    def test_professor_page_translates_titles_tags_and_grades(self):
+        expected = {
+            "en": [
+                "senior lecturer",
+                "Interesting lectures",
+                "Inspiring",
+                "Clear criteria",
+                "Not sure yet",
+                "Grade:",
+            ],
+            "ky": [
+                "ага окутуучу",
+                "Кызыктуу лекциялар",
+                "Шыктандырат",
+                "Түшүнүктүү критерийлер",
+                "Азырынча билбейм",
+                "Баасы:",
+            ],
+            "ru": [
+                "старший преподаватель",
+                "Интересные лекции",
+                "Вдохновляет",
+                "Понятные критерии",
+                "Ещё не знаю",
+                "Оценка:",
+            ],
+        }
+        forbidden = {
+            "en": ["старший преподаватель", "Интересные лекции", "Понятные критерии", "Ещё не знаю"],
+            "ky": ["старший преподаватель", "Интересные лекции", "Понятные критерии", "Ещё не знаю"],
+        }
+        for lang, values in expected.items():
+            with self.subTest(lang=lang):
+                html = self._render(lang)
+                for value in values:
+                    self.assertIn(value, html)
+                for value in forbidden.get(lang, []):
+                    self.assertNotIn(value, html)

@@ -5,7 +5,7 @@
   <div class="tile big {{ stats.tone }}">{% if stats.count %}{{ stats.overall|floatformat:1 }}{% else %}-{% endif %}</div>
   <div>
     <h1>{{ prof.full_name }}</h1>
-    <p class="sub">{{ prof.title }} — {{ prof.department }}, <a href="{% url 'school_detail' school.slug %}">{{ school.name }}</a></p>
+    <p class="sub">{% translate prof.title %} — {{ prof.department }}, <a href="{% url 'school_detail' school.slug %}">{{ school.name }}</a></p>
   </div>
   {% if stats.count %}
   <span class="stars" role="img" aria-label="{% blocktranslate with rating=stats.overall %}Рейтинг {{ rating }} из 5{% endblocktranslate %}"><span aria-hidden="true">★★★★★</span><span class="s-fill" aria-hidden="true" style="width:{% widthratio stats.overall 5 100 %}%">★★★★★</span></span>
@@ -25,7 +25,7 @@
   <li><span>{{ d.score }}</span><span class="bar"><i style="width:{{ d.pct }}%"></i></span><span>{{ d.count }}</span></li>
   {% endfor %}
 </ul>
-{% if stats.top_tags %}<p class="tags">{% translate "Студенты отмечают:" %} {{ stats.top_tags|join:", " }}</p>{% endif %}
+{% if stats.top_tags %}<p class="tags">{% translate "Студенты отмечают:" %} {% for tag in stats.top_tags %}{% translate tag %}{% if not forloop.last %}, {% endif %}{% endfor %}</p>{% endif %}
 {% endif %}
 
 <p><a class="btn" href="{% url 'review_new' prof.slug %}">{% translate "Оценить преподавателя" %}</a></p>
@@ -42,9 +42,9 @@
   <div>
     <p class="facts-line"><strong>{{ r.course }}</strong>{% if r.term %}, {{ r.term }}{% endif %}.
       {% translate "Сложность" %} {{ r.difficulty }}. {% if r.would_take_again %}{% translate "Пойду снова." %}{% else %}{% translate "Не пойду снова." %}{% endif %}
-      {% if r.grade %}{% translate "Оценка:" %} {{ r.grade }}.{% endif %}</p>
+      {% if r.grade %}{% translate "Оценка:" %} {% translate r.grade %}.{% endif %}</p>
     <p>{{ r.comment }}</p>
-    {% if r.tags %}<p class="tags">{{ r.tags|join:", " }}</p>{% endif %}
+    {% if r.tags %}<p class="tags">{% for tag in r.tags %}{% translate tag %}{% if not forloop.last %}, {% endif %}{% endfor %}</p>{% endif %}
     <div class="votes">
       <form method="post" action="{% url 'review_vote' r.id %}">{% csrf_token %}
         <button name="vote" value="up" aria-label="{% translate 'Полезно' %}: {{ r.course }} ({{ r.helpful }})">{% translate "Полезно" %} {{ r.helpful }}</button>
