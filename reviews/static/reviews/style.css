@@ -124,7 +124,7 @@ footer{color:var(--muted);font-size:.9rem;padding-top:2.5rem;padding-bottom:2.5r
 .btn:hover,button:hover{background:var(--accent-strong);color:var(--on-accent);transform:translateY(-1px)}
 .btn:active,button:active{transform:translateY(0)}
 input,select,textarea{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);
-  border-radius:.65rem;padding:.6rem .75rem;transition:border-color .15s ease}
+  max-width:100%;min-width:0;border-radius:.65rem;padding:.6rem .75rem;transition:border-color .15s ease}
 input:hover,select:hover,textarea:hover{border-color:var(--line-strong)}
 /* Persistent focus affordance on form controls (mouse and keyboard alike),
    complements the global :focus-visible outline. */

@@ -1,10 +1,11 @@
 {% load static i18n %}<!doctype html>
-<html lang="{{ LANGUAGE_CODE }}">
+<html lang="{{ LANGUAGE_CODE }}" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>{% block title %}ProfLens{% endblock %}</title>
+<script>document.documentElement.classList.remove("no-js");</script>
 <link rel="stylesheet" href="{% static 'reviews/style.css' %}">
 </head>
 <body>
