@@ -300,6 +300,8 @@ class InMemoryRepository:
     ) -> list[dict[str, Any]]:
         """Search approved professors with optional filters and sorting."""
         q = q.lower().strip()
+        school_slug = school_slug.strip()
+        city = city.strip()
         department = department.strip()
         out = []
         for p in self._professors.values():

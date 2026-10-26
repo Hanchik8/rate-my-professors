@@ -80,6 +80,34 @@ class SearchContractMixin:
         self.assertEqual(self._ids(school_slug=self.osh.slug),
                          {self.alan.id, self.john.id})
 
+    def test_surrounding_whitespace_is_trimmed_in_all_filters(self):
+        self.assertEqual(self._ids(q="  петров  "), {self.ivan.id})
+        self.assertEqual(self._ids(department="  Физика  "), {self.ivan.id})
+        self.assertEqual(self._ids(city="  Бишкек  "),
+                         {self.ivan.id, self.anna.id})
+        self.assertEqual(self._ids(school_slug=f"  {self.bishkek.slug}  "),
+                         {self.ivan.id, self.anna.id})
+
+    def test_whitespace_only_filters_return_all_approved(self):
+        for kwargs in (
+            {"school_slug": "   "},
+            {"city": "\t\n"},
+            {"department": "  "},
+        ):
+            with self.subTest(**kwargs):
+                self.assertEqual(self._ids(**kwargs), self.approved_ids)
+
+    def test_overlong_query_and_filter_values_return_empty(self):
+        long_text = "я" * 10000
+        for kwargs in (
+            {"q": long_text},
+            {"school_slug": "s" * 10000},
+            {"city": long_text},
+            {"department": long_text},
+        ):
+            with self.subTest(**kwargs):
+                self.assertEqual(self._ids(**kwargs), set())
+
     def test_unknown_school_city_and_department_return_empty(self):
         self.assertEqual(self._ids(school_slug="no-such-school"), set())
         self.assertEqual(self._ids(city="Атлантида"), set())
@@ -96,6 +124,14 @@ class SearchContractMixin:
                       department="Информатика"),
             set(),
         )
+
+    def test_invalid_sort_values_fall_back_to_rating_order(self):
+        expected = [row["prof"].id for row in self.repo.search("", sort="rating")]
+        for sort in ("", "RATING", "Reviews", "newest", "helpful",
+                     "rating desc", "'; DROP TABLE professors; --"):
+            with self.subTest(sort=sort):
+                actual = [row["prof"].id for row in self.repo.search("", sort=sort)]
+                self.assertEqual(actual, expected)
 
     def test_pending_professor_never_leaks_through_search_or_filters(self):
         self.assertNotIn(self.pending.id, self._ids())
@@ -159,6 +195,68 @@ class HomeSearchPaginationTests(_MemoryRepoTestCase):
                 response = self.client.get(reverse("home"), {"page": page})
                 self.assertEqual(response.status_code, 200)
                 self.assertTrue(response.context["results"])
+
+    def test_out_of_range_page_for_filtered_query_stays_in_results(self):
+        self._add_professors(15)
+        params = {"q": "смит", "department": "Пагинация", "page": "999"}
+        response = self.client.get(reverse("home"), params)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context["page_obj"].number,
+                         response.context["page_obj"].paginator.num_pages)
+        self.assertEqual(len(response.context["results"]), 5)
+        for row in response.context["results"]:
+            self.assertEqual(row["prof"].department, "Пагинация")
+            self.assertTrue(row["prof"].full_name.startswith("Смит"))
+
+    def test_out_of_range_page_with_no_results_is_empty(self):
+        response = self.client.get(
+            reverse("home"), {"q": "неттакого", "page": "999"}
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(list(response.context["results"]), [])
+        self.assertContains(response, "Ничего не нашлось")
+
+    def test_extremely_long_page_value_falls_back(self):
+        response = self.client.get(reverse("home"), {"page": "9" * 5000})
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context["results"])
+
+    def test_overlong_query_and_filter_values_show_empty_state(self):
+        long_text = "я" * 10000
+        for param in ("q", "school", "city", "department"):
+            with self.subTest(param=param):
+                response = self.client.get(reverse("home"), {param: long_text})
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(list(response.context["results"]), [])
+                self.assertContains(response, "Ничего не нашлось")
+
+    def test_whitespace_only_filters_list_everyone(self):
+        for params in (
+            {"school": "   "},
+            {"city": "\t\n"},
+            {"department": "  "},
+        ):
+            with self.subTest(**params):
+                response = self.client.get(reverse("home"), params)
+                self.assertEqual(response.status_code, 200)
+                self.assertTrue(response.context["results"])
+
+    def test_invalid_sort_values_keep_rating_order(self):
+        expected = [
+            row["prof"].id
+            for row in self.client.get(reverse("home"), {"sort": "rating"}).context["results"]
+        ]
+        for sort in ("", "RATING", "Reviews", "newest", "helpful",
+                     "rating desc", "'; DROP TABLE professors; --"):
+            with self.subTest(sort=sort):
+                response = self.client.get(reverse("home"), {"sort": sort})
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(response.context["sort"], "rating")
+                self.assertEqual(
+                    [row["prof"].id for row in response.context["results"]],
+                    expected,
+                )
 
     def test_special_character_query_shows_empty_state(self):
         for q in ("%", "_", ".*", "'; DROP TABLE professors; --"):

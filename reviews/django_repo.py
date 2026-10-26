@@ -338,11 +338,13 @@ class DjangoRepository:
     ) -> list[dict[str, Any]]:
         """Search approved professors with optional filters and sorting."""
         qs = Professor.objects.filter(status="approved").select_related("school")
+        school_slug = school_slug.strip()
+        city = city.strip()
+        department = department.strip()
         if school_slug:
             qs = qs.filter(school__slug=school_slug)
         if city:
             qs = qs.filter(school__city=city)
-        department = department.strip()
         if department:
             qs = qs.filter(department=department)
         q = q.lower().strip()
