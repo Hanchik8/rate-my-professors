@@ -8,17 +8,23 @@ fine for a single process and for tests.
 Authenticated requests are keyed by username, anonymous ones by client IP, so
 one user cannot exhaust another user's budget.
 """
+from __future__ import annotations
+
+from collections.abc import Callable
 from functools import wraps
+from typing import Any
 
 from django.conf import settings
 from django.core.cache import cache
-from django.http import HttpResponse
+from django.http import HttpRequest, HttpResponse
 from django.utils.translation import gettext as _
 
 _CACHE_PREFIX = "ratelimit"
 
+View = Callable[..., HttpResponse]
 
-def _client_ip(request):
+
+def _client_ip(request: HttpRequest) -> str:
     """Best-effort client IP, honouring the first ``X-Forwarded-For`` hop."""
     forwarded = request.META.get("HTTP_X_FORWARDED_FOR", "")
     if forwarded:
@@ -26,7 +32,7 @@ def _client_ip(request):
     return request.META.get("REMOTE_ADDR", "") or "unknown"
 
 
-def _subject(request, user=None):
+def _subject(request: HttpRequest, user: Any = None) -> str:
     """Return the identity the counter is attached to."""
     if user is None:
         user = getattr(request, "user", None)
@@ -35,7 +41,7 @@ def _subject(request, user=None):
     return f"ip:{_client_ip(request)}"
 
 
-def _config(action):
+def _config(action: str) -> tuple[bool, int, int]:
     """Return ``(enabled, limit, window)`` for ``action`` from settings."""
     if not getattr(settings, "RATELIMIT_ENABLE", True):
         return False, 0, 0
@@ -43,7 +49,7 @@ def _config(action):
     return True, limit, window
 
 
-def is_rate_limited(request, action, user=None):
+def is_rate_limited(request: HttpRequest, action: str, user: Any = None) -> bool:
     """Return ``True`` when ``action`` exceeded its limit for this subject."""
     enabled, limit, window = _config(action)
     if not enabled:
@@ -60,12 +66,12 @@ def is_rate_limited(request, action, user=None):
     return hits > limit
 
 
-def rate_limit(action):
+def rate_limit(action: str) -> Callable[[View], View]:
     """Decorator that answers ``429`` once ``action``'s budget is spent."""
 
-    def decorator(view):
+    def decorator(view: View) -> View:
         @wraps(view)
-        def wrapper(request, *args, **kwargs):
+        def wrapper(request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
             if request.method == "POST" and is_rate_limited(request, action):
                 return HttpResponse(
                     _("Слишком много запросов. Попробуйте позже."), status=429

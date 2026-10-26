@@ -1,5 +1,10 @@
+"""ORM-backed implementation of the repository API."""
+from __future__ import annotations
+
 from collections import Counter
+from collections.abc import Iterable, Mapping
 from statistics import mean
+from typing import TYPE_CHECKING, Any
 
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, transaction
@@ -10,12 +15,18 @@ from .models import Professor, Report, Review, School, Tag, Vote
 from .repository import _search_sort_key, _tone
 from .sanitize import MAX_COMMENT_LENGTH, clean_text
 
+if TYPE_CHECKING:
+    from .repository import Professor as ProfessorDC
+    from .repository import Review as ReviewDC
+    from .repository import School as SchoolDC
+
 
 class DjangoRepository:
     """ORM-backed repository with the same API as InMemoryRepository."""
 
     # writes
-    def add_school(self, name, city):
+    def add_school(self, name: str, city: str) -> SchoolDC:
+        """Create a school with a unique slug."""
         slug = slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
         # ensure unique
         base, i = slug, 1
@@ -25,7 +36,17 @@ class DjangoRepository:
         s = School.objects.create(name=name, slug=slug, city=city)
         return self._school_to_dc(s)
 
-    def add_professor(self, school_id, first, last, department, title, status="approved", user=None):
+    def add_professor(
+        self,
+        school_id: str,
+        first: str,
+        last: str,
+        department: str,
+        title: str,
+        status: str = "approved",
+        user: Any = None,
+    ) -> ProfessorDC:
+        """Create a professor, rejecting duplicates in the same school."""
         school = School.objects.get(pk=school_id)
         dup_qs = Professor.objects.filter(
             school=school,
@@ -50,7 +71,14 @@ class DjangoRepository:
         )
         return self._prof_to_dc(p)
 
-    def add_review(self, professor_id, data, user=None, status=None):
+    def add_review(
+        self,
+        professor_id: str,
+        data: Mapping[str, Any],
+        user: Any = None,
+        status: str | None = None,
+    ) -> ReviewDC:
+        """Create a review, enforcing per-user course uniqueness."""
         prof = Professor.objects.get(pk=professor_id)
         course = clean_text(data.get("course") or "")
         comment = clean_text(data.get("comment") or "")
@@ -77,7 +105,8 @@ class DjangoRepository:
             raise ValueError("duplicate review")
         return self._review_to_dc(r)
 
-    def vote(self, review_id, helpful, user=None):
+    def vote(self, review_id: str, helpful: bool, user: Any = None) -> None:
+        """Record a helpful/not-helpful vote, rejecting repeat votes by a user."""
         with transaction.atomic():
             r = Review.objects.select_for_update().get(pk=review_id)
             if user is not None:
@@ -91,7 +120,8 @@ class DjangoRepository:
             else:
                 Review.objects.filter(pk=review_id).update(not_helpful=F("not_helpful") + 1)
 
-    def report(self, review_id, user=None):
+    def report(self, review_id: str, user: Any = None) -> None:
+        """Record a report for a review, ignoring repeat reports by a user."""
         with transaction.atomic():
             r = Review.objects.select_for_update().get(pk=review_id)
             if user is not None:
@@ -100,22 +130,27 @@ class DjangoRepository:
                     return
             Review.objects.filter(pk=review_id).update(reported=F("reported") + 1)
 
-    def approve_review(self, review_id):
+    def approve_review(self, review_id: str) -> None:
+        """Mark a review as approved."""
         Review.objects.filter(pk=review_id).update(status="approved")
 
-    def approve_professor(self, professor_id):
+    def approve_professor(self, professor_id: str) -> None:
+        """Mark a professor as approved."""
         Professor.objects.filter(pk=professor_id).update(status="approved")
 
     # reads
-    def schools(self):
+    def schools(self) -> list[SchoolDC]:
+        """Return all schools."""
         return [self._school_to_dc(s) for s in School.objects.all()]
 
-    def cities(self):
+    def cities(self) -> list[str]:
+        """Return the sorted set of school cities."""
         # clear model ordering, otherwise DISTINCT silently includes it and the
         # same city shows up once per school.
         return sorted(School.objects.order_by().values_list("city", flat=True).distinct())
 
-    def departments(self):
+    def departments(self) -> list[str]:
+        """Return the sorted set of departments for approved professors."""
         return sorted(
             Professor.objects.filter(status="approved")
             .order_by()
@@ -123,19 +158,22 @@ class DjangoRepository:
             .distinct()
         )
 
-    def school(self, school_id):
+    def school(self, school_id: str) -> SchoolDC | None:
+        """Return a school by id, or ``None`` if it does not exist."""
         try:
             return self._school_to_dc(School.objects.get(pk=school_id))
         except School.DoesNotExist:
             return None
 
-    def school_by_slug(self, slug):
+    def school_by_slug(self, slug: str) -> SchoolDC | None:
+        """Return a school by slug, or ``None`` if it does not exist."""
         try:
             return self._school_to_dc(School.objects.get(slug=slug))
         except School.DoesNotExist:
             return None
 
-    def professor(self, slug):
+    def professor(self, slug: str) -> ProfessorDC | None:
+        """Return an approved professor by slug, or ``None``."""
         try:
             return self._prof_to_dc(
                 Professor.objects.select_related("school").get(slug=slug, status="approved")
@@ -143,13 +181,15 @@ class DjangoRepository:
         except Professor.DoesNotExist:
             return None
 
-    def professor_any(self, slug):
+    def professor_any(self, slug: str) -> ProfessorDC | None:
+        """Return a professor by slug regardless of moderation status."""
         try:
             return self._prof_to_dc(Professor.objects.select_related("school").get(slug=slug))
         except Professor.DoesNotExist:
             return None
 
-    def professor_by_id(self, professor_id):
+    def professor_by_id(self, professor_id: str) -> ProfessorDC | None:
+        """Return a professor by id, or ``None`` if it does not exist."""
         try:
             return self._prof_to_dc(
                 Professor.objects.select_related("school").get(pk=professor_id)
@@ -157,11 +197,13 @@ class DjangoRepository:
         except Professor.DoesNotExist:
             return None
 
-    def professors_for_school(self, school_id):
+    def professors_for_school(self, school_id: str) -> list[ProfessorDC]:
+        """Return approved professors belonging to a school."""
         qs = Professor.objects.filter(school_id=school_id, status="approved").select_related("school")
         return [self._prof_to_dc(p) for p in qs]
 
-    def review(self, review_id):
+    def review(self, review_id: str) -> ReviewDC | None:
+        """Return a review by id, or ``None`` for missing or malformed ids."""
         try:
             # Fetch tags eagerly: ``_review_to_dc`` always reads them, so a lazy
             # lookup here would add one query per call and N+1 in any batch use.
@@ -171,7 +213,8 @@ class DjangoRepository:
             # ValidationError: malformed UUID coming straight from the URL.
             return None
 
-    def reviews_for(self, professor_id, sort="newest", include_pending=False):
+    def reviews_for(self, professor_id: str, sort: str = "newest", include_pending: bool = False) -> list[ReviewDC]:
+        """Return a professor's reviews, optionally including non-approved ones."""
         qs = Review.objects.filter(professor_id=professor_id)
         if not include_pending:
             qs = qs.filter(status="approved")
@@ -184,14 +227,16 @@ class DjangoRepository:
         else:
             return [self._review_to_dc(r) for r in qs.order_by("-created_at")]
 
-    def all_reviews(self, include_pending=False):
+    def all_reviews(self, include_pending: bool = False) -> list[ReviewDC]:
+        """Return all reviews, optionally including non-approved ones."""
         qs = Review.objects.all().prefetch_related("tags")
         if not include_pending:
             qs = qs.filter(status="approved")
         return [self._review_to_dc(r) for r in qs]
 
     @staticmethod
-    def _empty_stats():
+    def _empty_stats() -> dict[str, Any]:
+        """Return the zero-value stats payload used for unrated professors."""
         return {
             "count": 0, "overall": 0, "difficulty": 0, "wta_pct": None,
             "tone": "none",
@@ -199,7 +244,7 @@ class DjangoRepository:
             "top_tags": [],
         }
 
-    def _stats_map(self, professor_ids):
+    def _stats_map(self, professor_ids: Iterable[Any]) -> dict[str, dict[str, Any]]:
         """Stats for many professors in a constant number of queries (no N+1)."""
         ids = [str(i) for i in professor_ids]
         out = {pid: self._empty_stats() for pid in ids}
@@ -262,10 +307,12 @@ class DjangoRepository:
 
         return out
 
-    def stats(self, professor_id):
+    def stats(self, professor_id: str) -> dict[str, Any]:
+        """Return aggregate rating statistics for a professor."""
         return self._stats_map([professor_id])[str(professor_id)]
 
-    def school_stats(self, school_id):
+    def school_stats(self, school_id: str) -> dict[str, Any]:
+        """Return aggregate rating statistics for a school."""
         prof_ids = list(
             Professor.objects.filter(school_id=school_id, status="approved")
             .values_list("pk", flat=True)
@@ -281,7 +328,15 @@ class DjangoRepository:
         avg = round(mean(rated), 1) if rated else 0
         return {"prof_count": n, "review_count": total, "avg_overall": avg}
 
-    def search(self, q="", school_slug="", city="", department="", sort="rating"):
+    def search(
+        self,
+        q: str = "",
+        school_slug: str = "",
+        city: str = "",
+        department: str = "",
+        sort: str = "rating",
+    ) -> list[dict[str, Any]]:
+        """Search approved professors with optional filters and sorting."""
         qs = Professor.objects.filter(status="approved").select_related("school")
         if school_slug:
             qs = qs.filter(school__slug=school_slug)
@@ -304,22 +359,26 @@ class DjangoRepository:
         out.sort(key=_search_sort_key(sort))
         return out
 
-    def has_user_reviewed(self, professor_id, course, user):
+    def has_user_reviewed(self, professor_id: str, course: str, user: Any) -> bool:
+        """Return whether a user already reviewed this course for a professor."""
         if user is None or not getattr(user, 'is_authenticated', False):
             return False
         return Review.objects.filter(professor_id=professor_id, course__iexact=course.strip(), author=user).exists()
 
-    def has_user_voted(self, review_id, user):
+    def has_user_voted(self, review_id: str, user: Any) -> bool:
+        """Return whether a user already voted on a review."""
         if user is None or not getattr(user, 'is_authenticated', False):
             return False
         return Vote.objects.filter(review_id=review_id, user=user).exists()
 
     # helpers: ORM object -> dataclass-like used by views/templates (duck typing)
-    def _school_to_dc(self, s):
+    def _school_to_dc(self, s: School) -> SchoolDC:
+        """Convert an ORM school into the view-facing dataclass."""
         from .repository import School as DCSchool
         return DCSchool(id=str(s.pk), name=s.name, slug=s.slug, city=s.city)
 
-    def _prof_to_dc(self, p):
+    def _prof_to_dc(self, p: Professor) -> ProfessorDC:
+        """Convert an ORM professor into the view-facing dataclass."""
         from .repository import Professor as DCProf
         return DCProf(
             id=str(p.pk), school_id=str(p.school_id), first_name=p.first_name,
@@ -327,7 +386,8 @@ class DjangoRepository:
             title=p.title, status=p.status,
         )
 
-    def _review_to_dc(self, r):
+    def _review_to_dc(self, r: Review) -> ReviewDC:
+        """Convert an ORM review into the view-facing dataclass."""
         from .repository import Review as DCReview
         tags = [str(t.name) for t in r.tags.all()] if hasattr(r, 'tags') else []
         return DCReview(

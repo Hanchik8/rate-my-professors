@@ -11,10 +11,11 @@ MIN_COMMENT_LENGTH = 20
 MAX_COMMENT_LENGTH = 1000
 
 # C0/C1 control characters, keeping tab (\x09), LF (\x0a) and CR (\x0d).
-_CONTROL_CHARS_RE = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f]")
+_CONTROL_CHARS_RE: re.Pattern[str] = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f]")
 
 
 def strip_control_chars(value: str) -> str:
+    """Remove C0/C1 control characters while preserving tab and newlines."""
     if not value:
         return ""
     return _CONTROL_CHARS_RE.sub("", value)
