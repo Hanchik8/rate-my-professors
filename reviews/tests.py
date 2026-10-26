@@ -1817,6 +1817,31 @@ class QueryEfficiencyTests(TestCase):
         with self.assertNumQueries(9):
             self.client.get(reverse("school_detail", args=[school.slug]))
 
+    def test_home_list_query_count_does_not_grow_per_professor(self):
+        """The professor list page issues no per-row queries as the catalog grows."""
+        self.client.get(reverse("home"))  # warm session/messages storage
+        self._add_schools(4)
+        self._add_load(professors=12, reviews_each=3)
+        with self.assertNumQueries(7):
+            self.client.get(reverse("home"))
+
+    def test_professor_profile_query_count_does_not_grow_with_reviews_or_tags(self):
+        """Profile reviews/tags are prefetched; adding rows adds no queries."""
+        prof = self.repo.search("Айбек")[0]["prof"]
+        url = reverse("professor", args=[prof.slug])
+        self.client.get(url)  # warm session/messages storage
+        for i in range(25):
+            self.repo.add_review(
+                prof.id,
+                _repo_review(
+                    course=f"Теги {i}",
+                    tags=["Строго оценивает", "Много тестов", "Понятные критерии"],
+                ),
+                status="approved",
+            )
+        with self.assertNumQueries(7):
+            self.client.get(url)
+
     def test_home_view_query_count_stays_bounded_as_catalog_grows(self):
         self.client.get(reverse("home"))  # warm session/messages storage
         self._add_schools(6)
