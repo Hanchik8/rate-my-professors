@@ -5,6 +5,7 @@ from django.db import models
 from django.db.models import F, Q
 from django.db.models.functions import Lower
 from django.utils.text import slugify
+from django.utils.translation import gettext_lazy as _
 
 from .sanitize import MAX_COMMENT_LENGTH, clean_text
 
@@ -149,8 +150,27 @@ class Vote(models.Model):
 
 
 class Report(models.Model):
+    REASON_SPAM = "spam"
+    REASON_ABUSE = "abuse"
+    REASON_PERSONAL_DATA = "personal_data"
+    REASON_OTHER = "other"
+    REASON_CHOICES = [
+        (REASON_SPAM, _("Спам")),
+        (REASON_ABUSE, _("Оскорбления или угрозы")),
+        (REASON_PERSONAL_DATA, _("Личные данные")),
+        (REASON_OTHER, _("Другое")),
+    ]
+    STATUS_PENDING = "pending"
+    STATUS_REVIEWED = "reviewed"
+    STATUS_CHOICES = [
+        (STATUS_PENDING, _("Ожидает рассмотрения")),
+        (STATUS_REVIEWED, _("Рассмотрена")),
+    ]
+
     review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name="reports")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="reports")
+    reason = models.CharField(max_length=20, choices=REASON_CHOICES, default=REASON_OTHER)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default=STATUS_PENDING)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

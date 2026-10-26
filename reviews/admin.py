@@ -68,5 +68,12 @@ class VoteAdmin(admin.ModelAdmin):
 
 @admin.register(Report)
 class ReportAdmin(admin.ModelAdmin):
-    list_display = ["review", "user", "created_at"]
+    list_display = ["review", "user", "reason", "created_at", "status"]
     list_select_related = ["review__professor__school", "user"]
+    list_filter = ["status"]
+    search_fields = ["reason", "review__course", "user__username"]
+    actions = ["mark_reviewed"]
+
+    @admin.action(description=_("Отметить выбранные жалобы рассмотренными"))
+    def mark_reviewed(self, request, queryset):
+        queryset.update(status=Report.STATUS_REVIEWED)

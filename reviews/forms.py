@@ -6,6 +6,7 @@ form layer and the repositories agree on what "clean" input looks like.
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
+from .models import Report
 from .repository import GRADES, TAGS
 from .sanitize import MAX_COMMENT_LENGTH, MIN_COMMENT_LENGTH, clean_text
 
@@ -22,6 +23,22 @@ def _ensure_length(value, minimum, maximum, too_short, too_long):
         raise forms.ValidationError(too_short % {"n": minimum})
     if len(value) > maximum:
         raise forms.ValidationError(too_long % {"n": maximum})
+
+
+class ReportForm(forms.Form):
+    """Validated reason supplied with a review report."""
+
+    reason = forms.ChoiceField(
+        choices=Report.REASON_CHOICES,
+        required=False,
+        initial=Report.REASON_OTHER,
+        label=_("Причина жалобы"),
+        widget=forms.Select(attrs={"aria-label": _("Причина жалобы")}),
+    )
+
+    def clean_reason(self):
+        """Keep one-click reports compatible by defaulting to ``other``."""
+        return self.cleaned_data.get("reason") or Report.REASON_OTHER
 
 
 class ReviewForm(forms.Form):

@@ -107,6 +107,8 @@ class InMemoryRepository:
         self._reviews: dict[str, Review] = {}
         # (review_id, user_id) -> "up"/"down"
         self._votes: dict[tuple[str, Any], bool] = {}
+        # (review_id, user_id) -> report reason; one report per user and review
+        self._reports: dict[tuple[str, Any], str] = {}
         # (professor_id, course_lower, user_id) uniqueness for review
         self._review_keys: set[tuple[str, str, Any]] = set()
 
@@ -186,11 +188,17 @@ class InMemoryRepository:
         else:
             r.not_helpful += 1
 
-    def report(self, review_id: str, user: Any = None) -> None:
-        """Increment the report counter for an existing review."""
+    def report(self, review_id: str, user: Any = None, reason: str = "other") -> None:
+        """Record one report per user and increment the review's counter."""
         r = self._reviews.get(review_id)
-        if r:
-            r.reported += 1
+        if not r:
+            return
+        if user is not None:
+            key = (review_id, getattr(user, "id", user))
+            if key in self._reports:
+                return
+            self._reports[key] = reason
+        r.reported += 1
 
     def approve_review(self, review_id: str) -> None:
         """Mark a review as approved when it exists."""

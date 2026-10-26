@@ -120,12 +120,14 @@ class DjangoRepository:
             else:
                 Review.objects.filter(pk=review_id).update(not_helpful=F("not_helpful") + 1)
 
-    def report(self, review_id: str, user: Any = None) -> None:
+    def report(self, review_id: str, user: Any = None, reason: str = Report.REASON_OTHER) -> None:
         """Record a report for a review, ignoring repeat reports by a user."""
         with transaction.atomic():
             r = Review.objects.select_for_update().get(pk=review_id)
             if user is not None:
-                _, created = Report.objects.get_or_create(review=r, user=user)
+                _, created = Report.objects.get_or_create(
+                    review=r, user=user, defaults={"reason": reason}
+                )
                 if not created:
                     return
             Review.objects.filter(pk=review_id).update(reported=F("reported") + 1)

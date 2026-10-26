@@ -19,7 +19,7 @@ from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.decorators.http import require_POST
 
-from .forms import ProfessorForm, ReviewForm
+from .forms import ProfessorForm, ReportForm, ReviewForm
 from .store import repo
 from .throttle import is_rate_limited, rate_limit
 
@@ -95,6 +95,7 @@ def professor_detail(request, slug):
     return render(request, "reviews/professor.html", {
         "prof": prof, "school": repo.school(prof.school_id), "stats": repo.stats(prof.id),
         "reviews": reviews, "sort": sort, "page_obj": page_obj,
+        "report_form": ReportForm(auto_id=False),
     })
 
 
@@ -210,14 +211,15 @@ def review_vote(request, review_id):
 @require_POST
 @login_required
 def review_report(request, review_id):
-    """Flag a review for moderator attention."""
+    """Flag a review for moderator attention with a validated reason."""
     review = repo.review(review_id)
     if review is None:
         raise Http404(_("Review not found"))
-    try:
-        repo.report(review_id, user=request.user)
-    except Exception:
-        pass
+    form = ReportForm(request.POST)
+    if not form.is_valid():
+        messages.error(request, _("Выберите корректную причину жалобы."))
+        return _redirect_to_review(review)
+    repo.report(review_id, user=request.user, reason=form.cleaned_data["reason"])
     messages.success(request, _("Жалоба отправлена модератору."))
     return _redirect_to_review(review)
 

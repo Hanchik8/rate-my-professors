@@ -52,6 +52,7 @@
         <button name="vote" value="down" aria-label="{% translate 'Бесполезно' %}: {{ r.course }} ({{ r.not_helpful|localize }})">{% translate "Бесполезно" %} {{ r.not_helpful|localize }}</button>
       </form>
       <form method="post" action="{% url 'review_report' r.id %}">{% csrf_token %}
+        {{ report_form.reason }}
         <button class="link-btn" type="submit" aria-label="{% translate 'Пожаловаться' %}: {{ r.course }}">{% translate "Пожаловаться" %}</button>
       </form>
     </div>

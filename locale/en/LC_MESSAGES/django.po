@@ -403,6 +403,33 @@ msgstr "You have already voted on this review."
 msgid "Жалоба отправлена модератору."
 msgstr "Report sent to a moderator."
 
+msgid "Спам"
+msgstr "Spam"
+
+msgid "Оскорбления или угрозы"
+msgstr "Insults or threats"
+
+msgid "Личные данные"
+msgstr "Personal data"
+
+msgid "Другое"
+msgstr "Other"
+
+msgid "Ожидает рассмотрения"
+msgstr "Pending review"
+
+msgid "Рассмотрена"
+msgstr "Reviewed"
+
+msgid "Причина жалобы"
+msgstr "Report reason"
+
+msgid "Выберите корректную причину жалобы."
+msgstr "Select a valid report reason."
+
+msgid "Отметить выбранные жалобы рассмотренными"
+msgstr "Mark selected reports as reviewed"
+
 msgid "Email"
 msgstr "Email"
 
