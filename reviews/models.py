@@ -10,7 +10,8 @@ from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
 from .caching import invalidate_catalog_cache
-from .sanitize import MAX_COMMENT_LENGTH, clean_text
+from .constants import MAX_COMMENT_LENGTH
+from .sanitize import clean_text
 
 
 class School(models.Model):

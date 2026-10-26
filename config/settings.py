@@ -5,6 +5,8 @@ from pathlib import Path
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.csp import CSP
 
+from reviews.constants import RATE_LIMITS
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -243,13 +245,8 @@ LOGOUT_REDIRECT_URL = "home"
 # Disabled by default while running the test suite so unrelated tests cannot
 # exhaust a shared per-user/per-IP budget; the throttle tests re-enable it.
 RATELIMIT_ENABLE = _parse_bool(os.environ.get("RATELIMIT_ENABLE"), default=not _is_test)
-# action -> (max hits, window in seconds)
-RATELIMIT = {
-    "login": (10, 60),
-    "signup": (5, 600),
-    "review": (10, 600),
-    "vote": (60, 60),
-}
+# action -> (max hits, window in seconds); the defaults live in reviews.constants.
+RATELIMIT = dict(RATE_LIMITS)
 
 # Shared cache used by the rate limiter (and available for future use). A real
 # multi-process deployment should point CACHE_BACKEND at Redis/Memcached so the

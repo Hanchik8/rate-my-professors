@@ -12,9 +12,10 @@ from django.db.models import Avg, Count, F, Q
 from django.utils.text import slugify
 
 from .caching import invalidate_catalog_cache
+from .constants import MAX_COMMENT_LENGTH
 from .models import Professor, Report, Review, School, Tag, Vote
 from .repository import _search_sort_key, _tone
-from .sanitize import MAX_COMMENT_LENGTH, clean_text
+from .sanitize import clean_text
 
 if TYPE_CHECKING:
     from .repository import Professor as ProfessorDC

@@ -2120,15 +2120,15 @@ class TextSanitisationTests(TestCase):
         self.assertFalse(any(ord(ch) < 32 and ch not in "\n\t" for ch in cleaned))
 
     def test_comment_field_length_matches_shared_constant(self):
+        from .constants import MAX_COMMENT_LENGTH, MIN_COMMENT_LENGTH
         from .forms import ReviewForm
-        from .sanitize import MAX_COMMENT_LENGTH, MIN_COMMENT_LENGTH
         field = ReviewForm().fields["comment"]
         self.assertEqual(field.max_length, MAX_COMMENT_LENGTH)
         self.assertEqual(field.min_length, MIN_COMMENT_LENGTH)
 
     def test_model_comment_has_max_length(self):
+        from .constants import MAX_COMMENT_LENGTH
         from .models import Review
-        from .sanitize import MAX_COMMENT_LENGTH
         self.assertEqual(Review._meta.get_field("comment").max_length, MAX_COMMENT_LENGTH)
 
     def test_form_strips_control_chars_from_comment(self):
@@ -2155,15 +2155,15 @@ class TextSanitisationTests(TestCase):
         self.assertEqual(form.cleaned_data["term"], "Осень 2025")
 
     def test_form_rejects_overlong_comment(self):
+        from .constants import MAX_COMMENT_LENGTH
         from .forms import ReviewForm
-        from .sanitize import MAX_COMMENT_LENGTH
         form = ReviewForm(_valid({"comment": "я" * (MAX_COMMENT_LENGTH + 1)}))
         self.assertFalse(form.is_valid())
         self.assertIn("comment", form.errors)
 
     def test_form_rejects_comment_too_short_after_cleaning(self):
+        from .constants import MIN_COMMENT_LENGTH
         from .forms import ReviewForm
-        from .sanitize import MIN_COMMENT_LENGTH
         # 19 visible chars + padding controls pass the raw min_length check
         form = ReviewForm(_valid({"comment": "х" * (MIN_COMMENT_LENGTH - 1) + "\x07\x07"}))
         self.assertFalse(form.is_valid())
@@ -2177,7 +2177,7 @@ class TextSanitisationTests(TestCase):
         self.assertNotIn("\x00", review.comment)
 
     def test_repository_rejects_overlong_comment(self):
-        from .sanitize import MAX_COMMENT_LENGTH
+        from .constants import MAX_COMMENT_LENGTH
         repo = InMemoryRepository()
         school = repo.add_school("Тестовый вуз", "Бишкек")
         prof = repo.add_professor(school.id, "Иван", "Петров", "Физика", "доцент")

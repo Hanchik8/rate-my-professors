@@ -2,13 +2,13 @@
 
 Review bodies are rendered through Django's autoescaping, but control
 characters are still stripped before they reach storage so they can never
-corrupt logs, exports or the moderation UI.  Length limits are defined here
-so the form, the model and the repositories all agree on them.
+corrupt logs, exports or the moderation UI.  Length limits are re-exported
+from ``constants`` so the form, the model and the repositories agree.
 """
 import re
 
-MIN_COMMENT_LENGTH = 20
-MAX_COMMENT_LENGTH = 1000
+from .constants import MAX_COMMENT_LENGTH as MAX_COMMENT_LENGTH
+from .constants import MIN_COMMENT_LENGTH as MIN_COMMENT_LENGTH
 
 # C0/C1 control characters, keeping tab (\x09), LF (\x0a) and CR (\x0d).
 _CONTROL_CHARS_RE: re.Pattern[str] = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f]")

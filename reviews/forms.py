@@ -6,9 +6,10 @@ form layer and the repositories agree on what "clean" input looks like.
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
+from .constants import MAX_COMMENT_LENGTH, MIN_COMMENT_LENGTH
 from .models import Report
 from .repository import GRADES, TAGS
-from .sanitize import MAX_COMMENT_LENGTH, MIN_COMMENT_LENGTH, clean_text
+from .sanitize import clean_text
 
 SCORES = [(5, "5"), (4, "4"), (3, "3"), (2, "2"), (1, "1")]
 

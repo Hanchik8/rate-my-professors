@@ -25,11 +25,10 @@ from .caching import (
     options_cache_key,
     school_cache_key,
 )
+from .constants import PAGE_SIZE
 from .forms import ProfessorForm, ReportForm, ReviewForm
 from .store import repo
 from .throttle import is_rate_limited, rate_limit
-
-PAGE_SIZE = 10
 
 
 def health(request):
