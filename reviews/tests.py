@@ -530,6 +530,23 @@ class ProfessorViewTests(_MemoryRepoTestCase):
         r = self.client.get(reverse("professor", args=[prof.slug]))
         self.assertNotContains(r, "Скрытый комментарий достаточной длины.")
 
+    def test_distribution_renders_when_reviews_exist(self):
+        prof = self.prof()
+        r = self.client.get(reverse("professor", args=[prof.slug]))
+        self.assertContains(r, 'class="dist"')
+        self.assertContains(r, 'aria-label="Распределение оценок"')
+        self.assertContains(r, '<span class="bar"><i style="width:')
+        self.assertContains(r, ">5<")
+
+    def test_distribution_empty_state_when_no_reviews(self):
+        school = self.repo.add_school("Test School", "Test City")
+        new_prof = self.repo.add_professor(school.id, "Test", "Professor", "Test Dept", "преподаватель")
+        r = self.client.get(reverse("professor", args=[new_prof.slug]))
+        self.assertContains(r, 'class="dist dist--empty"')
+        self.assertContains(r, 'aria-label="Распределение оценок"')
+        self.assertContains(r, ">0<")
+        self.assertNotContains(r, 'class="facts"')
+
 
 class ReviewFormViewTests(_MemoryRepoTestCase):
     def test_anonymous_get_redirects_to_login(self):

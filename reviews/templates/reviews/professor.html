@@ -20,13 +20,13 @@
   <div><dt>{% translate "Сложность" %}</dt><dd>{{ stats.difficulty|floatformat:1|localize }} / 5</dd></div>
   <div><dt>{% translate "Отзывов" %}</dt><dd>{{ stats.count|localize }}</dd></div>
 </dl>
-<ul class="dist" aria-label="{% translate 'Распределение оценок' %}">
+{% endif %}
+<ul class="dist{% if not stats.count %} dist--empty{% endif %}" aria-label="{% translate 'Распределение оценок' %}">
   {% for d in stats.distribution %}
   <li><span>{{ d.score|localize }}</span><span class="bar"><i style="width:{{ d.pct }}%"></i></span><span>{{ d.count|localize }}</span></li>
   {% endfor %}
 </ul>
-{% if stats.top_tags %}<p class="tags">{% translate "Студенты отмечают:" %} {% for tag in stats.top_tags %}{% translate tag %}{% if not forloop.last %}, {% endif %}{% endfor %}</p>{% endif %}
-{% endif %}
+{% if stats.count and stats.top_tags %}<p class="tags">{% translate "Студенты отмечают:" %} {% for tag in stats.top_tags %}{% translate tag %}{% if not forloop.last %}, {% endif %}{% endfor %}</p>{% endif %}
 
 <p><a class="btn" href="{% url 'review_new' prof.slug %}">{% translate "Оценить преподавателя" %}</a></p>
 

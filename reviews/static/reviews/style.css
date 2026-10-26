@@ -183,6 +183,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--focus)}
 .facts dd{margin:.15rem 0 0;font-weight:700;font-size:1.35rem}
 .dist{list-style:none;padding:0;max-width:24rem;margin:0 0 1.25rem}
 .dist li{display:grid;grid-template-columns:1.2rem 1fr 2rem;gap:.6rem;align-items:center;padding:.15rem 0}
+.dist--empty .bar{background:var(--line)}
 .bar{height:.55rem;background:var(--none-bg);border-radius:.3rem;overflow:hidden}
 .bar i{display:block;height:100%;background:var(--accent)}
 .tags{color:var(--muted);margin:.4rem 0}
