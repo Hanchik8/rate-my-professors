@@ -807,12 +807,20 @@ class SecuritySettingsTests(TestCase):
         from django.conf import settings
         self.assertEqual(settings.SECURE_REFERRER_POLICY, "same-origin")
 
+    def test_permissions_policy_configured(self):
+        from django.conf import settings
+        self.assertEqual(settings.PERMISSIONS_POLICY, "camera=(), geolocation=(), microphone=()")
+
     def test_security_headers_are_emitted(self):
         """Middleware must actually send the hardening response headers."""
         response = self.client.get(reverse("home"))
         self.assertEqual(response.headers.get("X-Content-Type-Options"), "nosniff")
         self.assertEqual(response.headers.get("X-Frame-Options"), "DENY")
         self.assertEqual(response.headers.get("Referrer-Policy"), "same-origin")
+        self.assertEqual(
+            response.headers.get("Permissions-Policy"),
+            "camera=(), geolocation=(), microphone=()",
+        )
 
     def test_csp_header_is_emitted(self):
         response = self.client.get(reverse("home"))
@@ -2182,6 +2190,7 @@ class ReviewEscapingTests(_MemoryRepoTestCase):
         payload = "<script>alert(1)</script>"
         r = self.client.get(reverse("home"), {"q": payload})
         self.assertNotContains(r, payload)
+        self.assertContains(r, "&lt;script&gt;alert(1)&lt;/script&gt;")
 
 
 # ---------------------------------------------------------------------------
@@ -2259,6 +2268,13 @@ class OpenRedirectTests(TestCase):
         r = self.client.get(reverse("login"), {"next": "https://evil.example.com"})
         self.assertEqual(r.status_code, 200)
         self.assertNotIn('value="https://evil.example.com"', r.content.decode())
+
+    def test_login_page_escapes_next_in_hidden_input(self):
+        payload = '/rules/?q="><script>alert(1)</script>'
+        r = self.client.get(reverse("login"), {"next": payload})
+        self.assertEqual(r.status_code, 200)
+        self.assertNotContains(r, "<script>alert(1)</script>")
+        self.assertContains(r, "&lt;script&gt;alert(1)&lt;/script&gt;")
 
     def test_set_language_rejects_external_next(self):
         r = self.client.post(reverse("set_language"), {

@@ -137,6 +137,9 @@ X_FRAME_OPTIONS = "DENY"
 # is a safe, privacy-preserving default that can be tightened per deployment.
 SECURE_REFERRER_POLICY = os.environ.get("SECURE_REFERRER_POLICY", "same-origin")
 
+# ProfLens does not use these browser features, so disable them by default.
+PERMISSIONS_POLICY = "camera=(), geolocation=(), microphone=()"
+
 # Minimal Content-Security-Policy: only same-origin resources are allowed and
 # objects/framing/base-uri/form targets are locked down. Inline script/style
 # stay permitted because the shipped templates rely on them (nav toggle, star
@@ -179,6 +182,7 @@ MIDDLEWARE = [
     "django.middleware.gzip.GZipMiddleware",
     "django.middleware.http.ConditionalGetMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "reviews.middleware.PermissionsPolicyMiddleware",
     "django.middleware.csp.ContentSecurityPolicyMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
