@@ -16,6 +16,7 @@ from typing import Any
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
+from .caching import invalidate_catalog_cache
 from .sanitize import MAX_COMMENT_LENGTH, clean_text
 
 # Теги адаптированы под вузы Кыргызстана — без упоминаний коррупции
@@ -118,6 +119,7 @@ class InMemoryRepository:
         slug = slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
         s = School(str(uuid.uuid4()), name, slug, city)
         self._schools[s.id] = s
+        invalidate_catalog_cache()
         return s
 
     def add_professor(
@@ -142,6 +144,7 @@ class InMemoryRepository:
             i += 1
         p = Professor(str(uuid.uuid4()), school_id, first, last, slug, department, title, status=status)
         self._professors[p.id] = p
+        invalidate_catalog_cache()
         return p
 
     def add_review(
@@ -173,6 +176,7 @@ class InMemoryRepository:
             status=status, author_id=getattr(user, 'id', None) if user else None,
         )
         self._reviews[r.id] = r
+        invalidate_catalog_cache()
         return r
 
     def vote(self, review_id: str, helpful: bool, user: Any = None) -> None:
@@ -204,11 +208,13 @@ class InMemoryRepository:
         """Mark a review as approved when it exists."""
         if review_id in self._reviews:
             self._reviews[review_id].status = "approved"
+            invalidate_catalog_cache()
 
     def approve_professor(self, professor_id: str) -> None:
         """Mark a professor as approved when it exists."""
         if professor_id in self._professors:
             self._professors[professor_id].status = "approved"
+            invalidate_catalog_cache()
 
     # reads
     def schools(self) -> list[School]:

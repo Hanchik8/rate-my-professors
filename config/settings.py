@@ -262,3 +262,7 @@ CACHES = {
         "LOCATION": os.environ.get("CACHE_LOCATION", "proflens"),
     }
 }
+
+# Catalog pages (home search, university lists and filter options) are cached
+# with django.core.cache; reviews/professors/schools invalidate the namespace.
+CATALOG_CACHE_TIMEOUT = int(os.environ.get("CATALOG_CACHE_TIMEOUT", "300"))

@@ -11,6 +11,7 @@ from django.db import IntegrityError, transaction
 from django.db.models import Avg, Count, F, Q
 from django.utils.text import slugify
 
+from .caching import invalidate_catalog_cache
 from .models import Professor, Report, Review, School, Tag, Vote
 from .repository import _search_sort_key, _tone
 from .sanitize import MAX_COMMENT_LENGTH, clean_text
@@ -135,10 +136,12 @@ class DjangoRepository:
     def approve_review(self, review_id: str) -> None:
         """Mark a review as approved."""
         Review.objects.filter(pk=review_id).update(status="approved")
+        invalidate_catalog_cache()
 
     def approve_professor(self, professor_id: str) -> None:
         """Mark a professor as approved."""
         Professor.objects.filter(pk=professor_id).update(status="approved")
+        invalidate_catalog_cache()
 
     # reads
     def schools(self) -> list[SchoolDC]:

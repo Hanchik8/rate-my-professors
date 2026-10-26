@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 
+from .caching import invalidate_catalog_cache
 from .models import Professor, Report, Review, School, Tag, Vote
 
 
@@ -35,6 +36,7 @@ class ProfessorAdmin(admin.ModelAdmin):
     @admin.action(description=_("Одобрить выбранных преподавателей"))
     def approve_selected(self, request, queryset):
         queryset.update(status="approved")
+        invalidate_catalog_cache()
 
     def full_name(self, obj):
         return obj.full_name
@@ -53,10 +55,12 @@ class ReviewAdmin(admin.ModelAdmin):
     @admin.action(description=_("Одобрить выбранные отзывы"))
     def approve_selected(self, request, queryset):
         queryset.update(status="approved")
+        invalidate_catalog_cache()
 
     @admin.action(description=_("Отклонить выбранные отзывы"))
     def reject_selected(self, request, queryset):
         queryset.update(status="rejected")
+        invalidate_catalog_cache()
 
 
 @admin.register(Vote)

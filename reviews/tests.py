@@ -1655,11 +1655,15 @@ class PaginationTests(_MemoryRepoTestCase):
 # ---------------------------------------------------------------------------
 # Performance: no N+1 queries in DjangoRepository list pages
 # ---------------------------------------------------------------------------
+@override_settings(CACHES={
+    "default": {"BACKEND": "django.core.cache.backends.dummy.DummyCache"},
+})
 class QueryEfficiencyTests(TestCase):
     """DjangoRepository uses select_related/prefetch_related/annotate.
 
     Each read path must run a constant number of queries regardless of how
-    many professors/reviews exist.
+    many professors/reviews exist. The catalog cache is disabled here so the
+    measurements exercise the repository rather than a warm cache.
     """
 
     def setUp(self):
@@ -2450,3 +2454,88 @@ class GZipMiddlewareTests(TestCase):
         self.assertEqual(response.status_code, 200)
         if response.has_header("Content-Encoding"):
             self.assertEqual(response["Content-Encoding"], "gzip")
+
+
+# ---------------------------------------------------------------------------
+# Performance: catalog pages use django.core.cache and invalidate on writes
+# ---------------------------------------------------------------------------
+class CatalogCacheTests(_MemoryRepoTestCase):
+    """Home results/filter options and school pages are served from the cache."""
+
+    def setUp(self):
+        cache.clear()
+        super().setUp()
+
+    def tearDown(self):
+        cache.clear()
+        super().tearDown()
+
+    def test_home_results_and_options_are_cached(self):
+        with (
+            mock.patch.object(self.repo, "search", wraps=self.repo.search) as search,
+            mock.patch.object(self.repo, "schools", wraps=self.repo.schools) as schools,
+        ):
+            self.client.get(reverse("home"))
+            self.client.get(reverse("home"))
+            self.assertEqual(search.call_count, 1)
+            self.assertEqual(schools.call_count, 1)
+
+    def test_home_options_are_shared_across_filter_combinations(self):
+        with (
+            mock.patch.object(self.repo, "search", wraps=self.repo.search) as search,
+            mock.patch.object(self.repo, "schools", wraps=self.repo.schools) as schools,
+        ):
+            self.client.get(reverse("home"))
+            self.client.get(reverse("home"), {"q": "Айбек"})
+            self.assertEqual(search.call_count, 2)
+            self.assertEqual(schools.call_count, 1)
+
+    def test_new_review_invalidates_home_cache(self):
+        url = reverse("home")
+        professor_id = self.prof().id
+        with mock.patch.object(self.repo, "search", wraps=self.repo.search) as search:
+            self.client.get(url)
+            self.client.get(url)
+            self.assertEqual(search.call_count, 1)
+            self.repo.add_review(
+                professor_id, _repo_review(course="Новый курс"), status="approved"
+            )
+            self.client.get(url)
+            self.assertEqual(search.call_count, 2)
+
+    def test_approved_review_invalidates_home_cache(self):
+        url = reverse("home")
+        review = self.repo.add_review(
+            self.prof().id, _repo_review(course="На модерации"), status="pending"
+        )
+        with mock.patch.object(self.repo, "search", wraps=self.repo.search) as search:
+            self.client.get(url)
+            self.client.get(url)
+            self.assertEqual(search.call_count, 1)
+            self.repo.approve_review(review.id)
+            self.client.get(url)
+            self.assertEqual(search.call_count, 2)
+
+    def test_school_page_is_cached_and_invalidated_by_review(self):
+        school = self.repo.schools()[0]
+        url = reverse("school_detail", args=[school.slug])
+        prof = self.repo.professors_for_school(school.id)[0]
+        with mock.patch.object(self.repo, "search", wraps=self.repo.search) as search:
+            self.client.get(url)
+            self.client.get(url)
+            self.assertEqual(search.call_count, 1)
+            self.repo.add_review(
+                prof.id, _repo_review(course="Ещё курс"), status="approved"
+            )
+            self.client.get(url)
+            self.assertEqual(search.call_count, 2)
+
+    def test_school_pages_are_cached_per_school(self):
+        first, second = self.repo.schools()[:2]
+        with mock.patch.object(self.repo, "search", wraps=self.repo.search) as search:
+            self.client.get(reverse("school_detail", args=[first.slug]))
+            self.client.get(reverse("school_detail", args=[second.slug]))
+            self.assertEqual(search.call_count, 2)
+            self.client.get(reverse("school_detail", args=[first.slug]))
+            self.client.get(reverse("school_detail", args=[second.slug]))
+            self.assertEqual(search.call_count, 2)

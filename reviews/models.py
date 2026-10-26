@@ -4,9 +4,12 @@ from django.conf import settings
 from django.db import models
 from django.db.models import F, Q
 from django.db.models.functions import Lower
+from django.db.models.signals import post_delete, post_save
+from django.dispatch import receiver
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
+from .caching import invalidate_catalog_cache
 from .sanitize import MAX_COMMENT_LENGTH, clean_text
 
 
@@ -177,3 +180,14 @@ class Report(models.Model):
         constraints = [
             models.UniqueConstraint(fields=["review", "user"], name="uniq_report_review_user"),
         ]
+
+
+# Catalog pages cache derived review/professor/school data, so any ORM write
+# that can change those pages invalidates the cache namespace. Bulk updates in
+# repositories/admin call ``invalidate_catalog_cache`` explicitly because they
+# do not emit model signals.
+@receiver([post_save, post_delete], sender=Review)
+@receiver([post_save, post_delete], sender=Professor)
+@receiver([post_save, post_delete], sender=School)
+def _invalidate_catalog_on_write(sender, **kwargs):
+    invalidate_catalog_cache()

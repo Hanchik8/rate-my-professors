@@ -19,6 +19,12 @@ from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.decorators.http import require_POST
 
+from .caching import (
+    get_or_set,
+    home_cache_key,
+    options_cache_key,
+    school_cache_key,
+)
 from .forms import ProfessorForm, ReportForm, ReviewForm
 from .store import repo
 from .throttle import is_rate_limited, rate_limit
@@ -62,17 +68,30 @@ def _home_filters(request):
     return q, school, city, department, sort
 
 
-def home(request):
-    """Search/browse professors with filters, sorting and pagination."""
-    q, school, city, department, sort = _home_filters(request)
-    results = repo.search(q, school, city, department, sort)
-    page_results, page_obj = _paginate(results, request.GET.get("page"))
-    return render(request, "reviews/home.html", {
-        "q": q, "school": school, "city": city,
-        "department": department, "sort": sort,
+def _home_options():
+    """Return cached filter option lists shared by every home search."""
+    return get_or_set(options_cache_key(), lambda: {
         "schools": repo.schools(),
         "cities": repo.cities(),
         "departments": repo.departments(),
+    })
+
+
+def home(request):
+    """Search/browse professors with filters, sorting and pagination."""
+    q, school, city, department, sort = _home_filters(request)
+    options = _home_options()
+    data = get_or_set(
+        home_cache_key(q, school, city, department, sort),
+        lambda: {"results": repo.search(q, school, city, department, sort)},
+    )
+    page_results, page_obj = _paginate(data["results"], request.GET.get("page"))
+    return render(request, "reviews/home.html", {
+        "q": q, "school": school, "city": city,
+        "department": department, "sort": sort,
+        "schools": options["schools"],
+        "cities": options["cities"],
+        "departments": options["departments"],
         "results": page_results,
         "page_obj": page_obj,
     })
@@ -109,12 +128,16 @@ def _school_or_404(slug):
 
 def _school_context(school, page_number):
     """Build the template context for a school page."""
-    results = repo.search("", school_slug=school.slug)
+    data = get_or_set(school_cache_key(school.slug), lambda: {
+        "results": repo.search("", school_slug=school.slug),
+        "stats": repo.school_stats(school.id),
+    })
+    results = data["results"]
     page_results, page_obj = _paginate(results, page_number)
     return {
         "school": school,
         "results": page_results,
-        "stats": repo.school_stats(school.id),
+        "stats": data["stats"],
         "departments": sorted({r["prof"].department for r in results}),
         "page_obj": page_obj,
     }
