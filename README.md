@@ -15,8 +15,9 @@ python manage.py test reviews  # тесты (DEBUG=True берётся из .env
 # вариант B — с PostgreSQL (данные сохраняются)
 docker compose up -d           # поднимет Postgres (или см. DATABASE_URL в .env)
 python manage.py migrate
-python manage.py seed_kg       # залить демо-данные КР (+ --universities: все 64 вуза из data/)
+python manage.py seed_kg       # все вузы КР из data/universities_kg.json + демо-преподаватели (повторный запуск безопасен)
 python manage.py seed_fake --professors 3000 --reviews 30000   # много тестовых данных (не для боевой БД!)
+python manage.py seed_fake --wipe --professors 3000 --reviews 30000   # заменить прежние тестовые данные, реальные не трогает
 python manage.py createsuperuser
 python manage.py runserver
 ```
@@ -70,7 +71,7 @@ python3 -c "import secrets; print(secrets.token_urlsafe(64))"   # готовый
 docker compose -f docker-compose.prod.yml --env-file .env.prod --profile https up -d --build
 
 docker compose -f docker-compose.prod.yml --env-file .env.prod exec web python manage.py createsuperuser
-docker compose -f docker-compose.prod.yml --env-file .env.prod exec web python manage.py seed_kg --universities   # по желанию
+docker compose -f docker-compose.prod.yml --env-file .env.prod exec web python manage.py seed_kg   # вузы КР (идемпотентно)
 ```
 
 Что происходит при старте контейнера `web` (`docker-entrypoint.sh`): ждёт базу → `migrate` → gunicorn. Статика собирается при сборке образа и раздаётся WhiteNoise (сжатие + вечный кэш), отдельный nginx не нужен.
@@ -104,3 +105,12 @@ docker compose -f docker-compose.prod.yml --env-file .env.prod logs -f web
 * Индексы под поиск и страницы, постоянные соединения с БД (`CONN_MAX_AGE`).
 * Кэш списков/статистики на `READ_CACHE_SECONDS` (Redis в проде), голоса показываются сразу.
 * gunicorn `gthread`: `WEB_CONCURRENCY` процессов × `GUNICORN_THREADS` потоков (`gunicorn.conf.py`).
+
+## Вузы, города и области
+
+Справочник `data/universities_kg.json` содержит все вузы КР (государственные и частные) с названиями на ru/ky/en,
+сокращением, городом, областью и сайтом. Источник: портал Министерства образования и науки КР
+(kesiptanda.edu.gov.kg, список 74 вузов) и список Национального офиса Erasmus+ на 1.04.2023; ссылки в самом файле.
+Ключ записи `code` стабилен: `seed_kg` обновляет вузы по нему (update_or_create), ничего не дублируя.
+Области (7) и города республиканского значения (Бишкек, Ош) описаны в `reviews/geo.py`; фильтр на главной
+группирует города по областям и сужает список вузов (на сервере, плюс `filters.js` без перезагрузки).

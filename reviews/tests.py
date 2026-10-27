@@ -79,7 +79,7 @@ class MemorySmokeTests(RepoSwapMixin, TestCase):
         r = self.client.get(reverse("home"), {"city": "Ош"})
         self.assertContains(r, "Бакыт")
         self.assertNotContains(r, "Айбек")
-        school = next(s for s in self.repo.schools() if "Ошский" in s.name)
+        school = next(s for s in self.repo.schools() if s.code == "oshsu")
         r2 = self.client.get(reverse("home"), {"school": school.slug})
         self.assertContains(r2, "Бакыт")
 
@@ -329,7 +329,7 @@ class DjangoSmokeTests(RepoSwapMixin, TestCase):
         Fake(stdout=StringIO()).handle(professors=200, reviews=1500, seed=1)
         cache.clear()
         with self.settings(READ_CACHE_SECONDS=0):
-            with self.assertNumQueries(4):  # schools, cities, count, one page with ratings
+            with self.assertNumQueries(3):  # schools (also gives the city filter), count, one page with ratings
                 r = self.client.get(reverse("home"))
             self.assertEqual(r.status_code, 200)
             school = Professor.objects.first().school
@@ -577,3 +577,217 @@ class ConcurrencyTests(TransactionTestCase):
         data = {"course": "Гонка", "overall": 4, "difficulty": 3, "would_take_again": True, "comment": "x" * 30}
         self._parallel(lambda: self.repo.add_review(str(prof.id), data, user=user))
         self.assertEqual(Review.objects.filter(author=user).count(), 1)
+
+
+# ---------- regions, cities, universities ----------
+
+class UniversitiesDataTests(unittest.TestCase):
+    """data/universities_kg.json is the list every backend loads."""
+
+    def test_file_is_complete_and_consistent(self):
+        from .geo import CITY_REGION, REGION_CODES
+        from .universities import load_universities
+        unis = load_universities()
+        self.assertGreaterEqual(len(unis), 70)
+        codes = [u["code"] for u in unis]
+        self.assertEqual(len(codes), len(set(codes)))
+        self.assertEqual(len({u["name"].lower() for u in unis}), len(unis))
+        for u in unis:
+            self.assertIn(u["region"], REGION_CODES, u["code"])
+            self.assertEqual(CITY_REGION[u["city"]], u["region"], u["code"])
+            self.assertIn(u["kind"], ("state", "private"))
+            self.assertTrue(u["name_ky"] and u["name_en"], u["code"])
+        regions = {u["region"] for u in unis}
+        for code in ("bishkek", "osh-city", "batken", "jalal-abad", "issyk-kul", "naryn", "talas", "chuy"):
+            self.assertIn(code, regions)
+        for code in ("knu", "alatoo", "auca", "krsu", "manas", "nsu", "iksu", "talsu", "batsu", "jasu", "oshtu"):
+            self.assertIn(code, codes)
+
+    def test_seven_oblasts_and_two_cities(self):
+        from .geo import REGIONS
+        self.assertEqual(sum(1 for _c, _n, k in REGIONS if k == "oblast"), 7)
+        self.assertEqual([c for c, _n, k in REGIONS if k == "city"], ["bishkek", "osh-city"])
+
+    def test_parse_place(self):
+        from .geo import parse_place
+        self.assertEqual(parse_place("r:chuy"), ("chuy", ""))
+        self.assertEqual(parse_place("Токмок"), ("", "Токмок"))
+        self.assertEqual(parse_place("r:nowhere"), ("", ""))
+        self.assertEqual(parse_place(""), ("", ""))
+
+
+class LocationFilterMixin:
+    """Same checks for both backends (memory and Django)."""
+
+    def _options(self, html, value):
+        return html.count(f'<option value="{value}"')
+
+    def test_city_dropdown_has_no_duplicates(self):
+        html = self.client.get(reverse("home")).content.decode()
+        city_select = html[html.index('name="city"'):html.index('name="school"')]
+        self.assertEqual(self._options(city_select, "Бишкек"), 1)
+        self.assertEqual(self._options(city_select, "Ош"), 1)
+        for city in ("Каракол", "Нарын", "Талас", "Баткен", "Жалал-Абад", "Токмок"):
+            self.assertEqual(self._options(city_select, city), 1, city)
+
+    def test_city_dropdown_grouped_by_region(self):
+        html = self.client.get(reverse("home")).content.decode()
+        for oblast in ("Баткенская", "Джалал-Абадская", "Иссык-Кульская", "Нарынская", "Ошская",
+                       "Таласская", "Чуйская"):
+            self.assertIn(f'<optgroup label="{oblast} область">', html)
+        self.assertIn('<option value="r:chuy"', html)
+
+    def test_repo_cities_distinct(self):
+        cities = self.repo.cities()
+        self.assertEqual(len(cities), len(set(cities)))
+        self.assertIn("Каракол", cities)
+
+    def test_city_narrows_schools_and_results(self):
+        r = self.client.get(reverse("home"), {"city": "Ош"})
+        html = r.content.decode()
+        self.assertIn('<option value="oshsu" data-region="osh-city" data-city="Ош">', html)
+        self.assertIn('<option value="knu" data-region="bishkek" data-city="Бишкек" hidden disabled>', html)
+        self.assertContains(r, "Бакыт")
+        self.assertNotContains(r, "Айбек")
+
+    def test_region_filter(self):
+        r = self.client.get(reverse("home"), {"city": "r:chuy"})
+        html = r.content.decode()
+        self.assertIn('<option value="r:chuy" selected>', html)
+        self.assertIn('<option value="iuca" data-region="chuy" data-city="Токмок">', html)
+        self.assertIn('data-city="Бишкек" hidden disabled', html)
+        self.assertNotContains(r, "Айбек")  # no demo professors in Chuy oblast
+        r2 = self.client.get(reverse("home"), {"region": "osh-city"})
+        self.assertContains(r2, "Бакыт")
+        self.assertNotContains(r2, "Айбек")
+
+    def test_unknown_region_ignored(self):
+        r = self.client.get(reverse("home"), {"city": "r:<script>"})
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, "Айбек")
+        self.assertNotContains(r, "<script>")
+
+    def test_school_outside_chosen_city_is_dropped(self):
+        r = self.client.get(reverse("home"), {"city": "Ош", "school": "knu"})
+        self.assertContains(r, "Бакыт")
+        self.assertNotContains(r, 'value="knu" data-region="bishkek" data-city="Бишкек" hidden disabled selected')
+
+    def test_labels_translated(self):
+        en = self.client.get(reverse("home"), HTTP_ACCEPT_LANGUAGE="en")
+        self.assertContains(en, '<optgroup label="Chuy Region">')
+        self.assertContains(en, "Bishkek (")
+        self.assertContains(en, "Kyrgyz National University named after J. Balasagyn")
+        ky = self.client.get(reverse("home"), HTTP_ACCEPT_LANGUAGE="ky")
+        self.assertContains(ky, '<optgroup label="Чүй облусу">')
+        self.assertContains(ky, "Ж. Баласагын атындагы Кыргыз улуттук университети")
+        # stored values stay Russian, so the filter keeps working in every language
+        self.assertContains(ky, '<option value="Бишкек"')
+
+    def test_school_page_shows_city_and_region(self):
+        school = next(s for s in self.repo.schools() if s.code == "iksu")
+        r = self.client.get(reverse("school_detail", args=[school.slug]))
+        self.assertContains(r, "Каракол")
+        self.assertContains(r, "Иссык-Кульская область")
+
+
+class MemoryLocationTests(LocationFilterMixin, RepoSwapMixin, TestCase):
+    backend = "memory"
+
+
+class DjangoLocationTests(LocationFilterMixin, RepoSwapMixin, TestCase):
+    backend = "django"
+
+    def test_seed_kg_is_idempotent(self):
+        from io import StringIO
+        from reviews.management.commands.seed_kg import Command as SeedCmd
+        from .models import School
+        from .universities import load_universities
+        n_schools, n_profs, n_reviews = School.objects.count(), Professor.objects.count(), Review.objects.count()
+        self.assertEqual(n_schools, len(load_universities()))
+        SeedCmd(stdout=StringIO()).handle()
+        SeedCmd(stdout=StringIO()).handle()
+        self.assertEqual((School.objects.count(), Professor.objects.count(), Review.objects.count()),
+                         (n_schools, n_profs, n_reviews))
+        self.assertEqual(School.objects.filter(region="").count(), 0)
+
+    def test_seed_kg_adopts_old_rows_and_keeps_slug(self):
+        from io import StringIO
+        from reviews.management.commands.seed_kg import Command as SeedCmd
+        from .models import School
+        School.objects.all().delete()
+        old = School.objects.create(name="Бишкекский гуманитарный университет им. К. Карасаева", city="Бишкек",
+                                    slug="старый-слаг")
+        SeedCmd(stdout=StringIO()).handle()
+        old.refresh_from_db()
+        self.assertEqual(old.code, "bgu")
+        self.assertEqual(old.slug, "старый-слаг")
+        self.assertEqual(old.name, "Бишкекский государственный университет им. К. Карасаева")
+        self.assertEqual(old.region, "bishkek")
+        self.assertEqual(School.objects.filter(code="bgu").count(), 1)
+
+    def test_region_filled_from_city_on_save(self):
+        from .models import School
+        s = School.objects.create(name="Тестовый институт", city="Токмок", slug="test-inst")
+        self.assertEqual(s.region, "chuy")
+
+
+class SeedFakeTests(TestCase):
+
+    def _run(self, **kw):
+        from io import StringIO
+        from reviews.management.commands.seed_fake import Command as Fake
+        from reviews.management.commands.seed_kg import Command as SeedCmd
+        SeedCmd(stdout=StringIO()).handle()
+        opts = {"professors": 600, "reviews": 1200, "seed": 7}
+        opts.update(kw)
+        Fake(stdout=StringIO()).handle(**opts)
+
+    def test_names_realistic_unique_and_spread(self):
+        import re
+        from reviews.management.commands.seed_fake import FEMALE, MALE, feminine_surname
+        from .models import School
+        self._run()
+        fake = Professor.objects.filter(is_demo=True)
+        self.assertEqual(fake.count(), 600)
+        names = list(fake.values_list("first_name", "last_name"))
+        self.assertEqual(len(names), len(set(names)))
+        for first, last in names:
+            self.assertIsNone(re.search(r"\d", first + last), (first, last))
+            given = first.split()[0]
+            self.assertIn(given, MALE + FEMALE)
+            if given in FEMALE:
+                self.assertFalse(last.endswith(("ов", "ев", "ин", "ский", "цкий")), (first, last))
+                if len(first.split()) > 1:
+                    self.assertTrue(first.endswith("овна"), first)
+            else:
+                self.assertFalse(last.endswith(("ова", "ева", "ина", "ская", "цкая")), (first, last))
+                if len(first.split()) > 1:
+                    self.assertTrue(first.endswith("ович"), first)
+        self.assertEqual(feminine_surname("Жумалиев"), "Жумалиева")
+        self.assertEqual(feminine_surname("Ковальский"), "Ковальская")
+        self.assertEqual(feminine_surname("Ким"), "Ким")
+        # every university gets fake professors
+        self.assertEqual(School.objects.filter(professors__is_demo=True).distinct().count(), School.objects.count())
+
+    def test_wipe_keeps_real_users_and_their_reviews(self):
+        self._run()
+        user = User.objects.create_user("real@example.com", "real@example.com", "x", is_staff=True,
+                                        is_superuser=True)
+        seed_prof = Professor.objects.get(first_name="Нурлан", last_name="Бекбоев")
+        mine = Review.objects.create(professor=seed_prof, course="Мой курс", overall=4, difficulty=3,
+                                     would_take_again=True, comment="x" * 30, status="pending", author=user)
+        fake_prof = Professor.objects.filter(is_demo=True).first()
+        on_fake = Review.objects.create(professor=fake_prof, course="Курс", overall=5, difficulty=2,
+                                        would_take_again=True, comment="y" * 30, status="approved", author=user)
+        added = Professor.objects.create(school=seed_prof.school, first_name="Свой", last_name="Преподаватель",
+                                         department="X", title="доцент", status="pending", created_by=user)
+        self._run(wipe=True, professors=100, reviews=100, seed=8)
+        user.refresh_from_db()
+        self.assertTrue(user.is_superuser and user.is_staff)
+        self.assertTrue(Review.objects.filter(pk=mine.pk).exists())
+        self.assertTrue(Review.objects.filter(pk=on_fake.pk).exists())
+        self.assertTrue(Professor.objects.filter(pk=added.pk).exists())
+        self.assertTrue(Professor.objects.filter(pk=seed_prof.pk).exists())
+        # the old batch is gone except the professor a real user reviewed
+        self.assertEqual(Professor.objects.filter(is_demo=True).count(), 100)
+        self.assertTrue(Professor.objects.filter(pk=fake_prof.pk).exists())
