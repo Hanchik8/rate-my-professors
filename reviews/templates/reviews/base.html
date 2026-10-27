@@ -28,7 +28,7 @@
       {% endif %}
       <form action="{% url 'set_language' %}" method="post" class="lang-switch">{% csrf_token %}
         <input name="next" type="hidden" value="{{ request.get_full_path }}">
-        <select name="language" onchange="this.form.submit()" aria-label="{% translate 'Язык' %}">
+        <select name="language" aria-label="{% translate 'Язык' %}">
           {% get_current_language as LANGUAGE_CODE %}
           {% get_available_languages as LANGUAGES %}
           {% for code, name in LANGUAGES %}<option value="{{ code }}"{% if code == LANGUAGE_CODE %} selected{% endif %}>{{ name }}</option>{% endfor %}
@@ -37,12 +37,13 @@
     </nav>
   </div>
 </header>
-{% if messages %}<ul class="messages" role="list">{% for m in messages %}<li class="{{ m.tags }}" role="{% if m.tags == 'error' %}alert{% else %}status{% endif %}">{{ m }}</li>{% endfor %}</ul>{% endif %}
+{% if messages %}<ul class="messages" role="list">{% for m in messages %}<li class="message {{ m.tags }}" role="{% if m.tags == 'error' %}alert{% else %}status{% endif %}" aria-live="{% if m.tags == 'error' %}assertive{% else %}polite{% endif %}"><span class="message-text">{{ m }}</span><button class="message-close" type="button" aria-label="{% translate 'Закрыть уведомление' %}">×</button></li>{% endfor %}</ul>{% endif %}
 <main id="main-content" tabindex="-1">{% block content %}{% endblock %}</main>
 <footer>
   <a href="{% url 'rules' %}">{% translate "Правила" %}</a> · <a href="{% url 'about' %}">{% translate "О проекте" %}</a> · {% translate "Демо-данные сбрасываются при рестарте (memory-режим)." %}
 </footer>
 {% block page_tools %}{% endblock %}
 <script src="{% static 'reviews/base.js' %}" defer></script>
+<script src="{% static 'reviews/messages.js' %}" defer></script>
 </body>
 </html>

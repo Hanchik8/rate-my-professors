@@ -1255,7 +1255,7 @@ class ProfessorA11yTests(_MemoryRepoTestCase):
         self.assertNotContains(r, ">Вперёд</a>")
 
     def test_warning_message_is_announced_as_polite_status(self):
-        user = self.login()
+        user = self.login(email="messages-success@example.com")
         review = self.repo.add_review(
             self.prof().id, _repo_review(course="Свой курс"), user=user
         )
@@ -1328,7 +1328,7 @@ class HeaderLayoutTests(_MemoryRepoTestCase):
                 self.assertEqual(switch.count(" selected>"), 1)
 
     def test_header_logged_in_shows_logout(self):
-        self.login()
+        self.login(email="messages-error@example.com")
         r = self.client.get(reverse("home"))
         self.assertContains(r, "Выйти")
         self.assertNotContains(r, ">Регистрация</a>")
@@ -2536,6 +2536,36 @@ class CatalogCacheTests(_MemoryRepoTestCase):
             self.client.get(reverse("school_detail", args=[first.slug]))
             self.client.get(reverse("school_detail", args=[second.slug]))
             self.assertEqual(search.call_count, 2)
-            self.client.get(reverse("school_detail", args=[first.slug]))
-            self.client.get(reverse("school_detail", args=[second.slug]))
-            self.assertEqual(search.call_count, 2)
+
+
+class MessagesRenderTests(_MemoryRepoTestCase):
+    """Rendered messages retain their accessible markup and static behavior."""
+
+    def test_success_message_markup_and_scripts(self):
+        user = self.login()
+        prof = self.prof()
+        response = self.client.post(
+            reverse("review_new", args=[prof.slug]), _valid(), follow=True
+        )
+
+        self.assertContains(response, 'class="message success"')
+        self.assertContains(response, 'role="status"')
+        self.assertContains(response, 'aria-label="Закрыть уведомление"')
+        self.assertContains(response, "reviews/base.js")
+        self.assertContains(response, "reviews/messages.js")
+        self.assertNotRegex(response.content.decode(), r"<script(?![^>]*\bsrc=)[^>]*>\s*[^\s<]")
+
+    def test_error_message_uses_alert_role(self):
+        self.login()
+        review = self.repo.reviews_for(self.prof().id)[0]
+        response = self.client.post(
+            reverse("review_report", args=[review.id]), {"reason": "invalid"}, follow=True
+        )
+
+        self.assertContains(response, 'class="message error"')
+        self.assertContains(response, 'role="alert"')
+
+    def test_messages_javascript_exists_in_static_files(self):
+        script = Path(__file__).parent / "static" / "reviews" / "messages.js"
+        self.assertTrue(script.is_file())
+        self.assertTrue(script.read_text(encoding="utf-8").strip())

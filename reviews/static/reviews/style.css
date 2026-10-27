@@ -27,6 +27,13 @@
   --radius-lg:1.25rem;
 }
 
+.messages{list-style:none;margin:1rem auto;padding:0;max-width:1100px}
+.message{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:.5rem 1rem;padding:.85rem 1rem;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:.65rem;background:var(--surface);color:var(--ink);box-shadow:0 2px 8px rgb(16 24 40 / 8%)}
+.message.success{border-left-color:#039855}.message.warning{border-left-color:#dc6803}.message.error{border-left-color:#d92d20}.message.info{border-left-color:#1570ef}
+.message-close{flex:none;border:0;background:transparent;color:inherit;font:inherit;font-size:1.5rem;line-height:1;cursor:pointer;padding:.2rem .4rem;border-radius:.3rem}
+.message-close:hover{background:var(--bg)}
+@media(prefers-color-scheme:dark){.message{box-shadow:0 2px 8px rgb(0 0 0 / 25%)}.message.success{border-left-color:#32d583}.message.warning{border-left-color:#fdb022}.message.error{border-left-color:#f97066}.message.info{border-left-color:#53b1fd}}
+
 /* Dark theme: follows the OS/browser preference, no toggle or JS needed. */
 @media (prefers-color-scheme:dark){
   :root{

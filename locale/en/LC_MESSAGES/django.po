@@ -186,6 +186,9 @@ msgstr "Skip to content"
 msgid "Меню"
 msgstr "Menu"
 
+msgid "Закрыть уведомление"
+msgstr "Close notification"
+
 msgid "Основная навигация"
 msgstr "Main navigation"
 
