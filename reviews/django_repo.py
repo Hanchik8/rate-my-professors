@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Any
 
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, transaction
-from django.db.models import Avg, Count, F, Q
+from django.db.models import Avg, Count, F, Q, Sum
 from django.utils.text import slugify
 
 from .caching import invalidate_catalog_cache
@@ -298,48 +298,42 @@ class DjangoRepository:
         if not ids:
             return out
 
-        # 1) aggregates per professor
-        aggregates = (
+        # Aggregate rating counts once. Deriving averages and distributions from
+        # these grouped counts avoids issuing separate aggregate queries.
+        rating_counts = (
             Review.objects.filter(professor_id__in=ids, status="approved")
             .values("professor_id")
-            .annotate(
-                n=Count("id"),
-                avg_overall=Avg("overall"),
-                avg_difficulty=Avg("difficulty"),
-                wta=Count("id", filter=Q(would_take_again=True)),
-            )
+            .values("professor_id", "overall")
+            .annotate(n=Count("id"), difficulty_sum=Sum("difficulty"),
+                      wta=Count("id", filter=Q(would_take_again=True)))
             .order_by()
         )
-        for row in aggregates:
-            pid = str(row["professor_id"])
-            n = row["n"]
-            overall = round(row["avg_overall"], 1)
-            out[pid].update({
-                "count": n,
-                "overall": overall,
-                "difficulty": round(row["avg_difficulty"], 1),
-                "wta_pct": round(100 * row["wta"] / n) if n else None,
-                "tone": _tone(overall),
-            })
-
-        # 2) rating distribution per professor
         dist_map = {}
-        for row in (
-            Review.objects.filter(professor_id__in=ids, status="approved")
-            .values("professor_id", "overall")
-            .annotate(c=Count("id"))
-            .order_by()
-        ):
-            dist_map.setdefault(str(row["professor_id"]), {})[row["overall"]] = row["c"]
+        for row in rating_counts:
+            pid = str(row["professor_id"])
+            stats = out[pid]
+            n = row["n"]
+            stats["count"] += n
+            stats["overall"] += row["overall"] * n
+            stats["difficulty"] += row["difficulty_sum"]
+            stats["wta_pct"] = (stats["wta_pct"] or 0) + row["wta"]
+            dist_map.setdefault(pid, {})[row["overall"]] = n
         for pid, counts in dist_map.items():
-            n = out[pid]["count"]
-            out[pid]["distribution"] = [
+            stats = out[pid]
+            n = stats["count"]
+            stats.update({
+                "overall": round(stats["overall"] / n, 1),
+                "difficulty": round(stats["difficulty"] / n, 1),
+                "wta_pct": round(100 * stats["wta_pct"] / n),
+            })
+            stats["tone"] = _tone(stats["overall"])
+            stats["distribution"] = [
                 {"score": s, "count": counts.get(s, 0),
                  "pct": round(100 * counts.get(s, 0) / n) if n else 0}
                 for s in range(5, 0, -1)
             ]
 
-        # 3) top tags per professor
+        # Top tags per professor.
         tag_map = {}
         for row in (
             Review.objects.filter(professor_id__in=ids, status="approved")

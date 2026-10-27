@@ -1725,19 +1725,19 @@ class QueryEfficiencyTests(TestCase):
             self.repo.add_professor(s.id, f"Перф{i}", f"Вуз{i}", "Кафедра перф", "доцент")
 
     def test_search_query_count_is_constant(self):
-        with self.assertNumQueries(4):
+        with self.assertNumQueries(3):
             self.repo.search()
         self._add_load()
-        with self.assertNumQueries(4):
+        with self.assertNumQueries(3):
             self.repo.search()
 
     def test_stats_query_count_is_constant(self):
         prof = self.repo.search("Айбек")[0]["prof"]
-        with self.assertNumQueries(3):
+        with self.assertNumQueries(2):
             self.repo.stats(prof.id)
         for i in range(10):
             self.repo.add_review(prof.id, _repo_review(course=f"Ещё {i}"), status="approved")
-        with self.assertNumQueries(3):
+        with self.assertNumQueries(2):
             self.repo.stats(prof.id)
 
     def test_reviews_for_prefetches_tags(self):
@@ -1829,37 +1829,37 @@ class QueryEfficiencyTests(TestCase):
 
     def test_school_stats_query_count_is_constant(self):
         school = self.repo.schools()[0]
-        with self.assertNumQueries(4):
+        with self.assertNumQueries(3):
             self.repo.school_stats(school.id)
         self._add_load()
-        with self.assertNumQueries(4):
+        with self.assertNumQueries(3):
             self.repo.school_stats(school.id)
 
     def test_home_view_query_count_is_constant(self):
         self.client.get(reverse("home"))
-        with self.assertNumQueries(7):
+        with self.assertNumQueries(6):
             self.client.get(reverse("home"))
         self._add_load()
-        with self.assertNumQueries(7):
+        with self.assertNumQueries(6):
             self.client.get(reverse("home"))
 
     def test_professor_view_query_count_is_constant(self):
         prof = self.repo.search("Айбек")[0]["prof"]
         self.client.get(reverse("professor", args=[prof.slug]))
-        with self.assertNumQueries(7):
+        with self.assertNumQueries(6):
             self.client.get(reverse("professor", args=[prof.slug]))
         for i in range(12):
             self.repo.add_review(prof.id, _repo_review(course=f"Отзыв {i}"), status="approved")
-        with self.assertNumQueries(7):
+        with self.assertNumQueries(6):
             self.client.get(reverse("professor", args=[prof.slug]))
 
     def test_school_view_query_count_is_constant(self):
         school = self.repo.schools()[0]
         self.client.get(reverse("school_detail", args=[school.slug]))
-        with self.assertNumQueries(9):
+        with self.assertNumQueries(7):
             self.client.get(reverse("school_detail", args=[school.slug]))
         self._add_load()
-        with self.assertNumQueries(9):
+        with self.assertNumQueries(7):
             self.client.get(reverse("school_detail", args=[school.slug]))
 
     def test_home_list_query_count_does_not_grow_per_professor(self):
@@ -1867,7 +1867,7 @@ class QueryEfficiencyTests(TestCase):
         self.client.get(reverse("home"))  # warm session/messages storage
         self._add_schools(4)
         self._add_load(professors=12, reviews_each=3)
-        with self.assertNumQueries(7):
+        with self.assertNumQueries(6):
             self.client.get(reverse("home"))
 
     def test_professor_profile_query_count_does_not_grow_with_reviews_or_tags(self):
@@ -1884,7 +1884,7 @@ class QueryEfficiencyTests(TestCase):
                 ),
                 status="approved",
             )
-        with self.assertNumQueries(7):
+        with self.assertNumQueries(6):
             self.client.get(url)
 
     def test_home_view_query_count_stays_bounded_as_catalog_grows(self):
