@@ -8,6 +8,8 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument("--clear", action="store_true", help="Очистить существующие школы/преподавателей/отзывы перед заливкой")
+        parser.add_argument("--universities", action="store_true",
+                            help="Дополнительно добавить все вузы из data/kg_universities.json (без преподавателей)")
 
     def handle(self, *args, **opts):
         if opts["clear"]:
@@ -53,4 +55,26 @@ class Command(BaseCommand):
                 tag, _ = Tag.objects.get_or_create(name=t)
                 r.tags.add(tag)
 
+        if opts.get("universities"):
+            schools += self._load_universities()
+
         self.stdout.write(self.style.SUCCESS(f"Готово: {len(schools)} вузов, {len(profs)} преподавателей, {len(REVIEWS)} отзывов."))
+
+    def _load_universities(self):
+        import json
+        from django.conf import settings
+        from django.utils.text import slugify
+
+        path = settings.BASE_DIR / "data" / "kg_universities.json"
+        created = []
+        existing = {n.lower() for n in School.objects.values_list("name", flat=True)}
+        for item in json.loads(path.read_text(encoding="utf-8")):
+            if item["name"].lower() in existing:
+                continue
+            base = slugify(item.get("short_name") or item["name"], allow_unicode=True) or slugify(item["name"])
+            slug, i = base, 1
+            while School.objects.filter(slug=slug).exists():
+                slug, i = f"{base}-{i}", i + 1
+            created.append(School.objects.create(name=item["name"], city=item.get("city") or "", slug=slug))
+            existing.add(item["name"].lower())
+        return created
