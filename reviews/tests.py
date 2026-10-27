@@ -2258,6 +2258,45 @@ class ReviewEscapingTests(_MemoryRepoTestCase):
         self.assertNotContains(r, payload)
         self.assertContains(r, "&lt;script&gt;alert(1)&lt;/script&gt;")
 
+    def test_review_comment_is_escaped_on_professor_and_profile_pages(self):
+        prof = self.prof()
+        user = self.login()
+        payload = '<script>alert("review")</script>'
+        review = self.repo.add_review(
+            prof.id, _repo_review(course="XSS курс", comment=payload), user=user
+        )
+        review.status = "approved"
+
+        professor_response = self.client.get(reverse("professor", args=[prof.slug]))
+        profile_response = self.client.get(reverse("profile"))
+        for response in (professor_response, profile_response):
+            with self.subTest(path=response.request["PATH_INFO"]):
+                self.assertNotContains(response, payload)
+                self.assertContains(response, "&lt;script&gt;alert(&quot;review&quot;)&lt;/script&gt;")
+
+    def test_professor_name_is_escaped_on_professor_school_home_and_profile_pages(self):
+        school = self.repo.schools()[0]
+        user = self.login()
+        prof = self.repo.add_professor(
+            school.id, "<script>", "alert(1)</script>", "XSS кафедра", "доцент"
+        )
+        review = self.repo.add_review(
+            prof.id, _repo_review(course="XSS курс", comment="Достаточно длинный отзыв."), user=user
+        )
+        review.status = "approved"
+        responses = (
+            self.client.get(reverse("professor", args=[prof.slug])),
+            self.client.get(reverse("school_detail", args=[school.slug])),
+            self.client.get(reverse("home")),
+            self.client.get(reverse("profile")),
+        )
+        payload = "<script> alert(1)</script>"
+        escaped = "&lt;script&gt; alert(1)&lt;/script&gt;"
+        for response in responses:
+            with self.subTest(path=response.request["PATH_INFO"]):
+                self.assertNotContains(response, payload)
+                self.assertContains(response, escaped)
+
 
 # ---------------------------------------------------------------------------
 # Security: CSRF — state-changing endpoints require a valid token
