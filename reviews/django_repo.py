@@ -237,16 +237,22 @@ class DjangoRepository:
             # ValidationError: malformed UUID coming straight from the URL.
             return None
 
-    def reviews_for(self, professor_id: str, sort: str = "newest", include_pending: bool = False) -> list[ReviewDC]:
+    def reviews_for(self, professor_id: str, sort: str = "new", include_pending: bool = False) -> list[ReviewDC]:
         """Return a professor's reviews, optionally including non-approved ones."""
         qs = Review.objects.filter(professor_id=professor_id)
         if not include_pending:
             qs = qs.filter(status="approved")
         qs = qs.prefetch_related("tags")
-        if sort == "helpful":
-            # sort in python by helpful - not_helpful
+        if sort in ("helpful", "high", "low", "old"):
             items = list(qs)
-            items.sort(key=lambda r: (r.helpful - r.not_helpful, r.created_at), reverse=True)
+            if sort == "helpful":
+                items.sort(key=lambda r: r.helpful, reverse=True)
+            elif sort == "high":
+                items.sort(key=lambda r: r.overall, reverse=True)
+            elif sort == "low":
+                items.sort(key=lambda r: r.overall)
+            else:
+                items.sort(key=lambda r: r.created_at)
             return [self._review_to_dc(r) for r in items]
         else:
             return [self._review_to_dc(r) for r in qs.order_by("-created_at")]

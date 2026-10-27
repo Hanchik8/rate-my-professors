@@ -65,6 +65,43 @@ class ProfileViewTestMixin:
         self.assertIn(reverse("login"), response.url)
         self.assertEqual(parse_qs(urlparse(response.url).query)["next"], [url])
 
+    def test_professor_review_sorting_and_invalid_sort(self):
+        from datetime import timedelta
+        from django.utils import timezone
+
+        reviews = [
+            self.repo.add_review(self.prof.id, {**_review_data("Old low", "Old comment"), "overall": 1}, status="approved"),
+            self.repo.add_review(self.prof.id, {**_review_data("Middle", "Middle comment"), "overall": 3}, status="approved"),
+            self.repo.add_review(self.prof.id, {**_review_data("New high", "New comment"), "overall": 5}, status="approved"),
+        ]
+        reviews[0].created_at = timezone.now() - timedelta(days=2)
+        reviews[1].created_at = timezone.now() - timedelta(days=1)
+        reviews[2].created_at = timezone.now()
+        reviews[1].helpful = 3
+        reviews[2].helpful = 1
+        if isinstance(self.repo, DjangoRepository):
+            from .models import Review
+            for review in reviews:
+                Review.objects.filter(pk=review.id).update(created_at=review.created_at, helpful=review.helpful)
+        expected = {
+            "new": ["New high", "Middle", "Old low"],
+            "old": ["Old low", "Middle", "New high"],
+            "high": ["New high", "Middle", "Old low"],
+            "low": ["Old low", "Middle", "New high"],
+            "helpful": ["Middle", "New high", "Old low"],
+            "invalid": ["New high", "Middle", "Old low"],
+        }
+        for sort, courses in expected.items():
+            response = self.client.get(reverse("professor", args=[self.prof.slug]), {"sort": sort})
+            self.assertEqual([r.course for r in response.context["reviews"]], courses)
+            self.assertEqual(response.context["sort"], sort if sort in expected and sort != "invalid" else "new")
+
+    def test_sort_is_preserved_in_review_pagination(self):
+        for index in range(12):
+            self.repo.add_review(self.prof.id, _review_data(f"Course {index}", f"Comment {index}"), status="approved")
+        response = self.client.get(reverse("professor", args=[self.prof.slug]), {"sort": "low"})
+        self.assertContains(response, 'href="?sort=low&page=2"')
+
     def test_menu_links_to_profile_only_for_authenticated_users(self):
         profile_url = reverse("profile")
         response = self.client.get(reverse("home"))

@@ -40,8 +40,7 @@
 <h2>{% translate "Отзывы" %}</h2>
 {% if reviews %}
 <p class="sort">{% translate "Сортировка:" %}
-  {% if sort == "newest" %}<strong>{% translate "сначала новые" %}</strong>{% else %}<a href="?sort=newest">{% translate "сначала новые" %}</a>{% endif %},
-  {% if sort == "helpful" %}<strong>{% translate "сначала полезные" %}</strong>{% else %}<a href="?sort=helpful">{% translate "сначала полезные" %}</a>{% endif %}
+  {% for value, label in sort_options %}{% if not forloop.first %}, {% endif %}{% if sort == value %}<strong>{% translate label %}</strong>{% else %}<a href="?sort={{ value }}">{% translate label %}</a>{% endif %}{% endfor %}
 </p>
 {% for r in reviews %}
 <article class="review" id="review-{{ r.id }}">

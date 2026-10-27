@@ -272,14 +272,20 @@ class InMemoryRepository:
         """Return a review by id, or ``None`` if it does not exist."""
         return self._reviews.get(review_id)
 
-    def reviews_for(self, professor_id: str, sort: str = "newest", include_pending: bool = False) -> list[Review]:
+    def reviews_for(self, professor_id: str, sort: str = "new", include_pending: bool = False) -> list[Review]:
         """Return a professor's reviews, optionally including non-approved ones."""
         rs = [
             r for r in self._reviews.values()
             if r.professor_id == professor_id and (include_pending or r.status == "approved")
         ]
-        key = (lambda r: r.helpful - r.not_helpful) if sort == "helpful" else (lambda r: r.created_at)
-        return sorted(rs, key=key, reverse=True)
+        keys = {
+            "old": (lambda r: r.created_at, False),
+            "high": (lambda r: r.overall, True),
+            "low": (lambda r: r.overall, False),
+            "helpful": (lambda r: r.helpful, True),
+        }
+        key, reverse = keys.get(sort, (lambda r: r.created_at, True))
+        return sorted(rs, key=key, reverse=reverse)
 
     def all_reviews(self, include_pending: bool = False) -> list[Review]:
         """Return all reviews, optionally including non-approved ones."""

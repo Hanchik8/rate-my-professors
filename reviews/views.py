@@ -107,12 +107,17 @@ def _professor_or_404(slug):
 def professor_detail(request, slug):
     """Show a professor profile with aggregate stats and paginated reviews."""
     prof = _professor_or_404(slug)
-    sort = "helpful" if request.GET.get("sort") == "helpful" else "newest"
+    sort = request.GET.get("sort", "new")
+    if sort == "newest":
+        sort = "new"
+    if sort not in ("new", "old", "high", "low", "helpful"):
+        sort = "new"
     all_reviews = repo.reviews_for(prof.id, sort)
     reviews, page_obj = _paginate(all_reviews, request.GET.get("page"))
     return render(request, "reviews/professor.html", {
         "prof": prof, "school": repo.school(prof.school_id), "stats": repo.stats(prof.id),
         "reviews": reviews, "sort": sort, "page_obj": page_obj,
+        "sort_options": [("new", "сначала новые"), ("old", "сначала старые"), ("high", "сначала высокая оценка"), ("low", "сначала низкая оценка"), ("helpful", "сначала полезные")],
         "report_form": ReportForm(auto_id=False),
     })
 

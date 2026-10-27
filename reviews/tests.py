@@ -513,7 +513,7 @@ class ProfessorViewTests(_MemoryRepoTestCase):
         prof = self.prof()
         r = self.client.get(reverse("professor", args=[prof.slug]))
         self.assertEqual(r.status_code, 200)
-        self.assertEqual(r.context["sort"], "newest")
+        self.assertEqual(r.context["sort"], "new")
         self.assertEqual(r.context["stats"]["count"], 3)
         r2 = self.client.get(reverse("professor", args=[prof.slug]), {"sort": "helpful"})
         self.assertEqual(r2.context["sort"], "helpful")
