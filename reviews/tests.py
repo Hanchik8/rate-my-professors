@@ -1358,7 +1358,8 @@ class ProfessorCardsTests(_MemoryRepoTestCase):
             with self.subTest(path=response.request["PATH_INFO"]):
                 self.assertContains(response, prof.full_name)
                 self.assertContains(response, f'href="{expected_url}"')
-                self.assertContains(response, f'aria-label="Рейтинг {localize(self.repo.stats(prof.id)["overall"])} из 5"')
+                self.assertContains(response, f'aria-label="Рейтинг {localize(self.repo.stats(prof.id)["overall"])}'
+                                               ' из 5"')
 
     def test_home_card_star_aria_label_matches_rating(self):
         r = self.client.get(reverse("home"))
@@ -2558,7 +2559,7 @@ class MessagesRenderTests(_MemoryRepoTestCase):
     """Rendered messages retain their accessible markup and static behavior."""
 
     def test_success_message_markup_and_scripts(self):
-        user = self.login()
+        self.login()
         prof = self.prof()
         response = self.client.post(
             reverse("review_new", args=[prof.slug]), _valid(), follow=True

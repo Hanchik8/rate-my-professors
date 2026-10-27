@@ -117,7 +117,8 @@ def professor_detail(request, slug):
     return render(request, "reviews/professor.html", {
         "prof": prof, "school": repo.school(prof.school_id), "stats": repo.stats(prof.id),
         "reviews": reviews, "sort": sort, "page_obj": page_obj,
-        "sort_options": [("new", "сначала новые"), ("old", "сначала старые"), ("high", "сначала высокая оценка"), ("low", "сначала низкая оценка"), ("helpful", "сначала полезные")],
+        "sort_options": [("new", "сначала новые"), ("old", "сначала старые"), ("high", "сначала высокая оценка"),
+                         ("low", "сначала низкая оценка"), ("helpful", "сначала полезные")],
         "report_form": ReportForm(auto_id=False),
     })
 
@@ -197,7 +198,8 @@ def review_edit(request, review_id):
             "overall": review.overall, "difficulty": review.difficulty,
             "would_take_again": "yes" if review.would_take_again else "no",
             "grade": review.grade, "tags": review.tags, "comment": review.comment})
-    return render(request, "reviews/review_form.html", {"prof": prof, "form": form, "editing": True, "url": reverse("rules")})
+    return render(request, "reviews/review_form.html",
+                  {"prof": prof, "form": form, "editing": True, "url": reverse("rules")})
 
 
 @login_required

@@ -2,7 +2,6 @@
 from unittest.mock import patch
 
 from django.core.cache import cache
-from django.http import HttpRequest
 from django.test import RequestFactory, SimpleTestCase, override_settings
 
 from .constants import MAX_COMMENT_LENGTH

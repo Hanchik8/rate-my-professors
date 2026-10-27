@@ -4,8 +4,8 @@ from django.contrib.auth.signals import user_login_failed
 from django.test import TestCase
 from django.urls import reverse
 
-from .seed import seed
 from .repository import InMemoryRepository
+from .seed import seed
 
 
 class SecurityLoggingTests(TestCase):
@@ -30,8 +30,8 @@ class SecurityLoggingTests(TestCase):
         self.assertNotIn("'unsafe-inline'", script_src)
 
     def test_pages_have_no_inline_scripts(self):
-        from reviews import store
         import reviews.views as views
+        from reviews import store
 
         repository = InMemoryRepository()
         seed(repository)

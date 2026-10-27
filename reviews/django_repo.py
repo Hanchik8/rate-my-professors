@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Any
 
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, transaction
-from django.db.models import Avg, Count, F, Q, Sum
+from django.db.models import Count, F, Q, Sum
 from django.utils.text import slugify
 
 from .caching import invalidate_catalog_cache

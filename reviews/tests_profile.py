@@ -67,12 +67,16 @@ class ProfileViewTestMixin:
 
     def test_professor_review_sorting_and_invalid_sort(self):
         from datetime import timedelta
+
         from django.utils import timezone
 
         reviews = [
-            self.repo.add_review(self.prof.id, {**_review_data("Old low", "Old comment"), "overall": 1}, status="approved"),
-            self.repo.add_review(self.prof.id, {**_review_data("Middle", "Middle comment"), "overall": 3}, status="approved"),
-            self.repo.add_review(self.prof.id, {**_review_data("New high", "New comment"), "overall": 5}, status="approved"),
+            self.repo.add_review(self.prof.id, {**_review_data("Old low", "Old comment"), "overall": 1},
+                                 status="approved"),
+            self.repo.add_review(self.prof.id, {**_review_data("Middle", "Middle comment"), "overall": 3},
+                                 status="approved"),
+            self.repo.add_review(self.prof.id, {**_review_data("New high", "New comment"), "overall": 5},
+                                 status="approved"),
         ]
         reviews[0].created_at = timezone.now() - timedelta(days=2)
         reviews[1].created_at = timezone.now() - timedelta(days=1)
@@ -163,10 +167,16 @@ class ProfileViewTestMixin:
         self.assertNotContains(response, 'class="review profile-review"')
 
     def test_owner_can_edit_and_review_returns_to_pending(self):
-        review = self.repo.add_review(self.prof.id, _review_data("Алгоритмы", "Исходный комментарий достаточно длинный."), user=self.user, status="approved")
+        review = self.repo.add_review(
+            self.prof.id,
+            _review_data("Алгоритмы", "Исходный комментарий достаточно длинный."),
+            user=self.user,
+            status="approved",
+        )
         self.client.force_login(self.user)
         response = self.client.post(reverse("review_edit", args=[review.id]), {
-            **_review_data("Алгоритмы", "Изменённый комментарий достаточно длинный."), "overall": "3", "would_take_again": "no",
+            **_review_data("Алгоритмы", "Изменённый комментарий достаточно длинный."),
+            "overall": "3", "would_take_again": "no",
         })
         self.assertEqual(response.status_code, 302)
         changed = self.repo.review(review.id)
@@ -174,7 +184,11 @@ class ProfileViewTestMixin:
         self.assertEqual(changed.status, "pending")
 
     def test_owner_can_delete_only_with_post(self):
-        review = self.repo.add_review(self.prof.id, _review_data("Алгоритмы", "Комментарий достаточно длинный для теста."), user=self.user)
+        review = self.repo.add_review(
+            self.prof.id,
+            _review_data("Алгоритмы", "Комментарий достаточно длинный для теста."),
+            user=self.user,
+        )
         self.client.force_login(self.user)
         url = reverse("review_delete", args=[review.id])
         self.assertEqual(self.client.get(url).status_code, 200)
@@ -183,7 +197,11 @@ class ProfileViewTestMixin:
         self.assertIsNone(self.repo.review(review.id))
 
     def test_other_user_cannot_edit_or_delete(self):
-        review = self.repo.add_review(self.prof.id, _review_data("Алгоритмы", "Комментарий достаточно длинный для теста."), user=self.user)
+        review = self.repo.add_review(
+            self.prof.id,
+            _review_data("Алгоритмы", "Комментарий достаточно длинный для теста."),
+            user=self.user,
+        )
         other = self._user("other-owner@example.com")
         self.client.force_login(other)
         self.assertEqual(self.client.get(reverse("review_edit", args=[review.id])).status_code, 404)
@@ -191,7 +209,11 @@ class ProfileViewTestMixin:
         self.assertIsNotNone(self.repo.review(review.id))
 
     def test_anonymous_edit_redirects_to_login(self):
-        review = self.repo.add_review(self.prof.id, _review_data("Алгоритмы", "Комментарий достаточно длинный для теста."), user=self.user)
+        review = self.repo.add_review(
+            self.prof.id,
+            _review_data("Алгоритмы", "Комментарий достаточно длинный для теста."),
+            user=self.user,
+        )
         response = self.client.get(reverse("review_edit", args=[review.id]))
         self.assertEqual(response.status_code, 302)
         self.assertIn(reverse("login"), response.url)
