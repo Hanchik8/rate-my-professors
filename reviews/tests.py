@@ -1,11 +1,25 @@
+import os
+import subprocess
+import sys
+import threading
+import unittest
+
+from django.conf import settings
 from django.contrib.auth.models import User
-from django.test import TestCase, override_settings
+from django.core import mail
+from django.core.cache import cache
+from django.db import IntegrityError, connection, transaction
+from django.test import RequestFactory, TestCase, TransactionTestCase, override_settings
 from django.urls import reverse
 
+from . import store
+from .django_repo import DjangoRepository
+from .models import Professor, Review, Vote
+from .ratelimit import client_ip, parse_rate
 from .repository import InMemoryRepository
 from .seed import seed
-from .store import repo as global_repo
-from .django_repo import DjangoRepository
+
+IS_POSTGRES = connection.vendor == "postgresql"
 
 
 def _valid(overrides=None):
@@ -17,25 +31,39 @@ def _valid(overrides=None):
     return d
 
 
-class MemorySmokeTests(TestCase):
-    """Smoke against InMemoryRepository (no DB) via isolated repo."""
+def _seed_django():
+    from reviews.management.commands.seed_kg import Command as SeedCmd
+    from io import StringIO
+    SeedCmd(stdout=StringIO()).handle(clear=True)
+
+
+class RepoSwapMixin:
+    """Point the views at a fresh repository for each test."""
+    backend = "memory"
+
     def setUp(self):
-        # use isolated in-memory repo for predictable slugs
-        from reviews import store as store_mod
-        self.repo = InMemoryRepository()
-        seed(self.repo)
-        self._orig = store_mod.repo
-        store_mod.repo = self.repo
-        # also patch views' repo reference
-        import reviews.views as v
-        self._orig_v = v.repo
-        v.repo = self.repo
+        super().setUp()
+        cache.clear()
+        if self.backend == "memory":
+            self.repo = InMemoryRepository()
+            seed(self.repo)
+        else:
+            self.repo = DjangoRepository()
+            _seed_django()
+        self._orig = store.repo
+        store.repo = self.repo
 
     def tearDown(self):
-        from reviews import store as store_mod
-        import reviews.views as v
-        store_mod.repo = self._orig
-        v.repo = self._orig_v
+        store.repo = self._orig
+        cache.clear()
+        super().tearDown()
+
+    def make_user(self, email="user@example.com", password="Very-Strong-Pass-42"):
+        return User.objects.create_user(username=email, email=email, password=password)
+
+
+class MemorySmokeTests(RepoSwapMixin, TestCase):
+    """Smoke against InMemoryRepository (no DB) via isolated repo."""
 
     def test_home_and_search(self):
         self.assertContains(self.client.get(reverse("home")), "Айбек")
@@ -43,12 +71,14 @@ class MemorySmokeTests(TestCase):
         self.assertContains(r, "Волков")
         self.assertNotContains(r, "Айбек")
 
+    def test_search_multiple_words_and_yo(self):
+        r = self.client.get(reverse("home"), {"q": "токтогулов айбек"})
+        self.assertContains(r, "Айбек")
+
     def test_filter_city_and_school(self):
-        # filter by city Osh should show only Osh prof
         r = self.client.get(reverse("home"), {"city": "Ош"})
         self.assertContains(r, "Бакыт")
         self.assertNotContains(r, "Айбек")
-        # filter by school slug
         school = next(s for s in self.repo.schools() if "Ошский" in s.name)
         r2 = self.client.get(reverse("home"), {"school": school.slug})
         self.assertContains(r2, "Бакыт")
@@ -56,45 +86,36 @@ class MemorySmokeTests(TestCase):
     def test_professor_page_and_404(self):
         prof = self.repo.search("Айбек")[0]["prof"]
         self.assertContains(self.client.get(reverse("professor", args=[prof.slug])), "Алгоритмы")
-        self.assertEqual(self.client.get(reverse("professor", args=["nobody"])).status_code, 404)
+        r = self.client.get(reverse("professor", args=["nobody"]))
+        self.assertEqual(r.status_code, 404)
+        self.assertContains(r, "404", status_code=404)
 
     def test_post_review_requires_login_and_pending(self):
-        # anonymous redirected to login
         prof = self.repo.search("Айбек")[0]["prof"]
         r = self.client.post(reverse("review_new", args=[prof.slug]), _valid())
-        self.assertIn(r.status_code, (302, 200))
-        # login and post
-        user = User.objects.create_user(username="tester@example.com", email="tester@example.com", password="pass12345")
-        self.client.force_login(user)
+        self.assertEqual(r.status_code, 302)
+        self.assertIn(reverse("login"), r["Location"])
+        self.client.force_login(self.make_user())
         r2 = self.client.post(reverse("review_new", args=[prof.slug]), _valid())
         self.assertEqual(r2.status_code, 302)
-        # pending, not visible yet
-        self.assertEqual(len(self.repo.reviews_for(prof.id)), 3)  # seed has 3 for first prof
+        self.assertEqual(len(self.repo.reviews_for(prof.id)), 3)  # pending is not shown
 
     def test_vote_requires_login_and_one_vote(self):
         prof = self.repo.search("Айбек")[0]["prof"]
         review = self.repo.reviews_for(prof.id)[0]
-        # anonymous redirected
         r = self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
-        self.assertIn(r.status_code, (302, 200))
-        user = User.objects.create_user(username="voter@example.com", email="voter@example.com", password="pass12345")
-        self.client.force_login(user)
+        self.assertEqual(r.status_code, 302)
+        self.client.force_login(self.make_user("voter@example.com"))
         before = review.helpful
-        r2 = self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
-        self.assertEqual(r2.status_code, 302)
+        self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
         self.assertEqual(review.helpful, before + 1)
-        # second vote by same user not counted twice
-        r3 = self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
-        self.assertEqual(r3.status_code, 302)
+        self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
         self.assertEqual(review.helpful, before + 1)
 
-    def test_course_not_uppercased_and_max_80(self):
-        user = User.objects.create_user(username="c@example.com", email="c@example.com", password="pass12345")
-        self.client.force_login(user)
+    def test_course_not_uppercased_and_trimmed(self):
+        self.client.force_login(self.make_user("c@example.com"))
         prof = self.repo.search("Айбек")[0]["prof"]
-        # course with mixed case preserved (trim only)
         self.client.post(reverse("review_new", args=[prof.slug]), _valid({"course": "  Микроэкономика  "}))
-        # fetch pending review
         pending = [r for r in self.repo.reviews_for(prof.id, include_pending=True) if r.course == "Микроэкономика"]
         self.assertTrue(pending)
 
@@ -109,68 +130,450 @@ class MemorySmokeTests(TestCase):
         self.assertNotIn("взят", joined)
         self.assertNotIn("корруп", joined)
 
-    def test_i18n_languages(self):
-        for lang in ["ru", "ky", "en"]:
-            r = self.client.get(reverse("home"), HTTP_ACCEPT_LANGUAGE=lang)
-            self.assertEqual(r.status_code, 200)
-
     def test_rules_page(self):
         self.assertContains(self.client.get(reverse("rules")), "Правила")
 
     def test_school_page(self):
         school = self.repo.schools()[0]
         r = self.client.get(reverse("school_detail", args=[school.slug]))
-        self.assertEqual(r.status_code, 200)
         self.assertContains(r, school.name)
 
     def test_add_professor_requires_login_and_duplicate_check(self):
         school = self.repo.schools()[0]
-        r = self.client.get(reverse("add_professor"))
-        # login required
-        self.assertIn(r.status_code, (302, 200))
-        user = User.objects.create_user(username="addp@example.com", email="addp@example.com", password="pass12345")
-        self.client.force_login(user)
-        r2 = self.client.get(reverse("add_professor"))
+        self.assertEqual(self.client.get(reverse("add_professor")).status_code, 302)
+        self.client.force_login(self.make_user("addp@example.com"))
+        self.assertEqual(self.client.get(reverse("add_professor")).status_code, 200)
+        data = {"school": str(school.id), "first_name": "Тест", "last_name": "Тестов",
+                "department": "Кафедра теста", "title": "доцент"}
+        self.assertEqual(self.client.post(reverse("add_professor"), data).status_code, 302)
+        self.assertEqual(self.client.post(reverse("add_professor"), data).status_code, 200)  # duplicate
+
+    def test_add_professor_rejects_bad_names(self):
+        school = self.repo.schools()[0]
+        self.client.force_login(self.make_user("names@example.com"))
+        r = self.client.post(reverse("add_professor"), {"school": str(school.id), "first_name": "<script>",
+                                                        "last_name": "Тестов1", "department": "x", "title": "доцент"})
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(len(self.repo.search("Тестов1")), 0)
+
+    def test_review_comment_rejects_links_and_phones(self):
+        prof = self.repo.search("Айбек")[0]["prof"]
+        self.client.force_login(self.make_user("links@example.com"))
+        for bad in ["Пишите мне в телеграм t.me/someone, всё расскажу", "Звоните по номеру +996 555 123 456 вечером"]:
+            r = self.client.post(reverse("review_new", args=[prof.slug]), _valid({"comment": bad, "course": bad[:10]}))
+            self.assertEqual(r.status_code, 200)
+            self.assertContains(r, "errorlist")
+
+    def test_pagination_keeps_query(self):
+        for i in range(25):
+            self.repo.add_professor(self.repo.schools()[0].id, "Тест", f"Пагинация{i}", "Физика", "доцент")
+        r = self.client.get(reverse("home"), {"q": "физика"})
+        self.assertContains(r, "page=2")
+        self.assertContains(r, "q=")
+        r2 = self.client.get(reverse("home"), {"q": "физика", "page": "2"})
         self.assertEqual(r2.status_code, 200)
-        # add new prof
-        data = {"school": str(school.id), "first_name": "Тест", "last_name": "Тестов", "department": "Кафедра теста", "title": "доцент"}
-        r3 = self.client.post(reverse("add_professor"), data)
-        self.assertEqual(r3.status_code, 302)
-        # duplicate
-        r4 = self.client.post(reverse("add_professor"), data)
-        self.assertEqual(r4.status_code, 200)
+        r3 = self.client.get(reverse("home"), {"page": "abc"})
+        self.assertEqual(r3.status_code, 200)
+
+    def test_security_headers(self):
+        r = self.client.get(reverse("home"))
+        self.assertEqual(r["X-Frame-Options"], "DENY")
+        self.assertEqual(r["X-Content-Type-Options"], "nosniff")
+        self.assertIn("same-origin", r["Referrer-Policy"])
+
+    def test_healthz_any_host(self):
+        r = self.client.get("/healthz", HTTP_HOST="internal-healthcheck")
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r.json()["status"], "ok")
+
+    def test_robots(self):
+        self.assertContains(self.client.get("/robots.txt"), "Disallow: /accounts/")
 
 
-# Django ORM backend — same smoke with DB
-class DjangoSmokeTests(TestCase):
-    def setUp(self):
-        from reviews import store as store_mod
-        import reviews.views as v
-        self.repo = DjangoRepository()
-        # seed via models helper
-        from reviews.management.commands.seed_kg import Command as SeedCmd
-        cmd = SeedCmd()
-        cmd.handle(clear=True)
-        # use DjangoRepository for views
-        self._orig = store_mod.repo
-        self._orig_v = v.repo
-        store_mod.repo = self.repo
-        v.repo = self.repo
+class I18nTests(RepoSwapMixin, TestCase):
 
-    def tearDown(self):
-        from reviews import store as store_mod
-        import reviews.views as v
-        store_mod.repo = self._orig
-        v.repo = self._orig_v
+    def test_locale_middleware_enabled(self):
+        self.assertIn("django.middleware.locale.LocaleMiddleware", settings.MIDDLEWARE)
+
+    def test_accept_language_header(self):
+        r = self.client.get(reverse("home"), HTTP_ACCEPT_LANGUAGE="en")
+        self.assertContains(r, 'lang="en"')
+        self.assertContains(r, "Find out what a class is really like")
+
+    def test_switch_language_via_form(self):
+        for code, text in [("ky", "Табуу"), ("en", "Search"), ("ru", "Найти")]:
+            r = self.client.post(reverse("set_language"), {"language": code, "next": "/"})
+            self.assertEqual(r.status_code, 302)
+            page = self.client.get(reverse("home"))
+            self.assertContains(page, f'lang="{code}"')
+            self.assertContains(page, text)
+
+    def test_tags_translated(self):
+        prof = self.repo.search("Айбек")[0]["prof"]
+        r = self.client.get(reverse("professor", args=[prof.slug]), HTTP_ACCEPT_LANGUAGE="en")
+        self.assertNotContains(r, "Интересные лекции")
+
+
+class DjangoSmokeTests(RepoSwapMixin, TestCase):
+    backend = "django"
 
     def test_home_shows_kg_data(self):
         self.assertContains(self.client.get(reverse("home")), "Айбек")
 
+    def test_search_case_insensitive_cyrillic(self):
+        r = self.client.get(reverse("home"), {"q": "ФИЗИКА"})
+        self.assertContains(r, "Волков")
+        self.assertNotContains(r, "Айбек")
+
+    def test_ratings_match_memory_repo(self):
+        mem = InMemoryRepository()
+        seed(mem)
+        mem_stats = {x["prof"].full_name: x["stats"]["overall"] for x in mem.search()}
+        db_stats = {x["prof"].full_name: x["stats"]["overall"] for x in self.repo.search()}
+        self.assertEqual(mem_stats, db_stats)
+        prof = self.repo.search("Айбек")[0]["prof"]
+        mprof = mem.search("Айбек")[0]["prof"]
+        s1, s2 = self.repo.stats(prof.id), mem.stats(mprof.id)
+        for k in ("count", "overall", "difficulty", "wta_pct", "distribution"):
+            self.assertEqual(s1[k], s2[k], k)
+        self.assertEqual(len(s1["top_tags"]), len(s2["top_tags"]))  # ties may be ordered differently
+
     def test_review_pending_not_visible(self):
         prof = self.repo.search("Айбек")[0]["prof"]
-        user = User.objects.create_user(username="django_tester@example.com", email="django_tester@example.com", password="pass12345")
-        self.client.force_login(user)
+        self.client.force_login(self.make_user("django_tester@example.com"))
         before = len(self.repo.reviews_for(prof.id))
         self.client.post(reverse("review_new", args=[prof.slug]), _valid())
         self.assertEqual(len(self.repo.reviews_for(prof.id)), before)
         self.assertEqual(len(self.repo.reviews_for(prof.id, include_pending=True)), before + 1)
+
+    def test_duplicate_review_blocked_case_insensitive(self):
+        prof = self.repo.search("Айбек")[0]["prof"]
+        self.client.force_login(self.make_user("dup@example.com"))
+        self.client.post(reverse("review_new", args=[prof.slug]), _valid({"course": "Алгоритмы"}))
+        # SQLite cannot lower-case Cyrillic, PostgreSQL (production) can
+        second = "алгоритмы " if IS_POSTGRES else "Алгоритмы "
+        r = self.client.post(reverse("review_new", args=[prof.slug]), _valid({"course": second}))
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(Review.objects.filter(author__email="dup@example.com").count(), 1)
+
+    def test_duplicate_review_blocked_by_database(self):
+        prof = Professor.objects.get(first_name="Айбек")
+        user = self.make_user("dbdup@example.com")
+        kw = dict(professor=prof, author=user, overall=4, difficulty=3, would_take_again=True, comment="x" * 30)
+        Review.objects.create(course="Физика", **kw)
+        with self.assertRaises(IntegrityError), transaction.atomic():
+            Review.objects.create(course="Физика", **kw)
+
+    def test_rating_range_enforced_by_database(self):
+        prof = Professor.objects.get(first_name="Айбек")
+        with self.assertRaises(IntegrityError), transaction.atomic():
+            Review.objects.create(professor=prof, course="X", overall=9, difficulty=3,
+                                  would_take_again=True, comment="x" * 30)
+
+    def test_duplicate_vote_blocked(self):
+        review = Review.objects.filter(status="approved").first()
+        self.client.force_login(self.make_user("v@example.com"))
+        before, before_down = review.helpful, review.not_helpful
+        self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
+        self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
+        self.client.post(reverse("review_vote", args=[review.id]), {"vote": "down"})
+        review.refresh_from_db()
+        self.assertEqual(review.helpful, before + 1)
+        self.assertEqual(review.not_helpful, before_down)
+        self.assertEqual(Vote.objects.filter(review=review).count(), 1)
+
+    def test_vote_validation(self):
+        review = Review.objects.filter(status="approved").first()
+        self.client.force_login(self.make_user("vv@example.com"))
+        self.assertEqual(self.client.get(reverse("review_vote", args=[review.id])).status_code, 405)
+        self.assertEqual(self.client.post(reverse("review_vote", args=[review.id]), {"vote": "boom"}).status_code, 400)
+        self.assertEqual(self.client.post(reverse("review_vote", args=["not-a-uuid"]), {"vote": "up"}).status_code, 404)
+
+    def test_cannot_vote_or_report_pending_review(self):
+        prof = Professor.objects.get(first_name="Айбек")
+        pending = Review.objects.create(professor=prof, course="X", overall=4, difficulty=3, would_take_again=True,
+                                        comment="x" * 30, status="pending")
+        self.client.force_login(self.make_user("p@example.com"))
+        self.assertEqual(self.client.post(reverse("review_vote", args=[pending.id]), {"vote": "up"}).status_code, 404)
+        self.assertEqual(self.client.post(reverse("review_report", args=[pending.id])).status_code, 404)
+
+    def test_cannot_vote_own_review(self):
+        prof = Professor.objects.get(first_name="Айбек")
+        user = self.make_user("own@example.com")
+        own = Review.objects.create(professor=prof, course="X", overall=4, difficulty=3, would_take_again=True,
+                                    comment="x" * 30, status="approved", author=user)
+        self.client.force_login(user)
+        self.client.post(reverse("review_vote", args=[own.id]), {"vote": "up"})
+        own.refresh_from_db()
+        self.assertEqual(own.helpful, 0)
+
+    def test_report_once_per_user(self):
+        review = Review.objects.filter(status="approved").first()
+        self.client.force_login(self.make_user("r@example.com"))
+        self.client.post(reverse("review_report", args=[review.id]))
+        self.client.post(reverse("review_report", args=[review.id]))
+        review.refresh_from_db()
+        self.assertEqual(review.reported, 1)
+
+    def test_duplicate_professor_case_insensitive_in_db(self):
+        prof = Professor.objects.get(first_name="Айбек")
+        if not IS_POSTGRES:
+            self.skipTest("SQLite lower() is ASCII-only; Cyrillic case folding is checked on PostgreSQL")
+        with self.assertRaises(IntegrityError), transaction.atomic():
+            Professor.objects.create(school=prof.school, first_name="АЙБЕК", last_name=prof.last_name.lower(),
+                                     department="X", title="доцент")
+
+    def test_no_n_plus_one_on_lists(self):
+        from reviews.management.commands.seed_fake import Command as Fake
+        from io import StringIO
+        Fake(stdout=StringIO()).handle(professors=200, reviews=1500, seed=1)
+        cache.clear()
+        with self.settings(READ_CACHE_SECONDS=0):
+            with self.assertNumQueries(4):  # schools, cities, count, one page with ratings
+                r = self.client.get(reverse("home"))
+            self.assertEqual(r.status_code, 200)
+            school = Professor.objects.first().school
+            with self.assertNumQueries(5):  # school, count, page, stats, departments
+                self.client.get(reverse("school_detail", args=[school.slug]))
+            prof = Professor.objects.filter(reviews__isnull=False).first()
+            with self.assertNumQueries(8):  # prof, school, 3x stats, count, page, tags prefetch
+                self.client.get(reverse("professor", args=[prof.slug]))
+
+    def test_read_cache_used(self):
+        with self.settings(READ_CACHE_SECONDS=60):
+            self.client.get(reverse("home"))
+            with self.assertNumQueries(0):
+                self.client.get(reverse("home"))
+
+
+@override_settings(RATELIMIT_ENABLED=True, RATELIMITS={**settings.RATELIMITS, "login": "3/m", "vote": "2/m"})
+class RateLimitTests(RepoSwapMixin, TestCase):
+
+    def test_parse_rate(self):
+        self.assertEqual(parse_rate("10/m"), (10, 60))
+        self.assertEqual(parse_rate("5/hour"), (5, 3600))
+
+    def test_login_post_limited_with_429(self):
+        url = reverse("login")
+        for _ in range(3):
+            self.assertEqual(self.client.post(url, {"username": "a@b.kg", "password": "wrong"}).status_code, 200)
+        r = self.client.post(url, {"username": "a@b.kg", "password": "wrong"})
+        self.assertEqual(r.status_code, 429)
+        self.assertTrue(int(r["Retry-After"]) > 0)
+
+    def test_get_never_limited(self):
+        url = reverse("login")
+        for _ in range(4):
+            self.client.post(url, {"username": "a@b.kg", "password": "wrong"})
+        for _ in range(20):
+            self.assertEqual(self.client.get(url).status_code, 200)
+        self.assertEqual(self.client.get(reverse("home")).status_code, 200)
+
+    def test_limit_is_per_ip_not_per_account(self):
+        url = reverse("login")
+        for _ in range(4):
+            self.client.post(url, {"username": "victim@b.kg", "password": "wrong"}, REMOTE_ADDR="10.0.0.1")
+        # the real owner from another IP is not locked out
+        self.make_user("victim@b.kg")
+        r = self.client.post(url, {"username": "victim@b.kg", "password": "Very-Strong-Pass-42"}, REMOTE_ADDR="10.0.0.2")
+        self.assertEqual(r.status_code, 302)
+
+    def test_spoofed_forwarded_for_ignored_without_proxy(self):
+        url = reverse("login")
+        for i in range(4):
+            r = self.client.post(url, {"username": "a@b.kg", "password": "x"}, HTTP_X_FORWARDED_FOR=f"1.2.3.{i}")
+        self.assertEqual(r.status_code, 429)
+
+    def test_vote_limited(self):
+        reviews = self.repo.all_reviews()[:3]
+        self.client.force_login(self.make_user("rl@example.com"))
+        codes = [self.client.post(reverse("review_vote", args=[r.id]), {"vote": "up"}).status_code for r in reviews]
+        self.assertEqual(codes, [302, 302, 429])
+
+
+class ClientIpTests(TestCase):
+    rf = RequestFactory()
+
+    def ip(self, remote, xff=None, proxies=0):
+        meta = {"REMOTE_ADDR": remote}
+        if xff is not None:
+            meta["HTTP_X_FORWARDED_FOR"] = xff
+        with self.settings(TRUSTED_PROXY_COUNT=proxies):
+            return client_ip(self.rf.get("/", **meta))
+
+    def test_no_proxy_uses_remote_addr(self):
+        self.assertEqual(self.ip("9.9.9.9", "1.1.1.1"), "9.9.9.9")
+
+    def test_one_proxy_takes_rightmost(self):
+        # client tried to fake 6.6.6.6, our proxy appended the real 5.5.5.5
+        self.assertEqual(self.ip("172.18.0.2", "6.6.6.6, 5.5.5.5", proxies=1), "5.5.5.5")
+
+    def test_two_proxies(self):
+        self.assertEqual(self.ip("172.18.0.2", "6.6.6.6, 5.5.5.5, 10.0.0.7", proxies=2), "5.5.5.5")
+
+    def test_garbage_falls_back(self):
+        self.assertEqual(self.ip("172.18.0.2", "not-an-ip", proxies=1), "172.18.0.2")
+
+    def test_clients_behind_proxy_are_different(self):
+        self.assertNotEqual(self.ip("172.18.0.2", "5.5.5.5", 1), self.ip("172.18.0.2", "5.5.5.6", 1))
+
+    def test_ipv6_grouped_by_64(self):
+        self.assertEqual(self.ip("2001:db8::1"), self.ip("2001:db8::ffff"))
+
+
+class AccountTests(RepoSwapMixin, TestCase):
+
+    def test_signup_rejects_weak_passwords(self):
+        for pwd in ["12345678", "password", "short1"]:
+            r = self.client.post(reverse("signup"), {"email": "w@example.com", "password1": pwd, "password2": pwd})
+            self.assertEqual(r.status_code, 200)
+        self.assertFalse(User.objects.filter(username="w@example.com").exists())
+
+    def test_signup_login_case_insensitive_and_sends_verification(self):
+        pwd = "Very-Strong-Pass-42"
+        r = self.client.post(reverse("signup"), {"email": "New@Example.com", "password1": pwd, "password2": pwd})
+        self.assertEqual(r.status_code, 302)
+        self.assertTrue(User.objects.filter(username="new@example.com").exists())
+        self.assertEqual(len(mail.outbox), 1)
+        self.client.logout()
+        r = self.client.post(reverse("login"), {"username": "NEW@example.com", "password": pwd})
+        self.assertEqual(r.status_code, 302)
+
+    def test_signup_duplicate_email(self):
+        self.make_user("dupe@example.com")
+        pwd = "Very-Strong-Pass-42"
+        r = self.client.post(reverse("signup"), {"email": "DUPE@example.com", "password1": pwd, "password2": pwd})
+        self.assertEqual(r.status_code, 200)
+
+    def _link(self):
+        import re
+        return re.search(r"https?://[^/]+(/accounts/verify/\S+/)", mail.outbox[-1].body).group(1)
+
+    def test_verification_link_marks_verified_once(self):
+        pwd = "Very-Strong-Pass-42"
+        self.client.post(reverse("signup"), {"email": "ver@example.com", "password1": pwd, "password2": pwd})
+        link = self._link()
+        self.assertEqual(self.client.get(link).status_code, 200)
+        user = User.objects.get(username="ver@example.com")
+        self.assertTrue(user.profile.email_verified)
+        self.assertEqual(self.client.get(link).status_code, 400)  # one-time
+
+    def test_verification_does_not_unban(self):
+        pwd = "Very-Strong-Pass-42"
+        self.client.post(reverse("signup"), {"email": "ban@example.com", "password1": pwd, "password2": pwd})
+        link = self._link()
+        User.objects.filter(username="ban@example.com").update(is_active=False)  # moderator bans
+        self.client.logout()
+        self.client.get(link)
+        user = User.objects.get(username="ban@example.com")
+        self.assertFalse(user.is_active)
+        r = self.client.post(reverse("login"), {"username": "ban@example.com", "password": pwd})
+        self.assertEqual(r.status_code, 200)  # still cannot log in
+
+    def test_bad_token(self):
+        self.assertEqual(self.client.get(reverse("verify_email", args=["MQ", "bad-token"])).status_code, 400)
+
+    @override_settings(REQUIRE_EMAIL_VERIFICATION=True)
+    def test_unverified_cannot_post_when_required(self):
+        prof = self.repo.search("Айбек")[0]["prof"]
+        self.client.force_login(self.make_user("unv@example.com"))
+        r = self.client.post(reverse("review_new", args=[prof.slug]), _valid())
+        self.assertRedirects(r, reverse("verification_needed"), fetch_redirect_response=False)
+        self.assertEqual(len(self.repo.reviews_for(prof.id, include_pending=True)), 3)
+        # GET still works
+        self.assertEqual(self.client.get(reverse("review_new", args=[prof.slug])).status_code, 200)
+
+
+class SettingsGuardTests(unittest.TestCase):
+    """Run settings in a separate process with a production-like environment."""
+    STRONG = "x7Gq2pV9kLm4Zr8TbN1wYc6Hs3Jd5Fa0Qe9Ui2Op7As4Df1Gh8Jk3Lz6Xc5Vb0Nm"
+
+    def run_settings(self, **env_vars):
+        env = {k: v for k, v in os.environ.items()
+               if k not in ("DEBUG", "SECRET_KEY", "ALLOWED_HOSTS", "TRUSTED_PROXY_COUNT")}
+        env.update({"DJANGO_SETTINGS_MODULE": "config.settings", "DEBUG": "False"}, **env_vars)
+        code = ("import django; django.setup(); from django.conf import settings as s; "
+                "print(s.SECURE_SSL_REDIRECT, s.SESSION_COOKIE_SECURE, s.CSRF_COOKIE_SECURE, "
+                "s.SECURE_HSTS_SECONDS > 0, getattr(s, 'SECURE_PROXY_SSL_HEADER', None) is not None)")
+        return subprocess.run([sys.executable, "-c", code], env=env, capture_output=True, text=True,
+                              cwd=settings.BASE_DIR)
+
+    def test_weak_secret_key_refused(self):
+        for key in ["", "dev-only-change-me", "change-me-in-production", "short", "django-insecure-" + "a" * 50]:
+            p = self.run_settings(SECRET_KEY=key, ALLOWED_HOSTS="example.kg")
+            self.assertNotEqual(p.returncode, 0, key)
+            self.assertIn("SECRET_KEY", p.stderr)
+
+    def test_allowed_hosts_required(self):
+        p = self.run_settings(SECRET_KEY=self.STRONG, ALLOWED_HOSTS="")
+        self.assertNotEqual(p.returncode, 0)
+        self.assertIn("ALLOWED_HOSTS", p.stderr)
+
+    def test_production_defaults_are_secure(self):
+        p = self.run_settings(SECRET_KEY=self.STRONG, ALLOWED_HOSTS="example.kg")
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertEqual(p.stdout.split(), ["True", "True", "True", "True", "False"])
+
+    def test_proxy_header_only_with_trusted_proxy(self):
+        p = self.run_settings(SECRET_KEY=self.STRONG, ALLOWED_HOSTS="example.kg", TRUSTED_PROXY_COUNT="1")
+        self.assertEqual(p.stdout.split()[-1], "True")
+
+
+@unittest.skipUnless(IS_POSTGRES, "real concurrency needs PostgreSQL")
+class ConcurrencyTests(TransactionTestCase):
+    """Many threads hit the same row at once; the database must keep the rules."""
+
+    def setUp(self):
+        _seed_django()
+        self.repo = DjangoRepository()
+
+    def _parallel(self, fn, n=8):
+        barrier = threading.Barrier(n)
+        results = []
+
+        def worker():
+            try:
+                barrier.wait()
+                results.append(fn())
+            except Exception as e:  # noqa: BLE001
+                results.append(e)
+            finally:
+                connection.close()
+
+        threads = [threading.Thread(target=worker) for _ in range(n)]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join()
+        return results
+
+    def test_parallel_votes_count_once(self):
+        review = Review.objects.filter(status="approved").first()
+        before = review.helpful
+        user = User.objects.create_user("race@example.com", "race@example.com", "Very-Strong-Pass-42")
+        self._parallel(lambda: self.repo.vote(str(review.id), True, user=user))
+        review.refresh_from_db()
+        self.assertEqual(Vote.objects.filter(review=review, user=user).count(), 1)
+        self.assertEqual(review.helpful, before + 1)
+
+    def test_parallel_votes_of_many_users_not_lost(self):
+        review = Review.objects.filter(status="approved").first()
+        before = review.helpful
+        users = [User.objects.create_user(f"u{i}@example.com", f"u{i}@example.com", "x") for i in range(8)]
+        it = iter(users)
+        lock = threading.Lock()
+
+        def vote():
+            with lock:
+                u = next(it)
+            self.repo.vote(str(review.id), True, user=u)
+        self._parallel(vote)
+        review.refresh_from_db()
+        self.assertEqual(review.helpful, before + 8)  # F() update: no lost increments
+
+    def test_parallel_duplicate_reviews(self):
+        prof = Professor.objects.get(first_name="Айбек")
+        user = User.objects.create_user("rev@example.com", "rev@example.com", "x")
+        data = {"course": "Гонка", "overall": 4, "difficulty": 3, "would_take_again": True, "comment": "x" * 30}
+        self._parallel(lambda: self.repo.add_review(str(prof.id), data, user=user))
+        self.assertEqual(Review.objects.filter(author=user).count(), 1)
