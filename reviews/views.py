@@ -1,221 +1,171 @@
+from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth import login
+from django.contrib.auth import get_user_model, login
+from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
 from django.core.paginator import Paginator
-from django.http import Http404
+from django.http import Http404, HttpResponseBadRequest
 from django.shortcuts import redirect, render
 from django.urls import reverse
+from django.utils import timezone
+from django.utils.encoding import force_str
+from django.utils.http import urlsafe_base64_decode
 from django.utils.translation import gettext as _
-from django.views.decorators.http import require_POST
-from django import forms
+from django.views.decorators.http import require_GET, require_POST
 
-from .forms import ProfessorForm, ReviewForm
-from .store import repo
+from . import store
+from .accounts import get_profile, is_verified, send_verification_email, token_generator, verified_required
+from .forms import EmailAuthenticationForm, EmailSignupForm, ProfessorForm, ReviewForm
+from .ratelimit import ratelimit
+
+PAGE_SIZE = 20
+MAX_QUERY_LENGTH = 100
 
 
+def _repo():
+    # read at call time so tests can swap store.repo
+    return store.repo
+
+
+def _page(request, items, per_page=PAGE_SIZE):
+    """Return (current page items, page object or None when everything fits one page)."""
+    paginator = Paginator(items, per_page)
+    page_obj = paginator.get_page(request.GET.get("page"))
+    return list(page_obj.object_list), (page_obj if paginator.num_pages > 1 else None)
+
+
+@require_GET
 def home(request):
-    q = request.GET.get("q", "")
-    school = request.GET.get("school", "")
-    city = request.GET.get("city", "")
-    results = repo.search(q, school, city)
-    paginator = Paginator(results, 10)
-    page_number = request.GET.get("page")
-    page_obj = paginator.get_page(page_number)
-    if paginator.num_pages <= 1:
-        page_results = results
-        page_obj = None
-    else:
-        page_results = page_obj.object_list
+    repo = _repo()
+    q = request.GET.get("q", "").strip()[:MAX_QUERY_LENGTH]
+    school = request.GET.get("school", "")[:220]
+    city = request.GET.get("city", "")[:80]
+    results, page_obj = _page(request, repo.search(q, school, city))
     return render(request, "reviews/home.html", {
         "q": q, "school": school, "city": city,
         "schools": repo.schools(),
-        "cities": repo.cities() if hasattr(repo, "cities") else sorted({s.city for s in repo.schools()}),
-        "results": page_results,
+        "cities": repo.cities(),
+        "results": results,
         "page_obj": page_obj,
     })
 
 
 def _professor_or_404(slug):
-    prof = repo.professor(slug)
+    prof = _repo().professor(slug)
     if prof is None:
         raise Http404("Professor not found")
     return prof
 
 
+@require_GET
 def professor_detail(request, slug):
+    repo = _repo()
     prof = _professor_or_404(slug)
     sort = "helpful" if request.GET.get("sort") == "helpful" else "newest"
-    all_reviews = repo.reviews_for(prof.id, sort)
-    paginator = Paginator(all_reviews, 10)
-    page_number = request.GET.get("page")
-    page_obj = paginator.get_page(page_number)
-    if paginator.num_pages <= 1:
-        page_obj = None
-        reviews = all_reviews
-    else:
-        reviews = page_obj.object_list
+    reviews, page_obj = _page(request, repo.reviews_for(prof.id, sort), per_page=10)
     return render(request, "reviews/professor.html", {
         "prof": prof, "school": repo.school(prof.school_id), "stats": repo.stats(prof.id),
         "reviews": reviews, "sort": sort, "page_obj": page_obj,
     })
 
 
+@require_GET
 def school_detail(request, slug):
-    school = repo.school_by_slug(slug) if hasattr(repo, "school_by_slug") else next((s for s in repo.schools() if s.slug == slug), None)
+    repo = _repo()
+    school = repo.school_by_slug(slug)
     if school is None:
         raise Http404("School not found")
-    results = [r for r in repo.search("", school_slug=school.slug)]
-    # stats for school
-    if hasattr(repo, "school_stats"):
-        stats = repo.school_stats(school.id)
-    else:
-        stats = {"prof_count": len(results), "review_count": sum(x["stats"]["count"] for x in results), "avg_overall": 0}
-    departments = sorted({r["prof"].department for r in results})
+    results, page_obj = _page(request, repo.search("", school_slug=school.slug))
     return render(request, "reviews/school.html", {
-        "school": school, "results": results, "stats": stats, "departments": departments,
+        "school": school, "results": results, "page_obj": page_obj,
+        "stats": repo.school_stats(school.id),
+        "departments": repo.departments_for_school(school.id),
     })
 
 
+@require_GET
 def rules(request):
     return render(request, "reviews/rules.html")
 
 
+@ratelimit("review")
 @login_required
+@verified_required
 def review_new(request, slug):
+    repo = _repo()
     prof = _professor_or_404(slug)
     if request.method == "POST":
         form = ReviewForm(request.POST)
         if form.is_valid():
             try:
                 repo.add_review(prof.id, form.cleaned_data, user=request.user)
-            except ValueError as e:
-                if "duplicate" in str(e).lower():
-                    form.add_error("course", _("Вы уже оставляли отзыв для этого предмета у этого преподавателя."))
-                else:
-                    form.add_error(None, str(e))
+            except ValueError:
+                form.add_error("course", _("Вы уже оставляли отзыв для этого предмета у этого преподавателя."))
             else:
                 messages.success(request, _("Отзыв отправлен на модерацию. Спасибо!"))
                 return redirect("professor", slug=prof.slug)
     else:
         form = ReviewForm()
-    return render(request, "reviews/review_form.html", {
-        "prof": prof, "form": form,
-        "login_url": reverse("login"),
-        "signup_url": reverse("signup"),
-        "url": reverse("rules"),
-    })
+    return render(request, "reviews/review_form.html", {"prof": prof, "form": form})
+
+
+def _approved_review_or_404(review_id):
+    review = _repo().review(review_id)
+    if review is None or review.status != "approved":
+        raise Http404("Review not found")
+    return review
+
+
+def _back_to_review(review):
+    prof = _repo().professor_by_id(review.professor_id)
+    if prof:
+        return redirect(reverse("professor", args=[prof.slug]) + f"#review-{review.id}")
+    return redirect("home")
 
 
 @require_POST
+@ratelimit("vote")
 @login_required
+@verified_required
 def review_vote(request, review_id):
-    review = repo.review(review_id)
-    if review is None:
-        raise Http404("Review not found")
+    choice = request.POST.get("vote")
+    if choice not in ("up", "down"):
+        return HttpResponseBadRequest("vote must be up or down")
+    review = _approved_review_or_404(review_id)
+    if review.author_id is not None and review.author_id == request.user.id:
+        messages.warning(request, _("Нельзя голосовать за свой отзыв."))
+        return _back_to_review(review)
     try:
-        repo.vote(review_id, helpful=request.POST.get("vote") == "up", user=request.user)
+        _repo().vote(review.id, helpful=choice == "up", user=request.user)
     except ValueError:
         messages.warning(request, _("Вы уже голосовали за этот отзыв."))
-    prof = repo.professor_by_id(review.professor_id)
-    if prof:
-        return redirect(reverse("professor", args=[prof.slug]) + f"#review-{review.id}")
-    return redirect("home")
+    return _back_to_review(review)
 
 
 @require_POST
+@ratelimit("report")
 @login_required
+@verified_required
 def review_report(request, review_id):
-    review = repo.review(review_id)
-    if review is None:
-        raise Http404("Review not found")
-    if hasattr(repo, "report"):
-        try:
-            repo.report(review_id, user=request.user)
-        except Exception:
-            pass
+    review = _approved_review_or_404(review_id)
+    _repo().report(review.id, user=request.user)
     messages.success(request, _("Жалоба отправлена модератору."))
-    prof = repo.professor_by_id(review.professor_id)
-    if prof:
-        return redirect(reverse("professor", args=[prof.slug]) + f"#review-{review.id}")
-    return redirect("home")
+    return _back_to_review(review)
 
 
-class EmailSignupForm(forms.Form):
-    email = forms.EmailField(label=_("Email"))
-    password1 = forms.CharField(label=_("Пароль"), widget=forms.PasswordInput)
-    password2 = forms.CharField(label=_("Повторите пароль"), widget=forms.PasswordInput)
-
-    def clean_email(self):
-        email = self.cleaned_data["email"].lower().strip()
-        if User.objects.filter(email__iexact=email).exists() or User.objects.filter(username__iexact=email).exists():
-            raise forms.ValidationError(_("Пользователь с таким email уже существует."))
-        return email
-
-    def clean(self):
-        cleaned = super().clean()
-        p1 = cleaned.get("password1")
-        p2 = cleaned.get("password2")
-        if p1 and p2 and p1 != p2:
-            raise forms.ValidationError(_("Пароли не совпадают."))
-        if p1 and len(p1) < 8:
-            raise forms.ValidationError(_("Пароль должен быть не менее 8 символов."))
-        return cleaned
-
-    def save(self):
-        email = self.cleaned_data["email"].lower().strip()
-        user = User.objects.create_user(username=email, email=email, password=self.cleaned_data["password1"])
-        return user
-
-
-def signup(request):
-    if request.user.is_authenticated:
-        return redirect("home")
-    if request.method == "POST":
-        form = EmailSignupForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            messages.success(request, _("Регистрация выполнена. Добро пожаловать!"))
-            return redirect("home")
-    else:
-        form = EmailSignupForm()
-    return render(request, "registration/signup.html", {"form": form})
-
-
+@ratelimit("add_professor")
 @login_required
+@verified_required
 def add_professor(request):
+    repo = _repo()
     schools = repo.schools()
     if request.method == "POST":
         form = ProfessorForm(request.POST, schools=schools)
         if form.is_valid():
+            data = form.cleaned_data
             try:
-                repo.add_professor(
-                    form.cleaned_data["school"],
-                    form.cleaned_data["first_name"].strip(),
-                    form.cleaned_data["last_name"].strip(),
-                    form.cleaned_data["department"].strip(),
-                    form.cleaned_data["title"],
-                    status="pending",
-                    user=request.user if hasattr(repo, "add_professor") and "user" in repo.add_professor.__code__.co_varnames else None,
-                )
-            except TypeError:
-                # InMemoryRepository fallback without user param
-                try:
-                    repo.add_professor(
-                        form.cleaned_data["school"],
-                        form.cleaned_data["first_name"].strip(),
-                        form.cleaned_data["last_name"].strip(),
-                        form.cleaned_data["department"].strip(),
-                        form.cleaned_data["title"],
-                        status="pending",
-                    )
-                except ValueError as e:
-                    form.add_error(None, _("Преподаватель с таким ФИО уже есть в этом вузе."))
-                else:
-                    messages.success(request, _("Преподаватель отправлен на модерацию."))
-                    return redirect("home")
+                repo.add_professor(data["school"], data["first_name"], data["last_name"],
+                                   data["department"], data["title"], status="pending", user=request.user)
             except ValueError:
                 form.add_error(None, _("Преподаватель с таким ФИО уже есть в этом вузе."))
             else:
@@ -223,8 +173,67 @@ def add_professor(request):
                 return redirect("home")
     else:
         form = ProfessorForm(schools=schools)
-    return render(request, "reviews/add_professor.html", {
-        "form": form,
-        "login_url": reverse("login"),
-        "signup_url": reverse("signup"),
+    return render(request, "reviews/add_professor.html", {"form": form})
+
+
+# ---------- accounts ----------
+
+class LoginView(auth_views.LoginView):
+    template_name = "registration/login.html"
+    authentication_form = EmailAuthenticationForm
+    redirect_authenticated_user = True
+
+
+login_view = ratelimit("login")(LoginView.as_view())
+
+
+@ratelimit("signup")
+def signup(request):
+    if request.user.is_authenticated:
+        return redirect("home")
+    if request.method == "POST":
+        form = EmailSignupForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            if user is not None:
+                login(request, user, backend="django.contrib.auth.backends.ModelBackend")
+                send_verification_email(request, user)
+                messages.success(request, _("Регистрация выполнена. Мы отправили письмо для подтверждения email."))
+                return redirect("home")
+    else:
+        form = EmailSignupForm()
+    return render(request, "registration/signup.html", {"form": form})
+
+
+@require_GET
+def verify_email(request, uidb64, token):
+    User = get_user_model()
+    try:
+        user = User.objects.get(pk=force_str(urlsafe_base64_decode(uidb64)))
+    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+    if user is None or not token_generator.check_token(user, token):
+        return render(request, "registration/verify_email.html", {"ok": False}, status=400)
+    profile = get_profile(user)
+    profile.email_verified = True
+    profile.email_verified_at = timezone.now()
+    profile.save(update_fields=["email_verified", "email_verified_at"])
+    # note: we deliberately do NOT log the user in and do NOT touch user.is_active
+    return render(request, "registration/verify_email.html", {"ok": True})
+
+
+@ratelimit("resend_verification")
+@login_required
+def verification_needed(request):
+    if is_verified(request.user):
+        return redirect("home")
+    if request.method == "POST":
+        if send_verification_email(request, request.user):
+            messages.success(request, _("Письмо отправлено ещё раз."))
+        else:
+            messages.error(request, _("Не удалось отправить письмо, попробуйте позже."))
+        return redirect("verification_needed")
+    return render(request, "registration/verification_needed.html", {
+        "required": settings.REQUIRE_EMAIL_VERIFICATION,
     })
+
