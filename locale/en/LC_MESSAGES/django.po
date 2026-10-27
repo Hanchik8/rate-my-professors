@@ -1,17 +1,356 @@
+#
 msgid ""
 msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-28 00:42+0600\n"
 "Language: en\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# English — source strings are Russian, so map minimally. Untranslated strings fallback to Russian.
-# Keeping file so `compilemessages` finds it.
+msgid "Подтвердите email на ProfLens"
+msgstr "Confirm your email on ProfLens"
 
-msgid "Узнайте, какие занятия на самом деле — до записи на курс."
-msgstr "Find out what a class is really like before you enroll."
+#, python-format
+msgid ""
+"Здравствуйте! Чтобы подтвердить email, откройте ссылку:\n"
+"\n"
+"%(link)s\n"
+"\n"
+"Если вы не регистрировались на ProfLens, просто проигнорируйте это письмо."
+msgstr ""
+"Hello! To confirm your email, open this link:\n"
+"\n"
+"%(link)s\n"
+"\n"
+"If you did not sign up for ProfLens, just ignore this email."
+
+msgid "Сначала подтвердите email — мы отправили письмо со ссылкой."
+msgstr "Please confirm your email first — we sent you a link."
+
+msgid "Предмет"
+msgstr "Subject"
+
+msgid "Например: Алгоритмы, Общая физика, Микроэкономика"
+msgstr "For example: Algorithms, General Physics, Microeconomics"
+
+msgid "Семестр"
+msgstr "Term"
+
+msgid "Например: Осень 2025 или Весна 2025"
+msgstr "For example: Fall 2025 or Spring 2025"
+
+msgid "Общее качество (5 — лучше всего)"
+msgstr "Overall quality (5 is best)"
+
+msgid "Сложность (5 — очень сложно)"
+msgstr "Difficulty (5 is very hard)"
+
+msgid "Да"
+msgstr "Yes"
+
+msgid "Нет"
+msgstr "No"
+
+msgid "Пошли бы снова к этому преподавателю?"
+msgstr "Would you take this professor again?"
+
+msgid "Предпочитаю не указывать"
+msgstr "Prefer not to say"
+
+msgid "Полученная оценка"
+msgstr "Grade received"
+
+msgid "Теги"
+msgstr "Tags"
+
+msgid "Выберите до 3"
+msgstr "Pick up to 3"
+
+msgid "Ваш отзыв"
+msgstr "Your review"
+
+msgid ""
+"Не менее 20 символов. Пишите только об учёбе, без оскорблений и личных "
+"данных."
+msgstr ""
+"At least 20 characters. Write only about teaching — no insults or personal "
+"data."
+
+msgid "Укажите название предмета."
+msgstr "Enter the course name."
+
+msgid "Не менее 20 символов."
+msgstr "At least 20 characters."
+
+msgid "Уберите ссылки, email и номера телефонов — это запрещено правилами."
+msgstr "Remove links, emails and phone numbers — the rules do not allow them."
+
+msgid "Выберите не более 3 тегов."
+msgstr "Pick no more than 3 tags."
+
+msgid "Вуз"
+msgstr "School"
+
+msgid "Имя"
+msgstr "First name"
+
+msgid "Фамилия"
+msgstr "Last name"
+
+msgid "Кафедра"
+msgstr "Department"
+
+msgid "Должность"
+msgstr "Position"
+
+msgid "профессор"
+msgstr "professor"
+
+msgid "доцент"
+msgstr "associate professor"
+
+msgid "старший преподаватель"
+msgstr "senior lecturer"
+
+msgid "преподаватель"
+msgstr "lecturer"
+
+msgid "Только буквы, пробел, дефис или апостроф."
+msgstr "Letters, spaces, hyphens or apostrophes only."
+
+msgid "Ссылки не допускаются."
+msgstr "Links are not allowed."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Пароль"
+msgstr "Password"
+
+msgid "Не менее 8 символов, не только цифры и не слишком простой."
+msgstr "At least 8 characters, not only digits and not too common."
+
+msgid "Повторите пароль"
+msgstr "Repeat password"
+
+msgid "Пользователь с таким email уже существует."
+msgstr "A user with this email already exists."
+
+msgid "Пароли не совпадают."
+msgstr "Passwords do not match."
+
+msgid "Строго оценивает"
+msgstr "Tough grader"
+
+msgid "Понятные критерии"
+msgstr "Clear grading criteria"
+
+msgid "Интересные лекции"
+msgstr "Interesting lectures"
+
+msgid "Много домашних заданий"
+msgstr "Lots of homework"
+
+msgid "Много тестов"
+msgstr "Lots of tests"
+
+msgid "Групповые проекты"
+msgstr "Group projects"
+
+msgid "Доступен вне занятий"
+msgstr "Available outside class"
+
+msgid "Даёт полезную обратную связь"
+msgstr "Gives good feedback"
+
+msgid "Важна посещаемость"
+msgstr "Attendance matters"
+
+msgid "Вдохновляет"
+msgstr "Inspiring"
+
+msgid "Зачёт"
+msgstr "Pass"
+
+msgid "Незачёт"
+msgstr "Fail (pass/fail)"
+
+msgid "Ещё не знаю"
+msgstr "Not sure yet"
+
+msgid "Доступ запрещён"
+msgstr "Access denied"
+
+msgid ""
+"Обновите страницу и попробуйте ещё раз. Если не помогает — включите cookies "
+"в браузере."
+msgstr ""
+"Reload the page and try again. If that does not help, enable cookies in your"
+" browser."
+
+msgid "На главную"
+msgstr "Back to home"
+
+msgid "Страница не найдена"
+msgstr "Page not found"
+
+msgid "Возможно, преподаватель ещё на модерации или ссылка устарела."
+msgstr "The professor may still be in moderation, or the link is outdated."
 
 msgid "Имя преподавателя или кафедра"
 msgstr "Professor name or department"
+
+msgid "Поиск"
+msgstr "Search"
+
+msgid "Найти"
+msgstr "Search"
+
+msgid "Слишком много запросов"
+msgstr "Too many requests"
+
+msgid "Слишком много попыток"
+msgstr "Too many attempts"
+
+#, python-format
+msgid "Подождите %(s)s секунду и попробуйте снова."
+msgid_plural "Подождите %(s)s секунд и попробуйте снова."
+msgstr[0] "Wait %(s)s second and try again."
+msgstr[1] "Wait %(s)s seconds and try again."
+
+msgid "Вход"
+msgstr "Log in"
+
+msgid "Войти"
+msgstr "Log in"
+
+msgid "Нет аккаунта? Зарегистрируйтесь"
+msgstr "No account? Sign up"
+
+msgid "Регистрация"
+msgstr "Sign up"
+
+msgid "Зарегистрироваться"
+msgstr "Sign up"
+
+msgid "Уже есть аккаунт? Войдите"
+msgstr "Already have an account? Log in"
+
+msgid "Подтверждение email"
+msgstr "Email confirmation"
+
+msgid "Подтвердите email"
+msgstr "Confirm your email"
+
+#, python-format
+msgid ""
+"Мы отправили письмо со ссылкой на %(email)s. Откройте его, чтобы подтвердить"
+" адрес."
+msgstr "We sent a link to %(email)s. Open it to confirm your address."
+
+msgid ""
+"Без подтверждения нельзя оставлять отзывы, голосовать и добавлять "
+"преподавателей."
+msgstr "Without confirmation you cannot post reviews, vote or add professors."
+
+msgid "Отправить письмо ещё раз"
+msgstr "Send the email again"
+
+msgid "Готово, email подтверждён. Теперь можно оставлять отзывы."
+msgstr "Done, your email is confirmed. You can now post reviews."
+
+msgid "Ссылка недействительна или устарела. Войдите и запросите новое письмо."
+msgstr "The link is invalid or expired. Log in and request a new email."
+
+msgid "Страницы"
+msgstr "Pages"
+
+msgid "Назад"
+msgstr "Previous"
+
+#, python-format
+msgid "Страница %(n)s из %(t)s"
+msgstr "Page %(n)s of %(t)s"
+
+msgid "Вперёд"
+msgstr "Next"
+
+msgid "Рейтинг"
+msgstr "Rating"
+
+#, python-format
+msgid "%(n)s отзыв"
+msgid_plural "%(n)s отзывов"
+msgstr[0] "%(n)s review"
+msgstr[1] "%(n)s reviews"
+
+msgid "Сложность"
+msgstr "Difficulty"
+
+msgid "Добавить преподавателя"
+msgstr "Add professor"
+
+msgid ""
+"Новый преподаватель появится после проверки модератором. Дубликаты по "
+"ФИО+вуз не принимаются."
+msgstr ""
+"A new professor appears after moderation. Duplicates (same name and school) "
+"are not accepted."
+
+msgid "Чтобы добавить преподавателя,"
+msgstr "To add a professor,"
+
+msgid "войдите"
+msgstr "log in"
+
+msgid "или"
+msgstr "or"
+
+msgid "зарегистрируйтесь"
+msgstr "sign up"
+
+msgid "Отправить на модерацию"
+msgstr "Submit for moderation"
+
+msgid "Отмена"
+msgstr "Cancel"
+
+msgid "отзывы о преподавателях вузов Кыргызстана"
+msgstr "professor reviews for universities in Kyrgyzstan"
+
+msgid ""
+"Честные отзывы студентов о преподавателях вузов Кыргызстана: рейтинг, "
+"сложность, теги. Узнайте, какие занятия на самом деле — до записи на курс."
+msgstr ""
+"Honest student reviews of professors at universities in Kyrgyzstan: ratings,"
+" difficulty, tags. Find out what a class is really like before you enroll."
+
+msgid "Отзывы студентов о преподавателях вузов Кыргызстана"
+msgstr "Student reviews of professors at universities in Kyrgyzstan"
+
+msgid "Перейти к содержимому"
+msgstr "Skip to content"
+
+msgid "Основное меню"
+msgstr "Main menu"
+
+msgid "Правила"
+msgstr "Rules"
+
+msgid "Выйти"
+msgstr "Log out"
+
+msgid "Язык"
+msgstr "Language"
+
+msgid "Демо-данные сбрасываются при рестарте (memory-режим)."
+msgstr "Demo data resets on restart (memory mode)."
+
+# English — source strings are Russian, so map minimally. Untranslated strings
+# fallback to Russian.
+# Keeping file so `compilemessages` finds it.
+msgid "Узнайте, какие занятия на самом деле — до записи на курс."
+msgstr "Find out what a class is really like before you enroll."
 
 msgid "Город"
 msgstr "City"
@@ -19,23 +358,30 @@ msgstr "City"
 msgid "Все города"
 msgstr "All cities"
 
-msgid "Вуз"
-msgstr "School"
-
 msgid "Все вузы"
 msgstr "All schools"
 
-msgid "отзывов"
-msgstr "ratings"
+msgid "Ничего не нашлось. Попробуйте короче запрос или другой вуз/город."
+msgstr "Nothing found. Try a shorter query or another school/city."
 
-msgid "Сложность"
-msgstr "Difficulty"
+#, python-format
+msgid ""
+"%(name)s (%(school)s): рейтинг %(rating)s из 5 по %(n)s отзывам студентов."
+msgstr ""
+"%(name)s (%(school)s): rated %(rating)s out of 5 in %(n)s student reviews."
+
+#, python-format
+msgid "%(name)s (%(school)s): отзывы студентов на ProfLens."
+msgstr "%(name)s (%(school)s): student reviews on ProfLens."
 
 msgid "Пойдут снова"
 msgstr "Would take again"
 
 msgid "Отзывов"
 msgstr "Ratings"
+
+msgid "Распределение оценок"
+msgstr "Rating distribution"
 
 msgid "Студенты отмечают:"
 msgstr "Students say:"
@@ -46,32 +392,89 @@ msgstr "Rate this professor"
 msgid "Отзывы"
 msgstr "Reviews"
 
+msgid "Сортировка:"
+msgstr "Sort:"
+
 msgid "сначала новые"
 msgstr "newest"
 
 msgid "сначала полезные"
 msgstr "most helpful"
 
-msgid "Предмет"
-msgstr "Subject"
+msgid "Оценка"
+msgstr "Rating"
 
-msgid "Семестр"
-msgstr "Term"
+msgid "Пойду снова."
+msgstr "Would take again."
 
-msgid "Правила"
-msgstr "Rules"
+msgid "Не пойду снова."
+msgstr "Would not take again."
 
-msgid "Добавить преподавателя"
-msgstr "Add professor"
+msgid "Оценка:"
+msgstr "Grade:"
 
-msgid "Вход"
-msgstr "Log in"
+msgid "Полезно"
+msgstr "Helpful"
 
-msgid "Регистрация"
-msgstr "Sign up"
+msgid "Бесполезно"
+msgstr "Not helpful"
 
-msgid "Язык"
-msgstr "Language"
+msgid "Пожаловаться"
+msgstr "Report"
+
+#, python-format
+msgid "Пока нет отзывов. Станьте первым, кто оценит %(name)s."
+msgstr "No reviews yet. Be the first to rate %(name)s."
+
+#, python-format
+msgid "Оценить %(name)s"
+msgstr "Rate %(name)s"
+
+msgid "Отзыв появится после проверки модератором."
+msgstr "Your review appears after moderation."
+
+msgid "Чтобы оставить отзыв,"
+msgstr "To leave a review,"
+
+msgid ""
+"ProfLens — отзывы только об учёбе: как преподаватель объясняет, оценивает, "
+"ведёт занятия. Сайт не для сведения счётов."
+msgstr ""
+"ProfLens is about teaching only: how a professor explains, grades and runs "
+"classes. It is not a place to settle scores."
+
+msgid "Только об учёбе — без оскорблений, угроз, дискриминации."
+msgstr "Only about studies — no insults, threats or discrimination."
+
+msgid "Без личных данных: не публикуйте телефоны, адреса, фото, переписку."
+msgstr ""
+"No personal data: do not post phone numbers, addresses, photos or messages."
+
+msgid "Пишите честно и по делу — отзыв должен помочь другим студентам."
+msgstr "Be honest and to the point — a review should help other students."
+
+msgid ""
+"Отзывы о реальных людях — зона риска (закон КР о персональных данных). Всё, "
+"что нарушает закон или правила, будет скрыто."
+msgstr ""
+"Reviews are about real people (Kyrgyz personal data law applies). Anything "
+"that breaks the law or the rules will be hidden."
+
+msgid "Отзывы и новые преподаватели проходят модерацию перед публикацией."
+msgstr "Reviews and new professors are moderated before publishing."
+
+msgid "За нарушение — удаление отзыва и блокировка аккаунта."
+msgstr "Violations lead to review removal and account suspension."
+
+msgid "Увидели нарушение?"
+msgstr "Saw a violation?"
+
+msgid "нажмите «Пожаловаться» под отзывом."
+msgstr "press “Report” under the review."
+
+#, python-format
+msgid "Отзывы студентов о преподавателях: %(name)s, %(city)s."
+msgstr "Student reviews of professors: %(name)s, %(city)s."
 
 msgid "Преподавателей"
 msgstr "Professors"
@@ -79,5 +482,44 @@ msgstr "Professors"
 msgid "Средний рейтинг"
 msgstr "Average rating"
 
+msgid "Кафедры"
+msgstr "Departments"
+
+msgid "Пока нет кафедр."
+msgstr "No departments yet."
+
 msgid "Преподаватели"
 msgstr "Professors"
+
+msgid "Пока нет преподавателей."
+msgstr "No professors yet."
+
+msgid "Вы уже оставляли отзыв для этого предмета у этого преподавателя."
+msgstr "You have already reviewed this course with this professor."
+
+msgid "Отзыв отправлен на модерацию. Спасибо!"
+msgstr "Your review was sent for moderation. Thank you!"
+
+msgid "Нельзя голосовать за свой отзыв."
+msgstr "You cannot vote on your own review."
+
+msgid "Вы уже голосовали за этот отзыв."
+msgstr "You have already voted on this review."
+
+msgid "Жалоба отправлена модератору."
+msgstr "Report sent to the moderators."
+
+msgid "Преподаватель с таким ФИО уже есть в этом вузе."
+msgstr "A professor with this name already exists at this school."
+
+msgid "Преподаватель отправлен на модерацию."
+msgstr "The professor was sent for moderation."
+
+msgid "Регистрация выполнена. Мы отправили письмо для подтверждения email."
+msgstr "You are signed up. We sent an email to confirm your address."
+
+msgid "Письмо отправлено ещё раз."
+msgstr "Email sent again."
+
+msgid "Не удалось отправить письмо, попробуйте позже."
+msgstr "Could not send the email, please try later."
