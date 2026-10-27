@@ -46,8 +46,8 @@
     {% if r.tags %}<p class="tags">{{ r.tags|translate_each|join:", " }}</p>{% endif %}
     <div class="votes">
       <form method="post" action="{% url 'review_vote' r.id %}">{% csrf_token %}
-        <button name="vote" value="up" type="submit">👍 {% translate "Полезно" %} {{ r.helpful }}</button>
-        <button name="vote" value="down" type="submit">👎 {% translate "Бесполезно" %} {{ r.not_helpful }}</button>
+        <button name="vote" value="up" type="submit">{% translate "Полезно" %} {{ r.helpful }}</button>
+        <button name="vote" value="down" type="submit">{% translate "Бесполезно" %} {{ r.not_helpful }}</button>
       </form>
       <form method="post" action="{% url 'review_report' r.id %}">{% csrf_token %}
         <button class="link-btn" type="submit">{% translate "Пожаловаться" %}</button>

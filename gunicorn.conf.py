@@ -22,3 +22,5 @@ loglevel = os.environ.get("GUNICORN_LOG_LEVEL", "info")
 # trust X-Forwarded-* only from the reverse proxy network (Caddy in docker compose)
 forwarded_allow_ips = os.environ.get("FORWARDED_ALLOW_IPS", "127.0.0.1")
 worker_tmp_dir = "/dev/shm" if os.path.isdir("/dev/shm") else None
+# gunicorn 25+: control socket in a writable place (the app dir is read-only for the app user)
+control_socket = "/tmp/gunicorn.ctl"

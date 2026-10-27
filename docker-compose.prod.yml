@@ -65,7 +65,7 @@ services:
     profiles: ["https"]
     restart: unless-stopped
     environment:
-      DOMAIN: ${DOMAIN:?set DOMAIN for https profile}
+      DOMAIN: ${DOMAIN:-localhost}
     ports:
       - "80:80"
       - "443:443"
