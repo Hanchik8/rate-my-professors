@@ -15,11 +15,13 @@ from types import SimpleNamespace
 
 from django.template.loader import render_to_string
 from django.test import RequestFactory, TestCase
+from django.urls import reverse
 from django.utils import translation
 
 APP_DIR = Path(__file__).parent
 LOCALE_DIR = APP_DIR.parent / "locale"
 TEMPLATES_DIR = APP_DIR / "templates"
+HOME_TEMPLATE = TEMPLATES_DIR / "reviews" / "home.html"
 
 GETTEXT_NAMES = {"_", "gettext", "gettext_lazy", "ngettext", "ngettext_lazy"}
 
@@ -192,6 +194,105 @@ class FormAndMessageTranslationTests(TestCase):
             for msgid, value in expected.items():
                 with self.subTest(msgid=msgid):
                     self.assertEqual(translation.gettext(msgid), value)
+
+
+class HomeTemplateTranslationTests(TestCase):
+    """Home page labels are wrapped for translation and resolve per locale."""
+
+    HOME_LABELS = {
+        "ru": (
+            "Узнайте, какие занятия на самом деле — до записи на курс.",
+            "Имя преподавателя или кафедра",
+            "Поиск",
+            "Город",
+            "Все города",
+            "Все вузы",
+            "Все кафедры",
+            "Сортировка",
+            "По рейтингу",
+            "По числу отзывов",
+            "Найти",
+        ),
+        "ky": (
+            "Сабактар чындыгында кандай өтөрүн — жазылуудан мурда билип алыңыз.",
+            "Окутуучунун аты же кафедра",
+            "Издөө",
+            "Шаар",
+            "Бардык шаарлар",
+            "Бардык ЖОЖдор",
+            "Бардык кафедралар",
+            "Иреттөө",
+            "Рейтинг боюнча",
+            "Сын-пикирлердин саны боюнча",
+            "Табуу",
+        ),
+        "en": (
+            "Find out what a class is really like before you enroll.",
+            "Professor name or department",
+            "Search",
+            "City",
+            "All cities",
+            "All schools",
+            "All departments",
+            "Sort",
+            "By rating",
+            "By number of reviews",
+            "Find",
+        ),
+    }
+
+    EMPTY_STATE = {
+        "ru": ("Ничего не нашлось", "Попробуйте сократить запрос или изменить фильтры.", "Сбросить фильтры"),
+        "ky": ("Эч нерсе табылган жок", "Суроону кыскартып же чыпкаларды өзгөртүп көрүңүз.", "Чыпкаларды тазалоо"),
+        "en": ("Nothing found", "Try a shorter query or change the filters.", "Reset filters"),
+    }
+
+    def test_home_template_wraps_all_literal_text(self):
+        source = HOME_TEMPLATE.read_text(encoding="utf-8")
+        source = re.sub(r"<!--.*?-->", "", source, flags=re.DOTALL)
+        source = re.sub(
+            r"\{%\s*comment\s*%\}.*?\{%\s*endcomment\s*%\}",
+            "",
+            source,
+            flags=re.DOTALL,
+        )
+        source = re.sub(
+            r"\{%\s*blocktranslate.*?%\}.*?\{%\s*endblocktranslate\s*%\}",
+            "",
+            source,
+            flags=re.DOTALL,
+        )
+        source = re.sub(r"\{%.*?%\}", "", source, flags=re.DOTALL)
+        source = re.sub(r"\{\{.*?\}\}", "", source, flags=re.DOTALL)
+        source = re.sub(r"<[^>]+>", "", source)
+        self.assertEqual(re.findall(r"\S+", source), [])
+
+    def test_home_labels_are_localized(self):
+        for lang, labels in self.HOME_LABELS.items():
+            with self.subTest(lang=lang):
+                response = self.client.get(
+                    reverse("home"), HTTP_ACCEPT_LANGUAGE=lang
+                )
+                self.assertEqual(response.status_code, 200)
+                html = response.content.decode()
+                for label in labels:
+                    self.assertIn(label, html)
+                if lang != "ru":
+                    self.assertNotIn("Все города", html)
+                    self.assertNotIn("По числу отзывов", html)
+
+    def test_home_empty_state_is_localized(self):
+        for lang, labels in self.EMPTY_STATE.items():
+            with self.subTest(lang=lang):
+                response = self.client.get(
+                    reverse("home"),
+                    {"q": "zzz-no-such-professor"},
+                    HTTP_ACCEPT_LANGUAGE=lang,
+                )
+                self.assertEqual(response.status_code, 200)
+                html = response.content.decode()
+                for label in labels:
+                    self.assertIn(label, html)
 
 
 class RenderedTemplateTranslationTests(TestCase):
