@@ -159,6 +159,22 @@ class HomeSearchPaginationTests(_MemoryRepoTestCase):
                 "Пагинация", "доцент",
             )
 
+    def test_home_and_school_pages_expose_mobile_viewport_and_labeled_search(self):
+        home = self.client.get(reverse("home"))
+        school = self.repo.schools()[0]
+        school_response = self.client.get(reverse("school_detail", args=[school.slug]))
+
+        for response in (home, school_response):
+            with self.subTest(path=response.request["PATH_INFO"]):
+                self.assertEqual(response.status_code, 200)
+                self.assertContains(response, '<meta name="viewport" content="width=device-width, initial-scale=1">')
+
+        self.assertContains(home, 'aria-label="Поиск"')
+        self.assertContains(home, 'aria-label="Город"')
+        self.assertContains(home, 'aria-label="Вуз"')
+        self.assertContains(home, 'aria-label="Кафедра"')
+        self.assertContains(home, 'aria-label="Сортировка"')
+
     def test_home_search_matches_professor_name(self):
         response = self.client.get(reverse("home"), {"q": "Айбек Токтогулов"})
 

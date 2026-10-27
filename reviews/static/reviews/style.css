@@ -273,7 +273,8 @@ textarea{resize:vertical}
   .lang-switch{margin-top:.4rem}
   .lang-switch select{width:100%;min-height:2.75rem}
   .cards{grid-template-columns:1fr}
-  .search button{flex:1 1 100%}
+  /* Keep every search/filter control full-width and easy to activate. */
+  .search input,.search select,.search button{flex:1 1 100%;width:100%}
   /* Touch-first sizing: every interactive control is at least 44px tall. */
   .search input,.search select,.search button{min-height:2.75rem}
   .btn,button{min-height:2.75rem}
