@@ -135,6 +135,10 @@ globals().update(
 # Clickjacking protection is safe to enable in every environment.
 X_FRAME_OPTIONS = "DENY"
 
+# Limit request-body and in-memory file upload sizes to 2.5 MiB.
+DATA_UPLOAD_MAX_MEMORY_SIZE = 2_621_440
+FILE_UPLOAD_MAX_MEMORY_SIZE = 2_621_440
+
 # Referrer-Policy limits how much of our URLs leak to third parties; "same-origin"
 # is a safe, privacy-preserving default that can be tightened per deployment.
 SECURE_REFERRER_POLICY = os.environ.get("SECURE_REFERRER_POLICY", "same-origin")
@@ -178,7 +182,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
-    "reviews",
+    "reviews.apps.ReviewsConfig",
 ]
 MIDDLEWARE = [
     "django.middleware.gzip.GZipMiddleware",
