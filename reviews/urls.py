@@ -16,6 +16,7 @@ urlpatterns = [
     path("reviews/<str:review_id>/vote/", views.review_vote, name="review_vote"),
     path("reviews/<str:review_id>/report/", views.review_report, name="review_report"),
     path("accounts/signup/", views.signup, name="signup"),
+    path("accounts/profile/", views.profile, name="profile"),
     path("accounts/login/", ThrottledLoginView.as_view(template_name="registration/login.html"), name="login"),
     path("accounts/logout/", auth_views.LogoutView.as_view(), name="logout"),
 ]

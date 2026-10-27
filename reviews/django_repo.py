@@ -240,6 +240,23 @@ class DjangoRepository:
             qs = qs.filter(status="approved")
         return [self._review_to_dc(r) for r in qs]
 
+    def reviews_for_user(self, user: Any) -> list[dict[str, Any]]:
+        """Return a user's reviews with catalog data, regardless of status."""
+        qs = (
+            Review.objects.filter(author=user)
+            .select_related("professor__school")
+            .prefetch_related("tags")
+            .order_by("-created_at")
+        )
+        return [
+            {
+                "review": self._review_to_dc(review),
+                "prof": self._prof_to_dc(review.professor),
+                "school": self._school_to_dc(review.professor.school),
+            }
+            for review in qs
+        ]
+
     @staticmethod
     def _empty_stats() -> dict[str, Any]:
         """Return the zero-value stats payload used for unrated professors."""

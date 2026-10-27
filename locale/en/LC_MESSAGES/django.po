@@ -581,3 +581,24 @@ msgstr "Breadcrumbs"
 
 msgid "Наверх"
 msgstr "Back to top"
+
+msgid "Мой профиль"
+msgstr "My profile"
+
+msgid "Мои отзывы"
+msgstr "My reviews"
+
+msgid "Вы ещё не оставляли отзывов."
+msgstr "You have not left any reviews yet."
+
+msgid "Статус модерации"
+msgstr "Moderation status"
+
+msgid "На проверке"
+msgstr "Under review"
+
+msgid "Опубликован"
+msgstr "Published"
+
+msgid "Отклонён"
+msgstr "Rejected"

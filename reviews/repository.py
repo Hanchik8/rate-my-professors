@@ -273,6 +273,24 @@ class InMemoryRepository:
             return list(self._reviews.values())
         return [r for r in self._reviews.values() if r.status == "approved"]
 
+    def reviews_for_user(self, user: Any) -> list[dict[str, Any]]:
+        """Return a user's reviews with catalog data, regardless of status."""
+        user_id = getattr(user, "id", user)
+        reviews = sorted(
+            (r for r in self._reviews.values() if r.author_id == user_id),
+            key=lambda r: r.created_at,
+            reverse=True,
+        )
+        rows = []
+        for review in reviews:
+            prof = self._professors[review.professor_id]
+            rows.append({
+                "review": review,
+                "prof": prof,
+                "school": self._schools[prof.school_id],
+            })
+        return rows
+
     def stats(self, professor_id: str) -> dict[str, Any]:
         """Return aggregate rating statistics for a professor."""
         rs = [r for r in self._reviews.values() if r.professor_id == professor_id and r.status == "approved"]

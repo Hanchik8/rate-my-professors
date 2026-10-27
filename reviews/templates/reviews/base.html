@@ -20,6 +20,7 @@
       <a href="{% url 'rules' %}">{% translate "Правила" %}</a>
       <a href="{% url 'add_professor' %}">{% translate "Добавить преподавателя" %}</a>
       {% if user.is_authenticated %}
+        <a href="{% url 'profile' %}">{% translate "Мой профиль" %}</a>
         <span class="muted nav-user">{{ user.email|default:user.username }}</span>
         <form method="post" action="{% url 'logout' %}" class="inline">{% csrf_token %}<button class="link-btn" type="submit">{% translate "Выйти" %}</button></form>
       {% else %}

@@ -162,6 +162,14 @@ def about(request):
     return render(request, "reviews/about.html")
 
 
+@login_required
+def profile(request):
+    """Show the current user's reviews and their moderation status."""
+    return render(request, "reviews/profile.html", {
+        "reviews": repo.reviews_for_user(request.user),
+    })
+
+
 def _save_review(form, prof, request):
     """Persist a validated review, returning ``True`` on success.
 
