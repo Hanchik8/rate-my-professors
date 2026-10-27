@@ -294,3 +294,24 @@ class RenderedTemplateTranslationTests(TestCase):
                 self.assertIn(label, html)
                 self.assertIn(f">{review_date}</time>", html)
                 self.assertIn('<time datetime="2025-10-25T', html)
+
+
+class LanguageAlternatesTests(TestCase):
+    def test_html_pages_have_language_and_alternate_links(self):
+        for path in ("/", "/rules/", "/about/", "/accounts/login/", "/accounts/signup/"):
+            for lang in ("ky", "ru", "en"):
+                with self.subTest(path=path, lang=lang):
+                    response = self.client.get(path, HTTP_ACCEPT_LANGUAGE=lang)
+                    self.assertEqual(response.status_code, 200)
+                    html = response.content.decode()
+                    self.assertIn(f'<html lang="{lang}"', html)
+                    for alternate in ("ky", "ru", "en"):
+                        self.assertIn(f'hreflang="{alternate}"', html)
+                        self.assertIn(f'language={alternate}', html)
+
+    def test_localized_dates_and_numbers_are_rendered_for_each_locale(self):
+        from django.utils.formats import localize
+
+        for lang, expected in (("ru", "4,5"), ("ky", "4.5"), ("en", "4.5")):
+            with self.subTest(lang=lang), translation.override(lang):
+                self.assertEqual(localize(4.5), expected)
