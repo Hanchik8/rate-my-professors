@@ -1,5 +1,6 @@
 """Application-specific HTTP middleware."""
 from django.conf import settings
+from django.utils.cache import patch_cache_control
 
 
 class PermissionsPolicyMiddleware:
@@ -11,4 +12,37 @@ class PermissionsPolicyMiddleware:
     def __call__(self, request):
         response = self.get_response(request)
         response.headers["Permissions-Policy"] = settings.PERMISSIONS_POLICY
+        return response
+
+
+# URL names of pages that render or collect user-specific data. Responses for
+# these views must never be stored by shared or browser caches.
+PRIVATE_CACHE_URL_NAMES = frozenset({
+    "profile",
+    "review_new",
+    "review_edit",
+    "review_report",
+    "login",
+    "signup",
+})
+
+
+class PrivateCacheControlMiddleware:
+    """Send ``Cache-Control: private, no-store`` on user-specific pages.
+
+    Public pages (home, school/professor detail, about, static) are left
+    untouched. Only the Cache-Control header is patched; other security
+    headers (CSP, Permissions-Policy, ...) are preserved. The resolver match
+    is read after the view ran, so it is available even for redirects and
+    error responses produced by matched views.
+    """
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        response = self.get_response(request)
+        match = request.resolver_match
+        if match is not None and match.url_name in PRIVATE_CACHE_URL_NAMES:
+            patch_cache_control(response, private=True, no_store=True)
         return response

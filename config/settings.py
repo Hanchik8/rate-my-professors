@@ -188,6 +188,7 @@ MIDDLEWARE = [
     "django.middleware.http.ConditionalGetMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "reviews.middleware.PermissionsPolicyMiddleware",
+    "reviews.middleware.PrivateCacheControlMiddleware",
     "django.middleware.csp.ContentSecurityPolicyMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
