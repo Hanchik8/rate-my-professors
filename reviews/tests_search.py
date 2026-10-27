@@ -159,6 +159,34 @@ class HomeSearchPaginationTests(_MemoryRepoTestCase):
                 "Пагинация", "доцент",
             )
 
+    def test_home_search_matches_professor_name(self):
+        response = self.client.get(reverse("home"), {"q": "Айбек Токтогулов"})
+
+        self.assertEqual(response.status_code, 200)
+        names = [row["prof"].full_name for row in response.context["results"]]
+        self.assertEqual(names, ["Айбек Токтогулов"])
+
+    def test_home_sort_by_rating_orders_results_by_average(self):
+        school = self.repo.schools()[0]
+        high = self.repo.add_professor(
+            school.id, "Рейтинг", "Высокий", "Проверка сортировки", "доцент"
+        )
+        low = self.repo.add_professor(
+            school.id, "Рейтинг", "Низкий", "Проверка сортировки", "доцент"
+        )
+        self.repo.add_review(high.id, _repo_review(course="Рейтинг 1", overall=5), status="approved")
+        self.repo.add_review(low.id, _repo_review(course="Рейтинг 2", overall=2), status="approved")
+
+        response = self.client.get(
+            reverse("home"), {"department": "Проверка сортировки", "sort": "rating"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            [row["prof"].id for row in response.context["results"]],
+            [high.id, low.id],
+        )
+
     def test_pagination_keeps_query_and_filters(self):
         self._add_professors(15)
         params = {"q": "смит", "department": "Пагинация"}
