@@ -70,6 +70,8 @@ class Professor(models.Model):
             models.Index(fields=["school", "status"], name="prof_school_status_idx"),
             # Department filter + values_list(distinct) on the home page.
             models.Index(fields=["department"], name="prof_dept_idx"),
+            # Default ordering (`last_name`, `first_name`) sorts by name.
+            models.Index(fields=["last_name", "first_name"], name="prof_name_idx"),
         ]
 
     @property

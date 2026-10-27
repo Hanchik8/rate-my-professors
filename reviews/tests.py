@@ -2041,7 +2041,7 @@ class PerfIndexDeclarationTests(TestCase):
 
         expected = {
             School: {"school_city_idx", "school_name_idx"},
-            Professor: {"prof_status_idx", "prof_school_status_idx", "prof_dept_idx"},
+            Professor: {"prof_status_idx", "prof_school_status_idx", "prof_dept_idx", "prof_name_idx"},
             Review: {"review_prof_status_idx", "review_status_created_idx"},
         }
         for model, names in expected.items():
@@ -2050,6 +2050,17 @@ class PerfIndexDeclarationTests(TestCase):
                 self.assertTrue(
                     names.issubset(declared), f"{model.__name__} missing {names - declared}"
                 )
+
+
+class MigrationsUpToDateTests(TestCase):
+    """Model declarations must stay in sync with the migration files."""
+
+    def test_makemigrations_check_finds_no_changes(self):
+        # `--check` exits with status 1 when models.py drifted from the
+        # migrations; call_command surfaces that as SystemExit.
+        from django.core.management import call_command
+
+        call_command("makemigrations", check=True, verbosity=0)
 
 
 # ---------------------------------------------------------------------------
