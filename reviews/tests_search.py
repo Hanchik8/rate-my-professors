@@ -7,6 +7,7 @@ import re
 from html import unescape
 from urllib.parse import parse_qs, urlsplit
 
+from django.core.cache import cache
 from django.test import TestCase
 from django.urls import reverse
 
@@ -318,3 +319,85 @@ class HomeSearchPaginationTests(_MemoryRepoTestCase):
                 self.assertEqual(response.status_code, 200)
                 self.assertEqual(list(response.context["results"]), [])
                 self.assertContains(response, "Ничего не нашлось")
+
+
+class HomeEmptyStateRenderTests(_MemoryRepoTestCase):
+    """An empty search result renders a hint and a link that resets filters."""
+
+    EMPTY_STATE_TEXTS = {
+        "ru": ("Ничего не нашлось", "Попробуйте сократить запрос или изменить фильтры.",
+               "Сбросить фильтры"),
+        "ky": ("Эч нерсе табылган жок", "Суроону кыскартып же чыпкаларды өзгөртүп көрүңүз.",
+               "Чыпкаларды тазалоо"),
+        "en": ("Nothing found", "Try a shorter query or change the filters.",
+               "Reset filters"),
+    }
+
+    def setUp(self):
+        cache.clear()
+        super().setUp()
+
+    def tearDown(self):
+        cache.clear()
+        super().tearDown()
+
+    def _empty_response(self, **extra):
+        return self.client.get(reverse("home"), {"q": "неттакого", **extra})
+
+    def _reset_href(self, response):
+        """Return the reset-filters link target, whatever the attribute order."""
+        html = response.content.decode()
+        anchor = re.search(r'<a\b[^>]*empty-state-action[^>]*>', html)
+        self.assertIsNotNone(anchor, "empty state must render the reset-filters link")
+        href = re.search(r'href="([^"]*)"', anchor.group(0))
+        self.assertIsNotNone(href, "reset-filters link must carry an href")
+        return unescape(href.group(1))
+
+    def test_empty_results_render_hint_and_reset_link(self):
+        response = self._empty_response()
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(list(response.context["results"]), [])
+        self.assertContains(response, 'role="status"')
+        self.assertContains(response, "Ничего не нашлось")
+        self.assertContains(response, "Попробуйте сократить запрос или изменить фильтры.")
+        self.assertContains(response, ">Сбросить фильтры</a>")
+
+    def test_reset_link_targets_home_without_query_parameters(self):
+        response = self._empty_response(city="Ош", department="Несуществующая")
+
+        target = urlsplit(self._reset_href(response))
+        self.assertEqual(target.path, reverse("home"))
+        self.assertEqual(target.query, "")
+
+    def test_reset_link_leads_to_unfiltered_results(self):
+        response = self._empty_response()
+
+        reset = self.client.get(self._reset_href(response))
+
+        self.assertEqual(reset.status_code, 200)
+        self.assertTrue(reset.context["results"])
+        self.assertNotContains(reset, "Ничего не нашлось")
+        self.assertNotContains(reset, "Сбросить фильтры")
+
+    def test_empty_state_hidden_when_search_has_results(self):
+        response = self.client.get(reverse("home"), {"q": "Айбек"})
+
+        self.assertTrue(response.context["results"])
+        self.assertNotContains(response, "Ничего не нашлось")
+        self.assertNotContains(response, "Сбросить фильтры")
+
+    def test_empty_state_rendered_in_every_supported_language(self):
+        for lang, texts in self.EMPTY_STATE_TEXTS.items():
+            with self.subTest(lang=lang):
+                response = self.client.get(
+                    reverse("home"), {"q": "неттакого"}, HTTP_ACCEPT_LANGUAGE=lang
+                )
+                self.assertEqual(response.status_code, 200)
+                for text in texts:
+                    self.assertContains(response, text)
+                for other, other_texts in self.EMPTY_STATE_TEXTS.items():
+                    if other == lang:
+                        continue
+                    for text in other_texts:
+                        self.assertNotContains(response, text)
