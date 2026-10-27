@@ -152,6 +152,12 @@ class DjangoSearchContractTests(SearchContractMixin, TestCase):
 
 
 class HomeSearchPaginationTests(_MemoryRepoTestCase):
+    def test_home_search_input_has_aria_label(self):
+        response = self.client.get(reverse("home"))
+
+        self.assertContains(response, '<input type="search" name="q"')
+        self.assertContains(response, 'aria-label="Поиск"')
+
     def _add_professors(self, count, last_prefix="Джонс"):
         school = self.repo.schools()[0]
         for i in range(count):

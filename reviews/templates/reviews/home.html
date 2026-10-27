@@ -19,7 +19,7 @@
     <option value="rating"{% if sort == "rating" %} selected{% endif %}>{% translate "По рейтингу" %}</option>
     <option value="reviews"{% if sort == "reviews" %} selected{% endif %}>{% translate "По числу отзывов" %}</option>
   </select>
-  <button>{% translate "Найти" %}</button>
+  <button type="submit" aria-label="{% translate 'Найти' %}">{% translate "Найти" %}</button>
 </form>
 <ol class="cards">
   {% for r in results %}
