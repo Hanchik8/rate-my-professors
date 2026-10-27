@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>{% block title %}ProfLens{% endblock %}</title>
-<script>document.documentElement.classList.remove("no-js");</script>
 <link rel="stylesheet" href="{% static 'reviews/style.css' %}">
 </head>
 <body>
@@ -44,26 +43,6 @@
   <a href="{% url 'rules' %}">{% translate "Правила" %}</a> · <a href="{% url 'about' %}">{% translate "О проекте" %}</a> · {% translate "Демо-данные сбрасываются при рестарте (memory-режим)." %}
 </footer>
 {% block page_tools %}{% endblock %}
-<script>
-(function () {
-  "use strict";
-  var toggle = document.querySelector(".nav-toggle");
-  if (!toggle) { return; }
-  toggle.addEventListener("click", function () {
-    var open = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!open));
-    var nav = document.getElementById(toggle.getAttribute("aria-controls"));
-    if (nav) { nav.classList.toggle("open", !open); }
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
-      toggle.setAttribute("aria-expanded", "false");
-      var nav = document.getElementById(toggle.getAttribute("aria-controls"));
-      if (nav) { nav.classList.remove("open"); }
-      toggle.focus();
-    }
-  });
-})();
-</script>
+<script src="{% static 'reviews/base.js' %}" defer></script>
 </body>
 </html>

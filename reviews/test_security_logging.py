@@ -1,6 +1,11 @@
 from django.conf import settings
+from django.contrib.auth.models import User
 from django.contrib.auth.signals import user_login_failed
 from django.test import TestCase
+from django.urls import reverse
+
+from .seed import seed
+from .repository import InMemoryRepository
 
 
 class SecurityLoggingTests(TestCase):
@@ -17,3 +22,34 @@ class SecurityLoggingTests(TestCase):
     def test_upload_limits_set(self):
         self.assertEqual(settings.DATA_UPLOAD_MAX_MEMORY_SIZE, 2_621_440)
         self.assertEqual(settings.FILE_UPLOAD_MAX_MEMORY_SIZE, 2_621_440)
+
+    def test_script_policy_disallows_inline_scripts(self):
+        response = self.client.get(reverse("home"))
+        policy = response["Content-Security-Policy"]
+        script_src = next(directive for directive in policy.split(";") if directive.strip().startswith("script-src"))
+        self.assertNotIn("'unsafe-inline'", script_src)
+
+    def test_pages_have_no_inline_scripts(self):
+        from reviews import store
+        import reviews.views as views
+
+        repository = InMemoryRepository()
+        seed(repository)
+        original_store_repo, original_view_repo = store.repo, views.repo
+        store.repo = views.repo = repository
+        try:
+            professor = repository.search("Айбек")[0]["prof"]
+            user = User.objects.create_user(username="security-test", password="test-password")
+            self.client.force_login(user)
+            urls = (
+                reverse("home"),
+                reverse("professor", args=[professor.slug]),
+                reverse("review_new", args=[professor.slug]),
+            )
+            for url in urls:
+                with self.subTest(url=url):
+                    response = self.client.get(url)
+                    self.assertEqual(response.status_code, 200)
+                    self.assertNotRegex(response.content.decode(), r"<script\b(?![^>]*\bsrc\s*=)[^>]*>")
+        finally:
+            store.repo, views.repo = original_store_repo, original_view_repo

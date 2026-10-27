@@ -147,12 +147,11 @@ SECURE_REFERRER_POLICY = os.environ.get("SECURE_REFERRER_POLICY", "same-origin")
 PERMISSIONS_POLICY = "camera=(), geolocation=(), microphone=()"
 
 # Minimal Content-Security-Policy: only same-origin resources are allowed and
-# objects/framing/base-uri/form targets are locked down. Inline script/style
-# stay permitted because the shipped templates rely on them (nav toggle, star
-# widths); an empty dict disables the header.
+# objects/framing/base-uri/form targets are locked down. Inline styles remain
+# permitted for template-rendered widths; an empty dict disables the header.
 SECURE_CSP = {
     "default-src": [CSP.SELF],
-    "script-src": [CSP.SELF, CSP.UNSAFE_INLINE],
+    "script-src": [CSP.SELF],
     "style-src": [CSP.SELF, CSP.UNSAFE_INLINE],
     "img-src": [CSP.SELF, "data:"],
     "object-src": [CSP.NONE],
