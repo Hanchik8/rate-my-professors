@@ -2622,6 +2622,77 @@ class CatalogCacheTests(_MemoryRepoTestCase):
             self.assertEqual(search.call_count, 2)
 
 
+class DjangoCatalogCacheInvalidationTests(TestCase):
+    """ORM writes and moderation refresh cached home and university pages."""
+
+    def setUp(self):
+        cache.clear()
+        self.addCleanup(cache.clear)
+        self.repo = DjangoRepository()
+        self.school = self.repo.add_school("Кешевый университет", "Бишкек")
+        self.professor = self.repo.add_professor(
+            self.school.id, "Иван", "Кешев", "Информатика", "доцент"
+        )
+        repo_patcher = mock.patch("reviews.views.repo", self.repo)
+        repo_patcher.start()
+        self.addCleanup(repo_patcher.stop)
+
+    @staticmethod
+    def _review_count(response):
+        if "stats" in response.context:
+            return response.context["stats"]["review_count"]
+        return response.context["results"][0]["stats"]["count"]
+
+    def _assert_invalidated_after(self, url, write):
+        with mock.patch.object(self.repo, "search", wraps=self.repo.search) as search:
+            initial = self.client.get(url)
+            self.assertEqual(initial.status_code, 200)
+            initial_count = self._review_count(initial)
+            self.assertEqual(self.client.get(url).status_code, 200)
+            self.assertEqual(search.call_count, 1)
+
+            write()
+
+            refreshed = self.client.get(url)
+            self.assertEqual(refreshed.status_code, 200)
+            self.assertEqual(search.call_count, 2)
+            self.assertEqual(self._review_count(refreshed), initial_count + 1)
+
+    def test_new_review_invalidates_home_and_school_caches(self):
+        pages = (
+            ("home", reverse("home")),
+            ("school", reverse("school_detail", args=[self.school.slug])),
+        )
+        for name, url in pages:
+            with self.subTest(page=name):
+                cache.clear()
+                self._assert_invalidated_after(
+                    url,
+                    lambda: self.repo.add_review(
+                        self.professor.id,
+                        _repo_review(course=f"Новый курс: {name}"),
+                        status="approved",
+                    ),
+                )
+
+    def test_review_approval_invalidates_home_and_school_caches(self):
+        pages = (
+            ("home", reverse("home")),
+            ("school", reverse("school_detail", args=[self.school.slug])),
+        )
+        for name, url in pages:
+            with self.subTest(page=name):
+                cache.clear()
+                review = self.repo.add_review(
+                    self.professor.id,
+                    _repo_review(course=f"Модерация: {name}"),
+                    status="pending",
+                )
+                self._assert_invalidated_after(
+                    url, lambda: self.repo.approve_review(review.id)
+                )
+
+
 class MessagesRenderTests(_MemoryRepoTestCase):
     """Rendered messages retain their accessible markup and static behavior."""
 
