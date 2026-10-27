@@ -999,6 +999,23 @@ class DesignAssetsTests(TestCase):
         css = STATIC_CSS.read_text(encoding="utf-8")
         self.assertRegex(css, r"\.cards\s+\.empty\s*\{[^}]*grid-column")
 
+    def test_base_template_loads_form_submit_state_script(self):
+        response = self.client.get(reverse("rules"))
+        self.assertContains(response, "reviews/form-submit.js")
+        script = Path(__file__).parent / "static" / "reviews" / "form-submit.js"
+        self.assertTrue(script.is_file())
+        source = script.read_text(encoding="utf-8")
+        self.assertIn('addEventListener("submit"', source)
+        self.assertIn("disabled = true", source)
+
+    def test_css_has_submit_loading_state_for_both_themes(self):
+        css = STATIC_CSS.read_text(encoding="utf-8")
+        self.assertIn(".is-loading::after", css)
+        self.assertIn("@keyframes submit-spin", css)
+        self.assertRegex(
+            css, r"@media\s*\(prefers-color-scheme\s*:\s*dark\)\s*\{[^}]*\.is-loading"
+        )
+
 
 class DesignContrastTests(TestCase):
     """WCAG 2.1 AA contrast checks for the CSS design tokens."""
