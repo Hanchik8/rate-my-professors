@@ -125,6 +125,40 @@ class ProfileViewTestMixin:
         self.assertContains(response, "Вы ещё не оставляли отзывов.")
         self.assertNotContains(response, 'class="review profile-review"')
 
+    def test_owner_can_edit_and_review_returns_to_pending(self):
+        review = self.repo.add_review(self.prof.id, _review_data("Алгоритмы", "Исходный комментарий достаточно длинный."), user=self.user, status="approved")
+        self.client.force_login(self.user)
+        response = self.client.post(reverse("review_edit", args=[review.id]), {
+            **_review_data("Алгоритмы", "Изменённый комментарий достаточно длинный."), "overall": "3", "would_take_again": "no",
+        })
+        self.assertEqual(response.status_code, 302)
+        changed = self.repo.review(review.id)
+        self.assertEqual(changed.comment, "Изменённый комментарий достаточно длинный.")
+        self.assertEqual(changed.status, "pending")
+
+    def test_owner_can_delete_only_with_post(self):
+        review = self.repo.add_review(self.prof.id, _review_data("Алгоритмы", "Комментарий достаточно длинный для теста."), user=self.user)
+        self.client.force_login(self.user)
+        url = reverse("review_delete", args=[review.id])
+        self.assertEqual(self.client.get(url).status_code, 200)
+        self.assertIsNotNone(self.repo.review(review.id))
+        self.assertEqual(self.client.post(url).status_code, 302)
+        self.assertIsNone(self.repo.review(review.id))
+
+    def test_other_user_cannot_edit_or_delete(self):
+        review = self.repo.add_review(self.prof.id, _review_data("Алгоритмы", "Комментарий достаточно длинный для теста."), user=self.user)
+        other = self._user("other-owner@example.com")
+        self.client.force_login(other)
+        self.assertEqual(self.client.get(reverse("review_edit", args=[review.id])).status_code, 404)
+        self.assertEqual(self.client.post(reverse("review_delete", args=[review.id])).status_code, 404)
+        self.assertIsNotNone(self.repo.review(review.id))
+
+    def test_anonymous_edit_redirects_to_login(self):
+        review = self.repo.add_review(self.prof.id, _review_data("Алгоритмы", "Комментарий достаточно длинный для теста."), user=self.user)
+        response = self.client.get(reverse("review_edit", args=[review.id]))
+        self.assertEqual(response.status_code, 302)
+        self.assertIn(reverse("login"), response.url)
+
     def test_profile_heading_and_status_are_translated(self):
         self.repo.add_review(
             self.prof.id,

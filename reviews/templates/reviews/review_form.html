@@ -1,8 +1,8 @@
 {% extends "reviews/base.html" %}{% load i18n %}
-{% block title %}{% blocktranslate with name=prof.full_name %}Оценить {{ name }}{% endblocktranslate %} — ProfLens{% endblock %}
+{% block title %}{% if editing %}{% translate "Изменить отзыв" %}{% else %}{% blocktranslate with name=prof.full_name %}Оценить {{ name }}{% endblocktranslate %}{% endif %} — ProfLens{% endblock %}
 {% block content %}
-<h1>{% blocktranslate with name=prof.full_name %}Оценить {{ name }}{% endblocktranslate %}</h1>
-<p class="muted">{% translate "Отзыв появится после проверки модератором." %} <a href="{{ url }}">{% translate "Правила" %}</a>.</p>
+<h1>{% if editing %}{% translate "Изменить отзыв" %}{% else %}{% blocktranslate with name=prof.full_name %}Оценить {{ name }}{% endblocktranslate %}{% endif %}</h1>
+  <p class="muted">{% translate "Отзыв появится после проверки модератором." %} <a href="{{ url }}">{% translate "Правила" %}</a>.</p>
 {% if not user.is_authenticated %}
 <p class="notice">{% translate "Чтобы оставить отзыв," %} <a href="{{ login_url }}">{% translate "войдите" %}</a> {% translate "или" %} <a href="{{ signup_url }}">{% translate "зарегистрируйтесь" %}</a>.</p>
 {% endif %}
@@ -10,7 +10,7 @@
   {{ form.non_field_errors }}
   {% include "reviews/_form_fields.html" %}
   <div class="form-actions">
-    <button>{% translate "Отправить на модерацию" %}</button>
+     <button>{% if editing %}{% translate "Сохранить изменения" %}{% else %}{% translate "Отправить на модерацию" %}{% endif %}</button>
     <a class="cancel" href="{% url 'professor' prof.slug %}">{% translate "Отмена" %}</a>
   </div>
 </form>

@@ -139,6 +139,24 @@ class DjangoRepository:
         Review.objects.filter(pk=review_id).update(status="approved")
         invalidate_catalog_cache()
 
+    def update_review(self, review_id: str, data: Mapping[str, Any]) -> None:
+        review = Review.objects.get(pk=review_id)
+        review.course = clean_text(data.get("course") or "")
+        review.term = clean_text(data.get("term") or "")
+        review.overall = data["overall"]
+        review.difficulty = data["difficulty"]
+        review.would_take_again = data["would_take_again"]
+        review.grade = data.get("grade", "")
+        review.comment = clean_text(data.get("comment") or "")
+        review.status = "pending"
+        review.save()
+        review.tags.set([Tag.objects.get_or_create(name=str(tag))[0] for tag in data.get("tags", [])])
+        invalidate_catalog_cache()
+
+    def delete_review(self, review_id: str) -> None:
+        Review.objects.filter(pk=review_id).delete()
+        invalidate_catalog_cache()
+
     def approve_professor(self, professor_id: str) -> None:
         """Mark a professor as approved."""
         Professor.objects.filter(pk=professor_id).update(status="approved")

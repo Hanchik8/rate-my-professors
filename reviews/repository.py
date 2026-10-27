@@ -211,6 +211,20 @@ class InMemoryRepository:
             self._reviews[review_id].status = "approved"
             invalidate_catalog_cache()
 
+    def update_review(self, review_id: str, data: Mapping[str, Any]) -> None:
+        review = self._reviews[review_id]
+        for key in ("course", "term", "comment"):
+            setattr(review, key, clean_text(data.get(key) or ""))
+        for key in ("overall", "difficulty", "would_take_again", "grade", "tags"):
+            setattr(review, key, list(data.get(key, [])) if key == "tags" else data.get(key))
+        review.status = "pending"
+        invalidate_catalog_cache()
+
+    def delete_review(self, review_id: str) -> None:
+        review = self._reviews.pop(review_id)
+        self._review_keys.discard((review.professor_id, review.course.lower(), review.author_id))
+        invalidate_catalog_cache()
+
     def approve_professor(self, professor_id: str) -> None:
         """Mark a professor as approved when it exists."""
         if professor_id in self._professors:

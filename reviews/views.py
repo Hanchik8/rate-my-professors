@@ -170,6 +170,41 @@ def profile(request):
     })
 
 
+def _owned_review_or_404(review_id, user):
+    review = _review_or_404(review_id)
+    if str(review.author_id) != str(user.id):
+        raise Http404(_("Review not found"))
+    return review
+
+
+@login_required
+def review_edit(request, review_id):
+    review = _owned_review_or_404(review_id, request.user)
+    prof = repo.professor_by_id(review.professor_id)
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            repo.update_review(review_id, form.cleaned_data)
+            messages.success(request, _("Отзыв отправлен на модерацию."))
+            return redirect("profile")
+    else:
+        form = ReviewForm(initial={"course": review.course, "term": review.term,
+            "overall": review.overall, "difficulty": review.difficulty,
+            "would_take_again": "yes" if review.would_take_again else "no",
+            "grade": review.grade, "tags": review.tags, "comment": review.comment})
+    return render(request, "reviews/review_form.html", {"prof": prof, "form": form, "editing": True, "url": reverse("rules")})
+
+
+@login_required
+def review_delete(request, review_id):
+    review = _owned_review_or_404(review_id, request.user)
+    if request.method == "POST":
+        repo.delete_review(review_id)
+        messages.success(request, _("Отзыв удалён."))
+        return redirect("profile")
+    return render(request, "reviews/review_confirm_delete.html", {"review": review})
+
+
 def _save_review(form, prof, request):
     """Persist a validated review, returning ``True`` on success.
 

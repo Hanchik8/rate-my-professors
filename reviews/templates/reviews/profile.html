@@ -30,6 +30,8 @@
     </p>
     {% if r.created_at %}<p class="review-date muted">{% translate "Дата отзыва:" %} <time datetime="{{ r.created_at|date:'c' }}">{{ r.created_at|date:"DATE_FORMAT" }}</time></p>{% endif %}
     <p>{{ r.comment }}</p>
+    <p><a href="{% url 'review_edit' r.id %}">{% translate "Изменить" %}</a>
+      <a href="{% url 'review_delete' r.id %}">{% translate "Удалить" %}</a></p>
     {% if r.tags %}<p class="tags">{% for tag in r.tags %}{% translate tag %}{% if not forloop.last %}, {% endif %}{% endfor %}</p>{% endif %}
   </div>
 </article>
