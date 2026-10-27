@@ -2,7 +2,7 @@
 from urllib.parse import parse_qs, urlparse
 
 from django.contrib.auth.models import User
-from django.test import TestCase
+from django.test import Client, TestCase
 from django.urls import reverse
 
 from .django_repo import DjangoRepository
@@ -178,10 +178,14 @@ class ProfileViewTestMixin:
             **_review_data("Алгоритмы", "Изменённый комментарий достаточно длинный."),
             "overall": "3", "would_take_again": "no",
         })
-        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse("profile"))
         changed = self.repo.review(review.id)
         self.assertEqual(changed.comment, "Изменённый комментарий достаточно длинный.")
         self.assertEqual(changed.status, "pending")
+        self.assertNotIn(
+            changed.id,
+            [item.id for item in self.repo.reviews_for(self.prof.id)],
+        )
 
     def test_owner_can_delete_only_with_post(self):
         review = self.repo.add_review(
@@ -197,15 +201,68 @@ class ProfileViewTestMixin:
         self.assertIsNone(self.repo.review(review.id))
 
     def test_other_user_cannot_edit_or_delete(self):
+        original_comment = "Комментарий достаточно длинный для теста."
+        review = self.repo.add_review(
+            self.prof.id,
+            _review_data("Алгоритмы", original_comment),
+            user=self.user,
+            status="approved",
+        )
+        other = self._user("other-owner@example.com")
+        self.client.force_login(other)
+        edit_url = reverse("review_edit", args=[review.id])
+        delete_url = reverse("review_delete", args=[review.id])
+
+        self.assertEqual(self.client.get(edit_url).status_code, 404)
+        self.assertEqual(
+            self.client.post(
+                edit_url,
+                _review_data("Взломанный предмет", "Попытка изменить чужой отзыв."),
+            ).status_code,
+            404,
+        )
+        self.assertEqual(self.client.get(delete_url).status_code, 404)
+        self.assertEqual(self.client.post(delete_url).status_code, 404)
+
+        unchanged = self.repo.review(review.id)
+        self.assertIsNotNone(unchanged)
+        self.assertEqual(unchanged.comment, original_comment)
+        self.assertEqual(unchanged.status, "approved")
+
+    def test_edit_and_delete_forms_include_csrf_tokens(self):
         review = self.repo.add_review(
             self.prof.id,
             _review_data("Алгоритмы", "Комментарий достаточно длинный для теста."),
             user=self.user,
         )
-        other = self._user("other-owner@example.com")
-        self.client.force_login(other)
-        self.assertEqual(self.client.get(reverse("review_edit", args=[review.id])).status_code, 404)
-        self.assertEqual(self.client.post(reverse("review_delete", args=[review.id])).status_code, 404)
+        self.client.force_login(self.user)
+        for url_name in ("review_edit", "review_delete"):
+            with self.subTest(url_name=url_name):
+                response = self.client.get(reverse(url_name, args=[review.id]))
+                self.assertContains(response, 'name="csrfmiddlewaretoken"')
+
+    def test_edit_and_delete_require_csrf_tokens(self):
+        original_comment = "Комментарий достаточно длинный для теста."
+        review = self.repo.add_review(
+            self.prof.id,
+            _review_data("Алгоритмы", original_comment),
+            user=self.user,
+            status="approved",
+        )
+        client = Client(enforce_csrf_checks=True)
+        client.force_login(self.user)
+
+        response = client.post(
+            reverse("review_edit", args=[review.id]),
+            _review_data("Алгоритмы", "Изменение без CSRF-токена не должно сохраниться."),
+        )
+        self.assertEqual(response.status_code, 403)
+        unchanged = self.repo.review(review.id)
+        self.assertEqual(unchanged.comment, original_comment)
+        self.assertEqual(unchanged.status, "approved")
+
+        response = client.post(reverse("review_delete", args=[review.id]))
+        self.assertEqual(response.status_code, 403)
         self.assertIsNotNone(self.repo.review(review.id))
 
     def test_anonymous_edit_redirects_to_login(self):
