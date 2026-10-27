@@ -1,23 +1,36 @@
 {% load static i18n %}<!doctype html>
+{% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% block title %}ProfLens{% endblock %}</title>
+<title>{% block title %}ProfLens — {% translate "отзывы о преподавателях вузов Кыргызстана" %}{% endblock %}</title>
+<meta name="description" content="{% block description %}{% translate "Честные отзывы студентов о преподавателях вузов Кыргызстана: рейтинг, сложность, теги. Узнайте, какие занятия на самом деле — до записи на курс." %}{% endblock %}">
+<meta name="theme-color" content="#14213d">
+<meta property="og:site_name" content="ProfLens">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{% block og_title %}ProfLens{% endblock %}">
+<meta property="og:description" content="{% translate "Отзывы студентов о преподавателях вузов Кыргызстана" %}">
+<meta property="og:url" content="{{ SITE_URL }}{{ request.path }}">
+<meta property="og:locale" content="{{ LANGUAGE_CODE }}">
+<link rel="canonical" href="{{ SITE_URL }}{{ request.path }}">
+<link rel="icon" href="{% static 'reviews/favicon.svg' %}" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'reviews/style.css' %}">
+{% block head %}{% endblock %}
 </head>
 <body>
+<a class="skip" href="#main">{% translate "Перейти к содержимому" %}</a>
 <header class="top">
   <div class="top-inner">
-    <a class="brand" href="{% url 'home' %}">ProfLens</a>
-    <nav class="nav">
+    <a class="brand" href="{% url 'home' %}">Prof<span>Lens</span></a>
+    <nav class="nav" aria-label="{% translate 'Основное меню' %}">
       <a href="{% url 'rules' %}">{% translate "Правила" %}</a>
       <a href="{% url 'add_professor' %}">{% translate "Добавить преподавателя" %}</a>
       {% if user.is_authenticated %}
-        <span class="muted">{{ user.email|default:user.username }}</span>
+        <span class="muted user-email" title="{{ user.email|default:user.username }}">{{ user.email|default:user.username }}</span>
         <form method="post" action="{% url 'logout' %}" class="inline">{% csrf_token %}<button class="link-btn" type="submit">{% translate "Выйти" %}</button></form>
       {% else %}
         <a href="{% url 'login' %}">{% translate "Вход" %}</a>
@@ -25,19 +38,20 @@
       {% endif %}
       <form action="{% url 'set_language' %}" method="post" class="lang-switch">{% csrf_token %}
         <input name="next" type="hidden" value="{{ request.get_full_path }}">
+        {% get_available_languages as LANGUAGES %}
         <select name="language" onchange="this.form.submit()" aria-label="{% translate 'Язык' %}">
-          {% get_current_language as LANGUAGE_CODE %}
-          {% get_available_languages as LANGUAGES %}
-          {% for code, name in LANGUAGES %}<option value="{{ code }}"{% if code == LANGUAGE_CODE %} selected{% endif %}>{{ name }}</option>{% endfor %}
+          {% for code, name in LANGUAGES %}<option value="{{ code }}" lang="{{ code }}"{% if code == LANGUAGE_CODE %} selected{% endif %}>{{ name }}</option>{% endfor %}
         </select>
+        <noscript><button type="submit">OK</button></noscript>
       </form>
     </nav>
   </div>
 </header>
-{% if messages %}<ul class="messages">{% for m in messages %}<li class="{{ m.tags }}">{{ m }}</li>{% endfor %}</ul>{% endif %}
-<main>{% block content %}{% endblock %}</main>
+{% if messages %}<ul class="messages" role="status">{% for m in messages %}<li class="{{ m.tags }}">{{ m }}</li>{% endfor %}</ul>{% endif %}
+<main id="main" tabindex="-1">{% block content %}{% endblock %}</main>
 <footer>
-  <a href="{% url 'rules' %}">{% translate "Правила" %}</a> · {% translate "Демо-данные сбрасываются при рестарте (memory-режим)." %}
+  <a href="{% url 'rules' %}">{% translate "Правила" %}</a> · © ProfLens
+  {% if DEMO_MEMORY_MODE %} · {% translate "Демо-данные сбрасываются при рестарте (memory-режим)." %}{% endif %}
 </footer>
 </body>
 </html>

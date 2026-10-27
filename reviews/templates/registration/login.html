@@ -2,6 +2,10 @@
 {% block title %}{% translate "Вход" %} — ProfLens{% endblock %}
 {% block content %}
 <h1>{% translate "Вход" %}</h1>
-<form method="post" class="form">{% csrf_token %}{{ form.as_p }}<button>{% translate "Войти" %}</button></form>
+<form method="post" class="form">{% csrf_token %}
+  {% include "registration/_fields.html" %}
+  <input type="hidden" name="next" value="{{ next }}">
+  <button type="submit">{% translate "Войти" %}</button>
+</form>
 <p><a href="{% url 'signup' %}">{% translate "Нет аккаунта? Зарегистрируйтесь" %}</a></p>
 {% endblock %}

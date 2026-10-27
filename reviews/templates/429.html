@@ -1,0 +1,10 @@
+{% extends "reviews/base.html" %}{% load i18n %}
+{% block title %}{% translate "Слишком много запросов" %} — ProfLens{% endblock %}
+{% block content %}
+<div class="error-page">
+  <p class="code">429</p>
+  <h1>{% translate "Слишком много попыток" %}</h1>
+  <p>{% blocktranslate count s=retry_after %}Подождите {{ s }} секунду и попробуйте снова.{% plural %}Подождите {{ s }} секунд и попробуйте снова.{% endblocktranslate %}</p>
+  <p><a class="btn" href="{% url 'home' %}">{% translate "На главную" %}</a></p>
+</div>
+{% endblock %}

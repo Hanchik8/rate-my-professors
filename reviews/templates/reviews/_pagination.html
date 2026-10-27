@@ -1,0 +1,7 @@
+{% load i18n proflens %}{% if page_obj %}
+<nav class="pagination" aria-label="{% translate 'Страницы' %}">
+  {% if page_obj.has_previous %}<a href="{% page_url page_obj.previous_page_number %}" rel="prev">← {% translate "Назад" %}</a>{% endif %}
+  <span aria-current="page">{% blocktranslate with n=page_obj.number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}</span>
+  {% if page_obj.has_next %}<a href="{% page_url page_obj.next_page_number %}" rel="next">{% translate "Вперёд" %} →</a>{% endif %}
+</nav>
+{% endif %}

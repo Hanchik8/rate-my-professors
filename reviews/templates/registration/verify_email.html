@@ -1,0 +1,12 @@
+{% extends "reviews/base.html" %}{% load i18n %}
+{% block title %}{% translate "Подтверждение email" %} — ProfLens{% endblock %}
+{% block content %}
+<h1>{% translate "Подтверждение email" %}</h1>
+{% if ok %}
+<p class="notice">{% translate "Готово, email подтверждён. Теперь можно оставлять отзывы." %}</p>
+<p><a class="btn" href="{% url 'home' %}">{% translate "На главную" %}</a></p>
+{% else %}
+<p class="notice">{% translate "Ссылка недействительна или устарела. Войдите и запросите новое письмо." %}</p>
+<p><a class="btn" href="{% url 'verification_needed' %}">{% translate "Отправить письмо ещё раз" %}</a></p>
+{% endif %}
+{% endblock %}

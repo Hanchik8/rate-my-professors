@@ -1,0 +1,10 @@
+{% extends "reviews/base.html" %}{% load i18n %}
+{% block title %}{% translate "Доступ запрещён" %} — ProfLens{% endblock %}
+{% block content %}
+<div class="error-page">
+  <p class="code">403</p>
+  <h1>{% translate "Доступ запрещён" %}</h1>
+  <p>{% translate "Обновите страницу и попробуйте ещё раз. Если не помогает — включите cookies в браузере." %}</p>
+  <p><a class="btn" href="{% url 'home' %}">{% translate "На главную" %}</a></p>
+</div>
+{% endblock %}

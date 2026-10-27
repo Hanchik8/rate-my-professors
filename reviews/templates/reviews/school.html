@@ -1,6 +1,9 @@
 {% extends "reviews/base.html" %}{% load i18n %}
 {% block title %}{{ school.name }} — ProfLens{% endblock %}
+{% block og_title %}{{ school.name }}{% endblock %}
+{% block description %}{% blocktranslate with name=school.name city=school.city %}Отзывы студентов о преподавателях: {{ name }}, {{ city }}.{% endblocktranslate %}{% endblock %}
 {% block content %}
+<p class="crumbs"><a href="{% url 'home' %}">ProfLens</a> / {{ school.city }}</p>
 <h1>{{ school.name }}</h1>
 <p class="sub">{{ school.city }}</p>
 {% if stats.prof_count %}
@@ -14,8 +17,8 @@
 {% if departments %}<p class="tags">{{ departments|join:", " }}</p>{% else %}<p class="empty">{% translate "Пока нет кафедр." %}</p>{% endif %}
 <h2>{% translate "Преподаватели" %}</h2>
 <ol class="rows">
-  {% for r in results %}
-  <li><a class="row" href="{% url 'professor' r.prof.slug %}"><span class="tile {{ r.stats.tone }}">{% if r.stats.count %}{{ r.stats.overall|floatformat:1 }}{% else %}-{% endif %}</span><span class="who"><strong>{{ r.prof.full_name }}</strong><span>{{ r.prof.department }}</span></span><span class="meta">{{ r.stats.count }} {% translate "отзывов" %}</span></a></li>
-  {% empty %}<li class="empty">{% translate "Пока нет преподавателей." %}</li>{% endfor %}
+  {% for r in results %}{% include "reviews/_prof_row.html" with show_school=False %}
+  {% empty %}<li class="empty">{% translate "Пока нет преподавателей." %} <a href="{% url 'add_professor' %}">{% translate "Добавить преподавателя" %}</a></li>{% endfor %}
 </ol>
+{% include "reviews/_pagination.html" %}
 {% endblock %}

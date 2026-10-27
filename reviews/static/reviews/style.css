@@ -70,4 +70,39 @@ input,select,textarea{font:inherit;color:var(--ink);background:var(--surface);bo
 .choices label{display:inline-flex;gap:.4rem;align-items:center;border:1px solid var(--ink);background:var(--surface);padding:.4rem .8rem;border-radius:.4rem;cursor:pointer;font-weight:400}
 .choices label:has(input:checked){background:var(--hl)}
 .errorlist{color:#a1281c;list-style:none;padding:0;margin:.3rem 0;font-weight:700}
-@media(max-width:42rem){.row{grid-template-columns:3.5rem 1fr}.row .meta{display:none}.headline{align-items:flex-start}.top-inner{flex-direction:column;align-items:flex-start}}
+
+.brand span{background:var(--hl);padding:0 .2rem;border-radius:.25rem;margin-left:.05rem}
+.skip{position:absolute;left:-999px;top:.5rem;background:var(--hl);color:var(--ink);padding:.5rem .8rem;border:2px solid var(--ink);border-radius:.4rem;z-index:10}
+.skip:focus{left:.5rem}
+main:focus{outline:none}
+.user-email{max-width:16rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.crumbs{margin:1rem 0 0;color:var(--muted);font-size:.95rem}
+.crumbs a{color:var(--muted)}
+.search select{max-width:100%;min-width:0;flex:1 1 12rem;text-overflow:ellipsis}
+.row{min-width:0}.who{min-width:0}.who strong,.who span{overflow-wrap:anywhere}
+.comment{overflow-wrap:anywhere;white-space:normal}
+.review time{margin-left:.3rem;font-size:.9rem}
+.btn:hover,button:hover{filter:brightness(.96)}
+.votes button:hover{background:var(--surface)}
+.field input[type=email],.field input[type=password]{width:100%}
+.form-errors .errorlist{margin:0 0 1rem}
+.error-page{padding:2rem 0 3rem;max-width:40rem}
+.error-page .code{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:4.5rem;font-weight:800;margin:0;line-height:1;color:var(--muted)}
+.error-page .search{margin-top:1.5rem}
+.pagination span{color:var(--muted)}
+@media(max-width:42rem){
+  body{font-size:1rem}
+  .row{grid-template-columns:3rem 1fr;gap:.75rem;padding:.8rem .25rem}
+  .row .meta{grid-column:2;font-size:.9rem}
+  .row .meta+.meta{display:none}
+  .tile{width:3rem;height:3rem;font-size:1.15rem}
+  .tile.big{width:4.5rem;height:4.5rem;font-size:2rem}
+  .headline{align-items:flex-start}
+  .top-inner{flex-direction:column;align-items:flex-start;gap:.5rem}
+  .nav{gap:.5rem .9rem}
+  .search>*{flex:1 1 100%}
+  .facts{gap:1.25rem}
+  .review{grid-template-columns:auto 1fr;gap:.75rem}
+  .user-email{max-width:12rem}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}

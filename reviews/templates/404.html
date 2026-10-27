@@ -1,0 +1,13 @@
+{% extends "reviews/base.html" %}{% load i18n %}
+{% block title %}{% translate "Страница не найдена" %} — ProfLens{% endblock %}
+{% block content %}
+<div class="error-page">
+  <p class="code">404</p>
+  <h1>{% translate "Страница не найдена" %}</h1>
+  <p>{% translate "Возможно, преподаватель ещё на модерации или ссылка устарела." %}</p>
+  <form class="search" method="get" action="{% url 'home' %}" role="search">
+    <input type="search" name="q" placeholder="{% translate 'Имя преподавателя или кафедра' %}" aria-label="{% translate 'Поиск' %}">
+    <button type="submit">{% translate "Найти" %}</button>
+  </form>
+</div>
+{% endblock %}
