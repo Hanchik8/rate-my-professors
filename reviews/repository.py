@@ -3,6 +3,7 @@
 When PostgreSQL is connected, write a DjangoRepository with these same methods
 (backed by models/ORM) and point reviews/store.py at it. Views stay untouched.
 """
+import threading
 import uuid
 from collections import Counter
 from dataclasses import dataclass, field
@@ -77,8 +78,16 @@ def _tone(overall):
     return "good" if overall >= 4 else "mid" if overall >= 3 else "bad"
 
 
+def _norm(text):
+    return " ".join((text or "").lower().replace("ё", "е").split())
+
+
 class InMemoryRepository:
+    """Demo/dev storage in process memory. Data is lost on restart and is not
+    shared between gunicorn workers, so production uses DjangoRepository."""
+
     def __init__(self):
+        self._lock = threading.Lock()
         self._schools, self._professors, self._reviews = {}, {}, {}
         # (review_id, user_id) -> "up"/"down"
         self._votes = {}
@@ -92,9 +101,12 @@ class InMemoryRepository:
         self._schools[s.id] = s
         return s
 
-    def add_professor(self, school_id, first, last, department, title, status="approved"):
+    def add_professor(self, school_id, first, last, department, title, status="approved", user=None):
+        with self._lock:
+            return self._add_professor(school_id, first.strip(), last.strip(), department.strip(), title, status)
+
+    def _add_professor(self, school_id, first, last, department, title, status):
         # защита от дубля ФИО+вуз (case-insensitive)
-        key = (school_id, f"{first} {last}".strip().lower())
         for p in self._professors.values():
             if p.school_id == school_id and p.full_name.lower() == f"{first} {last}".lower() and p.status != "rejected":
                 raise ValueError("duplicate professor")
@@ -109,6 +121,10 @@ class InMemoryRepository:
         return p
 
     def add_review(self, professor_id, data, user=None, status=None):
+        with self._lock:
+            return self._add_review(professor_id, data, user, status)
+
+    def _add_review(self, professor_id, data, user, status):
         # limit one review per professor+course per user
         course = data.get("course", "").strip()
         if user is not None and course:
@@ -130,6 +146,10 @@ class InMemoryRepository:
         return r
 
     def vote(self, review_id, helpful, user=None):
+        with self._lock:
+            self._vote(review_id, helpful, user)
+
+    def _vote(self, review_id, helpful, user):
         r = self._reviews[review_id]
         if user is not None:
             key = (review_id, getattr(user, 'id', user))
@@ -142,8 +162,15 @@ class InMemoryRepository:
             r.not_helpful += 1
 
     def report(self, review_id, user=None):
-        r = self._reviews.get(review_id)
-        if r:
+        with self._lock:
+            r = self._reviews.get(review_id)
+            if r is None:
+                return
+            if user is not None:
+                key = ("report", review_id, getattr(user, "id", user))
+                if key in self._votes:
+                    return
+                self._votes[key] = True
             r.reported += 1
 
     def approve_review(self, review_id):
@@ -219,8 +246,11 @@ class InMemoryRepository:
         avg = round(mean([self.stats(p.id)["overall"] for p in profs if self.stats(p.id)["count"]]), 1) if total_reviews else 0
         return {"prof_count": len(profs), "review_count": total_reviews, "avg_overall": avg}
 
+    def departments_for_school(self, school_id):
+        return sorted({p.department for p in self.professors_for_school(school_id)})
+
     def search(self, q="", school_slug="", city=""):
-        q = q.lower().strip()
+        words = _norm(q).split()[:5]
         out = []
         for p in self._professors.values():
             if p.status != "approved":
@@ -230,7 +260,8 @@ class InMemoryRepository:
                 continue
             if city and school.city != city:
                 continue
-            if q and q not in f"{p.full_name} {p.department}".lower():
+            text = _norm(f"{p.full_name} {p.department}")
+            if any(w not in text for w in words):
                 continue
             out.append({"prof": p, "school": school, "stats": self.stats(p.id)})
         out.sort(key=lambda x: (-x["stats"]["overall"], x["prof"].last_name))

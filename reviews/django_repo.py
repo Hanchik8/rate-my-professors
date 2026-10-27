@@ -1,89 +1,174 @@
-from collections import Counter
-from statistics import mean
-from django.db.models import Count
+"""ORM-backed repository with the same API as InMemoryRepository.
+
+Performance rules used here:
+* lists are built with ONE query: ratings are computed by the database
+  (annotate Avg/Count), never by calling stats() per professor (N+1);
+* lists are lazy (LazyResults) so the Paginator only loads the current page;
+* writes that can race (votes, reviews, reports) rely on unique constraints
+  in the database plus atomic F() updates instead of "check, then write".
+"""
+import hashlib
+
+from django.conf import settings
+from django.core.cache import cache
+from django.core.exceptions import ValidationError
+from django.db import IntegrityError, transaction
+from django.db.models import Avg, Count, F, FloatField, Q
+from django.db.models.functions import Coalesce
 from django.utils.text import slugify
 
-from .models import Professor, Review, School, Tag, Vote, Report
+from .models import Professor, Report, Review, School, Tag, Vote, normalize_search
+from .repository import Professor as DCProf
+from .repository import Review as DCReview
+from .repository import School as DCSchool
+from .repository import _tone
+
+APPROVED = Q(reviews__status="approved")
 
 
-def _tone(overall):
-    return "good" if overall >= 4 else "mid" if overall >= 3 else "bad"
+def _cached(key, builder):
+    """Cache read-heavy results for READ_CACHE_SECONDS (0 = no cache)."""
+    ttl = getattr(settings, "READ_CACHE_SECONDS", 0)
+    if not ttl:
+        return builder()
+    key = "rd:" + hashlib.sha256(key.encode()).hexdigest()[:32]
+    value = cache.get(key)
+    if value is None:
+        value = builder()
+        cache.set(key, value, ttl)
+    return value
+
+
+class LazyResults:
+    """A list-like wrapper around a queryset: len() is a COUNT query and
+    slicing loads only that slice. Paginator works with it directly."""
+
+    def __init__(self, queryset, convert, cache_prefix=None):
+        self._qs = queryset
+        self._convert = convert
+        self._prefix = cache_prefix
+        self._count = None
+
+    def count(self):
+        if self._count is None:
+            if self._prefix:
+                self._count = _cached(self._prefix + ":count", self._qs.count)
+            else:
+                self._count = self._qs.count()
+        return self._count
+
+    def __len__(self):
+        return self.count()
+
+    def __bool__(self):
+        return self.count() > 0
+
+    def _load(self, start, stop):
+        return [self._convert(obj) for obj in self._qs[start:stop]]
+
+    def __getitem__(self, item):
+        if isinstance(item, slice):
+            start, stop = item.start or 0, item.stop
+            if stop is None:
+                stop = self.count()
+            if self._prefix:
+                return _cached(f"{self._prefix}:{start}:{stop}", lambda: self._load(start, stop))
+            return self._load(start, stop)
+        return self._load(item, item + 1)[0]
+
+    def __iter__(self):
+        return iter(self[0:self.count()])
+
+
+def _stats_from_row(count, overall, difficulty):
+    if not count:
+        return {"count": 0, "overall": 0, "difficulty": 0, "tone": "none"}
+    overall = round(overall, 1)
+    return {"count": count, "overall": overall, "difficulty": round(difficulty, 1), "tone": _tone(overall)}
 
 
 class DjangoRepository:
-    """ORM-backed repository with the same API as InMemoryRepository."""
 
-    # writes
+    # ---------- writes ----------
     def add_school(self, name, city):
         slug = slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
-        # ensure unique
         base, i = slug, 1
         while School.objects.filter(slug=slug).exists():
             slug = f"{base}-{i}"
             i += 1
-        s = School.objects.create(name=name, slug=slug, city=city)
-        return self._school_to_dc(s)
+        return self._school_to_dc(School.objects.create(name=name, slug=slug, city=city))
 
     def add_professor(self, school_id, first, last, department, title, status="approved", user=None):
+        first, last = first.strip(), last.strip()
         school = School.objects.get(pk=school_id)
-        if Professor.objects.filter(school=school, first_name__iexact=first.strip(), last_name__iexact=last.strip()).exclude(status="rejected").exists():
-            # fallback case-insensitive python check for SQLite
-            for p in Professor.objects.filter(school=school).exclude(status="rejected"):
-                if p.full_name.lower() == f"{first} {last}".lower():
-                    raise ValueError("duplicate professor")
+        dup = Professor.objects.filter(
+            school=school, first_name__iexact=first, last_name__iexact=last,
+        ).exclude(status="rejected")
+        if dup.exists():
             raise ValueError("duplicate professor")
-        base = slugify(f"{first} {last}", allow_unicode=True) or slugify(f"{first} {last}") or f"{first}-{last}".lower()
-        slug = base
-        i = 1
-        while Professor.objects.filter(slug=slug).exists():
-            slug = f"{base}-{i}"
-            i += 1
-        p = Professor.objects.create(
-            school=school, first_name=first.strip(), last_name=last.strip(),
-            slug=slug, department=department, title=title, status=status, created_by=user,
-        )
-        return self._prof_to_dc(p)
+        base = slugify(f"{first} {last}", allow_unicode=True) or slugify(f"{first} {last}") or "professor"
+        for attempt in range(20):
+            slug = base if attempt == 0 else f"{base}-{attempt}"
+            if Professor.objects.filter(slug=slug).exists():
+                continue
+            try:
+                with transaction.atomic():
+                    p = Professor.objects.create(
+                        school=school, first_name=first, last_name=last, slug=slug,
+                        department=department.strip(), title=title, status=status, created_by=user,
+                    )
+                return self._prof_to_dc(p)
+            except IntegrityError:
+                # someone created the same professor or took the slug a moment ago
+                if dup.exists():
+                    raise ValueError("duplicate professor")
+        raise ValueError("could not allocate slug")
 
     def add_review(self, professor_id, data, user=None, status=None):
-        prof = Professor.objects.get(pk=professor_id)
         course = (data.get("course") or "").strip()
-        if user is not None and course:
-            exists = Review.objects.filter(professor=prof, course__iexact=course, author=user).exists()
-            if exists:
-                raise ValueError("duplicate review")
         if status is None:
             status = "pending" if user is not None else "approved"
-        r = Review.objects.create(
-            professor=prof, course=course, term=data.get("term", ""),
-            overall=data["overall"], difficulty=data["difficulty"],
-            would_take_again=data["would_take_again"], grade=data.get("grade", ""),
-            comment=data["comment"], status=status, author=user,
-        )
-        for t in data.get("tags", []):
-            tag, _ = Tag.objects.get_or_create(name=str(t))
-            r.tags.add(tag)
+        if user is not None and Review.objects.filter(
+            professor_id=professor_id, author=user, course__iexact=course,
+        ).exists():
+            raise ValueError("duplicate review")
+        try:
+            with transaction.atomic():
+                r = Review.objects.create(
+                    professor_id=professor_id, course=course, term=(data.get("term") or "").strip(),
+                    overall=data["overall"], difficulty=data["difficulty"],
+                    would_take_again=data["would_take_again"], grade=data.get("grade", ""),
+                    comment=data["comment"], status=status, author=user,
+                )
+                tags = [Tag.objects.get_or_create(name=str(t))[0] for t in data.get("tags", [])]
+                if tags:
+                    r.tags.add(*tags)
+        except IntegrityError:
+            # unique constraint caught a parallel double submit
+            raise ValueError("duplicate review")
         return self._review_to_dc(r)
 
     def vote(self, review_id, helpful, user=None):
-        r = Review.objects.get(pk=review_id)
-        if user is not None:
-            if Vote.objects.filter(review=r, user=user).exists():
-                raise ValueError("already voted")
-            Vote.objects.create(review=r, user=user, helpful=helpful)
-        if helpful:
-            r.helpful = r.helpful + 1
-        else:
-            r.not_helpful = r.not_helpful + 1
-        r.save(update_fields=["helpful", "not_helpful"])
+        """One vote per user per review, enforced by the DB unique constraint."""
+        with transaction.atomic():
+            if user is not None:
+                try:
+                    with transaction.atomic():
+                        Vote.objects.create(review_id=review_id, user=user, helpful=helpful)
+                except IntegrityError:
+                    raise ValueError("already voted")
+            field = "helpful" if helpful else "not_helpful"
+            Review.objects.filter(pk=review_id).update(**{field: F(field) + 1})
 
     def report(self, review_id, user=None):
-        r = Review.objects.get(pk=review_id)
-        if user is not None and Report.objects.filter(review=r, user=user).exists():
-            return
-        if user is not None:
-            Report.objects.create(review=r, user=user)
-        r.reported = r.reported + 1
-        r.save(update_fields=["reported"])
+        with transaction.atomic():
+            if user is not None:
+                try:
+                    with transaction.atomic():
+                        Report.objects.create(review_id=review_id, user=user)
+                except IntegrityError:
+                    return  # already reported by this user
+            Review.objects.filter(pk=review_id).update(reported=F("reported") + 1)
 
     def approve_review(self, review_id):
         Review.objects.filter(pk=review_id).update(status="approved")
@@ -91,64 +176,53 @@ class DjangoRepository:
     def approve_professor(self, professor_id):
         Professor.objects.filter(pk=professor_id).update(status="approved")
 
-    # reads
+    # ---------- reads ----------
     def schools(self):
-        return [self._school_to_dc(s) for s in School.objects.all()]
+        return _cached("schools", lambda: [self._school_to_dc(s) for s in School.objects.all()])
 
     def cities(self):
-        return sorted(School.objects.values_list("city", flat=True).distinct())
+        return _cached("cities", lambda: sorted(School.objects.values_list("city", flat=True).distinct()))
 
     def school(self, school_id):
-        try:
-            return self._school_to_dc(School.objects.get(pk=school_id))
-        except School.DoesNotExist:
-            return None
+        s = School.objects.filter(pk=school_id).first()
+        return self._school_to_dc(s) if s else None
 
     def school_by_slug(self, slug):
-        try:
-            return self._school_to_dc(School.objects.get(slug=slug))
-        except School.DoesNotExist:
-            return None
+        s = School.objects.filter(slug=slug).first()
+        return self._school_to_dc(s) if s else None
 
     def professor(self, slug):
-        try:
-            return self._prof_to_dc(Professor.objects.get(slug=slug, status="approved"))
-        except Professor.DoesNotExist:
-            return None
+        p = Professor.objects.filter(slug=slug, status="approved").first()
+        return self._prof_to_dc(p) if p else None
 
     def professor_any(self, slug):
-        try:
-            return self._prof_to_dc(Professor.objects.get(slug=slug))
-        except Professor.DoesNotExist:
-            return None
+        p = Professor.objects.filter(slug=slug).first()
+        return self._prof_to_dc(p) if p else None
 
     def professor_by_id(self, professor_id):
-        try:
-            return self._prof_to_dc(Professor.objects.get(pk=professor_id))
-        except Professor.DoesNotExist:
-            return None
+        p = Professor.objects.filter(pk=professor_id).first()
+        return self._prof_to_dc(p) if p else None
 
     def professors_for_school(self, school_id):
         return [self._prof_to_dc(p) for p in Professor.objects.filter(school_id=school_id, status="approved")]
 
     def review(self, review_id):
         try:
-            return self._review_to_dc(Review.objects.get(pk=review_id))
-        except Review.DoesNotExist:
+            r = Review.objects.filter(pk=review_id).first()
+        except (ValidationError, ValueError):  # malformed UUID in the URL
             return None
+        return self._review_to_dc(r) if r else None
 
     def reviews_for(self, professor_id, sort="newest", include_pending=False):
         qs = Review.objects.filter(professor_id=professor_id)
         if not include_pending:
             qs = qs.filter(status="approved")
-        qs = qs.prefetch_related("tags")
         if sort == "helpful":
-            # sort in python by helpful - not_helpful
-            items = list(qs)
-            items.sort(key=lambda r: (r.helpful - r.not_helpful, r.created_at), reverse=True)
-            return [self._review_to_dc(r) for r in items]
+            qs = qs.annotate(score=F("helpful") - F("not_helpful")).order_by("-score", "-created_at")
         else:
-            return [self._review_to_dc(r) for r in qs.order_by("-created_at")]
+            qs = qs.order_by("-created_at")
+        # no result cache here: vote counts must update immediately
+        return LazyResults(qs.prefetch_related("tags"), self._review_to_dc)
 
     def all_reviews(self, include_pending=False):
         qs = Review.objects.all().prefetch_related("tags")
@@ -157,94 +231,103 @@ class DjangoRepository:
         return [self._review_to_dc(r) for r in qs]
 
     def stats(self, professor_id):
+        return _cached(f"stats:{professor_id}", lambda: self._stats(professor_id))
+
+    def _stats(self, professor_id):
         qs = Review.objects.filter(professor_id=professor_id, status="approved")
-        n = qs.count()
-        dist = Counter(qs.values_list("overall", flat=True))
-        distribution = [{"score": s, "count": dist[s], "pct": round(100 * dist[s] / n) if n else 0} for s in range(5, 0, -1)]
+        agg = qs.aggregate(
+            n=Count("id"), overall=Avg("overall"), difficulty=Avg("difficulty"),
+            wta=Count("id", filter=Q(would_take_again=True)),
+        )
+        n = agg["n"]
+        dist = dict(qs.values_list("overall").annotate(c=Count("id")).values_list("overall", "c"))
+        distribution = [{"score": s, "count": dist.get(s, 0), "pct": round(100 * dist.get(s, 0) / n) if n else 0}
+                        for s in range(5, 0, -1)]
         if not n:
-            return {"count": 0, "overall": 0, "difficulty": 0, "wta_pct": None, "tone": "none", "distribution": distribution, "top_tags": []}
-        overall = round(mean(qs.values_list("overall", flat=True)), 1)
-        diff = round(mean(qs.values_list("difficulty", flat=True)), 1)
-        wta = round(100 * qs.filter(would_take_again=True).count() / n)
-        # top tags
-        tag_counts = Counter()
-        for r in qs.prefetch_related("tags"):
-            for t in r.tags.all():
-                tag_counts[str(t.name)] += 1
-        top_tags = [t for t, _ in tag_counts.most_common(3)]
-        return {"count": n, "overall": overall, "difficulty": diff, "wta_pct": wta, "tone": _tone(overall), "distribution": distribution, "top_tags": top_tags}
+            return {"count": 0, "overall": 0, "difficulty": 0, "wta_pct": None, "tone": "none",
+                    "distribution": distribution, "top_tags": []}
+        top_tags = list(
+            Tag.objects.filter(review__professor_id=professor_id, review__status="approved")
+            .annotate(c=Count("id")).order_by("-c", "name").values_list("name", flat=True)[:3]
+        )
+        overall = round(agg["overall"], 1)
+        return {
+            "count": n, "overall": overall, "difficulty": round(agg["difficulty"], 1),
+            "wta_pct": round(100 * agg["wta"] / n), "tone": _tone(overall),
+            "distribution": distribution, "top_tags": top_tags,
+        }
 
     def school_stats(self, school_id):
+        return _cached(f"school_stats:{school_id}", lambda: self._school_stats(school_id))
+
+    def _school_stats(self, school_id):
         profs = Professor.objects.filter(school_id=school_id, status="approved")
-        n = profs.count()
-        if not n:
-            return {"prof_count": 0, "review_count": 0, "avg_overall": 0}
-        total = Review.objects.filter(professor__school_id=school_id, status="approved").count()
-        if not total:
-            return {"prof_count": n, "review_count": 0, "avg_overall": 0}
-        avgs = []
-        for p in profs:
-            s = self.stats(str(p.pk))
-            if s["count"]:
-                avgs.append(s["overall"])
-        avg = round(mean(avgs), 1) if avgs else 0
-        return {"prof_count": n, "review_count": total, "avg_overall": avg}
+        rows = list(profs.annotate(n=Count("reviews", filter=APPROVED), avg=Avg("reviews__overall", filter=APPROVED))
+                    .values_list("n", "avg"))
+        total = sum(n for n, _ in rows)
+        avgs = [avg for n, avg in rows if n]
+        return {
+            "prof_count": len(rows),
+            "review_count": total,
+            "avg_overall": round(sum(round(a, 1) for a in avgs) / len(avgs), 1) if avgs else 0,
+        }
+
+    def departments_for_school(self, school_id):
+        return _cached(f"departments:{school_id}", lambda: list(
+            Professor.objects.filter(school_id=school_id, status="approved")
+            .order_by("department").values_list("department", flat=True).distinct()
+        ))
 
     def search(self, q="", school_slug="", city=""):
+        """Approved professors with ratings, best first. Returns a lazy list."""
         qs = Professor.objects.filter(status="approved").select_related("school")
         if school_slug:
             qs = qs.filter(school__slug=school_slug)
         if city:
             qs = qs.filter(school__city=city)
-        if q:
-            q = q.lower().strip()
-            # fetch and filter in python for case-insensitive unicode
-            items = []
-            for p in qs:
-                if q and q not in f"{p.full_name} {p.department}".lower():
-                    continue
-                dc = self._prof_to_dc(p)
-                items.append((p, dc))
-            out = []
-            for p, dc in items:
-                school = self._school_to_dc(p.school)
-                out.append({"prof": dc, "school": school, "stats": self.stats(str(p.pk))})
-            out.sort(key=lambda x: (-x["stats"]["overall"], x["prof"].last_name))
-            return out
-        out = []
-        for p in qs:
-            dc = self._prof_to_dc(p)
-            school = self._school_to_dc(p.school)
-            out.append({"prof": dc, "school": school, "stats": self.stats(str(p.pk))})
-        out.sort(key=lambda x: (-x["stats"]["overall"], x["prof"].last_name))
-        return out
+        q = normalize_search(q)
+        for word in q.split()[:5]:
+            qs = qs.filter(search_text__contains=word)
+        qs = qs.annotate(
+            n_reviews=Count("reviews", filter=APPROVED),
+            avg_overall=Coalesce(Avg("reviews__overall", filter=APPROVED), 0.0, output_field=FloatField()),
+            avg_difficulty=Avg("reviews__difficulty", filter=APPROVED),
+        ).order_by("-avg_overall", "last_name", "first_name", "id")
+        return LazyResults(qs, self._search_row, cache_prefix=f"search:{q}|{school_slug}|{city}")
+
+    def _search_row(self, p):
+        return {
+            "prof": self._prof_to_dc(p),
+            "school": self._school_to_dc(p.school),
+            "stats": _stats_from_row(p.n_reviews, p.avg_overall, p.avg_difficulty),
+        }
 
     def has_user_reviewed(self, professor_id, course, user):
-        if user is None or not getattr(user, 'is_authenticated', False):
+        if user is None or not getattr(user, "is_authenticated", False):
             return False
         return Review.objects.filter(professor_id=professor_id, course__iexact=course.strip(), author=user).exists()
 
     def has_user_voted(self, review_id, user):
-        if user is None or not getattr(user, 'is_authenticated', False):
+        if user is None or not getattr(user, "is_authenticated", False):
             return False
         return Vote.objects.filter(review_id=review_id, user=user).exists()
 
-    # helpers: ORM object -> dataclass-like used by views/templates (duck typing)
-    def _school_to_dc(self, s):
-        from .repository import School as DCSchool
+    # ---------- ORM object -> plain dataclass used by views/templates ----------
+    @staticmethod
+    def _school_to_dc(s):
         return DCSchool(id=str(s.pk), name=s.name, slug=s.slug, city=s.city)
 
-    def _prof_to_dc(self, p):
-        from .repository import Professor as DCProf
-        return DCProf(id=str(p.pk), school_id=str(p.school_id), first_name=p.first_name, last_name=p.last_name, slug=p.slug, department=p.department, title=p.title, status=p.status)
+    @staticmethod
+    def _prof_to_dc(p):
+        return DCProf(id=str(p.pk), school_id=str(p.school_id), first_name=p.first_name, last_name=p.last_name,
+                      slug=p.slug, department=p.department, title=p.title, status=p.status)
 
-    def _review_to_dc(self, r):
-        from .repository import Review as DCReview
-        tags = [str(t.name) for t in r.tags.all()] if hasattr(r, 'tags') else []
+    @staticmethod
+    def _review_to_dc(r):
         return DCReview(
             professor_id=str(r.professor_id), course=r.course, term=r.term,
             overall=r.overall, difficulty=r.difficulty, would_take_again=r.would_take_again,
-            grade=r.grade, comment=r.comment, tags=tags,
+            grade=r.grade, comment=r.comment, tags=[str(t.name) for t in r.tags.all()],
             id=str(r.pk), helpful=r.helpful, not_helpful=r.not_helpful,
             created_at=r.created_at, status=r.status, author_id=r.author_id,
             reported=r.reported,
