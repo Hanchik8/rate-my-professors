@@ -153,6 +153,15 @@ class LogoutFlowTests(_AuthTestCase):
         r = self.client.get(reverse("logout"))
         self.assertEqual(r.status_code, 405)
 
+    def test_logout_rejects_external_next_urls(self):
+        user = self.create_user()
+        for target in ("https://evil.com/", "//evil.com/", "javascript:alert(1)"):
+            with self.subTest(target=target):
+                self.client.force_login(user)
+                r = self.client.post(reverse("logout"), {"next": target})
+                self.assertEqual(r.status_code, 302)
+                self.assertEqual(r.url, reverse("home"))
+
     def test_after_logout_protected_page_redirects_to_login(self):
         user = self.create_user()
         self.client.force_login(user)
@@ -188,6 +197,14 @@ class AnonymousPermissionTests(_AuthTestCase):
         self.assertEqual(r.status_code, 302)
         self.assertEqual(r.url, url)
         self.assertEqual(self.client.get(url).status_code, 200)
+
+    def test_login_rejects_external_next_urls(self):
+        self.create_user()
+        for target in ("https://evil.com/", "//evil.com/", "javascript:alert(1)"):
+            with self.subTest(target=target):
+                r = self.login_via_view(next_url=target)
+                self.assertEqual(r.status_code, 302)
+                self.assertEqual(r.url, reverse("home"))
 
     def test_authenticated_user_can_submit_review(self):
         user = self.create_user()
