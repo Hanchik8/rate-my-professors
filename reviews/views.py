@@ -220,14 +220,20 @@ def _redirect_to_review(review):
     return redirect("home")
 
 
+def _review_or_404(review_id):
+    """Fetch a review or raise ``Http404`` when it does not exist."""
+    review = repo.review(review_id)
+    if review is None:
+        raise Http404(_("Review not found"))
+    return review
+
+
 @require_POST
 @login_required
 @rate_limit("vote")
 def review_vote(request, review_id):
     """Record a helpful / not-helpful vote on a review."""
-    review = repo.review(review_id)
-    if review is None:
-        raise Http404(_("Review not found"))
+    review = _review_or_404(review_id)
     if review.author_id is not None and str(review.author_id) == str(request.user.id):
         messages.warning(request, _("Нельзя голосовать за свой отзыв."))
         return _redirect_to_review(review)
@@ -242,9 +248,7 @@ def review_vote(request, review_id):
 @login_required
 def review_report(request, review_id):
     """Flag a review for moderator attention with a validated reason."""
-    review = repo.review(review_id)
-    if review is None:
-        raise Http404(_("Review not found"))
+    review = _review_or_404(review_id)
     form = ReportForm(request.POST)
     if not form.is_valid():
         messages.error(request, _("Выберите корректную причину жалобы."))
