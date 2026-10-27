@@ -23,21 +23,7 @@
 </form>
 <ol class="cards">
   {% for r in results %}
-  <li>
-    <a class="card" href="{% url 'professor' r.prof.slug %}">
-      <span class="tile {{ r.stats.tone }}">{% if r.stats.count %}{{ r.stats.overall|floatformat:1|localize }}{% else %}-{% endif %}</span>
-      <span class="card-body">
-        <span class="card-name">{{ r.prof.full_name }}</span>
-        <span class="card-sub">{{ r.prof.department }} — {{ r.school.name }}</span>
-        {% if r.stats.count %}
-        <span class="stars" role="img" aria-label="{% blocktranslate with rating=r.stats.overall %}Рейтинг {{ rating }} из 5{% endblocktranslate %}"><span aria-hidden="true">★★★★★</span><span class="s-fill" aria-hidden="true" style="width:{% widthratio r.stats.overall 5 100 %}%">★★★★★</span></span>
-        {% else %}
-        <span class="stars" role="img" aria-label="{% translate 'Нет оценок' %}"><span aria-hidden="true">★★★★★</span></span>
-        {% endif %}
-        <span class="card-meta">{{ r.stats.count|localize }} {% translate "отзывов" %} · {% translate "Сложность" %} {% if r.stats.count %}{{ r.stats.difficulty|floatformat:1|localize }}{% else %}-{% endif %}</span>
-      </span>
-    </a>
-  </li>
+  {% include "reviews/_professor_card.html" with r=r show_school=True show_difficulty=True %}
   {% empty %}
   <li class="empty empty-state" role="status">
     <strong class="empty-state-title">{% translate "Ничего не нашлось" %}</strong>

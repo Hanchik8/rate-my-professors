@@ -137,13 +137,15 @@ class MemorySmokeTests(TestCase):
         self.assertContains(self.client.get(reverse("rules")), "Правила")
 
     def test_school_page(self):
-        school = self.repo.schools()[0]
+        prof = self.repo.search("Айбек")[0]["prof"]
+        school = next(row["school"] for row in self.repo.search() if row["prof"].id == prof.id)
         r = self.client.get(reverse("school_detail", args=[school.slug]))
         self.assertEqual(r.status_code, 200)
         self.assertContains(r, school.name)
 
     def test_add_professor_requires_login_and_duplicate_check(self):
-        school = self.repo.schools()[0]
+        prof = self.repo.search("Айбек")[0]["prof"]
+        school = next(row["school"] for row in self.repo.search() if row["prof"].id == prof.id)
         r = self.client.get(reverse("add_professor"))
         # login required
         self.assertIn(r.status_code, (302, 200))
@@ -1343,6 +1345,20 @@ class ProfessorCardsTests(_MemoryRepoTestCase):
         self.assertContains(r, 'class="card-name"')
         self.assertContains(r, "★★★★★")
         self.assertContains(r, 'class="s-fill"')
+
+    def test_home_and_school_cards_render_name_link_and_rating(self):
+        prof = self.prof()
+        expected_url = reverse("professor", args=[prof.slug])
+        school = next(row["school"] for row in self.repo.search() if row["prof"].id == prof.id)
+
+        for response in (
+            self.client.get(reverse("home")),
+            self.client.get(reverse("school_detail", args=[school.slug])),
+        ):
+            with self.subTest(path=response.request["PATH_INFO"]):
+                self.assertContains(response, prof.full_name)
+                self.assertContains(response, f'href="{expected_url}"')
+                self.assertContains(response, f'aria-label="Рейтинг {localize(self.repo.stats(prof.id)["overall"])} из 5"')
 
     def test_home_card_star_aria_label_matches_rating(self):
         r = self.client.get(reverse("home"))
