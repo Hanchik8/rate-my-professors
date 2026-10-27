@@ -1,6 +1,12 @@
 {% extends "reviews/base.html" %}{% load i18n l10n %}
 {% block title %}{{ school.name }} — ProfLens{% endblock %}
 {% block content %}
+<nav class="breadcrumbs" aria-label="{% translate 'Хлебные крошки' %}">
+  <ol>
+    <li><a href="{% url 'home' %}">{% translate "Главная" %}</a></li>
+    <li aria-current="page">{{ school.name }}</li>
+  </ol>
+</nav>
 <h1>{{ school.name }}</h1>
 <p class="sub">{{ school.city }}</p>
 {% if stats.prof_count %}
@@ -40,3 +46,4 @@
 </div>
 {% endif %}
 {% endblock %}
+{% block page_tools %}{% include "reviews/_back_to_top.html" %}{% endblock %}

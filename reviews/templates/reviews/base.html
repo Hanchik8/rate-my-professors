@@ -38,10 +38,11 @@
   </div>
 </header>
 {% if messages %}<ul class="messages" role="list">{% for m in messages %}<li class="{{ m.tags }}" role="{% if m.tags == 'error' %}alert{% else %}status{% endif %}">{{ m }}</li>{% endfor %}</ul>{% endif %}
-<main id="main-content">{% block content %}{% endblock %}</main>
+<main id="main-content" tabindex="-1">{% block content %}{% endblock %}</main>
 <footer>
   <a href="{% url 'rules' %}">{% translate "Правила" %}</a> · <a href="{% url 'about' %}">{% translate "О проекте" %}</a> · {% translate "Демо-данные сбрасываются при рестарте (memory-режим)." %}
 </footer>
+{% block page_tools %}{% endblock %}
 <script>
 (function () {
   "use strict";

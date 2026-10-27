@@ -1,6 +1,13 @@
 {% extends "reviews/base.html" %}{% load i18n l10n %}
 {% block title %}{{ prof.full_name }} — ProfLens{% endblock %}
 {% block content %}
+<nav class="breadcrumbs" aria-label="{% translate 'Хлебные крошки' %}">
+  <ol>
+    <li><a href="{% url 'home' %}">{% translate "Главная" %}</a></li>
+    <li><a href="{% url 'school_detail' school.slug %}">{{ school.name }}</a></li>
+    <li aria-current="page">{{ prof.full_name }}</li>
+  </ol>
+</nav>
 <div class="headline">
   <div class="tile big {{ stats.tone }}">{% if stats.count %}{{ stats.overall|floatformat:1|localize }}{% else %}-{% endif %}</div>
   <div>
@@ -70,3 +77,4 @@
 <p class="empty">{% blocktranslate with name=prof.full_name %}Пока нет отзывов. Станьте первым, кто оценит {{ name }}.{% endblocktranslate %}</p>
 {% endif %}
 {% endblock %}
+{% block page_tools %}{% include "reviews/_back_to_top.html" %}{% endblock %}
