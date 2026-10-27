@@ -7,6 +7,8 @@ __pycache__/
 *.pyd
 venv/
 .env
+.env.prod
+.env.*.local
 .venv/
 env/
 ENV/
@@ -18,8 +20,8 @@ staticfiles/
 media/
 *.log
 
-# locale compiled
-*.mo
+# compiled translations (.mo) are committed so the site works without gettext tools
+
 
 # OS
 .DS_Store
