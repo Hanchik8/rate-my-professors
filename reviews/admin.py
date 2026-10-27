@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import School, Professor, Review, Tag, Vote, Report
+from .models import AccountProfile, Professor, Report, Review, School, Tag, Vote
 
 
 @admin.register(School)
@@ -25,7 +25,8 @@ class ReviewInline(admin.TabularInline):
 @admin.register(Professor)
 class ProfessorAdmin(admin.ModelAdmin):
     list_display = ["full_name", "school", "department", "title", "status", "created_at"]
-    list_filter = ["status", "school", "department"]
+    list_filter = ["status", "school"]
+    list_select_related = ["school"]
     search_fields = ["first_name", "last_name", "department"]
     actions = ["approve_selected"]
 
@@ -42,6 +43,8 @@ class ProfessorAdmin(admin.ModelAdmin):
 class ReviewAdmin(admin.ModelAdmin):
     list_display = ["professor", "course", "overall", "difficulty", "grade", "status", "reported", "created_at"]
     list_filter = ["status", "overall", "grade"]
+    list_select_related = ["professor", "professor__school"]
+    raw_id_fields = ["professor", "author"]
     search_fields = ["comment", "course", "professor__first_name", "professor__last_name"]
     actions = ["approve_selected", "reject_selected"]
     filter_horizontal = ["tags"]
@@ -59,8 +62,18 @@ class ReviewAdmin(admin.ModelAdmin):
 class VoteAdmin(admin.ModelAdmin):
     list_display = ["review", "user", "helpful", "created_at"]
     list_filter = ["helpful"]
+    raw_id_fields = ["review", "user"]
 
 
 @admin.register(Report)
 class ReportAdmin(admin.ModelAdmin):
     list_display = ["review", "user", "created_at"]
+    raw_id_fields = ["review", "user"]
+
+
+@admin.register(AccountProfile)
+class AccountProfileAdmin(admin.ModelAdmin):
+    list_display = ["user", "email_verified", "email_verified_at"]
+    list_filter = ["email_verified"]
+    search_fields = ["user__email"]
+    raw_id_fields = ["user"]

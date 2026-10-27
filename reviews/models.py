@@ -1,14 +1,23 @@
 import uuid
+
 from django.conf import settings
 from django.db import models
+from django.db.models import Q
+from django.db.models.functions import Lower
 from django.utils.text import slugify
+
+
+def normalize_search(text):
+    """Lower-case + ё->е. Used both for stored search_text and for queries,
+    so search is case-insensitive for Cyrillic on PostgreSQL and SQLite alike."""
+    return " ".join((text or "").lower().replace("ё", "е").split())
 
 
 class School(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=220, unique=True, allow_unicode=True)
-    city = models.CharField(max_length=80)
+    city = models.CharField(max_length=80, db_index=True)
 
     class Meta:
         ordering = ["name"]
@@ -41,11 +50,21 @@ class Professor(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="approved")
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
+    # "имя фамилия кафедра" in lower case, filled in save(); used by search
+    search_text = models.CharField(max_length=200, blank=True, default="", editable=False)
 
     class Meta:
         ordering = ["last_name", "first_name"]
         constraints = [
-            models.UniqueConstraint(fields=["school", "first_name", "last_name"], name="uniq_prof_school_name"),
+            # same name twice at one school is a duplicate (case-insensitive); rejected ones don't count
+            models.UniqueConstraint(
+                "school", Lower("first_name"), Lower("last_name"),
+                condition=~Q(status="rejected"), name="uniq_prof_school_name_ci",
+            ),
+        ]
+        indexes = [
+            models.Index(fields=["status", "last_name", "first_name"], name="prof_status_name_idx"),
+            models.Index(fields=["school", "status"], name="prof_school_status_idx"),
         ]
 
     @property
@@ -64,6 +83,9 @@ class Professor(models.Model):
                 slug = f"{base}-{i}"
                 i += 1
             self.slug = slug
+        self.search_text = normalize_search(f"{self.first_name} {self.last_name} {self.department}")
+        if kwargs.get("update_fields") is not None:
+            kwargs["update_fields"] = set(kwargs["update_fields"]) | {"search_text"}
         super().save(*args, **kwargs)
 
 
@@ -89,7 +111,17 @@ class Review(models.Model):
     class Meta:
         ordering = ["-created_at"]
         constraints = [
-            # one review per professor+course per user is enforced in repository, not DB (author can be null)
+            # one review per user per professor+course (case-insensitive). Seed reviews have no author.
+            models.UniqueConstraint(
+                "professor", "author", Lower("course"),
+                condition=Q(author__isnull=False), name="uniq_review_author_prof_course",
+            ),
+            models.CheckConstraint(condition=Q(overall__gte=1, overall__lte=5), name="review_overall_1_5"),
+            models.CheckConstraint(condition=Q(difficulty__gte=1, difficulty__lte=5), name="review_difficulty_1_5"),
+        ]
+        indexes = [
+            models.Index(fields=["professor", "status", "-created_at"], name="review_prof_status_date_idx"),
+            models.Index(fields=["status", "-created_at"], name="review_status_date_idx"),
         ]
 
     def __str__(self):
@@ -113,3 +145,14 @@ class Report(models.Model):
 
     class Meta:
         unique_together = [("review", "user")]
+
+
+class AccountProfile(models.Model):
+    """Extra per-user flags. email_verified is separate from User.is_active on purpose:
+    confirming an email must never re-enable a banned (is_active=False) account."""
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="profile")
+    email_verified = models.BooleanField(default=False)
+    email_verified_at = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.user} ({'verified' if self.email_verified else 'unverified'})"
