@@ -11,7 +11,9 @@ from datetime import datetime
 from statistics import mean
 
 from django.utils.text import slugify
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import get_language, gettext_lazy as _
+
+from .geo import build_locations, city_name, filter_schools, region_for_city, region_kind, region_name
 
 # Теги адаптированы под вузы Кыргызстана — без упоминаний коррупции
 TAGS = [
@@ -36,6 +38,36 @@ class School:
     name: str
     slug: str
     city: str
+    region: str = ""
+    code: str = ""
+    name_ky: str = ""
+    name_en: str = ""
+    short_name: str = ""
+    kind: str = ""
+    website: str = ""
+
+    @property
+    def display_name(self):
+        """Name in the active UI language, falling back to the official Russian one."""
+        lang = (get_language() or "ru")[:2]
+        if lang == "ky" and self.name_ky:
+            return self.name_ky
+        if lang == "en" and self.name_en:
+            return self.name_en
+        return self.name
+
+    @property
+    def region_name(self):
+        return region_name(self.region)
+
+    @property
+    def city_name(self):
+        return city_name(self.city)
+
+    @property
+    def in_oblast(self):
+        """False for Bishkek and Osh (cities of republican significance)."""
+        return region_kind(self.region) == "oblast"
 
 
 @dataclass
@@ -95,9 +127,9 @@ class InMemoryRepository:
         self._review_keys = set()
 
     # writes
-    def add_school(self, name, city):
-        slug = slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
-        s = School(str(uuid.uuid4()), name, slug, city)
+    def add_school(self, name, city, region="", code="", slug="", **extra):
+        slug = slug or code or slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
+        s = School(str(uuid.uuid4()), name, slug, city, region=region or region_for_city(city), code=code, **extra)
         self._schools[s.id] = s
         return s
 
@@ -188,6 +220,12 @@ class InMemoryRepository:
     def cities(self):
         return sorted({s.city for s in self._schools.values()})
 
+    def locations(self):
+        return build_locations(self._schools.values())
+
+    def schools_in(self, region="", city=""):
+        return filter_schools(self.schools(), region, city)
+
     def school(self, school_id):
         return self._schools.get(school_id)
 
@@ -249,7 +287,7 @@ class InMemoryRepository:
     def departments_for_school(self, school_id):
         return sorted({p.department for p in self.professors_for_school(school_id)})
 
-    def search(self, q="", school_slug="", city=""):
+    def search(self, q="", school_slug="", city="", region=""):
         words = _norm(q).split()[:5]
         out = []
         for p in self._professors.values():
@@ -259,6 +297,8 @@ class InMemoryRepository:
             if school_slug and school.slug != school_slug:
                 continue
             if city and school.city != city:
+                continue
+            if region and school.region != region:
                 continue
             text = _norm(f"{p.full_name} {p.department}")
             if any(w not in text for w in words):

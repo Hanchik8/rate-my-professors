@@ -110,7 +110,7 @@ class ProfessorForm(forms.Form):
     def __init__(self, *args, schools=None, **kwargs):
         super().__init__(*args, **kwargs)
         if schools is not None:
-            self.fields["school"].choices = [("", "—")] + [(str(s.id), s.name) for s in schools]
+            self.fields["school"].choices = [("", "—")] + [(str(s.id), s.display_name) for s in schools]
 
     def _clean_name(self, field):
         value = " ".join(self.cleaned_data[field].split())

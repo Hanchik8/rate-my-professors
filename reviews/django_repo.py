@@ -17,6 +17,7 @@ from django.db.models import Avg, Count, F, FloatField, Q
 from django.db.models.functions import Coalesce
 from django.utils.text import slugify
 
+from .geo import build_locations, filter_schools, region_for_city
 from .models import Professor, Report, Review, School, Tag, Vote, normalize_search
 from .repository import Professor as DCProf
 from .repository import Review as DCReview
@@ -90,13 +91,14 @@ def _stats_from_row(count, overall, difficulty):
 class DjangoRepository:
 
     # ---------- writes ----------
-    def add_school(self, name, city):
-        slug = slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
+    def add_school(self, name, city, region="", code="", slug="", **extra):
+        slug = slug or code or slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
         base, i = slug, 1
         while School.objects.filter(slug=slug).exists():
             slug = f"{base}-{i}"
             i += 1
-        return self._school_to_dc(School.objects.create(name=name, slug=slug, city=city))
+        return self._school_to_dc(School.objects.create(
+            name=name, slug=slug, city=city, region=region or region_for_city(city), code=code or None, **extra))
 
     def add_professor(self, school_id, first, last, department, title, status="approved", user=None):
         first, last = first.strip(), last.strip()
@@ -178,10 +180,19 @@ class DjangoRepository:
 
     # ---------- reads ----------
     def schools(self):
-        return _cached("schools", lambda: [self._school_to_dc(s) for s in School.objects.all()])
+        return _cached("schools:v2", lambda: [self._school_to_dc(s) for s in School.objects.all()])
 
     def cities(self):
-        return _cached("cities", lambda: sorted(School.objects.values_list("city", flat=True).distinct()))
+        # order_by() drops Meta.ordering ("name"): otherwise DISTINCT runs over (city, name)
+        # and every school brings its own copy of the city
+        return _cached("cities", lambda: sorted(School.objects.order_by().values_list("city", flat=True).distinct()))
+
+    def locations(self):
+        # built from the cached school list; labels are translated per request, so not cached
+        return build_locations(self.schools())
+
+    def schools_in(self, region="", city=""):
+        return filter_schools(self.schools(), region, city)
 
     def school(self, school_id):
         s = School.objects.filter(pk=school_id).first()
@@ -278,13 +289,15 @@ class DjangoRepository:
             .order_by("department").values_list("department", flat=True).distinct()
         ))
 
-    def search(self, q="", school_slug="", city=""):
+    def search(self, q="", school_slug="", city="", region=""):
         """Approved professors with ratings, best first. Returns a lazy list."""
         qs = Professor.objects.filter(status="approved").select_related("school")
         if school_slug:
             qs = qs.filter(school__slug=school_slug)
         if city:
             qs = qs.filter(school__city=city)
+        if region:
+            qs = qs.filter(school__region=region)
         q = normalize_search(q)
         for word in q.split()[:5]:
             qs = qs.filter(search_text__contains=word)
@@ -293,7 +306,7 @@ class DjangoRepository:
             avg_overall=Coalesce(Avg("reviews__overall", filter=APPROVED), 0.0, output_field=FloatField()),
             avg_difficulty=Avg("reviews__difficulty", filter=APPROVED),
         ).order_by("-avg_overall", "last_name", "first_name", "id")
-        return LazyResults(qs, self._search_row, cache_prefix=f"search:{q}|{school_slug}|{city}")
+        return LazyResults(qs, self._search_row, cache_prefix=f"search:{q}|{school_slug}|{city}|{region}")
 
     def _search_row(self, p):
         return {
@@ -315,7 +328,9 @@ class DjangoRepository:
     # ---------- ORM object -> plain dataclass used by views/templates ----------
     @staticmethod
     def _school_to_dc(s):
-        return DCSchool(id=str(s.pk), name=s.name, slug=s.slug, city=s.city)
+        return DCSchool(id=str(s.pk), name=s.name, slug=s.slug, city=s.city, region=s.region, code=s.code or "",
+                        name_ky=s.name_ky, name_en=s.name_en, short_name=s.short_name, kind=s.kind,
+                        website=s.website)
 
     @staticmethod
     def _prof_to_dc(p):

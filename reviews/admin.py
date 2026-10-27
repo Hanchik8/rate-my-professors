@@ -4,9 +4,9 @@ from .models import AccountProfile, Professor, Report, Review, School, Tag, Vote
 
 @admin.register(School)
 class SchoolAdmin(admin.ModelAdmin):
-    list_display = ["name", "city", "slug"]
-    list_filter = ["city"]
-    search_fields = ["name", "city"]
+    list_display = ["name", "short_name", "city", "region", "kind", "code"]
+    list_filter = ["region", "kind", "city"]
+    search_fields = ["name", "name_ky", "name_en", "short_name", "city", "code"]
     prepopulated_fields = {"slug": ["name"]}
 
 

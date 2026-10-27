@@ -1,7 +1,7 @@
 {% load i18n %}<li>
     <a class="row" href="{% url 'professor' r.prof.slug %}">
       <span class="tile {{ r.stats.tone }}" aria-label="{% translate 'Рейтинг' %}">{% if r.stats.count %}{{ r.stats.overall|floatformat:1 }}{% else %}–{% endif %}</span>
-      <span class="who"><strong>{{ r.prof.full_name }}</strong><span>{{ r.prof.department }}{% if show_school %} — {{ r.school.name }}{% endif %}</span></span>
+      <span class="who"><strong>{{ r.prof.full_name }}</strong><span>{{ r.prof.department }}{% if show_school %} — {{ r.school.display_name }}{% endif %}</span></span>
       <span class="meta">{% blocktranslate count n=r.stats.count %}{{ n }} отзыв{% plural %}{{ n }} отзывов{% endblocktranslate %}</span>
       <span class="meta">{% translate "Сложность" %} {% if r.stats.count %}{{ r.stats.difficulty|floatformat:1 }}{% else %}–{% endif %}</span>
     </a>

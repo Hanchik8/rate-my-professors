@@ -14,6 +14,9 @@ from django.utils.translation import gettext as _
 from django.views.decorators.http import require_GET, require_POST
 
 from . import store
+from .geo import REGION_CODES, REGION_PREFIX, build_locations, filter_schools, parse_place, region_name
+
+REGION_ORDER = {code: i for i, code in enumerate(REGION_CODES)}
 from .accounts import get_profile, is_verified, send_verification_email, token_generator, verified_required
 from .forms import EmailAuthenticationForm, EmailSignupForm, ProfessorForm, ReviewForm
 from .ratelimit import ratelimit
@@ -34,17 +37,39 @@ def _page(request, items, per_page=PAGE_SIZE):
     return list(page_obj.object_list), (page_obj if paginator.num_pages > 1 else None)
 
 
+def _school_groups(all_schools, visible_slugs):
+    """Schools for the <select>, grouped by region in the fixed region order."""
+    groups = {}
+    for s in sorted(all_schools, key=lambda s: s.display_name.lower()):
+        groups.setdefault(s.region, []).append(s)
+    return [{"name": region_name(code) or "—", "schools": groups[code],
+             "visible": any(s.slug in visible_slugs for s in groups[code])}
+            for code in sorted(groups, key=lambda c: REGION_ORDER.get(c, 99))]
+
+
 @require_GET
 def home(request):
     repo = _repo()
     q = request.GET.get("q", "").strip()[:MAX_QUERY_LENGTH]
     school = request.GET.get("school", "")[:220]
-    city = request.GET.get("city", "")[:80]
-    results, page_obj = _page(request, repo.search(q, school, city))
+    place = request.GET.get("city", "")[:80]
+    region, city = parse_place(place)
+    if not region and not city:
+        # ?region=chuy is accepted too (links from school pages)
+        region, _city = parse_place(REGION_PREFIX + request.GET.get("region", "")[:20])
+        place = REGION_PREFIX + region if region else ""
+    all_schools = repo.schools()  # one query (or cache hit) feeds both selects
+    schools = filter_schools(all_schools, region, city)
+    if school and not any(s.slug == school for s in schools):
+        # the chosen school is not in the chosen place: the place wins
+        school = ""
+    results, page_obj = _page(request, repo.search(q, school, city, region))
     return render(request, "reviews/home.html", {
-        "q": q, "school": school, "city": city,
-        "schools": repo.schools(),
-        "cities": repo.cities(),
+        "q": q, "school": school, "city": place,
+        "schools": schools,
+        "school_slugs": {s.slug for s in schools},
+        "school_groups": _school_groups(all_schools, {s.slug for s in schools}),
+        "locations": build_locations(all_schools),
         "results": results,
         "page_obj": page_obj,
     })

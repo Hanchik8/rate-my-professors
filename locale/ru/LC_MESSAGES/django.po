@@ -509,3 +509,140 @@ msgstr ""
 
 msgid "Не удалось отправить письмо, попробуйте позже."
 msgstr ""
+
+#: reviews/geo.py
+msgid "г. Бишкек"
+msgstr "г. Бишкек"
+
+#: reviews/geo.py
+msgid "г. Ош"
+msgstr "г. Ош"
+
+#: reviews/geo.py
+msgid "Баткенская область"
+msgstr "Баткенская область"
+
+#: reviews/geo.py
+msgid "Джалал-Абадская область"
+msgstr "Джалал-Абадская область"
+
+#: reviews/geo.py
+msgid "Иссык-Кульская область"
+msgstr "Иссык-Кульская область"
+
+#: reviews/geo.py
+msgid "Нарынская область"
+msgstr "Нарынская область"
+
+#: reviews/geo.py
+msgid "Ошская область"
+msgstr "Ошская область"
+
+#: reviews/geo.py
+msgid "Таласская область"
+msgstr "Таласская область"
+
+#: reviews/geo.py
+msgid "Чуйская область"
+msgstr "Чуйская область"
+
+#: reviews/geo.py
+msgid "Бишкек"
+msgstr "Бишкек"
+
+#: reviews/geo.py
+msgid "Ош"
+msgstr "Ош"
+
+#: reviews/geo.py
+msgid "Баткен"
+msgstr "Баткен"
+
+#: reviews/geo.py
+msgid "Кызыл-Кия"
+msgstr "Кызыл-Кия"
+
+#: reviews/geo.py
+msgid "Сулюкта"
+msgstr "Сулюкта"
+
+#: reviews/geo.py
+msgid "Жалал-Абад"
+msgstr "Жалал-Абад"
+
+#: reviews/geo.py
+msgid "Таш-Кумыр"
+msgstr "Таш-Кумыр"
+
+#: reviews/geo.py
+msgid "Кара-Куль"
+msgstr "Кара-Куль"
+
+#: reviews/geo.py
+msgid "Майлуу-Суу"
+msgstr "Майлуу-Суу"
+
+#: reviews/geo.py
+msgid "Каракол"
+msgstr "Каракол"
+
+#: reviews/geo.py
+msgid "Балыкчы"
+msgstr "Балыкчы"
+
+#: reviews/geo.py
+msgid "Чолпон-Ата"
+msgstr "Чолпон-Ата"
+
+#: reviews/geo.py
+msgid "Нарын"
+msgstr "Нарын"
+
+#: reviews/geo.py
+msgid "Узген"
+msgstr "Узген"
+
+#: reviews/geo.py
+msgid "Кара-Суу"
+msgstr "Кара-Суу"
+
+#: reviews/geo.py
+msgid "Талас"
+msgstr "Талас"
+
+#: reviews/geo.py
+msgid "Токмок"
+msgstr "Токмок"
+
+#: reviews/geo.py
+msgid "Кант"
+msgstr "Кант"
+
+#: reviews/geo.py
+msgid "Кара-Балта"
+msgstr "Кара-Балта"
+
+#: reviews/geo.py
+msgid "Шопоков"
+msgstr "Шопоков"
+
+#: reviews/geo.py
+msgid "Ивановка"
+msgstr "Ивановка"
+
+#: reviews/geo.py
+msgid "Город или область"
+msgstr "Город или область"
+
+#: reviews/geo.py
+msgid "Все города и области"
+msgstr "Все города и области"
+
+#: reviews/geo.py
+#, python-format
+msgid "%(region)s: все города"
+msgstr "%(region)s: все города"
+
+#: reviews/geo.py
+msgid "сайт вуза"
+msgstr "сайт вуза"

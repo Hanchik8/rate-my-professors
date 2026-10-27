@@ -1,11 +1,11 @@
 {% extends "reviews/base.html" %}{% load i18n %}
-{% block title %}{{ school.name }} — ProfLens{% endblock %}
-{% block og_title %}{{ school.name }}{% endblock %}
-{% block description %}{% blocktranslate with name=school.name city=school.city %}Отзывы студентов о преподавателях: {{ name }}, {{ city }}.{% endblocktranslate %}{% endblock %}
+{% block title %}{{ school.display_name }} — ProfLens{% endblock %}
+{% block og_title %}{{ school.display_name }}{% endblock %}
+{% block description %}{% blocktranslate with name=school.display_name city=school.city_name %}Отзывы студентов о преподавателях: {{ name }}, {{ city }}.{% endblocktranslate %}{% endblock %}
 {% block content %}
-<p class="crumbs"><a href="{% url 'home' %}">ProfLens</a> / {{ school.city }}</p>
-<h1>{{ school.name }}</h1>
-<p class="sub">{{ school.city }}</p>
+<p class="crumbs"><a href="{% url 'home' %}">ProfLens</a> / {% if school.in_oblast %}<a href="{% url 'home' %}?city=r:{{ school.region }}">{{ school.region_name }}</a> / {% endif %}<a href="{% url 'home' %}?city={{ school.city|urlencode }}">{{ school.city_name }}</a></p>
+<h1>{{ school.display_name }}</h1>
+<p class="sub">{% if school.short_name %}{{ school.short_name }} · {% endif %}{{ school.city_name }}{% if school.in_oblast %}, {{ school.region_name }}{% endif %}{% if school.website %} · <a href="{{ school.website }}" rel="noopener nofollow" target="_blank">{% translate "сайт вуза" %}</a>{% endif %}</p>
 {% if stats.prof_count %}
 <dl class="facts">
   <div><dt>{% translate "Преподавателей" %}</dt><dd>{{ stats.prof_count }}</dd></div>

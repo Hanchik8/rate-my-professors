@@ -1,14 +1,14 @@
 {% extends "reviews/base.html" %}{% load i18n proflens %}
-{% block title %}{{ prof.full_name }} — {{ school.name }} — ProfLens{% endblock %}
-{% block og_title %}{{ prof.full_name }} — {{ school.name }}{% endblock %}
-{% block description %}{% if stats.count %}{% blocktranslate with name=prof.full_name school=school.name rating=stats.overall n=stats.count %}{{ name }} ({{ school }}): рейтинг {{ rating }} из 5 по {{ n }} отзывам студентов.{% endblocktranslate %}{% else %}{% blocktranslate with name=prof.full_name school=school.name %}{{ name }} ({{ school }}): отзывы студентов на ProfLens.{% endblocktranslate %}{% endif %}{% endblock %}
+{% block title %}{{ prof.full_name }} — {{ school.display_name }} — ProfLens{% endblock %}
+{% block og_title %}{{ prof.full_name }} — {{ school.display_name }}{% endblock %}
+{% block description %}{% if stats.count %}{% blocktranslate with name=prof.full_name school=school.display_name rating=stats.overall n=stats.count %}{{ name }} ({{ school }}): рейтинг {{ rating }} из 5 по {{ n }} отзывам студентов.{% endblocktranslate %}{% else %}{% blocktranslate with name=prof.full_name school=school.display_name %}{{ name }} ({{ school }}): отзывы студентов на ProfLens.{% endblocktranslate %}{% endif %}{% endblock %}
 {% block content %}
-<p class="crumbs"><a href="{% url 'home' %}">ProfLens</a> / <a href="{% url 'school_detail' school.slug %}">{{ school.name }}</a></p>
+<p class="crumbs"><a href="{% url 'home' %}">ProfLens</a> / <a href="{% url 'school_detail' school.slug %}">{{ school.display_name }}</a></p>
 <div class="headline">
   <div class="tile big {{ stats.tone }}" aria-label="{% translate 'Рейтинг' %}">{% if stats.count %}{{ stats.overall|floatformat:1 }}{% else %}–{% endif %}</div>
   <div>
     <h1>{{ prof.full_name }}</h1>
-    <p class="sub">{% translate prof.title %} — {{ prof.department }}, <a href="{% url 'school_detail' school.slug %}">{{ school.name }}</a></p>
+    <p class="sub">{% translate prof.title %} — {{ prof.department }}, <a href="{% url 'school_detail' school.slug %}">{{ school.display_name }}</a></p>
   </div>
 </div>
 
