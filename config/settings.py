@@ -68,12 +68,25 @@ def _get_allowed_hosts(raw, is_test=False):
     return list(TEST_ALLOWED_HOSTS if is_test else DEFAULT_ALLOWED_HOSTS)
 
 
+def _get_csrf_trusted_origins(raw):
+    """Parse CSRF_TRUSTED_ORIGINS (comma-separated origins); empty by default.
+
+    An empty list is the Django default and keeps local HTTP dev working, so
+    an unset variable never breaks development; deployments behind HTTPS set
+    the variable explicitly.
+    """
+    return [o.strip() for o in (raw or "").split(",") if o.strip()]
+
+
 DEBUG = _get_debug(_is_test, os.environ.get("DEBUG"))
 if _is_test:
     SECRET_KEY = os.environ.get("SECRET_KEY") or TEST_SECRET_KEY
 else:
     SECRET_KEY = os.environ.get("SECRET_KEY") or DEFAULT_SECRET_KEY
 ALLOWED_HOSTS = _get_allowed_hosts(os.environ.get("ALLOWED_HOSTS"), _is_test)
+# Trusted origins for CSRF come from the environment, same as SECRET_KEY and
+# ALLOWED_HOSTS above; they are required for HTTPS deployments behind a proxy.
+CSRF_TRUSTED_ORIGINS = _get_csrf_trusted_origins(os.environ.get("CSRF_TRUSTED_ORIGINS"))
 
 
 def _validate_secret_key(secret_key, debug):

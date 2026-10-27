@@ -938,6 +938,46 @@ class SecuritySettingsTests(TestCase):
         # wildcard remains usable locally with DEBUG=True
         site._validate_allowed_hosts(["*"], debug=True)
 
+    def test_csrf_trusted_origins_default_is_empty(self):
+        from config import settings as site
+        # Empty default keeps local HTTP dev working without extra config.
+        self.assertEqual(site._get_csrf_trusted_origins(None), [])
+        self.assertEqual(site._get_csrf_trusted_origins(""), [])
+
+    def test_csrf_trusted_origins_parses_comma_separated_env(self):
+        from config import settings as site
+        self.assertEqual(
+            site._get_csrf_trusted_origins("https://a.example, https://b.example"),
+            ["https://a.example", "https://b.example"],
+        )
+
+    def test_csrf_trusted_origins_setting_is_a_list(self):
+        from django.conf import settings
+        self.assertIsInstance(settings.CSRF_TRUSTED_ORIGINS, list)
+
+    def test_secret_key_allowed_hosts_csrf_origins_come_from_env(self):
+        """A fresh settings import must source all three values from the env."""
+        import importlib
+        import os
+
+        from config import settings as site
+        env = {
+            "SECRET_KEY": "env-provided-secret-key",
+            "ALLOWED_HOSTS": "app.example,www.example",
+            "CSRF_TRUSTED_ORIGINS": "https://app.example,https://www.example",
+        }
+        with mock.patch.dict(os.environ, env):
+            reloaded = importlib.reload(site)
+        try:
+            self.assertEqual(reloaded.SECRET_KEY, "env-provided-secret-key")
+            self.assertEqual(reloaded.ALLOWED_HOSTS, ["app.example", "www.example"])
+            self.assertEqual(
+                reloaded.CSRF_TRUSTED_ORIGINS,
+                ["https://app.example", "https://www.example"],
+            )
+        finally:
+            importlib.reload(site)
+
 
 # ---------------------------------------------------------------------------
 # UX design: responsive layout, professor cards, rating stars, a11y
