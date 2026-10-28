@@ -166,6 +166,38 @@ class ProfileViewTestMixin:
         self.assertContains(response, "Вы ещё не оставляли отзывов.")
         self.assertNotContains(response, 'class="review profile-review"')
 
+    def test_profile_empty_state_links_to_home(self):
+        self.client.force_login(self.user)
+        response = self.client.get(reverse("profile"))
+        self.assertContains(response, 'class="empty empty-state"')
+        self.assertContains(response, 'class="btn empty-state-action"')
+        self.assertContains(response, f'href="{reverse("home")}"')
+        self.assertContains(response, "Вернуться на главную")
+
+    def test_profile_renders_status_badge_for_each_moderation_state(self):
+        for course, status, label in (
+            ("Ожидающий предмет", "pending", "На проверке"),
+            ("Опубликованный предмет", "approved", "Опубликован"),
+            ("Отклонённый предмет", "rejected", "Отклонён"),
+        ):
+            self.repo.add_review(
+                self.prof.id,
+                _review_data(course, f"Комментарий: {course}"),
+                user=self.user,
+                status=status,
+            )
+
+        self.client.force_login(self.user)
+        response = self.client.get(reverse("profile"))
+        for status, label in (
+            ("pending", "На проверке"),
+            ("approved", "Опубликован"),
+            ("rejected", "Отклонён"),
+        ):
+            with self.subTest(status=status):
+                self.assertContains(response, f'class="status-badge {status}"')
+                self.assertContains(response, label)
+
     def test_owner_can_edit_and_review_returns_to_pending(self):
         review = self.repo.add_review(
             self.prof.id,

@@ -115,22 +115,52 @@ def _get_secure_cookie(raw, default):
     return _parse_bool(raw, default=default)
 
 
-def _security_settings(debug, session_secure=None, csrf_secure=None):
+def _get_bool_setting(name, default):
+    """Read a boolean setting from the environment, falling back to `default`."""
+    return _parse_bool(os.environ.get(name), default=default)
+
+
+def _get_int_setting(name, default):
+    """Read an integer setting from the environment, falling back to `default`."""
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    try:
+        return int(raw.strip())
+    except (TypeError, ValueError):
+        return default
+
+
+def _security_settings(
+    debug,
+    session_secure=None,
+    csrf_secure=None,
+    ssl_redirect=None,
+    hsts_seconds=None,
+    hsts_include_subdomains=None,
+    hsts_preload=None,
+    content_type_nosniff=None,
+):
     """HTTPS/cookie hardening switches, enabled only when DEBUG=False.
 
-    ``session_secure``/``csrf_secure`` let the environment override the
-    debug-derived default; when left as ``None`` the secure value tracks
-    ``not debug``.  Kept as a pure function so the production branch can be
-    unit-tested without mutating the process environment.
+    The optional arguments let the environment override the debug-derived
+    defaults; when left as ``None`` each switch tracks ``debug`` (secure in
+    production, relaxed for local dev and the test suite).  Kept as a pure
+    function so the production branch can be unit-tested without mutating the
+    process environment.
     """
     return {
-        "SECURE_SSL_REDIRECT": not debug,
-        "SECURE_HSTS_SECONDS": 0 if debug else 31536000,
-        "SECURE_HSTS_INCLUDE_SUBDOMAINS": not debug,
-        "SECURE_HSTS_PRELOAD": not debug,
+        "SECURE_SSL_REDIRECT": not debug if ssl_redirect is None else ssl_redirect,
+        "SECURE_HSTS_SECONDS": (0 if debug else 31536000) if hsts_seconds is None else hsts_seconds,
+        "SECURE_HSTS_INCLUDE_SUBDOMAINS": (
+            not debug if hsts_include_subdomains is None else hsts_include_subdomains
+        ),
+        "SECURE_HSTS_PRELOAD": not debug if hsts_preload is None else hsts_preload,
         "SESSION_COOKIE_SECURE": not debug if session_secure is None else session_secure,
         "CSRF_COOKIE_SECURE": not debug if csrf_secure is None else csrf_secure,
-        "SECURE_CONTENT_TYPE_NOSNIFF": True,
+        "SECURE_CONTENT_TYPE_NOSNIFF": (
+            True if content_type_nosniff is None else content_type_nosniff
+        ),
         "SECURE_PROXY_SSL_HEADER": ("HTTP_X_FORWARDED_PROTO", "https") if not debug else None,
     }
 
@@ -142,11 +172,16 @@ globals().update(
         DEBUG,
         session_secure=_get_secure_cookie(os.environ.get("SESSION_COOKIE_SECURE"), not DEBUG),
         csrf_secure=_get_secure_cookie(os.environ.get("CSRF_COOKIE_SECURE"), not DEBUG),
+        ssl_redirect=_get_bool_setting("SECURE_SSL_REDIRECT", not DEBUG),
+        hsts_seconds=_get_int_setting("SECURE_HSTS_SECONDS", 0 if DEBUG else 31536000),
+        hsts_include_subdomains=_get_bool_setting("SECURE_HSTS_INCLUDE_SUBDOMAINS", not DEBUG),
+        hsts_preload=_get_bool_setting("SECURE_HSTS_PRELOAD", not DEBUG),
+        content_type_nosniff=_get_bool_setting("SECURE_CONTENT_TYPE_NOSNIFF", True),
     )
 )
 
 # Clickjacking protection is safe to enable in every environment.
-X_FRAME_OPTIONS = "DENY"
+X_FRAME_OPTIONS = os.environ.get("X_FRAME_OPTIONS", "DENY")
 
 # Limit request-body and in-memory file upload sizes to 2.5 MiB.
 DATA_UPLOAD_MAX_MEMORY_SIZE = 2_621_440
@@ -174,9 +209,9 @@ SECURE_CSP = {
 }
 
 # Cookies must never be readable from JavaScript and stay same-site by default.
-SESSION_COOKIE_HTTPONLY = True
-SESSION_COOKIE_SAMESITE = "Lax"
-CSRF_COOKIE_SAMESITE = "Lax"
+SESSION_COOKIE_HTTPONLY = _get_bool_setting("SESSION_COOKIE_HTTPONLY", True)
+SESSION_COOKIE_SAMESITE = os.environ.get("SESSION_COOKIE_SAMESITE", "Lax")
+CSRF_COOKIE_SAMESITE = os.environ.get("CSRF_COOKIE_SAMESITE", "Lax")
 
 # Password strength requirements enforced by Django auth / password reset.
 AUTH_PASSWORD_VALIDATORS = [

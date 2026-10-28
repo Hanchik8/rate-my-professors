@@ -20,6 +20,7 @@ from django.urls import reverse
 from django.utils.http import url_has_allowed_host_and_scheme
 from django.utils.translation import gettext as _
 from django.views.decorators.http import require_http_methods, require_POST
+from django.views.defaults import page_not_found, server_error
 
 from .caching import (
     get_or_set,
@@ -31,6 +32,16 @@ from .constants import PAGE_SIZE
 from .forms import ProfessorForm, ReportForm, ReviewForm
 from .store import repo
 from .throttle import is_rate_limited, rate_limit
+
+
+def handler404(request, exception=None):
+    """Render the project's translated 404 template."""
+    return page_not_found(request, exception, template_name="404.html")
+
+
+def handler500(request):
+    """Render the project's 500 template without touching the database."""
+    return server_error(request, template_name="500.html")
 
 
 def health(request):
