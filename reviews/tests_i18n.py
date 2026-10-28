@@ -313,7 +313,7 @@ class RenderedTemplateTranslationTests(TestCase):
             "count": 1,
             "overall": 4.5,
             "difficulty": 3,
-            "wta_pct": 100,
+            "wta_pct": 42.5,
             "tone": "good",
             "distribution": [{"score": 5, "count": 1, "pct": 100}],
             "top_tags": ["Интересные лекции", "Вдохновляет"],
@@ -398,6 +398,12 @@ class RenderedTemplateTranslationTests(TestCase):
                 self.assertIn(label, html)
                 self.assertIn(f">{review_date}</time>", html)
                 self.assertIn('<time datetime="2025-10-25T', html)
+
+    def test_percentages_use_locale_number_format(self):
+        expected = {"ru": "42,5%", "ky": "42.5%", "en": "42.5%"}
+        for lang, percentage in expected.items():
+            with self.subTest(lang=lang):
+                self.assertIn(percentage, self._render(lang))
 
     def test_professor_page_renders_empty_reviews_call_to_action(self):
         html = self._render("ru", include_reviews=False)

@@ -26,7 +26,7 @@
 
 {% if stats.count %}
 <dl class="facts">
-  <div><dt>{% translate "Пойдут снова" %}</dt><dd>{{ stats.wta_pct|localize }}%</dd></div>
+  <div><dt>{% translate "Пойдут снова" %}</dt><dd>{{ stats.wta_pct|floatformat:1|localize }}%</dd></div>
   <div><dt>{% translate "Сложность" %}</dt><dd>{{ stats.difficulty|floatformat:1|localize }} / 5</dd></div>
   <div><dt>{% translate "Отзывов" %}</dt><dd>{{ stats.count|localize }}</dd></div>
 </dl>
