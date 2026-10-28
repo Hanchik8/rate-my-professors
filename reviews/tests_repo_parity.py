@@ -88,6 +88,82 @@ class RepositoryParityMixin:
         self.assertNotEqual(allowed.id, original.id)
         self.assertEqual(allowed.school_id, self.other_school.id)
 
+    def test_add_professor_defaults_status_and_moderation_visibility(self):
+        self.assertEqual(self.high.status, "approved")
+        pending = self.repo.add_professor(
+            self.school.id, "Павел", "Ожидающий", "Химия", "доцент", status="pending"
+        )
+        self.assertEqual(pending.status, "pending")
+        self.assertIsNone(self.repo.professor(pending.slug))
+        self.assertEqual(self.repo.professor_any(pending.slug).id, pending.id)
+        self.assertEqual(self.repo.search("Ожидающий"), [])
+        self.assertNotIn("Химия", self.repo.departments())
+        self.assertEqual(
+            {p.id for p in self.repo.professors_for_school(self.school.id)},
+            {self.high.id, self.low.id},
+        )
+
+        self.repo.approve_professor(pending.id)
+        self.assertEqual(self.repo.professor(pending.slug).id, pending.id)
+        self.assertEqual(
+            [row["prof"].id for row in self.repo.search("Ожидающий")], [pending.id]
+        )
+        self.assertIn("Химия", self.repo.departments())
+
+    def test_add_professor_duplicate_pending_and_cross_school_slug(self):
+        pending = self.repo.add_professor(
+            self.school.id, "Игорь", "Скрытый", "Химия", "доцент", status="pending"
+        )
+        for first, last in (("Игорь", "Скрытый"), (" игорь ", " СКРЫТЫЙ ")):
+            with self.subTest(first=first, last=last):
+                with self.assertRaises(ValueError):
+                    self.repo.add_professor(
+                        self.school.id, first, last, "Физика", "профессор"
+                    )
+
+        allowed = self.repo.add_professor(
+            self.other_school.id, "Игорь", "Скрытый", "Химия", "доцент"
+        )
+        self.assertNotEqual(allowed.id, pending.id)
+        self.assertNotEqual(allowed.slug, pending.slug)
+        self.assertEqual(allowed.school_id, self.other_school.id)
+
+    def _approved_review(self, professor_id, course, user=None):
+        review = self.repo.add_review(professor_id, {
+            "course": course, "term": "Осень", "overall": 5,
+            "difficulty": 2, "would_take_again": True, "grade": "A",
+            "comment": "Отзыв для проверки голосования.", "tags": [],
+        }, user=user)
+        self.repo.approve_review(review.id)
+        return self.repo.review(review.id)
+
+    def test_vote_repeat_same_and_opposite_is_rejected(self):
+        review = self._approved_review(self.high.id, "Голосование", user=self.user)
+        self.assertFalse(self.repo.has_user_voted(review.id, self.user))
+        self.repo.vote(review.id, True, user=self.user)
+        self.assertTrue(self.repo.has_user_voted(review.id, self.user))
+        self.assertEqual(self.repo.review(review.id).helpful, 1)
+
+        with self.assertRaises(ValueError):
+            self.repo.vote(review.id, True, user=self.user)
+        with self.assertRaises(ValueError):
+            self.repo.vote(review.id, False, user=self.user)
+
+        after = self.repo.review(review.id)
+        self.assertEqual((after.helpful, after.not_helpful), (1, 0))
+        self.assertEqual(self.repo.reviews_for(self.high.id, sort="helpful")[0].id, review.id)
+
+    def test_vote_on_own_review_preserves_author_and_counts_once(self):
+        review = self._approved_review(self.low.id, "Свой курс", user=self.user)
+        self.assertEqual(review.author_id, self.user.id)
+        self.repo.vote(review.id, True, user=self.user)
+        after = self.repo.review(review.id)
+        self.assertEqual(
+            (after.author_id, after.helpful, after.not_helpful),
+            (self.user.id, 1, 0),
+        )
+        self.assertTrue(self.repo.has_user_voted(review.id, self.user))
+
 
 class InMemoryRepositoryParityTests(RepositoryParityMixin, TestCase):
     def make_repo(self):
