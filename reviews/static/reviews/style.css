@@ -124,6 +124,23 @@ main,footer{max-width:64rem;margin:0 auto;padding-left:1.25rem;padding-right:1.2
 footer{color:var(--muted);font-size:.9rem;padding-top:2.5rem;padding-bottom:2.5rem}
 .muted{color:var(--muted)}
 
+/* Error pages (404 / 500) */
+.error-page{display:flex;justify-content:center;padding:3rem 0 1rem}
+.error-card{position:relative;width:min(38rem,100%);overflow:hidden;padding:clamp(1.5rem,4vw,2.75rem);
+  border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface);
+  box-shadow:var(--shadow-lg);text-align:center}
+.error-card::before{content:"";position:absolute;inset:0 0 auto;height:4px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-strong))}
+.error-code{margin:0;font-size:clamp(3.5rem,12vw,6rem);line-height:.95;font-weight:800;
+  letter-spacing:-.05em;color:var(--accent)}
+.error-card h1{margin:.75rem auto 1rem;max-width:20ch}
+.error-card p{margin:.5rem auto 1rem;max-width:36ch}
+.error-actions{margin-top:1.5rem!important}
+.error-actions a{display:inline-block;padding:.7rem 1.35rem;border-radius:.65rem;background:var(--accent);
+  color:var(--on-accent);font-weight:600;text-decoration:none;box-shadow:var(--shadow);
+  transition:background .15s ease,transform .15s ease}
+.error-actions a:hover{background:var(--accent-strong);color:var(--on-accent);transform:translateY(-1px)}
+
 /* Breadcrumbs */
 .breadcrumbs{margin:1rem 0 0;color:var(--muted);font-size:.92rem}
 .breadcrumbs ol{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .5rem;list-style:none;margin:0;padding:0}
