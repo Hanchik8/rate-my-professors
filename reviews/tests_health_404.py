@@ -69,3 +69,52 @@ class ErrorHandlerRenderTests(TestCase):
         self.assertContains(response, "Что-то пошло не так", status_code=500)
         self.assertContains(response, "Вернуться на главную", status_code=500)
         self.assertEqual(len(queries), 0)
+
+
+class ProjectErrorHandlerWiringTests(TestCase):
+    """config.urls must explicitly wire the project's 404/500 handlers."""
+
+    def test_urlconf_exposes_project_handlers(self):
+        from config import urls
+        from reviews import views
+
+        self.assertIs(urls.handler404, views.handler404)
+        self.assertIs(urls.handler500, views.handler500)
+
+    def test_project_handler404_renders_custom_template(self):
+        from django.test import RequestFactory
+        from django.utils import translation
+
+        from config.urls import handler404
+
+        request = RequestFactory().get("/missing/", HTTP_ACCEPT_LANGUAGE="ru")
+        with translation.override("ru"):
+            response = handler404(request, Exception("missing"))
+        self.assertEqual(response.status_code, 404)
+        self.assertContains(response, "Страница не найдена", status_code=404)
+        self.assertContains(response, "Вернуться на главную", status_code=404)
+
+    def test_project_handler404_works_without_exception_argument(self):
+        from django.test import RequestFactory
+
+        from config.urls import handler404
+
+        response = handler404(RequestFactory().get("/missing/"))
+        self.assertEqual(response.status_code, 404)
+
+    def test_project_handler500_renders_custom_template_without_db_queries(self):
+        from django.db import connection
+        from django.test import RequestFactory
+        from django.test.utils import CaptureQueriesContext
+        from django.utils import translation
+
+        from config.urls import handler500
+
+        request = RequestFactory().get("/boom/")
+        with translation.override("ru"), CaptureQueriesContext(connection) as queries:
+            response = handler500(request)
+        self.assertEqual(response.status_code, 500)
+        self.assertContains(response, "Ошибка сервера", status_code=500)
+        self.assertContains(response, "Что-то пошло не так", status_code=500)
+        self.assertContains(response, "Вернуться на главную", status_code=500)
+        self.assertEqual(len(queries), 0)

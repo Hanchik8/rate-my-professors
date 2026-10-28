@@ -3,7 +3,11 @@ from django.contrib.sitemaps import views as sitemap_views
 from django.http import HttpResponse
 from django.urls import include, path, reverse
 
+from reviews import views as reviews_views
 from reviews.sitemaps import sitemaps
+
+handler404 = reviews_views.handler404
+handler500 = reviews_views.handler500
 
 
 def robots_txt(request):
