@@ -372,8 +372,8 @@ def review_report(request, review_id):
     return _redirect_to_review(review)
 
 
-def _safe_next_url(request, default):
-    """Return the requested ``next`` URL only if it stays on this host."""
+def _requested_next_url(request):
+    """Return a ``next`` URL from the request, preferring POST data."""
     target = request.POST.get("next") or request.GET.get("next")
     if target and url_has_allowed_host_and_scheme(
         url=target,
@@ -381,7 +381,12 @@ def _safe_next_url(request, default):
         require_https=request.is_secure(),
     ):
         return target
-    return default
+    return None
+
+
+def _safe_next_url(request, default):
+    """Return the requested ``next`` URL only if it stays on this host."""
+    return _requested_next_url(request) or default
 
 
 class ThrottledLoginView(auth_views.LoginView):

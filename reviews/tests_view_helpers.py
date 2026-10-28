@@ -5,7 +5,12 @@ from django import forms
 from django.test import RequestFactory, SimpleTestCase
 from django.urls import reverse
 
-from .views import _is_author, _is_valid_post, _review_form_context
+from .views import (
+    _is_author,
+    _is_valid_post,
+    _requested_next_url,
+    _review_form_context,
+)
 
 
 class _SampleForm(forms.Form):
@@ -42,6 +47,26 @@ class IsValidPostTests(SimpleTestCase):
     def test_invalid_post_is_rejected(self):
         request = self.factory.post("/", {})
         self.assertFalse(_is_valid_post(request, _SampleForm(request.POST)))
+
+
+class RequestedNextUrlTests(SimpleTestCase):
+    def setUp(self):
+        self.factory = RequestFactory()
+
+    def test_post_next_takes_precedence_over_get_next(self):
+        request = self.factory.post("/?next=/from-get", {"next": "/from-post"})
+
+        self.assertEqual(_requested_next_url(request), "/from-post")
+
+    def test_safe_get_next_is_used_when_post_next_is_missing(self):
+        request = self.factory.get("/?next=/from-get")
+
+        self.assertEqual(_requested_next_url(request), "/from-get")
+
+    def test_external_next_is_rejected(self):
+        request = self.factory.get("/?next=https://evil.example/")
+
+        self.assertIsNone(_requested_next_url(request))
 
 
 class ReviewFormContextTests(SimpleTestCase):
