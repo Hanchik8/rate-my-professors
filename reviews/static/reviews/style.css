@@ -253,7 +253,8 @@ input:focus,select:focus,textarea:focus{border-color:var(--focus)}
 .facts-line{color:var(--muted)}
 .facts-line strong{color:var(--ink)}
 .review-date{color:var(--muted);font-size:.9rem}
-.status-badge{display:inline-block;padding:.15rem .65rem;border-radius:999px;font-size:.85rem;font-weight:700;white-space:nowrap}
+.status-badge{display:inline-block;padding:.15rem .65rem;border:1px solid currentColor;border-radius:999px;
+  font-size:.85rem;font-weight:700;line-height:1.5;white-space:nowrap}
 .status-badge.pending{background:var(--mid-bg);color:var(--mid-ink)}
 .status-badge.approved{background:var(--good-bg);color:var(--good-ink)}
 .status-badge.rejected{background:var(--bad-bg);color:var(--bad-ink)}

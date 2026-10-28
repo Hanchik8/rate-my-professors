@@ -37,7 +37,10 @@
 </article>
 {% endwith %}
 {% empty %}
-<p class="empty">{% translate "Вы ещё не оставляли отзывов." %}</p>
+<section class="empty empty-state" role="status">
+  <p>{% translate "Вы ещё не оставляли отзывов." %}</p>
+  <a class="btn empty-state-action" href="{% url 'home' %}">{% translate "Вернуться на главную" %}</a>
+</section>
 {% endfor %}
 {% endblock %}
 {% block page_tools %}{% include "reviews/_back_to_top.html" %}{% endblock %}
