@@ -88,6 +88,11 @@ class Review:
     reported: int = 0
 
 
+def normalize_person_name(first: str, last: str) -> str:
+    """Return a case- and whitespace-insensitive key for a person's name."""
+    return " ".join(f"{first} {last}".split()).casefold()
+
+
 def _tone(overall: float) -> str:
     """Map an average overall score to the CSS tone token used by templates."""
     return "good" if overall >= 4 else "mid" if overall >= 3 else "bad"
@@ -133,10 +138,9 @@ class InMemoryRepository:
         status: str = "approved",
     ) -> Professor:
         """Create and store a professor, rejecting duplicates in the same school."""
-        # защита от дубля ФИО+вуз (case-insensitive)
-        for p in self._professors.values():
-            if p.school_id == school_id and p.full_name.lower() == f"{first} {last}".lower() and p.status != "rejected":
-                raise ValueError("duplicate professor")
+        # защита от дубля ФИО+вуз (регистр и лишние пробелы не важны)
+        if self.professor_by_name(school_id, first, last) is not None:
+            raise ValueError("duplicate professor")
         slug = slugify(f"{first} {last}", allow_unicode=True) or slugify(f"{first} {last}") or f"{first}-{last}".lower()
         # ensure unique slug
         base, i = slug, 1
@@ -263,6 +267,19 @@ class InMemoryRepository:
     def professor_by_id(self, professor_id: str) -> Professor | None:
         """Return a professor by id, or ``None`` if it does not exist."""
         return self._professors.get(professor_id)
+
+    def professor_by_name(self, school_id: str, first: str, last: str) -> Professor | None:
+        """Return a non-rejected professor matching a normalized full name."""
+        key = normalize_person_name(first, last)
+        return next(
+            (
+                p for p in self._professors.values()
+                if p.school_id == school_id
+                and p.status != "rejected"
+                and normalize_person_name(p.first_name, p.last_name) == key
+            ),
+            None,
+        )
 
     def professors_for_school(self, school_id: str) -> list[Professor]:
         """Return approved professors belonging to a school."""

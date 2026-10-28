@@ -505,16 +505,26 @@ def _submit_professor(form, user):
     return True
 
 
+def _existing_professor(form):
+    """Return the professor that made ``form`` fail the duplicate check."""
+    data = form.cleaned_data
+    return repo.professor_by_name(
+        data["school"], data["first_name"], data["last_name"],
+    )
+
+
 @require_http_methods(["GET", "POST"])
 @login_required
 def add_professor(request):
     """Allow a logged-in user to submit a professor for moderation."""
     schools = repo.schools()
     form = _form_for_request(request, ProfessorForm, schools=schools)
-    if _is_valid_post(request, form) and _submit_professor(form, request.user):
-        messages.success(request, _("Преподаватель отправлен на модерацию."))
-        return redirect("home")
-    return render(request, "reviews/add_professor.html", {
-        "form": form,
-        **_account_urls(),
-    })
+    context = {"form": form, **_account_urls()}
+    if _is_valid_post(request, form):
+        if _submit_professor(form, request.user):
+            messages.success(request, _("Преподаватель отправлен на модерацию."))
+            return redirect("home")
+        existing = _existing_professor(form)
+        if existing is not None:
+            context["professor"] = existing
+    return render(request, "reviews/add_professor.html", context)

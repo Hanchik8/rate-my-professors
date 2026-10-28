@@ -8,6 +8,7 @@
 {% endif %}
 <form method="post" class="form">{% csrf_token %}
   {{ form.non_field_errors }}
+  {% if professor %}<p class="muted"><a href="{% url 'professor' professor.slug %}">{{ professor.full_name }}</a></p>{% endif %}
   {% include "reviews/_form_fields.html" %}
   <div class="form-actions">
     <button>{% translate "Отправить на модерацию" %}</button>

@@ -68,6 +68,26 @@ class RepositoryParityMixin:
         self.assertEqual([r["prof"].full_name for r in rows[2:4]], ["Вера Средняя"])
         self.assertEqual(len(rows[:1]), 1)
 
+    def test_duplicate_professor_normalizes_case_and_whitespace(self):
+        original = self.repo.add_professor(
+            self.school.id, "Иван  Иванович", "Петров", "Физика", "доцент"
+        )
+        for first, last in (
+            ("иван иванович", "ПЕТРОВ"),
+            ("  ИВАН   ИВАНОВИЧ  ", "  петров  "),
+            ("Иван Иванович", "Петров"),
+        ):
+            with self.subTest(first=first, last=last):
+                with self.assertRaises(ValueError):
+                    self.repo.add_professor(
+                        self.school.id, first, last, "Математика", "профессор"
+                    )
+        allowed = self.repo.add_professor(
+            self.other_school.id, "  иван  иванович ", " ПЕТРОВ ", "Физика", "доцент"
+        )
+        self.assertNotEqual(allowed.id, original.id)
+        self.assertEqual(allowed.school_id, self.other_school.id)
+
 
 class InMemoryRepositoryParityTests(RepositoryParityMixin, TestCase):
     def make_repo(self):

@@ -672,6 +672,22 @@ class AddProfessorViewTests(_MemoryRepoTestCase):
         self.assertIsNotNone(self.repo.professor(p.slug))
         self.assertEqual(len(self.repo.search("Тестов")), 1)
 
+    def test_duplicate_ignores_case_and_spaces_and_links_existing(self):
+        self.login()
+        school = self.repo.schools()[0]
+        existing = self.repo.add_professor(
+            school.id, "Иван  Иванович", "Петров", "Физика", "доцент"
+        )
+        before = len(self.repo._professors)
+        data = {"school": str(school.id), "first_name": "  иван   иванович ",
+                "last_name": " ПЕТРОВ ", "department": "Математика", "title": "профессор"}
+        r = self.client.post(reverse("add_professor"), data)
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, "уже есть в этом вузе")
+        self.assertEqual(len(self.repo._professors), before)
+        self.assertEqual(r.context["professor"].id, existing.id)
+        self.assertContains(r, reverse("professor", args=[existing.slug]))
+
 
 # ---------------------------------------------------------------------------
 # Auth / signup views
@@ -784,6 +800,23 @@ class DjangoViewCoverageTests(TestCase):
         self.assertEqual(self.repo.review(review.id).helpful, 1)
         self.client.post(reverse("review_report", args=[review.id]))
         self.assertEqual(Report.objects.filter(review_id=review.id).count(), 1)
+
+    def test_add_professor_duplicate_ignores_case_and_spaces_and_links_existing(self):
+        from reviews.models import Professor
+        school = self.repo.schools()[0]
+        existing = self.repo.add_professor(
+            school.id, "Иван  Иванович", "Петров", "Физика", "доцент"
+        )
+        self.login()
+        before = Professor.objects.count()
+        data = {"school": str(school.id), "first_name": "  иван   иванович ",
+                "last_name": " ПЕТРОВ ", "department": "Математика", "title": "профессор"}
+        r = self.client.post(reverse("add_professor"), data)
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, "уже есть в этом вузе")
+        self.assertEqual(Professor.objects.count(), before)
+        self.assertEqual(r.context["professor"].id, existing.id)
+        self.assertContains(r, reverse("professor", args=[existing.slug]))
 
 
 # ---------------------------------------------------------------------------

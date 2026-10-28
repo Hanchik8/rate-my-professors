@@ -14,7 +14,7 @@ from django.utils.text import slugify
 from .caching import get_or_set, invalidate_catalog_cache, stats_cache_key
 from .constants import MAX_COMMENT_LENGTH
 from .models import Professor, Report, Review, School, Tag, Vote
-from .repository import _search_sort_key, _tone
+from .repository import _search_sort_key, _tone, normalize_person_name
 from .sanitize import clean_text
 
 if TYPE_CHECKING:
@@ -50,16 +50,7 @@ class DjangoRepository:
     ) -> ProfessorDC:
         """Create a professor, rejecting duplicates in the same school."""
         school = School.objects.get(pk=school_id)
-        dup_qs = Professor.objects.filter(
-            school=school,
-            first_name__iexact=first.strip(),
-            last_name__iexact=last.strip(),
-        ).exclude(status="rejected")
-        if dup_qs.exists():
-            # fallback case-insensitive python check for SQLite
-            for p in Professor.objects.filter(school=school).exclude(status="rejected"):
-                if p.full_name.lower() == f"{first} {last}".lower():
-                    raise ValueError("duplicate professor")
+        if self.professor_by_name(school_id, first, last) is not None:
             raise ValueError("duplicate professor")
         base = slugify(f"{first} {last}", allow_unicode=True) or slugify(f"{first} {last}") or f"{first}-{last}".lower()
         slug = base
@@ -220,6 +211,15 @@ class DjangoRepository:
             )
         except Professor.DoesNotExist:
             return None
+
+    def professor_by_name(self, school_id: str, first: str, last: str) -> ProfessorDC | None:
+        """Return a non-rejected professor matching a normalized full name."""
+        key = normalize_person_name(first, last)
+        qs = Professor.objects.select_related("school").filter(school_id=school_id).exclude(status="rejected")
+        for professor in qs:
+            if normalize_person_name(professor.first_name, professor.last_name) == key:
+                return self._prof_to_dc(professor)
+        return None
 
     def professors_for_school(self, school_id: str) -> list[ProfessorDC]:
         """Return approved professors belonging to a school."""
