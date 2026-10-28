@@ -1,9 +1,9 @@
 from django.core.cache import cache
 from django.test import TestCase
 
+from .caching import stats_cache_key
 from .django_repo import DjangoRepository
 from .models import Professor, Review, School
-from .caching import stats_cache_key
 
 
 class ProfessorStatsCacheTests(TestCase):
