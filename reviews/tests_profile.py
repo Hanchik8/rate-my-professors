@@ -275,6 +275,46 @@ class ProfileViewTestMixin:
         self.assertEqual(response.status_code, 302)
         self.assertIn(reverse("login"), response.url)
 
+    def test_anonymous_user_is_redirected_from_protected_get_views(self):
+        review = self.repo.add_review(
+            self.prof.id,
+            _review_data("Алгоритмы", "Комментарий достаточно длинный для теста."),
+            user=self.user,
+        )
+        protected_urls = (
+            reverse("profile"),
+            reverse("review_new", args=[self.prof.slug]),
+            reverse("review_edit", args=[review.id]),
+            reverse("review_delete", args=[review.id]),
+            reverse("add_professor"),
+        )
+
+        for url in protected_urls:
+            with self.subTest(url=url):
+                response = self.client.get(url)
+                self.assertEqual(response.status_code, 302)
+                self.assertEqual(urlparse(response.url).path, reverse("login"))
+                self.assertEqual(
+                    parse_qs(urlparse(response.url).query)["next"], [url]
+                )
+
+    def test_anonymous_user_is_redirected_from_protected_post_views(self):
+        review = self.repo.add_review(
+            self.prof.id,
+            _review_data("Алгоритмы", "Комментарий достаточно длинный для теста."),
+            user=self.user,
+        )
+
+        for url_name in ("review_vote", "review_report"):
+            url = reverse(url_name, args=[review.id])
+            with self.subTest(url_name=url_name):
+                response = self.client.post(url, {})
+                self.assertEqual(response.status_code, 302)
+                self.assertEqual(urlparse(response.url).path, reverse("login"))
+                self.assertEqual(
+                    parse_qs(urlparse(response.url).query)["next"], [url]
+                )
+
     def test_profile_heading_and_status_are_translated(self):
         self.repo.add_review(
             self.prof.id,
