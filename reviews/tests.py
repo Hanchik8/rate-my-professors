@@ -839,12 +839,18 @@ class SecuritySettingsTests(TestCase):
         from django.conf import settings
         self.assertEqual(settings.PERMISSIONS_POLICY, "camera=(), geolocation=(), microphone=()")
 
+    @override_settings(DEBUG=True)
     def test_security_headers_are_emitted(self):
         """Middleware must actually send the hardening response headers."""
+        from django.conf import settings
+
         response = self.client.get(reverse("home"))
+        self.assertTrue(settings.DEBUG)
+        self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers.get("X-Content-Type-Options"), "nosniff")
         self.assertEqual(response.headers.get("X-Frame-Options"), "DENY")
         self.assertEqual(response.headers.get("Referrer-Policy"), "same-origin")
+        self.assertNotIn("Strict-Transport-Security", response.headers)
         self.assertEqual(
             response.headers.get("Permissions-Policy"),
             "camera=(), geolocation=(), microphone=()",
