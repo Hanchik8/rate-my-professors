@@ -1943,6 +1943,36 @@ class QueryEfficiencyTests(TestCase):
         with self.assertNumQueries(6):
             self.client.get(reverse("home"))
 
+    def test_professor_list_query_count_is_flat_across_catalog_sizes(self):
+        """Home and school lists keep the same query count as rows are added.
+
+        Measuring the same two pages before and after growing the catalog
+        proves the numbers are independent of the professor/review count
+        rather than merely below a loose upper bound.
+        """
+        from django.db import connection
+        from django.test.utils import CaptureQueriesContext
+
+        school = self.repo.schools()[0]
+        home_url = reverse("home")
+        school_url = reverse("school_detail", args=[school.slug])
+        self.client.get(home_url)  # warm session/messages storage
+        self.client.get(school_url)
+
+        def counts():
+            with CaptureQueriesContext(connection) as home_ctx:
+                self.client.get(home_url)
+            with CaptureQueriesContext(connection) as school_ctx:
+                self.client.get(school_url)
+            return len(home_ctx.captured_queries), len(school_ctx.captured_queries)
+
+        before = counts()
+        self._add_schools(6)
+        self._add_load(professors=20, reviews_each=3)
+        after = counts()
+
+        self.assertEqual(after, before)
+
     def test_professor_profile_query_count_does_not_grow_with_reviews_or_tags(self):
         """Profile reviews/tags are prefetched; adding rows adds no queries."""
         prof = self.repo.search("Айбек")[0]["prof"]
