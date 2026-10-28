@@ -1,5 +1,8 @@
 {% extends "reviews/base.html" %}{% load i18n l10n %}
 {% block title %}{{ prof.full_name }} — ProfLens{% endblock %}
+{% block description %}{% blocktranslate with name=prof.full_name dept=prof.department school=school.name %}Отзывы студентов о преподавателе {{ name }} ({{ dept }}, {{ school }}): рейтинг, сложность и советы.{% endblocktranslate %}{% endblock %}
+{% block og_title %}{{ prof.full_name }} — ProfLens{% endblock %}
+{% block og_description %}{% blocktranslate with name=prof.full_name dept=prof.department school=school.name %}Отзывы студентов о преподавателе {{ name }} ({{ dept }}, {{ school }}): рейтинг, сложность и советы.{% endblocktranslate %}{% endblock %}
 {% block content %}
 <nav class="breadcrumbs" aria-label="{% translate 'Хлебные крошки' %}">
   <ol>

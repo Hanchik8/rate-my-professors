@@ -643,3 +643,12 @@ msgid "Отзыв отправлен на модерацию."
 msgstr "Review submitted for moderation."
 msgid "Удалить отзыв"
 msgstr "Delete review"
+
+msgid "ProfLens — отзывы о преподавателях вузов Кыргызстана: рейтинги, сложность курсов и советы студентов."
+msgstr "ProfLens — reviews of university professors in Kyrgyzstan: ratings, course difficulty and student advice."
+
+msgid "Отзывы студентов о преподавателе %(name)s (%(dept)s, %(school)s): рейтинг, сложность и советы."
+msgstr "Student reviews of professor %(name)s (%(dept)s, %(school)s): rating, difficulty and advice."
+
+msgid "Преподаватели и отзывы студентов вуза %(name)s (%(city)s): рейтинги, кафедры и советы."
+msgstr "Professors and student reviews at %(name)s (%(city)s): ratings, departments and advice."
