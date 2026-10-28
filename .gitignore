@@ -31,3 +31,7 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# Documentation
+DEPLOYMENT.md
+ADMIN_GUIDE.MD

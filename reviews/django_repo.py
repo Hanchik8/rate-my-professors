@@ -389,11 +389,14 @@ class DjangoRepository:
             qs = qs.filter(school__slug=school_slug)
         if city:
             qs = qs.filter(school__city=city)
-        if department:
-            qs = qs.filter(department=department)
+        want_dept = department.lower().strip()
         q = q.lower().strip()
         # filter in python for case-insensitive unicode
-        profs = [p for p in qs if not q or q in f"{p.full_name} {p.department}".lower()]
+        profs = [
+            p for p in qs
+            if (not want_dept or p.department.lower().strip() == want_dept)
+            and (not q or q in f"{p.full_name} {p.department}".lower())
+        ]
         stats_map = self._stats_map(p.pk for p in profs)
         out = []
         for p in profs:

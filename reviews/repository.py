@@ -355,7 +355,7 @@ class InMemoryRepository:
         q = q.lower().strip()
         school_slug = school_slug.strip()
         city = city.strip()
-        department = department.strip()
+        department = department.lower().strip()
         out = []
         for p in self._professors.values():
             if p.status != "approved":
@@ -365,7 +365,7 @@ class InMemoryRepository:
                 continue
             if city and school.city != city:
                 continue
-            if department and p.department != department:
+            if department and p.department.lower().strip() != department:
                 continue
             if q and q not in f"{p.full_name} {p.department}".lower():
                 continue
