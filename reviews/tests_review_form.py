@@ -154,7 +154,7 @@ class _ReviewFormViewMixin:
     def test_invalid_ratings_are_not_saved(self):
         before = self.pending_count()
         for field in ("overall", "difficulty"):
-            for value in ("", "0", "6", "abc"):
+            for value in ("", "0", "6", "abc", "4.5", "-1"):
                 with self.subTest(field=field, value=value):
                     response = self.client.post(self.url(), _valid({field: value}))
                     self.assertEqual(response.status_code, 200)
@@ -168,6 +168,40 @@ class _ReviewFormViewMixin:
         self.assertEqual(response.status_code, 200)
         self.assertIn("comment", response.context["form"].errors)
         self.assertEqual(self.pending_count(), before)
+
+    def test_whitespace_only_comment_is_not_saved(self):
+        before = self.pending_count()
+        response = self.client.post(self.url(), _valid({"comment": "   \n\t "}))
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("comment", response.context["form"].errors)
+        self.assertEqual(self.pending_count(), before)
+
+    def test_too_short_comment_is_not_saved(self):
+        before = self.pending_count()
+        response = self.client.post(
+            self.url(), _valid({"comment": "я" * (MIN_COMMENT_LENGTH - 1)})
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("comment", response.context["form"].errors)
+        self.assertEqual(self.pending_count(), before)
+
+    def test_boundary_comment_lengths_are_saved(self):
+        before = self.pending_count()
+        for length in (MIN_COMMENT_LENGTH, MAX_COMMENT_LENGTH):
+            course = f"Курс границы {length}"
+            response = self.client.post(
+                self.url(),
+                _valid({"course": course, "comment": "я" * length}),
+            )
+            self.assertEqual(response.status_code, 302)
+        saved = {
+            review.course: review.comment
+            for review in self.pending_reviews()
+            if review.course.startswith("Курс границы ")
+        }
+        self.assertEqual(self.pending_count(), before + 2)
+        for length in (MIN_COMMENT_LENGTH, MAX_COMMENT_LENGTH):
+            self.assertEqual(saved[f"Курс границы {length}"], "я" * length)
 
     def test_too_long_comment_is_not_saved(self):
         before = self.pending_count()
