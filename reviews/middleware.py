@@ -2,6 +2,8 @@
 from django.conf import settings
 from django.utils.cache import patch_cache_control
 
+STATIC_CACHE_MAX_AGE = 3600
+
 
 class PermissionsPolicyMiddleware:
     """Add the configured Permissions-Policy header to every response."""
@@ -28,6 +30,7 @@ PRIVATE_CACHE_URL_NAMES = frozenset({
 
 PUBLIC_CACHE_URL_NAMES = frozenset({
     "home",
+    "robots_txt",
     "sitemap_index",
     "django.contrib.sitemaps.views.sitemap",
 })
@@ -51,6 +54,13 @@ class PrivateCacheControlMiddleware:
         match = request.resolver_match
         if match is not None and match.url_name in PRIVATE_CACHE_URL_NAMES:
             patch_cache_control(response, private=True, no_store=True)
+        elif (
+            request.path.startswith(settings.STATIC_URL)
+            and request.method == "GET"
+            and response.status_code == 200
+            and not request.user.is_authenticated
+        ):
+            patch_cache_control(response, public=True, max_age=STATIC_CACHE_MAX_AGE)
         elif (
             match is not None
             and match.url_name in PUBLIC_CACHE_URL_NAMES

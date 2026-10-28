@@ -1,8 +1,10 @@
 """Cache-Control header tests: user-data pages are non-cacheable, public pages untouched."""
-from django.contrib.auth.models import User
-from django.test import TestCase
+from django.contrib.auth.models import AnonymousUser, User
+from django.http import HttpResponse, HttpResponseNotFound
+from django.test import RequestFactory, SimpleTestCase, TestCase
 from django.urls import reverse
 
+from .middleware import STATIC_CACHE_MAX_AGE, PrivateCacheControlMiddleware
 from .repository import InMemoryRepository
 from .seed import seed
 
@@ -125,17 +127,24 @@ class PublicPagesCacheControlTests(CacheControlTestCase):
     def test_professor_page_has_no_no_store(self):
         self.assert_public(self.client.get(reverse("professor", args=[self.prof.slug])))
 
-    def test_sitemap_responses_are_publicly_cacheable(self):
-        for url in (reverse("sitemap_index"), "/sitemap-home.xml"):
+    def test_sitemap_and_robots_responses_are_publicly_cacheable(self):
+        urls = (reverse("robots_txt"), reverse("sitemap_index"), "/sitemap-home.xml")
+        for url in urls:
             with self.subTest(url=url):
                 response = self.client.get(url)
                 self.assert_public(response)
                 self.assertIn("public", response.headers.get("Cache-Control", ""))
                 self.assertIn("max-age=300", response.headers.get("Cache-Control", ""))
 
-    def test_authenticated_home_and_sitemaps_are_not_shared_cacheable(self):
+    def test_authenticated_home_sitemaps_and_robots_are_not_shared_cacheable(self):
         self.login()
-        for url in (reverse("home"), reverse("sitemap_index"), "/sitemap-home.xml"):
+        urls = (
+            reverse("home"),
+            reverse("robots_txt"),
+            reverse("sitemap_index"),
+            "/sitemap-home.xml",
+        )
+        for url in urls:
             with self.subTest(url=url):
                 response = self.client.get(url)
                 cache_control = response.headers.get("Cache-Control", "")
@@ -144,4 +153,37 @@ class PublicPagesCacheControlTests(CacheControlTestCase):
 
     def test_non_get_home_request_is_not_publicly_cacheable(self):
         response = self.client.post(reverse("home"))
+        self.assertNotIn("public", response.headers.get("Cache-Control", ""))
+
+
+class StaticFilesCacheControlTests(SimpleTestCase):
+    def setUp(self):
+        self.factory = RequestFactory()
+
+    def _get(self, path, response=None, user=None):
+        response = response or HttpResponse("body")
+        middleware = PrivateCacheControlMiddleware(lambda request: response)
+        request = self.factory.get(path)
+        request.user = user or AnonymousUser()
+        return middleware(request)
+
+    def test_static_asset_is_publicly_cacheable(self):
+        response = self._get("/static/reviews/style.css")
+        cache_control = response.headers.get("Cache-Control", "")
+        self.assertIn("public", cache_control)
+        self.assertIn(f"max-age={STATIC_CACHE_MAX_AGE}", cache_control)
+
+    def test_authenticated_static_asset_is_not_shared_cacheable(self):
+        response = self._get("/static/reviews/style.css", user=User())
+        self.assertNotIn("public", response.headers.get("Cache-Control", ""))
+
+    def test_missing_static_asset_is_not_cached(self):
+        response = self._get("/static/reviews/missing.css", response=HttpResponseNotFound())
+        self.assertNotIn("public", response.headers.get("Cache-Control", ""))
+
+    def test_non_get_static_request_is_not_cached(self):
+        middleware = PrivateCacheControlMiddleware(lambda request: HttpResponse("body"))
+        request = self.factory.post("/static/reviews/style.css")
+        request.user = AnonymousUser()
+        response = middleware(request)
         self.assertNotIn("public", response.headers.get("Cache-Control", ""))
