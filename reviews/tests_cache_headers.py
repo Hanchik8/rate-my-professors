@@ -110,7 +110,10 @@ class PrivatePagesCacheControlTests(CacheControlTestCase):
 
 class PublicPagesCacheControlTests(CacheControlTestCase):
     def test_home_page_has_no_no_store(self):
-        self.assert_public(self.client.get(reverse("home")))
+        response = self.client.get(reverse("home"))
+        self.assert_public(response)
+        self.assertIn("public", response.headers.get("Cache-Control", ""))
+        self.assertIn("max-age=300", response.headers.get("Cache-Control", ""))
 
     def test_about_page_has_no_no_store(self):
         self.assert_public(self.client.get(reverse("about")))
@@ -121,3 +124,24 @@ class PublicPagesCacheControlTests(CacheControlTestCase):
 
     def test_professor_page_has_no_no_store(self):
         self.assert_public(self.client.get(reverse("professor", args=[self.prof.slug])))
+
+    def test_sitemap_responses_are_publicly_cacheable(self):
+        for url in (reverse("sitemap_index"), "/sitemap-home.xml"):
+            with self.subTest(url=url):
+                response = self.client.get(url)
+                self.assert_public(response)
+                self.assertIn("public", response.headers.get("Cache-Control", ""))
+                self.assertIn("max-age=300", response.headers.get("Cache-Control", ""))
+
+    def test_authenticated_home_and_sitemaps_are_not_shared_cacheable(self):
+        self.login()
+        for url in (reverse("home"), reverse("sitemap_index"), "/sitemap-home.xml"):
+            with self.subTest(url=url):
+                response = self.client.get(url)
+                cache_control = response.headers.get("Cache-Control", "")
+                self.assertIn("private", cache_control)
+                self.assertIn("no-store", cache_control)
+
+    def test_non_get_home_request_is_not_publicly_cacheable(self):
+        response = self.client.post(reverse("home"))
+        self.assertNotIn("public", response.headers.get("Cache-Control", ""))

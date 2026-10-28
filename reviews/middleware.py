@@ -26,6 +26,12 @@ PRIVATE_CACHE_URL_NAMES = frozenset({
     "signup",
 })
 
+PUBLIC_CACHE_URL_NAMES = frozenset({
+    "home",
+    "sitemap_index",
+    "django.contrib.sitemaps.views.sitemap",
+})
+
 
 class PrivateCacheControlMiddleware:
     """Send ``Cache-Control: private, no-store`` on user-specific pages.
@@ -45,4 +51,13 @@ class PrivateCacheControlMiddleware:
         match = request.resolver_match
         if match is not None and match.url_name in PRIVATE_CACHE_URL_NAMES:
             patch_cache_control(response, private=True, no_store=True)
+        elif (
+            match is not None
+            and match.url_name in PUBLIC_CACHE_URL_NAMES
+            and request.method == "GET"
+        ):
+            if request.user.is_authenticated:
+                patch_cache_control(response, private=True, no_store=True)
+            elif response.status_code == 200:
+                patch_cache_control(response, public=True, max_age=300)
         return response
