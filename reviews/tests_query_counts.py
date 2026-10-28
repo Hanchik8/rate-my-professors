@@ -101,3 +101,26 @@ class PageQueryCountTests(TestCase):
                 with self.assertNumQueries(before[sort]):
                     response = self.client.get(url, {"sort": sort})
                 self.assertEqual(len(response.context["reviews"]), 8)
+
+    def test_home_and_school_query_counts_do_not_grow_with_professors(self):
+        # Catalog queries are normally cached; dummy cache makes cold and warm
+        # behavior deterministic, so warm these page payloads before measuring.
+        home_url = reverse("home")
+        school_url = reverse("school_detail", args=[self.school.slug])
+        self.client.get(home_url)
+        self.client.get(school_url)
+
+        home_before = self._query_count(home_url)
+        school_before = self._query_count(school_url)
+
+        for index in range(4):
+            self.repo.add_professor(
+                self.school.id, f"Имя{index}", f"Фамилия{index}", "Физика", "доцент"
+            )
+
+        with self.assertNumQueries(home_before):
+            home_response = self.client.get(home_url)
+        with self.assertNumQueries(school_before):
+            school_response = self.client.get(school_url)
+        self.assertEqual(len(home_response.context["results"]), 5)
+        self.assertEqual(len(school_response.context["results"]), 5)
