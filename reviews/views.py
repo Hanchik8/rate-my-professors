@@ -98,10 +98,14 @@ def home(request):
 
 def _professor_or_404(slug):
     """Fetch an approved professor by slug or raise ``Http404``."""
-    prof = repo.professor(slug)
-    if prof is None:
-        raise Http404(_("Professor not found"))
-    return prof
+    return _object_or_404(repo.professor(slug), _("Professor not found"))
+
+
+def _object_or_404(obj, message):
+    """Return ``obj`` or raise ``Http404`` with the supplied message."""
+    if obj is None:
+        raise Http404(message)
+    return obj
 
 
 def professor_detail(request, slug):
@@ -125,10 +129,7 @@ def professor_detail(request, slug):
 
 def _school_or_404(slug):
     """Fetch a school by slug or raise ``Http404``."""
-    school = repo.school_by_slug(slug)
-    if school is None:
-        raise Http404(_("School not found"))
-    return school
+    return _object_or_404(repo.school_by_slug(slug), _("School not found"))
 
 
 def _school_context(school, page_number):
@@ -235,6 +236,11 @@ def _save_review(form, prof, request):
     return True
 
 
+def _account_urls():
+    """Return the login and signup URLs used by account-related forms."""
+    return {"login_url": reverse("login"), "signup_url": reverse("signup")}
+
+
 @login_required
 @rate_limit("review")
 def review_new(request, slug):
@@ -248,8 +254,7 @@ def review_new(request, slug):
         form = ReviewForm()
     return render(request, "reviews/review_form.html", {
         "prof": prof, "form": form,
-        "login_url": reverse("login"),
-        "signup_url": reverse("signup"),
+        **_account_urls(),
         "url": reverse("rules"),
     })
 
@@ -415,6 +420,5 @@ def add_professor(request):
         form = ProfessorForm(schools=schools)
     return render(request, "reviews/add_professor.html", {
         "form": form,
-        "login_url": reverse("login"),
-        "signup_url": reverse("signup"),
+        **_account_urls(),
     })
