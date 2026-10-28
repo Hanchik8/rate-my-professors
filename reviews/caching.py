@@ -16,6 +16,7 @@ _VERSION_KEY = "proflens:catalog:version"
 _HOME_KEY = "proflens:home"
 _OPTIONS_KEY = "proflens:options"
 _SCHOOL_KEY = "proflens:school"
+_STATS_KEY = "proflens:stats"
 _DEFAULT_TIMEOUT = 300
 
 
@@ -59,6 +60,11 @@ def home_cache_key(q: str, school: str, city: str, department: str, sort: str) -
 def school_cache_key(slug: str) -> str:
     """Cache key for a university page's professor list and statistics."""
     return f"{_SCHOOL_KEY}:{_version()}:{_digest(slug)}"
+
+
+def stats_cache_key(professor_id: str) -> str:
+    """Cache key for one professor's aggregate rating statistics."""
+    return f"{_STATS_KEY}:{_version()}:{_digest(str(professor_id))}"
 
 
 def get_or_set(key: str, factory) -> object:

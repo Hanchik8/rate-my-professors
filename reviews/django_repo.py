@@ -11,7 +11,7 @@ from django.db import IntegrityError, transaction
 from django.db.models import Count, F, Q, Sum
 from django.utils.text import slugify
 
-from .caching import invalidate_catalog_cache
+from .caching import get_or_set, invalidate_catalog_cache, stats_cache_key
 from .constants import MAX_COMMENT_LENGTH
 from .models import Professor, Report, Review, School, Tag, Vote
 from .repository import _search_sort_key, _tone
@@ -350,7 +350,10 @@ class DjangoRepository:
 
     def stats(self, professor_id: str) -> dict[str, Any]:
         """Return aggregate rating statistics for a professor."""
-        return self._stats_map([professor_id])[str(professor_id)]
+        return get_or_set(
+            stats_cache_key(professor_id),
+            lambda: self._stats_map([professor_id])[str(professor_id)],
+        )
 
     def school_stats(self, school_id: str) -> dict[str, Any]:
         """Return aggregate rating statistics for a school."""
