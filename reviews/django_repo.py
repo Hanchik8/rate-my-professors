@@ -14,7 +14,7 @@ from django.utils.text import slugify
 from .caching import get_or_set, invalidate_catalog_cache, stats_cache_key
 from .constants import MAX_COMMENT_LENGTH
 from .models import Professor, Report, Review, School, Tag, Vote
-from .repository import _search_sort_key, _tone, normalize_person_name
+from .repository import _search_sort_key, _tone, normalize_person_name, normalize_search_text
 from .sanitize import clean_text
 
 if TYPE_CHECKING:
@@ -391,9 +391,12 @@ class DjangoRepository:
             qs = qs.filter(school__city=city)
         if department:
             qs = qs.filter(department=department)
-        q = q.lower().strip()
-        # filter in python for case-insensitive unicode
-        profs = [p for p in qs if not q or q in f"{p.full_name} {p.department}".lower()]
+        q = normalize_search_text(q)
+        # filter in python for case-insensitive unicode and ё/е equivalence
+        profs = [
+            p for p in qs
+            if not q or q in normalize_search_text(f"{p.full_name} {p.department}")
+        ]
         stats_map = self._stats_map(p.pk for p in profs)
         out = []
         for p in profs:

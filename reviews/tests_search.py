@@ -55,7 +55,7 @@ class SearchContractMixin:
         return {x["prof"].id for x in self.repo.search(**kwargs)}
 
     def test_empty_query_returns_all_approved(self):
-        for q in ("", "   ", "\t\n"):
+        for q in ("", "   ", "\t\n", None):
             with self.subTest(q=q):
                 self.assertEqual(self._ids(q=q), self.approved_ids)
 
@@ -64,6 +64,21 @@ class SearchContractMixin:
         self.assertEqual(self._ids(q="ФИЗИКА"), {self.ivan.id})
         self.assertEqual(self._ids(q="о'Ко"), {self.john.id})
         self.assertEqual(self._ids(q="ИВАн ПЕТРОВ"), {self.ivan.id})
+
+    def test_query_is_insensitive_to_yo_and_e(self):
+        with_yo = self.repo.add_professor(
+            self.bishkek.id, "Пётр", "Ёлкин", "Физика", "доцент"
+        )
+        with_e = self.repo.add_professor(
+            self.bishkek.id, "Елена", "Егорова", "Математика", "доцент"
+        )
+
+        for q in ("пётр ёлкин", "петр елкин", "ПЁТР ЁЛКИН", "ПЕТР ЕЛКИН", "ёлкин", "елкин"):
+            with self.subTest(q=q):
+                self.assertEqual(self._ids(q=q), {with_yo.id})
+        for q in ("елена егорова", "ёлена ёгорова", "ЕЛЕНА ЕГОРОВА", "ЁЛЕНА ЁГОРОВА"):
+            with self.subTest(q=q):
+                self.assertEqual(self._ids(q=q), {with_e.id})
 
     def test_special_characters_are_literal_not_wildcards(self):
         # SQL LIKE wildcards, regex metacharacters and quote/injection payloads

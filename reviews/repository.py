@@ -93,6 +93,11 @@ def normalize_person_name(first: str, last: str) -> str:
     return " ".join(f"{first} {last}".split()).casefold()
 
 
+def normalize_search_text(value: str | None) -> str:
+    """Normalize free-text search input, treating ``ё`` and ``е`` as equal."""
+    return (value or "").casefold().replace("ё", "е").strip()
+
+
 def _tone(overall: float) -> str:
     """Map an average overall score to the CSS tone token used by templates."""
     return "good" if overall >= 4 else "mid" if overall >= 3 else "bad"
@@ -369,7 +374,7 @@ class InMemoryRepository:
         sort: str = "rating",
     ) -> list[dict[str, Any]]:
         """Search approved professors with optional filters and sorting."""
-        q = q.lower().strip()
+        q = normalize_search_text(q)
         school_slug = school_slug.strip()
         city = city.strip()
         department = department.strip()
@@ -384,7 +389,7 @@ class InMemoryRepository:
                 continue
             if department and p.department != department:
                 continue
-            if q and q not in f"{p.full_name} {p.department}".lower():
+            if q and q not in normalize_search_text(f"{p.full_name} {p.department}"):
                 continue
             out.append({"prof": p, "school": school, "stats": self.stats(p.id)})
         out.sort(key=_search_sort_key(sort))
