@@ -7,6 +7,7 @@ from .views import ThrottledLoginView
 urlpatterns = [
     path("", views.home, name="home"),
     path("health/", views.health, name="health"),
+    path("healthz", views.healthz, name="healthz"),
     path("rules/", views.rules, name="rules"),
     path("about/", views.about, name="about"),
     path("professors/add/", views.add_professor, name="add_professor"),

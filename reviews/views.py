@@ -42,6 +42,11 @@ def health(request):
     return JsonResponse({"status": "ok"})
 
 
+def healthz(request):
+    """Return a database-independent liveness response."""
+    return JsonResponse({"status": "ok"})
+
+
 def _paginate(items, page_number):
     """Return ``(page_items, page_obj)`` for ``items``.
 

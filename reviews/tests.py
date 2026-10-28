@@ -19,6 +19,15 @@ TEMPLATES_DIR = Path(__file__).parent / "templates"
 STATIC_CSS = Path(__file__).parent / "static" / "reviews" / "style.css"
 
 
+class HealthzTests(TestCase):
+    def test_healthz_is_public_and_does_not_query_database(self):
+        with self.assertNumQueries(0):
+            response = self.client.get(reverse("healthz"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json(), {"status": "ok"})
+
+
 def _valid(overrides=None):
     d = {"course": "Алгоритмы", "term": "Осень 2025", "overall": "4", "difficulty": "3",
          "would_take_again": "yes", "grade": "A", "tags": ["Интересные лекции"],
