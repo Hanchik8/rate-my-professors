@@ -19,7 +19,8 @@ def home(request):
     q = request.GET.get("q", "")
     school = request.GET.get("school", "")
     city = request.GET.get("city", "")
-    results = repo.search(q, school, city)
+    department = request.GET.get("department", "")
+    results = repo.search(q, school, city, department)
     paginator = Paginator(results, 10)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
@@ -29,9 +30,10 @@ def home(request):
     else:
         page_results = page_obj.object_list
     return render(request, "reviews/home.html", {
-        "q": q, "school": school, "city": city,
+        "q": q, "school": school, "city": city, "department": department,
         "schools": repo.schools(),
         "cities": repo.cities() if hasattr(repo, "cities") else sorted({s.city for s in repo.schools()}),
+        "departments": repo.departments() if hasattr(repo, "departments") else [],
         "results": page_results,
         "page_obj": page_obj,
     })

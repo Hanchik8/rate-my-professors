@@ -98,6 +98,9 @@ class DjangoRepository:
     def cities(self):
         return sorted(School.objects.values_list("city", flat=True).distinct())
 
+    def departments(self):
+        return sorted(Professor.objects.filter(status="approved").values_list("department", flat=True).distinct())
+
     def school(self, school_id):
         try:
             return self._school_to_dc(School.objects.get(pk=school_id))
@@ -190,17 +193,20 @@ class DjangoRepository:
         avg = round(mean(avgs), 1) if avgs else 0
         return {"prof_count": n, "review_count": total, "avg_overall": avg}
 
-    def search(self, q="", school_slug="", city=""):
+    def search(self, q="", school_slug="", city="", department=""):
         qs = Professor.objects.filter(status="approved").select_related("school")
         if school_slug:
             qs = qs.filter(school__slug=school_slug)
         if city:
             qs = qs.filter(school__city=city)
+        want_dept = department.lower().strip()
         if q:
             q = q.lower().strip()
             # fetch and filter in python for case-insensitive unicode
             items = []
             for p in qs:
+                if want_dept and p.department.lower().strip() != want_dept:
+                    continue
                 if q and q not in f"{p.full_name} {p.department}".lower():
                     continue
                 dc = self._prof_to_dc(p)
@@ -213,6 +219,8 @@ class DjangoRepository:
             return out
         out = []
         for p in qs:
+            if want_dept and p.department.lower().strip() != want_dept:
+                continue
             dc = self._prof_to_dc(p)
             school = self._school_to_dc(p.school)
             out.append({"prof": dc, "school": school, "stats": self.stats(str(p.pk))})

@@ -11,6 +11,10 @@
     <option value="">{% translate "Все вузы" %}</option>
     {% for s in schools %}<option value="{{ s.slug }}"{% if s.slug == school %} selected{% endif %}>{{ s.name }}</option>{% endfor %}
   </select>
+  <select name="department" aria-label="{% translate 'Кафедра' %}">
+    <option value="">{% translate "Все кафедры" %}</option>
+    {% for d in departments %}<option value="{{ d }}"{% if d == department %} selected{% endif %}>{{ d }}</option>{% endfor %}
+  </select>
   <button>{% translate "Найти" %}</button>
 </form>
 <ol class="rows">
@@ -29,9 +33,9 @@
 </ol>
 {% if page_obj %}
 <div class="pagination">
-  {% if page_obj.has_previous %}<a href="?q={{ q }}&school={{ school }}&city={{ city }}&page={{ page_obj.previous_page_number }}">{% translate "Назад" %}</a>{% endif %}
+  {% if page_obj.has_previous %}<a href="?q={{ q }}&school={{ school }}&city={{ city }}&department={{ department }}&page={{ page_obj.previous_page_number }}">{% translate "Назад" %}</a>{% endif %}
   <span>{% blocktranslate with n=page_obj.number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}</span>
-  {% if page_obj.has_next %}<a href="?q={{ q }}&school={{ school }}&city={{ city }}&page={{ page_obj.next_page_number }}">{% translate "Вперёд" %}</a>{% endif %}
+  {% if page_obj.has_next %}<a href="?q={{ q }}&school={{ school }}&city={{ city }}&department={{ department }}&page={{ page_obj.next_page_number }}">{% translate "Вперёд" %}</a>{% endif %}
 </div>
 {% endif %}
 {% endblock %}

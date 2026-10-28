@@ -2,7 +2,16 @@
 
 Аналог RateMyProfessors для вузов КР. Интерфейс на русском, кыргызском и английском (по умолчанию `ru`).
 
+> **Готовность к продакшену:** проект пока **не готов** к публичному запуску. Аудит, блокеры P0 и
+> требования к деплою — [`DEPLOYMENT.md`](DEPLOYMENT.md). Инструкция для владельца и модераторов —
+> [`ADMIN_GUIDE.md`](ADMIN_GUIDE.md).
+
 ## Локальный запуск
+
+> ⚠️ В текущей версии `.env` **не загружается автоматически**: переменные нужно экспортировать в
+> оболочку. Кроме того, `.env.example` задаёт `REPO_BACKEND=memory`, который перекрывает
+> `DATABASE_URL`; для PostgreSQL установите `REPO_BACKEND=django`. Подробности — в
+> [`DEPLOYMENT.md`](DEPLOYMENT.md), раздел «The data-loss trap».
 
 ```bash
 cp .env.example .env          # при необходимости поправьте значения
@@ -28,7 +37,7 @@ python manage.py runserver
 | `DEBUG` | `True` | `False` в проде |
 | `ALLOWED_HOSTS` | `*` | Через запятую, напр. `example.com,127.0.0.1` |
 | `DATABASE_URL` | _(пусто — SQLite)_ | `postgres://user:pass@host:port/db` |
-| `REPO_BACKEND` | `memory` | `memory` или `django` (ORM). При `DATABASE_URL` по умолчанию `django` |
+| `REPO_BACKEND` | `memory` | `memory` или `django` (ORM). Если переменная пуста, но задан `DATABASE_URL`, выбирается `django`. Явное `memory` имеет приоритет и отключает БД. |
 
 ### i18n
 

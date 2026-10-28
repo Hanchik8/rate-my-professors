@@ -53,6 +53,31 @@ class MemorySmokeTests(TestCase):
         r2 = self.client.get(reverse("home"), {"school": school.slug})
         self.assertContains(r2, "Бакыт")
 
+    def test_filter_department(self):
+        # seeded Физика: Дмитрий Волков; Информатика: Айбек Токтогулов and Бакыт Маматов
+        r = self.client.get(reverse("home"), {"department": "Физика"})
+        self.assertContains(r, "Волков")
+        self.assertNotContains(r, "Айбек")
+        self.assertNotContains(r, "Бакыт")
+        self.assertContains(r, 'name="department"')
+        self.assertContains(r, 'selected>Физика')
+        # case-insensitive + surrounding whitespace
+        r_ci = self.client.get(reverse("home"), {"department": "  физика  "})
+        self.assertContains(r_ci, "Волков")
+        self.assertNotContains(r_ci, "Айбек")
+        # empty department keeps existing unfiltered results
+        r_all = self.client.get(reverse("home"), {"department": ""})
+        self.assertContains(r_all, "Айбек")
+        self.assertContains(r_all, "Волков")
+        # pagination still present on the full list (12 seeded professors, 10 per page)
+        self.assertContains(r_all, "Вперёд")
+        # a narrow department list does not paginate
+        self.assertNotContains(r, "Вперёд")
+        # department combines with city
+        r_city = self.client.get(reverse("home"), {"department": "Информатика", "city": "Ош"})
+        self.assertContains(r_city, "Бакыт")
+        self.assertNotContains(r_city, "Айбек")
+
     def test_professor_page_and_404(self):
         prof = self.repo.search("Айбек")[0]["prof"]
         self.assertContains(self.client.get(reverse("professor", args=[prof.slug])), "Алгоритмы")
@@ -165,6 +190,19 @@ class DjangoSmokeTests(TestCase):
 
     def test_home_shows_kg_data(self):
         self.assertContains(self.client.get(reverse("home")), "Айбек")
+
+    def test_filter_department(self):
+        r = self.client.get(reverse("home"), {"department": "Физика"})
+        self.assertContains(r, "Волков")
+        self.assertNotContains(r, "Айбек")
+        r_ci = self.client.get(reverse("home"), {"department": "физика"})
+        self.assertContains(r_ci, "Волков")
+        self.assertNotContains(r_ci, "Смирнова")
+        r_all = self.client.get(reverse("home"), {"department": ""})
+        self.assertContains(r_all, "Айбек")
+        self.assertContains(r_all, "Волков")
+        names = [row["prof"].last_name for row in self.repo.search(department="Информатика")]
+        self.assertCountEqual(names, ["Токтогулов", "Маматов"])
 
     def test_review_pending_not_visible(self):
         prof = self.repo.search("Айбек")[0]["prof"]
