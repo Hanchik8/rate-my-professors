@@ -18,6 +18,9 @@ from django.test import RequestFactory, TestCase
 from django.urls import reverse
 from django.utils import translation
 
+from .repository import InMemoryRepository
+from .seed import seed
+
 APP_DIR = Path(__file__).parent
 LOCALE_DIR = APP_DIR.parent / "locale"
 TEMPLATES_DIR = APP_DIR / "templates"
@@ -401,6 +404,59 @@ class RenderedTemplateTranslationTests(TestCase):
         self.assertIn('class="empty empty-state"', html)
         self.assertIn("Пока нет отзывов. Станьте первым, кто оценит Test Professor.", html)
         self.assertIn('href="/professors/test-professor/rate/"', html)
+
+
+class KyrgyzPageRenderTests(TestCase):
+    """Every public page renders its labels in Kyrgyz, not Russian."""
+
+    def setUp(self):
+        import reviews.views as views
+        from reviews import store as store_mod
+
+        self.repo = InMemoryRepository()
+        seed(self.repo)
+        self._orig_store = store_mod.repo
+        self._orig_views = views.repo
+        store_mod.repo = self.repo
+        views.repo = self.repo
+
+    def tearDown(self):
+        import reviews.views as views
+        from reviews import store as store_mod
+
+        store_mod.repo = self._orig_store
+        views.repo = self._orig_views
+
+    def test_public_pages_render_in_kyrgyz(self):
+        prof = self.repo.search("Айбек")[0]["prof"]
+        school = next(
+            row["school"] for row in self.repo.search() if row["prof"].id == prof.id
+        )
+        pages = {
+            reverse("home"): ("Бардык шаарлар", "Издөө", "Табуу"),
+            reverse("rules"): ("Эрежелер", "Эреже бузууну көрдүңүзбү?", "«Арыздануу»"),
+            reverse("about"): ("Долбоор жөнүндө", "Бул кандай иштейт", "Байланыш"),
+            reverse("login"): ("Кирүү", "Аккаунтуңуз жокпу? Катталыңыз"),
+            reverse("signup"): ("Катталуу", "Аккаунтуңуз барбы? Кириңиз"),
+            reverse("school_detail", args=[school.slug]): (
+                "Башкы бет",
+                "Кафедралар",
+                "Окутуучулар",
+            ),
+            reverse("professor", args=[prof.slug]): (
+                "Башкы бет",
+                "Сын-пикирлер",
+                "Окутуучуну баалоо",
+            ),
+        }
+        for url, labels in pages.items():
+            with self.subTest(url=url):
+                response = self.client.get(url, HTTP_ACCEPT_LANGUAGE="ky")
+                self.assertEqual(response.status_code, 200)
+                html = response.content.decode()
+                self.assertIn('<html lang="ky"', html)
+                for label in labels:
+                    self.assertIn(label, html)
 
 
 class LanguageAlternatesTests(TestCase):
