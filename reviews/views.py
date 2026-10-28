@@ -17,7 +17,7 @@ from django.http import Http404, HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils.translation import gettext as _
-from django.views.decorators.http import require_POST, require_http_methods
+from django.views.decorators.http import require_http_methods, require_POST
 
 from .caching import (
     get_or_set,
@@ -60,15 +60,27 @@ def _paginate(items, page_number):
     return page_obj.object_list, page_obj
 
 
+def _form_for_request(request, form_class, **kwargs):
+    """Return a form bound to POST data, or an unbound form otherwise."""
+    data = request.POST if request.method == "POST" else None
+    return form_class(data, **kwargs)
+
+
+def _sort_param(request, allowed, default, aliases=None):
+    """Return a validated sort key from the query string."""
+    sort = request.GET.get("sort", default)
+    if aliases:
+        sort = aliases.get(sort, sort)
+    return sort if sort in allowed else default
+
+
 def _home_filters(request):
     """Parse and normalize the home page's search/filter query string."""
     q = request.GET.get("q", "")
     school = request.GET.get("school", "")
     city = request.GET.get("city", "")
     department = request.GET.get("department", "")
-    sort = request.GET.get("sort", "rating")
-    if sort not in ("rating", "reviews"):
-        sort = "rating"
+    sort = _sort_param(request, ("rating", "reviews"), "rating")
     return q, school, city, department, sort
 
 
@@ -116,11 +128,12 @@ def _object_or_404(obj, message):
 def professor_detail(request, slug):
     """Show a professor profile with aggregate stats and paginated reviews."""
     prof = _professor_or_404(slug)
-    sort = request.GET.get("sort", "new")
-    if sort == "newest":
-        sort = "new"
-    if sort not in ("new", "old", "high", "low", "helpful"):
-        sort = "new"
+    sort = _sort_param(
+        request,
+        ("new", "old", "high", "low", "helpful"),
+        "new",
+        aliases={"newest": "new"},
+    )
     all_reviews = repo.reviews_for(prof.id, sort)
     reviews, page_obj = _paginate(all_reviews, request.GET.get("page"))
     return render(request, "reviews/professor.html", {
@@ -189,22 +202,36 @@ def _owned_review_or_404(review_id, user):
     return review
 
 
+def _professor_for_review(review):
+    """Return the professor a review belongs to."""
+    return repo.professor_by_id(review.professor_id)
+
+
+def _review_initial(review):
+    """Return the initial form values for editing an existing review."""
+    return {
+        "course": review.course,
+        "term": review.term,
+        "overall": review.overall,
+        "difficulty": review.difficulty,
+        "would_take_again": "yes" if review.would_take_again else "no",
+        "grade": review.grade,
+        "tags": review.tags,
+        "comment": review.comment,
+    }
+
+
 @require_http_methods(["GET", "POST"])
 @login_required
 def review_edit(request, review_id):
     review = _owned_review_or_404(review_id, request.user)
-    prof = repo.professor_by_id(review.professor_id)
-    if request.method == "POST":
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            repo.update_review(review_id, form.cleaned_data)
-            messages.success(request, _("Отзыв отправлен на модерацию."))
-            return redirect("profile")
-    else:
-        form = ReviewForm(initial={"course": review.course, "term": review.term,
-            "overall": review.overall, "difficulty": review.difficulty,
-            "would_take_again": "yes" if review.would_take_again else "no",
-            "grade": review.grade, "tags": review.tags, "comment": review.comment})
+    prof = _professor_for_review(review)
+    initial = None if request.method == "POST" else _review_initial(review)
+    form = _form_for_request(request, ReviewForm, initial=initial)
+    if request.method == "POST" and form.is_valid():
+        repo.update_review(review_id, form.cleaned_data)
+        messages.success(request, _("Отзыв отправлен на модерацию."))
+        return redirect("profile")
     return render(request, "reviews/review_form.html",
                   {"prof": prof, "form": form, "editing": True, "url": reverse("rules")})
 
@@ -254,12 +281,9 @@ def _account_urls():
 def review_new(request, slug):
     """Create a review for a professor; new reviews await moderation."""
     prof = _professor_or_404(slug)
-    if request.method == "POST":
-        form = ReviewForm(request.POST)
-        if form.is_valid() and _save_review(form, prof, request):
-            return redirect("professor", slug=prof.slug)
-    else:
-        form = ReviewForm()
+    form = _form_for_request(request, ReviewForm)
+    if request.method == "POST" and form.is_valid() and _save_review(form, prof, request):
+        return redirect("professor", slug=prof.slug)
     return render(request, "reviews/review_form.html", {
         "prof": prof, "form": form,
         **_account_urls(),
@@ -269,7 +293,7 @@ def review_new(request, slug):
 
 def _redirect_to_review(review):
     """Redirect back to the review's anchor on its professor page."""
-    prof = repo.professor_by_id(review.professor_id)
+    prof = _professor_for_review(review)
     if prof:
         return redirect(reverse("professor", args=[prof.slug]) + f"#review-{review.id}")
     return redirect("home")
@@ -277,10 +301,7 @@ def _redirect_to_review(review):
 
 def _review_or_404(review_id):
     """Fetch a review or raise ``Http404`` when it does not exist."""
-    review = repo.review(review_id)
-    if review is None:
-        raise Http404(_("Review not found"))
-    return review
+    return _object_or_404(repo.review(review_id), _("Review not found"))
 
 
 @require_POST
@@ -325,6 +346,11 @@ class ThrottledLoginView(auth_views.LoginView):
         return super().post(request, *args, **kwargs)
 
 
+def _normalize_email(email):
+    """Return an email address lowercased and stripped of whitespace."""
+    return email.lower().strip()
+
+
 class EmailSignupForm(forms.Form):
     """Self-service signup that uses the email address as the username."""
 
@@ -334,7 +360,7 @@ class EmailSignupForm(forms.Form):
 
     def clean_email(self):
         """Normalize the email and reject duplicates (case-insensitive)."""
-        email = self.cleaned_data["email"].lower().strip()
+        email = _normalize_email(self.cleaned_data["email"])
         if User.objects.filter(email__iexact=email).exists() or User.objects.filter(username__iexact=email).exists():
             raise forms.ValidationError(_("Пользователь с таким email уже существует."))
         return email
@@ -357,7 +383,7 @@ class EmailSignupForm(forms.Form):
 
     def save(self):
         """Create and return a new user from the cleaned data."""
-        email = self.cleaned_data["email"].lower().strip()
+        email = _normalize_email(self.cleaned_data["email"])
         user = User.objects.create_user(username=email, email=email, password=self.cleaned_data["password1"])
         return user
 
@@ -368,15 +394,12 @@ def signup(request):
     """Register a new user and log them in immediately."""
     if request.user.is_authenticated:
         return redirect("home")
-    if request.method == "POST":
-        form = EmailSignupForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            messages.success(request, _("Регистрация выполнена. Добро пожаловать!"))
-            return redirect("home")
-    else:
-        form = EmailSignupForm()
+    form = _form_for_request(request, EmailSignupForm)
+    if request.method == "POST" and form.is_valid():
+        user = form.save()
+        login(request, user)
+        messages.success(request, _("Регистрация выполнена. Добро пожаловать!"))
+        return redirect("home")
     return render(request, "registration/signup.html", {"form": form})
 
 
@@ -421,13 +444,10 @@ def _submit_professor(form, user):
 def add_professor(request):
     """Allow a logged-in user to submit a professor for moderation."""
     schools = repo.schools()
-    if request.method == "POST":
-        form = ProfessorForm(request.POST, schools=schools)
-        if form.is_valid() and _submit_professor(form, request.user):
-            messages.success(request, _("Преподаватель отправлен на модерацию."))
-            return redirect("home")
-    else:
-        form = ProfessorForm(schools=schools)
+    form = _form_for_request(request, ProfessorForm, schools=schools)
+    if request.method == "POST" and form.is_valid() and _submit_professor(form, request.user):
+        messages.success(request, _("Преподаватель отправлен на модерацию."))
+        return redirect("home")
     return render(request, "reviews/add_professor.html", {
         "form": form,
         **_account_urls(),
