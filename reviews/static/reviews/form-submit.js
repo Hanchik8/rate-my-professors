@@ -13,17 +13,12 @@
     if (!button || button.tagName !== "BUTTON" || button.disabled) { return; }
     button.classList.add(BUSY_CLASS);
     button.setAttribute("aria-busy", "true");
-    button.disabled = true;
-  }
-
-  function preserveSubmitterValue(form, button) {
-    if (!button.name) { return; }
-    var value = document.createElement("input");
-    value.type = "hidden";
-    value.name = button.name;
-    value.value = button.value || "";
-    value.setAttribute("data-submit-state-value", "true");
-    form.appendChild(value);
+    if (button.name) {
+      // Keep named buttons enabled so their name/value is included in the POST.
+      button.setAttribute("aria-disabled", "true");
+    } else {
+      button.disabled = true;
+    }
   }
 
   function resetForm(form) {
@@ -34,11 +29,8 @@
         button.disabled = false;
         button.classList.remove(BUSY_CLASS);
         button.removeAttribute("aria-busy");
+        button.removeAttribute("aria-disabled");
       }
-    );
-    Array.prototype.forEach.call(
-      form.querySelectorAll("[data-submit-state-value]"),
-      function (input) { input.remove(); }
     );
   }
 
@@ -48,10 +40,7 @@
     if (form.dataset[BUSY_ATTR] === "true") { event.preventDefault(); return; }
     form.dataset[BUSY_ATTR] = "true";
 
-    var button = findSubmitter(form, event);
-    if (!button) { return; }
-    preserveSubmitterValue(form, button);
-    blockSubmitter(button);
+    blockSubmitter(findSubmitter(form, event));
   });
 
   document.addEventListener("reset", function (event) {

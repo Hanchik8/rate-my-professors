@@ -54,8 +54,8 @@
     {% if r.tags %}<p class="tags">{% for tag in r.tags %}{% translate tag %}{% if not forloop.last %}, {% endif %}{% endfor %}</p>{% endif %}
     <div class="votes">
       <form method="post" action="{% url 'review_vote' r.id %}">{% csrf_token %}
-        <button name="vote" value="up" aria-label="{% translate 'Полезно' %}: {{ r.course }} ({{ r.helpful|localize }})">{% translate "Полезно" %} {{ r.helpful|localize }}</button>
-        <button name="vote" value="down" aria-label="{% translate 'Бесполезно' %}: {{ r.course }} ({{ r.not_helpful|localize }})">{% translate "Бесполезно" %} {{ r.not_helpful|localize }}</button>
+        <button type="submit" name="vote" value="up" aria-label="{% translate 'Полезно' %}: {{ r.course }} ({{ r.helpful|localize }})">{% translate "Полезно" %} {{ r.helpful|localize }}</button>
+        <button type="submit" name="vote" value="down" aria-label="{% translate 'Бесполезно' %}: {{ r.course }} ({{ r.not_helpful|localize }})">{% translate "Бесполезно" %} {{ r.not_helpful|localize }}</button>
       </form>
       <form method="post" action="{% url 'review_report' r.id %}">{% csrf_token %}
         {{ report_form.reason }}

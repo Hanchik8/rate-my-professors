@@ -72,12 +72,15 @@ class VotingEdgeViewTestsMixin:
     # --- unauthorized -----------------------------------------------------
     def test_anonymous_vote_redirects_to_login(self):
         review = self.seed_review()
+        url = reverse("review_vote", args=[review.id])
         before = self.repo.review(review.id)
-        r = self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
+        before_counts = (before.helpful, before.not_helpful)
+        r = self.client.post(url, {"vote": "up"})
         self.assertEqual(r.status_code, 302)
         self.assertIn("/accounts/login/", r.url)
+        self.assertIn(f"next={url}", r.url)
         after = self.repo.review(review.id)
-        self.assertEqual((after.helpful, after.not_helpful), (before.helpful, before.not_helpful))
+        self.assertEqual((after.helpful, after.not_helpful), before_counts)
 
     # --- nonexistent id ---------------------------------------------------
     def test_nonexistent_review_id_returns_404(self):
@@ -99,6 +102,33 @@ class VotingEdgeViewTestsMixin:
         r = self.client.post(reverse("review_vote", args=[review.id]), {"vote": "up"})
         self.assertEqual(r.status_code, 302)
         self.assertEqual(self.repo.review(review.id).helpful, before + 1)
+
+    def test_down_vote_increments_not_helpful(self):
+        self.login("down-vote@example.com")
+        review = self.seed_review()
+        before = self.repo.review(review.id)
+        before_counts = (before.helpful, before.not_helpful)
+        r = self.client.post(
+            reverse("review_vote", args=[review.id]), {"vote": "down"}
+        )
+        self.assertEqual(r.status_code, 302)
+        after = self.repo.review(review.id)
+        self.assertEqual(after.helpful, before_counts[0])
+        self.assertEqual(after.not_helpful, before_counts[1] + 1)
+
+    def test_vote_buttons_submit_their_value(self):
+        self.login("buttons@example.com")
+        r = self.client.get(reverse("professor", args=[self.prof().slug]))
+        self.assertContains(r, 'type="submit" name="vote" value="up"')
+        self.assertContains(r, 'type="submit" name="vote" value="down"')
+
+    def test_repeat_vote_shows_clear_message(self):
+        self.login("repeat-message@example.com")
+        review = self.seed_review()
+        url = reverse("review_vote", args=[review.id])
+        self.client.post(url, {"vote": "up"})
+        r = self.client.post(url, {"vote": "up"}, follow=True)
+        self.assertContains(r, "Вы уже голосовали за этот отзыв.")
 
     def test_repeat_same_vote_is_not_counted_twice(self):
         self.login("repeat@example.com")
