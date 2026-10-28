@@ -649,3 +649,14 @@ msgstr "Окутуучу %(name)s (%(dept)s, %(school)s) тууралуу сту
 
 msgid "Преподаватели и отзывы студентов вуза %(name)s (%(city)s): рейтинги, кафедры и советы."
 msgstr "%(name)s ЖОЖунун окутуучулары жана студенттик сын-пикирлер (%(city)s): рейтингдер, кафедралар жана кеңештер."
+
+# Strings rendered by Django's built-in login form.
+msgid "Username"
+msgstr "Колдонуучунун аты"
+
+#, python-format
+msgid "Please enter a correct %(username)s and password. Note that both fields may be case-sensitive."
+msgstr "Туура %(username)s жана сырсөздү киргизиңиз. Эки талаа тең регистрге сезимтал болушу мүмкүн."
+
+msgid "This account is inactive."
+msgstr "Бул аккаунт активдүү эмес."
