@@ -41,6 +41,13 @@
 <p><a class="btn" href="{% url 'review_new' prof.slug %}">{% translate "Оценить преподавателя" %}</a></p>
 
 <h2>{% translate "Отзывы" %}</h2>
+<div class="review-summary" role="group" aria-label="{% if stats.count %}{% translate 'Средний рейтинг' %}: {{ stats.overall|floatformat:1|localize }} / 5, {% translate 'Отзывов' %}: {{ stats.count|localize }}{% else %}{% translate 'Нет оценок' %}{% endif %}">
+  <span class="tile small {{ stats.tone }}">{% if stats.count %}{{ stats.overall|floatformat:1|localize }}{% else %}-{% endif %}</span>
+  <span class="review-summary-text">
+    <span class="review-summary-label">{% translate "Средний рейтинг" %}</span>
+    <span class="review-summary-count">{% translate "Отзывов" %}: {{ stats.count|localize }}</span>
+  </span>
+</div>
 {% if reviews %}
 <p class="sort">{% translate "Сортировка:" %}
   {% for value, label in sort_options %}{% if not forloop.first %}, {% endif %}{% if sort == value %}<strong>{% translate label %}</strong>{% else %}<a href="?sort={{ value }}">{% translate label %}</a>{% endif %}{% endfor %}

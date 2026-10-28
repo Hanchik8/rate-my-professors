@@ -244,6 +244,14 @@ input:focus,select:focus,textarea:focus{border-color:var(--focus)}
   background:var(--surface);color:var(--ink);box-shadow:var(--shadow);display:inline-flex;align-items:center}
 .pagination a:hover{border-color:var(--accent);color:var(--accent)}
 
+/* Compact rating summary shown above the review list (theme-aware tokens). */
+.review-summary{display:flex;align-items:center;gap:.9rem;max-width:46rem;margin:.75rem 0 1.25rem;
+  padding:.7rem 1rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow)}
+.review-summary-text{display:flex;flex-direction:column;min-width:0;line-height:1.25}
+.review-summary-label{font-weight:700}
+.review-summary-count{color:var(--muted);font-size:.9rem}
+
 /* Reviews */
 .review{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--line);
   max-width:46rem;overflow-wrap:break-word}
