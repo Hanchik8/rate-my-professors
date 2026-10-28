@@ -217,12 +217,23 @@ class ProfessorForm(forms.Form):
 
     def clean_first_name(self):
         """Sanitize the first name."""
-        return clean_text(self.cleaned_data["first_name"])
+        return self._clean_required_text("first_name", 40)
 
     def clean_last_name(self):
         """Sanitize the last name."""
-        return clean_text(self.cleaned_data["last_name"])
+        return self._clean_required_text("last_name", 40)
 
     def clean_department(self):
         """Sanitize the department name."""
-        return clean_text(self.cleaned_data["department"])
+        return self._clean_required_text("department", 80)
+
+    def _clean_required_text(self, field, maximum):
+        value = clean_text(self.cleaned_data[field])
+        if not value:
+            raise forms.ValidationError(self.fields[field].error_messages["required"])
+        if len(value) > maximum:
+            raise forms.ValidationError(
+                self.fields[field].error_messages["max_length"],
+                code="max_length", params={"limit_value": maximum, "show_value": len(value)},
+            )
+        return value

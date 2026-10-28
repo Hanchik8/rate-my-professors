@@ -688,6 +688,42 @@ class AddProfessorViewTests(_MemoryRepoTestCase):
         self.assertEqual(r.context["professor"].id, existing.id)
         self.assertContains(r, reverse("professor", args=[existing.slug]))
 
+    def test_trims_names_and_rejects_empty_or_overlong_cleaned_text(self):
+        self.login()
+        school = self.repo.schools()[0]
+        data = self._data(school)
+        data.update(first_name="  Иван  ", last_name=" Петров ", department=" Кафедра ")
+        self.assertEqual(self.client.post(reverse("add_professor"), data).status_code, 302)
+        professor = next(p for p in self.repo._professors.values() if p.first_name == "Иван")
+        self.assertEqual((professor.first_name, professor.last_name, professor.department),
+                         ("Иван", "Петров", "Кафедра"))
+
+        data.update(first_name=" \t ")
+        response = self.client.post(reverse("add_professor"), data)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("first_name", response.context["form"].errors)
+
+        data.update(first_name="А" * 41)
+        response = self.client.post(reverse("add_professor"), data)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("first_name", response.context["form"].errors)
+
+    def test_invalid_choices_and_escaped_text_echo(self):
+        self.login()
+        school = self.repo.schools()[0]
+        data = self._data(school)
+        data.update(first_name="<script>alert(1)</script>", title="admin")
+        response = self.client.post(reverse("add_professor"), data)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("title", response.context["form"].errors)
+        self.assertContains(response, "&lt;script&gt;alert(1)&lt;/script&gt;")
+        self.assertNotContains(response, "<script>alert(1)</script>")
+
+        data.update(title="доцент", school="invalid-school")
+        response = self.client.post(reverse("add_professor"), data)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("school", response.context["form"].errors)
+
 
 # ---------------------------------------------------------------------------
 # Auth / signup views
