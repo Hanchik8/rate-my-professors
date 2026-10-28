@@ -1740,6 +1740,45 @@ class PaginationTests(_MemoryRepoTestCase):
         self.assertEqual(r2.status_code, 200)
         self.assertLessEqual(len(r2.context["reviews"]), 10)
 
+    def test_school_page_invalid_pages_fall_back(self):
+        school = self.repo.schools()[0]
+        for i in range(12):
+            self.repo.add_professor(school.id, f"Пагин{i}", f"Тестов{i}", "Кафедра", "доцент")
+        url = reverse("school_detail", args=[school.slug])
+        last = self.client.get(url).context["page_obj"].paginator.num_pages
+        for page in ("abc", "0", "-1", "9999"):
+            with self.subTest(page=page):
+                r = self.client.get(url, {"page": page})
+                self.assertEqual(r.status_code, 200)
+                self.assertIsNotNone(r.context["page_obj"])
+                self.assertIn(r.context["page_obj"].number, (1, last))
+        self.assertEqual(
+            self.client.get(url, {"page": "abc"}).context["page_obj"].number, 1
+        )
+        self.assertEqual(
+            self.client.get(url, {"page": "9999"}).context["page_obj"].number, last
+        )
+
+    def test_professor_page_invalid_pages_fall_back(self):
+        prof = self.prof()
+        for i in range(12):
+            self.repo.add_review(prof.id, _repo_review(course=f"Пагин{i}"), status="approved")
+        url = reverse("professor", args=[prof.slug])
+        last = self.client.get(url).context["page_obj"].paginator.num_pages
+        for page in ("abc", "0", "-1", "9999"):
+            with self.subTest(page=page):
+                r = self.client.get(url, {"page": page})
+                self.assertEqual(r.status_code, 200)
+                self.assertIsNotNone(r.context["page_obj"])
+                self.assertIn(r.context["page_obj"].number, (1, last))
+                self.assertTrue(r.context["reviews"])
+        self.assertEqual(
+            self.client.get(url, {"page": "abc"}).context["page_obj"].number, 1
+        )
+        self.assertEqual(
+            self.client.get(url, {"page": "9999"}).context["page_obj"].number, last
+        )
+
 
 # ---------------------------------------------------------------------------
 # Performance: no N+1 queries in DjangoRepository list pages
