@@ -17,7 +17,7 @@ from django.http import Http404, HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils.translation import gettext as _
-from django.views.decorators.http import require_POST
+from django.views.decorators.http import require_POST, require_http_methods
 
 from .caching import (
     get_or_set,
@@ -189,6 +189,7 @@ def _owned_review_or_404(review_id, user):
     return review
 
 
+@require_http_methods(["GET", "POST"])
 @login_required
 def review_edit(request, review_id):
     review = _owned_review_or_404(review_id, request.user)
@@ -208,6 +209,7 @@ def review_edit(request, review_id):
                   {"prof": prof, "form": form, "editing": True, "url": reverse("rules")})
 
 
+@require_http_methods(["GET", "POST"])
 @login_required
 def review_delete(request, review_id):
     review = _owned_review_or_404(review_id, request.user)
@@ -246,6 +248,7 @@ def _account_urls():
     return {"login_url": reverse("login"), "signup_url": reverse("signup")}
 
 
+@require_http_methods(["GET", "POST"])
 @login_required
 @rate_limit("review")
 def review_new(request, slug):
@@ -359,6 +362,7 @@ class EmailSignupForm(forms.Form):
         return user
 
 
+@require_http_methods(["GET", "POST"])
 @rate_limit("signup")
 def signup(request):
     """Register a new user and log them in immediately."""
@@ -412,6 +416,7 @@ def _submit_professor(form, user):
     return True
 
 
+@require_http_methods(["GET", "POST"])
 @login_required
 def add_professor(request):
     """Allow a logged-in user to submit a professor for moderation."""
