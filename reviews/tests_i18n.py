@@ -298,7 +298,7 @@ class HomeTemplateTranslationTests(TestCase):
 class RenderedTemplateTranslationTests(TestCase):
     """Repository values shown in templates are translated, not left in Russian."""
 
-    def _render(self, lang):
+    def _render(self, lang, include_reviews=True):
         prof = SimpleNamespace(
             full_name="Test Professor",
             title="старший преподаватель",
@@ -337,7 +337,7 @@ class RenderedTemplateTranslationTests(TestCase):
                     "prof": prof,
                     "school": school,
                     "stats": stats,
-                    "reviews": [review],
+                    "reviews": [review] if include_reviews else [],
                     "sort": "newest",
                 },
                 request=request,
@@ -395,6 +395,12 @@ class RenderedTemplateTranslationTests(TestCase):
                 self.assertIn(label, html)
                 self.assertIn(f">{review_date}</time>", html)
                 self.assertIn('<time datetime="2025-10-25T', html)
+
+    def test_professor_page_renders_empty_reviews_call_to_action(self):
+        html = self._render("ru", include_reviews=False)
+        self.assertIn('class="empty empty-state"', html)
+        self.assertIn("Пока нет отзывов. Станьте первым, кто оценит Test Professor.", html)
+        self.assertIn('href="/professors/test-professor/rate/"', html)
 
 
 class LanguageAlternatesTests(TestCase):
