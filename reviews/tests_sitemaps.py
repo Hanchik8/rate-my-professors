@@ -66,3 +66,23 @@ class DjangoSitemapTests(SitemapTestMixin, TestCase):
         school = repo.add_school("Тестовый университет", "Бишкек")
         repo.add_professor(school.id, "Иван", "Петров", "Информатика", "доцент")
         return repo
+
+
+class EmptyRepositorySitemapTests(SitemapTestMixin, TestCase):
+    def make_repo(self):
+        return InMemoryRepository()
+
+    def test_school_and_professor_sitemaps_are_empty(self):
+        for section in ("schools", "professors"):
+            with self.subTest(section=section):
+                response = self.client.get(f"/sitemap-{section}.xml")
+                self.assertEqual(response.status_code, 200)
+                self.assertIn("xml", response["Content-Type"])
+                self.assertNotContains(response, "<url>")
+
+    def test_robots_txt_works_with_empty_repository(self):
+        response = self.client.get(reverse("robots_txt"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "User-agent: *")
+        self.assertContains(response, reverse("sitemap_index"))
