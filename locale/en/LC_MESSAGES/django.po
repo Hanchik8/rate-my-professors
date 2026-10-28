@@ -463,8 +463,8 @@ msgstr "Password"
 msgid "Повторите пароль"
 msgstr "Repeat password"
 
-msgid "Пользователь с таким email уже существует."
-msgstr "A user with this email already exists."
+msgid "Не удалось зарегистрироваться. Проверьте введённые данные."
+msgstr "Could not sign up. Please check the information you entered."
 
 msgid "Пароли не совпадают."
 msgstr "Passwords do not match."

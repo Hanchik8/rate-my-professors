@@ -425,10 +425,14 @@ class EmailSignupForm(forms.Form):
     password2 = forms.CharField(label=_("Повторите пароль"), widget=forms.PasswordInput)
 
     def clean_email(self):
-        """Normalize the email and reject duplicates (case-insensitive)."""
+        """Normalize the email and reject duplicates (case-insensitive).
+
+        The error is deliberately generic: a signup page must not reveal
+        whether an account with this address already exists.
+        """
         email = _normalize_email(self.cleaned_data["email"])
         if User.objects.filter(email__iexact=email).exists() or User.objects.filter(username__iexact=email).exists():
-            raise forms.ValidationError(_("Пользователь с таким email уже существует."))
+            raise forms.ValidationError(_("Не удалось зарегистрироваться. Проверьте введённые данные."))
         return email
 
     def clean(self):
