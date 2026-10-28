@@ -68,6 +68,11 @@ def _form_for_request(request, form_class, **kwargs):
     return form_class(data, **kwargs)
 
 
+def _is_valid_post(request, form):
+    """Return ``True`` when ``request`` is a POST with a valid ``form``."""
+    return request.method == "POST" and form.is_valid()
+
+
 def _sort_param(request, allowed, default, aliases=None):
     """Return a validated sort key from the query string."""
     sort = request.GET.get("sort", default)
@@ -197,9 +202,15 @@ def profile(request):
     })
 
 
+def _is_author(obj, user):
+    """Return whether ``obj`` belongs to ``user`` (ids compare as strings)."""
+    return obj.author_id is not None and str(obj.author_id) == str(user.id)
+
+
 def _owned_review_or_404(review_id, user):
+    """Fetch a review owned by ``user`` or raise ``Http404``."""
     review = _review_or_404(review_id)
-    if str(review.author_id) != str(user.id):
+    if not _is_author(review, user):
         raise Http404(_("Review not found"))
     return review
 
@@ -230,12 +241,15 @@ def review_edit(request, review_id):
     prof = _professor_for_review(review)
     initial = None if request.method == "POST" else _review_initial(review)
     form = _form_for_request(request, ReviewForm, initial=initial)
-    if request.method == "POST" and form.is_valid():
+    if _is_valid_post(request, form):
         repo.update_review(review_id, form.cleaned_data)
         messages.success(request, _("Отзыв отправлен на модерацию."))
         return redirect("profile")
-    return render(request, "reviews/review_form.html",
-                  {"prof": prof, "form": form, "editing": True, "url": reverse("rules")})
+    return render(
+        request,
+        "reviews/review_form.html",
+        _review_form_context(prof, form, editing=True),
+    )
 
 
 @require_http_methods(["GET", "POST"])
@@ -277,6 +291,16 @@ def _account_urls():
     return {"login_url": reverse("login"), "signup_url": reverse("signup")}
 
 
+def _review_form_context(prof, form, *, editing=False):
+    """Build the shared context for creating or editing a review."""
+    context = {"prof": prof, "form": form, "url": reverse("rules")}
+    if editing:
+        context["editing"] = True
+    else:
+        context.update(_account_urls())
+    return context
+
+
 @require_http_methods(["GET", "POST"])
 @login_required
 @rate_limit("review")
@@ -284,13 +308,13 @@ def review_new(request, slug):
     """Create a review for a professor; new reviews await moderation."""
     prof = _professor_or_404(slug)
     form = _form_for_request(request, ReviewForm)
-    if request.method == "POST" and form.is_valid() and _save_review(form, prof, request):
+    if _is_valid_post(request, form) and _save_review(form, prof, request):
         return redirect("professor", slug=prof.slug)
-    return render(request, "reviews/review_form.html", {
-        "prof": prof, "form": form,
-        **_account_urls(),
-        "url": reverse("rules"),
-    })
+    return render(
+        request,
+        "reviews/review_form.html",
+        _review_form_context(prof, form),
+    )
 
 
 def _redirect_to_review(review):
@@ -312,7 +336,7 @@ def _review_or_404(review_id):
 def review_vote(request, review_id):
     """Record a helpful / not-helpful vote on a review."""
     review = _review_or_404(review_id)
-    if review.author_id is not None and str(review.author_id) == str(request.user.id):
+    if _is_author(review, request.user):
         messages.warning(request, _("Нельзя голосовать за свой отзыв."))
         return _redirect_to_review(review)
     try:
@@ -426,7 +450,7 @@ def signup(request):
     if request.user.is_authenticated:
         return redirect("home")
     form = _form_for_request(request, EmailSignupForm)
-    if request.method == "POST" and form.is_valid():
+    if _is_valid_post(request, form):
         user = form.save()
         login(request, user)
         messages.success(request, _("Регистрация выполнена. Добро пожаловать!"))
@@ -476,7 +500,7 @@ def add_professor(request):
     """Allow a logged-in user to submit a professor for moderation."""
     schools = repo.schools()
     form = _form_for_request(request, ProfessorForm, schools=schools)
-    if request.method == "POST" and form.is_valid() and _submit_professor(form, request.user):
+    if _is_valid_post(request, form) and _submit_professor(form, request.user):
         messages.success(request, _("Преподаватель отправлен на модерацию."))
         return redirect("home")
     return render(request, "reviews/add_professor.html", {
