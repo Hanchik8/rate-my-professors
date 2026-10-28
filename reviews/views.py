@@ -324,6 +324,7 @@ def review_vote(request, review_id):
 
 @require_POST
 @login_required
+@rate_limit("report")
 def review_report(request, review_id):
     """Flag a review for moderator attention with a validated reason."""
     review = _review_or_404(review_id)

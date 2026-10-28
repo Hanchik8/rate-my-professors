@@ -29,7 +29,13 @@ class SharedConstantsTests(SimpleTestCase):
         self.assertEqual(settings.RATELIMIT, RATE_LIMITS)
 
     def test_expected_rate_limit_actions_are_defined(self):
-        self.assertEqual(set(RATE_LIMITS), {"login", "signup", "review", "vote"})
+        self.assertEqual(
+            set(RATE_LIMITS), {"login", "signup", "review", "report", "vote"}
+        )
         for limit, window in RATE_LIMITS.values():
             self.assertGreater(limit, 0)
             self.assertGreater(window, 0)
+
+    def test_review_and_report_allow_five_posts_per_minute(self):
+        self.assertEqual(RATE_LIMITS["review"], (5, 60))
+        self.assertEqual(RATE_LIMITS["report"], (5, 60))

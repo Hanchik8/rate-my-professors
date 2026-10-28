@@ -15,6 +15,7 @@ MAX_COMMENT_LENGTH = 1000
 RATE_LIMITS = {
     "login": (10, 60),
     "signup": (5, 600),
-    "review": (10, 600),
+    "review": (5, 60),
+    "report": (5, 60),
     "vote": (60, 60),
 }

@@ -33,12 +33,18 @@ def _client_ip(request: HttpRequest) -> str:
 
 
 def _subject(request: HttpRequest, user: Any = None) -> str:
-    """Return the identity the counter is attached to."""
+    """Return the identity the counter is attached to.
+
+    Anonymous traffic is keyed by client IP. Authenticated traffic combines
+    the username with the client IP, so one user on several networks does not
+    share a single budget while distinct users stay independent.
+    """
+    ip = _client_ip(request)
     if user is None:
         user = getattr(request, "user", None)
     if user is not None and getattr(user, "is_authenticated", False):
-        return f"user:{user.get_username()}"
-    return f"ip:{_client_ip(request)}"
+        return f"user:{user.get_username()}|ip:{ip}"
+    return f"ip:{ip}"
 
 
 def _config(action: str) -> tuple[bool, int, int]:
