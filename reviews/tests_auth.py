@@ -171,6 +171,42 @@ class LogoutFlowTests(_AuthTestCase):
         self.assertIn(reverse("login"), r.url)
 
 
+class OpenRedirectTests(_AuthTestCase):
+    UNSAFE_TARGETS = ("//evil.com", "https://evil.com", "javascript:alert(1)")
+
+    def setUp(self):
+        super().setUp()
+        self.user = self.create_user()
+
+    def test_login_rejects_unsafe_next_and_falls_back_home(self):
+        for target in self.UNSAFE_TARGETS:
+            with self.subTest(target=target):
+                r = self.login_via_view(next_url=target)
+                self.assertEqual(r.status_code, 302)
+                self.assertEqual(r.url, reverse("home"))
+                self.assertNotIn("evil.com", r.url)
+
+    def test_login_allows_relative_next(self):
+        r = self.login_via_view(next_url="/path")
+        self.assertEqual(r.status_code, 302)
+        self.assertEqual(r.url, "/path")
+
+    def test_logout_rejects_unsafe_next_and_falls_back_home(self):
+        for target in self.UNSAFE_TARGETS:
+            with self.subTest(target=target):
+                self.client.force_login(self.user)
+                r = self.client.post(reverse("logout"), {"next": target})
+                self.assertEqual(r.status_code, 302)
+                self.assertEqual(r.url, reverse("home"))
+                self.assertNotIn("evil.com", r.url)
+
+    def test_logout_allows_relative_next(self):
+        self.client.force_login(self.user)
+        r = self.client.post(reverse("logout"), {"next": "/path"})
+        self.assertEqual(r.status_code, 302)
+        self.assertEqual(r.url, "/path")
+
+
 class AnonymousPermissionTests(_AuthTestCase):
     def test_anonymous_cannot_open_review_form(self):
         url = reverse("review_new", args=[self.prof.slug])

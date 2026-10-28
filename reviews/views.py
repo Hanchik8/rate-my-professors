@@ -6,6 +6,7 @@ layer.  Reusable pieces (pagination, filter parsing, moderation redirects)
 live in small private helpers below.
 """
 from django import forms
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth import views as auth_views
@@ -14,8 +15,9 @@ from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.db import connection
 from django.http import Http404, HttpResponse, JsonResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, resolve_url
 from django.urls import reverse
+from django.utils.http import url_has_allowed_host_and_scheme
 from django.utils.translation import gettext as _
 from django.views.decorators.http import require_http_methods, require_POST
 
@@ -334,6 +336,18 @@ def review_report(request, review_id):
     return _redirect_to_review(review)
 
 
+def _safe_next_url(request, default):
+    """Return the requested ``next`` URL only if it stays on this host."""
+    target = request.POST.get("next") or request.GET.get("next")
+    if target and url_has_allowed_host_and_scheme(
+        url=target,
+        allowed_hosts={request.get_host()},
+        require_https=request.is_secure(),
+    ):
+        return target
+    return default
+
+
 class ThrottledLoginView(auth_views.LoginView):
     """Login view with a simple per-IP attempt limit backed by the cache."""
 
@@ -344,6 +358,22 @@ class ThrottledLoginView(auth_views.LoginView):
                 _("Слишком много попыток входа. Попробуйте позже."), status=429
             )
         return super().post(request, *args, **kwargs)
+
+    def get_success_url(self):
+        """Redirect to a validated local ``next`` URL, else to the default."""
+        return _safe_next_url(
+            self.request, resolve_url(settings.LOGIN_REDIRECT_URL)
+        )
+
+
+class SafeLogoutView(auth_views.LogoutView):
+    """Logout view that never follows an off-site ``next`` parameter."""
+
+    def get_success_url(self):
+        """Redirect to a validated local ``next`` URL, else to the default."""
+        return _safe_next_url(
+            self.request, resolve_url(settings.LOGOUT_REDIRECT_URL)
+        )
 
 
 def _normalize_email(email):
