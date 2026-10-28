@@ -14,6 +14,65 @@ from .sanitize import clean_text
 SCORES = [(5, "5"), (4, "4"), (3, "3"), (2, "2"), (1, "1")]
 
 
+class _AutofocusChoiceMixin:
+    """Put ``autofocus`` on the first option of a choice group.
+
+    Choice widgets render a wrapper element rather than a single input, so a
+    plain ``autofocus`` attribute would be copied to every option.  The form
+    template tag flips ``_autofocus_first`` only for the first invalid field.
+    """
+
+    def create_option(self, *args, **kwargs):
+        option = super().create_option(*args, **kwargs)
+        if getattr(self, "_autofocus_first", False):
+            option["attrs"]["autofocus"] = True
+            self._autofocus_first = False
+        return option
+
+
+class AutofocusRadioSelect(_AutofocusChoiceMixin, forms.RadioSelect):
+    """Radio group whose first option can receive keyboard focus."""
+
+
+class AutofocusCheckboxSelectMultiple(_AutofocusChoiceMixin, forms.CheckboxSelectMultiple):
+    """Checkbox group whose first option can receive keyboard focus."""
+
+
+def apply_form_accessibility(form):
+    """Describe invalid fields and focus the first one before rendering.
+
+    Django 6 already adds ``aria-invalid`` for bound fields with errors, but
+    field groups (radio/checkbox) do not get their error/help text wired up by
+    the shared field template.  Doing this here keeps every form consistent.
+    """
+    if not form.is_bound:
+        return
+    errors = form.errors
+    first_invalid = True
+    for name in form.fields:
+        bound_field = form[name]
+        widget = bound_field.field.widget
+        has_error = name in errors
+        described_by = []
+        if bound_field.auto_id:
+            if bound_field.help_text:
+                described_by.append(f"{bound_field.auto_id}_helptext")
+            if has_error:
+                described_by.append(f"{bound_field.auto_id}_error")
+        if described_by:
+            widget.attrs["aria-describedby"] = " ".join(described_by)
+        if not has_error:
+            continue
+        if not widget.is_hidden:
+            widget.attrs["aria-invalid"] = "true"
+        if first_invalid:
+            if isinstance(widget, _AutofocusChoiceMixin):
+                widget._autofocus_first = True
+            else:
+                widget.attrs["autofocus"] = True
+            first_invalid = False
+
+
 def _ensure_length(value, minimum, maximum, too_short, too_long):
     """Raise a validation error when ``value`` falls outside the allowed range.
 
@@ -71,16 +130,16 @@ class ReviewForm(forms.Form):
         help_text=_("Например: Осень 2025 или Весна 2025"),
     )
     overall = forms.TypedChoiceField(
-        choices=SCORES, coerce=int, widget=forms.RadioSelect,
+        choices=SCORES, coerce=int, widget=AutofocusRadioSelect,
         label=_("Общее качество (5 — лучше всего)"),
     )
     difficulty = forms.TypedChoiceField(
-        choices=SCORES, coerce=int, widget=forms.RadioSelect,
+        choices=SCORES, coerce=int, widget=AutofocusRadioSelect,
         label=_("Сложность (5 — очень сложно)"),
     )
     would_take_again = forms.ChoiceField(
         choices=[("yes", _("Да")), ("no", _("Нет"))],
-        widget=forms.RadioSelect,
+        widget=AutofocusRadioSelect,
         label=_("Пошли бы снова к этому преподавателю?"),
     )
     grade = forms.ChoiceField(
@@ -89,7 +148,7 @@ class ReviewForm(forms.Form):
     )
     tags = forms.MultipleChoiceField(
         choices=[(str(t), str(t)) for t in TAGS],
-        required=False, widget=forms.CheckboxSelectMultiple,
+        required=False, widget=AutofocusCheckboxSelectMultiple,
         label=_("Теги"), help_text=_("Выберите до 3"),
     )
     comment = forms.CharField(

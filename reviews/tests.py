@@ -2304,6 +2304,14 @@ class EmptyStateTests(_MemoryRepoTestCase):
         self.assertContains(r, "Пока нет кафедр")
         self.assertNotContains(r, 'class="card"')
 
+    def test_school_empty_states_are_announced_and_offer_next_step(self):
+        school = self.repo.add_school("Пустой вуз", "Бишкек")
+        r = self.client.get(reverse("school_detail", args=[school.slug]))
+
+        self.assertContains(r, 'class="empty empty-state" role="status"', count=2)
+        self.assertContains(r, 'class="empty-state-title"', count=2)
+        self.assertContains(r, f'href="{reverse("add_professor")}"')
+
     def test_home_without_matches_shows_empty_state(self):
         r = self.client.get(reverse("home"), {"q": "неттакого"})
         self.assertContains(r, "Ничего не нашлось")

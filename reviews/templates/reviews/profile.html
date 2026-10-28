@@ -38,7 +38,7 @@
 {% endwith %}
 {% empty %}
 <section class="empty empty-state" role="status">
-  <p>{% translate "Вы ещё не оставляли отзывов." %}</p>
+  <strong class="empty-state-title">{% translate "Вы ещё не оставляли отзывов." %}</strong>
   <a class="btn empty-state-action" href="{% url 'home' %}">{% translate "Вернуться на главную" %}</a>
 </section>
 {% endfor %}

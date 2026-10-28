@@ -1,6 +1,7 @@
 import re
 from pathlib import Path
 
+from django.contrib.auth.models import User
 from django.test import TestCase
 from django.urls import reverse
 
@@ -32,3 +33,18 @@ class AccessibilityRenderTests(TestCase):
 
         self.assertIn(":focus-visible", stylesheet)
         self.assertRegex(stylesheet, r":focus-visible\s*\{[^}]*outline:\s*3px")
+
+    def test_non_field_errors_are_announced_with_alert_role(self):
+        User.objects.create_user(
+            username="a11y@example.com",
+            email="a11y@example.com",
+            password="pass12345",
+        )
+        response = self.client.post(
+            reverse("login"),
+            {"username": "a11y@example.com", "password": "wrongpass1"},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'class="errorlist nonfield"')
+        self.assertContains(response, 'role="alert"')

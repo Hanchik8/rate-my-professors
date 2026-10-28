@@ -83,7 +83,7 @@
 </div>
 {% endif %}
 {% else %}
-<section class="empty empty-state" aria-labelledby="empty-reviews-title">
+<section class="empty empty-state" role="status" aria-labelledby="empty-reviews-title">
   <h3 class="empty-state-title" id="empty-reviews-title">{% translate "Отзывы" %}</h3>
   <p>{% blocktranslate with name=prof.full_name %}Пока нет отзывов. Станьте первым, кто оценит {{ name }}.{% endblocktranslate %}</p>
   <a class="btn empty-state-action" href="{% url 'review_new' prof.slug %}">{% translate "Оценить преподавателя" %}</a>

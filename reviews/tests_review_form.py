@@ -237,6 +237,30 @@ class _ReviewFormViewMixin:
         self.assertIn("comment", response.context["form"].errors)
         self.assertEqual(self.pending_count(), before)
 
+    def test_invalid_field_renders_accessible_error_attributes(self):
+        response = self.client.post(self.url(), _valid({"comment": "коротко"}))
+        self.assertEqual(response.status_code, 200)
+        html = response.content.decode()
+
+        self.assertIn('id="id_comment_error"', html)
+        self.assertRegex(html, r'aria-describedby="[^"]*id_comment_error[^"]*"')
+        self.assertIn('aria-invalid="true"', html)
+        self.assertIn('role="alert"', html)
+        self.assertRegex(html, r"<textarea[^>]*\bautofocus\b")
+        self.assertEqual(html.count("autofocus"), 1)
+
+    def test_only_first_invalid_field_is_autofocused(self):
+        response = self.client.post(
+            self.url(), _valid({"overall": "6", "comment": "коротко"})
+        )
+        self.assertEqual(response.status_code, 200)
+        html = response.content.decode()
+
+        self.assertEqual(html.count("autofocus"), 1)
+        self.assertRegex(html, r"<input[^>]*\bautofocus\b")
+        self.assertIn('id="id_overall_error"', html)
+        self.assertIn('id="id_comment_error"', html)
+
 
 class MemoryReviewFormViewTests(_ReviewFormViewMixin, TestCase):
     use_django = False
