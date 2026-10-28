@@ -211,6 +211,7 @@ SECURE_CSP = {
 # Cookies must never be readable from JavaScript and stay same-site by default.
 SESSION_COOKIE_HTTPONLY = _get_bool_setting("SESSION_COOKIE_HTTPONLY", True)
 SESSION_COOKIE_SAMESITE = os.environ.get("SESSION_COOKIE_SAMESITE", "Lax")
+CSRF_COOKIE_HTTPONLY = _get_bool_setting("CSRF_COOKIE_HTTPONLY", True)
 CSRF_COOKIE_SAMESITE = os.environ.get("CSRF_COOKIE_SAMESITE", "Lax")
 
 # Password strength requirements enforced by Django auth / password reset.

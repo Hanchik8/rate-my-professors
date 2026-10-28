@@ -18,6 +18,7 @@ class CookieSettingsTests(TestCase):
     def test_csrf_cookie_is_samesite(self):
         self.assertEqual(settings.CSRF_COOKIE_SAMESITE, "Lax")
         self.assertIn(settings.CSRF_COOKIE_SAMESITE, {"Lax", "Strict"})
+        self.assertTrue(settings.CSRF_COOKIE_HTTPONLY)
 
     def test_secure_cookies_track_debug_flag(self):
         debug = site._security_settings(debug=True)
@@ -106,6 +107,27 @@ class SecurityHeaderResponseTests(TestCase):
 
     def test_x_frame_options_header(self):
         self.assertEqual(self.response.headers.get("X-Frame-Options"), "DENY")
+
+    def test_csrf_cookie_flags(self):
+        response = self.client.get(reverse("login"))
+        cookie = response.cookies[settings.CSRF_COOKIE_NAME]
+        self.assertEqual(cookie["httponly"], settings.CSRF_COOKIE_HTTPONLY)
+        self.assertEqual(cookie["samesite"], settings.CSRF_COOKIE_SAMESITE)
+        self.assertEqual(bool(cookie["secure"]), settings.CSRF_COOKIE_SECURE)
+
+    def test_session_cookie_flags_when_session_is_set(self):
+        from django.contrib.sessions.middleware import SessionMiddleware
+        from django.http import HttpResponse
+
+        request = self.client.request().wsgi_request
+        middleware = SessionMiddleware(lambda request: HttpResponse())
+        middleware.process_request(request)
+        request.session["flag_test"] = True
+        response = middleware.process_response(request, HttpResponse())
+        cookie = response.cookies[settings.SESSION_COOKIE_NAME]
+        self.assertEqual(bool(cookie["httponly"]), settings.SESSION_COOKIE_HTTPONLY)
+        self.assertEqual(cookie["samesite"], settings.SESSION_COOKIE_SAMESITE)
+        self.assertEqual(bool(cookie["secure"]), settings.SESSION_COOKIE_SECURE)
 
     def test_permissions_policy_header(self):
         self.assertEqual(
