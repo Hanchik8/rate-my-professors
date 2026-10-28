@@ -37,6 +37,21 @@ class ReportForm(forms.Form):
         widget=forms.Select(attrs={"aria-label": _("Причина жалобы")}),
     )
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["reason"].widget.attrs["maxlength"] = Report._meta.get_field("reason").max_length
+
+    def clean(self):
+        cleaned_data = super().clean()
+        reason = self.data.get(self.add_prefix("reason"), "") if self.is_bound else ""
+        if len(reason) > Report._meta.get_field("reason").max_length:
+            self.add_error("reason", forms.ValidationError(
+                _("Отзыв должен содержать не более %(n)d символов."),
+                code="max_length",
+                params={"n": Report._meta.get_field("reason").max_length},
+            ))
+        return cleaned_data
+
     def clean_reason(self):
         """Keep one-click reports compatible by defaulting to ``other``."""
         return self.cleaned_data.get("reason") or Report.REASON_OTHER

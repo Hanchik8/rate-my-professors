@@ -238,3 +238,18 @@ class ProfessorFormValidationEdgeTests(TestCase):
                             "department": "я" * 81, "title": "доцент"})
         self.assertFalse(form2.is_valid())
         self.assertIn("department", form2.errors)
+
+
+class ReportFormValidationTests(TestCase):
+    def test_reason_is_bounded_by_model_max_length(self):
+        from .forms import ReportForm
+        from .models import Report
+
+        max_length = Report._meta.get_field("reason").max_length
+        valid = ReportForm({"reason": "spam"})
+        self.assertTrue(valid.is_valid(), valid.errors)
+
+        oversized = ReportForm({"reason": "x" * (max_length + 1)})
+        self.assertFalse(oversized.is_valid())
+        self.assertIn("reason", oversized.errors)
+        self.assertEqual(ReportForm().fields["reason"].widget.attrs["maxlength"], max_length)
