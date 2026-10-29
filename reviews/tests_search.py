@@ -171,7 +171,11 @@ class HomeSearchPaginationTests(_MemoryRepoTestCase):
         response = self.client.get(reverse("home"))
 
         self.assertContains(response, '<input type="search" name="q"')
-        self.assertContains(response, 'aria-label="Поиск"')
+        self.assertRegex(
+            response.content.decode(),
+            r'<input\b(?=[^>]*\btype="search")(?=[^>]*\bname="q")'
+            r'(?=[^>]*\baria-label="Поиск")[^>]*>',
+        )
 
     def _add_professors(self, count, last_prefix="Джонс"):
         school = self.repo.schools()[0]

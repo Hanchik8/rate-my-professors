@@ -34,6 +34,15 @@ class AccessibilityRenderTests(TestCase):
         self.assertIn(":focus-visible", stylesheet)
         self.assertRegex(stylesheet, r":focus-visible\s*\{[^}]*outline:\s*3px")
 
+    def test_focus_visible_covers_links_buttons_and_search_fields(self):
+        stylesheet = (
+            Path(__file__).parent / "static" / "reviews" / "style.css"
+        ).read_text()
+        self.assertRegex(stylesheet, r"(?s):focus-visible\s*\{[^}]*outline:\s*3px")
+        self.assertRegex(stylesheet, r"(?s):focus-visible\s*\{[^}]*outline:\s*3px")
+        for selector in ("a", "button", "input", "select", "textarea"):
+            self.assertIn(selector, stylesheet)
+
     def test_non_field_errors_are_announced_with_alert_role(self):
         User.objects.create_user(
             username="a11y@example.com",
