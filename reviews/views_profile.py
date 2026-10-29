@@ -16,26 +16,13 @@ def profile(request):
     })
 
 
-def _is_author(obj, user):
-    return obj.author_id is not None and str(obj.author_id) == str(user.id)
-
-
-def _owned_review_or_404(review_id, user):
-    from . import views
-    review = views._review_or_404(review_id)
-    if not _is_author(review, user):
-        from django.http import Http404
-        raise Http404(_("Review not found"))
-    return review
-
-
 @require_http_methods(["GET", "POST"])
 @login_required
 @rate_limit("review")
 def review_edit(request, review_id):
     from . import views
     review = views._owned_review_or_404(review_id, request.user)
-    prof = views.repo.professor_by_id(review.professor_id)
+    prof = views._professor_for_review(review)
     initial = None if request.method == "POST" else views._review_initial(review)
     form = views._form_for_request(request, views.ReviewForm, initial=initial)
     if views._is_valid_post(request, form):

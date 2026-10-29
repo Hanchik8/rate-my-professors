@@ -13,7 +13,7 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import connection
-from django.http import Http404, HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse
 import json
 from django.shortcuts import redirect, render, resolve_url
 from django.urls import reverse
@@ -29,11 +29,16 @@ from .caching import (
     school_cache_key,
 )
 from .forms import ProfessorForm, ReportForm, ReviewForm
-from . import email_verification, services
+from . import email_verification, services, view_helpers
 from .models import EmailVerification as EmailVerificationModel
 from .store import repo
 from .throttle import is_rate_limited, rate_limit
-from .view_helpers import _paginate, _paginate_request
+from .view_helpers import (
+    _is_author,
+    _object_or_404,
+    _paginate,
+    _paginate_request,
+)
 
 
 def handler404(request, exception=None):
@@ -127,13 +132,6 @@ def _professor_or_404(slug):
     return _object_or_404(repo.professor(slug), _("Professor not found"))
 
 
-def _object_or_404(obj, message):
-    """Return ``obj`` or raise ``Http404`` with the supplied message."""
-    if obj is None:
-        raise Http404(message)
-    return obj
-
-
 def professor_detail(request, slug):
     """Show a professor profile with aggregate stats and paginated reviews."""
     prof = _professor_or_404(slug)
@@ -219,22 +217,14 @@ def about(request):
     return render(request, "reviews/about.html")
 
 
-def _is_author(obj, user):
-    """Return whether ``obj`` belongs to ``user`` (ids compare as strings)."""
-    return obj.author_id is not None and str(obj.author_id) == str(user.id)
-
-
 def _owned_review_or_404(review_id, user):
     """Fetch a review owned by ``user`` or raise ``Http404``."""
-    review = _review_or_404(review_id)
-    if not _is_author(review, user):
-        raise Http404(_("Review not found"))
-    return review
+    return view_helpers._owned_review_or_404(repo, review_id, user)
 
 
 def _professor_for_review(review):
     """Return the professor a review belongs to."""
-    return repo.professor_by_id(review.professor_id)
+    return view_helpers._professor_for_review(repo, review)
 
 
 def _review_initial(review):
@@ -307,21 +297,16 @@ def review_new(request, slug):
 
 def _redirect_to_review(review):
     """Redirect back to the review's anchor on its professor page."""
-    prof = _professor_for_review(review)
-    if prof:
-        return redirect(reverse("professor", args=[prof.slug]) + f"#review-{review.id}")
-    return redirect("home")
+    return view_helpers._redirect_to_review(repo, review)
 
 
 def _review_or_404(review_id):
     """Fetch a review or raise ``Http404`` when it does not exist."""
-    return _object_or_404(repo.review(review_id), _("Review not found"))
+    return view_helpers._review_or_404(repo, review_id)
 
 
-from .views_votes import (
-    _redirect_to_review, review_report, review_vote,
-)
-from .views_profile import _owned_review_or_404, profile, review_delete, review_edit
+from .views_votes import review_report, review_vote
+from .views_profile import profile, review_delete, review_edit
 
 
 def _requested_next_url(request):
