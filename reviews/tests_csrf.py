@@ -87,3 +87,25 @@ class CsrfFormTests(TestCase):
         for url in urls:
             with self.subTest(url=url):
                 self.assertEqual(self.client.post(url, {}).status_code, 403)
+
+
+class CsrfAnonymousEndpointTests(TestCase):
+    """Anonymous auth endpoints must reject POSTs without a CSRF token."""
+
+    def setUp(self):
+        self.client = Client(enforce_csrf_checks=True)
+
+    def test_auth_posts_reject_missing_csrf_token(self):
+        urls = [
+            reverse("login"),
+            reverse("signup"),
+            reverse("password_reset"),
+        ]
+        for url in urls:
+            with self.subTest(url=url):
+                self.assertEqual(self.client.post(url, {}).status_code, 403)
+
+    def test_password_reset_form_includes_csrf_input(self):
+        response = self.client.get(reverse("password_reset"))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'name="csrfmiddlewaretoken"')
