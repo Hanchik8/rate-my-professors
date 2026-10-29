@@ -389,6 +389,11 @@ def _safe_next_url(request, default):
     return _requested_next_url(request) or default
 
 
+def _auth_success_url(request, default_setting):
+    """Return a safe requested URL, or the resolved auth redirect default."""
+    return _safe_next_url(request, resolve_url(default_setting))
+
+
 class ThrottledLoginView(auth_views.LoginView):
     """Login view with a simple per-IP attempt limit backed by the cache."""
 
@@ -402,9 +407,7 @@ class ThrottledLoginView(auth_views.LoginView):
 
     def get_success_url(self):
         """Redirect to a validated local ``next`` URL, else to the default."""
-        return _safe_next_url(
-            self.request, resolve_url(settings.LOGIN_REDIRECT_URL)
-        )
+        return _auth_success_url(self.request, settings.LOGIN_REDIRECT_URL)
 
 
 class SafeLogoutView(auth_views.LogoutView):
@@ -412,9 +415,7 @@ class SafeLogoutView(auth_views.LogoutView):
 
     def get_success_url(self):
         """Redirect to a validated local ``next`` URL, else to the default."""
-        return _safe_next_url(
-            self.request, resolve_url(settings.LOGOUT_REDIRECT_URL)
-        )
+        return _auth_success_url(self.request, settings.LOGOUT_REDIRECT_URL)
 
 
 def _normalize_email(email):

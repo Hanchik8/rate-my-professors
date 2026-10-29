@@ -1,11 +1,16 @@
 """Focused tests for the shared helpers used by the HTTP views."""
 from types import SimpleNamespace
 
+from django.conf import settings
 from django import forms
 from django.test import RequestFactory, SimpleTestCase
 from django.urls import reverse
+from django.test import override_settings
 
 from .views import (
+    SafeLogoutView,
+    ThrottledLoginView,
+    _auth_success_url,
     _is_author,
     _is_valid_post,
     _requested_next_url,
@@ -67,6 +72,30 @@ class RequestedNextUrlTests(SimpleTestCase):
         request = self.factory.get("/?next=https://evil.example/")
 
         self.assertIsNone(_requested_next_url(request))
+
+
+class AuthSuccessUrlTests(SimpleTestCase):
+    def setUp(self):
+        self.factory = RequestFactory()
+
+    @override_settings(LOGIN_REDIRECT_URL="/after-login/")
+    def test_login_uses_safe_next_or_login_default(self):
+        view = ThrottledLoginView()
+        view.request = self.factory.get("/?next=/requested/")
+        self.assertEqual(view.get_success_url(), "/requested/")
+        view.request = self.factory.get("/?next=https://evil.example/")
+        self.assertEqual(view.get_success_url(), "/after-login/")
+
+    @override_settings(LOGOUT_REDIRECT_URL="/after-logout/")
+    def test_logout_uses_its_configured_default(self):
+        view = SafeLogoutView()
+        view.request = self.factory.get("/")
+        self.assertEqual(view.get_success_url(), "/after-logout/")
+
+    @override_settings(LOGIN_REDIRECT_URL="/fallback/")
+    def test_helper_resolves_the_configured_default(self):
+        request = self.factory.get("/")
+        self.assertEqual(_auth_success_url(request, settings.LOGIN_REDIRECT_URL), "/fallback/")
 
 
 class ReviewFormContextTests(SimpleTestCase):
