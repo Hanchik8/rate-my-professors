@@ -2235,7 +2235,12 @@ class PerfIndexDeclarationTests(TestCase):
         expected = {
             School: {"school_city_idx", "school_name_idx"},
             Professor: {"prof_status_idx", "prof_school_status_idx", "prof_dept_idx", "prof_name_idx"},
-            Review: {"review_prof_status_idx", "review_status_created_idx"},
+            Review: {
+                "review_prof_status_idx",
+                "review_prof_status_created_idx",
+                "review_status_created_idx",
+                "review_author_created_idx",
+            },
         }
         for model, names in expected.items():
             declared = {idx.name for idx in model._meta.indexes}
@@ -2243,6 +2248,18 @@ class PerfIndexDeclarationTests(TestCase):
                 self.assertTrue(
                     names.issubset(declared), f"{model.__name__} missing {names - declared}"
                 )
+
+    def test_profile_and_professor_review_indexes_match_queries(self):
+        from .models import Review
+
+        indexes = {idx.name: idx.fields for idx in Review._meta.indexes}
+        self.assertEqual(
+            indexes.get("review_author_created_idx"), ["author", "-created_at"]
+        )
+        self.assertEqual(
+            indexes.get("review_prof_status_created_idx"),
+            ["professor", "status", "-created_at"],
+        )
 
 
 class MigrationsUpToDateTests(TestCase):
@@ -2253,7 +2270,7 @@ class MigrationsUpToDateTests(TestCase):
         # migrations; call_command surfaces that as SystemExit.
         from django.core.management import call_command
 
-        call_command("makemigrations", check=True, verbosity=0)
+        call_command("makemigrations", check=True, dry_run=True, verbosity=0)
 
 
 # ---------------------------------------------------------------------------

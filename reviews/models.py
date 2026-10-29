@@ -70,6 +70,8 @@ class Professor(models.Model):
             models.Index(fields=["school", "status"], name="prof_school_status_idx"),
             # Department filter + values_list(distinct) on the home page.
             models.Index(fields=["department"], name="prof_dept_idx"),
+            # Catalog searches commonly combine the approved status and department filters.
+            models.Index(fields=["status", "department"], name="prof_status_dept_idx"),
             # Default ordering (`last_name`, `first_name`) sorts by name.
             models.Index(fields=["last_name", "first_name"], name="prof_name_idx"),
         ]
@@ -130,8 +132,15 @@ class Review(models.Model):
         indexes = [
             # `reviews_for()` and every stats aggregate filter by this pair.
             models.Index(fields=["professor", "status"], name="review_prof_status_idx"),
+            # Professor page filters by professor/status and sorts by newest.
+            models.Index(
+                fields=["professor", "status", "-created_at"],
+                name="review_prof_status_created_idx",
+            ),
             # `all_reviews()` filters by status and the default order is -created_at.
             models.Index(fields=["status", "-created_at"], name="review_status_created_idx"),
+            # `reviews_for_user()` filters by author and sorts by newest.
+            models.Index(fields=["author", "-created_at"], name="review_author_created_idx"),
         ]
 
     def clean(self):
