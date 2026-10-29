@@ -199,12 +199,13 @@ X_FRAME_OPTIONS = _get_x_frame_options()
 DATA_UPLOAD_MAX_MEMORY_SIZE = 2_621_440
 FILE_UPLOAD_MAX_MEMORY_SIZE = 2_621_440
 
-# Referrer-Policy limits how much of our URLs leak to third parties; "same-origin"
-# is a safe, privacy-preserving default that can be tightened per deployment.
-SECURE_REFERRER_POLICY = os.environ.get("SECURE_REFERRER_POLICY", "same-origin")
+# Referrer-Policy limits how much of our URLs leak to third parties.
+SECURE_REFERRER_POLICY = os.environ.get(
+    "SECURE_REFERRER_POLICY", "strict-origin-when-cross-origin"
+)
 
 # ProfLens does not use these browser features, so disable them by default.
-PERMISSIONS_POLICY = "camera=(), geolocation=(), microphone=()"
+PERMISSIONS_POLICY = "camera=(), microphone=(), geolocation=()"
 
 # Minimal Content-Security-Policy: only same-origin resources are allowed and
 # objects/framing/base-uri/form targets are locked down. Inline styles remain

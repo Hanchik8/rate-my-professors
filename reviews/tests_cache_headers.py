@@ -104,7 +104,7 @@ class PrivatePagesCacheControlTests(CacheControlTestCase):
         response = self.client.get(reverse("profile"))
         self.assertEqual(
             response.headers.get("Permissions-Policy"),
-            "camera=(), geolocation=(), microphone=()",
+            "camera=(), microphone=(), geolocation=()",
         )
         self.assertIn("default-src", response.headers.get("Content-Security-Policy", ""))
         self.assertEqual(response.headers.get("X-Frame-Options"), "DENY")

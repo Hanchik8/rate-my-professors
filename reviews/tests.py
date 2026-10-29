@@ -928,11 +928,11 @@ class SecuritySettingsTests(TestCase):
 
     def test_referrer_policy_configured(self):
         from django.conf import settings
-        self.assertEqual(settings.SECURE_REFERRER_POLICY, "same-origin")
+        self.assertEqual(settings.SECURE_REFERRER_POLICY, "strict-origin-when-cross-origin")
 
     def test_permissions_policy_configured(self):
         from django.conf import settings
-        self.assertEqual(settings.PERMISSIONS_POLICY, "camera=(), geolocation=(), microphone=()")
+        self.assertEqual(settings.PERMISSIONS_POLICY, "camera=(), microphone=(), geolocation=()")
 
     @override_settings(DEBUG=True)
     def test_security_headers_are_emitted(self):
@@ -944,11 +944,13 @@ class SecuritySettingsTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers.get("X-Content-Type-Options"), "nosniff")
         self.assertEqual(response.headers.get("X-Frame-Options"), "DENY")
-        self.assertEqual(response.headers.get("Referrer-Policy"), "same-origin")
+        self.assertEqual(
+            response.headers.get("Referrer-Policy"), "strict-origin-when-cross-origin"
+        )
         self.assertNotIn("Strict-Transport-Security", response.headers)
         self.assertEqual(
             response.headers.get("Permissions-Policy"),
-            "camera=(), geolocation=(), microphone=()",
+            "camera=(), microphone=(), geolocation=()",
         )
 
     def test_csp_header_is_emitted(self):

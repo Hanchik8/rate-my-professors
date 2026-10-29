@@ -85,7 +85,7 @@ class TransportSecuritySettingsTests(TestCase):
 
     def test_header_settings_have_safe_values(self):
         self.assertTrue(settings.SECURE_CONTENT_TYPE_NOSNIFF)
-        self.assertEqual(settings.SECURE_REFERRER_POLICY, "same-origin")
+        self.assertEqual(settings.SECURE_REFERRER_POLICY, "strict-origin-when-cross-origin")
         self.assertEqual(settings.X_FRAME_OPTIONS, "DENY")
 
     def test_frame_options_environment_value_cannot_disable_protection(self):
@@ -116,7 +116,7 @@ class SecurityHeaderResponseTests(TestCase):
     def test_referrer_policy_header(self):
         self.assertEqual(
             self.response.headers.get("Referrer-Policy"),
-            settings.SECURE_REFERRER_POLICY,
+            "strict-origin-when-cross-origin",
         )
 
     def test_x_frame_options_header(self):
@@ -146,7 +146,7 @@ class SecurityHeaderResponseTests(TestCase):
     def test_permissions_policy_header(self):
         self.assertEqual(
             self.response.headers.get("Permissions-Policy"),
-            settings.PERMISSIONS_POLICY,
+            "camera=(), microphone=(), geolocation=()",
         )
 
     def test_content_security_policy_header(self):
