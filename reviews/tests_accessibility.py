@@ -7,6 +7,15 @@ from django.urls import reverse
 
 
 class AccessibilityRenderTests(TestCase):
+    def test_base_template_renders_responsive_viewport(self):
+        response = self.client.get(reverse("about"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(
+            response,
+            '<meta name="viewport" content="width=device-width, initial-scale=1">',
+        )
+
     def test_base_template_renders_skip_link_and_labeled_icon_buttons(self):
         response = self.client.get(reverse("about"))
 
@@ -33,6 +42,16 @@ class AccessibilityRenderTests(TestCase):
 
         self.assertIn(":focus-visible", stylesheet)
         self.assertRegex(stylesheet, r":focus-visible\s*\{[^}]*outline:\s*3px")
+
+    def test_stylesheet_prevents_narrow_viewport_overflow_and_sizes_mobile_targets(self):
+        stylesheet = (
+            Path(__file__).parent / "static" / "reviews" / "style.css"
+        ).read_text()
+
+        self.assertRegex(stylesheet, r"body\s*\{[^}]*overflow-wrap:\s*anywhere")
+        self.assertRegex(stylesheet, r"\.nav-toggle[^}]*width:\s*2\.75rem")
+        self.assertRegex(stylesheet, r"\.nav-toggle[^}]*height:\s*2\.75rem")
+        self.assertIn(".message-close{min-width:2.75rem;min-height:2.75rem}", stylesheet)
 
     def test_focus_visible_covers_links_buttons_and_search_fields(self):
         stylesheet = (
