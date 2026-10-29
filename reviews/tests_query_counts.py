@@ -1,5 +1,6 @@
 """Query-count tests for the profile and professor pages."""
 from django.contrib.auth.models import User
+from django.core.cache import cache
 from django.db import connection
 from django.test import TestCase, override_settings
 from django.test.utils import CaptureQueriesContext
@@ -45,6 +46,49 @@ class PageQueryCountTests(TestCase):
             self.school.id, "Иван", "Петров", "Физика", "доцент"
         )
         self.client.force_login(self.user)
+
+    @override_settings(CACHES={
+        "default": {"BACKEND": "django.core.cache.backends.locmem.LocMemCache"},
+    })
+    def test_home_filter_options_are_cached_and_invalidated(self):
+        cache.clear()
+        url = reverse("home")
+
+        # The first request loads schools/cities/departments; later requests
+        # should reuse those options, while the catalog version invalidates
+        # them after a school or review write.
+        self.client.get(url)
+        with CaptureQueriesContext(connection) as warm:
+            response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse(any("FROM \"reviews_school\"" in q["sql"] for q in warm.captured_queries))
+
+        new_school = self.repo.add_school("Другой университет", "Ош")
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(new_school.name, [school.name for school in response.context["schools"]])
+
+        self._add_reviews("Новый отзыв", 1)
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+
+    def test_home_pagination_uses_materialized_results_without_count_query(self):
+        self._add_reviews("Отзыв", 2)
+        for index in range(12):
+            self.repo.add_professor(
+                self.school.id, f"Имя{index}", f"Фамилия{index}", "Физика", "доцент"
+            )
+        url = reverse("home")
+        self.client.get(url)  # populate options and result caches
+
+        with CaptureQueriesContext(connection) as captured:
+            response = self.client.get(url, {"page": "2"})
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context["page_obj"].number, 2)
+        self.assertFalse(any(
+            "COUNT(" in q["sql"].upper() and "REVIEWS_PROFESSOR" in q["sql"].upper()
+            for q in captured.captured_queries
+        ))
 
     def tearDown(self):
         import reviews.views as views
