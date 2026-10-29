@@ -1,6 +1,7 @@
 import json
+from unittest import mock
 
-from django.test import TestCase, override_settings
+from django.test import Client, TestCase, override_settings
 from django.urls import reverse
 
 
@@ -37,6 +38,44 @@ class Custom404PageTests(TestCase):
                 self.assertEqual(response.status_code, 404)
                 self.assertTemplateUsed(response, "404.html")
                 self.assertContains(response, heading, status_code=404)
+
+
+@override_settings(DEBUG=False)
+class ClientErrorResponseTests(TestCase):
+    """Exercise the real request/response cycle with DEBUG disabled.
+
+    ``raise_request_exception=False`` mirrors production: an unhandled view
+    exception must become a rendered 500 response instead of propagating into
+    the caller (which is what the default test client does).
+    """
+
+    def test_404_through_client_uses_custom_template_without_debug_details(self):
+        response = self.client.get("/no-such-page/")
+        self.assertEqual(response.status_code, 404)
+        self.assertTemplateUsed(response, "404.html")
+        self.assertContains(response, "Страница не найдена", status_code=404)
+        self.assertNotContains(response, "Traceback", status_code=404)
+
+    def test_500_through_client_uses_custom_template(self):
+        client = Client(raise_request_exception=False)
+        with mock.patch(
+            "reviews.views.get_or_set", side_effect=RuntimeError("boom")
+        ):
+            response = client.get(reverse("home"))
+        self.assertEqual(response.status_code, 500)
+        self.assertTemplateUsed(response, "500.html")
+        self.assertContains(response, "Ошибка сервера", status_code=500)
+        self.assertContains(response, "Вернуться на главную", status_code=500)
+
+    def test_500_through_client_does_not_leak_exception_details(self):
+        client = Client(raise_request_exception=False)
+        with mock.patch(
+            "reviews.views.get_or_set", side_effect=RuntimeError("secret-detail")
+        ):
+            response = client.get(reverse("home"))
+        self.assertEqual(response.status_code, 500)
+        self.assertNotContains(response, "secret-detail", status_code=500)
+        self.assertNotContains(response, "Traceback", status_code=500)
 
 
 class ErrorHandlerRenderTests(TestCase):
