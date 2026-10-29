@@ -107,3 +107,82 @@ class HomeAccessibilityTests(TestCase):
         for icon in re.findall(r'<span class="(?:brand-mark|burger)"[^>]*>', self.html):
             with self.subTest(icon=icon):
                 self.assertIn('aria-hidden="true"', icon)
+
+
+TEMPLATES_DIR = Path(__file__).parent / "templates"
+
+
+class TemplateSourceAccessibilityTests(TestCase):
+    """Guard the template sources so new pages keep the same a11y contract."""
+
+    def test_all_template_images_define_alt_text(self):
+        for path in TEMPLATES_DIR.rglob("*.html"):
+            html = path.read_text()
+            for image in re.findall(r"<img\b[^>]*>", html, flags=re.IGNORECASE):
+                with self.subTest(template=str(path), image=image):
+                    self.assertRegex(image, r"\balt\s*=")
+
+    def test_icon_only_controls_define_accessible_names(self):
+        icon_controls = {
+            "reviews/_back_to_top.html": ("back-to-top",),
+            "reviews/base.html": ("nav-toggle", "message-close"),
+            "reviews/professor.html": ("share-btn",),
+        }
+        for template, classes in icon_controls.items():
+            html = (TEMPLATES_DIR / template).read_text()
+            for class_name in classes:
+                with self.subTest(template=template, control=class_name):
+                    tags = [
+                        tag for tag in re.findall(r"<[a-zA-Z][^>]*>", html)
+                        if re.search(rf'class="[^"]*\b{re.escape(class_name)}\b', tag)
+                    ]
+                    self.assertTrue(tags, f"{class_name} control not found")
+                    for tag in tags:
+                        self.assertIn("aria-label", tag)
+
+
+class SchoolPaginationAccessibilityTests(TestCase):
+    def setUp(self):
+        from . import store as store_mod
+        from . import views as views_mod
+        from .constants import PAGE_SIZE
+        from .repository import InMemoryRepository
+
+        self._orig_repo = store_mod.repo
+        self._orig_view_repo = views_mod.repo
+        self.repo = InMemoryRepository()
+        store_mod.repo = self.repo
+        views_mod.repo = self.repo
+        self.school = self.repo.add_school("Университет доступности", "Бишкек")
+        for index in range(PAGE_SIZE + 1):
+            self.repo.add_professor(
+                self.school.id,
+                f"Имя{index}",
+                f"Фамилия{index}",
+                "Кафедра",
+                "доцент",
+            )
+
+    def tearDown(self):
+        from . import store as store_mod
+        from . import views as views_mod
+
+        store_mod.repo = self._orig_repo
+        views_mod.repo = self._orig_view_repo
+
+    def test_school_pagination_links_have_descriptive_labels(self):
+        response = self.client.get(reverse("school_detail", args=[self.school.slug]))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'aria-label="Страница 2 из 2"')
+        self.assertContains(response, '<span aria-current="page">Страница 1 из 2</span>')
+
+    def test_school_previous_page_link_is_labeled(self):
+        response = self.client.get(
+            reverse("school_detail", args=[self.school.slug]),
+            {"page": 2},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'aria-label="Страница 1 из 2"')
+        self.assertContains(response, '<span aria-current="page">Страница 2 из 2</span>')
