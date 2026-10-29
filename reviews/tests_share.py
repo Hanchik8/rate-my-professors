@@ -56,5 +56,5 @@ class ProfessorShareTests(TestCase):
     def test_professor_page_has_no_inline_javascript(self):
         response, _ = self._get()
         self.assertNotRegex(
-            response.content.decode(), r"<script(?![^>]*\bsrc=)[^>]*>\s*[^\s<]"
+            response.content.decode(), r"<script(?![^>]*\bsrc=)(?![^>]*type=[\"']application/ld\+json[\"'])[^>]*>\s*[^\s<]"
         )

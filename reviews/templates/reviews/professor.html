@@ -106,5 +106,6 @@
   <a class="btn empty-state-action" href="{% url 'review_new' prof.slug %}">{% translate "Оценить преподавателя" %}</a>
 </section>
 {% endif %}
+<script type="application/ld+json">{{ person_jsonld|safe }}</script>
 {% endblock %}
 {% block page_tools %}{% include "reviews/_back_to_top.html" %}{% endblock %}

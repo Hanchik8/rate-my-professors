@@ -15,6 +15,7 @@ from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.db import connection
 from django.http import Http404, HttpResponse, JsonResponse
+import json
 from django.shortcuts import redirect, render, resolve_url
 from django.urls import reverse
 from django.utils.http import url_has_allowed_host_and_scheme
@@ -157,8 +158,24 @@ def professor_detail(request, slug):
     )
     all_reviews = repo.reviews_for(prof.id, sort)
     reviews, page_obj = _paginate(all_reviews, request.GET.get("page"))
+    stats = repo.stats(prof.id)
+    person_schema = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": prof.full_name,
+    }
+    if stats["count"]:
+        person_schema["aggregateRating"] = {
+            "@type": "AggregateRating",
+            "ratingValue": stats["overall"],
+            "reviewCount": stats["count"],
+        }
+    person_jsonld = json.dumps(person_schema, ensure_ascii=False)
+    person_jsonld = (person_jsonld.replace("&", "\\u0026")
+                     .replace("<", "\\u003c").replace(">", "\\u003e"))
     return render(request, "reviews/professor.html", {
-        "prof": prof, "school": repo.school(prof.school_id), "stats": repo.stats(prof.id),
+        "prof": prof, "school": repo.school(prof.school_id), "stats": stats,
+        "person_jsonld": person_jsonld,
         "reviews": reviews, "sort": sort, "page_obj": page_obj,
         "sort_options": [("new", "сначала новые"), ("old", "сначала старые"), ("high", "сначала высокая оценка"),
                          ("low", "сначала низкая оценка"), ("helpful", "сначала полезные")],

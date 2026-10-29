@@ -2957,7 +2957,7 @@ class MessagesRenderTests(_MemoryRepoTestCase):
         self.assertContains(response, 'aria-label="Закрыть уведомление"')
         self.assertContains(response, "reviews/base.js")
         self.assertContains(response, "reviews/messages.js")
-        self.assertNotRegex(response.content.decode(), r"<script(?![^>]*\bsrc=)[^>]*>\s*[^\s<]")
+        self.assertNotRegex(response.content.decode(), r"<script(?![^>]*\bsrc=)(?![^>]*type=[\"']application/ld\+json[\"'])[^>]*>\s*[^\s<]")
 
     def test_error_message_uses_alert_role(self):
         self.login()

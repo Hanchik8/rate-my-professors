@@ -50,6 +50,6 @@ class SecurityLoggingTests(TestCase):
                 with self.subTest(url=url):
                     response = self.client.get(url)
                     self.assertEqual(response.status_code, 200)
-                    self.assertNotRegex(response.content.decode(), r"<script\b(?![^>]*\bsrc\s*=)[^>]*>")
+                    self.assertNotRegex(response.content.decode(), r"<script\b(?![^>]*\bsrc\s*=)(?![^>]*type=[\"']application/ld\+json[\"'])[^>]*>")
         finally:
             store.repo, views.repo = original_store_repo, original_view_repo
