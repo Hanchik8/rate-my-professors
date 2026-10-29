@@ -304,25 +304,34 @@ msgstr "newest"
 
 msgid "сначала полезные"
 msgstr "most helpful"
+
 msgid "сначала новые"
 msgstr "newest"
+
 msgid "сначала старые"
 msgstr "oldest"
+
 msgid "сначала высокая оценка"
 msgstr "highest rating first"
+
 msgid "сначала низкая оценка"
 msgstr "lowest rating first"
+
 msgid "сначала полезные"
 msgstr "most helpful"
 
 msgid "Newest"
 msgstr "Newest"
+
 msgid "Oldest"
 msgstr "Oldest"
+
 msgid "Highest rating"
 msgstr "Highest rating"
+
 msgid "Lowest rating"
 msgstr "Lowest rating"
+
 msgid "Most helpful"
 msgstr "Most helpful"
 
@@ -551,8 +560,12 @@ msgstr ""
 "Kyrgyzstan. We collect honest student opinions to help you choose courses "
 "and professors wisely."
 
-msgid "Наша миссия — сделать учебный процесс прозрачнее, а выбор преподавателя — информированным."
-msgstr "Our mission is to make the education process more transparent and the choice of a professor informed."
+msgid ""
+"Наша миссия — сделать учебный процесс прозрачнее, а выбор преподавателя — "
+"информированным."
+msgstr ""
+"Our mission is to make the education process more transparent and the choice"
+" of a professor informed."
 
 msgid "Как это работает"
 msgstr "How it works"
@@ -575,8 +588,8 @@ msgid ""
 "Отзывы доступны всем — без регистрации, бесплатно, на трёх языках (русский, "
 "кыргызский, английский)."
 msgstr ""
-"Reviews are available to everyone — no registration, free of charge, in three "
-"languages (Russian, Kyrgyz, English)."
+"Reviews are available to everyone — no registration, free of charge, in "
+"three languages (Russian, Kyrgyz, English)."
 
 msgid "Конфиденциальность"
 msgstr "Privacy"
@@ -629,37 +642,103 @@ msgstr "Rejected"
 
 msgid "Изменить"
 msgstr "Edit"
+
 msgid "Удалить"
 msgstr "Delete"
+
 msgid "Изменить отзыв"
 msgstr "Edit review"
+
 msgid "Сохранить изменения"
 msgstr "Save changes"
+
 msgid "Вы уверены, что хотите удалить этот отзыв?"
 msgstr "Are you sure you want to delete this review?"
+
 msgid "Отзыв удалён."
 msgstr "Review deleted."
+
 msgid "Отзыв отправлен на модерацию."
 msgstr "Review submitted for moderation."
+
 msgid "Удалить отзыв"
 msgstr "Delete review"
 
-msgid "ProfLens — отзывы о преподавателях вузов Кыргызстана: рейтинги, сложность курсов и советы студентов."
-msgstr "ProfLens — reviews of university professors in Kyrgyzstan: ratings, course difficulty and student advice."
+msgid ""
+"ProfLens — отзывы о преподавателях вузов Кыргызстана: рейтинги, сложность "
+"курсов и советы студентов."
+msgstr ""
+"ProfLens — reviews of university professors in Kyrgyzstan: ratings, course "
+"difficulty and student advice."
 
-msgid "Отзывы студентов о преподавателе %(name)s (%(dept)s, %(school)s): рейтинг, сложность и советы."
-msgstr "Student reviews of professor %(name)s (%(dept)s, %(school)s): rating, difficulty and advice."
+msgid ""
+"Отзывы студентов о преподавателе %(name)s (%(dept)s, %(school)s): рейтинг, "
+"сложность и советы."
+msgstr ""
+"Student reviews of professor %(name)s (%(dept)s, %(school)s): rating, "
+"difficulty and advice."
 
-msgid "Преподаватели и отзывы студентов вуза %(name)s (%(city)s): рейтинги, кафедры и советы."
-msgstr "Professors and student reviews at %(name)s (%(city)s): ratings, departments and advice."
+msgid ""
+"Преподаватели и отзывы студентов вуза %(name)s (%(city)s): рейтинги, кафедры"
+" и советы."
+msgstr ""
+"Professors and student reviews at %(name)s (%(city)s): ratings, departments "
+"and advice."
 
 # Strings rendered by Django's built-in login form.
 msgid "Username"
 msgstr "Username"
 
 #, python-format
-msgid "Please enter a correct %(username)s and password. Note that both fields may be case-sensitive."
-msgstr "Please enter a correct %(username)s and password. Note that both fields may be case-sensitive."
+msgid ""
+"Please enter a correct %(username)s and password. Note that both fields may "
+"be case-sensitive."
+msgstr ""
+"Please enter a correct %(username)s and password. Note that both fields may "
+"be case-sensitive."
 
 msgid "This account is inactive."
 msgstr "This account is inactive."
+
+msgid "Забыли пароль?"
+msgstr "Forgot password?"
+
+msgid "Сброс пароля"
+msgstr "Password reset"
+
+msgid "Укажите адрес электронной почты, связанный с аккаунтом."
+msgstr "Enter the email address associated with your account."
+
+msgid "Отправить ссылку"
+msgstr "Send link"
+
+msgid "Проверьте почту"
+msgstr "Check your email"
+
+msgid ""
+"Если аккаунт с таким адресом существует, мы отправили инструкции по сбросу "
+"пароля."
+msgstr ""
+"If an account exists for that address, we have sent password reset "
+"instructions."
+
+msgid "Новый пароль"
+msgstr "New password"
+
+msgid "Сохранить пароль"
+msgstr "Save password"
+
+msgid "Ссылка недействительна или уже использована."
+msgstr "This link is invalid or has already been used."
+
+msgid "Пароль изменён"
+msgstr "Password changed"
+
+msgid "Теперь вы можете войти с новым паролем."
+msgstr "You can now sign in with your new password."
+
+msgid "Чтобы задать новый пароль, перейдите по ссылке:"
+msgstr "To set a new password, follow this link:"
+
+msgid "Сброс пароля ProfLens"
+msgstr "ProfLens password reset"
