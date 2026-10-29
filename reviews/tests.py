@@ -2674,6 +2674,11 @@ class LoginRateLimitTests(TestCase):
         self.assertEqual(self._post(ip="10.0.0.1").status_code, 429)
         self.assertEqual(self._post(ip="10.0.0.2").status_code, 200)
 
+    def test_login_get_page_is_not_limited(self):
+        for _ in range(3):
+            self._post()
+        self.assertEqual(self.client.get(reverse("login")).status_code, 200)
+
 
 @_THROTTLE_SETTINGS
 class SignupRateLimitTests(TestCase):
