@@ -108,6 +108,10 @@ class PrivatePagesCacheControlTests(CacheControlTestCase):
         )
         self.assertIn("default-src", response.headers.get("Content-Security-Policy", ""))
         self.assertEqual(response.headers.get("X-Frame-Options"), "DENY")
+        self.assertEqual(
+            response.headers.get("Referrer-Policy"), "strict-origin-when-cross-origin"
+        )
+        self.assertEqual(response.headers.get("X-Content-Type-Options"), "nosniff")
 
 
 class PublicPagesCacheControlTests(CacheControlTestCase):
