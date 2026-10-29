@@ -12,7 +12,6 @@ from django.contrib.auth import login
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.core.paginator import Paginator
 from django.db import connection
 from django.http import Http404, HttpResponse, JsonResponse
 import json
@@ -29,12 +28,12 @@ from .caching import (
     options_cache_key,
     school_cache_key,
 )
-from .constants import PAGE_SIZE
 from .forms import ProfessorForm, ReportForm, ReviewForm
 from . import email_verification, services
 from .models import EmailVerification as EmailVerificationModel
 from .store import repo
 from .throttle import is_rate_limited, rate_limit
+from .view_helpers import _paginate, _paginate_request
 
 
 def handler404(request, exception=None):
@@ -61,24 +60,6 @@ def health(request):
 def healthz(request):
     """Return a database-independent liveness response."""
     return JsonResponse({"status": "ok"})
-
-
-def _paginate(items, page_number):
-    """Return ``(page_items, page_obj)`` for ``items``.
-
-    ``page_obj`` is ``None`` when everything fits on one page, so templates
-    can omit pagination controls while still using a flat result list.
-    """
-    paginator = Paginator(items, PAGE_SIZE)
-    page_obj = paginator.get_page(page_number)
-    if paginator.num_pages <= 1:
-        return items, None
-    return page_obj.object_list, page_obj
-
-
-def _paginate_request(request, items):
-    """Paginate ``items`` using the page number from the request query string."""
-    return _paginate(items, request.GET.get("page"))
 
 
 def _form_for_request(request, form_class, **kwargs):
