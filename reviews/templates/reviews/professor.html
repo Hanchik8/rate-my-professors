@@ -1,4 +1,4 @@
-{% extends "reviews/base.html" %}{% load i18n l10n %}
+{% extends "reviews/base.html" %}{% load i18n l10n static %}
 {% block title %}{{ prof.full_name }} — ProfLens{% endblock %}
 {% block description %}{% blocktranslate with name=prof.full_name dept=prof.department school=school.name %}Отзывы студентов о преподавателе {{ name }} ({{ dept }}, {{ school }}): рейтинг, сложность и советы.{% endblocktranslate %}{% endblock %}
 {% block og_title %}{{ prof.full_name }} — ProfLens{% endblock %}
@@ -39,6 +39,23 @@
 {% if stats.count and stats.top_tags %}<p class="tags">{% translate "Студенты отмечают:" %} {% for tag in stats.top_tags %}{% translate tag %}{% if not forloop.last %}, {% endif %}{% endfor %}</p>{% endif %}
 
 <p><a class="btn" href="{% url 'review_new' prof.slug %}">{% translate "Оценить преподавателя" %}</a></p>
+
+{% url 'professor' prof.slug as prof_url %}
+<div class="share" data-share>
+  <button class="btn share-btn" type="button" data-share-button
+          data-share-url="{{ request.scheme }}://{{ request.get_host }}{{ prof_url }}"
+          data-share-copied="{% translate 'Ссылка скопирована' %}"
+          aria-label="{% translate 'Поделиться' %}: {{ prof.full_name }}" hidden>
+    {% translate "Поделиться" %}
+  </button>
+  <p class="share-fallback">
+    <label for="share-url">{% translate "Ссылка на страницу преподавателя" %}</label>
+    <input id="share-url" class="share-url" type="url" readonly data-share-field
+           value="{{ request.scheme }}://{{ request.get_host }}{{ prof_url }}">
+  </p>
+  <p class="share-status muted" role="status" data-share-status hidden></p>
+</div>
+<script src="{% static 'reviews/share.js' %}" defer></script>
 
 <h2>{% translate "Отзывы" %}</h2>
 <div class="review-summary" role="group" aria-label="{% if stats.count %}{% translate 'Средний рейтинг' %}: {{ stats.overall|floatformat:1|localize }} / 5, {% translate 'Отзывов' %}: {{ stats.count|localize }}{% else %}{% translate 'Нет оценок' %}{% endif %}">

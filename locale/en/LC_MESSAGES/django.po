@@ -742,3 +742,12 @@ msgstr "To set a new password, follow this link:"
 
 msgid "Сброс пароля ProfLens"
 msgstr "ProfLens password reset"
+
+msgid "Поделиться"
+msgstr "Share"
+
+msgid "Ссылка на страницу преподавателя"
+msgstr "Link to the professor page"
+
+msgid "Ссылка скопирована"
+msgstr "Link copied"

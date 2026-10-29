@@ -252,6 +252,13 @@ input:focus,select:focus,textarea:focus{border-color:var(--focus)}
 .review-summary-label{font-weight:700}
 .review-summary-count{color:var(--muted);font-size:.9rem}
 
+/* Share control on the professor page (button is shown by share.js; the
+   read-only URL field is the no-JS fallback). */
+.share{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;margin:0 0 1.25rem}
+.share-fallback{display:flex;gap:.5rem;align-items:center;margin:0;flex:1;min-width:16rem}
+.share-url{flex:1;min-width:0}
+.share-status{margin:0;flex-basis:100%}
+
 /* Reviews */
 .review{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--line);
   max-width:46rem;overflow-wrap:break-word}
