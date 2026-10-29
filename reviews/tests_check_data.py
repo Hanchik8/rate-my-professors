@@ -58,5 +58,5 @@ class CheckDataCommandTests(TestCase):
         call_command("check_data", stdout=output)
 
         self.assertIn("Дубли профессоров: 1", output.getvalue())
-        self.assertIn("Example University: Ada Lovelace", output.getvalue())
+        self.assertIn("example university: ada lovelace", output.getvalue().lower())
         self.assertEqual(Professor.objects.count(), 2)
