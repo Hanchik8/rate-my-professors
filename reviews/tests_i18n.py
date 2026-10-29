@@ -160,6 +160,16 @@ class CatalogCompletenessTests(TestCase):
                 with self.subTest(lang=lang, msgid=msgid):
                     self.assertTrue(msgstr, f"untranslated entry in {lang}: {msgid!r}")
 
+    def test_kyrgyz_form_labels_are_not_left_in_russian(self):
+        expected = {
+            "Предмет": "Сабак",
+            "Семестр": "Окуу мезгили",
+            "Кафедра": "Бөлүм",
+        }
+        for msgid, msgstr in expected.items():
+            with self.subTest(msgid=msgid):
+                self.assertEqual(self.catalogs["ky"][msgid], msgstr)
+
 
 class FormAndMessageTranslationTests(TestCase):
     """Specific forms/validators/messages resolve in Kyrgyz and Russian."""
