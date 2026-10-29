@@ -7,6 +7,9 @@ from .views import _paginate
 
 
 class SharedConstantsTests(SimpleTestCase):
+    def test_database_connection_max_age_setting(self):
+        self.assertEqual(settings.DATABASES["default"]["CONN_MAX_AGE"], 0)
+
     def test_review_comment_limits_are_sane(self):
         self.assertEqual(MIN_COMMENT_LENGTH, 20)
         self.assertEqual(MAX_COMMENT_LENGTH, 1000)

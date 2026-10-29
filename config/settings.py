@@ -274,6 +274,7 @@ TEMPLATES = [{
 
 # Database: DATABASE_URL for Postgres, fallback to SQLite for local dev / tests
 _db_url = os.environ.get("DATABASE_URL", "")
+_conn_max_age = _get_int_setting("CONN_MAX_AGE", 0 if DEBUG else 60)
 if _db_url:
     # simple parse: postgres://user:pass@host:port/dbname  -> use psycopg
     # we rely on dj-database-url style but keep stdlib only
@@ -286,9 +287,14 @@ if _db_url:
         "PASSWORD": u.password or "",
         "HOST": u.hostname or "",
         "PORT": str(u.port or ""),
+        "CONN_MAX_AGE": _conn_max_age,
     }}
 else:
-    DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}}
+    DATABASES = {"default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+        "CONN_MAX_AGE": _conn_max_age,
+    }}
 
 STATIC_URL = "static/"
 USE_I18N = True
