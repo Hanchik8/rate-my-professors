@@ -2037,10 +2037,10 @@ class QueryEfficiencyTests(TestCase):
     def test_school_view_query_count_is_constant(self):
         school = self.repo.schools()[0]
         self.client.get(reverse("school_detail", args=[school.slug]))
-        with self.assertNumQueries(7):
+        with self.assertNumQueries(4):
             self.client.get(reverse("school_detail", args=[school.slug]))
         self._add_load()
-        with self.assertNumQueries(7):
+        with self.assertNumQueries(4):
             self.client.get(reverse("school_detail", args=[school.slug]))
 
     def test_home_list_query_count_does_not_grow_per_professor(self):

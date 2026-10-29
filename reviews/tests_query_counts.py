@@ -124,3 +124,17 @@ class PageQueryCountTests(TestCase):
             school_response = self.client.get(school_url)
         self.assertEqual(len(home_response.context["results"]), 5)
         self.assertEqual(len(school_response.context["results"]), 5)
+
+    def test_school_page_query_count_is_constant_with_professors(self):
+        url = reverse("school_detail", args=[self.school.slug])
+        self.client.get(url)  # warm the school result cache
+        before = self._query_count(url)
+
+        for index in range(5):
+            self.repo.add_professor(
+                self.school.id, f"Кафедра{index}", f"Преподаватель{index}", "Математика", "доцент"
+            )
+
+        with self.assertNumQueries(before):
+            response = self.client.get(url)
+        self.assertEqual(len(response.context["results"]), 6)

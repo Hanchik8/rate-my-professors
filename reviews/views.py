@@ -170,16 +170,23 @@ def _school_or_404(slug):
 
 def _school_context(school, page_number):
     """Build the template context for a school page."""
+    # Search already returns batched stats for every approved professor; reuse
+    # them here instead of issuing the separate school_stats query set.
     data = get_or_set(school_cache_key(school.slug), lambda: {
         "results": repo.search("", school_slug=school.slug),
-        "stats": repo.school_stats(school.id),
     })
     results = data["results"]
+    rated = [r["stats"]["overall"] for r in results if r["stats"]["count"]]
+    stats = {
+        "prof_count": len(results),
+        "review_count": sum(r["stats"]["count"] for r in results),
+        "avg_overall": round(sum(rated) / len(rated), 1) if rated else 0,
+    }
     page_results, page_obj = _paginate(results, page_number)
     return {
         "school": school,
         "results": page_results,
-        "stats": data["stats"],
+        "stats": stats,
         "departments": sorted({r["prof"].department for r in results}),
         "page_obj": page_obj,
     }
