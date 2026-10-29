@@ -1,6 +1,7 @@
 import uuid
 
 from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import F, Q
 from django.db.models.functions import Lower
@@ -147,6 +148,11 @@ class Review(models.Model):
         # Defence in depth for admin/ORM writers: drop control characters and
         # normalise line endings before validation.
         self.comment = clean_text(self.comment)
+        if len(self.comment) > MAX_COMMENT_LENGTH:
+            raise ValidationError({
+                "comment": _("Отзыв должен содержать не более %(n)d символов.")
+                % {"n": MAX_COMMENT_LENGTH}
+            })
 
     def __str__(self):
         return f"{self.professor} {self.course} {self.overall}"
