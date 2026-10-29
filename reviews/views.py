@@ -30,6 +30,7 @@ from .caching import (
 )
 from .constants import PAGE_SIZE
 from .forms import ProfessorForm, ReportForm, ReviewForm
+from . import services
 from .store import repo
 from .throttle import is_rate_limited, rate_limit
 
@@ -117,7 +118,9 @@ def home(request):
     options = _home_options()
     data = get_or_set(
         home_cache_key(q, school, city, department, sort),
-        lambda: {"results": repo.search(q, school, city, department, sort)},
+        lambda: {"results": services.search_professors(
+            repo, q, school=school, city=city, department=department, sort=sort,
+        )},
     )
     page_results, page_obj = _paginate(data["results"], request.GET.get("page"))
     return render(request, "reviews/home.html", {
@@ -173,7 +176,7 @@ def _school_context(school, page_number):
     # Search already returns batched stats for every approved professor; reuse
     # them here instead of issuing the separate school_stats query set.
     data = get_or_set(school_cache_key(school.slug), lambda: {
-        "results": repo.search("", school_slug=school.slug),
+        "results": services.professors_for_school(repo, school.slug),
     })
     results = data["results"]
     rated = [r["stats"]["overall"] for r in results if r["stats"]["count"]]
