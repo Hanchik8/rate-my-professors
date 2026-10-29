@@ -75,6 +75,11 @@ def _paginate(items, page_number):
     return page_obj.object_list, page_obj
 
 
+def _paginate_request(request, items):
+    """Paginate ``items`` using the page number from the request query string."""
+    return _paginate(items, request.GET.get("page"))
+
+
 def _form_for_request(request, form_class, **kwargs):
     """Return a form bound to POST data, or an unbound form otherwise."""
     data = request.POST if request.method == "POST" else None
@@ -123,7 +128,7 @@ def home(request):
             repo, q, school=school, city=city, department=department, sort=sort,
         )},
     )
-    page_results, page_obj = _paginate(data["results"], request.GET.get("page"))
+    page_results, page_obj = _paginate_request(request, data["results"])
     return render(request, "reviews/home.html", {
         "q": q, "school": school, "city": city,
         "department": department, "sort": sort,
@@ -157,7 +162,7 @@ def professor_detail(request, slug):
         aliases={"newest": "new"},
     )
     all_reviews = repo.reviews_for(prof.id, sort)
-    reviews, page_obj = _paginate(all_reviews, request.GET.get("page"))
+    reviews, page_obj = _paginate_request(request, all_reviews)
     stats = repo.stats(prof.id)
     person_schema = {
         "@context": "https://schema.org",
@@ -188,7 +193,7 @@ def _school_or_404(slug):
     return _object_or_404(repo.school_by_slug(slug), _("School not found"))
 
 
-def _school_context(school, page_number):
+def _school_context(school, request):
     """Build the template context for a school page."""
     # Search already returns batched stats for every approved professor; reuse
     # them here instead of issuing the separate school_stats query set.
@@ -202,7 +207,7 @@ def _school_context(school, page_number):
         "review_count": sum(r["stats"]["count"] for r in results),
         "avg_overall": round(sum(rated) / len(rated), 1) if rated else 0,
     }
-    page_results, page_obj = _paginate(results, page_number)
+    page_results, page_obj = _paginate_request(request, results)
     return {
         "school": school,
         "results": page_results,
@@ -218,7 +223,7 @@ def school_detail(request, slug):
     return render(
         request,
         "reviews/school.html",
-        _school_context(school, request.GET.get("page")),
+        _school_context(school, request),
     )
 
 
