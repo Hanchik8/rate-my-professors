@@ -304,6 +304,32 @@ class RepositoryContractMixin:
         self.assertEqual(st["tone"], "good")
         self.assertIn("Интересные лекции", st["top_tags"])
 
+    def test_only_approved_reviews_are_public_and_counted_in_rating(self):
+        s = self._school()
+        p = self._prof(s.id)
+        pending = self.repo.add_review(
+            p.id, _repo_review(course="Ожидает", overall=1), status="pending"
+        )
+        approved = self.repo.add_review(
+            p.id, _repo_review(course="Одобрен", overall=5), status="approved"
+        )
+        rejected = self.repo.add_review(
+            p.id, _repo_review(course="Отклонён", overall=1), status="rejected"
+        )
+
+        self.assertEqual([r.id for r in self.repo.reviews_for(p.id)], [approved.id])
+        self.assertEqual(
+            {r.id for r in self.repo.reviews_for(p.id, include_pending=True)},
+            {pending.id, approved.id, rejected.id},
+        )
+        stats = self.repo.stats(p.id)
+        self.assertEqual(stats["count"], 1)
+        self.assertEqual(stats["overall"], 5.0)
+        self.assertEqual(
+            [(row["score"], row["count"]) for row in stats["distribution"]],
+            [(5, 1), (4, 0), (3, 0), (2, 0), (1, 0)],
+        )
+
     def test_stats_tone_thresholds_are_shared_between_backends(self):
         s = self._school()
         cases = [(5, "good"), (4, "good"), (3, "mid"), (2, "bad"), (1, "bad")]
