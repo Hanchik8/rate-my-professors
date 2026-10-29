@@ -115,6 +115,41 @@ class ReportRateLimitTests(_MemoryRepoTestCase):
         )
 
 
+@override_settings(
+    RATELIMIT_ENABLE=True,
+    RATELIMIT={"login": (2, 60), "signup": (2, 60), "review": (2, 60)},
+)
+class AuthenticationRateLimitTests(TestCase):
+    def setUp(self):
+        cache.clear()
+        self.addCleanup(cache.clear)
+
+    def test_login_attempts_are_limited_per_ip(self):
+        url = reverse("login")
+        data = {"username": "missing@example.com", "password": "wrong"}
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.1").status_code, 200)
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.1").status_code, 200)
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.1").status_code, 429)
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.2").status_code, 200)
+
+    def test_signup_attempts_are_limited_per_ip(self):
+        url = reverse("signup")
+        data = {"email": "bad", "password1": "password", "password2": "password"}
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.1").status_code, 200)
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.1").status_code, 200)
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.1").status_code, 429)
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.2").status_code, 200)
+
+
+@override_settings(RATELIMIT_ENABLE=True, RATELIMIT={"review": (1, 60)})
+class AnonymousReviewRateLimitTests(_MemoryRepoTestCase):
+    def test_review_submission_is_limited_even_for_anonymous_ip(self):
+        url = reverse("review_new", args=[self.professor().slug])
+        self.assertEqual(self.client.post(url, _valid(), REMOTE_ADDR="10.0.0.1").status_code, 302)
+        self.assertEqual(self.client.post(url, _valid(), REMOTE_ADDR="10.0.0.1").status_code, 429)
+        self.assertEqual(self.client.post(url, _valid(), REMOTE_ADDR="10.0.0.2").status_code, 302)
+
+
 @override_settings(RATELIMIT_ENABLE=True, RATELIMIT={"review": (1, 60)})
 class ReviewManagementRateLimitTests(_MemoryRepoTestCase):
     def setUp(self):
