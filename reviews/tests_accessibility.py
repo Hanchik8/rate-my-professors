@@ -76,6 +76,12 @@ class HomeAccessibilityTests(TestCase):
         )
         self.assertContains(self.response, 'id="main-content" tabindex="-1"')
 
+    def test_home_navigation_marks_current_page(self):
+        self.assertContains(
+            self.response,
+            '<a class="brand" href="/" aria-current="page">',
+        )
+
     def test_home_icon_button_and_navigation_have_accessible_names(self):
         self.assertContains(self.response, 'class="nav-toggle"')
         self.assertContains(self.response, 'aria-expanded="false"')
