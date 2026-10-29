@@ -219,14 +219,6 @@ def about(request):
     return render(request, "reviews/about.html")
 
 
-@login_required
-def profile(request):
-    """Show the current user's reviews and their moderation status."""
-    return render(request, "reviews/profile.html", {
-        "reviews": repo.reviews_for_user(request.user),
-    })
-
-
 def _is_author(obj, user):
     """Return whether ``obj`` belongs to ``user`` (ids compare as strings)."""
     return obj.author_id is not None and str(obj.author_id) == str(user.id)
@@ -257,37 +249,6 @@ def _review_initial(review):
         "tags": review.tags,
         "comment": review.comment,
     }
-
-
-@require_http_methods(["GET", "POST"])
-@login_required
-@rate_limit("review")
-def review_edit(request, review_id):
-    review = _owned_review_or_404(review_id, request.user)
-    prof = _professor_for_review(review)
-    initial = None if request.method == "POST" else _review_initial(review)
-    form = _form_for_request(request, ReviewForm, initial=initial)
-    if _is_valid_post(request, form):
-        repo.update_review(review_id, form.cleaned_data)
-        messages.success(request, _("Отзыв отправлен на модерацию."))
-        return redirect("profile")
-    return render(
-        request,
-        "reviews/review_form.html",
-        _review_form_context(prof, form, editing=True),
-    )
-
-
-@require_http_methods(["GET", "POST"])
-@login_required
-@rate_limit("review")
-def review_delete(request, review_id):
-    review = _owned_review_or_404(review_id, request.user)
-    if request.method == "POST":
-        repo.delete_review(review_id)
-        messages.success(request, _("Отзыв удалён."))
-        return redirect("profile")
-    return render(request, "reviews/review_confirm_delete.html", {"review": review})
 
 
 def _save_review(form, prof, request):
@@ -357,35 +318,10 @@ def _review_or_404(review_id):
     return _object_or_404(repo.review(review_id), _("Review not found"))
 
 
-@require_POST
-@login_required
-@rate_limit("vote")
-def review_vote(request, review_id):
-    """Record a helpful / not-helpful vote on a review."""
-    review = _review_or_404(review_id)
-    if _is_author(review, request.user):
-        messages.warning(request, _("Нельзя голосовать за свой отзыв."))
-        return _redirect_to_review(review)
-    try:
-        repo.vote(review_id, helpful=request.POST.get("vote") == "up", user=request.user)
-    except ValueError:
-        messages.warning(request, _("Вы уже голосовали за этот отзыв."))
-    return _redirect_to_review(review)
-
-
-@require_POST
-@login_required
-@rate_limit("report")
-def review_report(request, review_id):
-    """Flag a review for moderator attention with a validated reason."""
-    review = _review_or_404(review_id)
-    form = ReportForm(request.POST)
-    if not form.is_valid():
-        messages.error(request, _("Выберите корректную причину жалобы."))
-        return _redirect_to_review(review)
-    repo.report(review_id, user=request.user, reason=form.cleaned_data["reason"])
-    messages.success(request, _("Жалоба отправлена модератору."))
-    return _redirect_to_review(review)
+from .views_votes import (
+    _redirect_to_review, review_report, review_vote,
+)
+from .views_profile import _owned_review_or_404, profile, review_delete, review_edit
 
 
 def _requested_next_url(request):
