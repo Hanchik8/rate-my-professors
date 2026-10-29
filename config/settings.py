@@ -353,7 +353,17 @@ DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL") or EMAIL_HOST_USER or 
 
 # Email confirmation by 6-digit code at signup. Set REQUIRE_EMAIL_VERIFICATION=False
 # when no SMTP account is configured; new accounts are then activated immediately.
-REQUIRE_EMAIL_VERIFICATION = _get_bool_setting("REQUIRE_EMAIL_VERIFICATION", True)
+# "auto" turns it on only once EMAIL_HOST_USER and EMAIL_HOST_PASSWORD are filled in.
+def _get_email_verification(raw, smtp_ready):
+    value = (raw or "").strip().lower()
+    if value == "auto":
+        return smtp_ready
+    return _parse_bool(raw, default=True)
+
+
+REQUIRE_EMAIL_VERIFICATION = _get_email_verification(
+    os.environ.get("REQUIRE_EMAIL_VERIFICATION"), bool(EMAIL_HOST_USER and EMAIL_HOST_PASSWORD)
+)
 EMAIL_VERIFICATION_CODE_TTL = 600
 EMAIL_VERIFICATION_MAX_ATTEMPTS = 5
 EMAIL_VERIFICATION_RESEND_INTERVAL = 60

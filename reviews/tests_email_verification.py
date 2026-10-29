@@ -185,3 +185,14 @@ class EmailVerificationDisabledTests(TestCase):
         self.assertTrue(User.objects.get(username=EMAIL).is_active)
         self.assertIn("_auth_user_id", self.client.session)
         self.assertEqual(len(mail.outbox), 0)
+
+
+class EmailVerificationSettingTests(TestCase):
+    def test_auto_follows_smtp_credentials(self):
+        from config.settings import _get_email_verification
+
+        self.assertTrue(_get_email_verification("auto", True))
+        self.assertFalse(_get_email_verification("auto", False))
+        self.assertFalse(_get_email_verification("False", True))
+        self.assertTrue(_get_email_verification(None, False))
+        self.assertTrue(_get_email_verification("True", False))
