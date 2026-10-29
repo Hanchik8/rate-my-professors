@@ -539,7 +539,12 @@ def _start_verification(request, user):
     if email_verification.issue_code(user):
         messages.success(request, _("Мы отправили 6-значный код на %(email)s. Введите его, чтобы завершить регистрацию.") % {"email": user.email})
     else:
-        messages.error(request, _("Не удалось отправить письмо с кодом. Попробуйте отправить код ещё раз чуть позже."))
+        _email_delivery_failed(request)
+
+
+def _email_delivery_failed(request):
+    """Show the shared error message when a verification email cannot be sent."""
+    messages.error(request, _("Не удалось отправить письмо с кодом. Попробуйте отправить код ещё раз чуть позже."))
 
 
 @require_http_methods(["GET", "POST"])
@@ -581,7 +586,7 @@ def _handle_resend(request, user):
     elif result.delivered:
         messages.success(request, _("Новый код отправлен на %(email)s.") % {"email": user.email})
     else:
-        messages.error(request, _("Не удалось отправить письмо с кодом. Попробуйте отправить код ещё раз чуть позже."))
+        _email_delivery_failed(request)
     return redirect("signup_verify")
 
 
