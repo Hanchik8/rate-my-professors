@@ -427,6 +427,9 @@ msgstr "Professors"
 msgid "Пока нет преподавателей."
 msgstr "No professors yet."
 
+msgid "Добавьте преподавателя, чтобы студенты могли делиться опытом."
+msgstr "Add a professor so students can share their experiences."
+
 msgid "Отзыв отправлен на модерацию. Спасибо!"
 msgstr "Review submitted for moderation. Thank you!"
 

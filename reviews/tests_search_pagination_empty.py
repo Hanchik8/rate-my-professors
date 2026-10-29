@@ -157,6 +157,8 @@ class SchoolPaginationEmptyContractMixin(_ListedRepoMixin):
         self.assertEqual(list(response.context["results"]), [])
         self.assertIsNone(response.context["page_obj"])
         self.assertContains(response, "Пока нет преподавателей")
+        self.assertContains(response, "Добавьте преподавателя, чтобы студенты могли делиться опытом.")
+        self.assertContains(response, f'href="{reverse("add_professor")}"')
         self.assertNotContains(response, 'class="pagination"')
 
     def test_school_exactly_page_size_results_have_no_pagination(self):
