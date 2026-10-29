@@ -24,6 +24,12 @@ class ReviewAdminModerationTests(TestCase):
             username="staff@example.com", email="staff@example.com", password="pass12345", is_staff=True
         )
         self.staff.user_permissions.add(Permission.objects.get(codename="change_review"))
+        self.staff_without_permissions = User.objects.create_user(
+            username="staff-no-permissions@example.com",
+            email="staff-no-permissions@example.com",
+            password="pass12345",
+            is_staff=True,
+        )
         self.superuser = User.objects.create_superuser(
             username="admin@example.com", email="admin@example.com", password="pass12345"
         )
@@ -65,6 +71,24 @@ class ReviewAdminModerationTests(TestCase):
         review = self._review()
         response = self._run_action("approve_selected", [review])
         self.assertEqual(response.status_code, 302)
+        review.refresh_from_db()
+        self.assertEqual(review.status, "pending")
+
+    def test_staff_without_permissions_gets_forbidden(self):
+        self.client.force_login(self.staff_without_permissions)
+        self.assertEqual(self.client.get(self._changelist_url()).status_code, 403)
+
+        review = self._review()
+        response = self._run_action("approve_selected", [review])
+        self.assertEqual(response.status_code, 403)
+        review.refresh_from_db()
+        self.assertEqual(review.status, "pending")
+
+    def test_anonymous_cannot_run_moderation_action(self):
+        review = self._review()
+        response = self._run_action("approve_selected", [review])
+        self.assertEqual(response.status_code, 302)
+        self.assertIn("/admin/login/", response.url)
         review.refresh_from_db()
         self.assertEqual(review.status, "pending")
 
