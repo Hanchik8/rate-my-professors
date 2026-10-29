@@ -20,6 +20,12 @@ class CookieSettingsTests(TestCase):
         self.assertIn(settings.CSRF_COOKIE_SAMESITE, {"Lax", "Strict"})
         self.assertTrue(settings.CSRF_COOKIE_HTTPONLY)
 
+    def test_cookie_samesite_rejects_permissive_or_invalid_environment_values(self):
+        with patch.dict(os.environ, {"SESSION_COOKIE_SAMESITE": "None"}):
+            self.assertEqual(site._get_samesite_setting("SESSION_COOKIE_SAMESITE"), "Lax")
+        with patch.dict(os.environ, {"CSRF_COOKIE_SAMESITE": "strict"}):
+            self.assertEqual(site._get_samesite_setting("CSRF_COOKIE_SAMESITE"), "Strict")
+
     def test_secure_cookies_track_debug_flag(self):
         debug = site._security_settings(debug=True)
         self.assertFalse(debug["SESSION_COOKIE_SECURE"])
@@ -58,6 +64,8 @@ class TransportSecuritySettingsTests(TestCase):
         self.assertGreaterEqual(security["SECURE_HSTS_SECONDS"], 31536000)
         self.assertTrue(security["SECURE_HSTS_INCLUDE_SUBDOMAINS"])
         self.assertTrue(security["SECURE_HSTS_PRELOAD"])
+        self.assertTrue(security["SECURE_CONTENT_TYPE_NOSNIFF"])
+        self.assertEqual(security["SECURE_PROXY_SSL_HEADER"], ("HTTP_X_FORWARDED_PROTO", "https"))
 
     def test_https_hardening_can_be_overridden_from_env(self):
         self.assertTrue(
@@ -79,6 +87,12 @@ class TransportSecuritySettingsTests(TestCase):
         self.assertTrue(settings.SECURE_CONTENT_TYPE_NOSNIFF)
         self.assertEqual(settings.SECURE_REFERRER_POLICY, "same-origin")
         self.assertEqual(settings.X_FRAME_OPTIONS, "DENY")
+
+    def test_frame_options_environment_value_cannot_disable_protection(self):
+        with patch.dict(os.environ, {"X_FRAME_OPTIONS": "ALLOWALL"}):
+            self.assertEqual(site._get_x_frame_options(), "DENY")
+        with patch.dict(os.environ, {"X_FRAME_OPTIONS": "sameorigin"}):
+            self.assertEqual(site._get_x_frame_options(), "SAMEORIGIN")
 
     def test_env_helpers_parse_values(self):
         with patch.dict(os.environ, {"TEST_SECURITY_BOOL": "yes", "TEST_SECURITY_INT": "42"}):

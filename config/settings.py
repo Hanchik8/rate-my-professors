@@ -180,8 +180,20 @@ globals().update(
     )
 )
 
-# Clickjacking protection is safe to enable in every environment.
-X_FRAME_OPTIONS = os.environ.get("X_FRAME_OPTIONS", "DENY")
+def _get_samesite_setting(name):
+    """Accept only restrictive SameSite values for application cookies."""
+    value = os.environ.get(name, "Lax").strip().capitalize()
+    return value if value in {"Lax", "Strict"} else "Lax"
+
+
+def _get_x_frame_options():
+    value = os.environ.get("X_FRAME_OPTIONS", "DENY").strip().upper()
+    return value if value in {"DENY", "SAMEORIGIN"} else "DENY"
+
+
+# Clickjacking protection is safe to enable in every environment. Do not allow
+# an environment typo or permissive value to silently disable the protection.
+X_FRAME_OPTIONS = _get_x_frame_options()
 
 # Limit request-body and in-memory file upload sizes to 2.5 MiB.
 DATA_UPLOAD_MAX_MEMORY_SIZE = 2_621_440
@@ -210,9 +222,9 @@ SECURE_CSP = {
 
 # Cookies must never be readable from JavaScript and stay same-site by default.
 SESSION_COOKIE_HTTPONLY = _get_bool_setting("SESSION_COOKIE_HTTPONLY", True)
-SESSION_COOKIE_SAMESITE = os.environ.get("SESSION_COOKIE_SAMESITE", "Lax")
+SESSION_COOKIE_SAMESITE = _get_samesite_setting("SESSION_COOKIE_SAMESITE")
 CSRF_COOKIE_HTTPONLY = _get_bool_setting("CSRF_COOKIE_HTTPONLY", True)
-CSRF_COOKIE_SAMESITE = os.environ.get("CSRF_COOKIE_SAMESITE", "Lax")
+CSRF_COOKIE_SAMESITE = _get_samesite_setting("CSRF_COOKIE_SAMESITE")
 
 # Password strength requirements enforced by Django auth / password reset.
 AUTH_PASSWORD_VALIDATORS = [
