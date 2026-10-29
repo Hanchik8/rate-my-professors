@@ -1,10 +1,9 @@
-{% load static i18n %}<!doctype html>
-<html lang="{{ LANGUAGE_CODE }}" class="no-js">
+{% load static i18n %}{% get_current_language as LANGUAGE_CODE %}{% get_available_languages as LANGUAGES %}<!doctype html>
+<html lang="{{ LANGUAGE_CODE|default:'ru' }}" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-{% get_available_languages as LANGUAGES %}
 {% if request %}{% for code, name in LANGUAGES %}<link rel="alternate" hreflang="{{ code }}" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}?{% if request.META.QUERY_STRING %}{{ request.META.QUERY_STRING|urlencode }}&amp;{% endif %}language={{ code }}">{% endfor %}{% endif %}
 <title>{% block title %}ProfLens{% endblock %}</title>
 <meta name="description" content="{% block description %}{% translate "ProfLens — отзывы о преподавателях вузов Кыргызстана: рейтинги, сложность курсов и советы студентов." %}{% endblock %}">
@@ -34,7 +33,6 @@
       <form action="{% url 'set_language' %}" method="post" class="lang-switch">{% csrf_token %}
         <input name="next" type="hidden" value="{{ request.get_full_path }}">
         <select name="language" aria-label="{% translate 'Язык' %}">
-          {% get_current_language as LANGUAGE_CODE %}
           {% for code, name in LANGUAGES %}<option value="{{ code }}"{% if code == LANGUAGE_CODE %} selected{% endif %}>{{ name }}</option>{% endfor %}
         </select>
       </form>

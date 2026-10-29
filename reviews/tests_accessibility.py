@@ -57,3 +57,47 @@ class AccessibilityRenderTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'class="errorlist nonfield"')
         self.assertContains(response, 'role="alert"')
+
+
+class HomeAccessibilityTests(TestCase):
+    """The rendered home page exposes the base template's a11y hooks."""
+
+    def setUp(self):
+        self.response = self.client.get(reverse("home"))
+        self.html = self.response.content.decode()
+
+    def test_home_declares_document_language(self):
+        self.assertEqual(self.response.status_code, 200)
+        self.assertContains(self.response, '<html lang="ru"')
+
+    def test_home_has_skip_link_and_focusable_main_target(self):
+        self.assertContains(
+            self.response, 'class="skip-link" href="#main-content"'
+        )
+        self.assertContains(self.response, 'id="main-content" tabindex="-1"')
+
+    def test_home_icon_button_and_navigation_have_accessible_names(self):
+        self.assertContains(self.response, 'class="nav-toggle"')
+        self.assertContains(self.response, 'aria-expanded="false"')
+        self.assertContains(self.response, 'aria-controls="site-nav"')
+        self.assertContains(self.response, 'aria-label="Меню"')
+        self.assertContains(
+            self.response,
+            '<nav class="nav" id="site-nav" aria-label="Основная навигация">',
+        )
+        self.assertContains(self.response, 'aria-label="Язык"')
+
+    def test_home_search_landmark_and_controls_are_labeled(self):
+        self.assertContains(self.response, 'role="search"')
+        for label in ("Поиск", "Город", "Вуз", "Кафедра", "Сортировка", "Найти"):
+            with self.subTest(label=label):
+                self.assertContains(self.response, f'aria-label="{label}"')
+
+    def test_home_images_have_alt_text(self):
+        for image in re.findall(r"<img\b[^>]*>", self.html, flags=re.IGNORECASE):
+            self.assertRegex(image, r"\balt\s*=", msg=f"Image missing alt: {image}")
+
+    def test_home_decorative_icons_are_hidden_from_assistive_tech(self):
+        for icon in re.findall(r'<span class="(?:brand-mark|burger)"[^>]*>', self.html):
+            with self.subTest(icon=icon):
+                self.assertIn('aria-hidden="true"', icon)
