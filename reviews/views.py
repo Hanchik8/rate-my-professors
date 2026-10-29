@@ -254,6 +254,7 @@ def _review_initial(review):
 
 @require_http_methods(["GET", "POST"])
 @login_required
+@rate_limit("review")
 def review_edit(request, review_id):
     review = _owned_review_or_404(review_id, request.user)
     prof = _professor_for_review(review)
@@ -272,6 +273,7 @@ def review_edit(request, review_id):
 
 @require_http_methods(["GET", "POST"])
 @login_required
+@rate_limit("review")
 def review_delete(request, review_id):
     review = _owned_review_or_404(review_id, request.user)
     if request.method == "POST":
@@ -532,6 +534,7 @@ def _existing_professor(form):
 
 @require_http_methods(["GET", "POST"])
 @login_required
+@rate_limit("review")
 def add_professor(request):
     """Allow a logged-in user to submit a professor for moderation."""
     schools = repo.schools()
