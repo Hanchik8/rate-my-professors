@@ -60,6 +60,9 @@ class HomePaginationEmptyContractMixin(_ListedRepoMixin):
         self.assertIsNone(response.context["page_obj"])
         self.assertNotContains(response, 'class="pagination"')
         self.assertContains(response, "Ничего не нашлось")
+        self.assertContains(response, "Попробуйте сократить запрос или изменить фильтры.")
+        self.assertContains(response, "Сбросить фильтры")
+        self.assertContains(response, f'href="{reverse("home")}"')
 
     def test_empty_search_with_any_page_parameter_stays_empty(self):
         for page in ("2", "999", "abc", "0", "-1"):
