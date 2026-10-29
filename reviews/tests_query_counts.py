@@ -182,3 +182,31 @@ class PageQueryCountTests(TestCase):
         with self.assertNumQueries(before):
             response = self.client.get(url)
         self.assertEqual(len(response.context["results"]), 6)
+
+    def test_home_and_school_query_counts_are_constant_with_rated_professors(self):
+        home_url = reverse("home")
+        school_url = reverse("school_detail", args=[self.school.slug])
+        self._add_reviews("Базовый", 1)
+        self.client.get(home_url)
+        self.client.get(school_url)
+
+        home_before = self._query_count(home_url)
+        school_before = self._query_count(school_url)
+
+        for index in range(4):
+            prof = self.repo.add_professor(
+                self.school.id, f"Оценённый{index}", f"Преподаватель{index}", "Физика", "доцент"
+            )
+            self.repo.add_review(
+                prof.id,
+                _review_data(f"Курс {index}"),
+                user=self.user,
+                status="approved",
+            )
+
+        with self.assertNumQueries(home_before):
+            home_response = self.client.get(home_url)
+        with self.assertNumQueries(school_before):
+            school_response = self.client.get(school_url)
+        self.assertEqual(len(home_response.context["results"]), 5)
+        self.assertEqual(len(school_response.context["results"]), 5)
