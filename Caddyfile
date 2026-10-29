@@ -1,0 +1,13 @@
+# Caddy gets a free HTTPS certificate (Let's Encrypt) for DOMAIN automatically.
+{$DOMAIN} {
+	encode zstd gzip
+	reverse_proxy web:8000 {
+		header_up X-Forwarded-Proto {scheme}
+	}
+	request_body {
+		max_size 2MB
+	}
+	log {
+		output stdout
+	}
+}

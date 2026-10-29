@@ -848,3 +848,243 @@ msgstr "The code has expired. Request a new code."
 
 msgid "Уже подтвердили? Войдите"
 msgstr "Already confirmed? Log in"
+
+msgid "Подтвердите email на ProfLens"
+msgstr "Confirm your email on ProfLens"
+
+#, python-format
+msgid ""
+"Здравствуйте! Чтобы подтвердить email, откройте ссылку:\n"
+"\n"
+"%(link)s\n"
+"\n"
+"Если вы не регистрировались на ProfLens, просто проигнорируйте это письмо."
+msgstr ""
+"Hello! To confirm your email, open this link:\n"
+"\n"
+"%(link)s\n"
+"\n"
+"If you did not sign up for ProfLens, just ignore this email."
+
+msgid "Сначала подтвердите email — мы отправили письмо со ссылкой."
+msgstr "Please confirm your email first — we sent you a link."
+
+msgid "Укажите название предмета."
+msgstr "Enter the course name."
+
+msgid "Не менее 20 символов."
+msgstr "At least 20 characters."
+
+msgid "Уберите ссылки, email и номера телефонов — это запрещено правилами."
+msgstr "Remove links, emails and phone numbers — the rules do not allow them."
+
+msgid "Только буквы, пробел, дефис или апостроф."
+msgstr "Letters, spaces, hyphens or apostrophes only."
+
+msgid "Ссылки не допускаются."
+msgstr "Links are not allowed."
+
+msgid "Не менее 8 символов, не только цифры и не слишком простой."
+msgstr "At least 8 characters, not only digits and not too common."
+
+msgid "Пользователь с таким email уже существует."
+msgstr "A user with this email already exists."
+
+msgid "Доступ запрещён"
+msgstr "Access denied"
+
+msgid ""
+"Обновите страницу и попробуйте ещё раз. Если не помогает — включите cookies "
+"в браузере."
+msgstr ""
+"Reload the page and try again. If that does not help, enable cookies in your"
+" browser."
+
+msgid "На главную"
+msgstr "Back to home"
+
+msgid "Возможно, преподаватель ещё на модерации или ссылка устарела."
+msgstr "The professor may still be in moderation, or the link is outdated."
+
+msgid "Слишком много запросов"
+msgstr "Too many requests"
+
+msgid "Слишком много попыток"
+msgstr "Too many attempts"
+
+msgid "Подтвердите email"
+msgstr "Confirm your email"
+
+#, python-format
+msgid ""
+"Мы отправили письмо со ссылкой на %(email)s. Откройте его, чтобы подтвердить"
+" адрес."
+msgstr "We sent a link to %(email)s. Open it to confirm your address."
+
+msgid ""
+"Без подтверждения нельзя оставлять отзывы, голосовать и добавлять "
+"преподавателей."
+msgstr "Without confirmation you cannot post reviews, vote or add professors."
+
+msgid "Отправить письмо ещё раз"
+msgstr "Send the email again"
+
+msgid "Готово, email подтверждён. Теперь можно оставлять отзывы."
+msgstr "Done, your email is confirmed. You can now post reviews."
+
+msgid "Ссылка недействительна или устарела. Войдите и запросите новое письмо."
+msgstr "The link is invalid or expired. Log in and request a new email."
+
+msgid "Страницы"
+msgstr "Pages"
+
+msgid "Рейтинг"
+msgstr "Rating"
+
+msgid "отзывы о преподавателях вузов Кыргызстана"
+msgstr "professor reviews for universities in Kyrgyzstan"
+
+msgid ""
+"Честные отзывы студентов о преподавателях вузов Кыргызстана: рейтинг, "
+"сложность, теги. Узнайте, какие занятия на самом деле — до записи на курс."
+msgstr ""
+"Honest student reviews of professors at universities in Kyrgyzstan: ratings,"
+" difficulty, tags. Find out what a class is really like before you enroll."
+
+msgid "Отзывы студентов о преподавателях вузов Кыргызстана"
+msgstr "Student reviews of professors at universities in Kyrgyzstan"
+
+msgid "Основное меню"
+msgstr "Main menu"
+
+#, python-format
+msgid ""
+"%(name)s (%(school)s): рейтинг %(rating)s из 5 по %(n)s отзывам студентов."
+msgstr ""
+"%(name)s (%(school)s): rated %(rating)s out of 5 in %(n)s student reviews."
+
+#, python-format
+msgid "%(name)s (%(school)s): отзывы студентов на ProfLens."
+msgstr "%(name)s (%(school)s): student reviews on ProfLens."
+
+msgid "Оценка"
+msgstr "Rating"
+
+#, python-format
+msgid "Отзывы студентов о преподавателях: %(name)s, %(city)s."
+msgstr "Student reviews of professors: %(name)s, %(city)s."
+
+msgid "Вы уже оставляли отзыв для этого предмета у этого преподавателя."
+msgstr "You have already reviewed this course with this professor."
+
+msgid "Регистрация выполнена. Мы отправили письмо для подтверждения email."
+msgstr "You are signed up. We sent an email to confirm your address."
+
+msgid "Письмо отправлено ещё раз."
+msgstr "Email sent again."
+
+msgid "Не удалось отправить письмо, попробуйте позже."
+msgstr "Could not send the email, please try later."
+
+msgid "г. Бишкек"
+msgstr "Bishkek city"
+
+msgid "г. Ош"
+msgstr "Osh city"
+
+msgid "Баткенская область"
+msgstr "Batken Region"
+
+msgid "Джалал-Абадская область"
+msgstr "Jalal-Abad Region"
+
+msgid "Иссык-Кульская область"
+msgstr "Issyk-Kul Region"
+
+msgid "Нарынская область"
+msgstr "Naryn Region"
+
+msgid "Ошская область"
+msgstr "Osh Region"
+
+msgid "Таласская область"
+msgstr "Talas Region"
+
+msgid "Чуйская область"
+msgstr "Chuy Region"
+
+msgid "Бишкек"
+msgstr "Bishkek"
+
+msgid "Ош"
+msgstr "Osh"
+
+msgid "Баткен"
+msgstr "Batken"
+
+msgid "Кызыл-Кия"
+msgstr "Kyzyl-Kiya"
+
+msgid "Сулюкта"
+msgstr "Sulukta"
+
+msgid "Жалал-Абад"
+msgstr "Jalal-Abad"
+
+msgid "Таш-Кумыр"
+msgstr "Tash-Kumyr"
+
+msgid "Кара-Куль"
+msgstr "Kara-Kul"
+
+msgid "Майлуу-Суу"
+msgstr "Mailuu-Suu"
+
+msgid "Каракол"
+msgstr "Karakol"
+
+msgid "Балыкчы"
+msgstr "Balykchy"
+
+msgid "Чолпон-Ата"
+msgstr "Cholpon-Ata"
+
+msgid "Нарын"
+msgstr "Naryn"
+
+msgid "Узген"
+msgstr "Uzgen"
+
+msgid "Кара-Суу"
+msgstr "Kara-Suu"
+
+msgid "Талас"
+msgstr "Talas"
+
+msgid "Токмок"
+msgstr "Tokmok"
+
+msgid "Кант"
+msgstr "Kant"
+
+msgid "Кара-Балта"
+msgstr "Kara-Balta"
+
+msgid "Шопоков"
+msgstr "Shopokov"
+
+msgid "Ивановка"
+msgstr "Ivanovka"
+
+msgid "Город или область"
+msgstr "City or region"
+
+msgid "Все города и области"
+msgstr "All cities and regions"
+
+#, python-format
+msgid "%(region)s: все города"
+msgstr "%(region)s: all cities"
+
+msgid "сайт вуза"
+msgstr "university website"

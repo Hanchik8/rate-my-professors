@@ -178,7 +178,7 @@ class HomeSearchPaginationTests(_MemoryRepoTestCase):
         )
 
     def _add_professors(self, count, last_prefix="Джонс"):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         for i in range(count):
             self.repo.add_professor(
                 school.id, f"Смит{i:02d}", f"{last_prefix}{i:02d}",
@@ -187,7 +187,7 @@ class HomeSearchPaginationTests(_MemoryRepoTestCase):
 
     def test_home_and_school_pages_expose_mobile_viewport_and_labeled_search(self):
         home = self.client.get(reverse("home"))
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         school_response = self.client.get(reverse("school_detail", args=[school.slug]))
 
         for response in (home, school_response):
@@ -209,7 +209,7 @@ class HomeSearchPaginationTests(_MemoryRepoTestCase):
         self.assertEqual(names, ["Айбек Токтогулов"])
 
     def test_home_sort_by_rating_orders_results_by_average(self):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         high = self.repo.add_professor(
             school.id, "Рейтинг", "Высокий", "Проверка сортировки", "доцент"
         )

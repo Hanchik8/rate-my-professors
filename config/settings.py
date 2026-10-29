@@ -245,6 +245,8 @@ INSTALLED_APPS = [
     "reviews.apps.ReviewsConfig",
 ]
 MIDDLEWARE = [
+    # Answers /healthz before host checks and HTTPS redirects (Docker / load balancers).
+    "reviews.middleware.HealthCheckMiddleware",
     "django.middleware.gzip.GZipMiddleware",
     "django.middleware.http.ConditionalGetMiddleware",
     "django.middleware.security.SecurityMiddleware",
@@ -259,7 +261,19 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
 ]
+# WhiteNoise serves compressed, hashed static files from gunicorn in the Docker
+# image. It is optional so local development works with only Django installed.
+try:
+    import whitenoise  # noqa: F401
+except ImportError:
+    _HAS_WHITENOISE = False
+else:
+    _HAS_WHITENOISE = True
+    INSTALLED_APPS.insert(INSTALLED_APPS.index("django.contrib.staticfiles"), "whitenoise.runserver_nostatic")
+    MIDDLEWARE.insert(MIDDLEWARE.index("django.middleware.security.SecurityMiddleware") + 1,
+                      "whitenoise.middleware.WhiteNoiseMiddleware")
 ROOT_URLCONF = "config.urls"
+WSGI_APPLICATION = "config.wsgi.application"
 TEMPLATES = [{
     "BACKEND": "django.template.backends.django.DjangoTemplates",
     "APP_DIRS": True,
@@ -269,6 +283,7 @@ TEMPLATES = [{
         "django.contrib.auth.context_processors.auth",
         "django.contrib.messages.context_processors.messages",
         "django.template.context_processors.i18n",
+        "reviews.context_processors.site",
     ]},
 }]
 
@@ -277,7 +292,7 @@ _db_url = os.environ.get("DATABASE_URL", "")
 if _db_url:
     # simple parse: postgres://user:pass@host:port/dbname  -> use psycopg
     # we rely on dj-database-url style but keep stdlib only
-    from urllib.parse import urlparse
+    from urllib.parse import parse_qsl, urlparse
     u = urlparse(_db_url)
     DATABASES = {"default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -286,11 +301,27 @@ if _db_url:
         "PASSWORD": u.password or "",
         "HOST": u.hostname or "",
         "PORT": str(u.port or ""),
+        "OPTIONS": dict(parse_qsl(u.query)),
+        # keep connections open between requests, check them before reuse
+        "CONN_MAX_AGE": _get_int_setting("DB_CONN_MAX_AGE", 60),
+        "CONN_HEALTH_CHECKS": True,
     }}
 else:
     DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}}
 
 STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STORAGES = {
+    "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
+    "staticfiles": {
+        "BACKEND": (
+            # gzip/brotli + hashed file names, so browsers can cache forever
+            "whitenoise.storage.CompressedManifestStaticFilesStorage"
+            if _HAS_WHITENOISE and not DEBUG and not _is_test
+            else "django.contrib.staticfiles.storage.StaticFilesStorage"
+        ),
+    },
+}
 USE_I18N = True
 LANGUAGE_CODE = "ru"
 LANGUAGES = [
@@ -334,18 +365,48 @@ RATELIMIT_ENABLE = _parse_bool(os.environ.get("RATELIMIT_ENABLE"), default=not _
 # action -> (max hits, window in seconds); the defaults live in reviews.constants.
 RATELIMIT = dict(RATE_LIMITS)
 
-# Shared cache used by the rate limiter (and available for future use). A real
-# multi-process deployment should point CACHE_BACKEND at Redis/Memcached so the
-# limit is enforced globally instead of per worker.
-CACHES = {
-    "default": {
-        "BACKEND": os.environ.get(
-            "CACHE_BACKEND", "django.core.cache.backends.locmem.LocMemCache"
-        ),
-        "LOCATION": os.environ.get("CACHE_LOCATION", "proflens"),
+# Shared cache used by the rate limiter and the catalog cache. REDIS_URL (set by
+# docker-compose.prod.yml) shares it between all gunicorn workers; otherwise
+# CACHE_BACKEND / CACHE_LOCATION, defaulting to per-process memory.
+_redis_url = os.environ.get("REDIS_URL", "")
+if _redis_url and not _is_test:
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.redis.RedisCache",
+            "LOCATION": _redis_url,
+            "KEY_PREFIX": "proflens",
+            "TIMEOUT": 300,
+        }
     }
-}
+else:
+    CACHES = {
+        "default": {
+            "BACKEND": os.environ.get(
+                "CACHE_BACKEND", "django.core.cache.backends.locmem.LocMemCache"
+            ),
+            "LOCATION": os.environ.get("CACHE_LOCATION", "proflens"),
+        }
+    }
 
 # Catalog pages (home search, university lists and filter options) are cached
 # with django.core.cache; reviews/professors/schools invalidate the namespace.
 CATALOG_CACHE_TIMEOUT = int(os.environ.get("CATALOG_CACHE_TIMEOUT", "300"))
+
+# Site name / public URL used in meta tags and emails.
+SITE_NAME = "ProfLens"
+SITE_URL = os.environ.get("SITE_URL", "").rstrip("/")
+# Admin can live on a less obvious path in production, e.g. ADMIN_URL=manage-7f3k/
+ADMIN_URL = os.environ.get("ADMIN_URL", "admin/")
+
+# Logging: everything to stdout, Docker collects it.
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {"plain": {"format": "%(asctime)s %(levelname)s %(name)s: %(message)s"}},
+    "handlers": {"console": {"class": "logging.StreamHandler", "formatter": "plain"}},
+    "root": {"handlers": ["console"], "level": os.environ.get("LOG_LEVEL", "INFO" if not _is_test else "CRITICAL")},
+    "loggers": {
+        "django.request": {"handlers": ["console"], "level": "ERROR" if _is_test else "WARNING", "propagate": False},
+        "django.security": {"handlers": ["console"], "level": "WARNING", "propagate": False},
+    },
+}

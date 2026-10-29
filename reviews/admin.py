@@ -2,14 +2,14 @@ from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 
 from .caching import invalidate_catalog_cache
-from .models import Professor, Report, Review, School, Tag, Vote
+from .models import AccountProfile, EmailVerification, Professor, Report, Review, School, Tag, Vote
 
 
 @admin.register(School)
 class SchoolAdmin(admin.ModelAdmin):
-    list_display = ["name", "city", "slug"]
-    list_filter = ["city"]
-    search_fields = ["name", "city"]
+    list_display = ["name", "short_name", "city", "region", "kind", "code"]
+    list_filter = ["region", "kind", "city"]
+    search_fields = ["name", "name_ky", "name_en", "short_name", "city", "code"]
     prepopulated_fields = {"slug": ["name"]}
 
 
@@ -81,3 +81,19 @@ class ReportAdmin(admin.ModelAdmin):
     @admin.action(description=_("Отметить выбранные жалобы рассмотренными"))
     def mark_reviewed(self, request, queryset):
         queryset.update(status=Report.STATUS_REVIEWED)
+
+
+@admin.register(EmailVerification)
+class EmailVerificationAdmin(admin.ModelAdmin):
+    list_display = ["user", "expires_at", "attempts", "last_sent_at"]
+    search_fields = ["user__email"]
+    raw_id_fields = ["user"]
+    exclude = ["code_hash"]
+
+
+@admin.register(AccountProfile)
+class AccountProfileAdmin(admin.ModelAdmin):
+    list_display = ["user", "email_verified", "email_verified_at"]
+    list_filter = ["email_verified"]
+    search_fields = ["user__email"]
+    raw_id_fields = ["user"]

@@ -14,9 +14,10 @@ from statistics import mean
 from typing import Any
 
 from django.utils.text import slugify
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import get_language, gettext_lazy as _
 
 from .caching import invalidate_catalog_cache
+from .geo import build_locations, city_name, filter_schools, region_for_city, region_kind, region_name
 from .constants import MAX_COMMENT_LENGTH
 from .sanitize import clean_text
 
@@ -45,6 +46,36 @@ class School:
     name: str
     slug: str
     city: str
+    region: str = ""
+    code: str = ""
+    name_ky: str = ""
+    name_en: str = ""
+    short_name: str = ""
+    kind: str = ""
+    website: str = ""
+
+    @property
+    def display_name(self) -> str:
+        """Name in the active UI language, falling back to the official Russian one."""
+        lang = (get_language() or "ru")[:2]
+        if lang == "ky" and self.name_ky:
+            return self.name_ky
+        if lang == "en" and self.name_en:
+            return self.name_en
+        return self.name
+
+    @property
+    def region_name(self) -> str:
+        return region_name(self.region)
+
+    @property
+    def city_name(self) -> str:
+        return city_name(self.city)
+
+    @property
+    def in_oblast(self) -> bool:
+        """False for Bishkek and Osh (cities of republican significance)."""
+        return region_kind(self.region) == "oblast"
 
 
 @dataclass
@@ -125,10 +156,10 @@ class InMemoryRepository:
         self._review_keys: set[tuple[str, str, Any]] = set()
 
     # writes
-    def add_school(self, name: str, city: str) -> School:
+    def add_school(self, name: str, city: str, region: str = "", code: str = "", slug: str = "", **extra: Any) -> School:
         """Create and store a school."""
-        slug = slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
-        s = School(str(uuid.uuid4()), name, slug, city)
+        slug = slug or code or slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
+        s = School(str(uuid.uuid4()), name, slug, city, region=region or region_for_city(city), code=code, **extra)
         self._schools[s.id] = s
         invalidate_catalog_cache()
         return s
@@ -253,6 +284,14 @@ class InMemoryRepository:
         """Return the sorted set of departments for approved professors."""
         return sorted({p.department for p in self._professors.values() if p.status == "approved"})
 
+    def locations(self) -> list[dict[str, Any]]:
+        """Regions of Kyrgyzstan with the distinct cities that have schools."""
+        return build_locations(self._schools.values())
+
+    def schools_in(self, region: str = "", city: str = "") -> list[School]:
+        """Schools located in a city, or anywhere in a region."""
+        return filter_schools(self.schools(), region, city)
+
     def school(self, school_id: str) -> School | None:
         """Return a school by id, or ``None`` if it does not exist."""
         return self._schools.get(school_id)
@@ -372,9 +411,11 @@ class InMemoryRepository:
         city: str = "",
         department: str = "",
         sort: str = "rating",
+        region: str = "",
     ) -> list[dict[str, Any]]:
         """Search approved professors with optional filters and sorting."""
         q = normalize_search_text(q)
+        region = region.strip()
         school_slug = school_slug.strip()
         city = city.strip()
         department = department.strip()
@@ -386,6 +427,8 @@ class InMemoryRepository:
             if school_slug and school.slug != school_slug:
                 continue
             if city and school.city != city:
+                continue
+            if region and (school.region or region_for_city(school.city)) != region:
                 continue
             if department and p.department != department:
                 continue

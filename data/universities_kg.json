@@ -1,0 +1,949 @@
+{
+ "source": [
+  "https://kesiptanda.edu.gov.kg/ru/articles/4/ (портал Министерства образования и науки КР: 74 вуза, 34 государственных, 40 частных; ky-названия оттуда)",
+  "https://erasmusplus.kg/wp-content/uploads/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%92%D1%83%D0%B7%D0%BE%D0%B2.pdf (Национальный офис Erasmus+, список на 1.04.2023, сайты и адреса)",
+  "https://ru.wikipedia.org/wiki/Список_высших_учебных_заведений_Кыргызстана (сайты)"
+ ],
+ "checked": "2026-10-28",
+ "note": "code is the stable key used by seed_kg (update_or_create). name_en is an unofficial English rendering where the institution has no official one. Branches (филиалы) of universities are not separate institutions and are not listed.",
+ "universities": [
+  {
+   "code": "knu",
+   "name": "Кыргызский национальный университет им. Ж. Баласагына",
+   "name_ky": "Ж. Баласагын атындагы Кыргыз улуттук университети",
+   "name_en": "Kyrgyz National University named after J. Balasagyn",
+   "short_name": "КНУ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://www.knu.kg",
+   "aliases": []
+  },
+  {
+   "code": "arabaev",
+   "name": "Кыргызский государственный университет им. И. Арабаева",
+   "name_ky": "И. Арабаев атындагы Кыргыз мамлекеттик университети",
+   "name_en": "Kyrgyz State University named after I. Arabaev",
+   "short_name": "КГУ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://arabaevksu.edu.kg",
+   "aliases": []
+  },
+  {
+   "code": "kstu",
+   "name": "Кыргызский государственный технический университет им. И. Раззакова",
+   "name_ky": "И. Раззаков атындагы Кыргыз мамлекеттик техникалык университети",
+   "name_en": "Kyrgyz State Technical University named after I. Razzakov",
+   "short_name": "КГТУ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://kstu.kg",
+   "aliases": []
+  },
+  {
+   "code": "ksucta",
+   "name": "Кыргызский государственный университет строительства, транспорта и архитектуры",
+   "name_ky": "Кыргыз мамлекеттик курулуш, транспорт жана архитектура университети",
+   "name_en": "Kyrgyz State University of Construction, Transport and Architecture",
+   "short_name": "КГУСТА",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://www.ksucta.kg",
+   "aliases": []
+  },
+  {
+   "code": "bgu",
+   "name": "Бишкекский государственный университет им. К. Карасаева",
+   "name_ky": "К. Карасаев атындагы Бишкек мамлекеттик университети",
+   "name_en": "Bishkek State University named after K. Karasaev",
+   "short_name": "БГУ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://www.bhu.kg",
+   "aliases": [
+    "Бишкекский гуманитарный университет им. К. Карасаева"
+   ]
+  },
+  {
+   "code": "ksapcs",
+   "name": "Кыргызская государственная академия физической культуры и спорта",
+   "name_ky": "Кыргыз мамлекеттик дене тарбия жана спорт академиясы",
+   "name_en": "Kyrgyz State Academy of Physical Culture and Sports",
+   "short_name": "КГАФКиС",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "http://ksapcs.kg",
+   "aliases": []
+  },
+  {
+   "code": "kgma",
+   "name": "Кыргызская государственная медицинская академия им. И. Ахунбаева",
+   "name_ky": "И. Ахунбаев атындагы Кыргыз мамлекеттик медициналык академиясы",
+   "name_en": "Kyrgyz State Medical Academy named after I. K. Akhunbaev",
+   "short_name": "КГМА",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://www.kgma.kg",
+   "aliases": []
+  },
+  {
+   "code": "ksla",
+   "name": "Кыргызский государственный юридический университет",
+   "name_ky": "Кыргыз мамлекеттик юридикалык университети",
+   "name_en": "Kyrgyz State Law University",
+   "short_name": "КГЮУ (КГЮА)",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://ksla.kg",
+   "aliases": [
+    "Кыргызская государственная юридическая академия"
+   ]
+  },
+  {
+   "code": "knau",
+   "name": "Кыргызский национальный аграрный университет им. К. И. Скрябина",
+   "name_ky": "К. И. Скрябин атындагы Кыргыз улуттук агрардык университети",
+   "name_en": "Kyrgyz National Agrarian University named after K. I. Skryabin",
+   "short_name": "КНАУ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://knau.kg",
+   "aliases": []
+  },
+  {
+   "code": "mukr",
+   "name": "Международный университет Кыргызской Республики",
+   "name_ky": "Кыргыз Республикасынын Эл аралык университети",
+   "name_en": "International University of the Kyrgyz Republic",
+   "short_name": "МУКР",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://mukr.iuk.kg",
+   "aliases": []
+  },
+  {
+   "code": "academy-mvd",
+   "name": "Академия МВД КР им. генерал-майора милиции Э. А. Алиева",
+   "name_ky": "Генерал-майор Э. А. Алиев атындагы КР ИИМ академиясы",
+   "name_en": "Academy of the Ministry of Internal Affairs of the KR named after E. A. Aliev",
+   "short_name": "Академия МВД",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://academy-mvd.kg",
+   "aliases": [
+    "Академия МВД КР им. Э. А. Алиева"
+   ]
+  },
+  {
+   "code": "kguki",
+   "name": "Кыргызский государственный университет культуры и искусства им. Б. Бейшеналиевой",
+   "name_ky": "Б. Бейшеналиева атындагы Кыргыз мамлекеттик маданият жана искусство университети",
+   "name_en": "Kyrgyz State University of Culture and Arts named after B. Beishenalieva",
+   "short_name": "КГУКИ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://kguki.kg",
+   "aliases": []
+  },
+  {
+   "code": "knk",
+   "name": "Кыргызская национальная консерватория им. К. Молдобасанова",
+   "name_ky": "К. Молдобасанов атындагы Кыргыз улуттук консерваториясы",
+   "name_en": "Kyrgyz National Conservatory named after K. Moldobasanov",
+   "short_name": "КНК",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "http://conservatory.kg",
+   "aliases": []
+  },
+  {
+   "code": "nah",
+   "name": "Национальная академия художеств Кыргызской Республики им. Т. Садыкова",
+   "name_ky": "Т. Садыков атындагы Кыргыз Республикасынын Улуттук көркөм-сүрөт академиясы",
+   "name_en": "National Academy of Arts of the Kyrgyz Republic named after T. Sadykov",
+   "short_name": "НАХ КР",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "http://academyart.kg",
+   "aliases": [
+    "Национальная академия художеств КР им. Т. Садыкова"
+   ]
+  },
+  {
+   "code": "manas",
+   "name": "Кыргызско-Турецкий университет «Манас»",
+   "name_ky": "Кыргыз-Түрк «Манас» университети",
+   "name_en": "Kyrgyz-Turkish Manas University",
+   "short_name": "КТУ «Манас»",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://www.manas.edu.kg",
+   "aliases": []
+  },
+  {
+   "code": "krsu",
+   "name": "Кыргызско-Российский Славянский университет им. Б. Ельцина",
+   "name_ky": "Б. Ельцин атындагы Кыргыз-Россия Славян университети",
+   "name_en": "Kyrgyz-Russian Slavic University named after B. Yeltsin",
+   "short_name": "КРСУ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://www.krsu.edu.kg",
+   "aliases": []
+  },
+  {
+   "code": "apa",
+   "name": "Академия государственного управления при Президенте Кыргызской Республики",
+   "name_ky": "Кыргыз Республикасынын Президентине караштуу Мамлекеттик башкаруу академиясы",
+   "name_en": "Academy of Public Administration under the President of the Kyrgyz Republic",
+   "short_name": "АГУПКР",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://www.apap.kg",
+   "aliases": [
+    "Академия государственного управления при Президенте КР"
+   ]
+  },
+  {
+   "code": "keu",
+   "name": "Кыргызский экономический университет им. М. Рыскулбекова",
+   "name_ky": "М. Рыскулбеков атындагы Кыргыз экономикалык университети",
+   "name_en": "Kyrgyz Economic University named after M. Ryskulbekov",
+   "short_name": "КЭУ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "http://www.keu.kg",
+   "aliases": []
+  },
+  {
+   "code": "absr",
+   "name": "Академия бизнеса и социального развития",
+   "name_ky": "Бизнес жана социалдык өнүктүрүү академиясы",
+   "name_en": "Academy of Business and Social Development",
+   "short_name": "АБиСР",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "http://isrip.kg",
+   "aliases": [
+    "Институт социального развития и предпринимательства"
+   ]
+  },
+  {
+   "code": "dipacademy",
+   "name": "Дипломатическая академия МИД КР им. К. Дикамбаева",
+   "name_ky": "К. Дикамбаев атындагы КР ТИМ дипломатиялык академиясы",
+   "name_en": "Diplomatic Academy of the MFA of the KR named after K. Dikambaev",
+   "short_name": "ДА МИД",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://dipacademy.kg",
+   "aliases": []
+  },
+  {
+   "code": "military-institute",
+   "name": "Военный институт Вооружённых Сил КР им. К. Усенбекова",
+   "name_ky": "К. Усенбеков атындагы Кыргыз Республикасынын Куралдуу күчтөрүнүн аскер институту",
+   "name_en": "Military Institute of the Armed Forces of the KR named after K. Usenbekov",
+   "short_name": "ВИ ВС КР",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "http://miafkr.edu.kg",
+   "aliases": []
+  },
+  {
+   "code": "kai",
+   "name": "Кыргызский авиационный институт им. И. Абдраимова",
+   "name_ky": "И. Абдраимов атындагы Кыргыз авиациялык институту",
+   "name_en": "Kyrgyz Aviation Institute named after I. Abdraimov",
+   "short_name": "КАИ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://kai.kg",
+   "aliases": [
+    "Кыргызский авиационный институт"
+   ]
+  },
+  {
+   "code": "ksmu",
+   "name": "Кыргызский государственный университет геологии, горного дела и освоения природных ресурсов им. У. Асаналиева",
+   "name_ky": "У. Асаналиев атындагы геология, тоо-кен иштери жана жаратылыш ресурстарын өздөштүрүү боюнча Кыргыз мамлекеттик университети",
+   "name_en": "Kyrgyz State University of Geology, Mining and Natural Resources Development named after U. Asanaliev",
+   "short_name": "КГУГГиОПР",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "https://ksmu.kg",
+   "aliases": [
+    "Кыргызский государственный университет геологии, горного дела и освоения природных ресурсов им. У. Асаналиева"
+   ]
+  },
+  {
+   "code": "kgmipk",
+   "name": "Кыргызский государственный медицинский институт переподготовки и повышения квалификации им. С. Б. Даниярова",
+   "name_ky": "С. Б. Данияров атындагы Кыргыз мамлекеттик кайра даярдоо жана квалификациясын жогорулатуу медициналык институту",
+   "name_en": "Kyrgyz State Medical Institute of Retraining and Advanced Training named after S. B. Daniyarov",
+   "short_name": "КГМИПиПК",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "state",
+   "website": "",
+   "aliases": []
+  },
+  {
+   "code": "oshsu",
+   "name": "Ошский государственный университет",
+   "name_ky": "Ош мамлекеттик университети",
+   "name_en": "Osh State University",
+   "short_name": "ОшГУ",
+   "city": "Ош",
+   "region": "osh-city",
+   "type": "state",
+   "website": "https://www.oshsu.kg",
+   "aliases": []
+  },
+  {
+   "code": "oshtu",
+   "name": "Ошский технологический университет им. М. Адышева",
+   "name_ky": "М. Адышев атындагы Ош технологиялык университети",
+   "name_en": "Osh Technological University named after M. Adyshev",
+   "short_name": "ОшТУ",
+   "city": "Ош",
+   "region": "osh-city",
+   "type": "state",
+   "website": "http://oshtu.kg",
+   "aliases": []
+  },
+  {
+   "code": "oshspu",
+   "name": "Ошский государственный педагогический университет им. А. Мырсабекова",
+   "name_ky": "А. Мырсабеков атындагы Ош мамлекеттик педагогикалык университети",
+   "name_en": "Osh State Pedagogical University named after A. Myrsabekov",
+   "short_name": "ОшГПУ",
+   "city": "Ош",
+   "region": "osh-city",
+   "type": "state",
+   "website": "https://oshmpu.kg",
+   "aliases": [
+    "Ошский гуманитарно-педагогический институт им. А. Мырсабекова"
+   ]
+  },
+  {
+   "code": "kuiu",
+   "name": "Кыргызско-Узбекский международный университет им. Б. Садыкова",
+   "name_ky": "Б. Садыков атындагы Кыргыз-Өзбек эл аралык университети",
+   "name_en": "Kyrgyz-Uzbek International University named after B. Sadykov",
+   "short_name": "КУМУ",
+   "city": "Ош",
+   "region": "osh-city",
+   "type": "state",
+   "website": "https://www.kuu.kg",
+   "aliases": [
+    "Кыргызско-Узбекский университет"
+   ]
+  },
+  {
+   "code": "oshgui",
+   "name": "Ошский государственный юридический институт",
+   "name_ky": "Ош мамлекеттик юридикалык институту",
+   "name_en": "Osh State Law Institute",
+   "short_name": "ОшГЮИ",
+   "city": "Ош",
+   "region": "osh-city",
+   "type": "state",
+   "website": "https://oshgui.kg",
+   "aliases": []
+  },
+  {
+   "code": "jasu",
+   "name": "Жалал-Абадский государственный университет им. Б. Осмонова",
+   "name_ky": "Б. Осмонов атындагы Жалал-Абад мамлекеттик университети",
+   "name_en": "Jalal-Abad State University named after B. Osmonov",
+   "short_name": "ЖАГУ",
+   "city": "Жалал-Абад",
+   "region": "jalal-abad",
+   "type": "state",
+   "website": "https://jagu.kg",
+   "aliases": [
+    "Жалал-Абадский государственный университет"
+   ]
+  },
+  {
+   "code": "batsu",
+   "name": "Баткенский государственный университет",
+   "name_ky": "Баткен мамлекеттик университети",
+   "name_en": "Batken State University",
+   "short_name": "БатГУ",
+   "city": "Баткен",
+   "region": "batken",
+   "type": "state",
+   "website": "http://batmu.kg",
+   "aliases": []
+  },
+  {
+   "code": "iksu",
+   "name": "Иссык-Кульский государственный университет им. К. Тыныстанова",
+   "name_ky": "К. Тыныстанов атындагы Ысык-Көл мамлекеттик университети",
+   "name_en": "Issyk-Kul State University named after K. Tynystanov",
+   "short_name": "ИГУ",
+   "city": "Каракол",
+   "region": "issyk-kul",
+   "type": "state",
+   "website": "http://iksu.kg",
+   "aliases": [
+    "Иссык-Кульский государственный университет им. К. Тыныстанова"
+   ]
+  },
+  {
+   "code": "nsu",
+   "name": "Нарынский государственный университет им. С. Нааматова",
+   "name_ky": "С. Нааматов атындагы Нарын мамлекеттик университети",
+   "name_en": "Naryn State University named after S. Naamatov",
+   "short_name": "НГУ",
+   "city": "Нарын",
+   "region": "naryn",
+   "type": "state",
+   "website": "https://nsu.kg",
+   "aliases": []
+  },
+  {
+   "code": "talsu",
+   "name": "Таласский государственный университет",
+   "name_ky": "Талас мамлекеттик университети",
+   "name_en": "Talas State University",
+   "short_name": "ТалГУ",
+   "city": "Талас",
+   "region": "talas",
+   "type": "state",
+   "website": "https://talsu.kg",
+   "aliases": []
+  },
+  {
+   "code": "at",
+   "name": "Академия туризма",
+   "name_ky": "Туризм академиясы",
+   "name_en": "Academy of Tourism",
+   "short_name": "АТ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "http://at.edu.kg",
+   "aliases": []
+  },
+  {
+   "code": "adam",
+   "name": "Университет АДАМ",
+   "name_ky": "АДАМ университети",
+   "name_en": "ADAM University",
+   "short_name": "АДАМ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://bafe.edu.kg",
+   "aliases": []
+  },
+  {
+   "code": "iku",
+   "name": "Международный Кувейтский университет",
+   "name_ky": "Эл аралык Кувейт университети",
+   "name_en": "International Kuwait University",
+   "short_name": "МКУ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "http://iku.kg",
+   "aliases": []
+  },
+  {
+   "code": "maupfib",
+   "name": "Международная академия управления, права, финансов и бизнеса",
+   "name_ky": "Эл аралык башкаруу, укук, финансы жана бизнес академиясы",
+   "name_en": "International Academy of Management, Law, Finance and Business",
+   "short_name": "МАУПФиБ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://maupfib.kg",
+   "aliases": []
+  },
+  {
+   "code": "krao",
+   "name": "Кыргызско-Российская академия образования",
+   "name_ky": "Кыргыз-Россия билим берүү академиясы",
+   "name_en": "Kyrgyz-Russian Academy of Education",
+   "short_name": "КРАО",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "http://ru.krao.kg",
+   "aliases": []
+  },
+  {
+   "code": "auca",
+   "name": "Американский университет в Центральной Азии",
+   "name_ky": "Борбордук Азиядагы Америка университети",
+   "name_en": "American University of Central Asia",
+   "short_name": "АУЦА",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://www.auca.kg",
+   "aliases": []
+  },
+  {
+   "code": "muk",
+   "name": "УНПК «Международный университет Кыргызстана»",
+   "name_ky": "Кыргызстандын Эл аралык университети",
+   "name_en": "International University of Kyrgyzstan",
+   "short_name": "МУК",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://muk.iuk.kg",
+   "aliases": []
+  },
+  {
+   "code": "ism",
+   "name": "Международная высшая школа медицины",
+   "name_ky": "Эл аралык жогорку медициналык мектеби",
+   "name_en": "International Higher School of Medicine",
+   "short_name": "МВШМ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://ism.edu.kg",
+   "aliases": []
+  },
+  {
+   "code": "alatoo",
+   "name": "Международный университет Ала-Тоо",
+   "name_ky": "Ала-Тоо Эл аралык университети",
+   "name_en": "Ala-Too International University",
+   "short_name": "МУА",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://alatoo.edu.kg",
+   "aliases": [
+    "Международный университет Алатоо"
+   ]
+  },
+  {
+   "code": "mnu",
+   "name": "Международный университет в г. Жалал-Абад",
+   "name_ky": "Жалал-Абад Эл аралык университети",
+   "name_en": "Jalal-Abad International University",
+   "short_name": "МНУ",
+   "city": "Жалал-Абад",
+   "region": "jalal-abad",
+   "type": "private",
+   "website": "https://mnu.kg",
+   "aliases": []
+  },
+  {
+   "code": "kku",
+   "name": "Кыргызско-Казахский университет",
+   "name_ky": "Кыргыз-Казак университети",
+   "name_en": "Kyrgyz-Kazakh University",
+   "short_name": "ККУ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://kku.edu.kg",
+   "aliases": []
+  },
+  {
+   "code": "isito",
+   "name": "Институт стратегических информационных технологий в образовании",
+   "name_ky": "Билим берүүдөгү стратегиялык маалыматтык технологиялар институту",
+   "name_en": "Institute of Strategic Information Technologies in Education",
+   "short_name": "ИСИТО",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://isito.kg",
+   "aliases": [
+    "Институт современных информационных технологий в образовании"
+   ]
+  },
+  {
+   "code": "iuca",
+   "name": "Международный университет в Центральной Азии",
+   "name_ky": "Борбордук Азиядагы Эл аралык университети",
+   "name_en": "International University of Central Asia",
+   "short_name": "МУЦА",
+   "city": "Токмок",
+   "region": "chuy",
+   "type": "private",
+   "website": "https://www.iuca.kg",
+   "aliases": []
+  },
+  {
+   "code": "eu",
+   "name": "Евразийский университет",
+   "name_ky": "Евразия университети",
+   "name_en": "Eurasian University",
+   "short_name": "ЕврУ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://eu.kg",
+   "aliases": []
+  },
+  {
+   "code": "intuit",
+   "name": "Международный университет инновационных технологий",
+   "name_ky": "Эл аралык инновациялык технологиялар университети",
+   "name_en": "International University of Innovative Technologies",
+   "short_name": "МУИТ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://intuit.kg",
+   "aliases": []
+  },
+  {
+   "code": "asmi",
+   "name": "Азиатский медицинский институт",
+   "name_ky": "Азия медициналык институту",
+   "name_en": "Asian Medical Institute",
+   "short_name": "АзМИ",
+   "city": "Кант",
+   "region": "chuy",
+   "type": "private",
+   "website": "https://www.asmi.kg",
+   "aliases": []
+  },
+  {
+   "code": "osce-academy",
+   "name": "Академия ОБСЕ",
+   "name_ky": "ЕККУ академиясы",
+   "name_en": "OSCE Academy in Bishkek",
+   "short_name": "Академия ОБСЕ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://osce-academy.net",
+   "aliases": []
+  },
+  {
+   "code": "smu",
+   "name": "Современный международный университет (АПБиО)",
+   "name_ky": "Заманбап эл аралык университети",
+   "name_en": "Modern International University",
+   "short_name": "СМУ",
+   "city": "Жалал-Абад",
+   "region": "jalal-abad",
+   "type": "private",
+   "website": "http://apbio.kg",
+   "aliases": [
+    "Академия права, бизнеса и образования"
+   ]
+  },
+  {
+   "code": "munib",
+   "name": "Международный университет науки и бизнеса",
+   "name_ky": "Илим жана бизнес Эл аралык университети",
+   "name_en": "International University of Science and Business",
+   "short_name": "МУНиБ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://munib.kg",
+   "aliases": []
+  },
+  {
+   "code": "ief",
+   "name": "Институт экономики и финансов",
+   "name_ky": "Экономика жана финансы институту",
+   "name_en": "Institute of Economics and Finance",
+   "short_name": "ИЭФ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "http://ief.kg",
+   "aliases": []
+  },
+  {
+   "code": "iite",
+   "name": "Институт инновационных технологий Евразии",
+   "name_ky": "Евразия боюнча инновациялык технологиялар институту",
+   "name_en": "Eurasian Institute of Innovative Technologies",
+   "short_name": "ИИТЕ",
+   "city": "Каракол",
+   "region": "issyk-kul",
+   "type": "private",
+   "website": "",
+   "aliases": [
+    "Иссык-Кульский институт инновационных технологий"
+   ]
+  },
+  {
+   "code": "imu",
+   "name": "Международный медицинский университет",
+   "name_ky": "Эл аралык медициналык университети",
+   "name_en": "International Medical University",
+   "short_name": "ММУ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://imu.edu.kg",
+   "aliases": []
+  },
+  {
+   "code": "atiso",
+   "name": "Академия труда и социальных отношений",
+   "name_ky": "Эмгек жана социалдык мамилелер академиясы",
+   "name_en": "Academy of Labour and Social Relations",
+   "short_name": "АТиСО",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://atiso.kg",
+   "aliases": []
+  },
+  {
+   "code": "keiin",
+   "name": "Кейин интернешнл институт",
+   "name_ky": "Кейин интернешнл институту",
+   "name_en": "Keiin International Institute",
+   "short_name": "КИИ",
+   "city": "Ивановка",
+   "region": "chuy",
+   "type": "private",
+   "website": "https://keiin.kg",
+   "aliases": [
+    "Кейин интернейшнл институт"
+   ]
+  },
+  {
+   "code": "ai-musakozhoev",
+   "name": "Академия инноваций им. Ш. Мусакожоева",
+   "name_ky": "Ш. Мусакожоев атындагы инновациялар академиясы",
+   "name_en": "Academy of Innovations named after Sh. Musakozhoev",
+   "short_name": "АИ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "http://www.ai.edu.kg",
+   "aliases": []
+  },
+  {
+   "code": "uca",
+   "name": "Университет Центральной Азии (кампус в Нарыне)",
+   "name_ky": "Борбордук Азия университети (Нарын кампусу)",
+   "name_en": "University of Central Asia (Naryn campus)",
+   "short_name": "УЦА",
+   "city": "Нарын",
+   "region": "naryn",
+   "type": "private",
+   "website": "https://ucentralasia.org",
+   "aliases": [
+    "Университет Центральной Азии"
+   ]
+  },
+  {
+   "code": "kica",
+   "name": "Корейский институт в Центральной Азии",
+   "name_ky": "Борбордук Азиядагы Корей институту",
+   "name_en": "Korean Institute in Central Asia",
+   "short_name": "КИЦА",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "http://kica.kg",
+   "aliases": []
+  },
+  {
+   "code": "roi",
+   "name": "Региональный образовательный институт",
+   "name_ky": "Региондук билим берүү институту",
+   "name_en": "Regional Educational Institute",
+   "short_name": "РОИ",
+   "city": "Таш-Кумыр",
+   "region": "jalal-abad",
+   "type": "private",
+   "website": "",
+   "aliases": [
+    "Региональный институт образования"
+   ]
+  },
+  {
+   "code": "nimsi",
+   "name": "Научно-исследовательский медико-социальный институт",
+   "name_ky": "Илимий-изилдөө медициналык-социалдык институту",
+   "name_en": "Research Medical and Social Institute",
+   "short_name": "НИМСИ",
+   "city": "Жалал-Абад",
+   "region": "jalal-abad",
+   "type": "private",
+   "website": "https://nimsi.kg",
+   "aliases": []
+  },
+  {
+   "code": "kiu",
+   "name": "Исламский университет Кыргызстана",
+   "name_ky": "Кыргызстандын Ислам университети",
+   "name_en": "Islamic University of Kyrgyzstan",
+   "short_name": "ИУК",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "http://www.kiu.kg",
+   "aliases": []
+  },
+  {
+   "code": "inai",
+   "name": "Кыргызско-Германский институт прикладной информатики",
+   "name_ky": "Кыргыз-Герман прикладдык информатика институту",
+   "name_en": "Kyrgyz-German Institute of Applied Informatics",
+   "short_name": "INAI.KG",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://www.inai.kg",
+   "aliases": []
+  },
+  {
+   "code": "salymbekov",
+   "name": "Салымбеков Университет",
+   "name_ky": "Салымбеков университети",
+   "name_en": "Salymbekov University",
+   "short_name": "SU",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://salymbekov.kg",
+   "aliases": []
+  },
+  {
+   "code": "avicenna",
+   "name": "Международный медицинский институт «Авиценна»",
+   "name_ky": "«Авиценна» эл аралык медициналык институту",
+   "name_en": "Avicenna International Medical Institute",
+   "short_name": "Авиценна",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "",
+   "aliases": []
+  },
+  {
+   "code": "kilc",
+   "name": "Кыргызский институт языков и культуры",
+   "name_ky": "Тилдер жана маданият Кыргыз институту",
+   "name_en": "Kyrgyz Institute of Languages and Culture",
+   "short_name": "КИЯК",
+   "city": "Шопоков",
+   "region": "chuy",
+   "type": "private",
+   "website": "",
+   "aliases": []
+  },
+  {
+   "code": "oimu",
+   "name": "Ошский международный медицинский университет",
+   "name_ky": "Ош эл аралык медициналык университети",
+   "name_en": "Osh International Medical University",
+   "short_name": "ОшММУ",
+   "city": "Ош",
+   "region": "osh-city",
+   "type": "private",
+   "website": "",
+   "aliases": []
+  },
+  {
+   "code": "rmu",
+   "name": "Роэль Метрополитен Университет",
+   "name_ky": "Роэль Метрополитен Университети",
+   "name_en": "Royal Metropolitan University",
+   "short_name": "RMU",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "",
+   "aliases": []
+  },
+  {
+   "code": "abc-academy",
+   "name": "Академия «АВС»",
+   "name_ky": "«АВС» Академиясы",
+   "name_en": "ABC Academy",
+   "short_name": "АВС",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "",
+   "aliases": []
+  },
+  {
+   "code": "kmsi",
+   "name": "Кыргызский медико-стоматологический институт",
+   "name_ky": "Кыргыз медициналык-стоматологиялык институту",
+   "name_en": "Kyrgyz Medical and Dental Institute",
+   "short_name": "КМСИ",
+   "city": "Кара-Балта",
+   "region": "chuy",
+   "type": "private",
+   "website": "",
+   "aliases": []
+  },
+  {
+   "code": "adi",
+   "name": "Академия цифровых инноваций",
+   "name_ky": "Санариптик инновациялар академиясы",
+   "name_en": "Academy of Digital Innovations",
+   "short_name": "АЦИ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "",
+   "aliases": []
+  },
+  {
+   "code": "chu",
+   "name": "Чуйский университет им. С. Мамбеткалиева",
+   "name_ky": "С. Мамбеткалиев атындагы Чүй университети",
+   "name_en": "Chui University named after S. Mambetkaliev",
+   "short_name": "ЧУ",
+   "city": "Бишкек",
+   "region": "bishkek",
+   "type": "private",
+   "website": "https://chu.kg",
+   "aliases": []
+  },
+  {
+   "code": "iki-alyshbaev",
+   "name": "Иссык-Кульский институт кооперации им. Алышбаева",
+   "name_ky": "Алышбаев атындагы Ысык-Көл кооперация институту",
+   "name_en": "Issyk-Kul Institute of Cooperation named after Alyshbaev",
+   "short_name": "ИИК",
+   "city": "Каракол",
+   "region": "issyk-kul",
+   "type": "private",
+   "website": "",
+   "aliases": []
+  }
+ ]
+}

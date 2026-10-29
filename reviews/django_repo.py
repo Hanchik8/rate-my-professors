@@ -13,6 +13,7 @@ from django.utils.text import slugify
 
 from .caching import get_or_set, invalidate_catalog_cache, stats_cache_key
 from .constants import MAX_COMMENT_LENGTH
+from .geo import build_locations, filter_schools
 from .models import Professor, Report, Review, School, Tag, Vote
 from .repository import _search_sort_key, _tone, normalize_person_name, normalize_search_text
 from .sanitize import clean_text
@@ -27,15 +28,15 @@ class DjangoRepository:
     """ORM-backed repository with the same API as InMemoryRepository."""
 
     # writes
-    def add_school(self, name: str, city: str) -> SchoolDC:
+    def add_school(self, name: str, city: str, region: str = "", code: str = "", slug: str = "", **extra: Any) -> SchoolDC:
         """Create a school with a unique slug."""
-        slug = slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
+        slug = slug or code or slugify(name, allow_unicode=True) or slugify(name) or name.lower().replace(" ", "-")
         # ensure unique
         base, i = slug, 1
         while School.objects.filter(slug=slug).exists():
             slug = f"{base}-{i}"
             i += 1
-        s = School.objects.create(name=name, slug=slug, city=city)
+        s = School.objects.create(name=name, slug=slug, city=city, region=region, code=code or None, **extra)
         return self._school_to_dc(s)
 
     def add_professor(
@@ -163,6 +164,14 @@ class DjangoRepository:
         # clear model ordering, otherwise DISTINCT silently includes it and the
         # same city shows up once per school.
         return sorted(School.objects.order_by().values_list("city", flat=True).distinct())
+
+    def locations(self) -> list[dict[str, Any]]:
+        """Regions of Kyrgyzstan with the distinct cities that have schools."""
+        return build_locations(self.schools())
+
+    def schools_in(self, region: str = "", city: str = "") -> list[SchoolDC]:
+        """Schools located in a city, or anywhere in a region."""
+        return filter_schools(self.schools(), region, city)
 
     def departments(self) -> list[str]:
         """Return the sorted set of departments for approved professors."""
@@ -379,9 +388,13 @@ class DjangoRepository:
         city: str = "",
         department: str = "",
         sort: str = "rating",
+        region: str = "",
     ) -> list[dict[str, Any]]:
         """Search approved professors with optional filters and sorting."""
         qs = Professor.objects.filter(status="approved").select_related("school")
+        region = region.strip()
+        if region:
+            qs = qs.filter(school__region=region)
         school_slug = school_slug.strip()
         city = city.strip()
         department = department.strip()
@@ -424,7 +437,11 @@ class DjangoRepository:
     def _school_to_dc(self, s: School) -> SchoolDC:
         """Convert an ORM school into the view-facing dataclass."""
         from .repository import School as DCSchool
-        return DCSchool(id=str(s.pk), name=s.name, slug=s.slug, city=s.city)
+        return DCSchool(
+            id=str(s.pk), name=s.name, slug=s.slug, city=s.city, region=s.region,
+            code=s.code or "", name_ky=s.name_ky, name_en=s.name_en, short_name=s.short_name,
+            kind=s.kind, website=s.website,
+        )
 
     def _prof_to_dc(self, p: Professor) -> ProfessorDC:
         """Convert an ORM professor into the view-facing dataclass."""

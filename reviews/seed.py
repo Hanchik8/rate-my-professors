@@ -7,16 +7,8 @@ if TYPE_CHECKING:
     from .django_repo import DjangoRepository
     from .repository import InMemoryRepository
 
-SCHOOLS = [
-    ("Кыргызский национальный университет им. Ж. Баласагына", "Бишкек"),
-    ("Кыргызско-Российский Славянский университет им. Б. Ельцина", "Бишкек"),
-    ("Американский университет в Центральной Азии", "Бишкек"),
-    ("Кыргызско-Турецкий университет «Манас»", "Бишкек"),
-    ("Кыргызский государственный технический университет им. И. Раззакова", "Бишкек"),
-    ("Бишкекский государственный университет им. К. Карасаева", "Бишкек"),
-    ("Кыргызская государственная медицинская академия им. И. Ахунбаева", "Бишкек"),
-    ("Ошский государственный университет", "Ош"),
-]
+# demo professors live at these universities (codes from data/universities_kg.json)
+SCHOOLS = ["knu", "krsu", "auca", "manas", "kstu", "bgu", "kgma", "oshsu"]
 # ТОЛЬКО вымышленные имена и фамилии
 PROFESSORS = [  # (school index, first, last, department, title)
     (0, "Айбек", "Токтогулов", "Информатика", "доцент"),
@@ -95,7 +87,10 @@ REVIEWS = [  # (prof index, course, term, overall, difficulty, take again, grade
 
 def seed(repo: InMemoryRepository | DjangoRepository) -> None:
     """Populate ``repo`` with the built-in demo schools, professors and reviews."""
-    schools = [repo.add_school(n, c) for n, c in SCHOOLS]
+    from .universities import add_to_repo
+
+    by_code = add_to_repo(repo)
+    schools = [by_code[code] for code in SCHOOLS]
     profs = [repo.add_professor(schools[s].id, f, last, d, t) for s, f, last, d, t in PROFESSORS]
     for pi, course, term, overall, diff, wta, grade, comment, tags in REVIEWS:
         repo.add_review(profs[pi].id, {

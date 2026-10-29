@@ -1,13 +1,13 @@
 {% extends "reviews/base.html" %}{% load i18n l10n static %}
 {% block title %}{{ prof.full_name }} — ProfLens{% endblock %}
-{% block description %}{% blocktranslate with name=prof.full_name dept=prof.department school=school.name %}Отзывы студентов о преподавателе {{ name }} ({{ dept }}, {{ school }}): рейтинг, сложность и советы.{% endblocktranslate %}{% endblock %}
+{% block description %}{% blocktranslate with name=prof.full_name dept=prof.department school=school.display_name %}Отзывы студентов о преподавателе {{ name }} ({{ dept }}, {{ school }}): рейтинг, сложность и советы.{% endblocktranslate %}{% endblock %}
 {% block og_title %}{{ prof.full_name }} — ProfLens{% endblock %}
-{% block og_description %}{% blocktranslate with name=prof.full_name dept=prof.department school=school.name %}Отзывы студентов о преподавателе {{ name }} ({{ dept }}, {{ school }}): рейтинг, сложность и советы.{% endblocktranslate %}{% endblock %}
+{% block og_description %}{% blocktranslate with name=prof.full_name dept=prof.department school=school.display_name %}Отзывы студентов о преподавателе {{ name }} ({{ dept }}, {{ school }}): рейтинг, сложность и советы.{% endblocktranslate %}{% endblock %}
 {% block content %}
 <nav class="breadcrumbs" aria-label="{% translate 'Хлебные крошки' %}">
   <ol>
     <li><a href="{% url 'home' %}">{% translate "Главная" %}</a></li>
-    <li><a href="{% url 'school_detail' school.slug %}">{{ school.name }}</a></li>
+    <li><a href="{% url 'school_detail' school.slug %}">{{ school.display_name }}</a></li>
     <li aria-current="page">{{ prof.full_name }}</li>
   </ol>
 </nav>
@@ -15,7 +15,7 @@
   <div class="tile big {{ stats.tone }}">{% if stats.count %}{{ stats.overall|floatformat:1|localize }}{% else %}-{% endif %}</div>
   <div>
     <h1>{{ prof.full_name }}</h1>
-    <p class="sub">{% translate prof.title %} — {{ prof.department }}, <a href="{% url 'school_detail' school.slug %}">{{ school.name }}</a></p>
+    <p class="sub">{% translate prof.title %} — {{ prof.department }}, <a href="{% url 'school_detail' school.slug %}">{{ school.display_name }}</a></p>
   </div>
   {% if stats.count %}
   <span class="stars" role="img" aria-label="{% blocktranslate with rating=stats.overall %}Рейтинг {{ rating }} из 5{% endblocktranslate %}"><span aria-hidden="true">★★★★★</span><span class="s-fill" aria-hidden="true" style="width:{% widthratio stats.overall 5 100 %}%">★★★★★</span></span>

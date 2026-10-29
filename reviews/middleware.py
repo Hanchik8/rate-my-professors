@@ -1,5 +1,6 @@
 """Application-specific HTTP middleware."""
 from django.conf import settings
+from django.http import JsonResponse
 from django.utils.cache import patch_cache_control
 
 STATIC_CACHE_MAX_AGE = 3600
@@ -70,4 +71,24 @@ class PrivateCacheControlMiddleware:
                 patch_cache_control(response, private=True, no_store=True)
             elif response.status_code == 200:
                 patch_cache_control(response, public=True, max_age=300)
+        return response
+
+
+class HealthCheckMiddleware:
+    """Answer GET /healthz with 200 {"status": "ok"} before any other middleware.
+
+    It runs first in MIDDLEWARE so Docker / load balancer liveness checks work
+    over plain HTTP with any Host header (no ALLOWED_HOSTS check, no HTTPS
+    redirect). Like the ``healthz`` view it never touches the database; the
+    database-backed readiness check stays at /health/.
+    """
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        if request.path != "/healthz":
+            return self.get_response(request)
+        response = JsonResponse({"status": "ok"})
+        response["Cache-Control"] = "no-store"
         return response

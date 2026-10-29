@@ -26,7 +26,7 @@
       {% if r.grade %}{% translate "Оценка:" %} {% translate r.grade %}.{% endif %}</p>
     <p>
       {% if prof.status == "approved" %}<a href="{% url 'professor' prof.slug %}">{{ prof.full_name }}</a>{% else %}{{ prof.full_name }}{% endif %}
-      — {{ school.name }}
+      — {{ school.display_name }}
     </p>
     {% if r.created_at %}<p class="review-date muted">{% translate "Дата отзыва:" %} <time datetime="{{ r.created_at|date:'c' }}">{{ r.created_at|date:"DATE_FORMAT" }}</time></p>{% endif %}
     <p>{{ r.comment }}</p>

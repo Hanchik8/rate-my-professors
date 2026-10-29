@@ -77,7 +77,7 @@ class MemorySmokeTests(TestCase):
         self.assertContains(r, "Бакыт")
         self.assertNotContains(r, "Айбек")
         # filter by school slug
-        school = next(s for s in self.repo.schools() if "Ошский" in s.name)
+        school = next(s for s in self.repo.schools() if s.name == "Ошский государственный университет")
         r2 = self.client.get(reverse("home"), {"school": school.slug})
         self.assertContains(r2, "Бакыт")
 
@@ -534,7 +534,7 @@ class HomeViewTests(_MemoryRepoTestCase):
 
 class SchoolViewTests(_MemoryRepoTestCase):
     def test_school_detail_stats_and_departments(self):
-        school = next(s for s in self.repo.schools() if "Ошский" in s.name)
+        school = next(s for s in self.repo.schools() if s.name == "Ошский государственный университет")
         r = self.client.get(reverse("school_detail", args=[school.slug]))
         self.assertEqual(r.status_code, 200)
         self.assertContains(r, school.name)
@@ -686,7 +686,7 @@ class AddProfessorViewTests(_MemoryRepoTestCase):
 
     def test_creates_pending_and_hidden_until_approved(self):
         self.login()
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         r = self.client.post(reverse("add_professor"), self._data(school))
         self.assertEqual(r.status_code, 302)
         pending = [p for p in self.repo._professors.values() if p.status == "pending"]
@@ -700,7 +700,7 @@ class AddProfessorViewTests(_MemoryRepoTestCase):
 
     def test_duplicate_ignores_case_and_spaces_and_links_existing(self):
         self.login()
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         existing = self.repo.add_professor(
             school.id, "Иван  Иванович", "Петров", "Физика", "доцент"
         )
@@ -716,7 +716,7 @@ class AddProfessorViewTests(_MemoryRepoTestCase):
 
     def test_trims_names_and_rejects_empty_or_overlong_cleaned_text(self):
         self.login()
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         data = self._data(school)
         data.update(first_name="  Иван  ", last_name=" Петров ", department=" Кафедра ")
         self.assertEqual(self.client.post(reverse("add_professor"), data).status_code, 302)
@@ -736,7 +736,7 @@ class AddProfessorViewTests(_MemoryRepoTestCase):
 
     def test_invalid_choices_and_escaped_text_echo(self):
         self.login()
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         data = self._data(school)
         data.update(first_name="<script>alert(1)</script>", title="admin")
         response = self.client.post(reverse("add_professor"), data)
@@ -817,7 +817,7 @@ class DjangoViewCoverageTests(TestCase):
 
     def test_home_school_professor_pages(self):
         self.assertContains(self.client.get(reverse("home")), "Айбек")
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         self.assertEqual(self.client.get(reverse("school_detail", args=[school.slug])).status_code, 200)
         prof = self.repo.search("Айбек")[0]["prof"]
         r = self.client.get(reverse("professor", args=[prof.slug]))
@@ -838,7 +838,7 @@ class DjangoViewCoverageTests(TestCase):
 
     def test_add_professor_pending_then_approved(self):
         from reviews.models import Professor
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         self.login()
         data = {"school": str(school.id), "first_name": "Тест", "last_name": "Модератов",
                 "department": "Кафедра", "title": "доцент"}
@@ -865,7 +865,7 @@ class DjangoViewCoverageTests(TestCase):
 
     def test_add_professor_duplicate_ignores_case_and_spaces_and_links_existing(self):
         from reviews.models import Professor
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         existing = self.repo.add_professor(
             school.id, "Иван  Иванович", "Петров", "Физика", "доцент"
         )
@@ -1536,14 +1536,14 @@ class ProfessorCardsTests(_MemoryRepoTestCase):
         self.assertContains(r, 'class="s-fill" aria-hidden="true" style="width:')
 
     def test_home_card_without_reviews_shows_empty_stars(self):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         self.repo.add_professor(school.id, "Тихон", "Безотзывов", "Физика", "доцент")
         r = self.client.get(reverse("home"), {"q": "Безотзывов"})
         self.assertContains(r, 'aria-label="Нет оценок"')
         self.assertNotContains(r, 'class="s-fill"')
 
     def test_school_page_renders_cards_with_stars(self):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         r = self.client.get(reverse("school_detail", args=[school.slug]))
         self.assertContains(r, 'class="card"')
         self.assertContains(r, "★★★★★")
@@ -1557,7 +1557,7 @@ class ProfessorCardsTests(_MemoryRepoTestCase):
             self.assertContains(r, f'aria-label="Рейтинг {localize(stats["overall"])} из 5"')
 
     def test_professor_page_without_reviews_shows_empty_stars(self):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         p = self.repo.add_professor(school.id, "Тихон", "Безотзывов", "Физика", "доцент")
         r = self.client.get(reverse("professor", args=[p.slug]))
         self.assertContains(r, 'aria-label="Нет оценок"')
@@ -1585,7 +1585,7 @@ class FormStatesDesignTests(_MemoryRepoTestCase):
         # Non-field errors must render: duplicate-professor rejection
         # is attached via form.add_error(None, ...).
         self.login()
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         data = {"school": str(school.id), "first_name": "Тест", "last_name": "Тестов",
                 "department": "Кафедра теста", "title": "доцент"}
         self.assertEqual(self.client.post(reverse("add_professor"), data).status_code, 302)
@@ -1807,7 +1807,7 @@ class PaginationTests(_MemoryRepoTestCase):
     """Professor lists (school page) and review lists (professor page) paginate."""
 
     def test_school_page_paginates_professors(self):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         for i in range(12):
             self.repo.add_professor(school.id, f"Пагин{i}", f"Тестов{i}", "Кафедра", "доцент")
         r = self.client.get(reverse("school_detail", args=[school.slug]))
@@ -1819,7 +1819,7 @@ class PaginationTests(_MemoryRepoTestCase):
         self.assertLessEqual(len(r2.context["results"]), 10)
 
     def test_school_single_page_has_no_widget(self):
-        school = next(s for s in self.repo.schools() if "Ошский" in s.name)
+        school = next(s for s in self.repo.schools() if s.name == "Ошский государственный университет")
         r = self.client.get(reverse("school_detail", args=[school.slug]))
         self.assertIsNone(r.context["page_obj"])
 
@@ -1836,7 +1836,7 @@ class PaginationTests(_MemoryRepoTestCase):
         self.assertLessEqual(len(r2.context["reviews"]), 10)
 
     def test_school_page_invalid_pages_fall_back(self):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         for i in range(12):
             self.repo.add_professor(school.id, f"Пагин{i}", f"Тестов{i}", "Кафедра", "доцент")
         url = reverse("school_detail", args=[school.slug])
@@ -1920,7 +1920,7 @@ class QueryEfficiencyTests(TestCase):
         )
 
     def _add_load(self, professors=8, reviews_each=3):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         for i in range(professors):
             p = self.repo.add_professor(school.id, f"Нагруз{i}", f"Проф{i}", "Кафедра", "доцент")
             for j in range(reviews_each):
@@ -2035,7 +2035,7 @@ class QueryEfficiencyTests(TestCase):
             self.assertIn("school", sql)
 
     def test_school_stats_query_count_is_constant(self):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         with self.assertNumQueries(3):
             self.repo.school_stats(school.id)
         self._add_load()
@@ -2061,7 +2061,7 @@ class QueryEfficiencyTests(TestCase):
             self.client.get(reverse("professor", args=[prof.slug]))
 
     def test_school_view_query_count_is_constant(self):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         self.client.get(reverse("school_detail", args=[school.slug]))
         with self.assertNumQueries(4):
             self.client.get(reverse("school_detail", args=[school.slug]))
@@ -2087,7 +2087,7 @@ class QueryEfficiencyTests(TestCase):
         from django.db import connection
         from django.test.utils import CaptureQueriesContext
 
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         home_url = reverse("home")
         school_url = reverse("school_detail", args=[school.slug])
         self.client.get(home_url)  # warm session/messages storage
@@ -2132,7 +2132,7 @@ class QueryEfficiencyTests(TestCase):
             self.client.get(reverse("home"))
 
     def test_school_view_query_count_stays_bounded_as_professors_grow(self):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         self.client.get(reverse("school_detail", args=[school.slug]))
         self._add_schools(3)
         self._add_load(professors=12, reviews_each=2)
@@ -2203,7 +2203,7 @@ class AdminQueryEfficiencyTests(TestCase):
         return len(ctx.captured_queries)
 
     def _load(self, professors=12, reviews_each=1):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         for i in range(professors):
             p = self.repo.add_professor(school.id, f"Админ{i}", f"Нагруз{i}", "Кафедра перф", "доцент")
             for j in range(reviews_each):
@@ -2370,7 +2370,7 @@ class EmptyStateTests(_MemoryRepoTestCase):
     """List pages render a friendly empty state instead of a blank area."""
 
     def test_professor_without_reviews_shows_empty_state(self):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         p = self.repo.add_professor(school.id, "Тихон", "Безотзывов", "Физика", "доцент")
         r = self.client.get(reverse("professor", args=[p.slug]))
         self.assertContains(r, "Пока нет отзывов")
@@ -2519,7 +2519,7 @@ class ReviewEscapingTests(_MemoryRepoTestCase):
                 self.assertContains(response, "&lt;script&gt;alert(&quot;review&quot;)&lt;/script&gt;")
 
     def test_professor_name_is_escaped_on_professor_school_home_and_profile_pages(self):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         user = self.login()
         prof = self.repo.add_professor(
             school.id, "<script>", "alert(1)</script>", "XSS кафедра", "доцент"
@@ -2850,7 +2850,7 @@ class CatalogCacheTests(_MemoryRepoTestCase):
             self.assertEqual(search.call_count, 2)
 
     def test_school_page_is_cached_and_invalidated_by_review(self):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         url = reverse("school_detail", args=[school.slug])
         prof = self.repo.professors_for_school(school.id)[0]
         with mock.patch.object(self.repo, "search", wraps=self.repo.search) as search:

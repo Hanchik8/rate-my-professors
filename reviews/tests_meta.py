@@ -84,7 +84,7 @@ class ProfessorMetaTagsTests(MetaTagsTestMixin, TestCase):
 
 class SchoolMetaTagsTests(MetaTagsTestMixin, TestCase):
     def test_school_meta_tags_describe_the_school(self):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         html = self.html(reverse("school_detail", args=[school.slug]))
 
         title = f"{school.name} — ProfLens"

@@ -131,7 +131,7 @@ class HomeSearchEdgeViewTests(_MemoryRepoTestCase):
         self.assertNotContains(r, "Бакыт")  # Ош
 
     def test_conflicting_school_and_city_is_empty(self):
-        school = next(s for s in self.repo.schools() if "Ошский" in s.name)
+        school = next(s for s in self.repo.schools() if s.name == "Ошский государственный университет")
         r = self.client.get(reverse("home"), {"school": school.slug, "city": "Бишкек"})
         self.assertContains(r, "Ничего не нашлось")
 

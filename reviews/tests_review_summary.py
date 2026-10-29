@@ -36,7 +36,7 @@ class ReviewSummaryRenderTests(TestCase):
         return self.repo.search("Айбек")[0]["prof"]
 
     def _new_professor_without_reviews(self):
-        school = self.repo.schools()[0]
+        school = next(s for s in self.repo.schools() if self.repo.professors_for_school(s.id))
         return self.repo.add_professor(
             school.id, "Тихон", "Безотзывов", "Физика", "доцент"
         )

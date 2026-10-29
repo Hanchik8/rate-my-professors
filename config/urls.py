@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib import admin
 from django.contrib.sitemaps import views as sitemap_views
 from django.http import HttpResponse
@@ -17,7 +18,7 @@ def robots_txt(request):
 
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path(settings.ADMIN_URL, admin.site.urls),
     path("i18n/", include("django.conf.urls.i18n")),
     path("robots.txt", robots_txt, name="robots_txt"),
     path("sitemap.xml", sitemap_views.index, {"sitemaps": sitemaps}, name="sitemap_index"),

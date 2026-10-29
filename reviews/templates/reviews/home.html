@@ -1,15 +1,27 @@
-{% extends "reviews/base.html" %}{% load i18n l10n %}
+{% extends "reviews/base.html" %}{% load i18n l10n static %}
 {% block content %}
 <h1>{% translate "Узнайте, какие занятия на самом деле — до записи на курс." %}</h1>
 <form class="search" method="get" role="search" aria-label="{% translate 'Поиск' %}">
   <input type="search" name="q" value="{{ q }}" placeholder="{% translate 'Имя преподавателя или кафедра' %}" aria-label="{% translate 'Поиск' %}">
-  <select name="city" aria-label="{% translate 'Город' %}">
+  <select name="city" id="f-city" aria-label="{% translate 'Город' %}">
     <option value="">{% translate "Все города" %}</option>
-    {% for c in cities %}<option value="{{ c }}"{% if c == city %} selected{% endif %}>{{ c }}</option>{% endfor %}
+    {% for loc in locations %}{% if loc.kind == "city" %}{% for c in loc.cities %}
+    <option value="{{ c.name }}"{% if c.name == city %} selected{% endif %}>{{ c.label }}</option>{% empty %}
+    <option value="{{ loc.value }}"{% if loc.value == city %} selected{% endif %}>{{ loc.name }}</option>{% endfor %}{% endif %}{% endfor %}
+    {% for loc in locations %}{% if loc.kind == "oblast" %}
+    <optgroup label="{{ loc.name }}">
+      <option value="{{ loc.value }}"{% if loc.value == city %} selected{% endif %}>{% blocktranslate with region=loc.name %}{{ region }}: все города{% endblocktranslate %}</option>
+      {% for c in loc.cities %}<option value="{{ c.name }}"{% if c.name == city %} selected{% endif %}>{{ c.label }}</option>
+      {% endfor %}
+    </optgroup>{% endif %}{% endfor %}
   </select>
-  <select name="school" aria-label="{% translate 'Вуз' %}">
+  <select name="school" id="f-school" aria-label="{% translate 'Вуз' %}">
     <option value="">{% translate "Все вузы" %}</option>
-    {% for s in schools %}<option value="{{ s.slug }}"{% if s.slug == school %} selected{% endif %}>{{ s.name }}</option>{% endfor %}
+    {% for g in school_groups %}
+    <optgroup label="{{ g.name }}"{% if not g.visible %} hidden{% endif %}>
+      {% for s in g.schools %}<option value="{{ s.slug }}" data-region="{{ s.region }}" data-city="{{ s.city }}"{% if s.slug not in school_slugs %} hidden disabled{% endif %}{% if s.slug == school %} selected{% endif %}>{{ s.display_name }}</option>
+      {% endfor %}
+    </optgroup>{% endfor %}
   </select>
   <select name="department" aria-label="{% translate 'Кафедра' %}">
     <option value="">{% translate "Все кафедры" %}</option>
@@ -39,4 +51,5 @@
   {% if page_obj.has_next %}<a href="?q={{ q|urlencode }}&school={{ school|urlencode }}&city={{ city|urlencode }}&department={{ department|urlencode }}&sort={{ sort|urlencode }}&page={{ page_obj.next_page_number }}" aria-label="{% blocktranslate with n=page_obj.next_page_number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{% translate "Вперёд" %}</a>{% endif %}
 </div>
 {% endif %}
+<script src="{% static 'reviews/filters.js' %}" defer></script>
 {% endblock %}

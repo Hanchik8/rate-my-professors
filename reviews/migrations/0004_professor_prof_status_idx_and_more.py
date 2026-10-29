@@ -16,10 +16,8 @@ class Migration(migrations.Migration):
             model_name='professor',
             index=models.Index(fields=['status'], name='prof_status_idx'),
         ),
-        migrations.AddIndex(
-            model_name='professor',
-            index=models.Index(fields=['school', 'status'], name='prof_school_status_idx'),
-        ),
+        # prof_school_status_idx (school, status) is created by 0002_production_hardening
+        # on the production-ready branch; both branches meet in 0010_merge.
         migrations.AddIndex(
             model_name='professor',
             index=models.Index(fields=['department'], name='prof_dept_idx'),

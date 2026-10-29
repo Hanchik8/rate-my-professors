@@ -31,6 +31,7 @@ from .caching import (
 )
 from .constants import PAGE_SIZE
 from .forms import ProfessorForm, ReportForm, ReviewForm
+from .geo import REGION_CODES, REGION_PREFIX, build_locations, filter_schools, parse_place, region_for_city, region_name
 from . import email_verification, services
 from .models import EmailVerification as EmailVerificationModel
 from .store import repo
@@ -119,21 +120,54 @@ def _home_options():
     })
 
 
+_REGION_ORDER = {code: i for i, code in enumerate(REGION_CODES)}
+
+
+def _school_groups(all_schools, visible_slugs):
+    """Schools for the <select>, grouped by region in the fixed region order."""
+    groups = {}
+    for s in sorted(all_schools, key=lambda s: s.display_name.lower()):
+        groups.setdefault(s.region or region_for_city(s.city), []).append(s)
+    return [{"name": region_name(code) or "—", "schools": groups[code],
+             "visible": any(s.slug in visible_slugs for s in groups[code])}
+            for code in sorted(groups, key=lambda c: _REGION_ORDER.get(c, 99))]
+
+
+def _home_place(request, city):
+    """Split the city filter into ``(place, region, city)``.
+
+    ``city`` is either a city name or ``r:<region>`` for a whole region;
+    ``?region=chuy`` (links from school pages) is accepted too.
+    """
+    region, town = parse_place(city)
+    if not region and not town:
+        region, _town = parse_place(REGION_PREFIX + request.GET.get("region", "")[:20])
+        city = REGION_PREFIX + region if region else ""
+    return city, region, town
+
+
 def home(request):
     """Search/browse professors with filters, sorting and pagination."""
     q, school, city, department, sort = _home_filters(request)
+    place, region, town = _home_place(request, city)
     options = _home_options()
+    all_schools = options["schools"]
+    schools = filter_schools(all_schools, region, town)
+    visible = {s.slug for s in schools}
     data = get_or_set(
-        home_cache_key(q, school, city, department, sort),
+        home_cache_key(q, school, place, department, sort),
         lambda: {"results": services.search_professors(
-            repo, q, school=school, city=city, department=department, sort=sort,
+            repo, q, school=school, city=town, department=department, sort=sort, region=region,
         )},
     )
     page_results, page_obj = _paginate_request(request, data["results"])
     return render(request, "reviews/home.html", {
-        "q": q, "school": school, "city": city,
+        "q": q, "school": school, "city": place,
         "department": department, "sort": sort,
-        "schools": options["schools"],
+        "schools": schools,
+        "school_slugs": visible,
+        "school_groups": _school_groups(all_schools, visible),
+        "locations": build_locations(all_schools),
         "cities": options["cities"],
         "departments": options["departments"],
         "results": page_results,
