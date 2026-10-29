@@ -4,6 +4,11 @@
 <h1>{% translate "Вход" %}</h1>
 <form method="post" class="form">{% csrf_token %}
   {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
+  {% if unverified %}
+  <ul class="errorlist nonfield" role="alert">
+    <li>{% translate "Аккаунт ещё не подтверждён. Введите код, который мы отправили на ваш email." %} <a href="{% url 'signup_verify' %}">{% translate "Ввести код подтверждения" %}</a></li>
+  </ul>
+  {% endif %}
   {% include "reviews/_form_errors.html" %}
   {% include "reviews/_form_fields.html" %}
   <div class="form-actions">

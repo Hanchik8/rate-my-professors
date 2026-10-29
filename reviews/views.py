@@ -31,7 +31,8 @@ from .caching import (
 )
 from .constants import PAGE_SIZE
 from .forms import ProfessorForm, ReportForm, ReviewForm
-from . import services
+from . import email_verification, services
+from .models import EmailVerification as EmailVerificationModel
 from .store import repo
 from .throttle import is_rate_limited, rate_limit
 
@@ -443,6 +444,23 @@ class ThrottledLoginView(auth_views.LoginView):
         """Redirect to a validated local ``next`` URL, else to the default."""
         return _auth_success_url(self.request, settings.LOGIN_REDIRECT_URL)
 
+    def form_invalid(self, form):
+        """Explain that an unconfirmed account needs its email code first.
+
+        The hint only appears when the password is correct, so it does not
+        reveal which addresses are registered.
+        """
+        username = _normalize_email(form.data.get("username", "") or "")
+        password = form.data.get("password", "") or ""
+        user = User.objects.filter(username__iexact=username, is_active=False).first() if username else None
+        if user is not None and password and user.check_password(password) and (
+            EmailVerificationModel.objects.filter(user=user).exists()
+        ):
+            self.request.session[VERIFY_SESSION_KEY] = user.email
+            form._errors.clear()
+            return self.render_to_response(self.get_context_data(form=form, unverified=True))
+        return super().form_invalid(form)
+
 
 class SafeLogoutView(auth_views.LogoutView):
     """Logout view that never follows an off-site ``next`` parameter."""
@@ -498,19 +516,113 @@ class EmailSignupForm(forms.Form):
         return user
 
 
+VERIFY_SESSION_KEY = "verify_email"
+
+
+class VerifyCodeForm(forms.Form):
+    """Six-digit email confirmation code."""
+
+    code = forms.RegexField(
+        label=_("Код из письма"),
+        regex=r"^\s*\d{6}\s*$",
+        max_length=12,
+        error_messages={"invalid": _("Введите 6 цифр из письма.")},
+        widget=forms.TextInput(attrs={
+            "inputmode": "numeric", "autocomplete": "one-time-code", "pattern": "[0-9]{6}", "maxlength": "6",
+        }),
+    )
+
+
+def _start_verification(request, user):
+    """Send the first code and remember whom the verify page is for."""
+    request.session[VERIFY_SESSION_KEY] = user.email
+    if email_verification.issue_code(user):
+        messages.success(request, _("Мы отправили 6-значный код на %(email)s. Введите его, чтобы завершить регистрацию.") % {"email": user.email})
+    else:
+        messages.error(request, _("Не удалось отправить письмо с кодом. Попробуйте отправить код ещё раз чуть позже."))
+
+
 @require_http_methods(["GET", "POST"])
 @rate_limit("signup")
 def signup(request):
-    """Register a new user and log them in immediately."""
+    """Register a new user; confirm the email by code before the first login."""
     if request.user.is_authenticated:
         return redirect("home")
     form = _form_for_request(request, EmailSignupForm)
     if _is_valid_post(request, form):
         user = form.save()
+        if email_verification.is_required():
+            user.is_active = False
+            user.save(update_fields=["is_active"])
+            _start_verification(request, user)
+            return redirect("signup_verify")
         login(request, user)
         messages.success(request, _("Регистрация выполнена. Добро пожаловать!"))
         return redirect("home")
     return render(request, "registration/signup.html", {"form": form})
+
+
+def _pending_user(request):
+    """Return the inactive user whose email is waiting for confirmation."""
+    email = request.session.get(VERIFY_SESSION_KEY)
+    if not email:
+        return None
+    return User.objects.filter(username__iexact=email, is_active=False).first()
+
+
+def _handle_resend(request, user):
+    if is_rate_limited(request, "resend"):
+        result = None
+    else:
+        result = email_verification.resend_code(user)
+    if result is None or not result.sent:
+        wait = result.wait if result else email_verification.resend_interval()
+        messages.warning(request, _("Новый код можно запросить через %(seconds)s с.") % {"seconds": wait})
+    elif result.delivered:
+        messages.success(request, _("Новый код отправлен на %(email)s.") % {"email": user.email})
+    else:
+        messages.error(request, _("Не удалось отправить письмо с кодом. Попробуйте отправить код ещё раз чуть позже."))
+    return redirect("signup_verify")
+
+
+_VERIFY_ERRORS = {
+    email_verification.WRONG: lambda: _("Неверный код. Проверьте письмо и попробуйте ещё раз."),
+    email_verification.EXPIRED: lambda: _("Срок действия кода истёк. Запросите новый код."),
+    email_verification.LOCKED: lambda: _("Слишком много неверных попыток. Запросите новый код."),
+    email_verification.MISSING: lambda: _("Код не найден. Запросите новый код."),
+}
+
+
+@require_http_methods(["GET", "POST"])
+@rate_limit("verify")
+def signup_verify(request):
+    """Enter the emailed code to activate the account, or ask for a new one."""
+    if request.user.is_authenticated:
+        return redirect("home")
+    user = _pending_user(request)
+    if user is None:
+        request.session.pop(VERIFY_SESSION_KEY, None)
+        messages.info(request, _("Подтверждать нечего: войдите или зарегистрируйтесь."))
+        return redirect("login")
+    if request.method == "POST" and request.POST.get("action") == "resend":
+        return _handle_resend(request, user)
+    form = _form_for_request(request, VerifyCodeForm)
+    if _is_valid_post(request, form):
+        status = email_verification.check_code(user, form.cleaned_data["code"].strip())
+        if status == email_verification.OK:
+            user.is_active = True
+            user.save(update_fields=["is_active"])
+            request.session.pop(VERIFY_SESSION_KEY, None)
+            login(request, user, backend="django.contrib.auth.backends.ModelBackend")
+            messages.success(request, _("Email подтверждён. Добро пожаловать!"))
+            return redirect("home")
+        form.add_error("code", _VERIFY_ERRORS[status]())
+    context = {
+        "form": form,
+        "email": user.email,
+        "resend_wait": email_verification.seconds_until_resend(getattr(user, "email_verification", None)),
+    }
+    return render(request, "registration/signup_verify.html", context)
 
 
 def _professor_args(form):

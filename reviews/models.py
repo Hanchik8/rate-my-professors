@@ -209,3 +209,27 @@ class Report(models.Model):
 @receiver([post_save, post_delete], sender=School)
 def _invalidate_catalog_on_write(sender, **kwargs):
     invalidate_catalog_cache()
+
+
+class EmailVerification(models.Model):
+    """Pending email confirmation for a freshly registered (inactive) user.
+
+    Only a keyed hash of the 6-digit code is stored, never the code itself.
+    """
+
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="email_verification",
+    )
+    code_hash = models.CharField(max_length=128, blank=True)
+    expires_at = models.DateTimeField()
+    attempts = models.PositiveSmallIntegerField(default=0)
+    last_sent_at = models.DateTimeField()
+
+    class Meta:
+        verbose_name = _("Подтверждение email")
+        verbose_name_plural = _("Подтверждения email")
+
+    def __str__(self):
+        return f"EmailVerification({self.user_id})"

@@ -305,8 +305,27 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
-EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND", "django.core.mail.backends.console.EmailBackend" if DEBUG else "django.core.mail.backends.smtp.EmailBackend")
-DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", "noreply@proflens.local")
+# SMTP delivery (free default: Gmail with a Google app password, see README).
+EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")
+EMAIL_PORT = _get_int_setting("EMAIL_PORT", 587)
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
+EMAIL_USE_TLS = _get_bool_setting("EMAIL_USE_TLS", True)
+EMAIL_TIMEOUT = _get_int_setting("EMAIL_TIMEOUT", 15)
+# Console output in DEBUG unless SMTP credentials are provided; SMTP otherwise.
+EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND") or (
+    "django.core.mail.backends.smtp.EmailBackend"
+    if EMAIL_HOST_USER or not DEBUG
+    else "django.core.mail.backends.console.EmailBackend"
+)
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL") or EMAIL_HOST_USER or "noreply@proflens.local"
+
+# Email confirmation by 6-digit code at signup. Set REQUIRE_EMAIL_VERIFICATION=False
+# when no SMTP account is configured; new accounts are then activated immediately.
+REQUIRE_EMAIL_VERIFICATION = _get_bool_setting("REQUIRE_EMAIL_VERIFICATION", True)
+EMAIL_VERIFICATION_CODE_TTL = 600
+EMAIL_VERIFICATION_MAX_ATTEMPTS = 5
+EMAIL_VERIFICATION_RESEND_INTERVAL = 60
 
 # Rate limiting: simple fixed-window counters kept in the Django cache.
 # Disabled by default while running the test suite so unrelated tests cannot

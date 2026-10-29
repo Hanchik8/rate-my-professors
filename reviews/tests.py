@@ -755,13 +755,13 @@ class AddProfessorViewTests(_MemoryRepoTestCase):
 # Auth / signup views
 # ---------------------------------------------------------------------------
 class AuthViewTests(TestCase):
-    def test_signup_creates_user_and_logs_in(self):
+    def test_signup_creates_inactive_user_pending_email_code(self):
         r = self.client.post(reverse("signup"), {
             "email": "new@example.com", "password1": "pass12345", "password2": "pass12345"})
         self.assertEqual(r.status_code, 302)
-        self.assertEqual(r.url, reverse("home"))
-        self.assertTrue(User.objects.filter(username="new@example.com").exists())
-        self.assertIn("_auth_user_id", self.client.session)
+        self.assertEqual(r.url, reverse("signup_verify"))
+        self.assertFalse(User.objects.get(username="new@example.com").is_active)
+        self.assertNotIn("_auth_user_id", self.client.session)
 
     def test_signup_duplicate_email(self):
         User.objects.create_user(username="dup@example.com", email="dup@example.com", password="pass12345")

@@ -165,6 +165,9 @@ footer{color:var(--muted);font-size:.9rem;padding-top:2.5rem;padding-bottom:2.5r
 .btn:active,button:active{transform:translateY(0)}
 .btn:disabled,button:disabled{opacity:.72;cursor:progress;transform:none;box-shadow:none}
 .btn:disabled:hover,button:disabled:hover{background:var(--accent);color:var(--on-accent);transform:none}
+button.secondary{background:var(--surface);color:var(--ink);border:1px solid var(--line-strong)}
+button.secondary:hover{background:var(--bg);color:var(--ink)}
+.form+.form{margin-top:1rem}
 .is-loading{position:relative;cursor:progress}
 .is-loading::after{content:"";display:inline-block;width:.85em;height:.85em;margin-left:.55rem;
   vertical-align:-.12em;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;

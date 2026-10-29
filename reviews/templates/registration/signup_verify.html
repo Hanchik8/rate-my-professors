@@ -1,0 +1,21 @@
+{% extends "reviews/base.html" %}{% load i18n %}
+{% block title %}{% translate "Подтверждение email" %} — ProfLens{% endblock %}
+{% block content %}
+<h1>{% translate "Подтверждение email" %}</h1>
+<p>{% blocktranslate %}Мы отправили 6-значный код на <strong>{{ email }}</strong>. Код действует 10 минут.{% endblocktranslate %}</p>
+<form method="post" class="form">{% csrf_token %}
+  {% include "reviews/_form_errors.html" %}
+  {% include "reviews/_form_fields.html" %}
+  <div class="form-actions">
+    <button>{% translate "Подтвердить" %}</button>
+  </div>
+</form>
+<form method="post" class="form">{% csrf_token %}
+  <input type="hidden" name="action" value="resend">
+  <p><small>{% translate "Не пришло письмо? Проверьте папку «Спам» или запросите новый код." %}</small></p>
+  <div class="form-actions">
+    <button class="secondary"{% if resend_wait %} title="{% blocktranslate with seconds=resend_wait %}Можно через {{ seconds }} с{% endblocktranslate %}"{% endif %}>{% translate "Отправить код ещё раз" %}</button>
+  </div>
+</form>
+<p><a href="{% url 'login' %}">{% translate "Уже подтвердили? Войдите" %}</a></p>
+{% endblock %}

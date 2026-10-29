@@ -30,7 +30,7 @@ class SharedConstantsTests(SimpleTestCase):
 
     def test_expected_rate_limit_actions_are_defined(self):
         self.assertEqual(
-            set(RATE_LIMITS), {"login", "signup", "review", "report", "vote"}
+            set(RATE_LIMITS), {"login", "signup", "review", "report", "vote", "verify", "resend"}
         )
         for limit, window in RATE_LIMITS.values():
             self.assertGreater(limit, 0)

@@ -751,3 +751,100 @@ msgstr "Link to the professor page"
 
 msgid "Ссылка скопирована"
 msgstr "Link copied"
+
+msgid "Email подтверждён. Добро пожаловать!"
+msgstr "Email confirmed. Welcome!"
+
+msgid ""
+"Аккаунт ещё не подтверждён. Введите код, который мы отправили на ваш email."
+msgstr ""
+"Your account is not confirmed yet. Enter the code we sent to your email."
+
+#, python-format
+msgid ""
+"Ваш код подтверждения ProfLens: %(code)s\n"
+"\n"
+"Код действует %(minutes)s минут. Если вы не регистрировались на ProfLens, просто проигнорируйте это письмо."
+msgstr ""
+"Your ProfLens confirmation code: %(code)s\n"
+"\n"
+"The code is valid for %(minutes)s minutes. If you did not sign up for ProfLens, just ignore this email."
+
+msgid "Введите 6 цифр из письма."
+msgstr "Enter the 6 digits from the email."
+
+msgid "Ввести код подтверждения"
+msgstr "Enter confirmation code"
+
+msgid "Код из письма"
+msgstr "Code from the email"
+
+msgid "Код не найден. Запросите новый код."
+msgstr "No code found. Request a new code."
+
+#, python-format
+msgid "Код подтверждения ProfLens: %(code)s"
+msgstr "ProfLens confirmation code: %(code)s"
+
+#, python-format
+msgid "Можно через %(seconds)s с"
+msgstr "Available in %(seconds)s s"
+
+#, python-format
+msgid ""
+"Мы отправили 6-значный код на %(email)s. Введите его, чтобы завершить "
+"регистрацию."
+msgstr "We sent a 6-digit code to %(email)s. Enter it to finish signing up."
+
+#, python-format
+msgid ""
+"Мы отправили 6-значный код на <strong>%(email)s</strong>. Код действует 10 "
+"минут."
+msgstr ""
+"We sent a 6-digit code to <strong>%(email)s</strong>. The code is valid for "
+"10 minutes."
+
+msgid "Не пришло письмо? Проверьте папку «Спам» или запросите новый код."
+msgstr "No email? Check your spam folder or request a new code."
+
+msgid ""
+"Не удалось отправить письмо с кодом. Попробуйте отправить код ещё раз чуть "
+"позже."
+msgstr ""
+"We could not send the email with the code. Try sending the code again a "
+"little later."
+
+msgid "Неверный код. Проверьте письмо и попробуйте ещё раз."
+msgstr "Wrong code. Check the email and try again."
+
+#, python-format
+msgid "Новый код можно запросить через %(seconds)s с."
+msgstr "You can request a new code in %(seconds)s s."
+
+#, python-format
+msgid "Новый код отправлен на %(email)s."
+msgstr "A new code was sent to %(email)s."
+
+msgid "Отправить код ещё раз"
+msgstr "Send the code again"
+
+msgid "Подтвердить"
+msgstr "Confirm"
+
+msgid "Подтверждать нечего: войдите или зарегистрируйтесь."
+msgstr "Nothing to confirm: log in or sign up."
+
+msgid "Подтверждение email"
+msgstr "Email confirmation"
+
+msgid "Подтверждения email"
+msgstr "Email confirmations"
+
+msgid "Слишком много неверных попыток. Запросите новый код."
+msgstr "Too many wrong attempts. Request a new code."
+
+msgid "Срок действия кода истёк. Запросите новый код."
+msgstr "The code has expired. Request a new code."
+
+msgid "Уже подтвердили? Войдите"
+msgstr "Already confirmed? Log in"

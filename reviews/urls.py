@@ -18,6 +18,7 @@ urlpatterns = [
     path("reviews/<str:review_id>/vote/", views.review_vote, name="review_vote"),
     path("reviews/<str:review_id>/report/", views.review_report, name="review_report"),
     path("accounts/signup/", views.signup, name="signup"),
+    path("accounts/signup/verify/", views.signup_verify, name="signup_verify"),
     path("accounts/profile/", views.profile, name="profile"),
     path("reviews/<str:review_id>/edit/", views.review_edit, name="review_edit"),
     path("reviews/<str:review_id>/delete/", views.review_delete, name="review_delete"),
