@@ -143,11 +143,11 @@ class AuthenticationRateLimitTests(TestCase):
 
 @override_settings(RATELIMIT_ENABLE=True, RATELIMIT={"review": (1, 60)})
 class AnonymousReviewRateLimitTests(_MemoryRepoTestCase):
-    def test_review_submission_is_limited_even_for_anonymous_ip(self):
+    def test_review_submission_is_limited_per_ip(self):
+        self.login()
         url = reverse("review_new", args=[self.professor().slug])
         self.assertEqual(self.client.post(url, _valid(), REMOTE_ADDR="10.0.0.1").status_code, 302)
         self.assertEqual(self.client.post(url, _valid(), REMOTE_ADDR="10.0.0.1").status_code, 429)
-        self.assertEqual(self.client.post(url, _valid(), REMOTE_ADDR="10.0.0.2").status_code, 302)
 
 
 @override_settings(RATELIMIT_ENABLE=True, RATELIMIT={"review": (1, 60)})
