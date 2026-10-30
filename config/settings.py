@@ -378,3 +378,7 @@ CACHES = {
 # Catalog pages (home search, university lists and filter options) are cached
 # with django.core.cache; reviews/professors/schools invalidate the namespace.
 CATALOG_CACHE_TIMEOUT = int(os.environ.get("CATALOG_CACHE_TIMEOUT", "300"))
+
+# Tests: a fast hasher. PBKDF2 cost ~1.2s per login/create_user and doubled the suite time.
+if _is_test:
+    PASSWORD_HASHERS = ["django.contrib.auth.hashers.MD5PasswordHasher"]
