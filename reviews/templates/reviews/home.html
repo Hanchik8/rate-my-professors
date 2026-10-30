@@ -32,11 +32,5 @@
   </li>
   {% endfor %}
 </ol>
-{% if page_obj %}
-<div class="pagination">
-  {% if page_obj.has_previous %}<a href="?q={{ q|urlencode }}&school={{ school|urlencode }}&city={{ city|urlencode }}&department={{ department|urlencode }}&sort={{ sort|urlencode }}&page={{ page_obj.previous_page_number }}" aria-label="{% blocktranslate with n=page_obj.previous_page_number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{% translate "Назад" %}</a>{% endif %}
-  <span aria-current="page">{% blocktranslate with n=page_obj.number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}</span>
-  {% if page_obj.has_next %}<a href="?q={{ q|urlencode }}&school={{ school|urlencode }}&city={{ city|urlencode }}&department={{ department|urlencode }}&sort={{ sort|urlencode }}&page={{ page_obj.next_page_number }}" aria-label="{% blocktranslate with n=page_obj.next_page_number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{% translate "Вперёд" %}</a>{% endif %}
-</div>
-{% endif %}
+{% if page_obj %}{% include "reviews/_pagination.html" %}{% endif %}
 {% endblock %}

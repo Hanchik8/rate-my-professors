@@ -313,6 +313,9 @@ msgstr "Try a shorter query or change the filters."
 msgid "Сбросить фильтры"
 msgstr "Reset filters"
 
+msgid "Первая"
+msgstr "First"
+
 msgid "Назад"
 msgstr "Previous"
 
@@ -322,6 +325,9 @@ msgstr "Page %(n)s of %(t)s"
 
 msgid "Вперёд"
 msgstr "Next"
+
+msgid "Последняя"
+msgstr "Last"
 
 msgid "Пойдут снова"
 msgstr "Would take again"
