@@ -250,8 +250,11 @@ msgstr "Rating %(rating)s out of 5"
 msgid "Нет оценок"
 msgstr "No ratings"
 
-msgid "отзывов"
-msgstr "ratings"
+#, python-format
+msgid "%(counter)s отзыв"
+msgid_plural "%(counter)s отзывов"
+msgstr[0] "%(counter)s review"
+msgstr[1] "%(counter)s reviews"
 
 msgid "Сложность"
 msgstr "Difficulty"

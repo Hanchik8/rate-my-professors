@@ -239,8 +239,10 @@ msgstr "5тен %(rating)s рейтинг"
 msgid "Нет оценок"
 msgstr "Баа жок"
 
-msgid "отзывов"
-msgstr "сын-пикир"
+#, python-format
+msgid "%(counter)s отзыв"
+msgid_plural "%(counter)s отзывов"
+msgstr[0] "%(counter)s сын-пикир"
 
 msgid "Сложность"
 msgstr "Татаалдыгы"
@@ -262,7 +264,7 @@ msgstr "Артка"
 
 #, python-format
 msgid "Страница %(n)s из %(t)s"
-msgstr "%(t)sтен %(n)s-барак"
+msgstr "%(n)s-барак / %(t)s"
 
 msgid "Вперёд"
 msgstr "Алга"

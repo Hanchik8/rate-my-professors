@@ -10,7 +10,7 @@
       {% else %}
       <span class="stars" role="img" aria-label="{% translate 'Нет оценок' %}"><span aria-hidden="true">★★★★★</span></span>
       {% endif %}
-      <span class="card-meta">{{ r.stats.count|localize }} {% translate "отзывов" %}{% if show_difficulty %} · {% translate "Сложность" %} {% if r.stats.count %}{{ r.stats.difficulty|floatformat:1|localize }}{% else %}-{% endif %}{% endif %}</span>
+      <span class="card-meta">{% blocktranslate count counter=r.stats.count %}{{ counter }} отзыв{% plural %}{{ counter }} отзывов{% endblocktranslate %}{% if show_difficulty %} · {% translate "Сложность" %} {% if r.stats.count %}{{ r.stats.difficulty|floatformat:1|localize }}{% else %}-{% endif %}{% endif %}</span>
     </span>
   </a>
 </li>

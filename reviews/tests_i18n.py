@@ -50,6 +50,9 @@ def parse_po(path):
         elif line.startswith("msgstr "):
             msgstr = ast.literal_eval(line[len("msgstr "):])
             mode = "str"
+        elif line.startswith("msgstr[0]"):
+            msgstr = ast.literal_eval(line[len("msgstr[0]"):])
+            mode = "str"
         elif line.startswith('"'):
             chunk = ast.literal_eval(line)
             if mode == "id":
@@ -95,7 +98,12 @@ def template_translatable_strings():
 
 
 def template_blocktranslate_strings():
-    """``{% blocktranslate %}`` strings converted to gettext ``%(var)s`` form."""
+    """``{% blocktranslate %}`` strings converted to gettext ``%(var)s`` form.
+
+    For ``{% blocktranslate count %}`` blocks the singular part (the gettext
+    ``msgid``) is extracted; the ``{% plural %}`` counterpart lives in the
+    catalog as ``msgid_plural``.
+    """
     found = set()
     pattern = re.compile(
         r"\{%\s*blocktranslate(?:[^%]*)%\}(.*?)\{%\s*endblocktranslate\s*%\}",
@@ -104,7 +112,8 @@ def template_blocktranslate_strings():
     for path in TEMPLATES_DIR.rglob("*.html"):
         text = path.read_text(encoding="utf-8")
         for match in pattern.finditer(text):
-            body = " ".join(match.group(1).split())
+            body = re.split(r"\{%\s*plural\s*%\}", match.group(1))[0]
+            body = " ".join(body.split())
             found.add(re.sub(r"\{\{\s*(\w+)\s*\}\}", r"%(\1)s", body))
     return found
 
