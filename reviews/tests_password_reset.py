@@ -16,6 +16,29 @@ class PasswordResetTests(TestCase):
         self.assertRedirects(response, reverse("password_reset_done"))
         self.assertEqual(len(mail.outbox), 1)
         self.assertIn("/accounts/reset/", mail.outbox[0].body)
+        self.assertIn("Чтобы задать новый пароль", mail.outbox[0].body)
+
+    def test_reset_pages_use_site_templates(self):
+        urls = [
+            reverse("password_reset"),
+            reverse("password_reset_done"),
+            reverse("password_reset_confirm", kwargs={"uidb64": "invalid", "token": "invalid"}),
+            reverse("password_reset_complete"),
+        ]
+        for url in urls:
+            with self.subTest(url=url):
+                response = self.client.get(url)
+                self.assertEqual(response.status_code, 200)
+                self.assertNotContains(response, "Django administration")
+                self.assertNotContains(response, "/admin/")
+                self.assertContains(response, 'class="top"')
+
+    def test_reset_pages_follow_selected_language(self):
+        for language in ("ru", "ky", "en"):
+            with self.subTest(language=language):
+                response = self.client.get(reverse("password_reset"), HTTP_ACCEPT_LANGUAGE=language)
+                self.assertEqual(response.status_code, 200)
+                self.assertContains(response, f'<html lang="{language}"', html=False)
 
     def test_unknown_email_uses_same_confirmation(self):
         response = self.client.post(reverse("password_reset"), {"email": "missing@example.com"})
