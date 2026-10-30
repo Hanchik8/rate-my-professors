@@ -595,6 +595,18 @@ class KyrgyzPageRenderTests(TestCase):
 
 
 class LanguageAlternatesTests(TestCase):
+    def test_language_query_parameter_selects_language_and_sets_cookie(self):
+        response = self.client.get("/?language=en")
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, '<html lang="en"')
+        self.assertEqual(response.cookies["django_language"].value, "en")
+
+    def test_alternate_links_keep_query_parameters_encoded_once(self):
+        response = self.client.get("/?q=hello%20world&language=ru")
+        html = response.content.decode()
+        self.assertIn('href="http://testserver/?q=hello+world&amp;language=ky"', html)
+        self.assertNotIn("language=ru&amp;language=ky", html)
+
     def test_html_pages_have_language_and_alternate_links(self):
         for path in ("/", "/rules/", "/about/", "/accounts/login/", "/accounts/signup/"):
             for lang in ("ky", "ru", "en"):
