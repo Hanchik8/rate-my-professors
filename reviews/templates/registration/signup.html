@@ -5,6 +5,12 @@
 <form method="post" class="form">{% csrf_token %}
   {% include "reviews/_form_errors.html" %}
   {% include "reviews/_form_fields.html" %}
+  {% if duplicate_email %}
+  <p class="form-hint">
+    <a href="{% url 'login' %}">{% translate "Войти" %}</a> ·
+    <a href="{% url 'password_reset' %}">{% translate "Забыли пароль?" %}</a>
+  </p>
+  {% endif %}
   <div class="form-actions">
     <button>{% translate "Зарегистрироваться" %}</button>
   </div>

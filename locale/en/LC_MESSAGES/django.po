@@ -484,6 +484,9 @@ msgstr "Repeat password"
 msgid "Не удалось зарегистрироваться. Проверьте введённые данные."
 msgstr "Could not sign up. Please check the information you entered."
 
+msgid "Этот email уже зарегистрирован. Войдите или восстановите пароль."
+msgstr "This email is already registered. Log in or reset your password."
+
 msgid "Пароли не совпадают."
 msgstr "Passwords do not match."
 

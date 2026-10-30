@@ -394,12 +394,15 @@ class EmailSignupForm(forms.Form):
     def clean_email(self):
         """Normalize the email and reject duplicates (case-insensitive).
 
-        The error is deliberately generic: a signup page must not reveal
-        whether an account with this address already exists.
+        The signup page offers login and password-reset links, but never
+        reveals whether the existing account has already confirmed its email.
         """
         email = _normalize_email(self.cleaned_data["email"])
         if User.objects.filter(email__iexact=email).exists() or User.objects.filter(username__iexact=email).exists():
-            raise forms.ValidationError(_("Не удалось зарегистрироваться. Проверьте введённые данные."))
+            self.duplicate_email = True
+            raise forms.ValidationError(
+                _("Этот email уже зарегистрирован. Войдите или восстановите пароль.")
+            )
         return email
 
     def clean(self):
@@ -473,7 +476,10 @@ def signup(request):
         login(request, user)
         messages.success(request, _("Регистрация выполнена. Добро пожаловать!"))
         return redirect("home")
-    return render(request, "registration/signup.html", {"form": form})
+    return render(request, "registration/signup.html", {
+        "form": form,
+        "duplicate_email": getattr(form, "duplicate_email", False),
+    })
 
 
 def _pending_user(request):
