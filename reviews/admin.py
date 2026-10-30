@@ -31,11 +31,16 @@ class ProfessorAdmin(admin.ModelAdmin):
     list_select_related = ["school"]
     list_filter = ["status", "school", "department"]
     search_fields = ["first_name", "last_name", "department"]
-    actions = ["approve_selected"]
+    actions = ["approve_selected", "reject_selected"]
 
     @admin.action(description=_("Одобрить выбранных преподавателей"))
     def approve_selected(self, request, queryset):
         queryset.update(status="approved")
+        invalidate_catalog_cache()
+
+    @admin.action(description=_("Отклонить выбранных преподавателей"))
+    def reject_selected(self, request, queryset):
+        queryset.update(status="rejected")
         invalidate_catalog_cache()
 
     def full_name(self, obj):

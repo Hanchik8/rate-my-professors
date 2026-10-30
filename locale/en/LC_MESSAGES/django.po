@@ -527,6 +527,9 @@ msgstr ""
 msgid "Одобрить выбранных преподавателей"
 msgstr "Approve selected professors"
 
+msgid "Отклонить выбранных преподавателей"
+msgstr "Reject selected professors"
+
 msgid "Одобрить выбранные отзывы"
 msgstr "Approve selected reviews"
 

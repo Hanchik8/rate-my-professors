@@ -3,7 +3,7 @@ from django.contrib.auth.models import Permission, User
 from django.test import TestCase
 from django.urls import reverse
 
-from .admin import ReviewAdmin
+from .admin import ProfessorAdmin, ReviewAdmin
 from .models import Professor, Review, School
 
 
@@ -126,6 +126,34 @@ class ReviewAdminModerationTests(TestCase):
 
         self.client.force_login(self.superuser)
         response = self._run_action("reject_selected", [selected])
+
+        self.assertEqual(response.status_code, 302)
+        selected.refresh_from_db()
+        untouched.refresh_from_db()
+        self.assertEqual(selected.status, "rejected")
+        self.assertEqual(untouched.status, "approved")
+
+    def test_professor_admin_registers_approve_and_reject_actions(self):
+        professor_admin = ProfessorAdmin(Professor, admin.site)
+        self.assertIn("approve_selected", professor_admin.actions)
+        self.assertIn("reject_selected", professor_admin.actions)
+
+    def test_reject_action_moderates_only_selected_professors(self):
+        selected = self.professor
+        untouched = Professor.objects.create(
+            school=self.school,
+            first_name="Пётр",
+            last_name="Петров",
+            department="Математика",
+            title="Профессор",
+            status="approved",
+        )
+
+        self.client.force_login(self.superuser)
+        response = self.client.post(
+            reverse("admin:reviews_professor_changelist"),
+            {"action": "reject_selected", "_selected_action": [str(selected.pk)]},
+        )
 
         self.assertEqual(response.status_code, 302)
         selected.refresh_from_db()
