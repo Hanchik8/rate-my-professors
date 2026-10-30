@@ -275,6 +275,50 @@ class FormAndMessageTranslationTests(TestCase):
                     self.assertEqual(translation.gettext(msgid), value)
 
 
+class SignupFormRenderTranslationTests(TestCase):
+    """Signup labels and form errors render in the active language."""
+
+    LABELS = {
+        "en": ("Password", "Repeat password"),
+        "ky": ("Сырсөз", "Сырсөздү кайталаңыз"),
+    }
+
+    ERRORS = {
+        "en": {
+            "mismatch": "Passwords do not match.",
+            "short": "Password must be at least 8 characters.",
+        },
+        "ky": {
+            "mismatch": "Сырсөздөр дал келбейт.",
+            "short": "Сырсөз кеминде 8 белгиден турушу керек.",
+        },
+    }
+
+    def test_signup_labels_render_in_en_and_ky(self):
+        for lang, (password, confirmation) in self.LABELS.items():
+            with self.subTest(lang=lang):
+                response = self.client.get(reverse("signup"), HTTP_ACCEPT_LANGUAGE=lang)
+                self.assertEqual(response.status_code, 200)
+                self.assertContains(response, password)
+                self.assertContains(response, confirmation)
+                self.assertNotContains(response, "Пароль*")
+
+    def test_signup_errors_render_in_en_and_ky(self):
+        cases = {
+            "mismatch": {"password1": "pass12345", "password2": "different-pass"},
+            "short": {"password1": "short", "password2": "short"},
+        }
+        for lang, expected in self.ERRORS.items():
+            for case, passwords in cases.items():
+                with self.subTest(lang=lang, case=case):
+                    data = {"email": f"{case}-{lang}@example.com", **passwords}
+                    response = self.client.post(
+                        reverse("signup"), data, HTTP_ACCEPT_LANGUAGE=lang
+                    )
+                    self.assertEqual(response.status_code, 200)
+                    self.assertContains(response, expected[case])
+
+
 class HomeTemplateTranslationTests(TestCase):
     """Home page labels are wrapped for translation and resolve per locale."""
 

@@ -19,6 +19,7 @@ from django.shortcuts import redirect, render, resolve_url
 from django.urls import reverse
 from django.utils.http import url_has_allowed_host_and_scheme
 from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy
 from django.views.decorators.http import require_http_methods, require_POST
 from django.views.defaults import page_not_found, server_error
 
@@ -380,9 +381,9 @@ def _normalize_email(email):
 class EmailSignupForm(forms.Form):
     """Self-service signup that uses the email address as the username."""
 
-    email = forms.EmailField(label=_("Email"))
-    password1 = forms.CharField(label=_("Пароль"), widget=forms.PasswordInput)
-    password2 = forms.CharField(label=_("Повторите пароль"), widget=forms.PasswordInput)
+    email = forms.EmailField(label=gettext_lazy("Email"))
+    password1 = forms.CharField(label=gettext_lazy("Пароль"), widget=forms.PasswordInput)
+    password2 = forms.CharField(label=gettext_lazy("Повторите пароль"), widget=forms.PasswordInput)
 
     def clean_email(self):
         """Normalize the email and reject duplicates (case-insensitive).
