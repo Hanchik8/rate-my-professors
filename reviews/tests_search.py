@@ -65,6 +65,21 @@ class SearchContractMixin:
         self.assertEqual(self._ids(q="о'Ко"), {self.john.id})
         self.assertEqual(self._ids(q="ИВАн ПЕТРОВ"), {self.ivan.id})
 
+    def test_query_word_order_does_not_matter(self):
+        gulnara = self.repo.add_professor(
+            self.bishkek.id, "Гульнара", "Асанова", "Лингвистика", "доцент"
+        )
+        self.assertEqual(self._ids(q="Гульнара Асанова"), {gulnara.id})
+        self.assertEqual(self._ids(q="Асанова Гульнара"), {gulnara.id})
+        self.assertEqual(self._ids(q="Иван Петров"), {self.ivan.id})
+        self.assertEqual(self._ids(q="Петров Иван"), {self.ivan.id})
+        self.assertEqual(self._ids(q="  Петров   Иван  "), {self.ivan.id})
+
+    def test_query_requires_every_word_to_match(self):
+        self.assertEqual(self._ids(q="Иван Смирнова"), set())
+        self.assertEqual(self._ids(q="Петров Физика"), {self.ivan.id})
+        self.assertEqual(self._ids(q="Смирнова Физика"), set())
+
     def test_query_is_insensitive_to_yo_and_e(self):
         with_yo = self.repo.add_professor(
             self.bishkek.id, "Пётр", "Ёлкин", "Физика", "доцент"

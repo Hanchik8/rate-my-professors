@@ -98,6 +98,11 @@ def normalize_search_text(value: str | None) -> str:
     return (value or "").casefold().replace("ё", "е").strip()
 
 
+def search_terms(value: str | None) -> list[str]:
+    """Split normalized search input into words that must all match (AND)."""
+    return normalize_search_text(value).split()
+
+
 def _tone(overall: float) -> str:
     """Map an average overall score to the CSS tone token used by templates."""
     return "good" if overall >= 4 else "mid" if overall >= 3 else "bad"
@@ -374,7 +379,7 @@ class InMemoryRepository:
         sort: str = "rating",
     ) -> list[dict[str, Any]]:
         """Search approved professors with optional filters and sorting."""
-        q = normalize_search_text(q)
+        terms = search_terms(q)
         school_slug = school_slug.strip()
         city = city.strip()
         department = department.strip()
@@ -389,7 +394,8 @@ class InMemoryRepository:
                 continue
             if department and p.department != department:
                 continue
-            if q and q not in normalize_search_text(f"{p.full_name} {p.department}"):
+            haystack = normalize_search_text(f"{p.full_name} {p.department}")
+            if terms and not all(term in haystack for term in terms):
                 continue
             out.append({"prof": p, "school": school, "stats": self.stats(p.id)})
         out.sort(key=_search_sort_key(sort))
