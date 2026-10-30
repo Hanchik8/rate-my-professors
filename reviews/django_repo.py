@@ -19,7 +19,7 @@ from .repository import (
     _tone,
     normalize_person_name,
     normalize_search_text,
-    search_terms,
+    search_terms_with_transliteration,
 )
 from .sanitize import clean_text
 
@@ -399,12 +399,12 @@ class DjangoRepository:
             qs = qs.filter(department=department)
         q = normalize_search_text(q)
         # filter in python for case-insensitive unicode and ё/е equivalence
-        terms = search_terms(q)
+        terms = search_terms_with_transliteration(q)
         profs = [
             p for p in qs
             if not terms
             or all(
-                term in normalize_search_text(f"{p.full_name} {p.department}")
+                any(variant in normalize_search_text(f"{p.full_name} {p.department}") for variant in term.split("|"))
                 for term in terms
             )
         ]

@@ -75,6 +75,17 @@ class SearchContractMixin:
         self.assertEqual(self._ids(q="Петров Иван"), {self.ivan.id})
         self.assertEqual(self._ids(q="  Петров   Иван  "), {self.ivan.id})
 
+    def test_latin_query_matches_cyrillic_professor_names(self):
+        asanova = self.repo.add_professor(
+            self.bishkek.id, "Гульнара", "Асанова", "Лингвистика", "доцент"
+        )
+        bekboev = self.repo.add_professor(
+            self.bishkek.id, "Айбек", "Бекбоев", "Физика", "доцент"
+        )
+        self.assertEqual(self._ids(q="Asanova"), {asanova.id})
+        self.assertEqual(self._ids(q="Bekboev"), {bekboev.id})
+        self.assertEqual(self._ids(q="Bekboev Физика"), {bekboev.id})
+
     def test_query_requires_every_word_to_match(self):
         self.assertEqual(self._ids(q="Иван Смирнова"), set())
         self.assertEqual(self._ids(q="Петров Физика"), {self.ivan.id})
