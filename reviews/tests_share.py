@@ -1,7 +1,7 @@
 """Share control on the professor page: static JS, no-JS fallback, no inline JS."""
 from pathlib import Path
 
-from django.test import TestCase
+from django.test import TestCase, override_settings
 from django.urls import reverse
 
 from . import store as store_mod
@@ -47,6 +47,12 @@ class ProfessorShareTests(TestCase):
         self.assertContains(response, "Ссылка скопирована")
         self.assertContains(response, 'role="status"')
         self.assertIn('aria-label="Поделиться:', html)
+
+    @override_settings(SITE_URL="https://example.org")
+    def test_share_url_uses_configured_site_url(self):
+        response, prof = self._get()
+        html = response.content.decode()
+        self.assertIn('data-share-url="https://example.org/professors/', html)
 
     def test_share_javascript_exists_in_static_files(self):
         script = Path(__file__).parent / "static" / "reviews" / "share.js"

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-{% if request %}{% for code, name in LANGUAGES %}<link rel="alternate" hreflang="{{ code }}" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}?{% if request.META.QUERY_STRING %}{{ request.META.QUERY_STRING|urlencode }}&amp;{% endif %}language={{ code }}">{% endfor %}{% endif %}
+{% if request %}{% for code, name in LANGUAGES %}<link rel="alternate" hreflang="{{ code }}" href="{{ site_url }}{{ request.path }}?{% if request.META.QUERY_STRING %}{{ request.META.QUERY_STRING|urlencode }}&amp;{% endif %}language={{ code }}">{% endfor %}{% endif %}
 <title>{% block title %}ProfLens{% endblock %}</title>
 <meta name="description" content="{% block description %}{% translate "ProfLens — отзывы о преподавателях вузов Кыргызстана: рейтинги, сложность курсов и советы студентов." %}{% endblock %}">
 <meta property="og:title" content="{% block og_title %}ProfLens{% endblock %}">

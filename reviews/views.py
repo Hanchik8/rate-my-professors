@@ -8,6 +8,7 @@ live in small private helpers below.
 from django import forms
 from django.conf import settings
 from django.contrib import messages
+from django.conf import settings
 from django.contrib.auth import login
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
@@ -149,6 +150,11 @@ def professor_detail(request, slug):
         "@context": "https://schema.org",
         "@type": "Person",
         "name": prof.full_name,
+        "url": (
+            f"{settings.SITE_URL}{reverse('professor', args=[prof.slug])}"
+            if settings.SITE_URL
+            else request.build_absolute_uri(reverse("professor", args=[prof.slug]))
+        ),
     }
     if stats["count"]:
         person_schema["aggregateRating"] = {

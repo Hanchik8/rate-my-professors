@@ -43,7 +43,7 @@
 {% url 'professor' prof.slug as prof_url %}
 <div class="share" data-share>
   <button class="btn share-btn" type="button" data-share-button
-          data-share-url="{{ request.scheme }}://{{ request.get_host }}{{ prof_url }}"
+          data-share-url="{{ site_url }}{{ prof_url }}"
           data-share-copied="{% translate 'Ссылка скопирована' %}"
           aria-label="{% translate 'Поделиться' %}: {{ prof.full_name }}" hidden>
     {% translate "Поделиться" %}
@@ -51,7 +51,7 @@
   <p class="share-fallback">
     <label for="share-url">{% translate "Ссылка на страницу преподавателя" %}</label>
     <input id="share-url" class="share-url" type="url" readonly data-share-field
-           value="{{ request.scheme }}://{{ request.get_host }}{{ prof_url }}">
+           value="{{ site_url }}{{ prof_url }}">
   </p>
   <p class="share-status muted" role="status" data-share-status hidden></p>
 </div>

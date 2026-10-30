@@ -7,6 +7,11 @@ from .repository import InMemoryRepository
 from .store import get_repo
 
 
+def site_url(request):
+    """Provide the configured canonical origin, falling back to the request."""
+    return {"site_url": settings.SITE_URL or f"{request.scheme}://{request.get_host()}"}
+
+
 def repository_mode(request):
     """Expose whether the active repository is the volatile in-memory one."""
     backend = getattr(settings, "REPO_BACKEND", "")

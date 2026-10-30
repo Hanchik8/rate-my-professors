@@ -8,6 +8,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from django.contrib.sitemaps import Sitemap
+from django.conf import settings
 from django.urls import reverse
 
 from .store import get_repo
@@ -66,3 +67,8 @@ sitemaps: dict[str, type[Sitemap]] = {
     "schools": SchoolSitemap,
     "professors": ProfessorSitemap,
 }
+
+if settings.SITE_URL:
+    for sitemap in sitemaps.values():
+        sitemap.protocol = settings.SITE_URL.partition(":")[0]
+        sitemap.domain = settings.SITE_URL.split("//", 1)[-1]

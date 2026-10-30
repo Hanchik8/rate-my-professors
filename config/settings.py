@@ -84,6 +84,14 @@ if _is_test:
 else:
     SECRET_KEY = os.environ.get("SECRET_KEY") or DEFAULT_SECRET_KEY
 ALLOWED_HOSTS = _get_allowed_hosts(os.environ.get("ALLOWED_HOSTS"), _is_test)
+SITE_URL = os.environ.get("SITE_URL", "").strip().rstrip("/")
+USE_X_FORWARDED_HOST = _parse_bool(os.environ.get("USE_X_FORWARDED_HOST"), False)
+_secure_proxy_ssl_header = os.environ.get("SECURE_PROXY_SSL_HEADER")
+SECURE_PROXY_SSL_HEADER = (
+    tuple(part.strip() for part in _secure_proxy_ssl_header.split("=", 1))
+    if _secure_proxy_ssl_header and "=" in _secure_proxy_ssl_header
+    else (("HTTP_X_FORWARDED_PROTO", "https") if not DEBUG else None)
+)
 # Trusted origins for CSRF come from the environment, same as SECRET_KEY and
 # ALLOWED_HOSTS above; they are required for HTTPS deployments behind a proxy.
 CSRF_TRUSTED_ORIGINS = _get_csrf_trusted_origins(os.environ.get("CSRF_TRUSTED_ORIGINS"))
@@ -272,6 +280,7 @@ TEMPLATES = [{
         "django.contrib.messages.context_processors.messages",
         "django.template.context_processors.i18n",
         "reviews.context_processors.repository_mode",
+        "reviews.context_processors.site_url",
     ]},
 }]
 
