@@ -575,6 +575,18 @@ class ProfessorViewTests(_MemoryRepoTestCase):
         self.assertContains(r, '<span class="bar"><i style="width:')
         self.assertContains(r, ">5<")
 
+    def test_distribution_rows_render_star_bars_and_aria_labels(self):
+        prof = self.prof()
+        r = self.client.get(reverse("professor", args=[prof.slug]))
+        self.assertContains(r, 'class="dist-score"')
+        self.assertContains(r, "★")
+        for row in r.context["stats"]["distribution"]:
+            self.assertContains(
+                r,
+                f'aria-label="Рейтинг {row["score"]} из 5, Отзывов: {row["count"]}"',
+            )
+            self.assertContains(r, f'<span class="bar"><i style="width:{row["pct"]}%"></i></span>')
+
     def test_distribution_empty_state_when_no_reviews(self):
         school = self.repo.add_school("Test School", "Test City")
         new_prof = self.repo.add_professor(school.id, "Test", "Professor", "Test Dept", "преподаватель")
