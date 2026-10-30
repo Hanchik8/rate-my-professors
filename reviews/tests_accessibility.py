@@ -160,6 +160,49 @@ class TemplateSourceAccessibilityTests(TestCase):
                         self.assertIn("aria-label", tag)
 
 
+class ProfessorPageAccessibilityTests(TestCase):
+    """The rendered professor page exposes labels on its icon/action buttons."""
+
+    def setUp(self):
+        from . import store as store_mod
+        from . import views as views_mod
+        from .repository import InMemoryRepository
+        from .tests import _repo_review
+
+        self._orig_repo = store_mod.repo
+        self._orig_view_repo = views_mod.repo
+        self.repo = InMemoryRepository()
+        store_mod.repo = self.repo
+        views_mod.repo = self.repo
+        school = self.repo.add_school("Университет доступности", "Бишкек")
+        self.prof = self.repo.add_professor(
+            school.id, "Айбек", "Токтосунов", "Информатика", "доцент"
+        )
+        self.repo.add_review(self.prof.id, _repo_review(), status="approved")
+
+    def tearDown(self):
+        from . import store as store_mod
+        from . import views as views_mod
+
+        store_mod.repo = self._orig_repo
+        views_mod.repo = self._orig_view_repo
+
+    def test_professor_page_icon_buttons_have_aria_labels(self):
+        response = self.client.get(reverse("professor", args=[self.prof.slug]))
+
+        self.assertEqual(response.status_code, 200)
+        html = response.content.decode()
+        buttons = re.findall(r"<button\b[^>]*>", html, flags=re.IGNORECASE)
+        self.assertTrue(buttons, "Professor page rendered no buttons")
+        for button in buttons:
+            with self.subTest(button=button):
+                self.assertIn("aria-label", button)
+        # Voting and share controls are labeled explicitly.
+        self.assertContains(response, 'aria-label="Полезно: Алгоритмы (0)"')
+        self.assertContains(response, 'aria-label="Бесполезно: Алгоритмы (0)"')
+        self.assertContains(response, 'aria-label="Поделиться: Айбек Токтосунов"')
+
+
 class SchoolPaginationAccessibilityTests(TestCase):
     def setUp(self):
         from . import store as store_mod
