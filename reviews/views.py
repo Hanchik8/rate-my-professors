@@ -13,6 +13,7 @@ from django.contrib.auth import login
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 from django.db import connection
 from django.http import HttpResponse, JsonResponse
 import json
@@ -172,6 +173,57 @@ def professor_detail(request, slug):
         "sort_options": [("new", "сначала новые"), ("old", "сначала старые"), ("high", "сначала высокая оценка"),
                          ("low", "сначала низкая оценка"), ("helpful", "сначала полезные")],
         "report_form": ReportForm(auto_id=False),
+    })
+
+
+def _compare_ids(raw_ids):
+    """Return unique, non-empty professor ids preserving their query order."""
+    ids = []
+    seen = set()
+    for raw in raw_ids.split(","):
+        professor_id = raw.strip()
+        if professor_id and professor_id not in seen:
+            seen.add(professor_id)
+            ids.append(professor_id)
+    return ids
+
+
+def _compare_error(request, message):
+    """Render the comparison page with a friendly validation message."""
+    return render(
+        request,
+        "reviews/compare.html",
+        {"error": message, "professors": []},
+        status=404,
+    )
+
+
+def compare(request):
+    """Show up to three approved professors side by side."""
+    ids = _compare_ids(",".join(request.GET.getlist("ids")))
+    if not 2 <= len(ids) <= 3:
+        return _compare_error(
+            request,
+            _("Для сравнения выберите от 2 до 3 преподавателей."),
+        )
+
+    professors = []
+    for professor_id in ids:
+        try:
+            prof = repo.professor_by_id(professor_id)
+        except (ValidationError, ValueError, TypeError):
+            prof = None
+        if prof is None or getattr(prof, "status", "approved") != "approved":
+            return _compare_error(request, _("Professor not found"))
+        professors.append({
+            "prof": prof,
+            "stats": repo.stats(prof.id),
+            "school": repo.school(prof.school_id),
+        })
+
+    return render(request, "reviews/compare.html", {
+        "professors": professors,
+        "error": "",
     })
 
 

@@ -12,6 +12,7 @@ urlpatterns = [
     path("rules/", views.rules, name="rules"),
     path("about/", views.about, name="about"),
     path("professors/add/", views.add_professor, name="add_professor"),
+    path("compare/", views.compare, name="compare"),
     path("schools/<str:slug>/", views.school_detail, name="school_detail"),
     path("professors/<str:slug>/", views.professor_detail, name="professor"),
     path("professors/<str:slug>/rate/", views.review_new, name="review_new"),

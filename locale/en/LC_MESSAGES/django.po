@@ -911,3 +911,18 @@ msgstr "The code has expired. Request a new code."
 
 msgid "Уже подтвердили? Войдите"
 msgstr "Already confirmed? Log in"
+
+msgid "Сравнение преподавателей"
+msgstr "Compare professors"
+
+msgid "Сравнить"
+msgstr "Compare"
+
+msgid "Средний балл"
+msgstr "Average score"
+
+msgid "Сравнение преподавателей по рейтингу, сложности и числу отзывов."
+msgstr "Compare professors by rating, difficulty and number of reviews."
+
+msgid "Для сравнения выберите от 2 до 3 преподавателей."
+msgstr "Choose 2 to 3 professors to compare."

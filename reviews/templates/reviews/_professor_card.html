@@ -13,4 +13,5 @@
       <span class="card-meta">{% blocktranslate count counter=r.stats.count %}{{ counter }} отзыв{% plural %}{{ counter }} отзывов{% endblocktranslate %}{% if show_difficulty %} · {% translate "Сложность" %} {% if r.stats.count %}{{ r.stats.difficulty|floatformat:1|localize }}{% else %}-{% endif %}{% endif %}</span>
     </span>
   </a>
+  <a class="btn card-compare" href="{% url 'compare' %}?ids={{ r.prof.id }}" aria-label="{% translate 'Сравнить' %}: {{ r.prof.full_name }}">{% translate "Сравнить" %}</a>
 </li>
