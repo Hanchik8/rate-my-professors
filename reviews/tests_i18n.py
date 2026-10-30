@@ -514,6 +514,19 @@ class RenderedTemplateTranslationTests(TestCase):
                 for value in forbidden.get(lang, []):
                     self.assertNotIn(value, html)
 
+    def test_department_names_render_in_english_but_filter_value_is_preserved(self):
+        from django.template.loader import render_to_string
+
+        with translation.override("en"):
+            html = render_to_string("reviews/home.html", {
+                "departments": ["Информатика"],
+                "department": "Информатика",
+                "cities": [], "schools": [], "results": [], "q": "",
+                "city": "", "school": "", "sort": "rating",
+                "page_obj": None,
+            })
+        self.assertIn('value="Информатика" selected>Computer Science</option>', html)
+
     def test_ratings_and_review_dates_use_locale_formats(self):
         expected = {
             "ru": ("4,5", "25 октября 2025 г.", "Дата отзыва:"),

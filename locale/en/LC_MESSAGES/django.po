@@ -73,6 +73,48 @@ msgstr "Last name"
 msgid "Кафедра"
 msgstr "Department"
 
+msgid "Информатика"
+msgstr "Computer Science"
+
+msgid "Математика"
+msgstr "Mathematics"
+
+msgid "Физика"
+msgstr "Physics"
+
+msgid "Экономика"
+msgstr "Economics"
+
+msgid "История"
+msgstr "History"
+
+msgid "Биология"
+msgstr "Biology"
+
+msgid "Лингвистика"
+msgstr "Linguistics"
+
+msgid "Психология"
+msgstr "Psychology"
+
+msgid "Международные отношения"
+msgstr "International Relations"
+
+msgid "Химия"
+msgstr "Chemistry"
+
+msgid "Филология"
+msgstr "Philology"
+
+msgid "Право"
+msgstr "Law"
+
+msgid "Инженерия"
+msgstr "Engineering"
+
+msgid "Медицина"
+msgstr "Medicine"
+
 #| msgid "Сложность"
 msgid "Должность"
 msgstr "Position"

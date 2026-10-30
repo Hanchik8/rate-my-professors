@@ -71,6 +71,48 @@ msgstr "Фамилиясы"
 msgid "Кафедра"
 msgstr "Бөлүм"
 
+msgid "Информатика"
+msgstr "Информатика"
+
+msgid "Математика"
+msgstr "Математика"
+
+msgid "Физика"
+msgstr "Физика"
+
+msgid "Экономика"
+msgstr "Экономика"
+
+msgid "История"
+msgstr "Тарых"
+
+msgid "Биология"
+msgstr "Биология"
+
+msgid "Лингвистика"
+msgstr "Лингвистика"
+
+msgid "Психология"
+msgstr "Психология"
+
+msgid "Международные отношения"
+msgstr "Эл аралык мамилелер"
+
+msgid "Химия"
+msgstr "Химия"
+
+msgid "Филология"
+msgstr "Филология"
+
+msgid "Право"
+msgstr "Укук"
+
+msgid "Инженерия"
+msgstr "Инженерия"
+
+msgid "Медицина"
+msgstr "Медицина"
+
 msgid "Должность"
 msgstr "Кызматы"
 

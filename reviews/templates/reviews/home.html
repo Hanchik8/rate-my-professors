@@ -1,4 +1,4 @@
-{% extends "reviews/base.html" %}{% load i18n l10n %}
+{% extends "reviews/base.html" %}{% load i18n l10n departments %}
 {% block content %}
 <h1>{% translate "Узнайте, какие занятия на самом деле — до записи на курс." %}</h1>
 <form class="search" method="get" role="search" aria-label="{% translate 'Поиск' %}">
@@ -13,7 +13,7 @@
   </select>
   <select name="department" aria-label="{% translate 'Кафедра' %}">
     <option value="">{% translate "Все кафедры" %}</option>
-    {% for d in departments %}<option value="{{ d }}"{% if d == department %} selected{% endif %}>{{ d }}</option>{% endfor %}
+    {% for d in departments %}<option value="{{ d }}"{% if d == department %} selected{% endif %}>{% translate_department d %}</option>{% endfor %}
   </select>
   <select name="sort" aria-label="{% translate 'Сортировка' %}">
     <option value="rating"{% if sort == "rating" %} selected{% endif %}>{% translate "По рейтингу" %}</option>
