@@ -20,6 +20,8 @@ def review_vote(request, review_id):
         views.repo.vote(review_id, helpful=request.POST.get("vote") == "up", user=request.user)
     except ValueError:
         messages.warning(request, _("Вы уже голосовали за этот отзыв."))
+    else:
+        messages.success(request, _("Ваш голос учтён. Спасибо!"))
     return views._redirect_to_review(review)
 
 

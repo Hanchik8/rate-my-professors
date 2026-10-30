@@ -103,6 +103,15 @@ class VotingEdgeViewTestsMixin:
         self.assertEqual(r.status_code, 302)
         self.assertEqual(self.repo.review(review.id).helpful, before + 1)
 
+    def test_successful_vote_shows_translated_success_message(self):
+        self.login("success-vote@example.com")
+        review = self.seed_review()
+        response = self.client.post(
+            reverse("review_vote", args=[review.id]), {"vote": "up"}, follow=True
+        )
+        self.assertContains(response, "Ваш голос учтён. Спасибо!")
+        self.assertTrue(any(message.tags == "success" for message in response.context["messages"]))
+
     def test_down_vote_increments_not_helpful(self):
         self.login("down-vote@example.com")
         review = self.seed_review()

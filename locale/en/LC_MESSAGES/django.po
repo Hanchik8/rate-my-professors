@@ -439,6 +439,9 @@ msgstr "Review submitted for moderation. Thank you!"
 msgid "Вы уже голосовали за этот отзыв."
 msgstr "You have already voted on this review."
 
+msgid "Ваш голос учтён. Спасибо!"
+msgstr "Your vote has been recorded. Thank you!"
+
 msgid "Жалоба отправлена модератору."
 msgstr "Report sent to a moderator."
 
