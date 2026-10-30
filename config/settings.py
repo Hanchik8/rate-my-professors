@@ -261,6 +261,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
 ]
 ROOT_URLCONF = "config.urls"
+REPO_BACKEND = os.environ.get("REPO_BACKEND", "")
 TEMPLATES = [{
     "BACKEND": "django.template.backends.django.DjangoTemplates",
     "APP_DIRS": True,
@@ -270,6 +271,7 @@ TEMPLATES = [{
         "django.contrib.auth.context_processors.auth",
         "django.contrib.messages.context_processors.messages",
         "django.template.context_processors.i18n",
+        "reviews.context_processors.repository_mode",
     ]},
 }]
 

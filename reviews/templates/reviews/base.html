@@ -42,7 +42,7 @@
 {% if messages %}<ul class="messages" role="list">{% for m in messages %}<li class="message {{ m.tags }}" role="{% if m.tags == 'error' %}alert{% else %}status{% endif %}" aria-live="{% if m.tags == 'error' %}assertive{% else %}polite{% endif %}"><span class="message-text">{{ m }}</span><button class="message-close" type="button" aria-label="{% translate 'Закрыть уведомление' %}">×</button></li>{% endfor %}</ul>{% endif %}
 <main id="main-content" tabindex="-1">{% block content %}{% endblock %}</main>
 <footer>
-  <a href="{% url 'rules' %}">{% translate "Правила" %}</a> · <a href="{% url 'about' %}">{% translate "О проекте" %}</a> · {% translate "Демо-данные сбрасываются при рестарте (memory-режим)." %}
+  <a href="{% url 'rules' %}">{% translate "Правила" %}</a> · <a href="{% url 'about' %}">{% translate "О проекте" %}</a>{% if is_memory_repo %} · {% translate "Демо-данные сбрасываются при рестарте (memory-режим)." %}{% endif %}
 </footer>
 {% block page_tools %}{% endblock %}
 <script src="{% static 'reviews/base.js' %}" defer></script>
