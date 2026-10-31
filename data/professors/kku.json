@@ -1,0 +1,13 @@
+{
+ "code": "kku",
+ "university": "Кыргызско-Казахский университет",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://kku.edu.kg",
+  "https://kku.edu.kg/opn-ekonomika/",
+  "https://kku.edu.kg/opn-yurisprudentsiya/",
+  "https://kku.edu.kg/opn-pedagogika-i-lingvistika/"
+ ],
+ "notes": "Сайт не отвечает из нашей сети (таймаут), главная получена только через fetch-индекс (без имён). Страницы программ не открылись ни fetch, ни браузером; по снимку Wayback 2024-11-09 разделов кафедр/ППС/руководства в меню нет. Внешний поиск имён преподавателей ККУ не дал. Преподавателей найти не удалось.",
+ "professors": []
+}

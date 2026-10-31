@@ -1,0 +1,265 @@
+{
+ "code": "salymbekov",
+ "university": "Салымбеков Университет",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://salymbekov.com/ru/",
+  "https://salymbekov.com/ru/kafedra-terapii/",
+  "https://salymbekov.com/ru/kafedra-egd/",
+  "https://salymbekov.com/ru/kafedra-egd-2/",
+  "https://salymbekov.com/ru/kafedra-kd/",
+  "https://salymbekov.com/ru/kafedra-kliniko-morfologicheskih-disciplin/",
+  "https://salymbekov.com/ru/prepodavateli/",
+  "https://salymbekov.com/ru/prepodavateli-2/",
+  "https://salymbekov.com/ru/dekanat/"
+ ],
+ "notes": "Домен salymbekov.kg недоступен, официальный сайт salymbekov.com (cookie-заглушка beget, обходится cookie). Составы ППС опубликованы только у кафедры медико-биологических дисциплин (kafedra-terapii) и естественно-гуманитарных дисциплин (kafedra-egd, на кыргызском), а также преподаватели Международного колледжа IT и бизнеса и Американского института технологий. Страницы кафедр клинических и морфо-физиологических дисциплин без списков. На кафедре ЕГД у части ППС указано т.и.д. без звания, отнесены к доценту, заведующая к профессору. Латинские имена иностранных преподавателей колледжа и AIT как на сайте, порядок фамилии для малайских и индийских имен условный.",
+ "professors": [
+  {
+   "last_name": "Жалилова",
+   "first_name": "Айнагуль Абдисалановна",
+   "department": "Медико-биологические дисциплины",
+   "title": "доцент",
+   "source_url": "https://salymbekov.com/ru/kafedra-terapii/"
+  },
+  {
+   "last_name": "Сарыева",
+   "first_name": "Нуриса Абдиевна",
+   "department": "Медико-биологические дисциплины",
+   "title": "доцент",
+   "source_url": "https://salymbekov.com/ru/kafedra-terapii/"
+  },
+  {
+   "last_name": "Кулданбаев",
+   "first_name": "Нурбек Кудайбергенович",
+   "department": "Медико-биологические дисциплины",
+   "title": "доцент",
+   "source_url": "https://salymbekov.com/ru/kafedra-terapii/"
+  },
+  {
+   "last_name": "Айткеева",
+   "first_name": "Чолпон Алымкуловна",
+   "department": "Медико-биологические дисциплины",
+   "title": "доцент",
+   "source_url": "https://salymbekov.com/ru/kafedra-terapii/"
+  },
+  {
+   "last_name": "Тумонбаева",
+   "first_name": "Жаркынай Сапишовна",
+   "department": "Медико-биологические дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://salymbekov.com/ru/kafedra-terapii/"
+  },
+  {
+   "last_name": "Макешова",
+   "first_name": "Айзада Дуйшонкуловна",
+   "department": "Медико-биологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/kafedra-terapii/"
+  },
+  {
+   "last_name": "Перегудова",
+   "first_name": "Ольга Викторовна",
+   "department": "Медико-биологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/kafedra-terapii/"
+  },
+  {
+   "last_name": "Токушева",
+   "first_name": "Төлөбүбү Сагынбековна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "профессор",
+   "source_url": "https://salymbekov.com/ru/kafedra-egd/"
+  },
+  {
+   "last_name": "Жумадилов",
+   "first_name": "Эсенгелди Жумадилович",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://salymbekov.com/ru/kafedra-egd/"
+  },
+  {
+   "last_name": "Бийназарова",
+   "first_name": "Назгүл Сүйүнбековна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://salymbekov.com/ru/kafedra-egd/"
+  },
+  {
+   "last_name": "Алишева",
+   "first_name": "Алия Бекбергеновна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://salymbekov.com/ru/kafedra-egd/"
+  },
+  {
+   "last_name": "Мамырова",
+   "first_name": "Мээрим Ишенбековна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://salymbekov.com/ru/kafedra-egd/"
+  },
+  {
+   "last_name": "Молдокматова",
+   "first_name": "Навира Токомбаевна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://salymbekov.com/ru/kafedra-egd/"
+  },
+  {
+   "last_name": "Жунушалиева",
+   "first_name": "Нурзат Манасовна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://salymbekov.com/ru/kafedra-egd/"
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Саодат Болотовна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://salymbekov.com/ru/kafedra-egd/"
+  },
+  {
+   "last_name": "Төлөбеков",
+   "first_name": "Ниязбек Тынабекович",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://salymbekov.com/ru/kafedra-egd/"
+  },
+  {
+   "last_name": "Дюшекеева",
+   "first_name": "Айзада Кубанычбековна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://salymbekov.com/ru/kafedra-egd/"
+  },
+  {
+   "last_name": "Тултемирова",
+   "first_name": "Гульназ Усенбековна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://salymbekov.com/ru/kafedra-egd/"
+  },
+  {
+   "last_name": "Жолболдиева",
+   "first_name": "Мирзат Бектуровна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/kafedra-egd/"
+  },
+  {
+   "last_name": "Midhunchakkaravarthy",
+   "first_name": "Divya",
+   "department": "Международный колледж IT и бизнеса",
+   "title": "профессор",
+   "source_url": "https://salymbekov.com/ru/prepodavateli/"
+  },
+  {
+   "last_name": "Salleh",
+   "first_name": "Hishamuddin Bin M",
+   "department": "Международный колледж IT и бизнеса",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli/"
+  },
+  {
+   "last_name": "Shah",
+   "first_name": "Mohd Nabil Amin Bin Harman",
+   "department": "Международный колледж IT и бизнеса",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli/"
+  },
+  {
+   "last_name": "Vivekanandam",
+   "first_name": "B.",
+   "department": "Международный колледж IT и бизнеса",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Janarthanan",
+   "first_name": "Midhunchakkaravarthy",
+   "department": "Международный колледж IT и бизнеса",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli/"
+  },
+  {
+   "last_name": "Kolapo",
+   "first_name": "Yahya-Imam Minur",
+   "department": "Международный колледж IT и бизнеса",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli/"
+  },
+  {
+   "last_name": "Дуйшекеева",
+   "first_name": "Алиса Омуркуловна",
+   "department": "Международный колледж IT и бизнеса",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli/"
+  },
+  {
+   "last_name": "Жолочубеков",
+   "first_name": "Нурсултан",
+   "department": "Международный колледж IT и бизнеса",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli/"
+  },
+  {
+   "last_name": "Билгазиев",
+   "first_name": "Эмиль",
+   "department": "Американский институт технологий",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli-2/"
+  },
+  {
+   "last_name": "Толубаева",
+   "first_name": "Мунара",
+   "department": "Американский институт технологий",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli-2/"
+  },
+  {
+   "last_name": "Emre",
+   "first_name": "Yunus",
+   "department": "Американский институт технологий",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli-2/"
+  },
+  {
+   "last_name": "Yeniaras",
+   "first_name": "Erol",
+   "department": "Американский институт технологий",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli-2/"
+  },
+  {
+   "last_name": "Omiwade",
+   "first_name": "D Soji",
+   "department": "Американский институт технологий",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli-2/"
+  },
+  {
+   "last_name": "Arad",
+   "first_name": "Alon",
+   "department": "Американский институт технологий",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli-2/"
+  },
+  {
+   "last_name": "Erenel",
+   "first_name": "Dogukan",
+   "department": "Американский институт технологий",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli-2/"
+  },
+  {
+   "last_name": "Uyanik",
+   "first_name": "Ilyas",
+   "department": "Американский институт технологий",
+   "title": "преподаватель",
+   "source_url": "https://salymbekov.com/ru/prepodavateli-2/"
+  }
+ ]
+}

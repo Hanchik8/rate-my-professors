@@ -1,0 +1,549 @@
+{
+ "code": "smu",
+ "university": "Современный международный университет (СМУ), Жалал-Абад",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://jasmu.kg/medical-team/",
+  "https://jasmu.kg/hospital-board/",
+  "https://jasmu.kg/diagnosis-and-treatment/",
+  "https://jasmu.kg/кафедра-английский-язык/",
+  "https://pie.kg/сотрудники/",
+  "https://k.jasmu.kg/наши-преподаватели/",
+  "https://jasmu.kg/landing-page/",
+  "https://jasmu.kg/ученый-совет/",
+  "https://jasmu.kg/ректор-сму/",
+  "http://apbio.kg (не открывается; Wayback 2019: /law, /englush, /languages, /economics, /computer-sciense)"
+ ],
+ "notes": "code smu = Современный международный университет (СМУ), Жалал-Абад, ул. Пушкина 152; правопреемник Академии права, бизнеса и образования (АПБиО, сайт apbio.kg), переименованной в СМУ в 2020 г. apbio.kg больше не открывается (DNS), использованы снимки Wayback декабря 2019 (юриспруденция: в основном инициалы; англ. филология; языки; экономика). Текущий сайт jasmu.kg и поддомены k.jasmu.kg, pie.kg отдают 403 боту; страницы кафедр языков и экономики прочитаны через web_fetch, кафедра английской филологии и пр. через Wayback (окт. 2025). Составы pie.kg/сотрудники, k.jasmu.kg/наши-преподаватели, jasmu.kg/landing-page и jasmu.kg/ученый-совет взяты из поискового индекса этих страниц (живые страницы закрыты 403). Кафедра юриспруденции: на текущей странице только заведующий; кафедры педагогики и психологии и информатики (jasmu.kg) — только заведующие/недоступны. Записи «М. Маканбай» (АПБиО) не добавлена отдельно — вероятно, Макамбай Максат.",
+ "professors": [
+  {
+   "last_name": "Эсенова",
+   "first_name": "Нуска Маматкуловна",
+   "department": "Языков",
+   "title": "доцент",
+   "source_url": "https://jasmu.kg/medical-team/"
+  },
+  {
+   "last_name": "Акматбекова",
+   "first_name": "Суюта Кубатбековна",
+   "department": "Языков",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/medical-team/"
+  },
+  {
+   "last_name": "Чааркозов",
+   "first_name": "Медет Турарович",
+   "department": "Языков",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/medical-team/"
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Нуржана Акылбековна",
+   "department": "Языков",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/medical-team/"
+  },
+  {
+   "last_name": "Эрматова",
+   "first_name": "Алтынай Жумабаевна",
+   "department": "Языков",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/medical-team/"
+  },
+  {
+   "last_name": "Рыскулова",
+   "first_name": "Элмира Мавляновна",
+   "department": "Языков",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/medical-team/"
+  },
+  {
+   "last_name": "Тагаева",
+   "first_name": "Суйумкан Абдураимовна",
+   "department": "Языков",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/medical-team/"
+  },
+  {
+   "last_name": "Ажибаева",
+   "first_name": "Замира Абдыкалыковна",
+   "department": "Языков",
+   "title": "профессор",
+   "source_url": "https://jasmu.kg/medical-team/"
+  },
+  {
+   "last_name": "Карымбаева",
+   "first_name": "Кызжибек Эрматовна",
+   "department": "Языков",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/medical-team/"
+  },
+  {
+   "last_name": "Дарбанов",
+   "first_name": "Бүркутбай Ерматович",
+   "department": "Языков",
+   "title": "профессор",
+   "source_url": "https://jasmu.kg/medical-team/"
+  },
+  {
+   "last_name": "Дарбанов",
+   "first_name": "Маккамбай Ерматович",
+   "department": "Языков",
+   "title": "профессор",
+   "source_url": "https://jasmu.kg/medical-team/"
+  },
+  {
+   "last_name": "Суюндуков",
+   "first_name": "Улан Азакович",
+   "department": "Экономики",
+   "title": "доцент",
+   "source_url": "https://jasmu.kg/hospital-board/"
+  },
+  {
+   "last_name": "Нурлан кызы",
+   "first_name": "Жазгул",
+   "department": "Экономики",
+   "title": "преподаватель",
+   "source_url": "https://jasmu.kg/hospital-board/"
+  },
+  {
+   "last_name": "Турдубеков",
+   "first_name": "Бегиджон Мадаминович",
+   "department": "Экономики",
+   "title": "доцент",
+   "source_url": "https://jasmu.kg/hospital-board/"
+  },
+  {
+   "last_name": "Каимова",
+   "first_name": "Шахноза Мамыржановна",
+   "department": "Экономики",
+   "title": "преподаватель",
+   "source_url": "https://jasmu.kg/hospital-board/"
+  },
+  {
+   "last_name": "Бурканов",
+   "first_name": "Азиз Орозбаевич",
+   "department": "Экономики",
+   "title": "доцент",
+   "source_url": "https://jasmu.kg/hospital-board/"
+  },
+  {
+   "last_name": "Казакбаев",
+   "first_name": "Кадиржан Кабилжанович",
+   "department": "Экономики",
+   "title": "доцент",
+   "source_url": "https://jasmu.kg/hospital-board/"
+  },
+  {
+   "last_name": "Жоробаева",
+   "first_name": "Аида Абдимуминовна",
+   "department": "Экономики",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/hospital-board/"
+  },
+  {
+   "last_name": "Атаканов",
+   "first_name": "Болотбек Курманбекович",
+   "department": "Экономики",
+   "title": "доцент",
+   "source_url": "https://jasmu.kg/hospital-board/"
+  },
+  {
+   "last_name": "Абдуллаева",
+   "first_name": "Нургуль Абдимиталиповна",
+   "department": "Экономики",
+   "title": "доцент",
+   "source_url": "https://jasmu.kg/hospital-board/"
+  },
+  {
+   "last_name": "Калбаева",
+   "first_name": "Р. Д.",
+   "department": "Экономики",
+   "title": "преподаватель",
+   "source_url": "https://web.archive.org/web/20191207071616/http://apbio.kg/economics",
+   "initials_only": true
+  },
+  {
+   "last_name": "Юсупов",
+   "first_name": "Улукбек Жалалидинович",
+   "department": "Юриспруденции",
+   "title": "доцент",
+   "source_url": "https://jasmu.kg/diagnosis-and-treatment/"
+  },
+  {
+   "last_name": "Макамбай",
+   "first_name": "Максат",
+   "department": "Юриспруденции",
+   "title": "профессор",
+   "source_url": "https://jasmu.kg/ректор-сму/"
+  },
+  {
+   "last_name": "Каримбаев",
+   "first_name": "А. К.",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://web.archive.org/web/20191207072048/http://apbio.kg/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдукахарова",
+   "first_name": "Т.",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://web.archive.org/web/20191207072048/http://apbio.kg/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токошев",
+   "first_name": "Р. И.",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://web.archive.org/web/20191207072048/http://apbio.kg/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мурзаев",
+   "first_name": "И. И.",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://web.archive.org/web/20191207072048/http://apbio.kg/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Расулжан кызы",
+   "first_name": "Ж.",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://web.archive.org/web/20191207072048/http://apbio.kg/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тажибаева",
+   "first_name": "Н. К.",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://web.archive.org/web/20191207072048/http://apbio.kg/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдыгапар кызы",
+   "first_name": "Р.",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://web.archive.org/web/20191207072048/http://apbio.kg/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кулиев",
+   "first_name": "Т.",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://web.archive.org/web/20191207072048/http://apbio.kg/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Асыранкулов",
+   "first_name": "Т.",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://web.archive.org/web/20191207072048/http://apbio.kg/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Маканбай",
+   "first_name": "Б.",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://web.archive.org/web/20191207072048/http://apbio.kg/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Коконбай уулу",
+   "first_name": "Нурбек",
+   "department": "Английской филологии",
+   "title": "доцент",
+   "source_url": "https://jasmu.kg/кафедра-английский-язык/"
+  },
+  {
+   "last_name": "Мамасалиев",
+   "first_name": "Мыктыбек Токтосунович",
+   "department": "Английской филологии",
+   "title": "преподаватель",
+   "source_url": "https://jasmu.kg/кафедра-английский-язык/"
+  },
+  {
+   "last_name": "Марат кызы",
+   "first_name": "Каныкей",
+   "department": "Английской филологии",
+   "title": "преподаватель",
+   "source_url": "https://jasmu.kg/кафедра-английский-язык/"
+  },
+  {
+   "last_name": "Каныбаев",
+   "first_name": "Кыялбек Садирбекович",
+   "department": "Английской филологии",
+   "title": "преподаватель",
+   "source_url": "https://jasmu.kg/кафедра-английский-язык/"
+  },
+  {
+   "last_name": "Танаева",
+   "first_name": "Гулзина Махмуталиевна",
+   "department": "Английской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/кафедра-английский-язык/"
+  },
+  {
+   "last_name": "Тиленбаева",
+   "first_name": "Аксана Паязбековна",
+   "department": "Английской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/кафедра-английский-язык/"
+  },
+  {
+   "last_name": "Хайткулова",
+   "first_name": "Нурила Муратбековна",
+   "department": "Английской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/кафедра-английский-язык/"
+  },
+  {
+   "last_name": "Хайдаров",
+   "first_name": "Акбар Халдарбаевич",
+   "department": "Английской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/кафедра-английский-язык/"
+  },
+  {
+   "last_name": "Топчубекова",
+   "first_name": "Айнура Акматалиевна",
+   "department": "Английской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/кафедра-английский-язык/"
+  },
+  {
+   "last_name": "Чарыева",
+   "first_name": "Афезе Хамидовна",
+   "department": "Английской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/кафедра-английский-язык/"
+  },
+  {
+   "last_name": "Урмат",
+   "first_name": "Маккамбай",
+   "department": "Английской филологии",
+   "title": "профессор",
+   "source_url": "https://jasmu.kg/кафедра-английский-язык/"
+  },
+  {
+   "last_name": "Алтынбаев",
+   "first_name": "Нурлан Курбанбекович",
+   "department": "Английской филологии",
+   "title": "профессор",
+   "source_url": "https://jasmu.kg/кафедра-английский-язык/"
+  },
+  {
+   "last_name": "Бекбалаев",
+   "first_name": "Аманкелди Абдыжапарович",
+   "department": "Английской филологии",
+   "title": "профессор",
+   "source_url": "https://jasmu.kg/кафедра-английский-язык/"
+  },
+  {
+   "last_name": "Абдыкахаров",
+   "first_name": "Абдыкапар Торокулович",
+   "department": "Английской филологии",
+   "title": "доцент",
+   "source_url": "https://jasmu.kg/кафедра-английский-язык/"
+  },
+  {
+   "last_name": "Ахматов",
+   "first_name": "Уран Ашурбекович",
+   "department": "Английской филологии",
+   "title": "преподаватель",
+   "source_url": "https://web.archive.org/web/20191207045404/http://apbio.kg/englush"
+  },
+  {
+   "last_name": "Календарова",
+   "first_name": "Акылай Тайыровна",
+   "department": "Английской филологии",
+   "title": "преподаватель",
+   "source_url": "https://web.archive.org/web/20191207045404/http://apbio.kg/englush"
+  },
+  {
+   "last_name": "Белеков",
+   "first_name": "Таалайбек Эсенбаевич",
+   "department": "Информатики",
+   "title": "доцент",
+   "source_url": "https://pie.kg/сотрудники/"
+  },
+  {
+   "last_name": "Абдраимов",
+   "first_name": "Кыялбек Зулпукарович",
+   "department": "Информатики",
+   "title": "преподаватель",
+   "source_url": "https://pie.kg/сотрудники/"
+  },
+  {
+   "last_name": "Кошбаев",
+   "first_name": "Алмазбек Абдупаттаевич",
+   "department": "Информатики",
+   "title": "профессор",
+   "source_url": "https://pie.kg/сотрудники/"
+  },
+  {
+   "last_name": "Эркулова",
+   "first_name": "Эльмира Кадыркуловна",
+   "department": "Информатики",
+   "title": "преподаватель",
+   "source_url": "https://pie.kg/сотрудники/"
+  },
+  {
+   "last_name": "Абилов",
+   "first_name": "Каныбек Бурханович",
+   "department": "Информатики",
+   "title": "преподаватель",
+   "source_url": "https://pie.kg/сотрудники/"
+  },
+  {
+   "last_name": "Доноев",
+   "first_name": "Талант Акматбекович",
+   "department": "Информатики",
+   "title": "преподаватель",
+   "source_url": "https://pie.kg/сотрудники/"
+  },
+  {
+   "last_name": "Абдукаримова",
+   "first_name": "Манзура Абдулхокимовна",
+   "department": "Информатики",
+   "title": "преподаватель",
+   "source_url": "https://pie.kg/сотрудники/"
+  },
+  {
+   "last_name": "Калдарова",
+   "first_name": "Динара Калыкназаровна",
+   "department": "Информатики",
+   "title": "преподаватель",
+   "source_url": "https://pie.kg/сотрудники/"
+  },
+  {
+   "last_name": "Кенжекулов",
+   "first_name": "Замирбек Байышбекович",
+   "department": "Информатики",
+   "title": "преподаватель",
+   "source_url": "https://pie.kg/сотрудники/"
+  },
+  {
+   "last_name": "Умаров",
+   "first_name": "Төлөгөн Мамутбекович",
+   "department": "Информатики",
+   "title": "преподаватель",
+   "source_url": "https://pie.kg/сотрудники/"
+  },
+  {
+   "last_name": "Байзаков",
+   "first_name": "Бектур Үсөнович",
+   "department": "Колледж СМУ",
+   "title": "доцент",
+   "source_url": "https://k.jasmu.kg/наши-преподаватели/"
+  },
+  {
+   "last_name": "Жумабаева",
+   "first_name": "Замира Таштановна",
+   "department": "Колледж СМУ",
+   "title": "преподаватель",
+   "source_url": "https://k.jasmu.kg/наши-преподаватели/"
+  },
+  {
+   "last_name": "Касымалиева",
+   "first_name": "Самара Алимбековна",
+   "department": "Колледж СМУ",
+   "title": "преподаватель",
+   "source_url": "https://k.jasmu.kg/наши-преподаватели/"
+  },
+  {
+   "last_name": "Тажибаева",
+   "first_name": "Нурзаада Муратбековна",
+   "department": "Колледж СМУ",
+   "title": "преподаватель",
+   "source_url": "https://k.jasmu.kg/наши-преподаватели/"
+  },
+  {
+   "last_name": "Мундузова",
+   "first_name": "Кызбурак Пазылжановна",
+   "department": "Колледж СМУ",
+   "title": "преподаватель",
+   "source_url": "https://k.jasmu.kg/наши-преподаватели/"
+  },
+  {
+   "last_name": "Байматова",
+   "first_name": "Айданек Таирбековна",
+   "department": "Колледж СМУ",
+   "title": "старший преподаватель",
+   "source_url": "https://jasmu.kg/landing-page/"
+  },
+  {
+   "last_name": "Ырысбаева",
+   "first_name": "Миргуль Атамырзаевна",
+   "department": "Колледж СМУ",
+   "title": "преподаватель",
+   "source_url": "https://jasmu.kg/landing-page/"
+  },
+  {
+   "last_name": "Турашева",
+   "first_name": "Жазгул Кабылджановна",
+   "department": "Колледж СМУ",
+   "title": "преподаватель",
+   "source_url": "https://jasmu.kg/landing-page/"
+  },
+  {
+   "last_name": "Туманбаева",
+   "first_name": "Мыскал Турдалиевна",
+   "department": "Колледж СМУ",
+   "title": "преподаватель",
+   "source_url": "https://jasmu.kg/landing-page/"
+  },
+  {
+   "last_name": "Тениев",
+   "first_name": "Зарлык Камалович",
+   "department": "Колледж СМУ",
+   "title": "преподаватель",
+   "source_url": "https://jasmu.kg/landing-page/"
+  },
+  {
+   "last_name": "Сатарова",
+   "first_name": "Бурулай Жолборсовна",
+   "department": "Колледж СМУ",
+   "title": "преподаватель",
+   "source_url": "https://jasmu.kg/landing-page/"
+  },
+  {
+   "last_name": "Ерке",
+   "first_name": "Елена Эриховна",
+   "department": "Современный международный университет",
+   "title": "доцент",
+   "source_url": "https://jasmu.kg/ученый-совет/"
+  },
+  {
+   "last_name": "Авдиева",
+   "first_name": "Мадина Исмаиловна",
+   "department": "Современный международный университет",
+   "title": "доцент",
+   "source_url": "https://jasmu.kg/ученый-совет/"
+  },
+  {
+   "last_name": "Хамидова",
+   "first_name": "Дильфуза Кабылжановна",
+   "department": "Современный международный университет",
+   "title": "доцент",
+   "source_url": "https://jasmu.kg/ученый-совет/"
+  },
+  {
+   "last_name": "Усубалиева",
+   "first_name": "Клара Абдыгаппаровна",
+   "department": "Языков",
+   "title": "старший преподаватель",
+   "source_url": "https://web.archive.org/web/20191207050208/http://apbio.kg/languages"
+  }
+ ]
+}

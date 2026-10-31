@@ -1,0 +1,142 @@
+{
+ "code": "kiu",
+ "university": "Исламский университет Кыргызстана",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://www.kiu.kg/ru/",
+  "https://www.kiu.kg/ru/structure/rectorate",
+  "https://www.kiu.kg/ru/structure/departments",
+  "https://www.kiu.kg/ru/faculty/theology",
+  "https://www.kiu.kg/ru/faculty/philology",
+  "https://www.kiu.kg/ru/faculty/sharia"
+ ],
+ "notes": "Списки преподавателей взяты с страниц трёх кафедр. Часть преподавателей указана на двух кафедрах (теология и арабская филология), оставлены один раз на кафедре теологии. Для кафедры шариата опубликован только заведующий. У одного преподавателя вместо должности указана латиница ФИО, должность взята как \"преподаватель\". Порядок \"Имя Фамилия\" у Азамата Шамшиева приведён к фамилии первой.",
+ "professors": [
+  {
+   "last_name": "Лутфилла уулу",
+   "first_name": "Салих",
+   "department": "Теология",
+   "title": "преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Сулайман кызы",
+   "first_name": "Мээрим",
+   "department": "Теология",
+   "title": "преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Осмонов",
+   "first_name": "Нурали Туратович",
+   "department": "Теология",
+   "title": "преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Гульмуродов",
+   "first_name": "Соибназар Исмоилович",
+   "department": "Теология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Малатаева",
+   "first_name": "Нурипа Жаныбековна",
+   "department": "Теология",
+   "title": "преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Бекмурзаева",
+   "first_name": "Буажар Абдусаттаровна",
+   "department": "Теология",
+   "title": "преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Матраимова",
+   "first_name": "Гулбайрам Нусуровна",
+   "department": "Теология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Осмонали кызы",
+   "first_name": "Айдана",
+   "department": "Теология",
+   "title": "преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Расуль Иблла кызы",
+   "first_name": "Дилрабо",
+   "department": "Теология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Абаскан уулу",
+   "first_name": "Бекзат",
+   "department": "Теология",
+   "title": "преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Муктар уулу",
+   "first_name": "Азирет",
+   "department": "Теология",
+   "title": "преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Мендибаев",
+   "first_name": "Нуратбек",
+   "department": "Теология",
+   "title": "профессор",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Дубанаев",
+   "first_name": "Азамат Хакимович",
+   "department": "Теология",
+   "title": "преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Касымова",
+   "first_name": "Гулбара Абдигапуровна",
+   "department": "Теология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Тологонова",
+   "first_name": "Малика",
+   "department": "Теология",
+   "title": "преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/theology"
+  },
+  {
+   "last_name": "Шамшиев",
+   "first_name": "Азамат",
+   "department": "Арабская филология",
+   "title": "преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/philology"
+  },
+  {
+   "last_name": "Арзыбек кызы",
+   "first_name": "Гулайым",
+   "department": "Арабская филология",
+   "title": "преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/philology"
+  },
+  {
+   "last_name": "Маматкулов",
+   "first_name": "Шамшидин Ирискулович",
+   "department": "Шариат",
+   "title": "преподаватель",
+   "source_url": "https://www.kiu.kg/ru/faculty/sharia"
+  }
+ ]
+}

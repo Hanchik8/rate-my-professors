@@ -1,0 +1,213 @@
+{
+ "code": "kmsi",
+ "university": "Кыргызский медико-стоматологический институт (КМСИ), Кара-Балта",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://kmsi.edu.kg/wp-json/wp/v2/pages (38 страниц)",
+  "https://kmsi.edu.kg/wp-json/wp/v2/posts",
+  "https://kmsi.edu.kg/",
+  "https://kmsi.edu.kg/?page_id=26359",
+  "https://kmsi.edu.kg/?page_id=29380"
+ ],
+ "notes": "Код kmsi сопоставлен с «Кыргызский медико-стоматологический институт» (КМСИ, г. Кара-Балта, ул. Кожомбердиева 112), сайт kmsi.edu.kg найден через список вузов edu.gov.kg. Состав взят со страниц программ «Фармация» и «Стоматология» (на сайте у всех указано «Преподаватель», руководители программ Сейдеева Г.Т. и Сираждинова А.А. тоже даны как преподаватели), плюс 3 преподавателя из новостей главной страницы. Учёные степени на сайте не указаны. Ректор, учредитель, бухгалтерия, приглашённые лекторы и работодатели исключены.",
+ "professors": [
+  {
+   "last_name": "Акматалиева",
+   "first_name": "Н. З.",
+   "department": "Не указана",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Аскарбеков",
+   "first_name": "Жанарбек Нурланович",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=26359"
+  },
+  {
+   "last_name": "Асылбекова",
+   "first_name": "Тумара Усупбековна",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=26359"
+  },
+  {
+   "last_name": "Байгазиева",
+   "first_name": "Эльзада Бакытбековна",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=26359"
+  },
+  {
+   "last_name": "Бейшеев",
+   "first_name": "Ж. К.",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джээнбаева",
+   "first_name": "Назгуль Молдомзаевна",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=26359"
+  },
+  {
+   "last_name": "Доктурбекова",
+   "first_name": "Нурайым Доктурбековна",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/"
+  },
+  {
+   "last_name": "Дуйшенбекова",
+   "first_name": "Элифа Дуйшенбековна",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=26359"
+  },
+  {
+   "last_name": "Жолдошалы уулу",
+   "first_name": "Улан",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=26359"
+  },
+  {
+   "last_name": "Майбасарова",
+   "first_name": "Рабига Маратовна",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=26359"
+  },
+  {
+   "last_name": "Ниязов",
+   "first_name": "Адилет Анарбаевич",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=26359"
+  },
+  {
+   "last_name": "Орозбаева",
+   "first_name": "Наргиза Хушмуратовна",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=26359"
+  },
+  {
+   "last_name": "Осмонбекова",
+   "first_name": "Нурай Сарпбековна",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=26359"
+  },
+  {
+   "last_name": "Сираждинова",
+   "first_name": "Анара Анарбаевна",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=26359"
+  },
+  {
+   "last_name": "Субботин",
+   "first_name": "Денис Николаевич",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=26359"
+  },
+  {
+   "last_name": "Токомбаев",
+   "first_name": "Женишбек Асанкулович",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=26359"
+  },
+  {
+   "last_name": "Шерикбаев",
+   "first_name": "Мерлис Омуркулович",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=26359"
+  },
+  {
+   "last_name": "Абдиева",
+   "first_name": "Чолпон Калбаевна",
+   "department": "Фармация",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=29380"
+  },
+  {
+   "last_name": "Аманкулова",
+   "first_name": "Назима Кубанычбековна",
+   "department": "Фармация",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=29380"
+  },
+  {
+   "last_name": "Бейшенбаева",
+   "first_name": "Назира Бошкоевна",
+   "department": "Фармация",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=29380"
+  },
+  {
+   "last_name": "Кадырова",
+   "first_name": "Рита Рысалиевна",
+   "department": "Фармация",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=29380"
+  },
+  {
+   "last_name": "Калеев",
+   "first_name": "Урмат Эргешбаевич",
+   "department": "Фармация",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=29380"
+  },
+  {
+   "last_name": "Куттубаева",
+   "first_name": "Бактыгуль Арстанбековна",
+   "department": "Фармация",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=29380"
+  },
+  {
+   "last_name": "Мадалбекова",
+   "first_name": "Сайрагуль Медеткановна",
+   "department": "Фармация",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=29380"
+  },
+  {
+   "last_name": "Сагынбекова",
+   "first_name": "Чынара Джумалиевна",
+   "department": "Фармация",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=29380"
+  },
+  {
+   "last_name": "Сайдалиева",
+   "first_name": "Лобархон Пархатовна",
+   "department": "Фармация",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=29380"
+  },
+  {
+   "last_name": "Сейдеева",
+   "first_name": "Гульмира Тилековна",
+   "department": "Фармация",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=29380"
+  },
+  {
+   "last_name": "Федорова",
+   "first_name": "Марина Алексеевна",
+   "department": "Фармация",
+   "title": "преподаватель",
+   "source_url": "https://kmsi.edu.kg/?page_id=29380"
+  }
+ ]
+}

@@ -1,0 +1,1609 @@
+{
+ "code": "ism",
+ "university": "Международная высшая школа медицины (МВШМ / IHSM)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://ru.ism.edu.kg/anatomy-department",
+  "https://ru.ism.edu.kg/cardiosurgery-radiology-department",
+  "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik",
+  "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik",
+  "https://ru.ism.edu.kg/fundamental-disciplines-department",
+  "https://ru.ism.edu.kg/humanities-department",
+  "https://ru.ism.edu.kg/infectious-diseases-department",
+  "https://ru.ism.edu.kg/internal-medicine-department",
+  "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department",
+  "https://ru.ism.edu.kg/natural-sciences-disciplines-department",
+  "https://ru.ism.edu.kg/obstetrics-and-gynecology-department",
+  "https://ru.ism.edu.kg/pathology-department",
+  "https://ru.ism.edu.kg/pediatrics-department",
+  "https://ru.ism.edu.kg/publichealthdepartment",
+  "https://ru.ism.edu.kg/special-clinical-disciplines-department",
+  "https://ru.ism.edu.kg/special-surgical-disciplines-department",
+  "https://ru.ism.edu.kg/surgery-department"
+ ],
+ "notes": "Взята русская версия сайта ru.ism.edu.kg, 17 кафедр (включая Иссык-Кульский кампус). Названия кафедр как в заголовке страницы без слова Кафедра. Завучи и заведующие без указанной степени отнесены к преподавателю. Лаборанты исключены.",
+ "professors": [
+  {
+   "last_name": "Джумашалиева",
+   "first_name": "Асель Урустембековна",
+   "department": "Анатомии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/anatomy-department"
+  },
+  {
+   "last_name": "Иметкулова",
+   "first_name": "Жаныл Болотбековна",
+   "department": "Анатомии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/anatomy-department"
+  },
+  {
+   "last_name": "Касмамбетова",
+   "first_name": "Шайыркуль Карыбаевна",
+   "department": "Анатомии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/anatomy-department"
+  },
+  {
+   "last_name": "Дуйшенова",
+   "first_name": "Калиман Шаршеновна",
+   "department": "Анатомии",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/anatomy-department"
+  },
+  {
+   "last_name": "Юсупалиев",
+   "first_name": "Таалайбек Камилович",
+   "department": "Анатомии",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/anatomy-department"
+  },
+  {
+   "last_name": "Рахматов",
+   "first_name": "Нургазы Акылбекович",
+   "department": "Анатомии",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/anatomy-department"
+  },
+  {
+   "last_name": "Токтобекова",
+   "first_name": "Астра Токтобековна",
+   "department": "Анатомии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/anatomy-department"
+  },
+  {
+   "last_name": "Шаршембиев",
+   "first_name": "Азамат Джолдошбекович",
+   "department": "Анатомии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/anatomy-department"
+  },
+  {
+   "last_name": "Усонова",
+   "first_name": "Аймира Жумагуловна",
+   "department": "Анатомии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/anatomy-department"
+  },
+  {
+   "last_name": "Абаева",
+   "first_name": "Тамара Сураналиевна",
+   "department": "Анатомии",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/anatomy-department"
+  },
+  {
+   "last_name": "Касенова",
+   "first_name": "Мырзагуль Сулайманкуловна",
+   "department": "Анатомии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/anatomy-department"
+  },
+  {
+   "last_name": "Молдожунусов",
+   "first_name": "Эрбол Уланович",
+   "department": "Анатомии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/anatomy-department"
+  },
+  {
+   "last_name": "Бебезов",
+   "first_name": "Ильхом Хакимович",
+   "department": "Кардиохирургии Радиологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/cardiosurgery-radiology-department"
+  },
+  {
+   "last_name": "Скоробогатова",
+   "first_name": "Оксана Владимировна",
+   "department": "Кардиохирургии Радиологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/cardiosurgery-radiology-department"
+  },
+  {
+   "last_name": "Максутов",
+   "first_name": "Чынгыз Жыргалбекович",
+   "department": "Кардиохирургии Радиологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/cardiosurgery-radiology-department"
+  },
+  {
+   "last_name": "Малаев",
+   "first_name": "Дастан Урматович",
+   "department": "Кардиохирургии Радиологии",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/cardiosurgery-radiology-department"
+  },
+  {
+   "last_name": "Пасанова",
+   "first_name": "Айдай Саитмухтаровна",
+   "department": "Кардиохирургии Радиологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/cardiosurgery-radiology-department"
+  },
+  {
+   "last_name": "Токтосунова",
+   "first_name": "Динара Борубаевна",
+   "department": "Кардиохирургии Радиологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/cardiosurgery-radiology-department"
+  },
+  {
+   "last_name": "Тургунов",
+   "first_name": "Азатбек Каныбекович",
+   "department": "Кардиохирургии Радиологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/cardiosurgery-radiology-department"
+  },
+  {
+   "last_name": "Хонкелдиев",
+   "first_name": "Бобиржон Махамадганиевич",
+   "department": "Кардиохирургии Радиологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/cardiosurgery-radiology-department"
+  },
+  {
+   "last_name": "Ахмедова",
+   "first_name": "Ирина Алимовна",
+   "department": "Кардиохирургии Радиологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/cardiosurgery-radiology-department"
+  },
+  {
+   "last_name": "Нурбеков",
+   "first_name": "Кайрат Нурбекович",
+   "department": "Кардиохирургии Радиологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/cardiosurgery-radiology-department"
+  },
+  {
+   "last_name": "Мурзалиева",
+   "first_name": "Эркайым Нурбековна",
+   "department": "Кардиохирургии Радиологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/cardiosurgery-radiology-department"
+  },
+  {
+   "last_name": "Джундубаев",
+   "first_name": "Мурат Курманбекович",
+   "department": "Кардиохирургии Радиологии",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/cardiosurgery-radiology-department"
+  },
+  {
+   "last_name": "Данияров",
+   "first_name": "Бектур Санжарбекович",
+   "department": "Кардиохирургии Радиологии",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/cardiosurgery-radiology-department"
+  },
+  {
+   "last_name": "Закирова",
+   "first_name": "Гульдана Закировна",
+   "department": "Клинических Дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik"
+  },
+  {
+   "last_name": "Шаршеналы кызы",
+   "first_name": "Керемет",
+   "department": "Клинических Дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik"
+  },
+  {
+   "last_name": "Акимжанов",
+   "first_name": "Нурсултан Таалайбекович",
+   "department": "Клинических Дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik"
+  },
+  {
+   "last_name": "Такенеев",
+   "first_name": "Талант Керимович",
+   "department": "Клинических Дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik"
+  },
+  {
+   "last_name": "Чодоева",
+   "first_name": "Турсун Абдиевна",
+   "department": "Клинических Дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik"
+  },
+  {
+   "last_name": "Илипаева",
+   "first_name": "Гульмира Ильязовна",
+   "department": "Клинических Дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik"
+  },
+  {
+   "last_name": "Асакеева",
+   "first_name": "Кырым Джумаевна",
+   "department": "Клинических Дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik"
+  },
+  {
+   "last_name": "Турдыева",
+   "first_name": "Гульбахрам Максутовна",
+   "department": "Клинических Дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik"
+  },
+  {
+   "last_name": "Кусеинова",
+   "first_name": "Айшоола Муратовна",
+   "department": "Клинических Дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik"
+  },
+  {
+   "last_name": "Ботобаева",
+   "first_name": "Арай Сайранбековна",
+   "department": "Клинических Дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik"
+  },
+  {
+   "last_name": "Игенова",
+   "first_name": "Сауле Баркаловна",
+   "department": "Клинических Дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik"
+  },
+  {
+   "last_name": "Абиров",
+   "first_name": "Инсан Кубанычбекович",
+   "department": "Клинических Дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik"
+  },
+  {
+   "last_name": "Солтобек уулу",
+   "first_name": "Тариель",
+   "department": "Клинических Дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik"
+  },
+  {
+   "last_name": "Мансурова",
+   "first_name": "Чолпон Турусбековна",
+   "department": "Клинических Дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-clinical-disciplines-ik"
+  },
+  {
+   "last_name": "Абдыбек кызы",
+   "first_name": "Жайнагул",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Сагындык кызы",
+   "first_name": "Венера",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Исмаилова",
+   "first_name": "Айзат Болотбековна",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Айдыралиева",
+   "first_name": "Элиза Туратбековна",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Мукаш уулу",
+   "first_name": "Таласбек",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Жумабекова",
+   "first_name": "Бурул Алымбековна",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Жумадилова",
+   "first_name": "Айдай Бакытовна",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Айбашова",
+   "first_name": "Салтанат Темирбековна",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Деркембаева",
+   "first_name": "Айжамал Керимбековна",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Джеентаева",
+   "first_name": "Мээрим Памировна",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Иманкулов",
+   "first_name": "Данияр Артурович",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Иманкулова",
+   "first_name": "Кыял Турусбековна",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Керимканова",
+   "first_name": "Гулвира Талайбековна",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Кылычбек кызы",
+   "first_name": "Айжан",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Кылычбек кызы",
+   "first_name": "Нуржан",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Султанов",
+   "first_name": "Жаныбек Рыспекович",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Шаймухамедова",
+   "first_name": "Элмира Турганбаевна",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Таалайбекова",
+   "first_name": "Алина Таалайбековна",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Төлөгөнова",
+   "first_name": "Наргиза Болотбековна",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Эмилбек кызы",
+   "first_name": "Гулкайыр",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Джумакадыров",
+   "first_name": "Улан Кубатович",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Жанышбек кызы",
+   "first_name": "Айгүл",
+   "department": "Фундаментальных дисциплин Иссык-Кульского кампуса",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/department-of-fundamental-disciplines-ik"
+  },
+  {
+   "last_name": "Айсаева",
+   "first_name": "Шадия Юсупжановна",
+   "department": "Базисных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/fundamental-disciplines-department"
+  },
+  {
+   "last_name": "Жапаралиева",
+   "first_name": "Чолпон Оморбековна",
+   "department": "Базисных Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/fundamental-disciplines-department"
+  },
+  {
+   "last_name": "Джунусова",
+   "first_name": "Гульнара Султановна",
+   "department": "Базисных Дисциплин",
+   "title": "профессор",
+   "source_url": "https://ru.ism.edu.kg/fundamental-disciplines-department"
+  },
+  {
+   "last_name": "Тюлюлюева",
+   "first_name": "Айзада Куттубаевна",
+   "department": "Базисных Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/fundamental-disciplines-department"
+  },
+  {
+   "last_name": "Кожомбердиева",
+   "first_name": "Дилфуза Кожомбердиевна",
+   "department": "Базисных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/fundamental-disciplines-department"
+  },
+  {
+   "last_name": "Кенешова",
+   "first_name": "Каныкей Садырбековна",
+   "department": "Базисных Дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/fundamental-disciplines-department"
+  },
+  {
+   "last_name": "Бакирова",
+   "first_name": "Ширин Сыргаковна",
+   "department": "Базисных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/fundamental-disciplines-department"
+  },
+  {
+   "last_name": "Нарынкуль",
+   "first_name": "Алымкул кызы",
+   "department": "Базисных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/fundamental-disciplines-department"
+  },
+  {
+   "last_name": "Джумашалиева",
+   "first_name": "Наргиза Шаршенбековна",
+   "department": "Базисных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/fundamental-disciplines-department"
+  },
+  {
+   "last_name": "Бактыбекова",
+   "first_name": "Наргиза Бактыбековна",
+   "department": "Базисных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/fundamental-disciplines-department"
+  },
+  {
+   "last_name": "Иманбаева",
+   "first_name": "Гульбахира Оморбековна",
+   "department": "Базисных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/fundamental-disciplines-department"
+  },
+  {
+   "last_name": "Уметова",
+   "first_name": "Айганыш Убайдилдаевна",
+   "department": "Базисных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/fundamental-disciplines-department"
+  },
+  {
+   "last_name": "Алымкулова",
+   "first_name": "Нурия Насипкуловна",
+   "department": "Гуманитарных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/humanities-department"
+  },
+  {
+   "last_name": "Каримова",
+   "first_name": "Саният Азимовна",
+   "department": "Гуманитарных Дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/humanities-department"
+  },
+  {
+   "last_name": "Бутешова",
+   "first_name": "Айзат Раисовна",
+   "department": "Гуманитарных Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/humanities-department"
+  },
+  {
+   "last_name": "Джаманкулов",
+   "first_name": "Данияр Канатбекович",
+   "department": "Гуманитарных Дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/humanities-department"
+  },
+  {
+   "last_name": "Кочкорбаева",
+   "first_name": "Чынара Итибаевна",
+   "department": "Гуманитарных Дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/humanities-department"
+  },
+  {
+   "last_name": "Незнаева",
+   "first_name": "Римма Антроповна",
+   "department": "Гуманитарных Дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/humanities-department"
+  },
+  {
+   "last_name": "Кибраева",
+   "first_name": "Мунира Анаркуловна",
+   "department": "Гуманитарных Дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/humanities-department"
+  },
+  {
+   "last_name": "Ажибекова",
+   "first_name": "Азиза Арстанбековна",
+   "department": "Гуманитарных Дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/humanities-department"
+  },
+  {
+   "last_name": "Мамытов",
+   "first_name": "Аркарбек Жолборсбекович",
+   "department": "Гуманитарных Дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/humanities-department"
+  },
+  {
+   "last_name": "Турусбеков",
+   "first_name": "Мелис Алымжанович",
+   "department": "Гуманитарных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/humanities-department"
+  },
+  {
+   "last_name": "Токонова",
+   "first_name": "Айдана Акилиновна",
+   "department": "Гуманитарных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/humanities-department"
+  },
+  {
+   "last_name": "Жазгул",
+   "first_name": "Туратбек кызы",
+   "department": "Гуманитарных Дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/humanities-department"
+  },
+  {
+   "last_name": "Аида",
+   "first_name": "Камчыбек кызы",
+   "department": "Гуманитарных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/humanities-department"
+  },
+  {
+   "last_name": "Кутманова",
+   "first_name": "Айнура Зарылбековна",
+   "department": "Инфекционных Болезней",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/infectious-diseases-department"
+  },
+  {
+   "last_name": "Джангазиева",
+   "first_name": "Айнура Асанкалиевна",
+   "department": "Инфекционных Болезней",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/infectious-diseases-department"
+  },
+  {
+   "last_name": "Закиров",
+   "first_name": "Тариель Жоомартович",
+   "department": "Инфекционных Болезней",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/infectious-diseases-department"
+  },
+  {
+   "last_name": "Буранчиева",
+   "first_name": "Асель Дженишбековна",
+   "department": "Инфекционных Болезней",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/infectious-diseases-department"
+  },
+  {
+   "last_name": "Курманалиева",
+   "first_name": "Алина Узакбековна",
+   "department": "Инфекционных Болезней",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/infectious-diseases-department"
+  },
+  {
+   "last_name": "Кибишева",
+   "first_name": "Кристина Игоревна",
+   "department": "Инфекционных Болезней",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/infectious-diseases-department"
+  },
+  {
+   "last_name": "Иманбаева",
+   "first_name": "Лира Асанбековна",
+   "department": "Инфекционных Болезней",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/infectious-diseases-department"
+  },
+  {
+   "last_name": "Турсунбаева",
+   "first_name": "Мира Сабирбековна",
+   "department": "Инфекционных Болезней",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/infectious-diseases-department"
+  },
+  {
+   "last_name": "Кудайбергенова",
+   "first_name": "Назира Торобаевна",
+   "department": "Терапии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/internal-medicine-department"
+  },
+  {
+   "last_name": "Молдоташев",
+   "first_name": "Ишенбай Курманович",
+   "department": "Терапии",
+   "title": "профессор",
+   "source_url": "https://ru.ism.edu.kg/internal-medicine-department"
+  },
+  {
+   "last_name": "Ким",
+   "first_name": "Татьяна Мироновна",
+   "department": "Терапии",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/internal-medicine-department"
+  },
+  {
+   "last_name": "Артыкбаева",
+   "first_name": "Айгуль Качкынбаевна",
+   "department": "Терапии",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/internal-medicine-department"
+  },
+  {
+   "last_name": "Князева",
+   "first_name": "Валерия Георгиевна",
+   "department": "Терапии",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/internal-medicine-department"
+  },
+  {
+   "last_name": "Долгалев",
+   "first_name": "Дмитрий Владимирович",
+   "department": "Терапии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/internal-medicine-department"
+  },
+  {
+   "last_name": "Сулайманова",
+   "first_name": "Нафиса Бахтияровна",
+   "department": "Терапии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/internal-medicine-department"
+  },
+  {
+   "last_name": "Леонтьева",
+   "first_name": "Наталья Сергеевна",
+   "department": "Терапии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/internal-medicine-department"
+  },
+  {
+   "last_name": "Алыкулова",
+   "first_name": "Асель Алыкуловна",
+   "department": "Терапии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/internal-medicine-department"
+  },
+  {
+   "last_name": "Тойгонбаева",
+   "first_name": "Бегайым Токбаевна",
+   "department": "Терапии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/internal-medicine-department"
+  },
+  {
+   "last_name": "Жанылмырза",
+   "first_name": "Бакирдин кызы",
+   "department": "Терапии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/internal-medicine-department"
+  },
+  {
+   "last_name": "Анарбаева",
+   "first_name": "Акбермет Алмазбековна",
+   "department": "Терапии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/internal-medicine-department"
+  },
+  {
+   "last_name": "Кылычбек",
+   "first_name": "Максутали уулу",
+   "department": "Терапии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/internal-medicine-department"
+  },
+  {
+   "last_name": "Великородов",
+   "first_name": "Семён Сергеевич",
+   "department": "Терапии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/internal-medicine-department"
+  },
+  {
+   "last_name": "Камчыбекова",
+   "first_name": "Алтынай Абданбековна",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Чокоев",
+   "first_name": "Асан Ленарович",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Боброва",
+   "first_name": "Кристина Юрьевна",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Молдобаева",
+   "first_name": "Асылкан Замирбековна",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Жетимишова",
+   "first_name": "Бегимай Жетимишовна",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Валиева",
+   "first_name": "Эдиса Бектурсуновна",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Жамилова",
+   "first_name": "Гульмира Коконовна",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Жоошева",
+   "first_name": "Элнура Алмазбековна",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Молдоева",
+   "first_name": "Бермет Дооронбековна",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Джуманалиева",
+   "first_name": "Дарья Алексанровна",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Сулайманов",
+   "first_name": "Сатимкул Батырбекович",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Хуссаин",
+   "first_name": "Сайед Азфар",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Аскарова",
+   "first_name": "Чынар Эдильбековна",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Жумагулова",
+   "first_name": "Калия Жумагуловна",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Мусакеев",
+   "first_name": "Адилет Омурбекович",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Каратаев",
+   "first_name": "Медербек Адылбекович",
+   "department": "Пропедтерапии И Семейной Медицины",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/introduction-to-internal-medicine-and-family-medicine-department"
+  },
+  {
+   "last_name": "Исмаилова",
+   "first_name": "Чинара Саматовна",
+   "department": "Естественно-Научных Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/natural-sciences-disciplines-department"
+  },
+  {
+   "last_name": "Худайбергенова",
+   "first_name": "Бермет Мерлисовна",
+   "department": "Естественно-Научных Дисциплин",
+   "title": "профессор",
+   "source_url": "https://ru.ism.edu.kg/natural-sciences-disciplines-department"
+  },
+  {
+   "last_name": "Байджуранова",
+   "first_name": "Анара Мелебековна",
+   "department": "Естественно-Научных Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/natural-sciences-disciplines-department"
+  },
+  {
+   "last_name": "Кострицына",
+   "first_name": "Татьяна Владимировна",
+   "department": "Естественно-Научных Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/natural-sciences-disciplines-department"
+  },
+  {
+   "last_name": "Айткеева",
+   "first_name": "Чолпон Алымкуловна",
+   "department": "Естественно-Научных Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/natural-sciences-disciplines-department"
+  },
+  {
+   "last_name": "Аманбаева",
+   "first_name": "Гульнара Муктаровна",
+   "department": "Естественно-Научных Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/natural-sciences-disciplines-department"
+  },
+  {
+   "last_name": "Мусабаев",
+   "first_name": "Уран Рысбекович",
+   "department": "Естественно-Научных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/natural-sciences-disciplines-department"
+  },
+  {
+   "last_name": "Айдыралиева",
+   "first_name": "Чынара Бактыбековна",
+   "department": "Естественно-Научных Дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/natural-sciences-disciplines-department"
+  },
+  {
+   "last_name": "Джумагулов",
+   "first_name": "Эльдар Куванчиевич",
+   "department": "Естественно-Научных Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/natural-sciences-disciplines-department"
+  },
+  {
+   "last_name": "Исакова",
+   "first_name": "Бермет Абдувалиевна",
+   "department": "Естественно-Научных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/natural-sciences-disciplines-department"
+  },
+  {
+   "last_name": "Мырзагалиева",
+   "first_name": "Эльнура Байтерековна",
+   "department": "Естественно-Научных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/natural-sciences-disciplines-department"
+  },
+  {
+   "last_name": "Алмамбетова",
+   "first_name": "Айпери Алмамбетовна",
+   "department": "Естественно-Научных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/natural-sciences-disciplines-department"
+  },
+  {
+   "last_name": "Берболот кызы",
+   "first_name": "Гулмайрам",
+   "department": "Естественно-Научных Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/natural-sciences-disciplines-department"
+  },
+  {
+   "last_name": "Рыскельдиева",
+   "first_name": "Виктория Турарбековна",
+   "department": "Акушерства и Гинекологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/obstetrics-and-gynecology-department"
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Сайкал Камчыбековна",
+   "department": "Акушерства и Гинекологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/obstetrics-and-gynecology-department"
+  },
+  {
+   "last_name": "Тотуяева",
+   "first_name": "Гулзат Асанкуловна",
+   "department": "Акушерства и Гинекологии",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/obstetrics-and-gynecology-department"
+  },
+  {
+   "last_name": "Узакова",
+   "first_name": "Аида Орозалиевна",
+   "department": "Акушерства и Гинекологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/obstetrics-and-gynecology-department"
+  },
+  {
+   "last_name": "Джамшед",
+   "first_name": "Алам Кахкашан",
+   "department": "Акушерства и Гинекологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/obstetrics-and-gynecology-department"
+  },
+  {
+   "last_name": "Аббас",
+   "first_name": "Ваджиха",
+   "department": "Акушерства и Гинекологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/obstetrics-and-gynecology-department"
+  },
+  {
+   "last_name": "Рысбаева",
+   "first_name": "Нуржамал Камалдиновна",
+   "department": "Акушерства и Гинекологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/obstetrics-and-gynecology-department"
+  },
+  {
+   "last_name": "Бровко",
+   "first_name": "Карина Маликовна",
+   "department": "Акушерства и Гинекологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/obstetrics-and-gynecology-department"
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "Нуржан Акылбековна",
+   "department": "Акушерства и Гинекологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/obstetrics-and-gynecology-department"
+  },
+  {
+   "last_name": "Болотбек кызы",
+   "first_name": "Бактыгуль",
+   "department": "Акушерства и Гинекологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/obstetrics-and-gynecology-department"
+  },
+  {
+   "last_name": "Эсеналиев",
+   "first_name": "Эрбол Эркинович",
+   "department": "Акушерства и Гинекологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/obstetrics-and-gynecology-department"
+  },
+  {
+   "last_name": "Довлотова",
+   "first_name": "Гульзар Сейитбековна",
+   "department": "Акушерства и Гинекологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/obstetrics-and-gynecology-department"
+  },
+  {
+   "last_name": "Кадырова",
+   "first_name": "Эльнура Анарбаевна",
+   "department": "Акушерства и Гинекологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/obstetrics-and-gynecology-department"
+  },
+  {
+   "last_name": "Бекназарова",
+   "first_name": "Ширин Зарипбековна",
+   "department": "Акушерства и Гинекологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/obstetrics-and-gynecology-department"
+  },
+  {
+   "last_name": "Молдоташева",
+   "first_name": "Гульнара Сапаровна",
+   "department": "Патологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pathology-department"
+  },
+  {
+   "last_name": "Ильина",
+   "first_name": "Людмила Леонидовна",
+   "department": "Патологии",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/pathology-department"
+  },
+  {
+   "last_name": "Жылкичиева",
+   "first_name": "Чинара Сапарбековна",
+   "department": "Патологии",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/pathology-department"
+  },
+  {
+   "last_name": "Пак",
+   "first_name": "Ирина Владимировна",
+   "department": "Патологии",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/pathology-department"
+  },
+  {
+   "last_name": "Арстанбеков",
+   "first_name": "Медербек Маматжанович",
+   "department": "Патологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pathology-department"
+  },
+  {
+   "last_name": "Ысабаева",
+   "first_name": "Датка Каныбековна",
+   "department": "Патологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pathology-department"
+  },
+  {
+   "last_name": "Болотбекова",
+   "first_name": "Жазгуль Болотбековна",
+   "department": "Патологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pathology-department"
+  },
+  {
+   "last_name": "Мансуров",
+   "first_name": "Абдурахим Касымжанович",
+   "department": "Патологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pathology-department"
+  },
+  {
+   "last_name": "Турдакунова",
+   "first_name": "Раушан Махмудовна",
+   "department": "Патологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pathology-department"
+  },
+  {
+   "last_name": "Котенко",
+   "first_name": "Антон Андреевич",
+   "department": "Патологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pathology-department"
+  },
+  {
+   "last_name": "Турдуматова",
+   "first_name": "Марал Карабаевна",
+   "department": "Патологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pathology-department"
+  },
+  {
+   "last_name": "Данияров",
+   "first_name": "Ильяз Даниярович",
+   "department": "Патологии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pathology-department"
+  },
+  {
+   "last_name": "Алексеев",
+   "first_name": "Владимир Петрович",
+   "department": "Педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pediatrics-department"
+  },
+  {
+   "last_name": "Нажимидинова",
+   "first_name": "Гульмира Ташалиевна",
+   "department": "Педиатрии",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/pediatrics-department"
+  },
+  {
+   "last_name": "Бейшебаева",
+   "first_name": "Назира Адылбековна",
+   "department": "Педиатрии",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/pediatrics-department"
+  },
+  {
+   "last_name": "Кудаяров",
+   "first_name": "Бакытбек Дуйшеевич",
+   "department": "Педиатрии",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/pediatrics-department"
+  },
+  {
+   "last_name": "Жолдошева",
+   "first_name": "Индира Мойдунжановна",
+   "department": "Педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pediatrics-department"
+  },
+  {
+   "last_name": "Ярулин",
+   "first_name": "Денис Шамильевич",
+   "department": "Педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pediatrics-department"
+  },
+  {
+   "last_name": "Маркилова",
+   "first_name": "Айжан Султановна",
+   "department": "Педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pediatrics-department"
+  },
+  {
+   "last_name": "Чонкоева",
+   "first_name": "Айкерим Асланбековна",
+   "department": "Педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pediatrics-department"
+  },
+  {
+   "last_name": "Тагаева",
+   "first_name": "Айзада Кокунбаевна",
+   "department": "Педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pediatrics-department"
+  },
+  {
+   "last_name": "Рафикова",
+   "first_name": "София Фоатовна",
+   "department": "Педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pediatrics-department"
+  },
+  {
+   "last_name": "Амирова",
+   "first_name": "Нураим Орозбековна",
+   "department": "Педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pediatrics-department"
+  },
+  {
+   "last_name": "Анарбекова",
+   "first_name": "Айжан Анарбековна",
+   "department": "Педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/pediatrics-department"
+  },
+  {
+   "last_name": "Джусупов",
+   "first_name": "Кенеш Осконбаевич",
+   "department": "Общественного Здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/publichealthdepartment"
+  },
+  {
+   "last_name": "Тумонбаева",
+   "first_name": "Жаркынай Сапишовна",
+   "department": "Общественного Здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/publichealthdepartment"
+  },
+  {
+   "last_name": "Шаршенова",
+   "first_name": "Айнаш Акыновна",
+   "department": "Общественного Здравоохранения",
+   "title": "профессор",
+   "source_url": "https://ru.ism.edu.kg/publichealthdepartment"
+  },
+  {
+   "last_name": "Вишняков",
+   "first_name": "Дмитрий Валерьевич",
+   "department": "Общественного Здравоохранения",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/publichealthdepartment"
+  },
+  {
+   "last_name": "Буюклянов",
+   "first_name": "Артур Ишханович",
+   "department": "Общественного Здравоохранения",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/publichealthdepartment"
+  },
+  {
+   "last_name": "Турдумамбетова",
+   "first_name": "Майрамкуль Алымбековна",
+   "department": "Общественного Здравоохранения",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/publichealthdepartment"
+  },
+  {
+   "last_name": "Асанбаева",
+   "first_name": "Айгуль Мусашевна",
+   "department": "Общественного Здравоохранения",
+   "title": "старший преподаватель",
+   "source_url": "https://ru.ism.edu.kg/publichealthdepartment"
+  },
+  {
+   "last_name": "Джалиев",
+   "first_name": "Жохонгир Бахтиярович",
+   "department": "Общественного Здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/publichealthdepartment"
+  },
+  {
+   "last_name": "Иманкулова",
+   "first_name": "Бактыгуль Насиридиновна",
+   "department": "Общественного Здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/publichealthdepartment"
+  },
+  {
+   "last_name": "Дербишалиева",
+   "first_name": "Жыпаркул Какиловна",
+   "department": "Общественного Здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/publichealthdepartment"
+  },
+  {
+   "last_name": "Жумакеева",
+   "first_name": "Элиза Кубанычбековна",
+   "department": "Общественного Здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/publichealthdepartment"
+  },
+  {
+   "last_name": "Айталиева",
+   "first_name": "Рами Руслановна",
+   "department": "Общественного Здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/publichealthdepartment"
+  },
+  {
+   "last_name": "Астаулов",
+   "first_name": "Никита Дмитриевич",
+   "department": "Общественного Здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/publichealthdepartment"
+  },
+  {
+   "last_name": "Ильязова",
+   "first_name": "Нургуль Болотбековна",
+   "department": "Общественного Здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/publichealthdepartment"
+  },
+  {
+   "last_name": "Мактыбаева",
+   "first_name": "Дамира Анарбековна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Юлдашев",
+   "first_name": "Ильшат Мухитдинович",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "профессор",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Малюкова",
+   "first_name": "Екатерина Александровна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Турдубаева",
+   "first_name": "Жыпар Алтыбаевна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Матаева",
+   "first_name": "Гульзат Турсунбековна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Муханова",
+   "first_name": "Алия Кубанычбековна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Бегалиева",
+   "first_name": "Бегайым Бейшеевна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Абдуллаева",
+   "first_name": "Надира Абдумиталиповна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Федорова",
+   "first_name": "Светлана Владимировна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Юлдашева",
+   "first_name": "Гаухарниса Ильшатовна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Лупенко",
+   "first_name": "Полина Евгеньевна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Базарбаева",
+   "first_name": "Чинара Сатыбалдиевна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Расулова",
+   "first_name": "Бактыгуль Расуловна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Карагулова",
+   "first_name": "Мээрим Маратбековна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Эшимбетова",
+   "first_name": "Чолпон Залымовна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Орозалиева",
+   "first_name": "Альфиса Молдакматовна",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Булатов",
+   "first_name": "Тимур Эрикович",
+   "department": "Специальных Клинических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-clinical-disciplines-department"
+  },
+  {
+   "last_name": "Лим",
+   "first_name": "Евгения Федоровна",
+   "department": "Специальных Хирургических Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/special-surgical-disciplines-department"
+  },
+  {
+   "last_name": "Исхакова",
+   "first_name": "Мадина Тургуновна",
+   "department": "Специальных Хирургических Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/special-surgical-disciplines-department"
+  },
+  {
+   "last_name": "Тырготов",
+   "first_name": "Таалай Амантурович",
+   "department": "Специальных Хирургических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-surgical-disciplines-department"
+  },
+  {
+   "last_name": "Кубанчбекова",
+   "first_name": "Аида Кубанчбековна",
+   "department": "Специальных Хирургических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-surgical-disciplines-department"
+  },
+  {
+   "last_name": "Эратов",
+   "first_name": "Илияс Тажибаевич",
+   "department": "Специальных Хирургических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-surgical-disciplines-department"
+  },
+  {
+   "last_name": "Жумагазы кызы",
+   "first_name": "Багынур",
+   "department": "Специальных Хирургических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-surgical-disciplines-department"
+  },
+  {
+   "last_name": "Алимов",
+   "first_name": "Чыныбек Баишович",
+   "department": "Специальных Хирургических Дисциплин",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/special-surgical-disciplines-department"
+  },
+  {
+   "last_name": "Койчуманов",
+   "first_name": "Сталбек Койчуманович",
+   "department": "Специальных Хирургических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-surgical-disciplines-department"
+  },
+  {
+   "last_name": "Бийгельдиев",
+   "first_name": "Улан Кынатбекович",
+   "department": "Специальных Хирургических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-surgical-disciplines-department"
+  },
+  {
+   "last_name": "Ибраимов",
+   "first_name": "Нурсултан Ибраимович",
+   "department": "Специальных Хирургических Дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/special-surgical-disciplines-department"
+  },
+  {
+   "last_name": "Ермеков",
+   "first_name": "Турар Ахметбекович",
+   "department": "Хирургических Болезней",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/surgery-department"
+  },
+  {
+   "last_name": "Чынгышпаев",
+   "first_name": "Шамиль Мукашевич",
+   "department": "Хирургических Болезней",
+   "title": "профессор",
+   "source_url": "https://ru.ism.edu.kg/surgery-department"
+  },
+  {
+   "last_name": "Айсаев",
+   "first_name": "Азиз Юсупджанович",
+   "department": "Хирургических Болезней",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/surgery-department"
+  },
+  {
+   "last_name": "Чакиев",
+   "first_name": "Айбек Молдошевич",
+   "department": "Хирургических Болезней",
+   "title": "доцент",
+   "source_url": "https://ru.ism.edu.kg/surgery-department"
+  },
+  {
+   "last_name": "Ермеков",
+   "first_name": "Ергали Макулбекович",
+   "department": "Хирургических Болезней",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/surgery-department"
+  },
+  {
+   "last_name": "Момуналиев",
+   "first_name": "Джакшылык Турсунбекович",
+   "department": "Хирургических Болезней",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/surgery-department"
+  },
+  {
+   "last_name": "Шадыканов",
+   "first_name": "Адылбек Бегалыевич",
+   "department": "Хирургических Болезней",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/surgery-department"
+  },
+  {
+   "last_name": "Мирбекова",
+   "first_name": "Акылай Мирбековна",
+   "department": "Хирургических Болезней",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/surgery-department"
+  },
+  {
+   "last_name": "Калыгулов",
+   "first_name": "Элмурас Тынчтыкович",
+   "department": "Хирургических Болезней",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/surgery-department"
+  },
+  {
+   "last_name": "Алиев",
+   "first_name": "Тимур Худедаевич",
+   "department": "Хирургических Болезней",
+   "title": "преподаватель",
+   "source_url": "https://ru.ism.edu.kg/surgery-department"
+  }
+ ]
+}

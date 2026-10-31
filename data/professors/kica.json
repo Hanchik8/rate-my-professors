@@ -1,0 +1,32 @@
+{
+ "code": "kica",
+ "university": "Корейский институт в Центральной Азии (КИЦА)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://kica.kg/",
+  "https://kica.kg/institute",
+  "https://kica.kg/course-catalog",
+  "https://kica.kg/applicant",
+  "https://kica.kg/documents",
+  "https://kica.kg/kkc",
+  "https://inha.uz/ru/sobytiya/vtoraya-nauchnaya-konferencziya-po-koreevedeniyu-sredi-studentov-molodyh-uchyonyh-issledovatelej-czentralnoj-azii-kyrgyzstana/",
+  "https://centrasia.org/person2.php?st=1709905725"
+ ],
+ "notes": "На сайте kica.kg нет страниц кафедр или ППС (только описание, документы, каталог курсов, колледж); раздел вакансий 404. Названа только учредитель-ректор (не включена как административная, учёного звания на сайте нет). Две записи из внешних источников: директор Центра корееведения при КИЦА профессор Пек Те Хен (новость INHA University in Tashkent, 2021) и проректор по учебной работе к.э.н., доцент Калчакеева Айгюль (справочник ЦентрАзия, на 2024). Актуальность внешних данных не проверена.",
+ "professors": [
+  {
+   "last_name": "Пек",
+   "first_name": "Те Хен",
+   "department": "Центр корееведения",
+   "title": "профессор",
+   "source_url": "https://inha.uz/ru/sobytiya/vtoraya-nauchnaya-konferencziya-po-koreevedeniyu-sredi-studentov-molodyh-uchyonyh-issledovatelej-czentralnoj-azii-kyrgyzstana/"
+  },
+  {
+   "last_name": "Калчакеева",
+   "first_name": "Айгюль",
+   "department": "Проректор по учебной работе",
+   "title": "доцент",
+   "source_url": "https://centrasia.org/person2.php?st=1709905725"
+  }
+ ]
+}

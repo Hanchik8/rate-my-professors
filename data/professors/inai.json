@@ -1,0 +1,76 @@
+{
+ "code": "inai",
+ "university": "Кыргызско-Германский институт прикладной информатики (INAI.KG / КГИПИ)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://www.inai.kg/application/organigram",
+  "https://www.inai.kg/"
+ ],
+ "notes": "Прямой доступ из песочницы к inai.kg по таймауту, страница получена через web_fetch. Кафедр на сайте нет, все ППС в одном разделе Органиграммы, department = Профессорско-преподавательский состав. Ректор, проректор по ВР, проектное бюро и администрация не включены (проректор Джалбиев включен, так как указан в ППС). Тропманн-Фрик и Брумен указаны как почетные профессора КГИПИ в составе ППС.",
+ "professors": [
+  {
+   "last_name": "Карабакиров",
+   "first_name": "К. Р.",
+   "department": "Профессорско-преподавательский состав",
+   "title": "доцент",
+   "source_url": "https://www.inai.kg/application/organigram",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джалбиев",
+   "first_name": "Эмирбек Автандилович",
+   "department": "Профессорско-преподавательский состав",
+   "title": "доцент",
+   "source_url": "https://www.inai.kg/application/organigram"
+  },
+  {
+   "last_name": "Сарымсакова",
+   "first_name": "Аэлита Женишевна",
+   "department": "Профессорско-преподавательский состав",
+   "title": "доцент",
+   "source_url": "https://www.inai.kg/application/organigram"
+  },
+  {
+   "last_name": "Ниязалиева",
+   "first_name": "Асель Темирбековна",
+   "department": "Профессорско-преподавательский состав",
+   "title": "старший преподаватель",
+   "source_url": "https://www.inai.kg/application/organigram"
+  },
+  {
+   "last_name": "Агыбаева",
+   "first_name": "Жамиля",
+   "department": "Профессорско-преподавательский состав",
+   "title": "старший преподаватель",
+   "source_url": "https://www.inai.kg/application/organigram"
+  },
+  {
+   "last_name": "Эгембердиев",
+   "first_name": "Муктар Акматович",
+   "department": "Профессорско-преподавательский состав",
+   "title": "преподаватель",
+   "source_url": "https://www.inai.kg/application/organigram"
+  },
+  {
+   "last_name": "Кадыркулова",
+   "first_name": "Мээрим Эсеновна",
+   "department": "Профессорско-преподавательский состав",
+   "title": "преподаватель",
+   "source_url": "https://www.inai.kg/application/organigram"
+  },
+  {
+   "last_name": "Тропманн-Фрик",
+   "first_name": "Марина",
+   "department": "Профессорско-преподавательский состав",
+   "title": "профессор",
+   "source_url": "https://www.inai.kg/application/organigram"
+  },
+  {
+   "last_name": "Брумен",
+   "first_name": "Боштьян",
+   "department": "Профессорско-преподавательский состав",
+   "title": "профессор",
+   "source_url": "https://www.inai.kg/application/organigram"
+  }
+ ]
+}

@@ -1,0 +1,648 @@
+{
+ "code": "knk",
+ "university": "Кыргызская национальная консерватория имени К. Молдобасанова",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://conservatory.kg/кафедры",
+  "https://conservatory.kg/кафедры/Факультет-повышения-квалификации",
+  "https://conservatory.kg/кафедры/Кыргызская-традиционная-музыка-и-народные-инструменты",
+  "https://conservatory.kg/кафедры/Музыкальное-искусство-эстрады",
+  "https://conservatory.kg/кафедры/Народное-пение",
+  "https://conservatory.kg/кафедры/Специальное-фортепиано",
+  "https://conservatory.kg/кафедры/Струнные-инструменты",
+  "https://conservatory.kg/кафедры/Духовые-и-ударные-инструменты",
+  "https://conservatory.kg/кафедры/Дирижирование",
+  "https://conservatory.kg/кафедры/Музыковедение-и-композиция",
+  "https://conservatory.kg/кафедры/Режиссура-хореографии-1",
+  "https://conservatory.kg/кафедры/Довузовская-подготовка",
+  "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+  "https://conservatory.kg/кафедры/КАФЕДРА-АКАДЕМИЧЕСКОГО-ПЕНИЯ"
+ ],
+ "notes": "Сайт даёт только инициалы ППС на страницах кафедр. Исключены концертмейстеры без преподавательской должности и исторические упоминания. Страницы ФПК и Довузовской подготовки без списков.",
+ "professors": [
+  {
+   "last_name": "Кирекечова",
+   "first_name": "С. С.",
+   "department": "Кыргызская традиционная музыка и народные инструменты",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Кыргызская-традиционная-музыка-и-народные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Уралиев",
+   "first_name": "Н. К.",
+   "department": "Кыргызская традиционная музыка и народные инструменты",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Кыргызская-традиционная-музыка-и-народные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Касаболотов",
+   "first_name": "А. У.",
+   "department": "Кыргызская традиционная музыка и народные инструменты",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Кыргызская-традиционная-музыка-и-народные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Суеркулова",
+   "first_name": "И. Б.",
+   "department": "Кыргызская традиционная музыка и народные инструменты",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Кыргызская-традиционная-музыка-и-народные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Айсаев",
+   "first_name": "Ж. О.",
+   "department": "Кыргызская традиционная музыка и народные инструменты",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Кыргызская-традиционная-музыка-и-народные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ибраева",
+   "first_name": "П. Ш.",
+   "department": "Кыргызская традиционная музыка и народные инструменты",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Кыргызская-традиционная-музыка-и-народные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Асанканов",
+   "first_name": "Н. А.",
+   "department": "Кыргызская традиционная музыка и народные инструменты",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Кыргызская-традиционная-музыка-и-народные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Валиев",
+   "first_name": "Ф. Г.",
+   "department": "Кыргызская традиционная музыка и народные инструменты",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Кыргызская-традиционная-музыка-и-народные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алишеров",
+   "first_name": "Б. Б.",
+   "department": "Кыргызская традиционная музыка и народные инструменты",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Кыргызская-традиционная-музыка-и-народные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мураталиев",
+   "first_name": "Т. М.",
+   "department": "Кыргызская традиционная музыка и народные инструменты",
+   "title": "профессор",
+   "source_url": "https://conservatory.kg/кафедры/Кыргызская-традиционная-музыка-и-народные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Адышева",
+   "first_name": "Б. Э.",
+   "department": "Кыргызская традиционная музыка и народные инструменты",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Кыргызская-традиционная-музыка-и-народные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кыдырбаева",
+   "first_name": "А. Ж.",
+   "department": "Кыргызская традиционная музыка и народные инструменты",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Кыргызская-традиционная-музыка-и-народные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мелисбекова",
+   "first_name": "Ч. М.",
+   "department": "Кыргызская традиционная музыка и народные инструменты",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Кыргызская-традиционная-музыка-и-народные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдылдаев",
+   "first_name": "А. И.",
+   "department": "Музыкальное искусство эстрады",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Музыкальное-искусство-эстрады",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сарлыкова",
+   "first_name": "Р. Т.",
+   "department": "Музыкальное искусство эстрады",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Музыкальное-искусство-эстрады",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сулайманкулов",
+   "first_name": "М. М.",
+   "department": "Музыкальное искусство эстрады",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Музыкальное-искусство-эстрады",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осмонкулов",
+   "first_name": "Ы. К.",
+   "department": "Музыкальное искусство эстрады",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Музыкальное-искусство-эстрады",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кыдыкбаев",
+   "first_name": "Э. Б.",
+   "department": "Музыкальное искусство эстрады",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Музыкальное-искусство-эстрады",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кыдыкбаев",
+   "first_name": "К. Б.",
+   "department": "Музыкальное искусство эстрады",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Музыкальное-искусство-эстрады",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "В. Т.",
+   "department": "Музыкальное искусство эстрады",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Музыкальное-искусство-эстрады",
+   "initials_only": true
+  },
+  {
+   "last_name": "Соколов",
+   "first_name": "А. Б.",
+   "department": "Музыкальное искусство эстрады",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Музыкальное-искусство-эстрады",
+   "initials_only": true
+  },
+  {
+   "last_name": "Асаналиев",
+   "first_name": "Т. Н.",
+   "department": "Народное пение",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Народное-пение",
+   "initials_only": true
+  },
+  {
+   "last_name": "Исраилов",
+   "first_name": "Ж. М.",
+   "department": "Народное пение",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Народное-пение",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алишерова",
+   "first_name": "Г. Б.",
+   "department": "Народное пение",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Народное-пение",
+   "initials_only": true
+  },
+  {
+   "last_name": "Койчуманов",
+   "first_name": "Ж. А.",
+   "department": "Народное пение",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Народное-пение",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жакыпов",
+   "first_name": "Б. К.",
+   "department": "Народное пение",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Народное-пение",
+   "initials_only": true
+  },
+  {
+   "last_name": "Акматова",
+   "first_name": "А. А.",
+   "department": "Народное пение",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Народное-пение",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жунушов",
+   "first_name": "Р. О.",
+   "department": "Народное пение",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Народное-пение",
+   "initials_only": true
+  },
+  {
+   "last_name": "Маамытов",
+   "first_name": "Д. М.",
+   "department": "Народное пение",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Народное-пение",
+   "initials_only": true
+  },
+  {
+   "last_name": "Лысенко",
+   "first_name": "Э. В.",
+   "department": "Специальное фортепиано",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Специальное-фортепиано",
+   "initials_only": true
+  },
+  {
+   "last_name": "Цокуренко",
+   "first_name": "П. А.",
+   "department": "Специальное фортепиано",
+   "title": "профессор",
+   "source_url": "https://conservatory.kg/кафедры/Специальное-фортепиано",
+   "initials_only": true
+  },
+  {
+   "last_name": "Нарынбаева",
+   "first_name": "З. А.",
+   "department": "Специальное фортепиано",
+   "title": "профессор",
+   "source_url": "https://conservatory.kg/кафедры/Специальное-фортепиано",
+   "initials_only": true
+  },
+  {
+   "last_name": "Толмачева",
+   "first_name": "И. Н.",
+   "department": "Специальное фортепиано",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Специальное-фортепиано",
+   "initials_only": true
+  },
+  {
+   "last_name": "Темников",
+   "first_name": "М. В.",
+   "department": "Специальное фортепиано",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Специальное-фортепиано",
+   "initials_only": true
+  },
+  {
+   "last_name": "Курманова",
+   "first_name": "Н. Ж.",
+   "department": "Струнные инструменты",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Струнные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Асаналиев",
+   "first_name": "Э. У.",
+   "department": "Струнные инструменты",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Струнные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кангельдиева",
+   "first_name": "К. У.",
+   "department": "Струнные инструменты",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Струнные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Слензак-Бегалиева",
+   "first_name": "З. З.",
+   "department": "Струнные инструменты",
+   "title": "профессор",
+   "source_url": "https://conservatory.kg/кафедры/Струнные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шалтакбаев",
+   "first_name": "Ч. Ж.",
+   "department": "Духовые и ударные инструменты",
+   "title": "профессор",
+   "source_url": "https://conservatory.kg/кафедры/Духовые-и-ударные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кыдыкбаев",
+   "first_name": "Б. Б.",
+   "department": "Духовые и ударные инструменты",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Духовые-и-ударные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шаршенбаев",
+   "first_name": "Э. Ш.",
+   "department": "Духовые и ударные инструменты",
+   "title": "профессор",
+   "source_url": "https://conservatory.kg/кафедры/Духовые-и-ударные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Калыбеков",
+   "first_name": "А. М.",
+   "department": "Духовые и ударные инструменты",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Духовые-и-ударные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джумашева",
+   "first_name": "Г. Б.",
+   "department": "Духовые и ударные инструменты",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Духовые-и-ударные-инструменты",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мураталиева",
+   "first_name": "А. К.",
+   "department": "Дирижирование",
+   "title": "профессор",
+   "source_url": "https://conservatory.kg/кафедры/Дирижирование",
+   "initials_only": true
+  },
+  {
+   "last_name": "Остапенко",
+   "first_name": "Ю. Ю.",
+   "department": "Дирижирование",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Дирижирование",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осмоналиев",
+   "first_name": "Р. М.",
+   "department": "Дирижирование",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Дирижирование",
+   "initials_only": true
+  },
+  {
+   "last_name": "Рябихина",
+   "first_name": "Е. Ю.",
+   "department": "Дирижирование",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Дирижирование",
+   "initials_only": true
+  },
+  {
+   "last_name": "Усенко",
+   "first_name": "О. И.",
+   "department": "Музыковедение и композиция",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Музыковедение-и-композиция",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жещинский",
+   "first_name": "А. Н.",
+   "department": "Музыковедение и композиция",
+   "title": "профессор",
+   "source_url": "https://conservatory.kg/кафедры/Музыковедение-и-композиция",
+   "initials_only": true
+  },
+  {
+   "last_name": "Дооранов",
+   "first_name": "Т. С.",
+   "department": "Музыковедение и композиция",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Музыковедение-и-композиция",
+   "initials_only": true
+  },
+  {
+   "last_name": "Куйкеева",
+   "first_name": "З. И.",
+   "department": "Музыковедение и композиция",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Музыковедение-и-композиция",
+   "initials_only": true
+  },
+  {
+   "last_name": "Гриневич",
+   "first_name": "Л. Г.",
+   "department": "Музыковедение и композиция",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Музыковедение-и-композиция",
+   "initials_only": true
+  },
+  {
+   "last_name": "Виноградова",
+   "first_name": "Г. А.",
+   "department": "Музыковедение и композиция",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Музыковедение-и-композиция",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мусаев",
+   "first_name": "Б. У.",
+   "department": "Музыковедение и композиция",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Музыковедение-и-композиция",
+   "initials_only": true
+  },
+  {
+   "last_name": "Окенова",
+   "first_name": "Г. Т.",
+   "department": "Режиссура хореографии",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Режиссура-хореографии-1",
+   "initials_only": true
+  },
+  {
+   "last_name": "Молдобакиров",
+   "first_name": "З. А.",
+   "department": "Режиссура хореографии",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Режиссура-хореографии-1",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токтогазиев",
+   "first_name": "А. Б.",
+   "department": "Режиссура хореографии",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Режиссура-хореографии-1",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токсаитова",
+   "first_name": "М. Э.",
+   "department": "Межфакультетские кафедры",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шергалиева",
+   "first_name": "Э. К.",
+   "department": "Межфакультетские кафедры",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+   "initials_only": true
+  },
+  {
+   "last_name": "Нам",
+   "first_name": "З. В.",
+   "department": "Межфакультетские кафедры",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+   "initials_only": true
+  },
+  {
+   "last_name": "Нусупова",
+   "first_name": "Ч. Т.",
+   "department": "Межфакультетские кафедры",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+   "initials_only": true
+  },
+  {
+   "last_name": "Добулбекова",
+   "first_name": "А. А.",
+   "department": "Межфакультетские кафедры",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+   "initials_only": true
+  },
+  {
+   "last_name": "Болотбеков",
+   "first_name": "Н. Б.",
+   "department": "Межфакультетские кафедры",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кабанбаева",
+   "first_name": "Т. А.",
+   "department": "Межфакультетские кафедры",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токтоналиева",
+   "first_name": "Л. К.",
+   "department": "Межфакультетские кафедры",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кирал",
+   "first_name": "В. В.",
+   "department": "Межфакультетские кафедры",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+   "initials_only": true
+  },
+  {
+   "last_name": "Текенова",
+   "first_name": "А. Ж.",
+   "department": "Межфакультетские кафедры",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тимошенко",
+   "first_name": "В. Г.",
+   "department": "Межфакультетские кафедры",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сейтканова",
+   "first_name": "А. Ш.",
+   "department": "Межфакультетские кафедры",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+   "initials_only": true
+  },
+  {
+   "last_name": "Нуждина",
+   "first_name": "И. В.",
+   "department": "Межфакультетские кафедры",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+   "initials_only": true
+  },
+  {
+   "last_name": "Байсалова",
+   "first_name": "А. Т.",
+   "department": "Межфакультетские кафедры",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/Межфакультетские-кафедры",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бейшеев",
+   "first_name": "Т. С.",
+   "department": "Академическое пение",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/КАФЕДРА-АКАДЕМИЧЕСКОГО-ПЕНИЯ",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чоткараева",
+   "first_name": "С. Ч.",
+   "department": "Академическое пение",
+   "title": "доцент",
+   "source_url": "https://conservatory.kg/кафедры/КАФЕДРА-АКАДЕМИЧЕСКОГО-ПЕНИЯ",
+   "initials_only": true
+  },
+  {
+   "last_name": "Асанкулова",
+   "first_name": "Э. К.",
+   "department": "Академическое пение",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/КАФЕДРА-АКАДЕМИЧЕСКОГО-ПЕНИЯ",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сарыгулова",
+   "first_name": "З. А.",
+   "department": "Академическое пение",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/КАФЕДРА-АКАДЕМИЧЕСКОГО-ПЕНИЯ",
+   "initials_only": true
+  },
+  {
+   "last_name": "Иманалиев",
+   "first_name": "У. Ж.",
+   "department": "Академическое пение",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/КАФЕДРА-АКАДЕМИЧЕСКОГО-ПЕНИЯ",
+   "initials_only": true
+  },
+  {
+   "last_name": "Омуров",
+   "first_name": "Э. С.",
+   "department": "Академическое пение",
+   "title": "старший преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/КАФЕДРА-АКАДЕМИЧЕСКОГО-ПЕНИЯ",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жоомартбеков",
+   "first_name": "Ж. Э.",
+   "department": "Академическое пение",
+   "title": "преподаватель",
+   "source_url": "https://conservatory.kg/кафедры/КАФЕДРА-АКАДЕМИЧЕСКОГО-ПЕНИЯ",
+   "initials_only": true
+  }
+ ]
+}

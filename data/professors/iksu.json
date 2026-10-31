@@ -1,0 +1,1159 @@
+{
+ "code": "iksu",
+ "university": "Иссык-Кульский государственный университет им. К. Тыныстанова (ИГУ)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "http://iksu.kg/?rest_route=/wp/v2/pages (выгружено 975 из 1075 страниц сайта; страница выдачи 9 отдаёт битый JSON)",
+  "http://main.iksu.kg/?page_id=10203",
+  "http://main.iksu.kg/?page_id=10224",
+  "http://main.iksu.kg/?page_id=13606",
+  "http://main.iksu.kg/?page_id=15570",
+  "http://main.iksu.kg/?page_id=15588",
+  "http://main.iksu.kg/?page_id=17826",
+  "http://main.iksu.kg/?page_id=17879",
+  "http://main.iksu.kg/?page_id=20348",
+  "http://main.iksu.kg/?page_id=2086",
+  "http://main.iksu.kg/?page_id=2091",
+  "http://main.iksu.kg/?page_id=2099",
+  "http://main.iksu.kg/?page_id=21203",
+  "http://main.iksu.kg/?page_id=22564",
+  "http://main.iksu.kg/?page_id=22871",
+  "http://main.iksu.kg/?page_id=2521",
+  "http://main.iksu.kg/?page_id=2523",
+  "http://main.iksu.kg/?page_id=2525",
+  "http://main.iksu.kg/?page_id=2532",
+  "http://main.iksu.kg/?page_id=2536",
+  "http://main.iksu.kg/?page_id=2545",
+  "http://main.iksu.kg/?page_id=2552",
+  "http://main.iksu.kg/?page_id=26941",
+  "http://main.iksu.kg/?page_id=27210",
+  "http://main.iksu.kg/?page_id=30412",
+  "http://main.iksu.kg/?page_id=30778",
+  "http://main.iksu.kg/?page_id=3432",
+  "http://main.iksu.kg/?page_id=3472",
+  "http://main.iksu.kg/?page_id=3535",
+  "http://main.iksu.kg/?page_id=3538",
+  "http://main.iksu.kg/?page_id=3606",
+  "http://main.iksu.kg/?page_id=3645",
+  "http://main.iksu.kg/?page_id=3647",
+  "http://main.iksu.kg/?page_id=3650",
+  "http://main.iksu.kg/?page_id=370",
+  "http://main.iksu.kg/?page_id=3728",
+  "http://main.iksu.kg/?page_id=3730",
+  "http://main.iksu.kg/?page_id=3964",
+  "http://main.iksu.kg/?page_id=3981"
+ ],
+ "notes": "Сайт iksu.kg (WordPress, ссылки вида main.iksu.kg/?page_id=...), страницы выгружены через REST API (?rest_route=), /wp-json/ отдаёт 404. Одна страница выдачи API (100 страниц сайта) не разобралась из-за битого JSON. Брались только имена в списочном формате «ФИО – должность/степень» на страницах кафедр (новые и старые версии страниц), плюс отдельные преподаватели из новостей с явной должностью. Исторические упоминания (бывшие заведующие, деканы прошлых лет), лаборанты, руководство вуза, сотрудники отделов, гости из других вузов исключены. Часть кафедр дана только инициалами (initials_only). Названия кафедр как в заголовках страниц, на русском или кыргызском.",
+ "professors": [
+  {
+   "last_name": "Арымбаев",
+   "first_name": "А. Д.",
+   "department": "Бухгалтердик эсеп, анализ жана аудит",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=2086",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мусуралиева",
+   "first_name": "Д. Т.",
+   "department": "Бухгалтердик эсеп, анализ жана аудит",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=2086",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сейкимбаева",
+   "first_name": "Б. К.",
+   "department": "Бухгалтердик эсеп, анализ жана аудит",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=2086",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шевелева",
+   "first_name": "О. В.",
+   "department": "Бухгалтердик эсеп, анализ жана аудит",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=2086",
+   "initials_only": true
+  },
+  {
+   "last_name": "Амантурова",
+   "first_name": "Чынара Кыдыкбековна",
+   "department": "Бухгалтерского учета, анализа и аудита",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=21203"
+  },
+  {
+   "last_name": "Атышов",
+   "first_name": "К. А.",
+   "department": "Бухгалтерского учета, анализа и аудита",
+   "title": "профессор",
+   "source_url": "http://main.iksu.kg/?page_id=21203",
+   "initials_only": true
+  },
+  {
+   "last_name": "Салюев",
+   "first_name": "Анвар Абдузаевич",
+   "department": "Бухгалтерского учета, анализа и аудита",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=22871"
+  },
+  {
+   "last_name": "Эркимбаев",
+   "first_name": "Максатбек Токтобекович",
+   "department": "Бухгалтерского учета, анализа и аудита",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=22871"
+  },
+  {
+   "last_name": "Бутенко",
+   "first_name": "И. В.",
+   "department": "Бухгалтерского учёта, анализа и аудита",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=2091",
+   "initials_only": true
+  },
+  {
+   "last_name": "Акматов",
+   "first_name": "Нурбек Рахматуллаевич",
+   "department": "Дошкольного и начального образования",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3728"
+  },
+  {
+   "last_name": "Арбаев",
+   "first_name": "Калысбек Асанович",
+   "department": "Дошкольного и начального образования",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3728"
+  },
+  {
+   "last_name": "Байтикова",
+   "first_name": "Тилек Аянбаевна",
+   "department": "Дошкольного и начального образования",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3728"
+  },
+  {
+   "last_name": "Жоломан кызы",
+   "first_name": "Венера",
+   "department": "Дошкольного и начального образования",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3728"
+  },
+  {
+   "last_name": "Исакова",
+   "first_name": "Светлана Турдубековна",
+   "department": "Дошкольного и начального образования",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3728"
+  },
+  {
+   "last_name": "Каныбекова",
+   "first_name": "Айтилек Каныбековна",
+   "department": "Дошкольного и начального образования",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3728"
+  },
+  {
+   "last_name": "Курманалиева",
+   "first_name": "Чолпон Албановна",
+   "department": "Дошкольного и начального образования",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3728"
+  },
+  {
+   "last_name": "Мукамбетова",
+   "first_name": "Айнура Керимбековна",
+   "department": "Дошкольного и начального образования",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3728"
+  },
+  {
+   "last_name": "Наматова",
+   "first_name": "Эльвира Ихтияровна",
+   "department": "Дошкольного и начального образования",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3728"
+  },
+  {
+   "last_name": "Сатиев",
+   "first_name": "Каныбек Бектаншович",
+   "department": "Дошкольного и начального образования",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3728"
+  },
+  {
+   "last_name": "Сатышева",
+   "first_name": "Гүлшара Асанбаевна",
+   "department": "Дошкольного и начального образования",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3728"
+  },
+  {
+   "last_name": "Шамыркулова",
+   "first_name": "Венера Талайбековна",
+   "department": "Дошкольного и начального образования",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3728"
+  },
+  {
+   "last_name": "Өмурзакова",
+   "first_name": "Карамат Кудайкуловна",
+   "department": "Дошкольного и начального образования",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3728"
+  },
+  {
+   "last_name": "Абдыраманова",
+   "first_name": "Н. Т.",
+   "department": "Естественных и медицинских наук",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3535",
+   "initials_only": true
+  },
+  {
+   "last_name": "Акматалиев",
+   "first_name": "Ж. Т.",
+   "department": "Естественных и медицинских наук",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3535",
+   "initials_only": true
+  },
+  {
+   "last_name": "Аманбаева",
+   "first_name": "Н. У.",
+   "department": "Естественных и медицинских наук",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3535",
+   "initials_only": true
+  },
+  {
+   "last_name": "Асанбекова",
+   "first_name": "Ч. А.",
+   "department": "Естественных и медицинских наук",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3535",
+   "initials_only": true
+  },
+  {
+   "last_name": "Болпонова",
+   "first_name": "Б. А.",
+   "department": "Естественных и медицинских наук",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3535",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жээнбекова",
+   "first_name": "А. Т.",
+   "department": "Естественных и медицинских наук",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3535",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ибраева",
+   "first_name": "К. Б.",
+   "department": "Естественных и медицинских наук",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3535",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кадыркулова",
+   "first_name": "С. К.",
+   "department": "Естественных и медицинских наук",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3535",
+   "initials_only": true
+  },
+  {
+   "last_name": "Калдыбаев",
+   "first_name": "Б. К.",
+   "department": "Естественных и медицинских наук",
+   "title": "профессор",
+   "source_url": "http://main.iksu.kg/?page_id=3535",
+   "initials_only": true
+  },
+  {
+   "last_name": "Качекова",
+   "first_name": "Ш. К.",
+   "department": "Естественных и медицинских наук",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3535",
+   "initials_only": true
+  },
+  {
+   "last_name": "Куренкеев",
+   "first_name": "Т. К.",
+   "department": "Естественных и медицинских наук",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3535",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осмонбаева",
+   "first_name": "Кымбаткүл Бейшеновна",
+   "department": "Естественных и медицинских наук",
+   "title": "профессор",
+   "source_url": "http://main.iksu.kg/?page_id=3535"
+  },
+  {
+   "last_name": "Сариева",
+   "first_name": "Г. Е.",
+   "department": "Естественных и медицинских наук",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3535",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осмонов",
+   "first_name": "И. О.",
+   "department": "Естественных наук",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=2545",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бокоев",
+   "first_name": "К. Т.",
+   "department": "Изобразительного искусства и дизайна",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3650",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тогузбаева",
+   "first_name": "Б. М.",
+   "department": "Изобразительного искусства и дизайна",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3650",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токтобеков",
+   "first_name": "К. Д.",
+   "department": "Изобразительного искусства и дизайна",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3650",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эдилова",
+   "first_name": "А. Э.",
+   "department": "Изобразительного искусства и дизайна",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3650",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдыракматова",
+   "first_name": "Н. К.",
+   "department": "Иностранных языков",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=26941",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алыбекова",
+   "first_name": "Б. Э.",
+   "department": "Иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=26941",
+   "initials_only": true
+  },
+  {
+   "last_name": "Асанбаева",
+   "first_name": "Н. Т.",
+   "department": "Иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=26941",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жумагулова",
+   "first_name": "Ф. М.",
+   "department": "Иностранных языков",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=26941",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ийсаева",
+   "first_name": "Анаркан Джумакадыровна",
+   "department": "Иностранных языков",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=26941"
+  },
+  {
+   "last_name": "Иманакунова",
+   "first_name": "И. Ж.",
+   "department": "Иностранных языков",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=26941",
+   "initials_only": true
+  },
+  {
+   "last_name": "Исакова",
+   "first_name": "Р. У.",
+   "department": "Иностранных языков",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=26941",
+   "initials_only": true
+  },
+  {
+   "last_name": "Калыкова",
+   "first_name": "Н. К.",
+   "department": "Иностранных языков",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=26941",
+   "initials_only": true
+  },
+  {
+   "last_name": "Каримова",
+   "first_name": "С. А.",
+   "department": "Иностранных языков",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=26941",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "У. Д.",
+   "department": "Иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=26941",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ногоева",
+   "first_name": "Ч. А.",
+   "department": "Иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=26941",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чыныбаева",
+   "first_name": "Д. Т.",
+   "department": "Иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=26941",
+   "initials_only": true
+  },
+  {
+   "last_name": "Некрасов",
+   "first_name": "Александр Николаевич",
+   "department": "Информатики",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=13606"
+  },
+  {
+   "last_name": "Асаналиева",
+   "first_name": "Ж. Б.",
+   "department": "Истории и методики преподавания",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=2521",
+   "initials_only": true
+  },
+  {
+   "last_name": "Муканбетова",
+   "first_name": "Р. Б.",
+   "department": "Истории и методики преподавания",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=2521",
+   "initials_only": true
+  },
+  {
+   "last_name": "Качкынова",
+   "first_name": "Эльвира Качкыновна",
+   "department": "Истории, государственного и муниципального управления",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=17879"
+  },
+  {
+   "last_name": "Алымбеков",
+   "first_name": "Кайырбек Айтакунович",
+   "department": "Истории, философии и социологии",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3730"
+  },
+  {
+   "last_name": "Асаналиева",
+   "first_name": "Джамал Бирликовна",
+   "department": "Истории, философии и социологии",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3730"
+  },
+  {
+   "last_name": "Боконтаева",
+   "first_name": "Жаныл Кенешевна",
+   "department": "Истории, философии и социологии",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3730"
+  },
+  {
+   "last_name": "Джунушева",
+   "first_name": "К. С.",
+   "department": "Истории, философии и социологии",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3730",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ибраев",
+   "first_name": "Чыныбай Таштандиевич",
+   "department": "Истории, философии и социологии",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3730"
+  },
+  {
+   "last_name": "Ишенбекова",
+   "first_name": "Нургуль Турсунгазиевна",
+   "department": "Истории, философии и социологии",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3730"
+  },
+  {
+   "last_name": "Каниметов",
+   "first_name": "Адыл Кулжигитович",
+   "department": "Истории, философии и социологии",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3730"
+  },
+  {
+   "last_name": "Керимкулов",
+   "first_name": "Жениш Курмангалиевич",
+   "department": "Истории, философии и социологии",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3730"
+  },
+  {
+   "last_name": "Кожомуратов",
+   "first_name": "Алмаз Ташкенбаевич",
+   "department": "Истории, философии и социологии",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3730"
+  },
+  {
+   "last_name": "Кылчыкбаев",
+   "first_name": "Каниет Тилекович",
+   "department": "Истории, философии и социологии",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3730"
+  },
+  {
+   "last_name": "Мукамбетова",
+   "first_name": "Рахат Бекмырзаевна",
+   "department": "Истории, философии и социологии",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3730"
+  },
+  {
+   "last_name": "Сооронбаева",
+   "first_name": "Чолпон Кабыловна",
+   "department": "Истории, философии и социологии",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3730"
+  },
+  {
+   "last_name": "Абдыкеримова",
+   "first_name": "Аида Эсенгуловна",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "профессор",
+   "source_url": "http://main.iksu.kg/?page_id=20348"
+  },
+  {
+   "last_name": "Анапияева",
+   "first_name": "Асел Абдысатаровна",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=20348"
+  },
+  {
+   "last_name": "Асаналиева",
+   "first_name": "Кыял Айбашевна",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=20348"
+  },
+  {
+   "last_name": "Дунканаев",
+   "first_name": "Абдыкалык Токтогулович",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "профессор",
+   "source_url": "http://main.iksu.kg/?page_id=20348"
+  },
+  {
+   "last_name": "Койлубаева",
+   "first_name": "Айгүл Кадырбаевна",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=20348"
+  },
+  {
+   "last_name": "Бейшебекова",
+   "first_name": "Ширин Белековна",
+   "department": "Кыргызского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3647"
+  },
+  {
+   "last_name": "Оторбаева",
+   "first_name": "Салтанат Батырбековна",
+   "department": "Кыргызского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3647"
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Бермет Дженалиевна",
+   "department": "Кыргызского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3647"
+  },
+  {
+   "last_name": "Толубаева",
+   "first_name": "Чолпон Дердеңбаевна",
+   "department": "Кыргызского языка и литературы",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3647"
+  },
+  {
+   "last_name": "Түмөнбаева",
+   "first_name": "Жазгүл Абдылдакуновна",
+   "department": "Кыргызского языка и литературы",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3647"
+  },
+  {
+   "last_name": "Абакиров",
+   "first_name": "К. А.",
+   "department": "Кыргызской литературы и манасоведения",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3645",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдылдабеков",
+   "first_name": "К. А.",
+   "department": "Кыргызской литературы и манасоведения",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3645",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бегалиев",
+   "first_name": "С. Б.",
+   "department": "Кыргызской литературы и манасоведения",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3645",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жумашева",
+   "first_name": "Н. А.",
+   "department": "Кыргызской литературы и манасоведения",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3645",
+   "initials_only": true
+  },
+  {
+   "last_name": "Казакбаев",
+   "first_name": "Айбек Муңкурович",
+   "department": "Көркөм сүрөт жана дизайн",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=10224"
+  },
+  {
+   "last_name": "Курманалиева",
+   "first_name": "Сабира Рыскуловна",
+   "department": "Көркөм сүрөт жана дизайн",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=10224"
+  },
+  {
+   "last_name": "Мамбетов",
+   "first_name": "Темиркул Омуркулович",
+   "department": "Көркөм сүрөт жана дизайн",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=10224"
+  },
+  {
+   "last_name": "Муратова",
+   "first_name": "Кымбат Таалайкуловна",
+   "department": "Көркөм сүрөт жана дизайн",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=10224"
+  },
+  {
+   "last_name": "Орозобаев",
+   "first_name": "Алайбек Керимович",
+   "department": "Көркөм сүрөт жана дизайн",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=10224"
+  },
+  {
+   "last_name": "Термечиков",
+   "first_name": "Медет Аскерович",
+   "department": "Көркөм сүрөт жана дизайн",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=10224"
+  },
+  {
+   "last_name": "Турсуналиев",
+   "first_name": "Мерген Турсуналиевич",
+   "department": "Көркөм сүрөт жана дизайн",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=10224"
+  },
+  {
+   "last_name": "Джапарова",
+   "first_name": "Салтанат Нургожоевна",
+   "department": "Математика жана информатика, окутуунун технологиялары",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=30778"
+  },
+  {
+   "last_name": "Исабеков",
+   "first_name": "К. А.",
+   "department": "Математика жана информатика, окутуунун технологиялары",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=30778",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кооманова",
+   "first_name": "Жанара Келгенбаевна",
+   "department": "Математики и информатики, технологий",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=22564"
+  },
+  {
+   "last_name": "Плех",
+   "first_name": "З. И.",
+   "department": "Орус тили жана адабияты",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=2099",
+   "initials_only": true
+  },
+  {
+   "last_name": "Дюшеева",
+   "first_name": "Н. К.",
+   "department": "Педагогики и психологии",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=2536",
+   "initials_only": true
+  },
+  {
+   "last_name": "Нор",
+   "first_name": "Л. И.",
+   "department": "Педагогики и психологии",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=2536",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абакиров",
+   "first_name": "А. А.",
+   "department": "Психолого-педагогических и гуманитарных наук",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3964",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абышалиев",
+   "first_name": "К. Б.",
+   "department": "Психолого-педагогических и гуманитарных наук",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3964",
+   "initials_only": true
+  },
+  {
+   "last_name": "Исакова",
+   "first_name": "Чинара Бакировна",
+   "department": "Психолого-педагогических и гуманитарных наук",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3964"
+  },
+  {
+   "last_name": "Исмаилова",
+   "first_name": "Ш. А.",
+   "department": "Психолого-педагогических и гуманитарных наук",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3964",
+   "initials_only": true
+  },
+  {
+   "last_name": "Карасартова",
+   "first_name": "Ж. Б.",
+   "department": "Психолого-педагогических и гуманитарных наук",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3964",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сагимбекова",
+   "first_name": "Д. С.",
+   "department": "Психолого-педагогических и гуманитарных наук",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3964",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ткачева",
+   "first_name": "С. А.",
+   "department": "Психолого-педагогических и гуманитарных наук",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3964",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чолпонкулова",
+   "first_name": "Н. Т.",
+   "department": "Психолого-педагогических и гуманитарных наук",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3964",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдуллаев",
+   "first_name": "Сайфулла Нурмухаммедович",
+   "department": "Русского языка и литературы",
+   "title": "профессор",
+   "source_url": "http://main.iksu.kg/?page_id=3432"
+  },
+  {
+   "last_name": "Абдуманапова",
+   "first_name": "Зухра Зайнишевна",
+   "department": "Русского языка и литературы",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3432"
+  },
+  {
+   "last_name": "Абыласынова",
+   "first_name": "Гуляим Изагалиевна",
+   "department": "Русского языка и литературы",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3432"
+  },
+  {
+   "last_name": "Белогорцева",
+   "first_name": "Марина Алексеевна",
+   "department": "Русского языка и литературы",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3432"
+  },
+  {
+   "last_name": "Гиляузизова",
+   "first_name": "Нелли Муратовна",
+   "department": "Русского языка и литературы",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3432"
+  },
+  {
+   "last_name": "Жоловчиева",
+   "first_name": "Сауле Маликовна",
+   "department": "Русского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3432"
+  },
+  {
+   "last_name": "Кадыркулова",
+   "first_name": "У. К.",
+   "department": "Русского языка и литературы",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3432",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кульчунова",
+   "first_name": "Мээрим Тынчылыковна",
+   "department": "Русского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3432"
+  },
+  {
+   "last_name": "Мелисова",
+   "first_name": "Толгонай Ленисовна",
+   "department": "Русского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3432"
+  },
+  {
+   "last_name": "Мурадылова",
+   "first_name": "Гулшан Шариповна",
+   "department": "Русского языка и литературы",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3432"
+  },
+  {
+   "last_name": "Тилекматова",
+   "first_name": "Асель Тилекматовна",
+   "department": "Русского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3432"
+  },
+  {
+   "last_name": "Абдыкеева",
+   "first_name": "Алтын Бекеновна",
+   "department": "Туризма и экономики",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3472"
+  },
+  {
+   "last_name": "Абытаева",
+   "first_name": "Үмүт Таштандыевна",
+   "department": "Туризма и экономики",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3472"
+  },
+  {
+   "last_name": "Борубаева",
+   "first_name": "Ирина Идрисовна",
+   "department": "Туризма и экономики",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3472"
+  },
+  {
+   "last_name": "Кадырова",
+   "first_name": "Гулькаир Бейшебаевна",
+   "department": "Туризма и экономики",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3472"
+  },
+  {
+   "last_name": "Карыбаева",
+   "first_name": "Чолпон Сакешевна",
+   "department": "Туризма и экономики",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3606"
+  },
+  {
+   "last_name": "Кыдыкбаева",
+   "first_name": "Эльмира Керезбековна",
+   "department": "Туризма и экономики",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3606"
+  },
+  {
+   "last_name": "Малаев",
+   "first_name": "Эмиль Туратбекович",
+   "department": "Туризма и экономики",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3606"
+  },
+  {
+   "last_name": "Ниязова",
+   "first_name": "Рахиля Тургунжановна",
+   "department": "Туризма и экономики",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3606"
+  },
+  {
+   "last_name": "Сариев",
+   "first_name": "Фархат Байбосунович",
+   "department": "Туризма и экономики",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3606"
+  },
+  {
+   "last_name": "Турсунбаева",
+   "first_name": "Гульмира Сыртбаевна",
+   "department": "Туризма и экономики",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3606"
+  },
+  {
+   "last_name": "Шыгаева",
+   "first_name": "Турсункул Конокбаевна",
+   "department": "Туризма и экономики",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3606"
+  },
+  {
+   "last_name": "Алыбеков",
+   "first_name": "Аскар Алыбекович",
+   "department": "Физики и инженерных технологий",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Джолдошев",
+   "first_name": "Базаркул Кошоевич",
+   "department": "Физики и инженерных технологий",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Жакыпов",
+   "first_name": "Нурлан Жанышевич",
+   "department": "Физики и инженерных технологий",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Жумабаев",
+   "first_name": "Кайрат Аскетович",
+   "department": "Физики и инженерных технологий",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Зиялиев",
+   "first_name": "Кадырбек Жанузакович",
+   "department": "Физики и инженерных технологий",
+   "title": "профессор",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Клименко",
+   "first_name": "Олег Ильич",
+   "department": "Физики и инженерных технологий",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Кожомбердиева",
+   "first_name": "Динара Кадыровна",
+   "department": "Физики и инженерных технологий",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Мусаев",
+   "first_name": "Капен Мусаевич",
+   "department": "Физики и инженерных технологий",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Орозакунова",
+   "first_name": "Бактыгүл Кеңешовна",
+   "department": "Физики и инженерных технологий",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Садыкова",
+   "first_name": "Элнура Замирбековна",
+   "department": "Физики и инженерных технологий",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Сатыбалдиев",
+   "first_name": "Урмат Кыдыралиевич",
+   "department": "Физики и инженерных технологий",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Тавинтеев",
+   "first_name": "Руслан Адылбекович",
+   "department": "Физики и инженерных технологий",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Такырбашев",
+   "first_name": "Амангелди Бексултанович",
+   "department": "Физики и инженерных технологий",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Торубаева",
+   "first_name": "Упел Сокушбашевна",
+   "department": "Физики и инженерных технологий",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Чинбаев",
+   "first_name": "Омурбек Конопияевич",
+   "department": "Физики и инженерных технологий",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Юсупов",
+   "first_name": "Равиль Харсанович",
+   "department": "Физики и инженерных технологий",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3981"
+  },
+  {
+   "last_name": "Чыныбаев",
+   "first_name": "Рысалы Рысбекович",
+   "department": "Физики и электроснабжения",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=2552"
+  },
+  {
+   "last_name": "Урсеитов",
+   "first_name": "Орозбай Урсеитович",
+   "department": "Физико-математический и естественно-технический факультет",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=15570"
+  },
+  {
+   "last_name": "Кудайбергенова",
+   "first_name": "А. К.",
+   "department": "Физического воспитания и методики его преподавания",
+   "title": "доцент",
+   "source_url": "http://main.iksu.kg/?page_id=3538",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "А. А.",
+   "department": "Физического воспитания и методики его преподавания",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3538",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токтомбаева",
+   "first_name": "А. А.",
+   "department": "Физического воспитания и методики его преподавания",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=3538",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кооманова",
+   "first_name": "В. К.",
+   "department": "Чет тилдер",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=17826",
+   "initials_only": true
+  },
+  {
+   "last_name": "Омурбекова",
+   "first_name": "Ч. У.",
+   "department": "Чет тилдер",
+   "title": "старший преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=17826",
+   "initials_only": true
+  },
+  {
+   "last_name": "Даутова",
+   "first_name": "З. Я.",
+   "department": "Экономики, финансов и налогообложения",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=15588",
+   "initials_only": true
+  },
+  {
+   "last_name": "Такырбашева",
+   "first_name": "Ж. А.",
+   "department": "Экономики, финансов и налогообложения",
+   "title": "преподаватель",
+   "source_url": "http://main.iksu.kg/?page_id=370",
+   "initials_only": true
+  }
+ ]
+}

@@ -1,0 +1,254 @@
+{
+ "code": "rmu",
+ "university": "Royal Metropolitan University (ОУ РМУ)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://rmu.edu.kg/site/ru/",
+  "https://rmu.edu.kg/site/en/education/departments/",
+  "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/",
+  "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-dental-disciplines-ru/faculty-ru/",
+  "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-humanities-and-natural-sciences-ru/faculty-ru/",
+  "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-morphological-and-fundamental-disciplines-ru/faculty-ru/"
+ ],
+ "notes": "Официальный сайт найден поиском: rmu.edu.kg. Взяты русские страницы \"Профессорско-преподавательский состав\" всех 4 кафедр. Иностранные преподаватели записаны в порядке как на сайте (первое слово как фамилия). PhD отнесено к \"доцент\". Один человек указан на двух кафедрах (Мамасадыков, Байшукуров), оставлен один раз.",
+ "professors": [
+  {
+   "last_name": "Алымкулов",
+   "first_name": "Муратбек Чынарбекович",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Айтикеев",
+   "first_name": "Адилет Усенович",
+   "department": "Клинические дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Мамасадыков",
+   "first_name": "Илгиз Ташполотович",
+   "department": "Клинические дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Усупбекова",
+   "first_name": "Жылдыз Жумабековна",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Султангазиева",
+   "first_name": "Мээрим Болотбековна",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Мустапакулова",
+   "first_name": "Айтурган Мустапакуловна",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Орункулов",
+   "first_name": "Нурбек Бакытбекович",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Рао",
+   "first_name": "Рамша",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Сабаева",
+   "first_name": "Асылгул Ырысбаевна",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Сами",
+   "first_name": "Аднан",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Джаналиева",
+   "first_name": "Элиза Кенжебековна",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Маратова",
+   "first_name": "Алия Маратовна",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Нурдинов",
+   "first_name": "Медербек Рахатович",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Орозова",
+   "first_name": "Бегимай Кубанычбековна",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Касымова",
+   "first_name": "Айсулуу Алмазовна",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-clinical-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Бекташева",
+   "first_name": "Аида Кубанычбековна",
+   "department": "Стоматологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-dental-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Исаков",
+   "first_name": "Нурбек Суеркулович",
+   "department": "Стоматологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-dental-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Байшукуров",
+   "first_name": "Эльзар Эркинбекович",
+   "department": "Стоматологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-dental-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Макенжанов",
+   "first_name": "Азим Алмазович",
+   "department": "Стоматологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-dental-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Шамим",
+   "first_name": "Анум",
+   "department": "Стоматологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-dental-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Жумашева",
+   "first_name": "Айпери Жумашевна",
+   "department": "Стоматологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-dental-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Жолдошбекова",
+   "first_name": "Аяна Есенгельдиевна",
+   "department": "Стоматологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-dental-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Субанов",
+   "first_name": "Мирлан Турдубекович",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-humanities-and-natural-sciences-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Эркебуланова",
+   "first_name": "Салый Джусуевна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-humanities-and-natural-sciences-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Давлетбакова",
+   "first_name": "Дамира Темирбековна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-humanities-and-natural-sciences-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Мамбеталиев",
+   "first_name": "Урмат Зарлыкович",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-humanities-and-natural-sciences-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Камбарова",
+   "first_name": "Нургуль Абдимомуновна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-humanities-and-natural-sciences-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Токобаев",
+   "first_name": "Данияр Эркинович",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-humanities-and-natural-sciences-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Перегудова",
+   "first_name": "Ольга Викторовна",
+   "department": "Морфологические и фундаментальные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-morphological-and-fundamental-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Имран",
+   "first_name": "Юсаф",
+   "department": "Морфологические и фундаментальные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-morphological-and-fundamental-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Беренова",
+   "first_name": "Жазгуль Береновна",
+   "department": "Морфологические и фундаментальные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-morphological-and-fundamental-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Шамилов",
+   "first_name": "Батый Айтмерекович",
+   "department": "Морфологические и фундаментальные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-morphological-and-fundamental-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Деркембаева",
+   "first_name": "Айым Кайырбековна",
+   "department": "Морфологические и фундаментальные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-morphological-and-fundamental-disciplines-ru/faculty-ru/"
+  },
+  {
+   "last_name": "Бектемиров",
+   "first_name": "Болот Кушубекович",
+   "department": "Морфологические и фундаментальные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://rmu.edu.kg/site/ru/education-ru/academic-departments-ru/department-of-morphological-and-fundamental-disciplines-ru/faculty-ru/"
+  }
+ ]
+}

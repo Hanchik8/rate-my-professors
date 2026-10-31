@@ -1,0 +1,401 @@
+{
+ "code": "apa",
+ "university": "Академия государственного управления при Президенте КР им. Ж. Абдрахманова (АГУПКР)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://www.apap.kg/education/pps",
+  "https://apap.kg/api/pages/education-6/",
+  "https://apap.kg/api/pages/",
+  "https://www.apap.kg/assets/index-COvRy3bN.js"
+ ],
+ "notes": "Сайт www.apap.kg это SPA. Страница ППС (/education/pps, API /api/pages/education-6/) показывает только 4 человек. Полные составы кафедр ГМУиП и Экономика и менеджмент найдены в языковых ресурсах официального бандла сайта (index-COvRy3bN.js, ключи EduKafedGMU и EduKafedEM), source_url указывает на этот файл; отдельный маршрут страницы кафедры в роутере не найден. Состав кафедры EduKafedBP идентичен ЭМ и не дублировался. Часть ППС только с инициалами.",
+ "professors": [
+  {
+   "last_name": "Абдиева",
+   "first_name": "Айгуль Ильясбековна",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/education/pps"
+  },
+  {
+   "last_name": "Алымкулов",
+   "first_name": "Марат Сапарбекович",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "профессор",
+   "source_url": "https://www.apap.kg/education/pps"
+  },
+  {
+   "last_name": "Арапова",
+   "first_name": "Эльмира Байышевна",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "преподаватель",
+   "source_url": "https://www.apap.kg/education/pps"
+  },
+  {
+   "last_name": "Жума кызы",
+   "first_name": "Раиза",
+   "department": "Экономика и менеджмент",
+   "title": "профессор",
+   "source_url": "https://www.apap.kg/education/pps"
+  },
+  {
+   "last_name": "Базарбаев",
+   "first_name": "Кудайберген Базарбаевич",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Бекташев",
+   "first_name": "Кубанычбек Джумаевич",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Байзаков",
+   "first_name": "Асан Байзакович",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "профессор",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Болпонова",
+   "first_name": "Асыл Бакытбековна",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "профессор",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Дуйшо кызы",
+   "first_name": "Нуржан",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Егиналиев",
+   "first_name": "Марат Санжыевич",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Жапаров",
+   "first_name": "Турдубек Турдалиевич",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "профессор",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Калекеев",
+   "first_name": "М. А.",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "старший преподаватель",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Касымова",
+   "first_name": "Эльвира Джапашевна",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Кошоев",
+   "first_name": "Темирбек Сулайманович",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "профессор",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Кожоев",
+   "first_name": "К. А.",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "преподаватель",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кунтубаева",
+   "first_name": "А. А.",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кыдыралиева",
+   "first_name": "А. Ш.",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "старший преподаватель",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мамбеталиева",
+   "first_name": "Эркайым Жумамудуновна",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Мурзаев",
+   "first_name": "Салих Кадырбекович",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "профессор",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "Айгуль Каныбековна",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Приходько",
+   "first_name": "Л. А.",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ожукеева",
+   "first_name": "Токонай Ожукеевна",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "профессор",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Орозалиев",
+   "first_name": "Ш. Ы.",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "старший преподаватель",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осмоналиева",
+   "first_name": "Ч. Ч.",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "старший преподаватель",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Райымбеков",
+   "first_name": "Б. Ж.",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Саякбаев",
+   "first_name": "Тилек Дженишбекович",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "преподаватель",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Торогельдиева",
+   "first_name": "Бактыкан Макишевна",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "профессор",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Узакбаева",
+   "first_name": "Нуржамал Эргешбаевна",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "старший преподаватель",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Эсенбаев",
+   "first_name": "Азис Эркинбекович",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js"
+  },
+  {
+   "last_name": "Абдразакова",
+   "first_name": "А. М.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдынасыров",
+   "first_name": "У. Т.",
+   "department": "Экономика и менеджмент",
+   "title": "профессор",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алимбаева",
+   "first_name": "Ш. Б.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Байсубанова",
+   "first_name": "С. Т.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Биримкулова",
+   "first_name": "А. Д.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Досалиев",
+   "first_name": "Б. А.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жолонбаева",
+   "first_name": "А. Ж.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кадырбердиева",
+   "first_name": "А. С.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Китаева",
+   "first_name": "М. М.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Макембаева",
+   "first_name": "К. И.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мажитов",
+   "first_name": "А. С.",
+   "department": "Экономика и менеджмент",
+   "title": "старший преподаватель",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Нукеева",
+   "first_name": "М. А.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Окенаева",
+   "first_name": "М. Ж.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Суйуналиева",
+   "first_name": "Б. Ш.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Супатаева",
+   "first_name": "Н. Т.",
+   "department": "Экономика и менеджмент",
+   "title": "профессор",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токтобекова",
+   "first_name": "М. А.",
+   "department": "Экономика и менеджмент",
+   "title": "профессор",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Турсунова",
+   "first_name": "Н. М.",
+   "department": "Экономика и менеджмент",
+   "title": "старший преподаватель",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Фреюк",
+   "first_name": "Г. В.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тагайбекова",
+   "first_name": "Ж. Т.",
+   "department": "Экономика и менеджмент",
+   "title": "преподаватель",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эралиева",
+   "first_name": "А. А.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ашымов",
+   "first_name": "С. Дж.",
+   "department": "Государственное и муниципальное управление и право",
+   "title": "преподаватель",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тентимишова",
+   "first_name": "Г. К.",
+   "department": "Экономика и менеджмент",
+   "title": "старший преподаватель",
+   "source_url": "https://www.apap.kg/assets/index-COvRy3bN.js",
+   "initials_only": true
+  }
+ ]
+}

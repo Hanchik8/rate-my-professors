@@ -1,0 +1,2537 @@
+{
+ "code": "bgu",
+ "university": "Бишкекский государственный университет им. К. Карасаева (БГУ)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://www.bhu.kg (редирект на https://bsu.kg/ru/)",
+  "https://bsu.kg/wp-json/wp/v2/pages (все 243 страницы, включая страницы кафедр и факультетов)",
+  "https://bsu.kg/ru/sotrudniki-fvmo/",
+  "https://bsu.kg/ru/sotrudniki-frf/",
+  "https://bsu.kg/ru/sotrudniki-fjef/",
+  "https://bsu.kg/ru/sotrudniki-fpo/",
+  "https://bsu.kg/ru/sotrudniki-spf/",
+  "https://bsu.kg/ru/sotrudniki-fjem/",
+  "https://bsu.kg/ru/sotrudniki-fec/",
+  "https://bsu.kg/ru/sotrudniki-kkf/",
+  "https://bsu.kg/ru/sotrudniki-fzhiis/",
+  "https://bsu.kg/ru/kyrgyz-filologijasy-fakulteti/",
+  "https://old.bhu.kg/wp-json/wp/v2/kafedry (38 кафедр)",
+  "https://old.bhu.kg/kafedry/kafedra-jekonomika-finansov-i-buhgalterskogo-ucheta/",
+  "https://old.bhu.kg/kafedry/kafedra-jazykov-i-obshhestvennyh-nauk/",
+  "https://old.bhu.kg/kafedry/kafedra-pedagogicheskogo-obrazovanija-i-innovacionnyh-tehnologij/",
+  "https://old.bhu.kg/kafedry/kafedra-menedzhmenta-i-socialno-informacionnyh-tehnologij/",
+  "https://old.bhu.kg/kafedry/kafedra-prakticheskogo-kursa-inostrannyh-jazykov/",
+  "https://old.bhu.kg/kafedry/kafedra-fizicheskogo-vospitanija/",
+  "https://old.bhu.kg/kafedry/kafedra-inostrannyh-jazykov/",
+  "https://old.bhu.kg/kafedry/kafedra-sociologii-i-politiko-pravovyh-disciplin/",
+  "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/",
+  "https://old.bhu.kg/kafedry/kafedra-teorii-i-praktiki-perevoda/",
+  "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/",
+  "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/",
+  "https://old.bhu.kg/kafedry/kafedra-teorii-i-metodiki-nachalnogo-doshkolnogo-obrazovanija/",
+  "https://old.bhu.kg/kafedry/pedagogika-zhana-psihologija-kafedrasy/",
+  "https://old.bhu.kg/kafedry/kafedra-jekologii-i-prirodopolzovanija/",
+  "https://old.bhu.kg/kafedry/kafedra-gosudarstvennoj-municipalnoj-sluzhby-i-menedzhmenta/",
+  "https://old.bhu.kg/kafedry/kafedra-geografii-turizma-i-estestvennyh-nauk/",
+  "https://old.bhu.kg/kafedry/teorii-i-praktiki-buhgalterskogo-ucheta/",
+  "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/",
+  "https://old.bhu.kg/kafedry/jekonomicheskih-programm-i-upravlenija/",
+  "https://old.bhu.kg/kafedry/kafedra-matematiki-i-informatiki/",
+  "https://old.bhu.kg/kafedry/kafedra-socialnoj-informacii-i-dokumentologii/",
+  "https://old.bhu.kg/kafedry/kafedra-zhurnalistiki-i-svjazi-s-obshhestvennostju/",
+  "https://old.bhu.kg/kafedry/kafedra-teorii-i-istorii-russkoj-literatury/",
+  "https://old.bhu.kg/kafedry/kafedra-oficialnogo-jazyka/",
+  "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/",
+  "https://old.bhu.kg/kafedry/kafedra-kitajskogo-jazyka/",
+  "https://old.bhu.kg/kafedry/kafedra-kitajskoj-filologii/",
+  "https://old.bhu.kg/kafedry/kafedra-mirovoj-jekonomiki/",
+  "https://old.bhu.kg/kafedry/kafedra-filosofii-teorii-i-istorii-kultury/",
+  "https://old.bhu.kg/kafedry/mamlekettik-til-kafedrasy/",
+  "https://old.bhu.kg/kafedry/kyrgyz-adabijaty-kafedrasy/",
+  "https://old.bhu.kg/kafedry/kyrgyz-zhana-turk-tilderinin-teorijasy-kafedrasy/",
+  "https://old.bhu.kg/kafedry/kafedra-korejskoj-filologii/",
+  "https://old.bhu.kg/kafedry/kafedra-filologii-stran-blizhnego-i-srednego-vostoka/",
+  "https://old.bhu.kg/kafedry/kafedra-japonskoj-filologii/",
+  "https://old.bhu.kg/kafedry/kafedra-mezhdunarodnyh-otnoshenij/",
+  "https://old.bhu.kg/kafedry/kafedra-istorii-kyrgyzstana-i-zarubezhnogo-vostoka/"
+ ],
+ "notes": "На текущем сайте bsu.kg на страницах кафедр составы ППС почти не опубликованы (только описания, отдельные фамилии и таблица кафедры экологии), поэтому основной источник поимённых составов — официальный поддомен old.bhu.kg (раздел «Состав кафедры» на страницах 38 кафедр; часть отдала 500 при параллельной загрузке, перекачано последовательно). Составы на old.bhu.kg могут быть не самыми свежими. С текущего сайта добавлены деканы, заместители деканов и заведующие кафедрами из блоков «Сотрудники» факультетов (должность у них неизвестна, поставлено «преподаватель», если их нет в составе кафедры) и отдельные преподаватели, явно названные на страницах кафедр. Не нашлось поимённых составов для кафедр физвоспитания, ИНДО (менеджмента и СИТ, педагогического образования, языков и общественных наук, экономики/финансов/учёта — разделы на old.bhu.kg пустые). Лаборанты, секретари кафедр (катчы), волонтёры, методисты исключены. Маппинг: д.н.+профессор/и.о. проф. → профессор; и.о. профессора без д.н., доцент, и.о. доцента, к.н., «доц. м.а.», «д.м.а.» → доцент; ст. преподаватель, улук/ага окутуучу → старший преподаватель. Кыргызские роли сохранены как на сайте. Записи с инициалами (часть кафедры журналистики на old.bhu.kg, таблица кафедры экологии) помечены initials_only.",
+ "professors": [
+  {
+   "last_name": "Исакова",
+   "first_name": "Салтанат Сыргаковна",
+   "department": "Иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Сагыналиева",
+   "first_name": "Гулнара Токторбаевна",
+   "department": "Иностранных языков",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Мамбеталиева",
+   "first_name": "Айгул Шайлообаевна",
+   "department": "Иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Токторбаева",
+   "first_name": "Фарида Артыковна",
+   "department": "Иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Ибраимова",
+   "first_name": "Татыгул Озгонбаевна",
+   "department": "Иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Мырзаканова",
+   "first_name": "Айсулуу Мырзакановна",
+   "department": "Иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Русланова",
+   "first_name": "Мырзагул Руслановна",
+   "department": "Иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Баялиева",
+   "first_name": "Нургуль Дыйканбаевна",
+   "department": "Иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Саргожоева",
+   "first_name": "Айсалкын Товокеловна",
+   "department": "Иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Шакирова",
+   "first_name": "Айсезим Алимовна",
+   "department": "Иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Кайдылдаева",
+   "first_name": "Элмира Кайдылдаевна",
+   "department": "Практического курса иностранных языков",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-prakticheskogo-kursa-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Зыйнатхан Самидиновна",
+   "department": "Практического курса иностранных языков",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-prakticheskogo-kursa-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Бошкоева",
+   "first_name": "Назгул Султанбековна",
+   "department": "Практического курса иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-prakticheskogo-kursa-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Дербишалиева",
+   "first_name": "Жамила Бернсовна",
+   "department": "Практического курса иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-prakticheskogo-kursa-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Ахметова",
+   "first_name": "Чынара Росахуновна",
+   "department": "Практического курса иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-prakticheskogo-kursa-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Касымова",
+   "first_name": "Альбина Бадамбаевна",
+   "department": "Практического курса иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-prakticheskogo-kursa-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Абдуллаева",
+   "first_name": "Бегимай Даниярбековна",
+   "department": "Практического курса иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-prakticheskogo-kursa-inostrannyh-jazykov/"
+  },
+  {
+   "last_name": "Сапаралиев",
+   "first_name": "Дөөлөтбек Бекишевич",
+   "department": "Истории Кыргызстана и Зарубежного востока",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-istorii-kyrgyzstana-i-zarubezhnogo-vostoka/"
+  },
+  {
+   "last_name": "Бийлибаев",
+   "first_name": "Кайнарбек Шеримкулович",
+   "department": "Истории Кыргызстана и Зарубежного востока",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-istorii-kyrgyzstana-i-zarubezhnogo-vostoka/"
+  },
+  {
+   "last_name": "Бегалиев",
+   "first_name": "Максат Маратович",
+   "department": "Истории Кыргызстана и Зарубежного востока",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-istorii-kyrgyzstana-i-zarubezhnogo-vostoka/"
+  },
+  {
+   "last_name": "Арзыматова",
+   "first_name": "Анаркүл Жумадиловна",
+   "department": "Истории Кыргызстана и Зарубежного востока",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-istorii-kyrgyzstana-i-zarubezhnogo-vostoka/"
+  },
+  {
+   "last_name": "Бейшеналиев",
+   "first_name": "Талайбек Орозбекович",
+   "department": "Истории Кыргызстана и Зарубежного востока",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-istorii-kyrgyzstana-i-zarubezhnogo-vostoka/"
+  },
+  {
+   "last_name": "Рыскулов",
+   "first_name": "Токтобек Мамбетович",
+   "department": "Международных отношений",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-mezhdunarodnyh-otnoshenij/"
+  },
+  {
+   "last_name": "Алибекова",
+   "first_name": "Айгуль Имановна",
+   "department": "Международных отношений",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-mezhdunarodnyh-otnoshenij/"
+  },
+  {
+   "last_name": "Саякбаева",
+   "first_name": "Эльмира Турдубековна",
+   "department": "Международных отношений",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-mezhdunarodnyh-otnoshenij/"
+  },
+  {
+   "last_name": "Кулжанова",
+   "first_name": "Сабира Кувайбековна",
+   "department": "Международных отношений",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-mezhdunarodnyh-otnoshenij/"
+  },
+  {
+   "last_name": "Танырыков",
+   "first_name": "Валимжан Танырыкович",
+   "department": "Международных отношений",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-mezhdunarodnyh-otnoshenij/"
+  },
+  {
+   "last_name": "Бактыгулова",
+   "first_name": "Канайым Джумадиловна",
+   "department": "Международных отношений",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-mezhdunarodnyh-otnoshenij/"
+  },
+  {
+   "last_name": "Джусаев",
+   "first_name": "Кубанычбек Джолдошевич",
+   "department": "Международных отношений",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-mezhdunarodnyh-otnoshenij/"
+  },
+  {
+   "last_name": "Машрапов",
+   "first_name": "Таласбек Туратбекович",
+   "department": "Международных отношений",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-mezhdunarodnyh-otnoshenij/"
+  },
+  {
+   "last_name": "Нусувалиева",
+   "first_name": "Жылдыз Орозбековна",
+   "department": "Японской филологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-japonskoj-filologii/"
+  },
+  {
+   "last_name": "Мамашева",
+   "first_name": "Жийдегуль",
+   "department": "Японской филологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-japonskoj-filologii/"
+  },
+  {
+   "last_name": "Советова",
+   "first_name": "Жазгуль Советовна",
+   "department": "Японской филологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-japonskoj-filologii/"
+  },
+  {
+   "last_name": "Виленская",
+   "first_name": "Юлия",
+   "department": "Японской филологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-japonskoj-filologii/"
+  },
+  {
+   "last_name": "Усенова",
+   "first_name": "Бегайым Зикировна",
+   "department": "Японской филологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-japonskoj-filologii/"
+  },
+  {
+   "last_name": "Байбориева",
+   "first_name": "Бермет Аликовна",
+   "department": "Японской филологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-japonskoj-filologii/"
+  },
+  {
+   "last_name": "Лиу",
+   "first_name": "Чуний",
+   "department": "Японской филологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-japonskoj-filologii/"
+  },
+  {
+   "last_name": "Джунушалиева",
+   "first_name": "Асель",
+   "department": "Японской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-japonskoj-filologii/"
+  },
+  {
+   "last_name": "Сайджё",
+   "first_name": "Юто",
+   "department": "Японской филологии",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-japonskoj-filologii/"
+  },
+  {
+   "last_name": "Уварова",
+   "first_name": "Нами",
+   "department": "Японской филологии",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-japonskoj-filologii/"
+  },
+  {
+   "last_name": "Чонмурунова",
+   "first_name": "Гульмира Соотбековна",
+   "department": "Филологии стран Ближнего и Среднего востока",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filologii-stran-blizhnego-i-srednego-vostoka/"
+  },
+  {
+   "last_name": "Даулятов",
+   "first_name": "Абдумажит Абдуллаевич",
+   "department": "Филологии стран Ближнего и Среднего востока",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filologii-stran-blizhnego-i-srednego-vostoka/"
+  },
+  {
+   "last_name": "Сейденалиева",
+   "first_name": "Альфия Сагыналиевна",
+   "department": "Филологии стран Ближнего и Среднего востока",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filologii-stran-blizhnego-i-srednego-vostoka/"
+  },
+  {
+   "last_name": "Мамырбаев",
+   "first_name": "Торобек Кылычбекович",
+   "department": "Филологии стран Ближнего и Среднего востока",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filologii-stran-blizhnego-i-srednego-vostoka/"
+  },
+  {
+   "last_name": "Шамшиев",
+   "first_name": "Келдибек Абдыжапарович",
+   "department": "Филологии стран Ближнего и Среднего востока",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filologii-stran-blizhnego-i-srednego-vostoka/"
+  },
+  {
+   "last_name": "Кулова",
+   "first_name": "Керээз Жоломановна",
+   "department": "Филологии стран Ближнего и Среднего востока",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filologii-stran-blizhnego-i-srednego-vostoka/"
+  },
+  {
+   "last_name": "Турдубаев",
+   "first_name": "Хуштарбек",
+   "department": "Филологии стран Ближнего и Среднего востока",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filologii-stran-blizhnego-i-srednego-vostoka/"
+  },
+  {
+   "last_name": "Смагулова",
+   "first_name": "Алия Сагынтаевна",
+   "department": "Корейской филологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-korejskoj-filologii/"
+  },
+  {
+   "last_name": "Ким",
+   "first_name": "Сук Хен",
+   "department": "Корейской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-korejskoj-filologii/"
+  },
+  {
+   "last_name": "Ким",
+   "first_name": "Док Юн",
+   "department": "Корейской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-korejskoj-filologii/"
+  },
+  {
+   "last_name": "Ким",
+   "first_name": "Гук Джин",
+   "department": "Корейской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-korejskoj-filologii/"
+  },
+  {
+   "last_name": "Юстус",
+   "first_name": "Евгения Олеговна",
+   "department": "Корейской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-korejskoj-filologii/"
+  },
+  {
+   "last_name": "Ормонова",
+   "first_name": "Айжаркын Токтосуновна",
+   "department": "Корейской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-korejskoj-filologii/"
+  },
+  {
+   "last_name": "Кубанычбек кызы",
+   "first_name": "Азиза",
+   "department": "Корейской филологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-korejskoj-filologii/"
+  },
+  {
+   "last_name": "Айтматова",
+   "first_name": "Айчурок Таштанбековна",
+   "department": "Корейской филологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-korejskoj-filologii/"
+  },
+  {
+   "last_name": "Усмамбетов",
+   "first_name": "Баяман",
+   "department": "Кыргыз жана түрк тилдеринин теориясы кафедрасы",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-zhana-turk-tilderinin-teorijasy-kafedrasy/"
+  },
+  {
+   "last_name": "Карымшакова",
+   "first_name": "Айша",
+   "department": "Кыргыз жана түрк тилдеринин теориясы кафедрасы",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-zhana-turk-tilderinin-teorijasy-kafedrasy/"
+  },
+  {
+   "last_name": "Уметалиева",
+   "first_name": "Толкун",
+   "department": "Кыргыз жана түрк тилдеринин теориясы кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-zhana-turk-tilderinin-teorijasy-kafedrasy/"
+  },
+  {
+   "last_name": "Артыкова",
+   "first_name": "Жамал",
+   "department": "Кыргыз жана түрк тилдеринин теориясы кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-zhana-turk-tilderinin-teorijasy-kafedrasy/"
+  },
+  {
+   "last_name": "Садыралиева",
+   "first_name": "Гүлшан",
+   "department": "Кыргыз жана түрк тилдеринин теориясы кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-zhana-turk-tilderinin-teorijasy-kafedrasy/"
+  },
+  {
+   "last_name": "Беделова",
+   "first_name": "Космира",
+   "department": "Кыргыз жана түрк тилдеринин теориясы кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-zhana-turk-tilderinin-teorijasy-kafedrasy/"
+  },
+  {
+   "last_name": "Эстебесова",
+   "first_name": "Перизат",
+   "department": "Кыргыз жана түрк тилдеринин теориясы кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-zhana-turk-tilderinin-teorijasy-kafedrasy/"
+  },
+  {
+   "last_name": "Абдиева",
+   "first_name": "Венера",
+   "department": "Кыргыз жана түрк тилдеринин теориясы кафедрасы",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-zhana-turk-tilderinin-teorijasy-kafedrasy/"
+  },
+  {
+   "last_name": "Турмаханбетова",
+   "first_name": "Айзат",
+   "department": "Кыргыз жана түрк тилдеринин теориясы кафедрасы",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-zhana-turk-tilderinin-teorijasy-kafedrasy/"
+  },
+  {
+   "last_name": "Жумабай кызы",
+   "first_name": "Батма",
+   "department": "Кыргыз жана түрк тилдеринин теориясы кафедрасы",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-zhana-turk-tilderinin-teorijasy-kafedrasy/"
+  },
+  {
+   "last_name": "Асакеева",
+   "first_name": "Динара",
+   "department": "Кыргыз адабияты кафедрасы",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-adabijaty-kafedrasy/"
+  },
+  {
+   "last_name": "Кенжешев",
+   "first_name": "Каныбек",
+   "department": "Кыргыз адабияты кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-adabijaty-kafedrasy/"
+  },
+  {
+   "last_name": "Абдыракунов",
+   "first_name": "Турдубай",
+   "department": "Кыргыз адабияты кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-adabijaty-kafedrasy/"
+  },
+  {
+   "last_name": "Ибраимов",
+   "first_name": "Кубат",
+   "department": "Кыргыз адабияты кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-adabijaty-kafedrasy/"
+  },
+  {
+   "last_name": "Кылычев",
+   "first_name": "Эсентур",
+   "department": "Кыргыз адабияты кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-adabijaty-kafedrasy/"
+  },
+  {
+   "last_name": "Умарова",
+   "first_name": "Рохила",
+   "department": "Кыргыз адабияты кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-adabijaty-kafedrasy/"
+  },
+  {
+   "last_name": "Жороева",
+   "first_name": "Нурила",
+   "department": "Кыргыз адабияты кафедрасы",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-adabijaty-kafedrasy/"
+  },
+  {
+   "last_name": "Чыйбылова",
+   "first_name": "Бурул",
+   "department": "Кыргыз адабияты кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-adabijaty-kafedrasy/"
+  },
+  {
+   "last_name": "Уркунчиева",
+   "first_name": "Гулсайра",
+   "department": "Кыргыз адабияты кафедрасы",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-adabijaty-kafedrasy/"
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "Жылдыз Койчумановна",
+   "department": "Кыргыз адабияты кафедрасы",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-adabijaty-kafedrasy/"
+  },
+  {
+   "last_name": "Борбучалова",
+   "first_name": "Бактыгүл",
+   "department": "Кыргыз адабияты кафедрасы",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-adabijaty-kafedrasy/"
+  },
+  {
+   "last_name": "Жумаканова",
+   "first_name": "Элвира Муктарбековна",
+   "department": "Кыргыз адабияты кафедрасы",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-adabijaty-kafedrasy/"
+  },
+  {
+   "last_name": "Темирова",
+   "first_name": "Бактыгүл Тажибаевна",
+   "department": "Кыргыз адабияты кафедрасы",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/kyrgyz-adabijaty-kafedrasy/"
+  },
+  {
+   "last_name": "Жамашова",
+   "first_name": "Асыл",
+   "department": "Мамлекеттик тил кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/mamlekettik-til-kafedrasy/"
+  },
+  {
+   "last_name": "Султанова",
+   "first_name": "Бегайым",
+   "department": "Мамлекеттик тил кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/mamlekettik-til-kafedrasy/"
+  },
+  {
+   "last_name": "Деркембаева",
+   "first_name": "Бубукан",
+   "department": "Мамлекеттик тил кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/mamlekettik-til-kafedrasy/"
+  },
+  {
+   "last_name": "Черикова",
+   "first_name": "Нуржан",
+   "department": "Мамлекеттик тил кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/mamlekettik-til-kafedrasy/"
+  },
+  {
+   "last_name": "Жумалиева",
+   "first_name": "Рыскул",
+   "department": "Мамлекеттик тил кафедрасы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/mamlekettik-til-kafedrasy/"
+  },
+  {
+   "last_name": "Ыбышова",
+   "first_name": "Перизат",
+   "department": "Мамлекеттик тил кафедрасы",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/mamlekettik-til-kafedrasy/"
+  },
+  {
+   "last_name": "Токтогулов",
+   "first_name": "Бегаалы",
+   "department": "Мамлекеттик тил кафедрасы",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/mamlekettik-til-kafedrasy/"
+  },
+  {
+   "last_name": "Егешова",
+   "first_name": "Аида",
+   "department": "Мамлекеттик тил кафедрасы",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/mamlekettik-til-kafedrasy/"
+  },
+  {
+   "last_name": "Теңизбекова",
+   "first_name": "Бегай",
+   "department": "Мамлекеттик тил кафедрасы",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/mamlekettik-til-kafedrasy/"
+  },
+  {
+   "last_name": "Бейсебаев",
+   "first_name": "Рахат Сансызбаевич",
+   "department": "Философии, теории и истории культуры",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filosofii-teorii-i-istorii-kultury/"
+  },
+  {
+   "last_name": "Усенова",
+   "first_name": "Нургуль Эсенамановна",
+   "department": "Философии, теории и истории культуры",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filosofii-teorii-i-istorii-kultury/"
+  },
+  {
+   "last_name": "Байсубанов",
+   "first_name": "Учкун Карыбекович",
+   "department": "Философии, теории и истории культуры",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filosofii-teorii-i-istorii-kultury/"
+  },
+  {
+   "last_name": "Секиева",
+   "first_name": "Назира Абылмажиновна",
+   "department": "Философии, теории и истории культуры",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filosofii-teorii-i-istorii-kultury/"
+  },
+  {
+   "last_name": "Алиев",
+   "first_name": "Кубан Нуркасымович",
+   "department": "Философии, теории и истории культуры",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filosofii-teorii-i-istorii-kultury/"
+  },
+  {
+   "last_name": "Тунгатаров",
+   "first_name": "Улан Урматбекович",
+   "department": "Философии, теории и истории культуры",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filosofii-teorii-i-istorii-kultury/"
+  },
+  {
+   "last_name": "Тологонова",
+   "first_name": "Мээрим Талантовна",
+   "department": "Философии, теории и истории культуры",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filosofii-teorii-i-istorii-kultury/"
+  },
+  {
+   "last_name": "Маратова",
+   "first_name": "Бегайым Маратовна",
+   "department": "Философии, теории и истории культуры",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filosofii-teorii-i-istorii-kultury/"
+  },
+  {
+   "last_name": "Сатыбалдиева",
+   "first_name": "Каныкей Качкынбековна",
+   "department": "Философии, теории и истории культуры",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filosofii-teorii-i-istorii-kultury/"
+  },
+  {
+   "last_name": "Канатбекова",
+   "first_name": "Кымбат Канатбековна",
+   "department": "Философии, теории и истории культуры",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-filosofii-teorii-i-istorii-kultury/"
+  },
+  {
+   "last_name": "Укуева",
+   "first_name": "Айнагуль",
+   "department": "Мировой экономики и регионоведения",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-mirovoj-jekonomiki/"
+  },
+  {
+   "last_name": "Садыгалиев",
+   "first_name": "Уран",
+   "department": "Мировой экономики и регионоведения",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-mirovoj-jekonomiki/"
+  },
+  {
+   "last_name": "Мусаев",
+   "first_name": "Ырыскелди",
+   "department": "Мировой экономики и регионоведения",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-mirovoj-jekonomiki/"
+  },
+  {
+   "last_name": "Жакыпова",
+   "first_name": "Эльмира",
+   "department": "Мировой экономики и регионоведения",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-mirovoj-jekonomiki/"
+  },
+  {
+   "last_name": "Шаимбетова",
+   "first_name": "Жазира",
+   "department": "Мировой экономики и регионоведения",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-mirovoj-jekonomiki/"
+  },
+  {
+   "last_name": "Кубанычбек кызы",
+   "first_name": "Чолпон",
+   "department": "Мировой экономики и регионоведения",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-mirovoj-jekonomiki/"
+  },
+  {
+   "last_name": "Сабырова",
+   "first_name": "Зарина Исабаевна",
+   "department": "Китайской филологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskoj-filologii/"
+  },
+  {
+   "last_name": "Лю",
+   "first_name": "Владимир Ганович",
+   "department": "Китайской филологии",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskoj-filologii/"
+  },
+  {
+   "last_name": "Омуралиева",
+   "first_name": "Асель Чоюнбековна",
+   "department": "Китайской филологии",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskoj-filologii/"
+  },
+  {
+   "last_name": "Борсокеева",
+   "first_name": "Нуркыз Болсунбековна",
+   "department": "Китайской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskoj-filologii/"
+  },
+  {
+   "last_name": "Букабаева",
+   "first_name": "Жылдыз Сабырбековна",
+   "department": "Китайской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskoj-filologii/"
+  },
+  {
+   "last_name": "Байшериева",
+   "first_name": "Жанна Рахимовна",
+   "department": "Китайской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskoj-filologii/"
+  },
+  {
+   "last_name": "Алтымышова",
+   "first_name": "Жаркын Жусупбековна",
+   "department": "Китайской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskoj-filologii/"
+  },
+  {
+   "last_name": "Курманалиева",
+   "first_name": "Мунара Курманалиевна",
+   "department": "Китайской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskoj-filologii/"
+  },
+  {
+   "last_name": "Кыдырова",
+   "first_name": "Айсулуу Суюмбаевна",
+   "department": "Китайской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskoj-filologii/"
+  },
+  {
+   "last_name": "Асекова",
+   "first_name": "Гулзат Алманбетовна",
+   "department": "Китайской филологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskoj-filologii/"
+  },
+  {
+   "last_name": "Токтобаева",
+   "first_name": "Айсулуу Токтобаевна",
+   "department": "Китайской филологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskoj-filologii/"
+  },
+  {
+   "last_name": "Кенеш кызы",
+   "first_name": "Айнура",
+   "department": "Китайского языка",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskogo-jazyka/"
+  },
+  {
+   "last_name": "Чжан",
+   "first_name": "Ирина Владимировна",
+   "department": "Китайского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskogo-jazyka/"
+  },
+  {
+   "last_name": "Тазабекова",
+   "first_name": "Назира Канатовна",
+   "department": "Китайского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskogo-jazyka/"
+  },
+  {
+   "last_name": "Иманалиева",
+   "first_name": "Элмира Токтобековна",
+   "department": "Китайского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskogo-jazyka/"
+  },
+  {
+   "last_name": "Акматова",
+   "first_name": "Анара Сыдыковна",
+   "department": "Китайского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskogo-jazyka/"
+  },
+  {
+   "last_name": "Турдакун кызы",
+   "first_name": "Айзада",
+   "department": "Китайского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-kitajskogo-jazyka/"
+  },
+  {
+   "last_name": "Ниязалиева",
+   "first_name": "Рахат Анарбековна",
+   "department": "Общего и русского языкознания",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Абыканова",
+   "first_name": "Гулмира Артыковна",
+   "department": "Общего и русского языкознания",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Елебесова",
+   "first_name": "Светлана Александровна",
+   "department": "Общего и русского языкознания",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Куттубаева",
+   "first_name": "Гульнар Асанкуловна",
+   "department": "Общего и русского языкознания",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Сыдыков",
+   "first_name": "Анарбай Намитаевич",
+   "department": "Общего и русского языкознания",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Рапия Раимжановна",
+   "department": "Общего и русского языкознания",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Бекболиева",
+   "first_name": "Бактыгуль Асанбековна",
+   "department": "Общего и русского языкознания",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Ташбалтаева",
+   "first_name": "Эльмира Кожоевна",
+   "department": "Общего и русского языкознания",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Абдылдабекова",
+   "first_name": "Жаныл Маликовна",
+   "department": "Общего и русского языкознания",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Пущина",
+   "first_name": "Любовь Ивановна",
+   "department": "Общего и русского языкознания",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Абылова",
+   "first_name": "Алмаш Камчыбековна",
+   "department": "Общего и русского языкознания",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Мондошева",
+   "first_name": "Венера Айтказиевна",
+   "department": "Общего и русского языкознания",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Дрыжак",
+   "first_name": "Нина Петровна",
+   "department": "Общего и русского языкознания",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Бекбосунова",
+   "first_name": "Наргиза Бекбосуновна",
+   "department": "Общего и русского языкознания",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Шаршеналиева",
+   "first_name": "Бегимай Шаршеналиевна",
+   "department": "Общего и русского языкознания",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Думанаева",
+   "first_name": "Назира Кенжебековна",
+   "department": "Общего и русского языкознания",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Сулайманова",
+   "first_name": "Касиет Талантбековна",
+   "department": "Общего и русского языкознания",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-obshhego-i-russkogo-jazykoznanija/"
+  },
+  {
+   "last_name": "Абдыкасымова",
+   "first_name": "Айнура Ракымбергеновна",
+   "department": "Официального языка",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-oficialnogo-jazyka/"
+  },
+  {
+   "last_name": "Тоялиева",
+   "first_name": "Динара Орозбековна",
+   "department": "Официального языка",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-oficialnogo-jazyka/"
+  },
+  {
+   "last_name": "Суералиева",
+   "first_name": "Замира Сагынбековна",
+   "department": "Официального языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-oficialnogo-jazyka/"
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "Чынара Жусуповна",
+   "department": "Официального языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-oficialnogo-jazyka/"
+  },
+  {
+   "last_name": "Куттубаева",
+   "first_name": "Инга Кубанычевна",
+   "department": "Официального языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-oficialnogo-jazyka/"
+  },
+  {
+   "last_name": "Асаналиева",
+   "first_name": "Асель Дамирбековна",
+   "department": "Теории и истории русской литературы",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-istorii-russkoj-literatury/"
+  },
+  {
+   "last_name": "Абдыраманова",
+   "first_name": "Айнагуль Шабданбаевна",
+   "department": "Теории и истории русской литературы",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-istorii-russkoj-literatury/"
+  },
+  {
+   "last_name": "Рыбина",
+   "first_name": "Елена Васильевна",
+   "department": "Теории и истории русской литературы",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-istorii-russkoj-literatury/"
+  },
+  {
+   "last_name": "Турарбек кызы",
+   "first_name": "Чынара",
+   "department": "Теории и истории русской литературы",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-istorii-russkoj-literatury/"
+  },
+  {
+   "last_name": "Токонова",
+   "first_name": "Асел Абылмажиновна",
+   "department": "Теории и истории русской литературы",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-istorii-russkoj-literatury/"
+  },
+  {
+   "last_name": "Суюмбек кызы",
+   "first_name": "Айгерим",
+   "department": "Теории и истории русской литературы",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-istorii-russkoj-literatury/"
+  },
+  {
+   "last_name": "Табыйбекова",
+   "first_name": "Алтынай Табыйбековна",
+   "department": "Теории и истории русской литературы",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-istorii-russkoj-literatury/"
+  },
+  {
+   "last_name": "Эшимканова",
+   "first_name": "Асель Адыловна",
+   "department": "Журналистики и связей с общественностью",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-zhurnalistiki-i-svjazi-s-obshhestvennostju/"
+  },
+  {
+   "last_name": "Ишемкулов",
+   "first_name": "Т. И.",
+   "department": "Журналистики и связей с общественностью",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-zhurnalistiki-i-svjazi-s-obshhestvennostju/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Асанова",
+   "first_name": "Алтын Асановна",
+   "department": "Журналистики и связей с общественностью",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-zhurnalistiki-i-svjazi-s-obshhestvennostju/"
+  },
+  {
+   "last_name": "Асаналиев",
+   "first_name": "У. А.",
+   "department": "Журналистики и связей с общественностью",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-zhurnalistiki-i-svjazi-s-obshhestvennostju/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдыкадыров",
+   "first_name": "К. Д.",
+   "department": "Журналистики и связей с общественностью",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-zhurnalistiki-i-svjazi-s-obshhestvennostju/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Болотбекова",
+   "first_name": "К. Б.",
+   "department": "Журналистики и связей с общественностью",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-zhurnalistiki-i-svjazi-s-obshhestvennostju/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бактыбек кызы",
+   "first_name": "Айжан",
+   "department": "Журналистики и связей с общественностью",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-zhurnalistiki-i-svjazi-s-obshhestvennostju/"
+  },
+  {
+   "last_name": "Калыбекова",
+   "first_name": "Н. К.",
+   "department": "Журналистики и связей с общественностью",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-zhurnalistiki-i-svjazi-s-obshhestvennostju/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кошоева",
+   "first_name": "Миргуль",
+   "department": "Журналистики и связей с общественностью",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-zhurnalistiki-i-svjazi-s-obshhestvennostju/"
+  },
+  {
+   "last_name": "Окумалиев",
+   "first_name": "Р. Э.",
+   "department": "Журналистики и связей с общественностью",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-zhurnalistiki-i-svjazi-s-obshhestvennostju/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кабатай кызы",
+   "first_name": "Айнура",
+   "department": "Журналистики и связей с общественностью",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-zhurnalistiki-i-svjazi-s-obshhestvennostju/"
+  },
+  {
+   "last_name": "Жекшен кызы",
+   "first_name": "Кундуз",
+   "department": "Журналистики и связей с общественностью",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-zhurnalistiki-i-svjazi-s-obshhestvennostju/"
+  },
+  {
+   "last_name": "Мукамбетова",
+   "first_name": "Гульжан Имеровна",
+   "department": "Социальной информации и документологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-socialnoj-informacii-i-dokumentologii/"
+  },
+  {
+   "last_name": "Мелис кызы",
+   "first_name": "Назира",
+   "department": "Социальной информации и документологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-socialnoj-informacii-i-dokumentologii/"
+  },
+  {
+   "last_name": "Теишова",
+   "first_name": "Мадина Нурлановна",
+   "department": "Социальной информации и документологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-socialnoj-informacii-i-dokumentologii/"
+  },
+  {
+   "last_name": "Туркманов",
+   "first_name": "Жылдызбек Каныбекович",
+   "department": "Информатики и математики",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-matematiki-i-informatiki/"
+  },
+  {
+   "last_name": "Жанакунова",
+   "first_name": "Мээрим Орозбековна",
+   "department": "Информатики и математики",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-matematiki-i-informatiki/"
+  },
+  {
+   "last_name": "Алиева",
+   "first_name": "Айнур Рабатовна",
+   "department": "Информатики и математики",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-matematiki-i-informatiki/"
+  },
+  {
+   "last_name": "Халилова",
+   "first_name": "Тажигул Ташполотовна",
+   "department": "Информатики и математики",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-matematiki-i-informatiki/"
+  },
+  {
+   "last_name": "Назарматова",
+   "first_name": "Гульжан Абдыкеримовна",
+   "department": "Информатики и математики",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-matematiki-i-informatiki/"
+  },
+  {
+   "last_name": "Мамбетказиева",
+   "first_name": "Айжан Токтобековна",
+   "department": "Информатики и математики",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-matematiki-i-informatiki/"
+  },
+  {
+   "last_name": "Аалиева",
+   "first_name": "Бурул Асанакуновна",
+   "department": "Информатики и математики",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-matematiki-i-informatiki/"
+  },
+  {
+   "last_name": "Козубекова",
+   "first_name": "Гулназира Сагыналиевна",
+   "department": "Информатики и математики",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-matematiki-i-informatiki/"
+  },
+  {
+   "last_name": "Карынбаева",
+   "first_name": "Миргул Муратбековна",
+   "department": "Информатики и математики",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-matematiki-i-informatiki/"
+  },
+  {
+   "last_name": "Картанбаева",
+   "first_name": "Насийкат Алтымышовна",
+   "department": "Информатики и математики",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-matematiki-i-informatiki/"
+  },
+  {
+   "last_name": "Аскарбек кызы",
+   "first_name": "Лира",
+   "department": "Информатики и математики",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-matematiki-i-informatiki/"
+  },
+  {
+   "last_name": "Жаныбаева",
+   "first_name": "Айниса Шамшыбековна",
+   "department": "Информатики и математики",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-matematiki-i-informatiki/"
+  },
+  {
+   "last_name": "Абдыкеримова",
+   "first_name": "Айжан Толоновна",
+   "department": "Информатики и математики",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-matematiki-i-informatiki/"
+  },
+  {
+   "last_name": "Рысалиева",
+   "first_name": "Гульзат Омурзаковна",
+   "department": "Экономических программ и управления",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/jekonomicheskih-programm-i-upravlenija/"
+  },
+  {
+   "last_name": "Савина",
+   "first_name": "Светлана Евгеньевна",
+   "department": "Экономических программ и управления",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/jekonomicheskih-programm-i-upravlenija/"
+  },
+  {
+   "last_name": "Савина",
+   "first_name": "Мария Моисеевна",
+   "department": "Экономических программ и управления",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/jekonomicheskih-programm-i-upravlenija/"
+  },
+  {
+   "last_name": "Даутов",
+   "first_name": "Ялкун Умержанович",
+   "department": "Экономических программ и управления",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/jekonomicheskih-programm-i-upravlenija/"
+  },
+  {
+   "last_name": "Гапурбаева",
+   "first_name": "Шахнос Розижановна",
+   "department": "Экономических программ и управления",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/jekonomicheskih-programm-i-upravlenija/"
+  },
+  {
+   "last_name": "Жакшылык кызы",
+   "first_name": "Райма",
+   "department": "Экономических программ и управления",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/jekonomicheskih-programm-i-upravlenija/"
+  },
+  {
+   "last_name": "Токтосунова",
+   "first_name": "Зейнеп Канатовна",
+   "department": "Экономических программ и управления",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/jekonomicheskih-programm-i-upravlenija/"
+  },
+  {
+   "last_name": "Шамбетова",
+   "first_name": "Нурида Алтынбековна",
+   "department": "Экономических программ и управления",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/jekonomicheskih-programm-i-upravlenija/"
+  },
+  {
+   "last_name": "Сманова",
+   "first_name": "Азиза Бактыбековна",
+   "department": "Экономических программ и управления",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/jekonomicheskih-programm-i-upravlenija/"
+  },
+  {
+   "last_name": "Абдыраимова",
+   "first_name": "Жанна Джекшеналиевна",
+   "department": "Экономических программ и управления",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/jekonomicheskih-programm-i-upravlenija/"
+  },
+  {
+   "last_name": "Турусбекова",
+   "first_name": "Гузаль Турусбековна",
+   "department": "Экономических программ и управления",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/jekonomicheskih-programm-i-upravlenija/"
+  },
+  {
+   "last_name": "Савин",
+   "first_name": "Виктор Евгеньевич",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Калманбетова",
+   "first_name": "Гульзат Талимбековна",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Таранова",
+   "first_name": "Елена Владимировна",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Усоналиева",
+   "first_name": "Динара Амановна",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Шакулова",
+   "first_name": "Нуриса Эмилбековна",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Мусаев",
+   "first_name": "Улан Абдулдаевич",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Чокоев",
+   "first_name": "Заир Линарович",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Алиев",
+   "first_name": "Бекболот Абдуганиевич",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Хапизов",
+   "first_name": "Абдрахим Аубахриевич",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Джалилова",
+   "first_name": "Луиза Неманжановна",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Баимова",
+   "first_name": "Жазгуль Сулаймановна",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Орозалиева",
+   "first_name": "Базира Мурсабековна",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Иманалиева",
+   "first_name": "Бегимай Талантбековна",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Жолдошова",
+   "first_name": "Замира Саткынбековна",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Молдошова",
+   "first_name": "Айканым Абдыбековна",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Туратбекова",
+   "first_name": "Нурдана Туратбековна",
+   "department": "Финансов, банковского дела и налогообложения",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/finansov-bankovskogo-dela-i-nalogooblozhenija/"
+  },
+  {
+   "last_name": "Ражапбаева",
+   "first_name": "Майрам Абдылдаевна",
+   "department": "Теории и практики бухгалтерского учета",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/teorii-i-praktiki-buhgalterskogo-ucheta/"
+  },
+  {
+   "last_name": "Сайфудинов",
+   "first_name": "Бекмамат Нурмаматович",
+   "department": "Теории и практики бухгалтерского учета",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/teorii-i-praktiki-buhgalterskogo-ucheta/"
+  },
+  {
+   "last_name": "Суйналиева",
+   "first_name": "Нуржамал Касымовна",
+   "department": "Теории и практики бухгалтерского учета",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/teorii-i-praktiki-buhgalterskogo-ucheta/"
+  },
+  {
+   "last_name": "Аташова",
+   "first_name": "Айзада Курманбаевна",
+   "department": "Теории и практики бухгалтерского учета",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/teorii-i-praktiki-buhgalterskogo-ucheta/"
+  },
+  {
+   "last_name": "Озёрова",
+   "first_name": "Эльмира Куванычпекова",
+   "department": "Теории и практики бухгалтерского учета",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/teorii-i-praktiki-buhgalterskogo-ucheta/"
+  },
+  {
+   "last_name": "Садыбакасов",
+   "first_name": "Исабек Айымбекович",
+   "department": "Теории и практики бухгалтерского учета",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/teorii-i-praktiki-buhgalterskogo-ucheta/"
+  },
+  {
+   "last_name": "Джекшенова",
+   "first_name": "Гульзар Мукайевна",
+   "department": "Теории и практики бухгалтерского учета",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/teorii-i-praktiki-buhgalterskogo-ucheta/"
+  },
+  {
+   "last_name": "Нурманбетова",
+   "first_name": "Жылдыз Эркебаевна",
+   "department": "Теории и практики бухгалтерского учета",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/teorii-i-praktiki-buhgalterskogo-ucheta/"
+  },
+  {
+   "last_name": "Чылабаева",
+   "first_name": "Асель Кубанычбековна",
+   "department": "Теории и практики бухгалтерского учета",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/teorii-i-praktiki-buhgalterskogo-ucheta/"
+  },
+  {
+   "last_name": "Абдылдаева",
+   "first_name": "Рыскан Сагынбековна",
+   "department": "Теории и практики бухгалтерского учета",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/teorii-i-praktiki-buhgalterskogo-ucheta/"
+  },
+  {
+   "last_name": "Орозалиев",
+   "first_name": "Алымкул Абдыкеримович",
+   "department": "Географии, туризма и естественных наук",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-geografii-turizma-i-estestvennyh-nauk/"
+  },
+  {
+   "last_name": "Шакирбеков",
+   "first_name": "Дүйшөнбек",
+   "department": "Географии, туризма и естественных наук",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-geografii-turizma-i-estestvennyh-nauk/"
+  },
+  {
+   "last_name": "Тыныбекова",
+   "first_name": "Гульхаир Асангалиевна",
+   "department": "Географии, туризма и естественных наук",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-geografii-turizma-i-estestvennyh-nauk/"
+  },
+  {
+   "last_name": "Молдобачаева",
+   "first_name": "Айнура Дуйшонбековна",
+   "department": "Географии, туризма и естественных наук",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-geografii-turizma-i-estestvennyh-nauk/"
+  },
+  {
+   "last_name": "Мухтар кызы",
+   "first_name": "Керез",
+   "department": "Географии, туризма и естественных наук",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-geografii-turizma-i-estestvennyh-nauk/"
+  },
+  {
+   "last_name": "Джанузакова",
+   "first_name": "Чынаркан Осмонкуловна",
+   "department": "Географии, туризма и естественных наук",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-geografii-turizma-i-estestvennyh-nauk/"
+  },
+  {
+   "last_name": "Молдошев",
+   "first_name": "Алмазбек Дюшембиевич",
+   "department": "Географии, туризма и естественных наук",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-geografii-turizma-i-estestvennyh-nauk/"
+  },
+  {
+   "last_name": "Орозакунов",
+   "first_name": "Аскар Исабаевич",
+   "department": "Географии, туризма и естественных наук",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-geografii-turizma-i-estestvennyh-nauk/"
+  },
+  {
+   "last_name": "Сатыбалдиева",
+   "first_name": "Умут Жунусбековна",
+   "department": "Географии, туризма и естественных наук",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-geografii-turizma-i-estestvennyh-nauk/"
+  },
+  {
+   "last_name": "Романов",
+   "first_name": "Данияр Кытайбекович",
+   "department": "Географии, туризма и естественных наук",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-geografii-turizma-i-estestvennyh-nauk/"
+  },
+  {
+   "last_name": "Тукубаева",
+   "first_name": "Жаркын Казыбековна",
+   "department": "Географии, туризма и естественных наук",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-geografii-turizma-i-estestvennyh-nauk/"
+  },
+  {
+   "last_name": "Асанбек уулу",
+   "first_name": "Анвар",
+   "department": "Географии, туризма и естественных наук",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-geografii-turizma-i-estestvennyh-nauk/"
+  },
+  {
+   "last_name": "Ратбекова",
+   "first_name": "Ажар Ратбековна",
+   "department": "Географии, туризма и естественных наук",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-geografii-turizma-i-estestvennyh-nauk/"
+  },
+  {
+   "last_name": "Мамытов",
+   "first_name": "Алмас Садырович",
+   "department": "Государственной, муниципальной службы и менеджмента",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-gosudarstvennoj-municipalnoj-sluzhby-i-menedzhmenta/"
+  },
+  {
+   "last_name": "Абдужабаров",
+   "first_name": "Хайрулла Абдужабарович",
+   "department": "Государственной, муниципальной службы и менеджмента",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-gosudarstvennoj-municipalnoj-sluzhby-i-menedzhmenta/"
+  },
+  {
+   "last_name": "Абдымомунова",
+   "first_name": "Кулнара Салморбековна",
+   "department": "Государственной, муниципальной службы и менеджмента",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-gosudarstvennoj-municipalnoj-sluzhby-i-menedzhmenta/"
+  },
+  {
+   "last_name": "Ниязалиева",
+   "first_name": "Кундуз Райкановна",
+   "department": "Государственной, муниципальной службы и менеджмента",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-gosudarstvennoj-municipalnoj-sluzhby-i-menedzhmenta/"
+  },
+  {
+   "last_name": "Асанбаева",
+   "first_name": "Гульзана Жумалиевна",
+   "department": "Государственной, муниципальной службы и менеджмента",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-gosudarstvennoj-municipalnoj-sluzhby-i-menedzhmenta/"
+  },
+  {
+   "last_name": "Сманкулова",
+   "first_name": "Жылдыз Джакибековна",
+   "department": "Государственной, муниципальной службы и менеджмента",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-gosudarstvennoj-municipalnoj-sluzhby-i-menedzhmenta/"
+  },
+  {
+   "last_name": "Масеитова",
+   "first_name": "Айганыш Медеткановна",
+   "department": "Государственной, муниципальной службы и менеджмента",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-gosudarstvennoj-municipalnoj-sluzhby-i-menedzhmenta/"
+  },
+  {
+   "last_name": "Кыдырбаева",
+   "first_name": "Ира Абдумиталиповна",
+   "department": "Государственной, муниципальной службы и менеджмента",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-gosudarstvennoj-municipalnoj-sluzhby-i-menedzhmenta/"
+  },
+  {
+   "last_name": "Сариева",
+   "first_name": "Диана Суйунбаевна",
+   "department": "Государственной, муниципальной службы и менеджмента",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-gosudarstvennoj-municipalnoj-sluzhby-i-menedzhmenta/"
+  },
+  {
+   "last_name": "Айдарбекова",
+   "first_name": "Жазгуль Айдарбековна",
+   "department": "Государственной, муниципальной службы и менеджмента",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-gosudarstvennoj-municipalnoj-sluzhby-i-menedzhmenta/"
+  },
+  {
+   "last_name": "Эркинбек кызы",
+   "first_name": "Наргиза",
+   "department": "Государственной, муниципальной службы и менеджмента",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-gosudarstvennoj-municipalnoj-sluzhby-i-menedzhmenta/"
+  },
+  {
+   "last_name": "Бокоева",
+   "first_name": "Элегия Токтоналиевна",
+   "department": "Экологии и природопользования",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-jekologii-i-prirodopolzovanija/"
+  },
+  {
+   "last_name": "Акматова",
+   "first_name": "Назира Карыбековна",
+   "department": "Экологии и природопользования",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-jekologii-i-prirodopolzovanija/"
+  },
+  {
+   "last_name": "Кадыркулов",
+   "first_name": "Актан Курманбекович",
+   "department": "Экологии и природопользования",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-jekologii-i-prirodopolzovanija/"
+  },
+  {
+   "last_name": "Стамалиева",
+   "first_name": "Жазгул Састакбаевна",
+   "department": "Экологии и природопользования",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-jekologii-i-prirodopolzovanija/"
+  },
+  {
+   "last_name": "Джайлобаева",
+   "first_name": "Назира Сиязбековна",
+   "department": "Экологии и природопользования",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-jekologii-i-prirodopolzovanija/"
+  },
+  {
+   "last_name": "Джапаркулова",
+   "first_name": "Салтанат Апасовна",
+   "department": "Экологии и природопользования",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-jekologii-i-prirodopolzovanija/"
+  },
+  {
+   "last_name": "Толобалдиев",
+   "first_name": "Бексултан Толобалдиевич",
+   "department": "Экологии и природопользования",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-jekologii-i-prirodopolzovanija/"
+  },
+  {
+   "last_name": "Урматаева",
+   "first_name": "Ырыскул Максатбековна",
+   "department": "Экологии и природопользования",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-jekologii-i-prirodopolzovanija/"
+  },
+  {
+   "last_name": "Советбекова",
+   "first_name": "Азира Бакытовна",
+   "department": "Экологии и природопользования",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-jekologii-i-prirodopolzovanija/"
+  },
+  {
+   "last_name": "Джумагулова",
+   "first_name": "Гульнура Алпочоевна",
+   "department": "Педагогики и психологии",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/pedagogika-zhana-psihologija-kafedrasy/"
+  },
+  {
+   "last_name": "Мураталиева",
+   "first_name": "Мира Алымбековна",
+   "department": "Педагогики и психологии",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/pedagogika-zhana-psihologija-kafedrasy/"
+  },
+  {
+   "last_name": "Нурманбетова",
+   "first_name": "Гульнара Кемелевна",
+   "department": "Педагогики и психологии",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/pedagogika-zhana-psihologija-kafedrasy/"
+  },
+  {
+   "last_name": "Байсубанова",
+   "first_name": "Ася Карыбековна",
+   "department": "Педагогики и психологии",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/pedagogika-zhana-psihologija-kafedrasy/"
+  },
+  {
+   "last_name": "Сабырова",
+   "first_name": "Элзада Сыдыковна",
+   "department": "Педагогики и психологии",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/pedagogika-zhana-psihologija-kafedrasy/"
+  },
+  {
+   "last_name": "Молдалиева",
+   "first_name": "Саламат Аманкуловна",
+   "department": "Педагогики и психологии",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/pedagogika-zhana-psihologija-kafedrasy/"
+  },
+  {
+   "last_name": "Кошалиева",
+   "first_name": "Салтанат Шайдуллаевна",
+   "department": "Педагогики и психологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/pedagogika-zhana-psihologija-kafedrasy/"
+  },
+  {
+   "last_name": "Мийназарова",
+   "first_name": "Венера Мукашевна",
+   "department": "Педагогики и психологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/pedagogika-zhana-psihologija-kafedrasy/"
+  },
+  {
+   "last_name": "Нурланова",
+   "first_name": "Айзат Нурлановна",
+   "department": "Педагогики и психологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/pedagogika-zhana-psihologija-kafedrasy/"
+  },
+  {
+   "last_name": "Байдылдаева",
+   "first_name": "Айганыш Оморовна",
+   "department": "Педагогики и психологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/pedagogika-zhana-psihologija-kafedrasy/"
+  },
+  {
+   "last_name": "Абдыракунова",
+   "first_name": "Жылдыз Сатаровна",
+   "department": "Теории и методики начального, дошкольного образования",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-metodiki-nachalnogo-doshkolnogo-obrazovanija/"
+  },
+  {
+   "last_name": "Кылычова",
+   "first_name": "Таалайкул Берикбаевна",
+   "department": "Теории и методики начального, дошкольного образования",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-metodiki-nachalnogo-doshkolnogo-obrazovanija/"
+  },
+  {
+   "last_name": "Таирова",
+   "first_name": "Калбубу Акматжановна",
+   "department": "Теории и методики начального, дошкольного образования",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-metodiki-nachalnogo-doshkolnogo-obrazovanija/"
+  },
+  {
+   "last_name": "Бекмырзаева",
+   "first_name": "Алтынай Бекмырзаевна",
+   "department": "Теории и методики начального, дошкольного образования",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-metodiki-nachalnogo-doshkolnogo-obrazovanija/"
+  },
+  {
+   "last_name": "Базакечова",
+   "first_name": "Гулзат Эсенбаевна",
+   "department": "Теории и методики начального, дошкольного образования",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-metodiki-nachalnogo-doshkolnogo-obrazovanija/"
+  },
+  {
+   "last_name": "Алымбекова",
+   "first_name": "Айтолкун Алымбековна",
+   "department": "Теории и методики начального, дошкольного образования",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-metodiki-nachalnogo-doshkolnogo-obrazovanija/"
+  },
+  {
+   "last_name": "Жээнбекова",
+   "first_name": "Умут Жээнбековна",
+   "department": "Теории и методики начального, дошкольного образования",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-metodiki-nachalnogo-doshkolnogo-obrazovanija/"
+  },
+  {
+   "last_name": "Таалайбекова",
+   "first_name": "Алтынай Таалайбековна",
+   "department": "Теории и методики начального, дошкольного образования",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-metodiki-nachalnogo-doshkolnogo-obrazovanija/"
+  },
+  {
+   "last_name": "Баяманова",
+   "first_name": "Майрам Сатаровна",
+   "department": "Английского языка",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Ирсалиева",
+   "first_name": "Нарынкул Кусеиновна",
+   "department": "Английского языка",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Козуев",
+   "first_name": "Дурус Исакбаевич",
+   "department": "Английского языка",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Адыбаева",
+   "first_name": "Уулкелди Дуйшенбиевна",
+   "department": "Английского языка",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Турусбекова",
+   "first_name": "Аида Садырбековна",
+   "department": "Английского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Умоталиева",
+   "first_name": "Айгуль Базарбаевна",
+   "department": "Английского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Радова",
+   "first_name": "Эрика Радовна",
+   "department": "Английского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Сейтказиева",
+   "first_name": "Жазгуль Закиряевна",
+   "department": "Английского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Абдышева",
+   "first_name": "Чынара Алиаскаровна",
+   "department": "Английского языка",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Талканова",
+   "first_name": "Чолпон Жапаралиевна",
+   "department": "Английского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Усманова",
+   "first_name": "Назира Мяхсимовна",
+   "department": "Английского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Одокозова",
+   "first_name": "Кыял Иманбаевна",
+   "department": "Английского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Кырбашева",
+   "first_name": "Аселена Аспековна",
+   "department": "Английского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Мусабекова",
+   "first_name": "Назгул Турусбаевна",
+   "department": "Английского языка",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Касмалиева",
+   "first_name": "Элзада Таалайбековна",
+   "department": "Английского языка",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Жыргалбек кызы",
+   "first_name": "Асель",
+   "department": "Английского языка",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-anglijskogo-jazyka/"
+  },
+  {
+   "last_name": "Абдуллаева",
+   "first_name": "Саадат Мукашевна",
+   "department": "Немецкого языка",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/"
+  },
+  {
+   "last_name": "Токтогазиева",
+   "first_name": "Дариха Садаваевна",
+   "department": "Немецкого языка",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/"
+  },
+  {
+   "last_name": "Кадыркулова",
+   "first_name": "Фатима Дункановна",
+   "department": "Немецкого языка",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/"
+  },
+  {
+   "last_name": "Исаева",
+   "first_name": "Жаныл Койчубековна",
+   "department": "Немецкого языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/"
+  },
+  {
+   "last_name": "Сулайманова",
+   "first_name": "Бактыгуль Аскербековна",
+   "department": "Немецкого языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/"
+  },
+  {
+   "last_name": "Каниметова",
+   "first_name": "Айгуль Болотбековна",
+   "department": "Немецкого языка",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/"
+  },
+  {
+   "last_name": "Мурзабаева",
+   "first_name": "Аяна Мусагалыевна",
+   "department": "Немецкого языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/"
+  },
+  {
+   "last_name": "Бейшенова",
+   "first_name": "Жазгуль Бегалиевна",
+   "department": "Немецкого языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/"
+  },
+  {
+   "last_name": "Алыпсатарова",
+   "first_name": "Рахат Бактыбековна",
+   "department": "Немецкого языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/"
+  },
+  {
+   "last_name": "Сыдыгалиева",
+   "first_name": "Элена Чынарбековна",
+   "department": "Немецкого языка",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/"
+  },
+  {
+   "last_name": "Сотникова-Маркварт",
+   "first_name": "Тамара Михайловна",
+   "department": "Немецкого языка",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/"
+  },
+  {
+   "last_name": "Дюшебаева",
+   "first_name": "Элмира Кубанычбековна",
+   "department": "Немецкого языка",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/"
+  },
+  {
+   "last_name": "Зарылбек кызы",
+   "first_name": "Ырыскан",
+   "department": "Немецкого языка",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/"
+  },
+  {
+   "last_name": "Мирлан кызы",
+   "first_name": "Адинай",
+   "department": "Немецкого языка",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-nemeckogo-jazyka/"
+  },
+  {
+   "last_name": "Жумакеева",
+   "first_name": "Эльмира Бердалиевна",
+   "department": "Теории и практики перевода",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-praktiki-perevoda/"
+  },
+  {
+   "last_name": "Джаркинбаева",
+   "first_name": "Назгуль Болотбековна",
+   "department": "Теории и практики перевода",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-praktiki-perevoda/"
+  },
+  {
+   "last_name": "Ысакулов",
+   "first_name": "Кутбидин Ысакулович",
+   "department": "Теории и практики перевода",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-praktiki-perevoda/"
+  },
+  {
+   "last_name": "Чыныбаева",
+   "first_name": "Самара Рыскуловна",
+   "department": "Теории и практики перевода",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-praktiki-perevoda/"
+  },
+  {
+   "last_name": "Акишева",
+   "first_name": "Нургуль Садирбековна",
+   "department": "Теории и практики перевода",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-praktiki-perevoda/"
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Жазгуль Дуйшеналиевна",
+   "department": "Теории и практики перевода",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-praktiki-perevoda/"
+  },
+  {
+   "last_name": "Омурбаева",
+   "first_name": "Гульзат Жакшылыковна",
+   "department": "Теории и практики перевода",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-praktiki-perevoda/"
+  },
+  {
+   "last_name": "Аскарбекова",
+   "first_name": "Наргиза Аскарбековна",
+   "department": "Теории и практики перевода",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-praktiki-perevoda/"
+  },
+  {
+   "last_name": "Осконбаева",
+   "first_name": "Нуриля Абдымажитовна",
+   "department": "Теории и практики перевода",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-praktiki-perevoda/"
+  },
+  {
+   "last_name": "Мукашова",
+   "first_name": "Мира Кыдыкбековна",
+   "department": "Теории и практики перевода",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-praktiki-perevoda/"
+  },
+  {
+   "last_name": "Орузбаева",
+   "first_name": "Махабат Алымбековна",
+   "department": "Теории и практики перевода",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-praktiki-perevoda/"
+  },
+  {
+   "last_name": "Кузнецова",
+   "first_name": "Валерия Александровна",
+   "department": "Теории и практики перевода",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-teorii-i-praktiki-perevoda/"
+  },
+  {
+   "last_name": "Орозалиев",
+   "first_name": "Эрик Садыкович",
+   "department": "Социальной работы и практической психологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "Нургуль Кусейновна",
+   "department": "Социальной работы и практической психологии",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Айтиева",
+   "first_name": "Айганыш Джапаровна",
+   "department": "Социальной работы и практической психологии",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Айтбаева",
+   "first_name": "Перизат Мурзакматовна",
+   "department": "Социальной работы и практической психологии",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Жыргалбеков",
+   "first_name": "Жакшылык Жыргалбекович",
+   "department": "Социальной работы и практической психологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Кулубаев",
+   "first_name": "Мамбеталы Абдибалиевич",
+   "department": "Социальной работы и практической психологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Толубаев",
+   "first_name": "Нурлан Сапарбекович",
+   "department": "Социальной работы и практической психологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Кояшова",
+   "first_name": "Екатерина Дмитриевна",
+   "department": "Социальной работы и практической психологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Исакова",
+   "first_name": "Виктория Леонидовна",
+   "department": "Социальной работы и практической психологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Пудов",
+   "first_name": "Владимир Евгеньевич",
+   "department": "Социальной работы и практической психологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Бузурманкулова",
+   "first_name": "Жаркын Айткуловна",
+   "department": "Социальной работы и практической психологии",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Билалиева",
+   "first_name": "Айнура Жумабековна",
+   "department": "Социальной работы и практической психологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Тентигенова",
+   "first_name": "Асель Ибираимовна",
+   "department": "Социальной работы и практической психологии",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Аскарбекова",
+   "first_name": "Жылдыз Аскарбековна",
+   "department": "Социальной работы и практической психологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Касымова",
+   "first_name": "Раушан Токтомушовна",
+   "department": "Социальной работы и практической психологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Салимова",
+   "first_name": "Лейла Рамазан кызы",
+   "department": "Социальной работы и практической психологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Айтбекова",
+   "first_name": "Айнура Айтбековна",
+   "department": "Социальной работы и практической психологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Шайлообек кызы",
+   "first_name": "Айсулуу",
+   "department": "Социальной работы и практической психологии",
+   "title": "преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-cocialnoj-raboty-i-prakticheskoj-psihologii/"
+  },
+  {
+   "last_name": "Сыргабаев",
+   "first_name": "Самарбек Бердибекович",
+   "department": "Социологии и политико-правовых дисциплин",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-sociologii-i-politiko-pravovyh-disciplin/"
+  },
+  {
+   "last_name": "Омуралиев",
+   "first_name": "Нурбек Ашимканович",
+   "department": "Социологии и политико-правовых дисциплин",
+   "title": "профессор",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-sociologii-i-politiko-pravovyh-disciplin/"
+  },
+  {
+   "last_name": "Сейитбаев",
+   "first_name": "Бактыбек Турарович",
+   "department": "Социологии и политико-правовых дисциплин",
+   "title": "доцент",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-sociologii-i-politiko-pravovyh-disciplin/"
+  },
+  {
+   "last_name": "Эшанкулова",
+   "first_name": "Назгуль Аллакуловна",
+   "department": "Социологии и политико-правовых дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-sociologii-i-politiko-pravovyh-disciplin/"
+  },
+  {
+   "last_name": "Дюйшенбекова",
+   "first_name": "Адениса Дюйшенбековна",
+   "department": "Социологии и политико-правовых дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-sociologii-i-politiko-pravovyh-disciplin/"
+  },
+  {
+   "last_name": "Уркунчиева",
+   "first_name": "Раиса Жолдошбековна",
+   "department": "Социологии и политико-правовых дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-sociologii-i-politiko-pravovyh-disciplin/"
+  },
+  {
+   "last_name": "Алымбаева",
+   "first_name": "Наргиза Нурдиновна",
+   "department": "Социологии и политико-правовых дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-sociologii-i-politiko-pravovyh-disciplin/"
+  },
+  {
+   "last_name": "Толоева",
+   "first_name": "Бактыгуль Шаршенбековна",
+   "department": "Социологии и политико-правовых дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://old.bhu.kg/kafedry/kafedra-sociologii-i-politiko-pravovyh-disciplin/"
+  },
+  {
+   "last_name": "Догдурбаева",
+   "first_name": "Каниет Догдурбаевна",
+   "department": "Факультет востоковедения и международных отношений",
+   "title": "преподаватель",
+   "source_url": "https://bsu.kg/ru/sotrudniki-fvmo/"
+  },
+  {
+   "last_name": "Багдатова",
+   "first_name": "Курманжан Багдатовна",
+   "department": "Факультет русской филологии",
+   "title": "преподаватель",
+   "source_url": "https://bsu.kg/ru/sotrudniki-frf/"
+  },
+  {
+   "last_name": "Азизова",
+   "first_name": "Алтынай Азизовна",
+   "department": "Институт экономики, финансов и бизнес управления",
+   "title": "преподаватель",
+   "source_url": "https://bsu.kg/ru/sotrudniki-fjef/"
+  },
+  {
+   "last_name": "Ишенбекова",
+   "first_name": "Калиса Талантбековна",
+   "department": "Факультет педагогического образования",
+   "title": "преподаватель",
+   "source_url": "https://bsu.kg/ru/sotrudniki-fpo/"
+  },
+  {
+   "last_name": "Омурбек",
+   "first_name": "Ясин Дамирович",
+   "department": "Факультет педагогического образования",
+   "title": "преподаватель",
+   "source_url": "https://bsu.kg/ru/sotrudniki-fpo/"
+  },
+  {
+   "last_name": "Белалиева",
+   "first_name": "Айнура Жумабековна",
+   "department": "Социально-психологический факультет",
+   "title": "преподаватель",
+   "source_url": "https://bsu.kg/ru/sotrudniki-spf/"
+  },
+  {
+   "last_name": "Оторова",
+   "first_name": "Айдай Токторбековна",
+   "department": "Факультет экологии и менеджмента",
+   "title": "преподаватель",
+   "source_url": "https://bsu.kg/ru/sotrudniki-fjem/"
+  },
+  {
+   "last_name": "Аширбаева",
+   "first_name": "Аида Жетимишовна",
+   "department": "Факультет европейских цивилизаций",
+   "title": "преподаватель",
+   "source_url": "https://bsu.kg/ru/sotrudniki-fec/"
+  },
+  {
+   "last_name": "Ботоканова",
+   "first_name": "Гульнара Топчуевна",
+   "department": "Кыргызско-китайский факультет",
+   "title": "преподаватель",
+   "source_url": "https://bsu.kg/ru/sotrudniki-kkf/"
+  },
+  {
+   "last_name": "Мирбек кызы",
+   "first_name": "Айзуура",
+   "department": "Кыргызско-китайский факультет",
+   "title": "преподаватель",
+   "source_url": "https://bsu.kg/ru/sotrudniki-kkf/"
+  },
+  {
+   "last_name": "Мондошова",
+   "first_name": "Венера Айтказиевна",
+   "department": "Факультет журналистики и информационных систем",
+   "title": "преподаватель",
+   "source_url": "https://bsu.kg/ru/sotrudniki-fzhiis/"
+  },
+  {
+   "last_name": "Барыктабасова",
+   "first_name": "Гүлзада Нурланбековна",
+   "department": "Кыргыз филологиясы факультети",
+   "title": "преподаватель",
+   "source_url": "https://bsu.kg/ru/kyrgyz-filologijasy-fakulteti/"
+  },
+  {
+   "last_name": "Чодураев",
+   "first_name": "Т. М.",
+   "department": "Экологии и природопользования",
+   "title": "профессор",
+   "source_url": "https://bsu.kg/ru/kafedra-jekologii-i-prirodopolzovanija-fjem/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чонтоева",
+   "first_name": "Н. Т.",
+   "department": "Экологии и природопользования",
+   "title": "старший преподаватель",
+   "source_url": "https://bsu.kg/ru/kafedra-jekologii-i-prirodopolzovanija-fjem/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Амираева",
+   "first_name": "Б. М.",
+   "department": "Экологии и природопользования",
+   "title": "преподаватель",
+   "source_url": "https://bsu.kg/ru/kafedra-jekologii-i-prirodopolzovanija-fjem/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Искендерова",
+   "first_name": "Суусар",
+   "department": "Педагогического образования и инновационных технологий ИНДО",
+   "title": "профессор",
+   "source_url": "https://bsu.kg/ru/kafedra-pedagogicheskogo-obrazovanija-i-innovacionnyh-tehnologij-indo/"
+  },
+  {
+   "last_name": "Мамбеталиев",
+   "first_name": "У. З.",
+   "department": "Истории Кыргызстана и Зарубежного востока",
+   "title": "старший преподаватель",
+   "source_url": "https://bsu.kg/ru/kafedra-istorii-kyrgyzstana-i-zarubezhnogo-vostoka/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Дуйшенбиев",
+   "first_name": "С.",
+   "department": "Истории Кыргызстана и Зарубежного востока",
+   "title": "доцент",
+   "source_url": "https://bsu.kg/ru/kafedra-istorii-kyrgyzstana-i-zarubezhnogo-vostoka/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мурзахмедова",
+   "first_name": "Г. М.",
+   "department": "Теории и истории русской литературы",
+   "title": "преподаватель",
+   "source_url": "https://bsu.kg/ru/kafedra-teorii-i-istorii-russkoj-literatury-frf/",
+   "initials_only": true
+  }
+ ]
+}
