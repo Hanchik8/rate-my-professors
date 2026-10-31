@@ -30,7 +30,34 @@ def _clean(value: str, limit: int) -> str:
     return value[:limit].strip()
 
 
-def clean_record(rec: dict) -> dict | None:
+UNKNOWN_DEPARTMENT = "Общая"
+# Latin look-alikes that slip into Cyrillic words on scraped pages ("Cтроительство").
+_LATIN_LOOKALIKES = str.maketrans("AaBCcEeHKMOoPpTXxy", "АаВСсЕеНКМОоРрТХху")
+_MIXED_WORD_RE = re.compile(r"\b\w*[А-Яа-яЁё]\w*\b")
+
+
+def _fix_mixed_script(text: str) -> str:
+    def fix(m):
+        word = m.group(0)
+        return word.translate(_LATIN_LOOKALIKES) if re.search(r"[A-Za-z]", word) else word
+    return _MIXED_WORD_RE.sub(fix, text)
+
+
+def clean_department(dept: str, school_names: tuple[str, ...] = ()) -> str:
+    """Normalize a department; source notes and a repeated university name mean "unknown"."""
+    dept = _clean(dept or "", 80)
+    dept = re.sub(r"^(кафедра|department of)\s+", "", dept, flags=re.I).strip(" «»\"")
+    # "Не указана (список «...»)" and similar collector notes are not departments
+    if re.match(r"^(не указан|нет данных|unknown|n/?a\b)", dept, flags=re.I) or re.search(r"\(список\b|\bисточник:", dept, flags=re.I):
+        dept = ""
+    names = {n.strip().lower() for n in school_names if n}
+    if dept and dept.lower() in names:
+        dept = ""
+    dept = _fix_mixed_script(dept)
+    return (dept[:1].upper() + dept[1:]) if dept else UNKNOWN_DEPARTMENT
+
+
+def clean_record(rec: dict, school_names: tuple[str, ...] = ()) -> dict | None:
     """Return a normalized record, or None when it can't be a real name."""
     # anything after a comma or bracket is a degree / note, not part of the name
     last = re.split(r"[,(]", str(rec.get("last_name", "")))[0]
@@ -39,13 +66,15 @@ def clean_record(rec: dict) -> dict | None:
     first = _clean(_DEGREE_RE.sub("", first), 40).strip(" ,")
     if not last or not first or not _NAME_RE.match(last) or not _NAME_RE.match(first):
         return None
-    dept = _clean(rec.get("department", ""), 80)
-    dept = re.sub(r"^(кафедра|department of)\s+", "", dept, flags=re.I).strip(" «»\"")
-    dept = (dept[:1].upper() + dept[1:]) if dept else "Общая"
+    dept = clean_department(rec.get("department", ""), school_names)
     title = _clean(rec.get("title", ""), 40).lower()
     if title not in TITLES:
         title = "преподаватель"
     return {"last_name": last, "first_name": first, "department": dept, "title": title}
+
+
+def _school_names(school) -> tuple[str, ...]:
+    return tuple(getattr(school, f, "") or "" for f in ("name", "name_ky", "name_en", "short_name"))
 
 
 def _key(first: str, last: str) -> str:
@@ -80,7 +109,7 @@ class Command(BaseCommand):
             for rec in data.get("professors", []):
                 if skip_initials and rec.get("initials_only"):
                     continue
-                clean = clean_record(rec)
+                clean = clean_record(rec, _school_names(school))
                 if clean is None:
                     bad += 1
                     continue

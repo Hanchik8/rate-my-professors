@@ -1183,3 +1183,36 @@ msgstr "%(region)s: all cities"
 
 msgid "сайт вуза"
 msgstr "university website"
+
+msgid "%(name)s добавлен(а) к сравнению."
+msgstr "%(name)s added to the comparison."
+
+msgid "Найдите ещё одного преподавателя и нажмите «Сравнить» на его карточке."
+msgstr "Find one more professor and press “Compare” on their card."
+
+msgid "Список сравнения пуст."
+msgstr "Your comparison list is empty."
+
+msgid "Нажмите «Сравнить» на карточках двух или трёх преподавателей."
+msgstr "Press “Compare” on the cards of two or three professors."
+
+msgid "Выбрать преподавателя"
+msgstr "Choose a professor"
+
+msgid "Убрать из сравнения"
+msgstr "Remove from comparison"
+
+msgid "Убрать"
+msgstr "Remove"
+
+msgid "Добавить ещё преподавателя"
+msgstr "Add another professor"
+
+msgid "Очистить сравнение"
+msgstr "Clear comparison"
+
+msgid "Ссылка на это сравнение"
+msgstr "Link to this comparison"
+
+msgid "Кафедра: сначала выберите вуз"
+msgstr "Department: choose a university first"

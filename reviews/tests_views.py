@@ -536,7 +536,7 @@ class CompareViewTests(TestCase):
 
     def test_card_compare_links_on_home_and_school_pages(self):
         prof = self.professors[0]
-        compare_url = f"{reverse('compare')}?ids={prof.id}"
+        compare_url = f"{reverse('compare')}?add={prof.id}"
         school = self.repo.school(prof.school_id)
         home = self.client.get(reverse("home"))
         self.assertContains(home, compare_url)
@@ -544,3 +544,71 @@ class CompareViewTests(TestCase):
         school_page = self.client.get(reverse("school_detail", args=[school.slug]))
         self.assertContains(school_page, compare_url)
         self.assertContains(school_page, "Сравнить")
+
+
+class CompareSessionListTests(CompareViewTests):
+    """The card buttons build the comparison one professor at a time."""
+
+    def _add(self, prof):
+        return self.client.get(reverse("compare"), {"add": prof.id})
+
+    def test_single_pick_is_a_normal_page_asking_for_one_more(self):
+        first = self.professors[0]
+        self.assertRedirects(self._add(first), reverse("compare"))
+        page = self.client.get(reverse("compare"))
+        self.assertEqual(page.status_code, 200)
+        self.assertContains(page, first.full_name)
+        self.assertContains(page, "Найдите ещё одного преподавателя")
+
+    def test_two_picks_show_the_table_and_a_share_link(self):
+        first, second = self.professors[:2]
+        self._add(first)
+        self._add(second)
+        page = self.client.get(reverse("compare"))
+        self.assertEqual(len(page.context["professors"]), 2)
+        self.assertContains(page, f"?ids={first.id},{second.id}")
+
+    def test_list_keeps_the_last_three_and_supports_remove_and_clear(self):
+        for prof in self.professors[:4]:
+            self._add(prof)
+        page = self.client.get(reverse("compare"))
+        self.assertEqual([r["prof"].id for r in page.context["professors"]], [p.id for p in self.professors[1:4]])
+        self.client.get(reverse("compare"), {"remove": self.professors[1].id})
+        self.assertEqual(len(self.client.get(reverse("compare")).context["professors"]), 2)
+        self.client.get(reverse("compare"), {"clear": "1"})
+        self.assertContains(self.client.get(reverse("compare")), "Список сравнения пуст")
+
+    def test_unknown_id_is_not_added(self):
+        self._add(type("P", (), {"id": "00000000-0000-0000-0000-000000000000"})())
+        self.assertEqual(self.client.get(reverse("compare")).context["professors"], [])
+
+
+class LoginEmailCaseTests(TestCase):
+    def test_login_accepts_email_in_any_case(self):
+        from django.contrib.auth.models import User
+        User.objects.create_user("student@example.kg", "student@example.kg", "Strong-pass-123")
+        r = self.client.post(reverse("login"), {"username": "  Student@Example.KG ", "password": "Strong-pass-123"})
+        self.assertEqual(r.status_code, 302)
+        self.assertIn("_auth_user_id", self.client.session)
+
+    def test_email_inputs_do_not_autocapitalize(self):
+        self.assertContains(self.client.get(reverse("login")), 'autocapitalize="none"')
+        self.assertContains(self.client.get(reverse("signup")), 'autocapitalize="none"')
+
+
+class DepartmentFilterScopeTests(TestCase):
+    def test_department_list_is_scoped_to_the_chosen_school(self):
+        import reviews.views as views
+        repo = InMemoryRepository()
+        a = repo.add_school("Alpha U", "Бишкек")
+        b = repo.add_school("Beta U", "Ош")
+        repo.add_professor(a.id, "Ай", "Бек", "Физика", "доцент")
+        repo.add_professor(b.id, "Нур", "Бек", "Химия", "доцент")
+        original = views.repo
+        views.repo = repo
+        try:
+            self.assertEqual(self.client.get(reverse("home")).context["departments"], [])
+            self.assertEqual(self.client.get(reverse("home"), {"school": a.slug}).context["departments"], ["Физика"])
+            self.assertEqual(self.client.get(reverse("top"), {"school": b.slug}).context["departments"], ["Химия"])
+        finally:
+            views.repo = original

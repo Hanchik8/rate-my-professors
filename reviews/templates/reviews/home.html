@@ -25,6 +25,7 @@
   </select>
   <select name="department" aria-label="{% translate 'Кафедра' %}">
     <option value="">{% translate "Все кафедры" %}</option>
+    {% if not school %}<option value="" disabled>{% translate "Кафедра: сначала выберите вуз" %}</option>{% endif %}
     {% for d in departments %}<option value="{{ d }}"{% if d == department %} selected{% endif %}>{% translate_department d %}</option>{% endfor %}
   </select>
   <select name="sort" aria-label="{% translate 'Сортировка' %}">

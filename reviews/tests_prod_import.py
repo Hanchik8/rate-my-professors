@@ -5,10 +5,15 @@ from pathlib import Path
 
 from django.contrib.auth import get_user_model
 from django.core.management import call_command
+from unittest import skipUnless
+
 from django.test import TestCase
 
 from reviews.management.commands.import_professors import clean_record
 from reviews.models import Professor, Review, School
+
+# School.code ships with the production catalog (deploy branch); dev may not have it yet.
+HAS_CODE = any(f.name == "code" for f in School._meta.get_fields())
 
 
 class CleanRecordTests(TestCase):
@@ -26,6 +31,7 @@ class CleanRecordTests(TestCase):
         self.assertEqual(clean_record({"last_name": "Петров", "first_name": "П. П."})["first_name"], "П. П.")
 
 
+@skipUnless(HAS_CODE, "School.code is not in this branch")
 class ImportProfessorsTests(TestCase):
     def setUp(self):
         self.school = School.objects.create(code="knu", name="КНУ", slug="knu", city="Бишкек")
@@ -53,6 +59,7 @@ class ImportProfessorsTests(TestCase):
         self.assertEqual(Professor.objects.count(), 1)
 
 
+@skipUnless(HAS_CODE, "School.code is not in this branch")
 class PrepareProductionTests(TestCase):
     def test_wipes_content_but_keeps_schools_and_staff(self):
         school = School.objects.create(code="knu", name="КНУ", slug="knu", city="Бишкек")
@@ -78,3 +85,17 @@ class RealNamesNotMangledTests(TestCase):
             self.assertEqual((rec["last_name"], rec["first_name"]), (last, first))
         rec = clean_record({"last_name": "Асанов", "first_name": "Бакыт к.т.н. доц."})
         self.assertEqual(rec["first_name"], "Бакыт")
+
+
+class CleanDepartmentTests(TestCase):
+    def test_notes_and_school_names_become_unknown(self):
+        from reviews.management.commands.import_professors import clean_department
+        self.assertEqual(clean_department("Не указана (список «ТалМУнун окутуучулары»)"), "Общая")
+        self.assertEqual(clean_department("Баткенский государственный университет", ("Баткенский государственный университет",)), "Общая")
+        self.assertEqual(clean_department("Кафедра физики"), "Физики")
+
+    def test_latin_lookalikes_inside_cyrillic_words_are_fixed(self):
+        from reviews.management.commands.import_professors import clean_department
+        self.assertEqual(clean_department("Предметно-цикловое объединение Cтроительство"), "Предметно-цикловое объединение Строительство")
+        self.assertEqual(clean_department("Computer Science"), "Computer Science")
+        self.assertEqual(clean_department("Возобновляемые источники энергии"), "Возобновляемые источники энергии")
