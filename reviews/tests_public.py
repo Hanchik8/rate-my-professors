@@ -62,6 +62,38 @@ class SitemapXmlI18nTests(TestCase):
                     self.assertIn("xml", response["Content-Type"], f"xml content-type expected for {lang}/{section}")
 
 
+class SchoolPagePublicTests(TestCase):
+    def setUp(self):
+        self._orig_repo = store_mod.repo
+        import reviews.views as views
+        self._orig_view_repo = views.repo
+        self.repo = InMemoryRepository()
+        store_mod.repo = views.repo = self.repo
+        self.school = self.repo.add_school("Публичный университет", "Бишкек")
+
+    def tearDown(self):
+        import reviews.views as views
+        store_mod.repo = self._orig_repo
+        views.repo = self._orig_view_repo
+
+    def test_school_page_status_and_content_type(self):
+        response = self.client.get(reverse("school_detail", args=[self.school.slug]))
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("text/html", response["Content-Type"])
+
+    def test_school_page_displays_school_and_empty_state(self):
+        response = self.client.get(reverse("school_detail", args=[self.school.slug]))
+        self.assertContains(response, self.school.name)
+        self.assertContains(response, self.school.city)
+        self.assertContains(response, "Пока нет кафедр.")
+        self.assertContains(response, "Пока нет преподавателей.")
+        self.assertContains(response, reverse("add_professor"))
+
+    def test_school_page_returns_404_for_unknown_school(self):
+        response = self.client.get(reverse("school_detail", args=["unknown-school"]))
+        self.assertEqual(response.status_code, 404)
+
+
 ABOUT_CASES = [
     ("ru", "О проекте"),
     ("ky", "Долбоор жөнүндө"),

@@ -1,5 +1,7 @@
 """View-level tests: search edges, shared helpers and HTTP method security."""
 from types import SimpleNamespace
+from pathlib import Path
+from urllib.parse import quote
 
 from django import forms
 from django.conf import settings
@@ -22,6 +24,53 @@ from .views import (
     _requested_next_url,
     _review_form_context,
 )
+
+
+class ProfessorShareTests(TestCase):
+    def setUp(self):
+        import reviews.views as views
+        from . import store as store_mod
+        self.repo = InMemoryRepository()
+        seed(self.repo)
+        self._orig_store = store_mod.repo
+        self._orig_views = views.repo
+        store_mod.repo = views.repo = self.repo
+
+    def tearDown(self):
+        import reviews.views as views
+        from . import store as store_mod
+        store_mod.repo = self._orig_store
+        views.repo = self._orig_views
+
+    def _get(self):
+        prof = self.repo.search("Айбек")[0]["prof"]
+        response = self.client.get(reverse("professor", args=[prof.slug]))
+        self.assertEqual(response.status_code, 200)
+        return response, prof
+
+    def test_share_button_script_and_fallback_are_rendered(self):
+        response, prof = self._get()
+        html = response.content.decode()
+        for content in ("data-share-button", "Поделиться", "reviews/share.js",
+                        "Ссылка на страницу преподавателя", "data-share-field",
+                        f"/professors/{prof.slug}/", "Ссылка скопирована", 'role="status"'):
+            self.assertContains(response, content)
+        self.assertIn('aria-label="Поделиться:', html)
+
+    @override_settings(SITE_URL="https://example.org")
+    def test_share_url_uses_configured_site_url(self):
+        _, prof = self._get()
+        html = self.client.get(reverse("professor", args=[prof.slug])).content.decode()
+        self.assertIn(f'data-share-url="https://example.org/professors/{quote(prof.slug, safe="")}/"', html)
+
+    def test_share_javascript_exists_in_static_files(self):
+        script = Path(__file__).parent / "static" / "reviews" / "share.js"
+        self.assertTrue(script.is_file())
+        self.assertTrue(script.read_text(encoding="utf-8").strip())
+
+    def test_professor_page_has_no_inline_javascript(self):
+        response, _ = self._get()
+        self.assertNotRegex(response.content.decode(), r"<script(?![^>]*\bsrc=)(?![^>]*type=[\"']application/ld\+json[\"'])[^>]*>\s*[^\s<]")
 
 
 # ---------------------------------------------------------------------------
