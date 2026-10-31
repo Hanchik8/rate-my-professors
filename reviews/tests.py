@@ -2058,10 +2058,10 @@ class QueryEfficiencyTests(TestCase):
 
     def test_home_view_query_count_is_constant(self):
         self.client.get(reverse("home"))
-        with self.assertNumQueries(6):
+        with self.assertNumQueries(5):
             self.client.get(reverse("home"))
         self._add_load()
-        with self.assertNumQueries(6):
+        with self.assertNumQueries(5):
             self.client.get(reverse("home"))
 
     def test_professor_view_query_count_is_constant(self):
@@ -2088,7 +2088,7 @@ class QueryEfficiencyTests(TestCase):
         self.client.get(reverse("home"))  # warm session/messages storage
         self._add_schools(4)
         self._add_load(professors=12, reviews_each=3)
-        with self.assertNumQueries(6):
+        with self.assertNumQueries(5):
             self.client.get(reverse("home"))
 
     def test_professor_list_query_count_is_flat_across_catalog_sizes(self):

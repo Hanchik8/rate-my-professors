@@ -170,10 +170,13 @@ class DjangoRepository:
         # same city shows up once per school.
         return sorted(School.objects.order_by().values_list("city", flat=True).distinct())
 
-    def departments(self) -> list[str]:
-        """Return the sorted set of departments for approved professors."""
+    def departments(self, school_slug: str = "") -> list[str]:
+        """Return the sorted set of departments for approved professors (optionally of one school)."""
+        qs = Professor.objects.filter(status="approved")
+        if school_slug:
+            qs = qs.filter(school__slug=school_slug)
         return sorted(
-            Professor.objects.filter(status="approved")
+            qs
             .order_by()
             .values_list("department", flat=True)
             .distinct()

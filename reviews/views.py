@@ -105,8 +105,18 @@ def _home_options():
     return get_or_set(options_cache_key(), lambda: {
         "schools": repo.schools(),
         "cities": repo.cities(),
-        "departments": repo.departments(),
     })
+
+
+def _department_choices(school, department):
+    """Departments of the chosen school only; without a school the list would hold
+    every department of every university (over a thousand options)."""
+    school = school.strip()
+    choices = repo.departments(school) if school else []
+    department = department.strip()
+    if department and department not in choices:
+        choices = [department] + choices
+    return choices
 
 
 def home(request):
@@ -132,7 +142,7 @@ def home(request):
         "department": department, "sort": sort,
         "schools": options["schools"],
         "cities": options["cities"],
-        "departments": options["departments"],
+        "departments": _department_choices(school, department),
         "results": page_results,
         "page_obj": page_obj,
         "empty_state": empty_state,
@@ -150,7 +160,7 @@ def top(request):
     return render(request, "reviews/top.html", {
         "results": results,
         "schools": repo.schools(),
-        "departments": repo.departments(),
+        "departments": _department_choices(school, department),
         "school": school,
         "department": department,
     })
@@ -224,31 +234,85 @@ def _compare_error(request, message):
     )
 
 
+COMPARE_SESSION_KEY = "compare_ids"
+COMPARE_MAX = 3
+
+
+def _compare_professor(professor_id):
+    """Return an approved professor by id, or ``None`` for unknown/invalid ids."""
+    try:
+        prof = repo.professor_by_id(professor_id)
+    except (ValidationError, ValueError, TypeError):
+        return None
+    if prof is None or getattr(prof, "status", "approved") != "approved":
+        return None
+    return prof
+
+
+def _compare_rows(professors):
+    return [
+        {"prof": prof, "stats": repo.stats(prof.id), "school": repo.school(prof.school_id)}
+        for prof in professors
+    ]
+
+
+def _compare_from_session(request):
+    """Manage the visitor's comparison list (``add``/``remove``/``clear``) kept in the session."""
+    selected = [i for i in request.session.get(COMPARE_SESSION_KEY, []) if isinstance(i, str)]
+    changed = False
+    add_id = request.GET.get("add", "").strip()
+    if add_id:
+        if add_id not in selected and _compare_professor(add_id) is not None:
+            selected = (selected + [add_id])[-COMPARE_MAX:]
+            changed = True
+    remove_id = request.GET.get("remove", "").strip()
+    if remove_id and remove_id in selected:
+        selected.remove(remove_id)
+        changed = True
+    if request.GET.get("clear"):
+        selected, changed = [], True
+    if changed or add_id or remove_id:
+        request.session[COMPARE_SESSION_KEY] = selected
+        return redirect("compare")
+    professors = [p for p in (_compare_professor(i) for i in selected) if p is not None]
+    if len(professors) != len(selected):
+        request.session[COMPARE_SESSION_KEY] = [p.id for p in professors]
+    share_url = ""
+    if len(professors) >= 2:
+        share_url = request.build_absolute_uri(reverse("compare")) + "?ids=" + ",".join(p.id for p in professors)
+    return render(request, "reviews/compare.html", {
+        "professors": _compare_rows(professors),
+        "error": "",
+        "session_mode": True,
+        "need_more": len(professors) < 2,
+        "can_add": len(professors) < COMPARE_MAX,
+        "share_url": share_url,
+    })
+
+
 def compare(request):
-    """Show up to three approved professors side by side."""
+    """Compare up to three approved professors side by side.
+
+    ``?ids=a,b[,c]`` is a shareable comparison. Without ``ids`` the page shows
+    the visitor's own list, filled one professor at a time by the "Сравнить"
+    buttons on the cards (``?add=<id>``).
+    """
+    if "ids" not in request.GET:
+        return _compare_from_session(request)
     ids = _compare_ids(",".join(request.GET.getlist("ids")))
-    if not 2 <= len(ids) <= 3:
+    if not 2 <= len(ids) <= COMPARE_MAX:
         return _compare_error(
             request,
             _("Для сравнения выберите от 2 до 3 преподавателей."),
         )
-
     professors = []
     for professor_id in ids:
-        try:
-            prof = repo.professor_by_id(professor_id)
-        except (ValidationError, ValueError, TypeError):
-            prof = None
-        if prof is None or getattr(prof, "status", "approved") != "approved":
+        prof = _compare_professor(professor_id)
+        if prof is None:
             return _compare_error(request, _("Professor not found"))
-        professors.append({
-            "prof": prof,
-            "stats": repo.stats(prof.id),
-            "school": repo.school(prof.school_id),
-        })
-
+        professors.append(prof)
     return render(request, "reviews/compare.html", {
-        "professors": professors,
+        "professors": _compare_rows(professors),
         "error": "",
     })
 
@@ -425,6 +489,13 @@ class EmailLoginForm(AuthenticationForm):
         field.label = gettext_lazy("Email")
         field.widget.input_type = "email"
         field.widget.attrs["autocomplete"] = "email"
+        field.widget.attrs["autocapitalize"] = "none"
+
+    def clean_username(self):
+        """Accept the email in any letter case (phones capitalize the first letter)."""
+        username = (self.cleaned_data.get("username") or "").strip()
+        match = User.objects.filter(username__iexact=username).values_list("username", flat=True).first()
+        return match or username
 
 
 class ThrottledLoginView(auth_views.LoginView):
@@ -478,7 +549,7 @@ def _normalize_email(email):
 class EmailSignupForm(forms.Form):
     """Self-service signup that uses the email address as the username."""
 
-    email = forms.EmailField(label=gettext_lazy("Email"))
+    email = forms.EmailField(label=gettext_lazy("Email"), widget=forms.EmailInput(attrs={"autocapitalize": "none", "autocomplete": "email"}))
     password1 = forms.CharField(label=gettext_lazy("Пароль"), widget=forms.PasswordInput)
     password2 = forms.CharField(label=gettext_lazy("Повторите пароль"), widget=forms.PasswordInput)
 

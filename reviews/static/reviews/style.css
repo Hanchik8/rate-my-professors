@@ -195,8 +195,8 @@ input:focus,select:focus,textarea:focus{border-color:var(--focus)}
 /* Professor cards */
 .cards{list-style:none;margin:1.5rem 0;padding:0;display:grid;
   grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:1rem}
-.cards>li{min-width:0}
-.card{display:flex;gap:1rem;align-items:flex-start;min-width:0;height:100%;background:var(--surface);color:inherit;text-decoration:none;
+.cards>li{min-width:0;display:flex;flex-direction:column;gap:.5rem}
+.card{display:flex;flex:1 1 auto;gap:1rem;align-items:flex-start;min-width:0;background:var(--surface);color:inherit;text-decoration:none;
   border:1px solid var(--line);border-radius:var(--radius-lg);padding:1.1rem 1.2rem;box-shadow:var(--shadow);
   transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
 .card:hover{color:inherit;border-color:var(--line-strong);box-shadow:var(--shadow-lg);transform:translateY(-3px)}
@@ -362,3 +362,9 @@ textarea{resize:vertical}
   *,*::before,*::after{transition:none!important;animation:none!important}
   html{scroll-behavior:auto}
 }
+
+/* Compare button sits under its card inside the grid cell (no overlap with the next row). */
+.card-compare{align-self:flex-start}
+.compare-actions{margin-top:1rem}
+.compare-remove{font-size:.85rem;font-weight:400}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

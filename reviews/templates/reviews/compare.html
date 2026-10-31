@@ -15,14 +15,27 @@
   <p><a class="empty-state-action" href="{% url 'home' %}">{% translate "Вернуться на главную" %}</a></p>
 </section>
 {% else %}
+{% if session_mode and need_more %}
+<section class="empty empty-state" role="status">
+  {% if professors %}
+  <strong class="empty-state-title">{% blocktranslate with name=professors.0.prof.full_name %}{{ name }} добавлен(а) к сравнению.{% endblocktranslate %}</strong>
+  <p>{% translate "Найдите ещё одного преподавателя и нажмите «Сравнить» на его карточке." %}</p>
+  {% else %}
+  <strong class="empty-state-title">{% translate "Список сравнения пуст." %}</strong>
+  <p>{% translate "Нажмите «Сравнить» на карточках двух или трёх преподавателей." %}</p>
+  {% endif %}
+  <a class="empty-state-action" href="{% url 'home' %}">{% translate "Выбрать преподавателя" %}</a>
+</section>
+{% endif %}
+{% if professors %}
 <div class="compare-wrap">
   <table class="compare">
-    <caption>{% translate "Сравнение преподавателей" %}</caption>
+    <caption class="sr-only">{% translate "Сравнение преподавателей" %}</caption>
     <thead>
       <tr>
         <th scope="col">{% translate "ФИО" %}</th>
         {% for item in professors %}
-        <th scope="col"><a href="{% url 'professor' item.prof.slug %}">{{ item.prof.full_name }}</a></th>
+        <th scope="col"><a href="{% url 'professor' item.prof.slug %}">{{ item.prof.full_name }}</a>{% if session_mode %}<br><a class="compare-remove" href="{% url 'compare' %}?remove={{ item.prof.id }}" aria-label="{% translate 'Убрать из сравнения' %}: {{ item.prof.full_name }}">{% translate "Убрать" %}</a>{% endif %}</th>
         {% endfor %}
       </tr>
     </thead>
@@ -50,6 +63,10 @@
     </tbody>
   </table>
 </div>
+{% if session_mode %}
+<p class="compare-actions">{% if can_add and not need_more %}<a href="{% url 'home' %}">{% translate "Добавить ещё преподавателя" %}</a> · {% endif %}<a href="{% url 'compare' %}?clear=1">{% translate "Очистить сравнение" %}</a>{% if share_url %} · <a href="{{ share_url }}">{% translate "Ссылка на это сравнение" %}</a>{% endif %}</p>
+{% endif %}
+{% endif %}
 {% endif %}
 {% endblock %}
 {% block page_tools %}{% include "reviews/_back_to_top.html" %}{% endblock %}

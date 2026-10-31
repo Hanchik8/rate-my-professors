@@ -291,9 +291,13 @@ class InMemoryRepository:
         """Return the sorted set of school cities."""
         return sorted({s.city for s in self._schools.values()})
 
-    def departments(self) -> list[str]:
-        """Return the sorted set of departments for approved professors."""
-        return sorted({p.department for p in self._professors.values() if p.status == "approved"})
+    def departments(self, school_slug: str = "") -> list[str]:
+        """Return the sorted set of departments for approved professors (optionally of one school)."""
+        school_ids = {s.id for s in self._schools.values() if s.slug == school_slug} if school_slug else None
+        return sorted({
+            p.department for p in self._professors.values()
+            if p.status == "approved" and (school_ids is None or p.school_id in school_ids)
+        })
 
     def school(self, school_id: str) -> School | None:
         """Return a school by id, or ``None`` if it does not exist."""
