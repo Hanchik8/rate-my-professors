@@ -1,0 +1,1088 @@
+{
+ "code": "talsu",
+ "university": "Таласский государственный университет (ТалГУ)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://talsu.kg/wp-json/wp/v2/pages (все 273 страницы сайта)",
+  "https://talsu.kg/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d0%ba%d1%83%d1%80%d0%b0%d0%bc%d1%8b-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%ba%d0%be/",
+  "https://talsu.kg/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%81%d0%b5%d0%ba%d1%86%d0%b8%d1%8f%d1%81%d1%8b%d0%bd%d1%8b%d0%bd-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80/",
+  "https://talsu.kg/%d0%bf%d0%bf%d1%81/",
+  "https://talsu.kg/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d1%81%d0%ba%d0%be-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4%d0%b0%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d0%ba%d0%b8%d0%b9-%d1%81%d0%be%d1%81%d1%82/",
+  "https://talsu.kg/%d1%83%d0%ba%d1%83%d0%ba-%d1%82%d0%b0%d0%b0%d0%bd%d1%83%d1%83-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%ba%d0%be%d0%be%d0%bc%d0%b4%d1%83%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb-3/",
+  "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b1%d0%b8%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d0%b8-%d0%b3%d0%b5%d0%be%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d1%8f/",
+  "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b/",
+  "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%bd%d0%b0%d1%83%d0%ba%d0%b8/",
+  "https://talsu.kg/%d1%87%d0%bb%d0%b5%d0%bd%d1%8b-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2/",
+  "https://talsu.kg/about-university/honored-teachers/",
+  "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%ba%d1%8b%d1%80%d0%b3%d1%8b%d0%b7-%d1%82%d0%b8%d0%bb-%d0%b0%d0%b4%d0%b0%d0%b1%d0%b8%d1%8f%d1%82/",
+  "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%b0%d0%bd%d0%b3%d0%bb%d0%b8%d0%b9%d1%81%d0%ba%d0%b8%d0%b9-%d1%8f%d0%b7%d1%8b%d0%ba/",
+  "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d0%b8/",
+  "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d1%80%d1%83%d1%81%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d1%8f%d0%b7%d1%8b%d0%ba%d0%b0-%d0%b8-%d0%bb%d0%b8%d1%82%d0%b5%d1%80%d0%b0%d1%82%d1%83%d1%80%d0%b0/",
+  "https://talsu.kg/university-structure/undergraduate/faculty-of-natural-science-and-pedagogy/department-of-mathematics-physics-and-informatics/",
+  "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d0%b4/",
+  "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/department-of-economics-and-management/",
+  "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/department-of-information-systems-and-technologies/"
+ ],
+ "notes": "Сайт talsu.kg на WordPress, все страницы выгружены через REST API. Блоки «Кафедра курамы» на страницах кафедр «Агробизнес жана биоэкология» и «Физика-математика жана колдонмо информатика» в основном вкладки/картинки, состав взят из текстовых списков и упоминаний. Для кафедр «Тарых жана укук таануу», «Кыргыз тили жана адабияты», «Биология и география», «Транспорт, энергетика и экономика» на сайте только инициалы. Страница «ТалМУнун окутуучулары» (about-university/honored-teachers) даёт ФИО без кафедр, у тех, кто не найден на страницах кафедр, department = «Не указана». Включены преподаватели колледжей ТалМУ (секции МТД, экономики, укук таануу; Педагогикалык колледж) с пометкой в department. Почётные профессора, ректорат, студенты, научные руководители из других вузов исключены. Страница «Научно-исследовательская деятельность кафедры ЭиМ» (список публикаций с соавторами) не использована. Кафедра химии: в тексте в основном студенты, взята только Бешкемпирова (через страницу Агробизнес).",
+ "professors": [
+  {
+   "last_name": "Бешкемпирова",
+   "first_name": "В. К.",
+   "department": "Агробизнес жана биоэкология",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Донбаева",
+   "first_name": "Гулайым Чыныбековна",
+   "department": "Агробизнес жана биоэкология",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b/"
+  },
+  {
+   "last_name": "Кайнаева",
+   "first_name": "Жазгуль Абдылдабековна",
+   "department": "Агробизнес жана биоэкология",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b/"
+  },
+  {
+   "last_name": "Постнова",
+   "first_name": "Евгения Александровна",
+   "department": "Агробизнес жана биоэкология",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b/"
+  },
+  {
+   "last_name": "Раимкулов",
+   "first_name": "Курсанбек Мамасалиевич",
+   "department": "Агробизнес жана биоэкология",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b/"
+  },
+  {
+   "last_name": "Сагынбаева",
+   "first_name": "С. Т.",
+   "department": "Агробизнес жана биоэкология",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Такырбашова",
+   "first_name": "Замира Калыгуловна",
+   "department": "Агробизнес жана биоэкология",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b/"
+  },
+  {
+   "last_name": "Ташибекова",
+   "first_name": "Замира Мазеловна",
+   "department": "Агробизнес жана биоэкология",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b/"
+  },
+  {
+   "last_name": "Шабданова",
+   "first_name": "Надира Коргонбаевна",
+   "department": "Агробизнес жана биоэкология",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b/"
+  },
+  {
+   "last_name": "Абдрахманова",
+   "first_name": "В. А.",
+   "department": "Биология и география",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b1%d0%b8%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d0%b8-%d0%b3%d0%b5%d0%be%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алымкулов",
+   "first_name": "Б. Б.",
+   "department": "Биология и география",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b1%d0%b8%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d0%b8-%d0%b3%d0%b5%d0%be%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Байжигитова",
+   "first_name": "Насыйкат Чынарбековна",
+   "department": "Биология и география",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Бейшеналиева",
+   "first_name": "Д. М.",
+   "department": "Биология и география",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b1%d0%b8%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d0%b8-%d0%b3%d0%b5%d0%be%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Козубекова",
+   "first_name": "Алмаш Токтобековна",
+   "department": "Биология и география",
+   "title": "старший преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Кыдыкова",
+   "first_name": "Н. Ж.",
+   "department": "Биология и география",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b1%d0%b8%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d0%b8-%d0%b3%d0%b5%d0%be%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мамбеталиева",
+   "first_name": "А. А.",
+   "department": "Биология и география",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b1%d0%b8%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d0%b8-%d0%b3%d0%b5%d0%be%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Молдалиева",
+   "first_name": "Ж. Н.",
+   "department": "Биология и география",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b1%d0%b8%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d0%b8-%d0%b3%d0%b5%d0%be%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мырзабекова",
+   "first_name": "Сүйүмкан Садырбековна",
+   "department": "Биология и география",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Султанкулов",
+   "first_name": "К. А.",
+   "department": "Биология и география",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b1%d0%b8%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d0%b8-%d0%b3%d0%b5%d0%be%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чурмукова",
+   "first_name": "Н. К.",
+   "department": "Биология и география",
+   "title": "старший преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%b1%d0%b8%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d0%b8-%d0%b3%d0%b5%d0%be%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдырахманов",
+   "first_name": "Иманбек Асанович",
+   "department": "Жерде жүрүүчү транспорт жана транспорттук процесстердин технологиясы",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d0%b4/"
+  },
+  {
+   "last_name": "Дуйшобаев",
+   "first_name": "Калдыбек Садыбакасович",
+   "department": "Жерде жүрүүчү транспорт жана транспорттук процесстердин технологиясы",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d0%b4/"
+  },
+  {
+   "last_name": "Керимбай уулу",
+   "first_name": "Максат",
+   "department": "Жерде жүрүүчү транспорт жана транспорттук процесстердин технологиясы",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d0%b4/"
+  },
+  {
+   "last_name": "Кулеков",
+   "first_name": "Нурзат Абдылдабекович",
+   "department": "Жерде жүрүүчү транспорт жана транспорттук процесстердин технологиясы",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d0%b4/"
+  },
+  {
+   "last_name": "Курманалиева",
+   "first_name": "Айнура Озубековна",
+   "department": "Жерде жүрүүчү транспорт жана транспорттук процесстердин технологиясы",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d0%b4/"
+  },
+  {
+   "last_name": "Омурбеков",
+   "first_name": "Адамкалый Молдошевич",
+   "department": "Жерде жүрүүчү транспорт жана транспорттук процесстердин технологиясы",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d0%b4/"
+  },
+  {
+   "last_name": "Осмонов",
+   "first_name": "Майрамбек Надырбекович",
+   "department": "Жерде жүрүүчү транспорт жана транспорттук процесстердин технологиясы",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d0%b4/"
+  },
+  {
+   "last_name": "Ташманбетов",
+   "first_name": "Тилек Тынаевич",
+   "department": "Жерде жүрүүчү транспорт жана транспорттук процесстердин технологиясы",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d0%b4/"
+  },
+  {
+   "last_name": "Тургунбаев",
+   "first_name": "Мелисбек Сыргабаевич",
+   "department": "Жерде жүрүүчү транспорт жана транспорттук процесстердин технологиясы",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d0%b4/"
+  },
+  {
+   "last_name": "Шамуратов",
+   "first_name": "Калыбек Тазырбекович",
+   "department": "Жерде жүрүүчү транспорт жана транспорттук процесстердин технологиясы",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d0%b4/"
+  },
+  {
+   "last_name": "Алымбекова",
+   "first_name": "Анипа Тургунбековна",
+   "department": "Колледж ТалМУ, секция МТД",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%bf%d1%81/"
+  },
+  {
+   "last_name": "Асанова",
+   "first_name": "Мирзат Асановна",
+   "department": "Колледж ТалМУ, секция МТД",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%bf%d1%81/"
+  },
+  {
+   "last_name": "Бекмуратова",
+   "first_name": "Индира Замировна",
+   "department": "Колледж ТалМУ, секция МТД",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%bf%d1%81/"
+  },
+  {
+   "last_name": "Бокоева",
+   "first_name": "Мунара Кенешбековна",
+   "department": "Колледж ТалМУ, секция МТД",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%bf%d1%81/"
+  },
+  {
+   "last_name": "Джумабеков",
+   "first_name": "Мидин Сагынбекович",
+   "department": "Колледж ТалМУ, секция МТД",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%bf%d1%81/"
+  },
+  {
+   "last_name": "Ералиева",
+   "first_name": "Назира Раимкуловна",
+   "department": "Колледж ТалМУ, секция МТД",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%bf%d1%81/"
+  },
+  {
+   "last_name": "Калдымолдоев",
+   "first_name": "Улан Эмилбекович",
+   "department": "Колледж ТалМУ, секция МТД",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%bf%d1%81/"
+  },
+  {
+   "last_name": "Норозалиева",
+   "first_name": "Гулбар Сагынбековна",
+   "department": "Колледж ТалМУ, секция МТД",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%bf%d1%81/"
+  },
+  {
+   "last_name": "Орозалиев",
+   "first_name": "Азамат Тологонович",
+   "department": "Колледж ТалМУ, секция МТД",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%bf%d1%81/"
+  },
+  {
+   "last_name": "Рысалиева",
+   "first_name": "Роза Болотбековна",
+   "department": "Колледж ТалМУ, секция МТД",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%bf%d1%81/"
+  },
+  {
+   "last_name": "Садырбаева",
+   "first_name": "Чолпон Ырызбековна",
+   "department": "Колледж ТалМУ, секция МТД",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%bf%d1%81/"
+  },
+  {
+   "last_name": "Сатаева",
+   "first_name": "Лариса Асанкуловна",
+   "department": "Колледж ТалМУ, секция МТД",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%bf%d1%81/"
+  },
+  {
+   "last_name": "Солтонбаева",
+   "first_name": "Күмүшкан Джетигеновна",
+   "department": "Колледж ТалМУ, секция МТД",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%bf%d1%81/"
+  },
+  {
+   "last_name": "Учуров",
+   "first_name": "Вячеслав Александрович",
+   "department": "Колледж ТалМУ, секция МТД",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%bf%d1%81/"
+  },
+  {
+   "last_name": "Акматова",
+   "first_name": "Эльвира Айткуловна",
+   "department": "Колледж ТалМУ, секция укук таануу жана коомдук дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%83%d0%ba%d1%83%d0%ba-%d1%82%d0%b0%d0%b0%d0%bd%d1%83%d1%83-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%ba%d0%be%d0%be%d0%bc%d0%b4%d1%83%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb-3/"
+  },
+  {
+   "last_name": "Батырбек кызы",
+   "first_name": "Айнура",
+   "department": "Колледж ТалМУ, секция укук таануу жана коомдук дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%83%d0%ba%d1%83%d0%ba-%d1%82%d0%b0%d0%b0%d0%bd%d1%83%d1%83-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%ba%d0%be%d0%be%d0%bc%d0%b4%d1%83%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb-3/"
+  },
+  {
+   "last_name": "Бекмуратова",
+   "first_name": "Динара Замировна",
+   "department": "Колледж ТалМУ, секция укук таануу жана коомдук дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%83%d0%ba%d1%83%d0%ba-%d1%82%d0%b0%d0%b0%d0%bd%d1%83%d1%83-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%ba%d0%be%d0%be%d0%bc%d0%b4%d1%83%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb-3/"
+  },
+  {
+   "last_name": "Мадмарова",
+   "first_name": "Эльнара Абдувалиевна",
+   "department": "Колледж ТалМУ, секция укук таануу жана коомдук дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%83%d0%ba%d1%83%d0%ba-%d1%82%d0%b0%d0%b0%d0%bd%d1%83%d1%83-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%ba%d0%be%d0%be%d0%bc%d0%b4%d1%83%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb-3/"
+  },
+  {
+   "last_name": "Наржигитова",
+   "first_name": "Клара Жанусаковна",
+   "department": "Колледж ТалМУ, секция укук таануу жана коомдук дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%83%d0%ba%d1%83%d0%ba-%d1%82%d0%b0%d0%b0%d0%bd%d1%83%d1%83-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%ba%d0%be%d0%be%d0%bc%d0%b4%d1%83%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb-3/"
+  },
+  {
+   "last_name": "Омурзакова",
+   "first_name": "Савлем Токтоновна",
+   "department": "Колледж ТалМУ, секция укук таануу жана коомдук дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%83%d0%ba%d1%83%d0%ba-%d1%82%d0%b0%d0%b0%d0%bd%d1%83%d1%83-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%ba%d0%be%d0%be%d0%bc%d0%b4%d1%83%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb-3/"
+  },
+  {
+   "last_name": "Узакбаева",
+   "first_name": "Жакшыгул Аскарбековна",
+   "department": "Колледж ТалМУ, секция укук таануу жана коомдук дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%83%d0%ba%d1%83%d0%ba-%d1%82%d0%b0%d0%b0%d0%bd%d1%83%d1%83-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%ba%d0%be%d0%be%d0%bc%d0%b4%d1%83%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb-3/"
+  },
+  {
+   "last_name": "Чалабаева",
+   "first_name": "Джазгуль Айбашовна",
+   "department": "Колледж ТалМУ, секция укук таануу жана коомдук дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%83%d0%ba%d1%83%d0%ba-%d1%82%d0%b0%d0%b0%d0%bd%d1%83%d1%83-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%ba%d0%be%d0%be%d0%bc%d0%b4%d1%83%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb-3/"
+  },
+  {
+   "last_name": "Акматжанова",
+   "first_name": "Айсулуу Кубатбековна",
+   "department": "Колледж ТалМУ, секция экономики и бухгалтерского учета",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d1%81%d0%ba%d0%be-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4%d0%b0%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d0%ba%d0%b8%d0%b9-%d1%81%d0%be%d1%81%d1%82/"
+  },
+  {
+   "last_name": "Акматов",
+   "first_name": "Молдобек Адылович",
+   "department": "Колледж ТалМУ, секция экономики и бухгалтерского учета",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d1%81%d0%ba%d0%be-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4%d0%b0%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d0%ba%d0%b8%d0%b9-%d1%81%d0%be%d1%81%d1%82/"
+  },
+  {
+   "last_name": "Барпыбеков",
+   "first_name": "Айтымбек Барпыбекович",
+   "department": "Колледж ТалМУ, секция экономики и бухгалтерского учета",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d1%81%d0%ba%d0%be-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4%d0%b0%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d0%ba%d0%b8%d0%b9-%d1%81%d0%be%d1%81%d1%82/"
+  },
+  {
+   "last_name": "Бекболиева",
+   "first_name": "Чынара Алмасбековна",
+   "department": "Колледж ТалМУ, секция экономики и бухгалтерского учета",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d1%81%d0%ba%d0%be-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4%d0%b0%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d0%ba%d0%b8%d0%b9-%d1%81%d0%be%d1%81%d1%82/"
+  },
+  {
+   "last_name": "Дуулат уулу",
+   "first_name": "Адилет",
+   "department": "Колледж ТалМУ, секция экономики и бухгалтерского учета",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d1%81%d0%ba%d0%be-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4%d0%b0%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d0%ba%d0%b8%d0%b9-%d1%81%d0%be%d1%81%d1%82/"
+  },
+  {
+   "last_name": "Изабаева",
+   "first_name": "Индира Кенжебековна",
+   "department": "Колледж ТалМУ, секция экономики и бухгалтерского учета",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d1%81%d0%ba%d0%be-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4%d0%b0%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d0%ba%d0%b8%d0%b9-%d1%81%d0%be%d1%81%d1%82/"
+  },
+  {
+   "last_name": "Соорбекова",
+   "first_name": "Жылдыз Басарбаевна",
+   "department": "Колледж ТалМУ, секция экономики и бухгалтерского учета",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d1%81%d0%ba%d0%be-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4%d0%b0%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d0%ba%d0%b8%d0%b9-%d1%81%d0%be%d1%81%d1%82/"
+  },
+  {
+   "last_name": "Чыныбаева",
+   "first_name": "Г. Э.",
+   "department": "Колледж ТалМУ, секция экономики и бухгалтерского учета",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d1%81%d0%ba%d0%be-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4%d0%b0%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d0%ba%d0%b8%d0%b9-%d1%81%d0%be%d1%81%d1%82/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдыкаирова",
+   "first_name": "Айнакан Ибрагимовна",
+   "department": "Коомдук илимдер",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%bd%d0%b0%d1%83%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Искакова",
+   "first_name": "Эльмира Жакшынбековна",
+   "department": "Коомдук илимдер",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%bd%d0%b0%d1%83%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Калманбетов",
+   "first_name": "Манас Мырзабекович",
+   "department": "Коомдук илимдер",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%bd%d0%b0%d1%83%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Кенешбекова",
+   "first_name": "Айгерим Канатовна",
+   "department": "Коомдук илимдер",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%bd%d0%b0%d1%83%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Койчуманов",
+   "first_name": "Замир Турарбекович",
+   "department": "Коомдук илимдер",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%bd%d0%b0%d1%83%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Кудабаева",
+   "first_name": "Гулира Байдылдаевна",
+   "department": "Коомдук илимдер",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%bd%d0%b0%d1%83%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Курманбаева",
+   "first_name": "Гульсада Ийгиликовна",
+   "department": "Коомдук илимдер",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%bd%d0%b0%d1%83%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Майтпасов",
+   "first_name": "Кожомкул Кенжекулович",
+   "department": "Коомдук илимдер",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%bd%d0%b0%d1%83%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Мырзабекова",
+   "first_name": "Укен Джаныбердиевна",
+   "department": "Коомдук илимдер",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%bd%d0%b0%d1%83%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Насипбаева",
+   "first_name": "Ырыс Ибраимовна",
+   "department": "Коомдук илимдер",
+   "title": "старший преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%bd%d0%b0%d1%83%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Ниясалиев",
+   "first_name": "Марат Анарбекович",
+   "department": "Коомдук илимдер",
+   "title": "старший преподаватель",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%bd%d0%b0%d1%83%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Уметов",
+   "first_name": "Эрмек Асанович",
+   "department": "Коомдук илимдер",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%bd%d0%b0%d1%83%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Упенов",
+   "first_name": "Айбек Шерипбекович",
+   "department": "Коомдук илимдер",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%8b/%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%be%d0%b1%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%bd%d0%b0%d1%83%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Айталиева",
+   "first_name": "Т. К.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%ba%d1%8b%d1%80%d0%b3%d1%8b%d0%b7-%d1%82%d0%b8%d0%bb-%d0%b0%d0%b4%d0%b0%d0%b1%d0%b8%d1%8f%d1%82/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Акынбекова",
+   "first_name": "А. У.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%ba%d1%8b%d1%80%d0%b3%d1%8b%d0%b7-%d1%82%d0%b8%d0%bb-%d0%b0%d0%b4%d0%b0%d0%b1%d0%b8%d1%8f%d1%82/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жумалиев",
+   "first_name": "С. С.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "профессор",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%ba%d1%8b%d1%80%d0%b3%d1%8b%d0%b7-%d1%82%d0%b8%d0%bb-%d0%b0%d0%b4%d0%b0%d0%b1%d0%b8%d1%8f%d1%82/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жунусалиева",
+   "first_name": "К. Т.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%ba%d1%8b%d1%80%d0%b3%d1%8b%d0%b7-%d1%82%d0%b8%d0%bb-%d0%b0%d0%b4%d0%b0%d0%b1%d0%b8%d1%8f%d1%82/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кенжебаев",
+   "first_name": "Д. О.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "профессор",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%ba%d1%8b%d1%80%d0%b3%d1%8b%d0%b7-%d1%82%d0%b8%d0%bb-%d0%b0%d0%b4%d0%b0%d0%b1%d0%b8%d1%8f%d1%82/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Акматова",
+   "first_name": "Канышай Кубатбековна",
+   "department": "Мировые языки",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%87%d0%bb%d0%b5%d0%bd%d1%8b-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Качкынбаева",
+   "first_name": "Жаныл Жолунбековна",
+   "department": "Мировые языки",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%87%d0%bb%d0%b5%d0%bd%d1%8b-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Куттубаева",
+   "first_name": "Дамира Доолбековна",
+   "department": "Мировые языки",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d1%87%d0%bb%d0%b5%d0%bd%d1%8b-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Сатаева",
+   "first_name": "Гулмира Сейтмуратовна",
+   "department": "Мировые языки",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d1%87%d0%bb%d0%b5%d0%bd%d1%8b-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Тагайкулова",
+   "first_name": "Сайкал Абдрашитовна",
+   "department": "Мировые языки",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%87%d0%bb%d0%b5%d0%bd%d1%8b-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Темиралиев",
+   "first_name": "Бабурнур Апилможунович",
+   "department": "Мировые языки",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d1%87%d0%bb%d0%b5%d0%bd%d1%8b-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Турсалиева",
+   "first_name": "Гуля Жакыпбековна",
+   "department": "Мировые языки",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/%d1%87%d0%bb%d0%b5%d0%bd%d1%8b-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Уркумбаева",
+   "first_name": "Рахат Аваскановна",
+   "department": "Мировые языки",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d1%80%d1%83%d1%81%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d1%8f%d0%b7%d1%8b%d0%ba%d0%b0-%d0%b8-%d0%bb%d0%b8%d1%82%d0%b5%d1%80%d0%b0%d1%82%d1%83%d1%80%d0%b0/"
+  },
+  {
+   "last_name": "Өмүрбек кызы",
+   "first_name": "Үмүт",
+   "department": "Мировые языки",
+   "title": "старший преподаватель",
+   "source_url": "https://talsu.kg/%d1%87%d0%bb%d0%b5%d0%bd%d1%8b-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%bc%d0%b8%d1%80%d0%be%d0%b2%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Абдырахманова",
+   "first_name": "Венера Аманбековна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Алтыкеева",
+   "first_name": "Нурзада Жаныбековна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Арыкбаева",
+   "first_name": "Элиза Макеновна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Бабаназарова",
+   "first_name": "Сырга Жолдошбековна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Бейшенова",
+   "first_name": "Махабат Шүкүрбековна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Дооронова",
+   "first_name": "Айжан Бактыбековна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Дүйшебаева",
+   "first_name": "Марипа Кушубаковна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Жороев",
+   "first_name": "Афтандил Кемелович",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Итикулова",
+   "first_name": "Алмакан Төлөгөновна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Касымова",
+   "first_name": "Нүргүл Рыскулбековна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Кочоралиева",
+   "first_name": "Бермет Аскарбековна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Мураталиева",
+   "first_name": "Анара Жаныбековна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Ниясалиева",
+   "first_name": "Бактыгүл Анарбековна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Нукешов",
+   "first_name": "Султанбек Токтоназарович",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Садыралиева",
+   "first_name": "Назгүл Иманбековна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Секимова",
+   "first_name": "Күмүшкан Токтуковна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Тажибаева",
+   "first_name": "Гүлзада Дүйшөнбековна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Тургунбаева",
+   "first_name": "Зухра Бекболотовна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Туткучбаева",
+   "first_name": "Каныкей Абдыжапаровна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Өмүрканова",
+   "first_name": "Жамиля Эгенбердиевна",
+   "department": "Не указана (список «ТалМУнун окутуучулары»)",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Абдышова",
+   "first_name": "Айпери Анарбаевна",
+   "department": "Педагогикалык колледж",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%81%d0%b5%d0%ba%d1%86%d0%b8%d1%8f%d1%81%d1%8b%d0%bd%d1%8b%d0%bd-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80/"
+  },
+  {
+   "last_name": "Ажибаева",
+   "first_name": "Айнура Жакшымбековна",
+   "department": "Педагогикалык колледж",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d0%ba%d1%83%d1%80%d0%b0%d0%bc%d1%8b-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%ba%d0%be/"
+  },
+  {
+   "last_name": "Арсиева",
+   "first_name": "Чолпон Бегалиевна",
+   "department": "Педагогикалык колледж",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d0%ba%d1%83%d1%80%d0%b0%d0%bc%d1%8b-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%ba%d0%be/"
+  },
+  {
+   "last_name": "Батыркулова",
+   "first_name": "Айгерим Соотбековна",
+   "department": "Педагогикалык колледж",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d0%ba%d1%83%d1%80%d0%b0%d0%bc%d1%8b-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%ba%d0%be/"
+  },
+  {
+   "last_name": "Калманова",
+   "first_name": "Бубусара Бегалиевна",
+   "department": "Педагогикалык колледж",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d0%ba%d1%83%d1%80%d0%b0%d0%bc%d1%8b-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%ba%d0%be/"
+  },
+  {
+   "last_name": "Кумашова",
+   "first_name": "Аида Анаркуловна",
+   "department": "Педагогикалык колледж",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d0%ba%d1%83%d1%80%d0%b0%d0%bc%d1%8b-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%ba%d0%be/"
+  },
+  {
+   "last_name": "Кундузбекова",
+   "first_name": "Таттыкыз Амангелдиевна",
+   "department": "Педагогикалык колледж",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d0%ba%d1%83%d1%80%d0%b0%d0%bc%d1%8b-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%ba%d0%be/"
+  },
+  {
+   "last_name": "Момоконова",
+   "first_name": "Самара Аргынбековна",
+   "department": "Педагогикалык колледж",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d0%ba%d1%83%d1%80%d0%b0%d0%bc%d1%8b-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%ba%d0%be/"
+  },
+  {
+   "last_name": "Расакулбек кызы",
+   "first_name": "Айдай",
+   "department": "Педагогикалык колледж",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d0%ba%d1%83%d1%80%d0%b0%d0%bc%d1%8b-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%ba%d0%be/"
+  },
+  {
+   "last_name": "Рыскулова",
+   "first_name": "Жайнагүл Добулбековна",
+   "department": "Педагогикалык колледж",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d0%ba%d1%83%d1%80%d0%b0%d0%bc%d1%8b-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%ba%d0%be/"
+  },
+  {
+   "last_name": "Сейдакматова",
+   "first_name": "Акылай Эсенбековна",
+   "department": "Педагогикалык колледж",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d0%ba%d1%83%d1%80%d0%b0%d0%bc%d1%8b-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%ba%d0%be/"
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Гулжан Сатыбаевна",
+   "department": "Педагогикалык колледж",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d0%ba%d1%83%d1%80%d0%b0%d0%bc%d1%8b-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%ba%d0%be/"
+  },
+  {
+   "last_name": "Токтогазиева",
+   "first_name": "Каным Соотбековна",
+   "department": "Педагогикалык колледж",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%81%d0%b5%d0%ba%d1%86%d0%b8%d1%8f%d1%81%d1%8b%d0%bd%d1%8b%d0%bd-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80/"
+  },
+  {
+   "last_name": "Токтосун кызы",
+   "first_name": "Айданек",
+   "department": "Педагогикалык колледж",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d0%ba%d1%83%d1%80%d0%b0%d0%bc%d1%8b-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%ba%d0%be/"
+  },
+  {
+   "last_name": "Абдиева",
+   "first_name": "Жылдызкан Канатбековна",
+   "department": "Тарых жана укук таануу",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Бейшекеев",
+   "first_name": "Теңирберди Кайдиевич",
+   "department": "Тарых жана укук таануу",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Жусупова",
+   "first_name": "Моймол Молдобековна",
+   "department": "Тарых жана укук таануу",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Кокоев",
+   "first_name": "Теңдик Кайнарбекович",
+   "department": "Тарых жана укук таануу",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Кулова",
+   "first_name": "Э. К.",
+   "department": "Тарых жана укук таануу",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d0%b8/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сатаева",
+   "first_name": "Салтанат Төлөгөновна",
+   "department": "Тарых жана укук таануу",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Султаналиев",
+   "first_name": "С. Ж.",
+   "department": "Тарых жана укук таануу",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d0%b8/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Усубалиева",
+   "first_name": "А. С.",
+   "department": "Тарых жана укук таануу",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d0%b8/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чекиров",
+   "first_name": "Козубек Абдыкулович",
+   "department": "Тарых жана укук таануу",
+   "title": "старший преподаватель",
+   "source_url": "https://talsu.kg/about-university/honored-teachers/"
+  },
+  {
+   "last_name": "Үмөтов",
+   "first_name": "Э. А.",
+   "department": "Тарых жана укук таануу",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-humanities/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d1%8b-%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d0%b8/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Калманбетова",
+   "first_name": "Б. Б.",
+   "department": "Транспорт, энергетика и экономика",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/department-of-economics-and-management/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Курманкулов",
+   "first_name": "Шекербек Жанышбаевич",
+   "department": "Транспорт, энергетика и экономика",
+   "title": "профессор",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/department-of-economics-and-management/"
+  },
+  {
+   "last_name": "Рыскулбеков",
+   "first_name": "И. А.",
+   "department": "Транспорт, энергетика и экономика",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/department-of-economics-and-management/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Укуева",
+   "first_name": "А. К.",
+   "department": "Транспорт, энергетика и экономика",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/technical-and-economic-faculty/department-of-economics-and-management/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдырайымов",
+   "first_name": "Эркинбек Абдылдаевич",
+   "department": "Физика-математика жана колдонмо информатика",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-natural-science-and-pedagogy/department-of-mathematics-physics-and-informatics/"
+  },
+  {
+   "last_name": "Акматалиев",
+   "first_name": "Замир Турусбекович",
+   "department": "Физика-математика жана колдонмо информатика",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-natural-science-and-pedagogy/department-of-mathematics-physics-and-informatics/"
+  },
+  {
+   "last_name": "Батырбеков",
+   "first_name": "Догдурбек Атаярович",
+   "department": "Физика-математика жана колдонмо информатика",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-natural-science-and-pedagogy/department-of-mathematics-physics-and-informatics/"
+  },
+  {
+   "last_name": "Боруева",
+   "first_name": "Сагын Шаршеновна",
+   "department": "Физика-математика жана колдонмо информатика",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-natural-science-and-pedagogy/department-of-mathematics-physics-and-informatics/"
+  },
+  {
+   "last_name": "Дуйшеева",
+   "first_name": "Гулина Жоломановна",
+   "department": "Физика-математика жана колдонмо информатика",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-natural-science-and-pedagogy/department-of-mathematics-physics-and-informatics/"
+  },
+  {
+   "last_name": "Дуйшеналиева",
+   "first_name": "Урумкан Эрмековна",
+   "department": "Физика-математика жана колдонмо информатика",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-natural-science-and-pedagogy/department-of-mathematics-physics-and-informatics/"
+  },
+  {
+   "last_name": "Касымбекова",
+   "first_name": "Динара Аскарбековна",
+   "department": "Физика-математика жана колдонмо информатика",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-natural-science-and-pedagogy/department-of-mathematics-physics-and-informatics/"
+  },
+  {
+   "last_name": "Кыштообаева",
+   "first_name": "Чолпон Асанкуловна",
+   "department": "Физика-математика жана колдонмо информатика",
+   "title": "старший преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-natural-science-and-pedagogy/department-of-mathematics-physics-and-informatics/"
+  },
+  {
+   "last_name": "Мамырова",
+   "first_name": "Чолпон Абжалбековна",
+   "department": "Физика-математика жана колдонмо информатика",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-natural-science-and-pedagogy/department-of-mathematics-physics-and-informatics/"
+  },
+  {
+   "last_name": "Раева",
+   "first_name": "Майрамкул Тургунбековна",
+   "department": "Физика-математика жана колдонмо информатика",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-natural-science-and-pedagogy/department-of-mathematics-physics-and-informatics/"
+  },
+  {
+   "last_name": "Раева",
+   "first_name": "Чынаркүл Тургунбековна",
+   "department": "Физика-математика жана колдонмо информатика",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-natural-science-and-pedagogy/department-of-mathematics-physics-and-informatics/"
+  },
+  {
+   "last_name": "Стамалиева",
+   "first_name": "Калымкан Асаналиевна",
+   "department": "Физика-математика жана колдонмо информатика",
+   "title": "доцент",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-natural-science-and-pedagogy/department-of-mathematics-physics-and-informatics/"
+  },
+  {
+   "last_name": "Шайланова",
+   "first_name": "Майрамкан Мукановна",
+   "department": "Физика-математика жана колдонмо информатика",
+   "title": "преподаватель",
+   "source_url": "https://talsu.kg/university-structure/undergraduate/faculty-of-natural-science-and-pedagogy/department-of-mathematics-physics-and-informatics/"
+  }
+ ]
+}

@@ -9,9 +9,18 @@
   "https://www.knu.kg/ky/institutes",
   "https://www-old.knu.kg/ru/index.php?option=com_content&view=section&id=44&Itemid=88",
   "https://ictai.knu.kg/",
-  "https://ifl.knu.kg/"
+  "https://ifl.knu.kg/",
+  "https://www-old.knu.kg/ru/index.php?option=com_content&view=category&id=86&Itemid=542",
+  "https://www-old.knu.kg/ru/index.php?option=com_content&view=category&id=92&Itemid=88",
+  "https://www-old.knu.kg/ru/index.php?option=com_content&view=category&id=950&Itemid=88",
+  "https://www-old.knu.kg/ru/index.php?option=com_content&view=category&id=889&Itemid=88",
+  "https://www-old.knu.kg/ru/index.php?option=com_content&view=category&id=998&Itemid=88",
+  "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=619",
+  "https://www.knu.kg/ky/faculties (Кыргыз филологиясы факультети, PDF кафедр)",
+  "https://www.knu.kg/ky/ru/institutes (Юридический институт, ККИ, КЯИ, МИМН, ИЦППК, ИМиБ)",
+  "https://www.knu.kg/ky/ru/archives/29427"
  ],
- "notes": "в работе",
+ "notes": "Собрано с нового сайта knu.kg (PDF кафедр/институтов), старого www-old.knu.kg (страницы кафедр, часть данных 2018-2022 гг., могут быть устаревшими) и поддоменов ictai.knu.kg, ifl.knu.kg. Должности по правилу: профессор по званию, доцент/к.н. -> доцент, ага окутуучу/ст. преп. -> старший преподаватель, остальное/неизвестно -> преподаватель. Не пройдено или пройдено частично: кафедра неорганической химии и ХТ (страница на старом сайте пустая, на новом нет PDF, найден только зав. кафедрой по новости, инициалы); Кыргызско-европейский факультет (на старом и новом сайте нет поимённого состава кафедр, есть только руководство и руководители ОП); Кыргызско-японский институт (опубликовано только руководство, преподаватели не названы, не добавлены); Международный институт медицины и науки / медфак (кафедры анатомии и физиологии без списков, добавлены только директор и декан); ИЦППК, кафедра ФиСЭО (поимённого списка нет, добавлена только зав. кафедрой); Кыргызско-китайский институт (только руководство и руководители ОП, файл kki_sotr не содержит ППС); кафедра алгебры, геометрии, топологии и ПВМ матфака (страница старого сайта пустая); Юридический институт: кафедры АФиИП и предпринимательского права на новом сайте без списка ППС (взяты данные старого сайта 2018 г.); кафедра кыргызского языкознания и ФББТ указаны в PDF только инициалами; ряд факультетов на старом сайте (физфак, химфак) обновлялся последний раз в 2018-2020 гг. Регионы (Нарын, Талас, Баткен, Сулюкта) и колледжи не обходились полностью.",
  "professors": [
   {
    "last_name": "Рыспаев",
@@ -2009,6 +2018,1861 @@
    "source_url": "https://ifl.knu.kg/index.php/fakultet/okmushtuular-ke-eshi"
   },
   {
+   "last_name": "Джумагазиева",
+   "first_name": "Нуржан Курманбековна",
+   "department": "Периодическая печать",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=1544"
+  },
+  {
+   "last_name": "Матисаков",
+   "first_name": "Абдыламит Мурзаевич",
+   "department": "Периодическая печать",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=1544"
+  },
+  {
+   "last_name": "Халилов",
+   "first_name": "Абдыганы Дарманбекович",
+   "department": "Периодическая печать",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=1544"
+  },
+  {
+   "last_name": "Султаналиева",
+   "first_name": "Аита Сматовна",
+   "department": "Периодическая печать",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=1544"
+  },
+  {
+   "last_name": "Тюмонбаев",
+   "first_name": "Айбек Рабаевич",
+   "department": "Периодическая печать",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=1544"
+  },
+  {
+   "last_name": "Кылычбаева",
+   "first_name": "Элмира Закиралиевна",
+   "department": "Периодическая печать",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=1544"
+  },
+  {
+   "last_name": "Мамышева",
+   "first_name": "Жамийла Аскаровна",
+   "department": "Периодическая печать",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=1544"
+  },
+  {
+   "last_name": "Сакыбаева",
+   "first_name": "Жыргал Дуйшеналиевна",
+   "department": "Периодическая печать",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=1544"
+  },
+  {
+   "last_name": "Жапаркулова",
+   "first_name": "Айжан Жапаркуловна",
+   "department": "Периодическая печать",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=1544"
+  },
+  {
+   "last_name": "Кабатаева",
+   "first_name": "Гулзат Есенгуловна",
+   "department": "Периодическая печать",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=1544"
+  },
+  {
+   "last_name": "Тагаев",
+   "first_name": "Бегалы Тагаевич",
+   "department": "Телерадиожурналистика",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=605"
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Гүлбара Бектургановна",
+   "department": "Телерадиожурналистика",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=605"
+  },
+  {
+   "last_name": "Алымбаева",
+   "first_name": "Зарылкан Арстанбековна",
+   "department": "Телерадиожурналистика",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=605"
+  },
+  {
+   "last_name": "Эшанкулова",
+   "first_name": "Шахризада Аллакуловна",
+   "department": "Телерадиожурналистика",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=605"
+  },
+  {
+   "last_name": "Байзакова",
+   "first_name": "Нурзат Койчукеевна",
+   "department": "Телерадиожурналистика",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=605"
+  },
+  {
+   "last_name": "Капарова",
+   "first_name": "Чынара Абдылдаевна",
+   "department": "Телерадиожурналистика",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=605"
+  },
+  {
+   "last_name": "Тилекеева",
+   "first_name": "Нурлангуль Асановна",
+   "department": "Телерадиожурналистика",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=605"
+  },
+  {
+   "last_name": "Есенгулова",
+   "first_name": "Светлана Байызбековна",
+   "department": "Телерадиожурналистика",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=605"
+  },
+  {
+   "last_name": "Матаева",
+   "first_name": "Айзада Эсенбековна",
+   "department": "Телерадиожурналистика",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=605"
+  },
+  {
+   "last_name": "Сыдыгалиев",
+   "first_name": "Нурсулан",
+   "department": "Телерадиожурналистика",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=605"
+  },
+  {
+   "last_name": "Джанузакова",
+   "first_name": "Умут Джакшылыковна",
+   "department": "Телерадиожурналистика",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=605"
+  },
+  {
+   "last_name": "Кожобеков",
+   "first_name": "Тынчтык",
+   "department": "Телерадиожурналистика",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=605"
+  },
+  {
+   "last_name": "Максутова",
+   "first_name": "Бегайым Борукуловна",
+   "department": "Рекламное дело и связи с общественностью",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7733"
+  },
+  {
+   "last_name": "Токсоналиева",
+   "first_name": "Роза Мусурапшаевна",
+   "department": "Рекламное дело и связи с общественностью",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7733"
+  },
+  {
+   "last_name": "Маманова",
+   "first_name": "Рейна Бакиевна",
+   "department": "Рекламное дело и связи с общественностью",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7733"
+  },
+  {
+   "last_name": "Асанова",
+   "first_name": "Бактыгуль Жекшебаевна",
+   "department": "Рекламное дело и связи с общественностью",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7733"
+  },
+  {
+   "last_name": "Токторбаева",
+   "first_name": "Татына Мурзабековна",
+   "department": "Рекламное дело и связи с общественностью",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7733"
+  },
+  {
+   "last_name": "Эралиева",
+   "first_name": "Айнура Закирбековна",
+   "department": "Рекламное дело и связи с общественностью",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7733"
+  },
+  {
+   "last_name": "Какишов",
+   "first_name": "Кенжебек Каныбекович",
+   "department": "Рекламное дело и связи с общественностью",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7733"
+  },
+  {
+   "last_name": "Рустамова",
+   "first_name": "Динара Кошеевна",
+   "department": "Рекламное дело и связи с общественностью",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7733"
+  },
+  {
+   "last_name": "Маткадыров",
+   "first_name": "Рустам Алимжанович",
+   "department": "Рекламное дело и связи с общественностью",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7733"
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Каныкей Шаршембековна",
+   "department": "Рекламное дело и связи с общественностью",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7733"
+  },
+  {
+   "last_name": "Абакиров",
+   "first_name": "Курманбек",
+   "department": "Кыргыз адабияты",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_adab_2022.pdf"
+  },
+  {
+   "last_name": "Абдыразаков",
+   "first_name": "Абдыкерим",
+   "department": "Кыргыз адабияты",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_adab_2022.pdf"
+  },
+  {
+   "last_name": "Даутов",
+   "first_name": "Кадыркул",
+   "department": "Кыргыз адабияты",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_adab_2022.pdf"
+  },
+  {
+   "last_name": "Баймырзаев",
+   "first_name": "Бактыбек",
+   "department": "Кыргыз адабияты",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_adab_2022.pdf"
+  },
+  {
+   "last_name": "Турдубаева",
+   "first_name": "Назгүл",
+   "department": "Кыргыз адабияты",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_adab_2022.pdf"
+  },
+  {
+   "last_name": "Тиллебаев",
+   "first_name": "Садык",
+   "department": "Кыргыз адабияты",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_adab_2022.pdf"
+  },
+  {
+   "last_name": "Исаева",
+   "first_name": "Сайра",
+   "department": "Кыргыз адабияты",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_adab_2022.pdf"
+  },
+  {
+   "last_name": "Сатыбеков",
+   "first_name": "Муктар",
+   "department": "Кыргыз адабияты",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_adab_2022.pdf"
+  },
+  {
+   "last_name": "Акунов",
+   "first_name": "Эмилбек Бердибаевич",
+   "department": "Кыргыз тили жана адабияты кыргыз тилинде окутулбаган билим берүү мекемелеринде",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_mekeme_2022.pdf"
+  },
+  {
+   "last_name": "Жумаев",
+   "first_name": "Мырзабек Көчөрбаевич",
+   "department": "Кыргыз тили жана адабияты кыргыз тилинде окутулбаган билим берүү мекемелеринде",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_mekeme_2022.pdf"
+  },
+  {
+   "last_name": "Токушева",
+   "first_name": "Төлөбүбү Сагынбековна",
+   "department": "Кыргыз тили жана адабияты кыргыз тилинде окутулбаган билим берүү мекемелеринде",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_mekeme_2022.pdf"
+  },
+  {
+   "last_name": "Апышева",
+   "first_name": "Майрамкуль Тункатаровна",
+   "department": "Кыргыз тили жана адабияты кыргыз тилинде окутулбаган билим берүү мекемелеринде",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_mekeme_2022.pdf"
+  },
+  {
+   "last_name": "Орозалиева",
+   "first_name": "Жүрсүн Муканбетовна",
+   "department": "Кыргыз тили жана адабияты кыргыз тилинде окутулбаган билим берүү мекемелеринде",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_mekeme_2022.pdf"
+  },
+  {
+   "last_name": "Бешкемпирова",
+   "first_name": "Айнура Ийманбековна",
+   "department": "Кыргыз тили жана адабияты кыргыз тилинде окутулбаган билим берүү мекемелеринде",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_mekeme_2022.pdf"
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Наргүл Ыманалиевна",
+   "department": "Кыргыз тили жана адабияты кыргыз тилинде окутулбаган билим берүү мекемелеринде",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_mekeme_2022.pdf"
+  },
+  {
+   "last_name": "Абдыкадырова",
+   "first_name": "Гулсаада Көчкөнбаевна",
+   "department": "Кыргыз тили жана адабияты кыргыз тилинде окутулбаган билим берүү мекемелеринде",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_mekeme_2022.pdf"
+  },
+  {
+   "last_name": "Исмаилова",
+   "first_name": "Гүлбарчын Карыбаевна",
+   "department": "Кыргыз тили жана адабияты кыргыз тилинде окутулбаган билим берүү мекемелеринде",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_mekeme_2022.pdf"
+  },
+  {
+   "last_name": "Балбак кызы",
+   "first_name": "Лариса",
+   "department": "Кыргыз тил илими",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_til_2022.pdf"
+  },
+  {
+   "last_name": "Аскар кызы",
+   "first_name": "Жылдыз",
+   "department": "Филологиялык билим берүүнүн технологиялары",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/30.03-КФФ-ФББТ-кафедрасы-слайд.pdf"
+  },
+  {
+   "last_name": "Элебесова",
+   "first_name": "Бурул Бекказиевна",
+   "department": "Түркология жана котормо таануу бөлүмү",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2025/07/КФФ.-Туркология-жана-котормо-таануу-бөлүмү-2025-Б.Элебесова-01.07.2025.pdf"
+  },
+  {
+   "last_name": "Жайлообаев",
+   "first_name": "Бактыбек Алманбетович",
+   "department": "Түркология жана котормо таануу бөлүмү",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2025/07/КФФ.-Туркология-жана-котормо-таануу-бөлүмү-2025-Б.Элебесова-01.07.2025.pdf"
+  },
+  {
+   "last_name": "Сыдыкбаева",
+   "first_name": "Бермет Шаршекеевна",
+   "department": "Түркология жана котормо таануу бөлүмү",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2025/07/КФФ.-Туркология-жана-котормо-таануу-бөлүмү-2025-Б.Элебесова-01.07.2025.pdf"
+  },
+  {
+   "last_name": "Курамаева",
+   "first_name": "Фаризат Нуржигитовна",
+   "department": "Түркология жана котормо таануу бөлүмү",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2025/07/КФФ.-Туркология-жана-котормо-таануу-бөлүмү-2025-Б.Элебесова-01.07.2025.pdf"
+  },
+  {
+   "last_name": "Молдобаева",
+   "first_name": "Акак Токтосуновна",
+   "department": "Түркология жана котормо таануу бөлүмү",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2025/07/КФФ.-Туркология-жана-котормо-таануу-бөлүмү-2025-Б.Элебесова-01.07.2025.pdf"
+  },
+  {
+   "last_name": "Идаева",
+   "first_name": "Асем Бекмурзаевна",
+   "department": "Түркология жана котормо таануу бөлүмү",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2025/07/КФФ.-Туркология-жана-котормо-таануу-бөлүмү-2025-Б.Элебесова-01.07.2025.pdf"
+  },
+  {
+   "last_name": "Усупбаева",
+   "first_name": "Асель Романовна",
+   "department": "Түркология жана котормо таануу бөлүмү",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2025/07/КФФ.-Туркология-жана-котормо-таануу-бөлүмү-2025-Б.Элебесова-01.07.2025.pdf"
+  },
+  {
+   "last_name": "Тилабердиева",
+   "first_name": "Сейилкан Бактыбековна",
+   "department": "Түркология жана котормо таануу бөлүмү",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2025/07/КФФ.-Туркология-жана-котормо-таануу-бөлүмү-2025-Б.Элебесова-01.07.2025.pdf"
+  },
+  {
+   "last_name": "Каленова",
+   "first_name": "Зарина Жолдошбековна",
+   "department": "Түркология жана котормо таануу бөлүмү",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2025/07/КФФ.-Туркология-жана-котормо-таануу-бөлүмү-2025-Б.Элебесова-01.07.2025.pdf"
+  },
+  {
+   "last_name": "Явуз Ажар",
+   "first_name": "Эсра",
+   "department": "Түркология жана котормо таануу бөлүмү",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2025/07/КФФ.-Туркология-жана-котормо-таануу-бөлүмү-2025-Б.Элебесова-01.07.2025.pdf"
+  },
+  {
+   "last_name": "Садыков",
+   "first_name": "Абдыкадыр",
+   "department": "Манас таануу жана дүйнөлүк адабият",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_manas_2022.pdf"
+  },
+  {
+   "last_name": "Сыдыков",
+   "first_name": "Назир",
+   "department": "Манас таануу жана дүйнөлүк адабият",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_manas_2022.pdf"
+  },
+  {
+   "last_name": "Медетов",
+   "first_name": "Аскар Советович",
+   "department": "Манас таануу жана дүйнөлүк адабият",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_manas_2022.pdf"
+  },
+  {
+   "last_name": "Жаныбаева",
+   "first_name": "Майрамкуль Абыкеевна",
+   "department": "Манас таануу жана дүйнөлүк адабият",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_manas_2022.pdf"
+  },
+  {
+   "last_name": "Бокешова",
+   "first_name": "Максатгуль Турганалиевна",
+   "department": "Манас таануу жана дүйнөлүк адабият",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_manas_2022.pdf"
+  },
+  {
+   "last_name": "Бейшеева",
+   "first_name": "Жыргал Жусупбековна",
+   "department": "Манас таануу жана дүйнөлүк адабият",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_manas_2022.pdf"
+  },
+  {
+   "last_name": "Молдоев",
+   "first_name": "Эдилбек Эсенович",
+   "department": "Конституционное и административное право",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Ганиева",
+   "first_name": "Тамара Имангалиевна",
+   "department": "Конституционное и административное право",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Розахунова",
+   "first_name": "Нонна Расуловна",
+   "department": "Конституционное и административное право",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Мырзалимов",
+   "first_name": "Руслан Муратбекович",
+   "department": "Конституционное и административное право",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Бокоев",
+   "first_name": "Жаныбек Абдыраевич",
+   "department": "Конституционное и административное право",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Кубатов",
+   "first_name": "Илимбек Кубанычбекович",
+   "department": "Конституционное и административное право",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Токтомбаева",
+   "first_name": "Айдай Жыргалбековна",
+   "department": "Конституционное и административное право",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Урматова",
+   "first_name": "Айнура Дуйшоевна",
+   "department": "Конституционное и административное право",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Абдыраев",
+   "first_name": "Медербек Абдыраевич",
+   "department": "Конституционное и административное право",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Асанов",
+   "first_name": "Нурдин Аалыевич",
+   "department": "Конституционное и административное право",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Борончиев",
+   "first_name": "Азамат Самаганович",
+   "department": "Конституционное и административное право",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Сагыналиева",
+   "first_name": "Венера Желденовна",
+   "department": "Конституционное и административное право",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Омуралиева",
+   "first_name": "Айымкан Темиркуловна",
+   "department": "Конституционное и административное право",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Таштанов",
+   "first_name": "Нуржан Анарбаевич",
+   "department": "Конституционное и административное право",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Ажыбаева",
+   "first_name": "Жылдыз Омурбековна",
+   "department": "Конституционное и административное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Жунушалиев",
+   "first_name": "Чынгыз Адашбекович",
+   "department": "Конституционное и административное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Кабаева",
+   "first_name": "Бермет Темиржановна",
+   "department": "Конституционное и административное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Камил кызы",
+   "first_name": "Гузель",
+   "department": "Конституционное и административное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Курманбек кызы",
+   "first_name": "Эльвира",
+   "department": "Конституционное и административное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Ойтемиров",
+   "first_name": "Махмуд Гиесович",
+   "department": "Конституционное и административное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Абакирова",
+   "first_name": "Асель Мырзакановна",
+   "department": "Конституционное и административное право",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Аманалиев",
+   "first_name": "Урмат Олжобекович",
+   "department": "Конституционное и административное право",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Соттимкулов",
+   "first_name": "Муротали Акилбекович",
+   "department": "Конституционное и административное право",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Сальпиева",
+   "first_name": "Нургуль Шаршенбековна",
+   "department": "Конституционное и административное право",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Чекирова",
+   "first_name": "Аида Кадыровна",
+   "department": "Конституционное и административное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Русланбекова",
+   "first_name": "Бегимай Русланбековна",
+   "department": "Конституционное и административное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4806"
+  },
+  {
+   "last_name": "Токтобаев",
+   "first_name": "Болот Токтомышевич",
+   "department": "Теория и история государства и права",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Мукамбаева",
+   "first_name": "Галина Алексеевна",
+   "department": "Теория и история государства и права",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Бейшембиев",
+   "first_name": "Эсенгул Джумашевич",
+   "department": "Теория и история государства и права",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Уметов",
+   "first_name": "Кадырбек Акунович",
+   "department": "Теория и история государства и права",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Айдарбекова",
+   "first_name": "Гульнара Бейшекеевна",
+   "department": "Теория и история государства и права",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Оторова",
+   "first_name": "Бактыгуль Каныбековна",
+   "department": "Теория и история государства и права",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Иманкулов",
+   "first_name": "Тимур Иманкулович",
+   "department": "Теория и история государства и права",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Келдибеков",
+   "first_name": "Алишер Данышманович",
+   "department": "Теория и история государства и права",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Мамырбаева",
+   "first_name": "Зульфия Анарбековна",
+   "department": "Теория и история государства и права",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Карыпов",
+   "first_name": "Бакай Курманбекович",
+   "department": "Теория и история государства и права",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Суталинова",
+   "first_name": "Нурсель Абылкановна",
+   "department": "Теория и история государства и права",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Базарбаева",
+   "first_name": "Салтанат Токтогуловна",
+   "department": "Теория и история государства и права",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Мукамбаева",
+   "first_name": "Гульнара Усуповна",
+   "department": "Теория и история государства и права",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Тоташева",
+   "first_name": "Асылай Болотбековна",
+   "department": "Теория и история государства и права",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Курманалиева",
+   "first_name": "Асель Абылкановна",
+   "department": "Теория и история государства и права",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Анарбаева",
+   "first_name": "Айгерим Кемелбековна",
+   "department": "Теория и история государства и права",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7519"
+  },
+  {
+   "last_name": "Салыбекова",
+   "first_name": "Толкун Салыбековна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Батырбаев",
+   "first_name": "Бактыбек Сулаймнович",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Сманов",
+   "first_name": "Койчуке Дербишалиевич",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Камалова",
+   "first_name": "Лейла Наримановна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Жумабекова",
+   "first_name": "Турдукан Абдыраевна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Бузурманкулов",
+   "first_name": "Байтик Жолдошбекович",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Дуйшеев",
+   "first_name": "Канат Жумакадырович",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Ким",
+   "first_name": "Маргарита Олеговна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Нуриев",
+   "first_name": "Доорон Шамшиевич",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Исаева",
+   "first_name": "Клара Асангазиевна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Саякбаев",
+   "first_name": "Таласбек Аскарбекович",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Аблабекова",
+   "first_name": "Наргиза Муратбековна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Джакупбекова",
+   "first_name": "Чынара Насеровна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Джексенова",
+   "first_name": "Лариса Николаевна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Калыгулова",
+   "first_name": "Алима Джумабековна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Рыспаева",
+   "first_name": "Гулзат Сыдыкбековна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Алымкулова",
+   "first_name": "Айнура Сатылгановна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Идинова",
+   "first_name": "Зухра Маровна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Кадиева",
+   "first_name": "Луиза Элбрусовна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Зулайка Дуйшекеевна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Эгимбаев",
+   "first_name": "Аскар Таалайбекович",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Абжапаров",
+   "first_name": "Максат Сапаралиевич",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Сарыгулова",
+   "first_name": "Айгул Асылбековна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Усенов",
+   "first_name": "Эрнис Бердибекович",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Мамбеткалиева",
+   "first_name": "Перизат Мамбекалиевна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Абакиров",
+   "first_name": "Кайсын Кадырович",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Камчыбеков",
+   "first_name": "Арсланбек Советбекович",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Аязбекова",
+   "first_name": "Айна Усеновна",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Калдыбай уулу",
+   "first_name": "Мирлан",
+   "department": "Уголовный процесс и судебная экспертиза",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=6558"
+  },
+  {
+   "last_name": "Жээналиева",
+   "first_name": "Аида Осконбаевна",
+   "department": "Уголовное право и криминология",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Абдиев",
+   "first_name": "Кубанычбек Мукарамович",
+   "department": "Уголовное право и криминология",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Абдукаримова",
+   "first_name": "Назира Эшмухамедовна",
+   "department": "Уголовное право и криминология",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Альчибеков",
+   "first_name": "Канат Альчибекович",
+   "department": "Уголовное право и криминология",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Мамытова",
+   "first_name": "Алия Байсаловна",
+   "department": "Уголовное право и криминология",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Бейшембек кызы",
+   "first_name": "Асема",
+   "department": "Уголовное право и криминология",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Кадырова",
+   "first_name": "Айпери Турдумаматова",
+   "department": "Уголовное право и криминология",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Насбекова",
+   "first_name": "Самара Калыбековна",
+   "department": "Уголовное право и криминология",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Омурбеков",
+   "first_name": "Анварбек Токторбекович",
+   "department": "Уголовное право и криминология",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Осмонов",
+   "first_name": "Доктурбек Мырзакматович",
+   "department": "Уголовное право и криминология",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Умиркулов",
+   "first_name": "Абдували Гуламович",
+   "department": "Уголовное право и криминология",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Абдухалыкова",
+   "first_name": "Гульнура Калысовна",
+   "department": "Уголовное право и криминология",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Жузубалиева",
+   "first_name": "Анаркуль Каныбековна",
+   "department": "Уголовное право и криминология",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Адылова",
+   "first_name": "Назгул Адыловна",
+   "department": "Уголовное право и криминология",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Мамбетова",
+   "first_name": "Айжан Аманбековна",
+   "department": "Уголовное право и криминология",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Калиев",
+   "first_name": "Тилек Турарбекович",
+   "department": "Уголовное право и криминология",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Алымкулова",
+   "first_name": "Эльвира Суперлановна",
+   "department": "Уголовное право и криминология",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Джакупбеков",
+   "first_name": "Максат Замирович",
+   "department": "Уголовное право и криминология",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Исмаилов",
+   "first_name": "Дастан Искендербекович",
+   "department": "Уголовное право и криминология",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Шимеева",
+   "first_name": "Жибек Шеровна",
+   "department": "Уголовное право и криминология",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Каныбеков",
+   "first_name": "Эрнар",
+   "department": "Уголовное право и криминология",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4613"
+  },
+  {
+   "last_name": "Орозалиева",
+   "first_name": "Айнура Асановна",
+   "department": "Предпринимательское и процессуальное право",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4612"
+  },
+  {
+   "last_name": "Алимбеков",
+   "first_name": "Муса Шаршеналиевич",
+   "department": "Предпринимательское и процессуальное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4612"
+  },
+  {
+   "last_name": "Казанбаева",
+   "first_name": "Зарема Равильевна",
+   "department": "Предпринимательское и процессуальное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4612"
+  },
+  {
+   "last_name": "Шамилов",
+   "first_name": "Максат Шамилович",
+   "department": "Предпринимательское и процессуальное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4612"
+  },
+  {
+   "last_name": "Насбекова",
+   "first_name": "Саткынай Калыбековна",
+   "department": "Предпринимательское и процессуальное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4612"
+  },
+  {
+   "last_name": "Тынаева",
+   "first_name": "Анна Викторовна",
+   "department": "Предпринимательское и процессуальное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4612"
+  },
+  {
+   "last_name": "Бекбаев",
+   "first_name": "Тимур Амангельдыевич",
+   "department": "Предпринимательское и процессуальное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4612"
+  },
+  {
+   "last_name": "Джангазиев",
+   "first_name": "Серик Кежебекович",
+   "department": "Предпринимательское и процессуальное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4612"
+  },
+  {
+   "last_name": "Рысбеков",
+   "first_name": "Апас Рысбекович",
+   "department": "Предпринимательское и процессуальное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4612"
+  },
+  {
+   "last_name": "Туйбаев",
+   "first_name": "Руслан Жайлымышович",
+   "department": "Предпринимательское и процессуальное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4612"
+  },
+  {
+   "last_name": "Жапарбекова",
+   "first_name": "Зарема Докдурбековна",
+   "department": "Предпринимательское и процессуальное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4612"
+  },
+  {
+   "last_name": "Бектенова",
+   "first_name": "Сагынай Толоновна",
+   "department": "Предпринимательское и процессуальное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4612"
+  },
+  {
+   "last_name": "Аземкулов",
+   "first_name": "Бахтияр Барктабасович",
+   "department": "Предпринимательское и процессуальное право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4612"
+  },
+  {
+   "last_name": "Раманкулов",
+   "first_name": "Кубанычбек Советович",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Мурзабекова",
+   "first_name": "Жыпар Таавалдиевна",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Турсунакунов",
+   "first_name": "Сурап",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Жылкичиева",
+   "first_name": "Кундуз Сапарбекована",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Андашев",
+   "first_name": "Улан Турдубекович",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Качкын кызы",
+   "first_name": "Гульназ",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Курумшиева",
+   "first_name": "Эльмира Ишенбековна",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Сыргакова",
+   "first_name": "Зиада Амантуровна",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Бопоева",
+   "first_name": "Бегайым Назаркуловна",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Борончиева",
+   "first_name": "Айсулуу Кубанычбековна",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Жумабаева",
+   "first_name": "Гульмайрам Токоновна",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Кадыров",
+   "first_name": "Азамат Анварбекович",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Курманалиева",
+   "first_name": "Лариса Кумендеровна",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Сыдыкбекова",
+   "first_name": "Чолпон",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Турганбаев",
+   "first_name": "Эрнист Канатбекович",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Уметалиева",
+   "first_name": "Зарина Калыковна",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Джакыбалиева",
+   "first_name": "Назик Айылчиевна",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Курманова",
+   "first_name": "Ширин Жекшенбаевна",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Мадалинов",
+   "first_name": "Алишер Турсунжанович",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Мукамбетов",
+   "first_name": "Улукбек Мукамбетович",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Такырбашова",
+   "first_name": "Гульзат Калыбековна",
+   "department": "Гражданское, трудовое и экологическое право",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=4615"
+  },
+  {
+   "last_name": "Базарбаев",
+   "first_name": "Эрлан Базарбаевич",
+   "department": "Правоведение и таможенное дело",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7520"
+  },
+  {
+   "last_name": "Абдиев",
+   "first_name": "Атантай",
+   "department": "Правоведение и таможенное дело",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7520"
+  },
+  {
+   "last_name": "Беспалов",
+   "first_name": "Дмитрий Александрович",
+   "department": "Правоведение и таможенное дело",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7520"
+  },
+  {
+   "last_name": "Сарсеитова",
+   "first_name": "Нуржамал Шамшыбековна",
+   "department": "Правоведение и таможенное дело",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7520"
+  },
+  {
+   "last_name": "Батырканов",
+   "first_name": "Нуралы Муратбекович",
+   "department": "Правоведение и таможенное дело",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7520"
+  },
+  {
+   "last_name": "Баденова",
+   "first_name": "Алия Кенжебековна",
+   "department": "Правоведение и таможенное дело",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7520"
+  },
+  {
+   "last_name": "Бакасова",
+   "first_name": "Салтанат Черикчиевна",
+   "department": "Правоведение и таможенное дело",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7520"
+  },
+  {
+   "last_name": "Досматова",
+   "first_name": "Асель Нышановна",
+   "department": "Правоведение и таможенное дело",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7520"
+  },
+  {
+   "last_name": "Кулжанова",
+   "first_name": "Алина Жаныбековна",
+   "department": "Правоведение и таможенное дело",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7520"
+  },
+  {
+   "last_name": "Базлакунова",
+   "first_name": "Астра Ташыбековна",
+   "department": "Правоведение и таможенное дело",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7520"
+  },
+  {
+   "last_name": "Оморбеков",
+   "first_name": "Абибилла Абасович",
+   "department": "Правоведение и таможенное дело",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7520"
+  },
+  {
+   "last_name": "Асанкулова",
+   "first_name": "Жибек Жыргалбековна",
+   "department": "Правоведение и таможенное дело",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7520"
+  },
+  {
+   "last_name": "Кылычов",
+   "first_name": "Сыргак Сарыпбекович",
+   "department": "Правоведение и таможенное дело",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7520"
+  },
+  {
+   "last_name": "Самудинов",
+   "first_name": "Улан Мундуспекович",
+   "department": "Гражданское и трудовое право",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-ГиТП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Алишева",
+   "first_name": "Алия Бекбергеновна",
+   "department": "Гражданское и трудовое право",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-ГиТП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Бекташ",
+   "first_name": "Гульзат Калыбековна",
+   "department": "Гражданское и трудовое право",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-ГиТП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Тешебаева",
+   "first_name": "Айгуль Нурлановна",
+   "department": "Гражданское и трудовое право",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-ГиТП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Сатыбекова",
+   "first_name": "Гульнара Шарафидиновна",
+   "department": "Гражданское и трудовое право",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-ГиТП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Камытов",
+   "first_name": "Канат Токоевич",
+   "department": "Уголовное право и криминология",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/08/E-mail-преподавателей-А.Бузурманкулов-15.08.2024.pdf"
+  },
+  {
+   "last_name": "Жунусова",
+   "first_name": "Махабат Шамильевна",
+   "department": "Уголовное право и криминология",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/08/E-mail-преподавателей-А.Бузурманкулов-15.08.2024.pdf"
+  },
+  {
+   "last_name": "Жарашбаев",
+   "first_name": "Махмуд Дубанбекович",
+   "department": "Уголовное право и криминология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/08/E-mail-преподавателей-А.Бузурманкулов-15.08.2024.pdf"
+  },
+  {
+   "last_name": "Бердалиев",
+   "first_name": "Кайрат Чолпонбекович",
+   "department": "Уголовное право и криминология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/08/E-mail-преподавателей-А.Бузурманкулов-15.08.2024.pdf"
+  },
+  {
+   "last_name": "Жаныбекова",
+   "first_name": "Нургиза Жаныбековна",
+   "department": "Уголовное право и криминология",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/08/E-mail-преподавателей-А.Бузурманкулов-15.08.2024.pdf"
+  },
+  {
+   "last_name": "Бодобаев",
+   "first_name": "Канимет Асанкулович",
+   "department": "Уголовное право и криминология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/08/E-mail-преподавателей-А.Бузурманкулов-15.08.2024.pdf"
+  },
+  {
+   "last_name": "Сарманова",
+   "first_name": "Бахтигуль Османбековна",
+   "department": "Уголовное право и криминология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/08/E-mail-преподавателей-А.Бузурманкулов-15.08.2024.pdf"
+  },
+  {
+   "last_name": "Базарбаев",
+   "first_name": "Алмаз Сатыбалдиевич",
+   "department": "Уголовное право и криминология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/08/E-mail-преподавателей-А.Бузурманкулов-15.08.2024.pdf"
+  },
+  {
+   "last_name": "Абдыжапарова",
+   "first_name": "Айгерим Турдубековна",
+   "department": "Уголовное право и криминология",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/08/E-mail-преподавателей-А.Бузурманкулов-15.08.2024.pdf"
+  },
+  {
+   "last_name": "Болотбекова",
+   "first_name": "Эльмира Кенешбековна",
+   "department": "Уголовное право и криминология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/08/E-mail-преподавателей-А.Бузурманкулов-15.08.2024.pdf"
+  },
+  {
+   "last_name": "Какешов",
+   "first_name": "Бакыт Дайрабаевич",
+   "department": "Уголовное право и криминология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/08/E-mail-преподавателей-А.Бузурманкулов-15.08.2024.pdf"
+  },
+  {
+   "last_name": "Муратбекова",
+   "first_name": "Салтанат Муратбековна",
+   "department": "Конституционное и муниципальное право",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-КиМП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Шалпыкова",
+   "first_name": "Айдана Абдыкаимовна",
+   "department": "Конституционное и муниципальное право",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-КиМП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Тургамбаева",
+   "first_name": "Чынара Калмаковна",
+   "department": "Конституционное и муниципальное право",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-КиМП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Нуридинова",
+   "first_name": "Айдай Нуридиновна",
+   "department": "Конституционное и муниципальное право",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-КиМП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Жолдошбекова",
+   "first_name": "Айгерим Жолдошбековна",
+   "department": "Конституционное и муниципальное право",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-КиМП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Саипова",
+   "first_name": "Майрам Борошиловна",
+   "department": "Конституционное и муниципальное право",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-КиМП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Акматбек кызы",
+   "first_name": "Айпери",
+   "department": "Конституционное и муниципальное право",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-КиМП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Насирдинова",
+   "first_name": "Самара Жамалидиновна",
+   "department": "Конституционное и муниципальное право",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-КиМП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Темирбекова",
+   "first_name": "Мыскал Лепесовна",
+   "department": "Конституционное и муниципальное право",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-КиМП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Кочкарова",
+   "first_name": "Эристина Азрет-Алиевна",
+   "department": "Конституционное и муниципальное право",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-КиМП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Рысмендеев",
+   "first_name": "Бакыт Дженишбекович",
+   "department": "Конституционное и муниципальное право",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-КиМП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Джакшылыкова",
+   "first_name": "Гулкайыр Джакшылыковна",
+   "department": "Конституционное и муниципальное право",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-КиМП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Кенебаева",
+   "first_name": "Наргиза Конокбаевна",
+   "department": "Конституционное и муниципальное право",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-КиМП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Казакбаев",
+   "first_name": "Медетбек Кубатбекович",
+   "department": "Экологическое и земельное право",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-ЭиЗП-А.Бузурманкулов-06.11.2024.pdf"
+  },
+  {
+   "last_name": "Саадабаев",
+   "first_name": "Аскербек Саадабаевич",
+   "department": "Дифференциальные уравнения",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7766"
+  },
+  {
+   "last_name": "Темиров",
+   "first_name": "Бекжан Кайыпбекович",
+   "department": "Дифференциальные уравнения",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7766"
+  },
+  {
+   "last_name": "Усенов",
+   "first_name": "Изат Абдраевич",
+   "department": "Дифференциальные уравнения",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7766"
+  },
+  {
+   "last_name": "Акерова",
+   "first_name": "Джылдыс Абдрамановна",
+   "department": "Дифференциальные уравнения",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7765"
+  },
+  {
+   "last_name": "Сапарова",
+   "first_name": "Айнур Батыралиевна",
+   "department": "Дифференциальные уравнения",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7765"
+  },
+  {
+   "last_name": "Бараталиев",
+   "first_name": "Керим Бараталиевич",
+   "department": "Математический анализ",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7767"
+  },
+  {
+   "last_name": "Омуров",
+   "first_name": "Таалайбек Дардаилович",
+   "department": "Математический анализ",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7766"
+  },
+  {
+   "last_name": "Какишов",
+   "first_name": "Каныбек Какишович",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7766"
+  },
+  {
+   "last_name": "Аблабеков",
+   "first_name": "Бактыбай Сапарбекович",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7766"
+  },
+  {
+   "last_name": "Аскар кызы",
+   "first_name": "Лира",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768"
+  },
+  {
+   "last_name": "Султанкул кызы",
+   "first_name": "Айнура",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768"
+  },
+  {
+   "last_name": "Назарбаев",
+   "first_name": "Фархат Токтогазиевич",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7765"
+  },
+  {
+   "last_name": "Омуралиева",
+   "first_name": "Арсаргул Илиясовна",
+   "department": "Управление качеством",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-управления-качеством-26.03.2024.pdf"
+  },
+  {
+   "last_name": "Керимбекова",
+   "first_name": "Дюйшекан Осмоналиевна",
+   "department": "Управление качеством",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-управления-качеством-26.03.2024.pdf"
+  },
+  {
+   "last_name": "Ашырбаева",
+   "first_name": "Салыйма Ысыевна",
+   "department": "Управление качеством",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-управления-качеством-26.03.2024.pdf"
+  },
+  {
+   "last_name": "Намазбекова",
+   "first_name": "Жылдыз Бектурсуновна",
+   "department": "Управление качеством",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-управления-качеством-26.03.2024.pdf"
+  },
+  {
+   "last_name": "Джаныш кызы",
+   "first_name": "Махабат",
+   "department": "Управление качеством",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-управления-качеством-26.03.2024.pdf"
+  },
+  {
+   "last_name": "Кыдыралиева",
+   "first_name": "Сезим Бактыбековна",
+   "department": "Управление качеством",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-управления-качеством-26.03.2024.pdf"
+  },
+  {
+   "last_name": "Арыкбай кызы",
+   "first_name": "Алия",
+   "department": "Управление качеством",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-управления-качеством-26.03.2024.pdf"
+  },
+  {
+   "last_name": "Апаева",
+   "first_name": "Софья Хусеиновна",
+   "department": "Кыргызско-китайский институт",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kki_ruk.pdf"
+  },
+  {
+   "last_name": "Бейшеева",
+   "first_name": "Анара Асанбековна",
+   "department": "Кыргызско-китайский институт",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kki_ruk.pdf"
+  },
+  {
+   "last_name": "Токсоналиева",
+   "first_name": "Асель Мусурапшаевна",
+   "department": "Кыргызско-китайский институт",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kki_ruk.pdf"
+  },
+  {
+   "last_name": "Юсупов",
+   "first_name": "Рашид Умарович",
+   "department": "Кыргызско-китайский институт",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kki_ruk.pdf"
+  },
+  {
+   "last_name": "Молдобаева",
+   "first_name": "Айсулу Замирбековна",
+   "department": "Кыргызско-китайский институт",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kki_ruk.pdf"
+  },
+  {
+   "last_name": "Ма",
+   "first_name": "Дюань",
+   "department": "Кыргызско-китайский институт",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kki_ruk.pdf"
+  },
+  {
+   "last_name": "Кудайбергенова",
+   "first_name": "Зейнеп Совхозбаевна",
+   "department": "Филологическое и социально-экономическое образование",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/2.-Руководство-и-общий-коллектив-ИЦППК.pdf"
+  },
+  {
+   "last_name": "Сулайманова",
+   "first_name": "Рахат Токтогуловна",
+   "department": "Институт целевой подготовки педагогических кадров",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/2.-Руководство-и-общий-коллектив-ИЦППК.pdf"
+  },
+  {
+   "last_name": "Зарипова",
+   "first_name": "Анар Аскарбековна",
+   "department": "Международный институт медицины и науки",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/institutes"
+  },
+  {
+   "last_name": "Узакбаев",
+   "first_name": "Чынгыз Камчибекович",
+   "department": "Медицинский факультет",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=9092"
+  },
+  {
    "last_name": "Усенканов",
    "first_name": "Джумабай Осмонбекович",
    "department": "Теоретическая и общая физика",
@@ -3052,13 +4916,6 @@
    "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
   },
   {
-   "last_name": "Сарсеитова",
-   "first_name": "Нуржамал Шамшыбековна",
-   "department": "Таможенное дело и правоведение",
-   "title": "доцент",
-   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
-  },
-  {
    "last_name": "Жантаева",
    "first_name": "Гульмира Гульджигитовна",
    "department": "Таможенное дело и правоведение",
@@ -3087,13 +4944,6 @@
    "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
   },
   {
-   "last_name": "Базлакунова",
-   "first_name": "Астра Ташыбековна",
-   "department": "Таможенное дело и правоведение",
-   "title": "старший преподаватель",
-   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
-  },
-  {
    "last_name": "Кожогулов",
    "first_name": "Мирбек Акылбекович",
    "department": "Таможенное дело и правоведение",
@@ -3117,13 +4967,6 @@
   {
    "last_name": "Сардарбекова",
    "first_name": "Айпери Куланбековна",
-   "department": "Таможенное дело и правоведение",
-   "title": "преподаватель",
-   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
-  },
-  {
-   "last_name": "Муратбекова",
-   "first_name": "Салтанат Муратбековна",
    "department": "Таможенное дело и правоведение",
    "title": "преподаватель",
    "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
@@ -4151,6 +5994,438 @@
    "department": "Институт переподготовки и повышения квалификации кадров",
    "title": "преподаватель",
    "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/рюземе-Ануфриева-О.В.doc",
+   "initials_only": true
+  },
+  {
+   "last_name": "Азымбекова",
+   "first_name": "А. А.",
+   "department": "Рекламное дело и связи с общественностью",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7733",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бабашева",
+   "first_name": "Б.",
+   "department": "Кыргыз тили жана адабияты кыргыз тилинде окутулбаган билим берүү мекемелеринде",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_mekeme_2022.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдразакова",
+   "first_name": "Г. Ш.",
+   "department": "Кыргыз тил илими",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_til_2022.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мусаев",
+   "first_name": "С. Ж.",
+   "department": "Кыргыз тил илими",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_til_2022.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Маразыков",
+   "first_name": "Т. С.",
+   "department": "Кыргыз тил илими",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_til_2022.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жаманкулова",
+   "first_name": "Г. Т.",
+   "department": "Кыргыз тил илими",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_til_2022.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Биялиев",
+   "first_name": "А.",
+   "department": "Кыргыз тил илими",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_til_2022.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Дуйшеев",
+   "first_name": "Ж.",
+   "department": "Кыргыз тил илими",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_til_2022.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Султаналиев",
+   "first_name": "И. Ш.",
+   "department": "Кыргыз тил илими",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_til_2022.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Табалдиева",
+   "first_name": "А. Б.",
+   "department": "Кыргыз тил илими",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_til_2022.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бекназарова",
+   "first_name": "Б. Т.",
+   "department": "Кыргыз тил илими",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_til_2022.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Солтоноев",
+   "first_name": "А. М.",
+   "department": "Кыргыз тил илими",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/03/kaf_kg_til_2022.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Оторбаев",
+   "first_name": "Б. К.",
+   "department": "Филологиялык билим берүүнүн технологиялары",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/30.03-КФФ-ФББТ-кафедрасы-слайд.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ишекеев",
+   "first_name": "Н.",
+   "department": "Филологиялык билим берүүнүн технологиялары",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/30.03-КФФ-ФББТ-кафедрасы-слайд.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чыманов",
+   "first_name": "Ж. А.",
+   "department": "Филологиялык билим берүүнүн технологиялары",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/30.03-КФФ-ФББТ-кафедрасы-слайд.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Байсабаев",
+   "first_name": "Б. А.",
+   "department": "Филологиялык билим берүүнүн технологиялары",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/30.03-КФФ-ФББТ-кафедрасы-слайд.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сарылбекова",
+   "first_name": "З. С.",
+   "department": "Филологиялык билим берүүнүн технологиялары",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/30.03-КФФ-ФББТ-кафедрасы-слайд.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джаманкулова",
+   "first_name": "А. Т.",
+   "department": "Филологиялык билим берүүнүн технологиялары",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/30.03-КФФ-ФББТ-кафедрасы-слайд.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тыныстанова",
+   "first_name": "Н. А.",
+   "department": "Филологиялык билим берүүнүн технологиялары",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/30.03-КФФ-ФББТ-кафедрасы-слайд.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Беделова",
+   "first_name": "К. А.",
+   "department": "Филологиялык билим берүүнүн технологиялары",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/30.03-КФФ-ФББТ-кафедрасы-слайд.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Буркутбаева",
+   "first_name": "С. Р.",
+   "department": "Уголовное право и криминология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-УПиК-А.Бузурманкулов-06.11.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Иманбекова",
+   "first_name": "А. И.",
+   "department": "Уголовное право и криминология",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-УПиК-А.Бузурманкулов-06.11.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Садырова",
+   "first_name": "К. Б.",
+   "department": "Уголовное право и криминология",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-УПиК-А.Бузурманкулов-06.11.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Анаркулова",
+   "first_name": "Э. С.",
+   "department": "Экологическое и земельное право",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-ЭиЗП-А.Бузурманкулов-06.11.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мусабаева",
+   "first_name": "Н. А.",
+   "department": "Экологическое и земельное право",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-ЭиЗП-А.Бузурманкулов-06.11.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мааткеримова",
+   "first_name": "Д. Т.",
+   "department": "Экологическое и земельное право",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-ЭиЗП-А.Бузурманкулов-06.11.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Келдибаева",
+   "first_name": "Ж. Д.",
+   "department": "Экологическое и земельное право",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-ЭиЗП-А.Бузурманкулов-06.11.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ибраев",
+   "first_name": "Т. И.",
+   "department": "Экологическое и земельное право",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-ЭиЗП-А.Бузурманкулов-06.11.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джамалов",
+   "first_name": "М. А.",
+   "department": "Экологическое и земельное право",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-ЭиЗП-А.Бузурманкулов-06.11.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Даирова",
+   "first_name": "М. Ж.",
+   "department": "Экологическое и земельное право",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-ЭиЗП-А.Бузурманкулов-06.11.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шабралиева",
+   "first_name": "А. Э.",
+   "department": "Экологическое и земельное право",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/История-кафедры-ЭиЗП-А.Бузурманкулов-06.11.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Уралиев",
+   "first_name": "А. А.",
+   "department": "Дифференциальные уравнения",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7766",
+   "initials_only": true
+  },
+  {
+   "last_name": "Салейдинов",
+   "first_name": "К. И.",
+   "department": "Дифференциальные уравнения",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7766",
+   "initials_only": true
+  },
+  {
+   "last_name": "Назаркулова",
+   "first_name": "Б. Н.",
+   "department": "Математический анализ",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7767",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сулайманов",
+   "first_name": "Б. Э.",
+   "department": "Математический анализ",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7767",
+   "initials_only": true
+  },
+  {
+   "last_name": "Белеков",
+   "first_name": "К. Ж.",
+   "department": "Математический анализ",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7767",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шаршенбиева",
+   "first_name": "Ф.",
+   "department": "Математический анализ",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7767",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жапарова",
+   "first_name": "З. А.",
+   "department": "Математический анализ",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7767",
+   "initials_only": true
+  },
+  {
+   "last_name": "Асанкулова",
+   "first_name": "А. С.",
+   "department": "Математический анализ",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7767",
+   "initials_only": true
+  },
+  {
+   "last_name": "Иманалиев",
+   "first_name": "Т. М.",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кененбаева",
+   "first_name": "Г. М.",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768",
+   "initials_only": true
+  },
+  {
+   "last_name": "Раманкулов",
+   "first_name": "С. Т.",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "профессор",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бейшекеев",
+   "first_name": "Ж. Ж.",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мамбетова",
+   "first_name": "А. М.",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "доцент",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джундубаев",
+   "first_name": "А. А.",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ыкынов",
+   "first_name": "Р. Т.",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алтыбаев",
+   "first_name": "Н.",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бейшебаева",
+   "first_name": "Ж. Б.",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768",
+   "initials_only": true
+  },
+  {
+   "last_name": "Байсабаева",
+   "first_name": "Ч. Т.",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768",
+   "initials_only": true
+  },
+  {
+   "last_name": "Садыкова",
+   "first_name": "Б. А.",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768",
+   "initials_only": true
+  },
+  {
+   "last_name": "Саркелова",
+   "first_name": "Ж. Ж.",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768",
+   "initials_only": true
+  },
+  {
+   "last_name": "Баатырбеков",
+   "first_name": "Э. Б.",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768",
+   "initials_only": true
+  },
+  {
+   "last_name": "Нуркалиева",
+   "first_name": "А.",
+   "department": "Прикладная математика, информатика и компьютерные технологии",
+   "title": "преподаватель",
+   "source_url": "https://www-old.knu.kg/ru/index.php?option=com_content&view=article&id=7768",
+   "initials_only": true
+  },
+  {
+   "last_name": "Дуйшонбаева",
+   "first_name": "А. Т.",
+   "department": "Неорганическая химия и химическая технология",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/archives/29427",
    "initials_only": true
   },
   {

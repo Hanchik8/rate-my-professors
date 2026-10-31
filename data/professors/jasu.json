@@ -1,0 +1,2920 @@
+{
+ "code": "jasu",
+ "university": "Жалал-Абадский государственный университет им. Б. Осмонова",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://jagu.edu.kg/ru/users/role/teacher",
+  "https://jagu.edu.kg/ru/users/{1..900} (профили пользователей)",
+  "https://jagu.edu.kg/ru/categories/41",
+  "https://jagu.edu.kg/ru/categories/65",
+  "https://jagu.edu.kg/ru/categories/{1..519} (страницы кафедр и ПЦК, разделы состава)"
+ ],
+ "notes": "Сайт ЖАГУ (jagu.kg переадресует на jagu.edu.kg). Список /users/role/teacher (422 записи) отдаёт страницы в неустойчивом порядке, поэтому перебраны профили /ru/users/1..900; взяты записи с ролью «Преподаватели» + несколько «Сотрудников» с преподавательскими должностями. Включены преподаватели колледжей ЖАГУ (ПЦК); многие преподаватели без указанной кафедры числятся на сайте в «Жалал-Абадский колледж» — так и оставлено. Исключены лаборанты, инспекторы, программисты, школа, студенты. Запись «Абибиллаевна Шайыргул» пропущена: фамилия на сайте не указана. Должности у многих не заполнены, тогда title=преподаватель. Дополнительно разобраны страницы кафедр/ПЦК /ru/categories/N (таблицы и списки ППС): добавлены новые преподаватели и дополнены отчества. Пропущены списки студентов, отзывы выпускников, наградные списки и исторические упоминания бывших заведующих.",
+ "professors": [
+  {
+   "last_name": "Батырова",
+   "first_name": "Ырыскан Мыйзамовна",
+   "department": "Автоматизированные системы управление",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/29"
+  },
+  {
+   "last_name": "Ажыкулов",
+   "first_name": "Сапарбек Мажитович",
+   "department": "Автоматизированные системы управление",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/29"
+  },
+  {
+   "last_name": "Шеркулов",
+   "first_name": "Рафаэль Рашидович",
+   "department": "Автоматизированные системы управление",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/29"
+  },
+  {
+   "last_name": "Шамшиев",
+   "first_name": "Расул Кеңешович",
+   "department": "Философии и гуманитарных наук им. Ш.М. Ниязалиева",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/29"
+  },
+  {
+   "last_name": "Карбекова",
+   "first_name": "Азиза Баймаматовна",
+   "department": "Аграрно-технический институт",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/categories/55"
+  },
+  {
+   "last_name": "Конурова",
+   "first_name": "Шарипа",
+   "department": "Автоматизированные системы управление",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/33"
+  },
+  {
+   "last_name": "Нусупова",
+   "first_name": "Роза Сарыпбековна",
+   "department": "Физики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/29"
+  },
+  {
+   "last_name": "Шакирова",
+   "first_name": "Мавлюда Рысбаевна",
+   "department": "Институт Конфуция",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/38"
+  },
+  {
+   "last_name": "Цзинь",
+   "first_name": "Янь",
+   "department": "Институт Конфуция",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/users/39"
+  },
+  {
+   "last_name": "Субанов",
+   "first_name": "Бекжан Абдыжалилович",
+   "department": "Таш-Кумырский институт",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/41"
+  },
+  {
+   "last_name": "Аскарова",
+   "first_name": "Айнура Каныбековна",
+   "department": "Институт экономики и право",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/users/43"
+  },
+  {
+   "last_name": "Асылбекова",
+   "first_name": "Чырашкан Айтмурзаевна",
+   "department": "Институт филологии",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/44"
+  },
+  {
+   "last_name": "Сакбаева",
+   "first_name": "Зулфия Исраиловна",
+   "department": "Медицинский институт",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/50"
+  },
+  {
+   "last_name": "Уметов",
+   "first_name": "Таалайбек Эгембердиевич",
+   "department": "Институт профессионального развития кадров",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/users/58"
+  },
+  {
+   "last_name": "Курстанбаев",
+   "first_name": "Актилек Мурзаевич",
+   "department": "Медицинский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/59"
+  },
+  {
+   "last_name": "Анарбаева",
+   "first_name": "Гулнора Абдуманоповна",
+   "department": "История",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/60"
+  },
+  {
+   "last_name": "Асанова",
+   "first_name": "Майрамкан",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/62"
+  },
+  {
+   "last_name": "Осунбеков",
+   "first_name": "Сайдымурат Сайтмаматович",
+   "department": "Майлуу-Суйский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/63"
+  },
+  {
+   "last_name": "Жусупбекова",
+   "first_name": "Бурул",
+   "department": "Колледж экономики и права, ПЦК Правоведение",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/74"
+  },
+  {
+   "last_name": "Калыбекова",
+   "first_name": "Зияда Садыковна",
+   "department": "Педагогический институт им. Э.Уметова",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/84"
+  },
+  {
+   "last_name": "Калмурзаева",
+   "first_name": "Асель",
+   "department": "Жалал-Абадский колледж, ПЦК Экономика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/91"
+  },
+  {
+   "last_name": "Калдарова",
+   "first_name": "Динара Калыкназаровна",
+   "department": "Жалал-Абадский колледж, ПЦК «Автоматизированные системы и математика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/96"
+  },
+  {
+   "last_name": "Нарматова",
+   "first_name": "Нургул",
+   "department": "Автоматизированные системы управление",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/97"
+  },
+  {
+   "last_name": "Токтоматова",
+   "first_name": "Гульнара",
+   "department": "Педагогический колледж, ПЦК «Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/100"
+  },
+  {
+   "last_name": "Аттокурова",
+   "first_name": "Мооркан",
+   "department": "Межкультурной коммуникации и лингвистики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/111"
+  },
+  {
+   "last_name": "Айылчиева",
+   "first_name": "Назгуль",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/112"
+  },
+  {
+   "last_name": "Мамыралиева",
+   "first_name": "Айнагул Тураматовна",
+   "department": "Экономика, учёт и финансы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/55"
+  },
+  {
+   "last_name": "Матраимова",
+   "first_name": "Айгүл Абдимуктаровна",
+   "department": "Медицинский колледж, ПЦК Гуманитарных и естественно-математических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/94"
+  },
+  {
+   "last_name": "Шаимкулова",
+   "first_name": "Сабира",
+   "department": "Жалал-Абадский колледж, ПЦК «Энергетика и защита в чрезвычайных ситуациях",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/120"
+  },
+  {
+   "last_name": "Эшбаев",
+   "first_name": "Абдилазиз Аматович",
+   "department": "Жалал-Абадский колледж, ПЦК «Техника",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/78"
+  },
+  {
+   "last_name": "Мамбетова",
+   "first_name": "Мирагул",
+   "department": "Педагогический колледж, ПЦК «Учитель начальных классов и кыргызский язык",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/123"
+  },
+  {
+   "last_name": "Баймырзаева",
+   "first_name": "Батма Масалбековна",
+   "department": "Колледж иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Ажыкулов",
+   "first_name": "Жумабек Анарбекович",
+   "department": "Педагогический колледж, ПЦК «Физическая культура",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/82"
+  },
+  {
+   "last_name": "Джалилова",
+   "first_name": "Анаргүл",
+   "department": "Жалал-Абадский колледж, ПЦК «Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/126"
+  },
+  {
+   "last_name": "Мамажунусова",
+   "first_name": "Нурхан",
+   "department": "Жалал-Абадский колледж, ПЦК «Конструирование швейных изделий",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/127"
+  },
+  {
+   "last_name": "Бабаева",
+   "first_name": "Анаргүл",
+   "department": "Педагогический колледж, ПЦК «Дошкольное образования",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/128"
+  },
+  {
+   "last_name": "Ураимов",
+   "first_name": "Кубанычбек",
+   "department": "Педагогика, психология и технология обучения",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/129"
+  },
+  {
+   "last_name": "Ураимхалилова",
+   "first_name": "Аширхон",
+   "department": "Математика и математическое моделирование",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/132"
+  },
+  {
+   "last_name": "Алиев",
+   "first_name": "Ильяс Тыныбекович",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/133"
+  },
+  {
+   "last_name": "Кадырова",
+   "first_name": "Анара",
+   "department": "Кыргызского языка и литературы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/134"
+  },
+  {
+   "last_name": "Жолдошбаева",
+   "first_name": "Ыкыбал Капаровна",
+   "department": "Английского языка и литературы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/135"
+  },
+  {
+   "last_name": "Бекиева",
+   "first_name": "Нуркан Калмаматовна",
+   "department": "Немецкого и межфакультетских иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/136"
+  },
+  {
+   "last_name": "Жусупова",
+   "first_name": "Аида Абдуллажановна",
+   "department": "Русской филологии",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/137"
+  },
+  {
+   "last_name": "Нурманбаев",
+   "first_name": "Мухтар Жакыпович",
+   "department": "Анатомии и физиологии",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/139"
+  },
+  {
+   "last_name": "Асанова",
+   "first_name": "Карачач",
+   "department": "Медико-биологических дисциплин",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/140"
+  },
+  {
+   "last_name": "Абдраманов",
+   "first_name": "Калдарбек Алишерович",
+   "department": "Клинических дисциплин",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/users/141"
+  },
+  {
+   "last_name": "Абдыкалыков",
+   "first_name": "Козубай Орозокулович",
+   "department": "Общей хирургии",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/142"
+  },
+  {
+   "last_name": "Эшиев",
+   "first_name": "Асылбек Мирзатилаевич",
+   "department": "Гуманитарные дисциплины",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/users/143"
+  },
+  {
+   "last_name": "Эшмуратов",
+   "first_name": "Абдырахман Ботобекович",
+   "department": "Хирургии и травматологии",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/144"
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Бактыгул Момуновна",
+   "department": "Фармация",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/145"
+  },
+  {
+   "last_name": "Темиров",
+   "first_name": "Немат Мойдунович",
+   "department": "Общественного здравоохранения",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/146"
+  },
+  {
+   "last_name": "Медведев",
+   "first_name": "Сергей Николаевич",
+   "department": "Пропедевтики внутренних болезней и семейной медицины",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/users/147"
+  },
+  {
+   "last_name": "Садырова",
+   "first_name": "Нургуль Адылгазиевна",
+   "department": "Акушерства и педиатрии",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/148"
+  },
+  {
+   "last_name": "Арзиев",
+   "first_name": "Нурбек Исамаматович",
+   "department": "Уголовно-правовых дисциплин",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/149"
+  },
+  {
+   "last_name": "Нарматов",
+   "first_name": "Нурлис Каныбекович",
+   "department": "Гражданское право и адвокатура",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/150"
+  },
+  {
+   "last_name": "Толонов",
+   "first_name": "Эмил Нажимидинович",
+   "department": "Экономика, учёт и финансы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/151"
+  },
+  {
+   "last_name": "Орозбаев",
+   "first_name": "Болотбек Суюналыевич",
+   "department": "Ветеринарной медицины",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/152"
+  },
+  {
+   "last_name": "Кокумбаева",
+   "first_name": "Кулумкан Асановна",
+   "department": "Электроэнергетики и механики",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/153"
+  },
+  {
+   "last_name": "Кенжекулов",
+   "first_name": "Каныбек Назимович",
+   "department": "Электроэнергетика и техника",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/156"
+  },
+  {
+   "last_name": "Нурматова",
+   "first_name": "Гүлшайыр Мамбетовна",
+   "department": "Филология и педагогика",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/157"
+  },
+  {
+   "last_name": "Султанкулов",
+   "first_name": "Медетбек Дыйканбаевич",
+   "department": "Естественно-научные дисциплины",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/158"
+  },
+  {
+   "last_name": "Усупов",
+   "first_name": "Мелис",
+   "department": "Таш-Кумырский институт",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/159"
+  },
+  {
+   "last_name": "Taichikov",
+   "first_name": "Kanatbek",
+   "department": "История",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/160"
+  },
+  {
+   "last_name": "Назарбаева",
+   "first_name": "Батма Суйналиевна",
+   "department": "Кочкор-Атинский колледж",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/161"
+  },
+  {
+   "last_name": "Уркумбаева",
+   "first_name": "Гулназ Жапарбековна",
+   "department": "Аксыйский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/162"
+  },
+  {
+   "last_name": "Аскарова",
+   "first_name": "Аида Орунбековна",
+   "department": "Кара-Кульский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/163"
+  },
+  {
+   "last_name": "Равшанбек кызы",
+   "first_name": "Айнагүл",
+   "department": "Медицинский колледж, ПЦК по лечебному и акушерскому делу",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/168"
+  },
+  {
+   "last_name": "Примкулова",
+   "first_name": "Асылкан Осмоновна",
+   "department": "Медицинский колледж, ПЦК по лечебному и акушерскому делу",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/169"
+  },
+  {
+   "last_name": "Казакова",
+   "first_name": "Рапия Жумашовна",
+   "department": "Медицинский колледж, ПЦК Фармация",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/170"
+  },
+  {
+   "last_name": "Болотова",
+   "first_name": "Динара Аширалиевна",
+   "department": "Медицинский колледж, ПЦК Сестринское дело и ортопедическая стоматология",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/171"
+  },
+  {
+   "last_name": "Ормогоева",
+   "first_name": "Айнура Арстаналиевна",
+   "department": "Медицинский колледж, ПЦК Гуманитарных и естественно-математических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/172"
+  },
+  {
+   "last_name": "Дарбанов",
+   "first_name": "Беркут Ерматович",
+   "department": "Межкультурной коммуникации и лингвистики",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Акбуюков",
+   "first_name": "Мурат Муйдинович",
+   "department": "Межкультурной коммуникации и лингвистики",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/37"
+  },
+  {
+   "last_name": "Эргешова",
+   "first_name": "Рахима",
+   "department": "Межкультурной коммуникации и лингвистики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/177"
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Кенжебу Ибраимовна",
+   "department": "Межкультурной коммуникации и лингвистики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/178"
+  },
+  {
+   "last_name": "Баитова",
+   "first_name": "Нуржан",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/183"
+  },
+  {
+   "last_name": "Барпиева",
+   "first_name": "Гулиза",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/184"
+  },
+  {
+   "last_name": "Мамарасулова",
+   "first_name": "Гулмира",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/186"
+  },
+  {
+   "last_name": "Жолдошова",
+   "first_name": "Токтокан",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/187"
+  },
+  {
+   "last_name": "Карим кызы",
+   "first_name": "Лунара",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/188"
+  },
+  {
+   "last_name": "Ныязбек уулу",
+   "first_name": "Исабек",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/189"
+  },
+  {
+   "last_name": "Садырова",
+   "first_name": "Наргиза",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/192"
+  },
+  {
+   "last_name": "Сулайманова",
+   "first_name": "Майрамкан",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/194"
+  },
+  {
+   "last_name": "Токтогулов",
+   "first_name": "Абдуманап",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/196"
+  },
+  {
+   "last_name": "Масеитов",
+   "first_name": "Нурдин",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/197"
+  },
+  {
+   "last_name": "Суюнбаева",
+   "first_name": "Замира",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/199"
+  },
+  {
+   "last_name": "Сатымкулова",
+   "first_name": "Наргиза",
+   "department": "Колледж экономики и права, ПЦК Социальной работы",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/204"
+  },
+  {
+   "last_name": "Мусакулов",
+   "first_name": "Нурбек Куралбекович",
+   "department": "Экономика, учёт и финансы",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/55"
+  },
+  {
+   "last_name": "Абдурахимов",
+   "first_name": "Низамидин Халдарбаевич",
+   "department": "Физического воспитания и спорта",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Манас",
+   "first_name": "Акимов",
+   "department": "Анатомии и физиологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/210"
+  },
+  {
+   "last_name": "Ашимбаева",
+   "first_name": "Гульбайра",
+   "department": "Гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/259"
+  },
+  {
+   "last_name": "Алимусаева",
+   "first_name": "Нурзат",
+   "department": "Жалал-Абадский колледж, ПЦК «Автоматизированные системы и математика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/270"
+  },
+  {
+   "last_name": "Жолонбаева",
+   "first_name": "Бегимай",
+   "department": "Жалал-Абадский колледж, ПЦК «Ветеринария",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/274"
+  },
+  {
+   "last_name": "Маатазимова",
+   "first_name": "Гүлзат",
+   "department": "Педагогика, психология и технология обучения",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/279"
+  },
+  {
+   "last_name": "Токторбаева",
+   "first_name": "Акылай",
+   "department": "Физики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/283"
+  },
+  {
+   "last_name": "Джураев",
+   "first_name": "Абубакир Мухтарович",
+   "department": "Математика и математическое моделирование",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/users/285"
+  },
+  {
+   "last_name": "Джоробаев",
+   "first_name": "Ырсалы",
+   "department": "Колледж экономики и права, ПЦК Правоведение",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/287"
+  },
+  {
+   "last_name": "Сабиралиева",
+   "first_name": "Гульмира",
+   "department": "Колледж экономики и права, ПЦК Правоведение",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/288"
+  },
+  {
+   "last_name": "Токтосунов",
+   "first_name": "Келдибек",
+   "department": "Колледж экономики и права, ПЦК Правоведение",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/290"
+  },
+  {
+   "last_name": "Эрматали уулу",
+   "first_name": "Баяман",
+   "department": "Математика и математическое моделирование",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/291"
+  },
+  {
+   "last_name": "Идрисова",
+   "first_name": "Гулбарчын Ильясовна",
+   "department": "Физики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/31"
+  },
+  {
+   "last_name": "Ажикулова",
+   "first_name": "Үрүкан",
+   "department": "Физики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/349"
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Нургул Таштановна",
+   "department": "Физики и информатики",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/31"
+  },
+  {
+   "last_name": "Төрөгулова",
+   "first_name": "Рысбү Абазбековна",
+   "department": "Физики и информатики",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/31"
+  },
+  {
+   "last_name": "Мажиева",
+   "first_name": "Дарья Тойчуевна",
+   "department": "Физики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/31"
+  },
+  {
+   "last_name": "Ботоева",
+   "first_name": "Дамира",
+   "department": "Физики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/353"
+  },
+  {
+   "last_name": "Молдокеримова",
+   "first_name": "Эктибар",
+   "department": "Физики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/354"
+  },
+  {
+   "last_name": "Абдукадыр кызы",
+   "first_name": "Айнагул",
+   "department": "Физики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/355"
+  },
+  {
+   "last_name": "Имонкулов",
+   "first_name": "Закиржон",
+   "department": "Физики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/356"
+  },
+  {
+   "last_name": "Маматова",
+   "first_name": "Гульшаир Тыныбековна",
+   "department": "Физики и информатики",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/31"
+  },
+  {
+   "last_name": "Жолонбаева",
+   "first_name": "Айжамал Жунусбековна",
+   "department": "Физики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/31"
+  },
+  {
+   "last_name": "Мурзалиев",
+   "first_name": "Каныбек",
+   "department": "Физики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/361"
+  },
+  {
+   "last_name": "Алдозова",
+   "first_name": "Нуркан Сабырбековна",
+   "department": "Философии и гуманитарных наук им. Ш.М. Ниязалиева",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/363"
+  },
+  {
+   "last_name": "Акылбек кызы",
+   "first_name": "Венера",
+   "department": "Колледж экономики и права, ПЦК Экономика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/377"
+  },
+  {
+   "last_name": "Бекиева",
+   "first_name": "Гулмира",
+   "department": "Колледж экономики и права, ПЦК Экономика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/378"
+  },
+  {
+   "last_name": "Ахмедова",
+   "first_name": "Зульфия",
+   "department": "Колледж экономики и права, ПЦК Экономика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/379"
+  },
+  {
+   "last_name": "Кадырова",
+   "first_name": "Элиза",
+   "department": "Колледж экономики и права, ПЦК Экономика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/380"
+  },
+  {
+   "last_name": "Сусунбаев",
+   "first_name": "Талайбек",
+   "department": "Уголовно-правовых дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/394"
+  },
+  {
+   "last_name": "Ирисова",
+   "first_name": "Нуриза",
+   "department": "Педагогика, психология и технология обучения",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/402"
+  },
+  {
+   "last_name": "Тажибаева",
+   "first_name": "Жаркын",
+   "department": "Педагогика, психология и технология обучения",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/403"
+  },
+  {
+   "last_name": "Сакиева",
+   "first_name": "Сайипжамал",
+   "department": "Педагогика, психология и технология обучения",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/users/404"
+  },
+  {
+   "last_name": "Аданова",
+   "first_name": "Дарикан Арапбаевна",
+   "department": "Педагогика, психология и технология обучения",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/32"
+  },
+  {
+   "last_name": "Токтогулова",
+   "first_name": "Гүлжамал",
+   "department": "Философии и гуманитарных наук им. Ш.М. Ниязалиева",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/users/412"
+  },
+  {
+   "last_name": "Жороева",
+   "first_name": "Айнура Маматовна",
+   "department": "Колледж экономики и права",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/413"
+  },
+  {
+   "last_name": "Алимбаева",
+   "first_name": "Гулмайрам",
+   "department": "Жалал-Абадский колледж, ПЦК Энергетика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/418"
+  },
+  {
+   "last_name": "Айдарбекова",
+   "first_name": "Анарбу",
+   "department": "Колледж экономики и права, ПЦК Экономика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/425"
+  },
+  {
+   "last_name": "Маматов",
+   "first_name": "Айбек",
+   "department": "Колледж экономики и права, ПЦК Экономика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/426"
+  },
+  {
+   "last_name": "Мокуева",
+   "first_name": "Нускайым Шарабидиновна",
+   "department": "Педагогика, психология и технология обучения",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/32"
+  },
+  {
+   "last_name": "Бекболотова",
+   "first_name": "Эльнура Орозбаевна",
+   "department": "Медико-биологических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/43"
+  },
+  {
+   "last_name": "Найманбаев",
+   "first_name": "Муктарбек",
+   "department": "Педагогика, психология и технология обучения",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/454"
+  },
+  {
+   "last_name": "Осмоналиева",
+   "first_name": "Сабира",
+   "department": "Педагогика, психология и технология обучения",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/472"
+  },
+  {
+   "last_name": "Рыскулова",
+   "first_name": "Гулзат Уметкуловна",
+   "department": "Педагогика, психология и технология обучения",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/32"
+  },
+  {
+   "last_name": "Акматов",
+   "first_name": "Айдарбек Адилбекович",
+   "department": "Педагогика, психология и технология обучения",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/32"
+  },
+  {
+   "last_name": "Жээнбекова",
+   "first_name": "Бурулай Жолболдуевна",
+   "department": "Естественнонаучное образование",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/532"
+  },
+  {
+   "last_name": "Шерипбаев",
+   "first_name": "Амангелди Рахманович",
+   "department": "Кыргызского языка и литературы",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/36"
+  },
+  {
+   "last_name": "Каленбекова",
+   "first_name": "Гулбарчин",
+   "department": "Кыргызского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/552"
+  },
+  {
+   "last_name": "Матурайимова",
+   "first_name": "Динара",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/557"
+  },
+  {
+   "last_name": "Салибаева",
+   "first_name": "Гулмайрам",
+   "department": "Колледж экономики и права, ПЦК Экономика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/559"
+  },
+  {
+   "last_name": "Иркеева",
+   "first_name": "Зарина",
+   "department": "Колледж экономики и права, ПЦК Экономика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/560"
+  },
+  {
+   "last_name": "Жороева",
+   "first_name": "Алтынай",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/563"
+  },
+  {
+   "last_name": "Барпыбаева",
+   "first_name": "Венера",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/564"
+  },
+  {
+   "last_name": "Молдомиров",
+   "first_name": "Эрлан",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/565"
+  },
+  {
+   "last_name": "Абдувалиев",
+   "first_name": "Ибраим",
+   "department": "Кыргызского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/566"
+  },
+  {
+   "last_name": "Бактыбек у",
+   "first_name": "Бектурсун",
+   "department": "Колледж экономики и права",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/572"
+  },
+  {
+   "last_name": "Алимаматова",
+   "first_name": "Динара Авазовна",
+   "department": "Русской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/39"
+  },
+  {
+   "last_name": "Тойчуева",
+   "first_name": "Венера Мурзаевна",
+   "department": "Русской филологии",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/categories/39"
+  },
+  {
+   "last_name": "Султанбаева",
+   "first_name": "Динара Толегеновна",
+   "department": "Русской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/39"
+  },
+  {
+   "last_name": "Жамашева",
+   "first_name": "Нуриля Султанбековна",
+   "department": "Русской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/39"
+  },
+  {
+   "last_name": "Сулейманова",
+   "first_name": "Тамара Акматовна",
+   "department": "Русской филологии",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/39"
+  },
+  {
+   "last_name": "Алымкулов",
+   "first_name": "Алмазбек Абылкасымович",
+   "department": "Русской филологии",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/39"
+  },
+  {
+   "last_name": "Айылчиева",
+   "first_name": "Дилара Турсуналиевна",
+   "department": "Русской филологии",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/39"
+  },
+  {
+   "last_name": "Толубаева",
+   "first_name": "Молмол Орозбековна",
+   "department": "Немецкого и межфакультетских иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/38"
+  },
+  {
+   "last_name": "Калмурзаева",
+   "first_name": "Айчурок Абдирашидовна",
+   "department": "Русской филологии",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/39"
+  },
+  {
+   "last_name": "Арсланбекова",
+   "first_name": "Насыйкат Эркинбаевна",
+   "department": "Английского языка и литературы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Жумабекова",
+   "first_name": "Насиба Акимжановна",
+   "department": "Английского языка и литературы",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Ташиева",
+   "first_name": "Нуржамал Абдиллаевна",
+   "department": "Английского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Усупова",
+   "first_name": "Адилет",
+   "department": "Экономика и информатика",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/658"
+  },
+  {
+   "last_name": "Буланова",
+   "first_name": "Зууракан",
+   "department": "Экономика и информатика",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/660"
+  },
+  {
+   "last_name": "Абдуллаева",
+   "first_name": "Мырзайым",
+   "department": "Филология и педагогика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/662"
+  },
+  {
+   "last_name": "Нурдинов",
+   "first_name": "Шамшидин",
+   "department": "Анатомии и физиологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/665"
+  },
+  {
+   "last_name": "Эрматова",
+   "first_name": "Мээркан Кимсановна",
+   "department": "Акушерства и педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/51"
+  },
+  {
+   "last_name": "Акматалиева",
+   "first_name": "Айнура",
+   "department": "Экономика и информатика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/673"
+  },
+  {
+   "last_name": "Рахманалы кызы",
+   "first_name": "Жаңылай",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/679"
+  },
+  {
+   "last_name": "Орозбаева",
+   "first_name": "Гулбарчин Абдимажитовна",
+   "department": "Английского языка и литературы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Жороева",
+   "first_name": "Гулбара Анарбаевна",
+   "department": "Английского языка и литературы",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Имаралы кызы",
+   "first_name": "Назбийке",
+   "department": "Кыргызского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/691"
+  },
+  {
+   "last_name": "Акбарбек уулу",
+   "first_name": "Сагынбек",
+   "department": "Электроэнергетика и техника",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/692"
+  },
+  {
+   "last_name": "Мамбеталиева",
+   "first_name": "Айгул Божуевна",
+   "department": "Английского языка и литературы",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Биймырзаева",
+   "first_name": "Багдагуль",
+   "department": "Электроэнергетика и техника",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/700"
+  },
+  {
+   "last_name": "Курманалиева",
+   "first_name": "Гүлнуркан",
+   "department": "Филология и педагогика",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/702"
+  },
+  {
+   "last_name": "Кочконбаев",
+   "first_name": "Сыргак",
+   "department": "Электроэнергетика и техника",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/705"
+  },
+  {
+   "last_name": "Бакирова",
+   "first_name": "Гүлжан Көккөзовна",
+   "department": "Кыргызского языка и литературы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/36"
+  },
+  {
+   "last_name": "Нарбаева",
+   "first_name": "Айгуль",
+   "department": "Естественно-научные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/710"
+  },
+  {
+   "last_name": "Бакивалиева",
+   "first_name": "Калима",
+   "department": "Естественно-научные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/711"
+  },
+  {
+   "last_name": "Сакеева",
+   "first_name": "Кундускан",
+   "department": "Филология и педагогика",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/712"
+  },
+  {
+   "last_name": "Нарбаева",
+   "first_name": "Гулбара",
+   "department": "Филология и педагогика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/713"
+  },
+  {
+   "last_name": "Чодошева",
+   "first_name": "Тынаргүл",
+   "department": "Филология и педагогика",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/714"
+  },
+  {
+   "last_name": "Турдубаева",
+   "first_name": "Мастура",
+   "department": "Естественно-научные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/715"
+  },
+  {
+   "last_name": "Керимкулова",
+   "first_name": "Калима",
+   "department": "Филология и педагогика",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/716"
+  },
+  {
+   "last_name": "Жуманалиев",
+   "first_name": "Гүлжигит",
+   "department": "Естественно-научные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/719"
+  },
+  {
+   "last_name": "Казакбаева",
+   "first_name": "Айгул",
+   "department": "Естественно-научные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/722"
+  },
+  {
+   "last_name": "Мурзаева",
+   "first_name": "Диана",
+   "department": "Экономика и информатика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/723"
+  },
+  {
+   "last_name": "Токтомамбетова",
+   "first_name": "Жамилякан",
+   "department": "Филология и педагогика",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/725"
+  },
+  {
+   "last_name": "Эшиев",
+   "first_name": "Жаркул",
+   "department": "Филология и педагогика",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/726"
+  },
+  {
+   "last_name": "Райымбекова",
+   "first_name": "Гулмира",
+   "department": "Электроэнергетика и техника",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/727"
+  },
+  {
+   "last_name": "Мырзабекова",
+   "first_name": "Айзада",
+   "department": "Филология и педагогика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/769"
+  },
+  {
+   "last_name": "Эсенов",
+   "first_name": "Ырысбай",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/799"
+  },
+  {
+   "last_name": "Абдумомунов",
+   "first_name": "Мамашарип",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/800"
+  },
+  {
+   "last_name": "Акматова",
+   "first_name": "Каныкей",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/801"
+  },
+  {
+   "last_name": "Раимкулова",
+   "first_name": "Канымгул",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/802"
+  },
+  {
+   "last_name": "Бектемиров",
+   "first_name": "Жантөрө",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/803"
+  },
+  {
+   "last_name": "Тажибаева",
+   "first_name": "Айсулуу",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/804"
+  },
+  {
+   "last_name": "Каримова",
+   "first_name": "Жамила",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/805"
+  },
+  {
+   "last_name": "Калбаев",
+   "first_name": "Эрнис",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/806"
+  },
+  {
+   "last_name": "Пратова",
+   "first_name": "Элиза",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/807"
+  },
+  {
+   "last_name": "Сапарбекова",
+   "first_name": "Элнура",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/808"
+  },
+  {
+   "last_name": "Токтоназарова",
+   "first_name": "Аида Тыныбековна",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/809"
+  },
+  {
+   "last_name": "Жумабаева",
+   "first_name": "Аймээрим",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/810"
+  },
+  {
+   "last_name": "Исаев",
+   "first_name": "Абдукапар",
+   "department": "Хирургии и травматологии",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/812"
+  },
+  {
+   "last_name": "Джылчикеева",
+   "first_name": "Нурайым",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/813"
+  },
+  {
+   "last_name": "Таалайбек кызы",
+   "first_name": "Аида",
+   "department": "Хирургии и травматологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/814"
+  },
+  {
+   "last_name": "Камбарова",
+   "first_name": "Айнура Кашкарлыковна",
+   "department": "Общественного здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/815"
+  },
+  {
+   "last_name": "Зиавитдинов",
+   "first_name": "Миржалал Шухратжонович",
+   "department": "Общественного здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/817"
+  },
+  {
+   "last_name": "Чолпонкулова",
+   "first_name": "Бермет Мурадиллаевна",
+   "department": "Общественного здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/818"
+  },
+  {
+   "last_name": "Калаева",
+   "first_name": "Гулумкан Садыбакасовна",
+   "department": "Общественного здравоохранения",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/819"
+  },
+  {
+   "last_name": "Куват кызы",
+   "first_name": "Эльвира",
+   "department": "Общественного здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/820"
+  },
+  {
+   "last_name": "Пулатов",
+   "first_name": "Уланбек Райимович",
+   "department": "Общественного здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/821"
+  },
+  {
+   "last_name": "Мурзабаева",
+   "first_name": "Мохирахон",
+   "department": "Анатомии и физиологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/826"
+  },
+  {
+   "last_name": "Ташиев",
+   "first_name": "Шавкатбек Турсунбаевич",
+   "department": "Общей хирургии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/45"
+  },
+  {
+   "last_name": "Gurrala",
+   "first_name": "Harsha Chandra",
+   "department": "Анатомии и физиологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/828"
+  },
+  {
+   "last_name": "Сатыкул кызы",
+   "first_name": "Жумаида",
+   "department": "Общественного здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/830"
+  },
+  {
+   "last_name": "Набижанов",
+   "first_name": "Азамат Набижанович",
+   "department": "Общественного здравоохранения",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/831"
+  },
+  {
+   "last_name": "Омурзакова",
+   "first_name": "Чолпонай",
+   "department": "Пропедевтики внутренних болезней и семейной медицины",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/832"
+  },
+  {
+   "last_name": "Мундузбаева",
+   "first_name": "Дамира Алимбековна",
+   "department": "Гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/833"
+  },
+  {
+   "last_name": "Камбарова",
+   "first_name": "Нигора",
+   "department": "Акушерства и педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/834"
+  },
+  {
+   "last_name": "Гадаева",
+   "first_name": "Бурул",
+   "department": "Гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/835"
+  },
+  {
+   "last_name": "Жусупбекова",
+   "first_name": "Назгул Абдиманаповна",
+   "department": "Госпитальной терапии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/44"
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "Эльмира",
+   "department": "Жалал-Абадский колледж, ПЦК «Автоматизированные системы и математика",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/839"
+  },
+  {
+   "last_name": "Кадыралиев",
+   "first_name": "Саматбек",
+   "department": "Хирургии и травматологии",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/840"
+  },
+  {
+   "last_name": "Темирланова",
+   "first_name": "Ева Темирлановна",
+   "department": "Госпитальной терапии",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/44"
+  },
+  {
+   "last_name": "Тилекбаева",
+   "first_name": "Элмира Азимбаевна",
+   "department": "Акушерства и педиатрии",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/51"
+  },
+  {
+   "last_name": "Тазабекова",
+   "first_name": "Бурулай",
+   "department": "Анатомии и физиологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/844"
+  },
+  {
+   "last_name": "Садирбекова",
+   "first_name": "Зарина",
+   "department": "Акушерства и педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/847"
+  },
+  {
+   "last_name": "Доноева",
+   "first_name": "Гулмайрам",
+   "department": "Колледж экономики и права, ПЦК Правоведение",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/849"
+  },
+  {
+   "last_name": "Кыялбек кызы",
+   "first_name": "Даткайым",
+   "department": "Акушерства и педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/852"
+  },
+  {
+   "last_name": "Балтабаева",
+   "first_name": "Элгиза Муратовна",
+   "department": "Гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/46"
+  },
+  {
+   "last_name": "Боронова",
+   "first_name": "Турдайым",
+   "department": "Акушерства и педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/858"
+  },
+  {
+   "last_name": "Султанова",
+   "first_name": "Турсунай",
+   "department": "Акушерства и педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/862"
+  },
+  {
+   "last_name": "Рахимова",
+   "first_name": "Робия",
+   "department": "Акушерства и педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/864"
+  },
+  {
+   "last_name": "Эрнис у",
+   "first_name": "Айбат",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/873"
+  },
+  {
+   "last_name": "Касымова",
+   "first_name": "Дарийка",
+   "department": "Колледж экономики и права, ПЦК Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/875"
+  },
+  {
+   "last_name": "Турдубаева",
+   "first_name": "Бариса Майлыевна",
+   "department": "Жалал-Абадский государственный университет",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/9"
+  },
+  {
+   "last_name": "Орозова",
+   "first_name": "Жазгул",
+   "department": "Научно-исследовательский институт фундаментальных, прикладных исследований и инн",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/12"
+  },
+  {
+   "last_name": "Садырова",
+   "first_name": "Назира",
+   "department": "Научно-исследовательский институт фундаментальных, прикладных исследований и инн",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/15"
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Назгүл",
+   "department": "Научно-исследовательский институт фундаментальных, прикладных исследований и инн",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/18"
+  },
+  {
+   "last_name": "Алыбаев",
+   "first_name": "Курманбек Сарманович",
+   "department": "Научно-исследовательский институт фундаментальных, прикладных исследований и инн",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/users/37"
+  },
+  {
+   "last_name": "Кайкиева",
+   "first_name": "Улпат",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/72"
+  },
+  {
+   "last_name": "Калчакеев",
+   "first_name": "Кубанычбек Бекболотович",
+   "department": "Научно-исследовательский институт фундаментальных, прикладных исследований и инн",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/users/92"
+  },
+  {
+   "last_name": "Сопукулова",
+   "first_name": "Айкокул Абдыракмановна",
+   "department": "Английского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Тайшынова",
+   "first_name": "Атыргул",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/94"
+  },
+  {
+   "last_name": "Арстанбекова",
+   "first_name": "Нуржан Батыровна",
+   "department": "Естественнонаучное образование",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/387"
+  },
+  {
+   "last_name": "Абдыкалыкова",
+   "first_name": "Чинара Казыбековна",
+   "department": "Жалал-Абадский государственный университет",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/138"
+  },
+  {
+   "last_name": "Токоева",
+   "first_name": "Гулдана",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/195"
+  },
+  {
+   "last_name": "Шерматов",
+   "first_name": "Абдужапар",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/201"
+  },
+  {
+   "last_name": "Zhumabekova",
+   "first_name": "Nasiba",
+   "department": "Жалал-Абадский колледж",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/205"
+  },
+  {
+   "last_name": "Таштанова",
+   "first_name": "Кайринса",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/211"
+  },
+  {
+   "last_name": "Кулушов",
+   "first_name": "Нурмамбет",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/292"
+  },
+  {
+   "last_name": "Медербек уулу",
+   "first_name": "Жоомарт",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/296"
+  },
+  {
+   "last_name": "Балываева",
+   "first_name": "Шахноза",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/302"
+  },
+  {
+   "last_name": "Хайткулова",
+   "first_name": "Курманжан",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/303"
+  },
+  {
+   "last_name": "Осорова",
+   "first_name": "Жибек",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/304"
+  },
+  {
+   "last_name": "Пратова",
+   "first_name": "Майрам Таштемировна",
+   "department": "Медицинский колледж, ПЦК Гуманитарных и естественно-математических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/94"
+  },
+  {
+   "last_name": "Алимова",
+   "first_name": "Айгерим",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/306"
+  },
+  {
+   "last_name": "Искендеров",
+   "first_name": "Анвар",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/307"
+  },
+  {
+   "last_name": "Дыйканов",
+   "first_name": "Кыялбек Алманбекович",
+   "department": "Медицинский колледж, ПЦК Гуманитарных и естественно-математических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/94"
+  },
+  {
+   "last_name": "Бакалаева",
+   "first_name": "Лайликан",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/309"
+  },
+  {
+   "last_name": "Термечикова",
+   "first_name": "Сейилкан Мамытовна",
+   "department": "Медицинский колледж, ПЦК Гуманитарных и естественно-математических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/94"
+  },
+  {
+   "last_name": "Атабекова",
+   "first_name": "Шарапат",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/368"
+  },
+  {
+   "last_name": "Рысбаева",
+   "first_name": "Жамила",
+   "department": "Жалал-Абадский колледж",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/369"
+  },
+  {
+   "last_name": "Samudinova",
+   "first_name": "Gulsanam",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/399"
+  },
+  {
+   "last_name": "Назаралиева",
+   "first_name": "Эркайым",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/400"
+  },
+  {
+   "last_name": "Мурзабекова",
+   "first_name": "Мээрим",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/411"
+  },
+  {
+   "last_name": "Abdykadyrov",
+   "first_name": "Jumadil",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/453"
+  },
+  {
+   "last_name": "Тороева",
+   "first_name": "Кайринса Омошовна",
+   "department": "Педагогика, психология и технология обучения",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/32"
+  },
+  {
+   "last_name": "Турсунбаева",
+   "first_name": "Жазгул Акылбековна",
+   "department": "Кыргызского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/36"
+  },
+  {
+   "last_name": "Торобекова",
+   "first_name": "Айжамал",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/491"
+  },
+  {
+   "last_name": "Аьдуллаева",
+   "first_name": "Улара",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/527"
+  },
+  {
+   "last_name": "Тойчиева",
+   "first_name": "Нурчурок",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/541"
+  },
+  {
+   "last_name": "Курстанбекова",
+   "first_name": "Бактыгул",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/561"
+  },
+  {
+   "last_name": "Макеев",
+   "first_name": "Бекбол",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/562"
+  },
+  {
+   "last_name": "Бакиров",
+   "first_name": "Ильяс",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/586"
+  },
+  {
+   "last_name": "Нышанбай кызы",
+   "first_name": "Байыма",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/643"
+  },
+  {
+   "last_name": "Керимбердиева",
+   "first_name": "Айсалкын Дуйшоевна",
+   "department": "Английского языка и литературы",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Байышбек кызы",
+   "first_name": "Аида",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/653"
+  },
+  {
+   "last_name": "Гуламжанова",
+   "first_name": "Жаңылай",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/654"
+  },
+  {
+   "last_name": "Карашакиева",
+   "first_name": "Назгуль",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/663"
+  },
+  {
+   "last_name": "Кочорова",
+   "first_name": "Гүлүмкан Осмоновна",
+   "department": "Кыргызского языка и литературы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/36"
+  },
+  {
+   "last_name": "Булонов",
+   "first_name": "Азанкан",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/718"
+  },
+  {
+   "last_name": "Атамурзаева",
+   "first_name": "Бусара",
+   "department": "Жалал-Абадский колледж",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/users/724"
+  },
+  {
+   "last_name": "Тагаев",
+   "first_name": "Сардар",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/777"
+  },
+  {
+   "last_name": "Исраилов",
+   "first_name": "Замирбек",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/829"
+  },
+  {
+   "last_name": "Абдраманова",
+   "first_name": "Толгонай",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/837"
+  },
+  {
+   "last_name": "Рахманова",
+   "first_name": "Диана",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/842"
+  },
+  {
+   "last_name": "Макамбаева",
+   "first_name": "Бегимай Мирланбековна",
+   "department": "Госпитальной терапии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/44"
+  },
+  {
+   "last_name": "Исмоналиева",
+   "first_name": "Айзирек",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/854"
+  },
+  {
+   "last_name": "Алыкулова",
+   "first_name": "Зарина",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/857"
+  },
+  {
+   "last_name": "Жапарбек кызы",
+   "first_name": "Гулзат",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/865"
+  },
+  {
+   "last_name": "Жумабек кызы",
+   "first_name": "Гүлкан",
+   "department": "Жалал-Абадский колледж",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/users/872"
+  },
+  {
+   "last_name": "Термечикова",
+   "first_name": "Алтынкан Мамытовна",
+   "department": "Автоматизированные системы управление",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/29"
+  },
+  {
+   "last_name": "Усенов",
+   "first_name": "Кенешбек Жумабекович",
+   "department": "Физики и информатики",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/categories/31"
+  },
+  {
+   "last_name": "Мамадразаков",
+   "first_name": "Жумабек Барктабасович",
+   "department": "Физики и информатики",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/31"
+  },
+  {
+   "last_name": "Мирзахмедова",
+   "first_name": "Айнура Абдухалиловна",
+   "department": "Физики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/31"
+  },
+  {
+   "last_name": "Темирбаева",
+   "first_name": "Гулзад Козоновна",
+   "department": "Педагогика, психология и технология обучения",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/32"
+  },
+  {
+   "last_name": "Абдырахманова",
+   "first_name": "Гулчехра Батырбековна",
+   "department": "Английского языка и литературы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Алымкулова",
+   "first_name": "Гулжан Чондуевна",
+   "department": "Английского языка и литературы",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Жолдошева",
+   "first_name": "Зарипа Токторовна",
+   "department": "Английского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Мирзахидова",
+   "first_name": "Миясар Инамжановна",
+   "department": "Английского языка и литературы",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Төрөмаматова",
+   "first_name": "Миргул Мыктарбековна",
+   "department": "Английского языка и литературы",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Эргашева",
+   "first_name": "Дилафруз Ибрахимовна",
+   "department": "Английского языка и литературы",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Жолдошова",
+   "first_name": "Зарипа Токторовна",
+   "department": "Английского языка и литературы",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/35"
+  },
+  {
+   "last_name": "Чокоева",
+   "first_name": "Дилбар Маматкуловна",
+   "department": "Кыргызского языка и литературы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/36"
+  },
+  {
+   "last_name": "Алтаева",
+   "first_name": "Динара Исаковна",
+   "department": "Кыргызского языка и литературы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/36"
+  },
+  {
+   "last_name": "Хурибаева",
+   "first_name": "Элмира Хайдаровна",
+   "department": "Кыргызского языка и литературы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/36"
+  },
+  {
+   "last_name": "Абдуллаева",
+   "first_name": "Перизат Уламкадыровна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Абдиева",
+   "first_name": "Дилфуза Канатбековна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Алмазбекова",
+   "first_name": "Таттыгул Алмазбековна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Арзыбаева",
+   "first_name": "Манзура Калиловна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Ахматкулова",
+   "first_name": "Нурзина Рыспековна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Бакирова",
+   "first_name": "Аида Эркиналыевна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Батыралиева",
+   "first_name": "Бермет Джалиловна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Бекназарова",
+   "first_name": "Бувнара Иминжановна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Борубаева",
+   "first_name": "Айжан Абдулашимовна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Залимбекова",
+   "first_name": "Жазгул Абжапаровна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Кулушова",
+   "first_name": "Айнагул Алибаевна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Момунова",
+   "first_name": "Чынара Шукуралиевна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Мурзалиева",
+   "first_name": "Мунара Камчыбековна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Сабирбекова",
+   "first_name": "Бермет Базаралиевна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Сарыбаева",
+   "first_name": "Айрин Алишеровна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Талипова",
+   "first_name": "Динара Салимовна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Шукурова",
+   "first_name": "Айтурган Жыргалбековна",
+   "department": "Колледж иностранных языков, ПЦК Иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/369"
+  },
+  {
+   "last_name": "Эсенова",
+   "first_name": "Айчурок Гайназаровна",
+   "department": "Немецкого и межфакультетских иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/38"
+  },
+  {
+   "last_name": "Алибаева",
+   "first_name": "Сайракан Тайкадыровна",
+   "department": "Немецкого и межфакультетских иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/38"
+  },
+  {
+   "last_name": "Мамбетова",
+   "first_name": "Замира Кыдырмышевна",
+   "department": "Немецкого и межфакультетских иностранных языков",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/38"
+  },
+  {
+   "last_name": "Молдобаева",
+   "first_name": "Бактыкан Үрүсбековна",
+   "department": "Немецкого и межфакультетских иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/38"
+  },
+  {
+   "last_name": "Мыктарова",
+   "first_name": "Гулсана Абдыкашымовна",
+   "department": "Немецкого и межфакультетских иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/38"
+  },
+  {
+   "last_name": "Садыкова",
+   "first_name": "Сымбат Зарылкановна",
+   "department": "Немецкого и межфакультетских иностранных языков",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/categories/38"
+  },
+  {
+   "last_name": "Тургунбаева",
+   "first_name": "Нурия Тургунбаевна",
+   "department": "Немецкого и межфакультетских иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/38"
+  },
+  {
+   "last_name": "Ураимова",
+   "first_name": "Нуриза Тайырбековна",
+   "department": "Немецкого и межфакультетских иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/38"
+  },
+  {
+   "last_name": "Досиева",
+   "first_name": "Динара Асанбековна",
+   "department": "Немецкого и межфакультетских иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/38"
+  },
+  {
+   "last_name": "Артыкбаева",
+   "first_name": "Күмүшай Нишанбаевна",
+   "department": "Естественнонаучное образование",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/387"
+  },
+  {
+   "last_name": "Болотбеков",
+   "first_name": "Азирет Орозбаевич",
+   "department": "Естественнонаучное образование",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/387"
+  },
+  {
+   "last_name": "Болотова",
+   "first_name": "Алтынай Сатыбалдиевна",
+   "department": "Естественнонаучное образование",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/387"
+  },
+  {
+   "last_name": "Дамирова",
+   "first_name": "Айпери Бакытовна",
+   "department": "Естественнонаучное образование",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/387"
+  },
+  {
+   "last_name": "Жусупбаева",
+   "first_name": "Гулсара Исмаиловна",
+   "department": "Естественнонаучное образование",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/387"
+  },
+  {
+   "last_name": "Керимбекова",
+   "first_name": "Анара Жеенмырзаевна",
+   "department": "Естественнонаучное образование",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/387"
+  },
+  {
+   "last_name": "Кенжебаев",
+   "first_name": "Советбек Кайыпович",
+   "department": "Естественнонаучное образование",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/387"
+  },
+  {
+   "last_name": "Молдомусаева",
+   "first_name": "Асем Жолдошевна",
+   "department": "Естественнонаучное образование",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/387"
+  },
+  {
+   "last_name": "Сатканкулова",
+   "first_name": "Мунара Эргешалиевна",
+   "department": "Естественнонаучное образование",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/387"
+  },
+  {
+   "last_name": "Эгембердиева",
+   "first_name": "Алтынай Дуйшоевна",
+   "department": "Естественнонаучное образование",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/387"
+  },
+  {
+   "last_name": "Зулпукаров",
+   "first_name": "Капар Зулпукарович",
+   "department": "Русской филологии",
+   "title": "профессор",
+   "source_url": "https://jagu.edu.kg/ru/categories/39"
+  },
+  {
+   "last_name": "Алишов",
+   "first_name": "Шумкарбек Садирбекович",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Ажибаев",
+   "first_name": "Курманбек Тешебаевич",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Аскаров",
+   "first_name": "Сардарбек Сапаралиевич",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Атамкулов",
+   "first_name": "Асан Авасович",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Бакиров",
+   "first_name": "Асхат Заирбекович",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Камчыбеков",
+   "first_name": "Абибилла Алатаевич",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Корошов",
+   "first_name": "Эламан Кайыпжанович",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Махмадаминов",
+   "first_name": "Уткирбек Махамадсолиевич",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Машаев",
+   "first_name": "Манас Аширбекович",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Салаев",
+   "first_name": "Алтынбек Жунусалыевич",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Таштанов",
+   "first_name": "Малик Акынович",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Ташмаматов",
+   "first_name": "Тынчтыкбек Суйунбаевич",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Усенов",
+   "first_name": "Алмаз Жуманазарович",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Эргашов",
+   "first_name": "Фарход Абдумаликович",
+   "department": "Физическая культура, спорт и допризывная подготовка",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/398"
+  },
+  {
+   "last_name": "Матсаков",
+   "first_name": "Каныбек Сулайманкулович",
+   "department": "Анатомии и физиологии",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/42"
+  },
+  {
+   "last_name": "Акимов",
+   "first_name": "Манас Алмазбекович",
+   "department": "Анатомии и физиологии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/42"
+  },
+  {
+   "last_name": "Мамажанов",
+   "first_name": "Давлетбек Касымбекович",
+   "department": "Медико-биологических дисциплин",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/43"
+  },
+  {
+   "last_name": "Исмаилов",
+   "first_name": "Таалайбек Койчуманович",
+   "department": "Медико-биологических дисциплин",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/43"
+  },
+  {
+   "last_name": "Садуллаева",
+   "first_name": "Алтынай Шадуллаевна",
+   "department": "Медико-биологических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/43"
+  },
+  {
+   "last_name": "Эркулова",
+   "first_name": "Акмоор Кубанычбековна",
+   "department": "Госпитальной терапии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/44"
+  },
+  {
+   "last_name": "Каримова",
+   "first_name": "Айдинай Каримовна",
+   "department": "Госпитальной терапии",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/44"
+  },
+  {
+   "last_name": "Адилбекова",
+   "first_name": "Аэлита Жылдызбековна",
+   "department": "Госпитальной терапии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/44"
+  },
+  {
+   "last_name": "Асанов",
+   "first_name": "Тимур Арстанбекович",
+   "department": "Госпитальной терапии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/44"
+  },
+  {
+   "last_name": "Рысбекова",
+   "first_name": "Айчурок Маткаримовна",
+   "department": "Госпитальной терапии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/44"
+  },
+  {
+   "last_name": "Абдыкадыров",
+   "first_name": "Жусупбек Маманазарович",
+   "department": "Общей хирургии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/45"
+  },
+  {
+   "last_name": "Абдылдаев",
+   "first_name": "Зарылбек Жамшитбекович",
+   "department": "Общей хирургии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/45"
+  },
+  {
+   "last_name": "Айтназаров",
+   "first_name": "Мыктыбек Сатыбалдиевич",
+   "department": "Общей хирургии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/45"
+  },
+  {
+   "last_name": "Артыкматов",
+   "first_name": "Буният Дастанбекович",
+   "department": "Общей хирургии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/45"
+  },
+  {
+   "last_name": "Джусупова",
+   "first_name": "Нурпери Досумбековна",
+   "department": "Общей хирургии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/45"
+  },
+  {
+   "last_name": "Жолдошов",
+   "first_name": "Кубат Абжалалович",
+   "department": "Общей хирургии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/45"
+  },
+  {
+   "last_name": "Кененбаева",
+   "first_name": "Кундуз Бактыбаевна",
+   "department": "Общей хирургии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/45"
+  },
+  {
+   "last_name": "Манасова",
+   "first_name": "Роза Манасовна",
+   "department": "Общей хирургии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/45"
+  },
+  {
+   "last_name": "Махмудов",
+   "first_name": "Абдуманап Абдумуталипович",
+   "department": "Общей хирургии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/45"
+  },
+  {
+   "last_name": "Рапикова",
+   "first_name": "Маьмура Адахамжавновна",
+   "department": "Общей хирургии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/45"
+  },
+  {
+   "last_name": "Сатыбалдиев",
+   "first_name": "Эмилбек Эркинбекович",
+   "department": "Общей хирургии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/45"
+  },
+  {
+   "last_name": "Талантбекова",
+   "first_name": "Жумагул Талантбековна",
+   "department": "Общей хирургии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/45"
+  },
+  {
+   "last_name": "Маматова",
+   "first_name": "Гулкан Тыныбековна",
+   "department": "Гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/46"
+  },
+  {
+   "last_name": "Кубанычбекова",
+   "first_name": "Дамира Кубанычбековна",
+   "department": "Гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/46"
+  },
+  {
+   "last_name": "Стамбеков",
+   "first_name": "Бектур Жумабекович",
+   "department": "Пропедевтики внутренних болезней и семейной медицины",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/50"
+  },
+  {
+   "last_name": "Сейдалиев",
+   "first_name": "Аскар Джумабаевич",
+   "department": "Акушерства и педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/51"
+  },
+  {
+   "last_name": "Садыралиев",
+   "first_name": "Жандаралы Садыралиевич",
+   "department": "Экономика, учёт и финансы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/55"
+  },
+  {
+   "last_name": "Карабекова",
+   "first_name": "Аида Камилжановна",
+   "department": "Экономика, учёт и финансы",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/55"
+  },
+  {
+   "last_name": "Жолболдуева",
+   "first_name": "Дарыгул Шамиловна",
+   "department": "Экономика, учёт и финансы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/55"
+  },
+  {
+   "last_name": "Уметов",
+   "first_name": "Салмоорбек Садирбекович",
+   "department": "Экономика, учёт и финансы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/55"
+  },
+  {
+   "last_name": "Жамашева",
+   "first_name": "Гулбара Султанбековна",
+   "department": "Экономика, учёт и финансы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/55"
+  },
+  {
+   "last_name": "Макеева",
+   "first_name": "Аида Шайлообековна",
+   "department": "Экономика, учёт и финансы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/55"
+  },
+  {
+   "last_name": "Эргешова",
+   "first_name": "Тамара Абдивалиевна",
+   "department": "Экономика, учёт и финансы",
+   "title": "доцент",
+   "source_url": "https://jagu.edu.kg/ru/categories/55"
+  },
+  {
+   "last_name": "Аширалиева",
+   "first_name": "Бактыгул Абдиумаматкадыровна",
+   "department": "Экономика, учёт и финансы",
+   "title": "старший преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/55"
+  },
+  {
+   "last_name": "Абдыкадыров",
+   "first_name": "Панарбек Муратбекович",
+   "department": "Экономика, учёт и финансы",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/55"
+  },
+  {
+   "last_name": "Кубанычбеков",
+   "first_name": "Эрнист Кубанычбекович",
+   "department": "Экономика, учёт и финансы",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/55"
+  },
+  {
+   "last_name": "Орозова",
+   "first_name": "Чыныгул Самидиновна",
+   "department": "Экономика, учёт и финансы",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/55"
+  },
+  {
+   "last_name": "Бекешов",
+   "first_name": "Марип Атанбаевич",
+   "department": "Жалал-Абадский колледж, ПЦК «Техника",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/78"
+  },
+  {
+   "last_name": "Досматов",
+   "first_name": "Нурмамат Эшиевич",
+   "department": "Жалал-Абадский колледж, ПЦК «Техника",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/78"
+  },
+  {
+   "last_name": "Исмаилов",
+   "first_name": "Бакытбек Абдимиталипович",
+   "department": "Жалал-Абадский колледж, ПЦК «Техника",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/78"
+  },
+  {
+   "last_name": "Орозалиева",
+   "first_name": "Мээрим Раттановвна",
+   "department": "Жалал-Абадский колледж, ПЦК «Техника",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/78"
+  },
+  {
+   "last_name": "Ташиев",
+   "first_name": "Эдилбек Чыныбаевич",
+   "department": "Жалал-Абадский колледж, ПЦК «Техника",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/78"
+  },
+  {
+   "last_name": "Абдивапова",
+   "first_name": "Жазгул Абдималиковна",
+   "department": "Педагогический колледж, ПЦК «Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/83"
+  },
+  {
+   "last_name": "Султанова",
+   "first_name": "Гульбарчин Райимбековна",
+   "department": "Педагогический колледж, ПЦК «Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/83"
+  },
+  {
+   "last_name": "Акматбеков",
+   "first_name": "Мар Зулпуевич",
+   "department": "Педагогический колледж, ПЦК «Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/83"
+  },
+  {
+   "last_name": "Жумабаева",
+   "first_name": "Замира Таштановна",
+   "department": "Жалал-Абадский колледж, ПЦК «Общеобразовательная",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/84"
+  },
+  {
+   "last_name": "Сооронбаева",
+   "first_name": "Гульзина Абдыкапаровна",
+   "department": "Жалал-Абадский колледж, ПЦК «Конструирование швейных изделий",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/85"
+  },
+  {
+   "last_name": "Султанова",
+   "first_name": "Наргиза Алиевна",
+   "department": "Жалал-Абадский колледж, ПЦК «Конструирование швейных изделий",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/85"
+  },
+  {
+   "last_name": "Калымбетова",
+   "first_name": "Гулбурак Исраиловна",
+   "department": "Медицинский колледж, ПЦК по лечебному и акушерскому делу",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/90"
+  },
+  {
+   "last_name": "Исмаилова",
+   "first_name": "Айнагул Абдукахаровна",
+   "department": "Медицинский колледж, ПЦК по лечебному и акушерскому делу",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/90"
+  },
+  {
+   "last_name": "Тахирова",
+   "first_name": "Айгерим Тахировна",
+   "department": "Медицинский колледж, ПЦК по лечебному и акушерскому делу",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/90"
+  },
+  {
+   "last_name": "Мамасадыкова",
+   "first_name": "Айганыш Мамасадыковна",
+   "department": "Медицинский колледж, ПЦК по лечебному и акушерскому делу",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/90"
+  },
+  {
+   "last_name": "Акматов",
+   "first_name": "Жумабек Тургунбаевич",
+   "department": "Медицинский колледж, ПЦК по лечебному и акушерскому делу",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/90"
+  },
+  {
+   "last_name": "Озгонова",
+   "first_name": "Тамара Турусбековна",
+   "department": "Медицинский колледж, ПЦК по лечебному и акушерскому делу",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/90"
+  },
+  {
+   "last_name": "Досова",
+   "first_name": "Элона Фархадовна",
+   "department": "Медицинский колледж, ПЦК Фармация",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/92"
+  },
+  {
+   "last_name": "Насипова",
+   "first_name": "Алтынай Шералиевна",
+   "department": "Медицинский колледж, ПЦК Сестринское дело и ортопедическая стоматология",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/93"
+  },
+  {
+   "last_name": "Осмоналиева",
+   "first_name": "Мээркан Кенжекуловна",
+   "department": "Медицинский колледж, ПЦК Сестринское дело и ортопедическая стоматология",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/93"
+  },
+  {
+   "last_name": "Юсупова",
+   "first_name": "Чолпонай Ураимжановна",
+   "department": "Медицинский колледж, ПЦК Сестринское дело и ортопедическая стоматология",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/93"
+  },
+  {
+   "last_name": "Исаев",
+   "first_name": "Абдыгапар Абдырахманович",
+   "department": "Медицинский колледж, ПЦК Сестринское дело и ортопедическая стоматология",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/93"
+  },
+  {
+   "last_name": "Ташболотов",
+   "first_name": "Жунусбек Жакыпович",
+   "department": "Медицинский колледж, ПЦК Сестринское дело и ортопедическая стоматология",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/93"
+  },
+  {
+   "last_name": "Самидинова",
+   "first_name": "Луиза Жусупбековна",
+   "department": "Медицинский колледж, ПЦК Гуманитарных и естественно-математических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://jagu.edu.kg/ru/categories/94"
+  }
+ ]
+}

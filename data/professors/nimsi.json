@@ -1,0 +1,612 @@
+{
+ "code": "nimsi",
+ "university": "Научно-исследовательский медико-социальный институт (НИМСИ)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+  "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd",
+  "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-sd",
+  "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/aup-nimsi",
+  "https://nimsi.kg/e-biblioteka/videomaterialy",
+  "https://nimsi.kg/institut/struktura-nimsi/prorektor-po-ur/otdel-kachestva-i-uchebnoj-raboty-3",
+  "https://nimsi.kg/institut/struktura-nimsi/prezident",
+  "https://nimsi.kg/ (новостная лента ?start=0..90)"
+ ],
+ "notes": "НИМСИ (сейчас переименован в ЦАММУ, сайт nimsi.kg). Отдельного списка ППС нет: составы взяты из описаний 4 кафедр (часто только инициалы, составы 2019-2023 гг.), видеолекций и новостей. Полные ФИО подставлены только когда они видны на указанной странице. Иностранные преподаватели (пакистанские) записаны в порядке как на сайте. Совместители и гостевые профессора других вузов (Сакибаев, Алиев, Каххаров, Пименова) исключены, кроме совместителей указанных в составе кафедр. ebilim.nimsi.kg требует логина.",
+ "professors": [
+  {
+   "last_name": "Анарбекова",
+   "first_name": "Венера Эркинбековна",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd"
+  },
+  {
+   "last_name": "Тампагаров",
+   "first_name": "Куштарбек Бекмуратович",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "профессор",
+   "source_url": "https://nimsi.kg/normativnye-dokumenty/rekvizity"
+  },
+  {
+   "last_name": "Калчекеев",
+   "first_name": "К. Б.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "профессор",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Арынбаев",
+   "first_name": "Жаныбай Токоевич",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/prezident"
+  },
+  {
+   "last_name": "Орозов",
+   "first_name": "Руслан Назарбаевич",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd"
+  },
+  {
+   "last_name": "Адышева",
+   "first_name": "А. А.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жунусов",
+   "first_name": "Н. С.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Нарбаев",
+   "first_name": "Мирсадык Рахимбердиевич",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/prorektor-po-nir"
+  },
+  {
+   "last_name": "Асилова",
+   "first_name": "З. А.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Канетова",
+   "first_name": "Динара Эменовна",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/prorektor-po-ur/otdel-it-i-ootkt"
+  },
+  {
+   "last_name": "Калиев",
+   "first_name": "Азамат Сайитович",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/mezhdunarodnyj-otdel/o-nas"
+  },
+  {
+   "last_name": "Турдубаева",
+   "first_name": "Аида Мамажунусовна",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/?start=20"
+  },
+  {
+   "last_name": "Нарымбетов",
+   "first_name": "Талант Канатбекович",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd"
+  },
+  {
+   "last_name": "Назаров",
+   "first_name": "Жусуп Мирзамидинович",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/prorektor-po-ur/otdel-it-i-ootkt"
+  },
+  {
+   "last_name": "Кочкорбаева",
+   "first_name": "Лайли",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://nimsi.kg/e-biblioteka/videomaterialy"
+  },
+  {
+   "last_name": "Осконбаева",
+   "first_name": "Санабар",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://nimsi.kg/e-biblioteka/videomaterialy"
+  },
+  {
+   "last_name": "Раманкулов",
+   "first_name": "Ш. М.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кашкенчиев",
+   "first_name": "М. Э.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ормогоева",
+   "first_name": "А. А.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Болотбеков",
+   "first_name": "Кубанычбек Маданович",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/prorektor-po-gos-yazyku-i-sr"
+  },
+  {
+   "last_name": "Бечелова",
+   "first_name": "А. Т.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бутаева",
+   "first_name": "Назокат Хожибековна",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/e-biblioteka/videomaterialy"
+  },
+  {
+   "last_name": "Надырбаева",
+   "first_name": "Кутбу",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/e-biblioteka/videomaterialy"
+  },
+  {
+   "last_name": "Шерматова",
+   "first_name": "Мадина",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/e-biblioteka/videomaterialy"
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "А. К.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Райымкул уулу",
+   "first_name": "Ж.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Айдарбек уулу",
+   "first_name": "Б.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Камбаралиева",
+   "first_name": "Айнура",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/e-biblioteka/videomaterialy"
+  },
+  {
+   "last_name": "Калыкова",
+   "first_name": "Гулзада",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/e-biblioteka/videomaterialy"
+  },
+  {
+   "last_name": "Кочкорова",
+   "first_name": "Наргиза",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/e-biblioteka/videomaterialy"
+  },
+  {
+   "last_name": "Базарбаева",
+   "first_name": "Махабат",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/e-biblioteka/videomaterialy"
+  },
+  {
+   "last_name": "Саркерова",
+   "first_name": "А. К.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эшмуратова",
+   "first_name": "К. Д.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Арзыматов",
+   "first_name": "А. М.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Каипов",
+   "first_name": "А. Ж.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ажибаев",
+   "first_name": "Замир Абдыкалыкович",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/?start=20"
+  },
+  {
+   "last_name": "Калдарбекова",
+   "first_name": "Гулназ",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/e-biblioteka/videomaterialy"
+  },
+  {
+   "last_name": "Эгембердиева",
+   "first_name": "Гулина",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/e-biblioteka/videomaterialy"
+  },
+  {
+   "last_name": "Мамбеткулова",
+   "first_name": "А. Н.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ташиева",
+   "first_name": "Н. А.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Маратбек кызы",
+   "first_name": "Т.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Маданбеков",
+   "first_name": "А.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдумажитова",
+   "first_name": "Ж.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эрмекова",
+   "first_name": "Н.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жамашева",
+   "first_name": "Н.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-egd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Орозбаева",
+   "first_name": "Жылдызкан Мариповна",
+   "department": "Общих медицинских дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd"
+  },
+  {
+   "last_name": "Бегалиев",
+   "first_name": "Шокан Сабирханович",
+   "department": "Общих медицинских дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd"
+  },
+  {
+   "last_name": "Мухаммед",
+   "first_name": "Шоиб Шахид",
+   "department": "Общих медицинских дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd"
+  },
+  {
+   "last_name": "Мустафа",
+   "first_name": "Садик",
+   "department": "Общих медицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd"
+  },
+  {
+   "last_name": "Сандху",
+   "first_name": "Хасан",
+   "department": "Общих медицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd"
+  },
+  {
+   "last_name": "Ахмад",
+   "first_name": "Иштиаг",
+   "department": "Общих медицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd"
+  },
+  {
+   "last_name": "Саджила",
+   "first_name": "Дауд",
+   "department": "Общих медицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd"
+  },
+  {
+   "last_name": "Набила",
+   "first_name": "Дауд",
+   "department": "Общих медицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd"
+  },
+  {
+   "last_name": "Садик",
+   "first_name": "Имран",
+   "department": "Общих медицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd"
+  },
+  {
+   "last_name": "Абдул",
+   "first_name": "Мухаммед Фаррук",
+   "department": "Общих медицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd"
+  },
+  {
+   "last_name": "Джээнбекова",
+   "first_name": "Мунара Качканаковна",
+   "department": "Общих медицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd"
+  },
+  {
+   "last_name": "Маннопов",
+   "first_name": "Сейитбек Элмурад уулу",
+   "department": "Общих медицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd"
+  },
+  {
+   "last_name": "Сейтбек уулу",
+   "first_name": "Бексултан",
+   "department": "Общих медицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd"
+  },
+  {
+   "last_name": "Нарматова",
+   "first_name": "Каниза Каныбековна",
+   "department": "Общих медицинских дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-omd"
+  },
+  {
+   "last_name": "Ахмедов",
+   "first_name": "Ш. Д.",
+   "department": "Клинических дисциплин и семейной медицины",
+   "title": "старший преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-sd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Боржиев",
+   "first_name": "Урматбек Арстанбекович",
+   "department": "Клинических дисциплин и семейной медицины",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/?start=60"
+  },
+  {
+   "last_name": "Абиров",
+   "first_name": "Кубанычбек Эсеналиевич",
+   "department": "Клинических дисциплин и семейной медицины",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/?start=50"
+  },
+  {
+   "last_name": "Кравцов",
+   "first_name": "А. А.",
+   "department": "Клинических дисциплин и семейной медицины",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-sd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Амираев",
+   "first_name": "Н. А.",
+   "department": "Клинических дисциплин и семейной медицины",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-sd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шербаев",
+   "first_name": "Н. Д.",
+   "department": "Клинических дисциплин и семейной медицины",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-sd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Садырова",
+   "first_name": "Нургуль Адылгазиевна",
+   "department": "Клинических дисциплин и семейной медицины",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-sd"
+  },
+  {
+   "last_name": "Ташиева",
+   "first_name": "Гульбара Самидиновна",
+   "department": "Клинических дисциплин и семейной медицины",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/prorektor-po-ur/otdel-kachestva-i-uchebnoj-raboty-3"
+  },
+  {
+   "last_name": "Тайирбеков",
+   "first_name": "Т. Т.",
+   "department": "Клинических дисциплин и семейной медицины",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/kafedra-sd",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жуманалиева",
+   "first_name": "Максудакан Бекиевна",
+   "department": "Клинических дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/aup-nimsi"
+  },
+  {
+   "last_name": "Шатманов",
+   "first_name": "С. Т.",
+   "department": "Клинических дисциплин",
+   "title": "профессор",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/aup-nimsi",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сулайманов",
+   "first_name": "Ш. А.",
+   "department": "Клинических дисциплин",
+   "title": "профессор",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/aup-nimsi",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кожалиев",
+   "first_name": "А. К.",
+   "department": "Клинических дисциплин",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/aup-nimsi",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эшимбетова",
+   "first_name": "А. Ш.",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/aup-nimsi",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдилкасимов",
+   "first_name": "Азизбек",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/e-biblioteka/videomaterialy"
+  },
+  {
+   "last_name": "Маткеримов",
+   "first_name": "Б.",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/aup-nimsi",
+   "initials_only": true
+  },
+  {
+   "last_name": "Таанышбекова",
+   "first_name": "А.",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/aup-nimsi",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдыкаарова",
+   "first_name": "А.",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/institut/struktura-nimsi/kafedry-nimsi/aup-nimsi",
+   "initials_only": true
+  },
+  {
+   "last_name": "Зулпукаров",
+   "first_name": "Муктар Акматбекович",
+   "department": "Научно-исследовательский медико-социальный институт",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/e-biblioteka/videomaterialy"
+  },
+  {
+   "last_name": "Маматов",
+   "first_name": "Алишер",
+   "department": "Научно-исследовательский медико-социальный институт",
+   "title": "преподаватель",
+   "source_url": "https://nimsi.kg/e-biblioteka/videomaterialy"
+  },
+  {
+   "last_name": "Султангазиев",
+   "first_name": "Расул Абалиевич",
+   "department": "Научно-исследовательский медико-социальный институт",
+   "title": "доцент",
+   "source_url": "https://nimsi.kg/?start=50"
+  }
+ ]
+}

@@ -1,0 +1,724 @@
+{
+ "code": "nsu",
+ "university": "Нарынский государственный университет им. С. Нааматова (НГУ)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://nsu.kg/wp-json/wp/v2/pages (все 411 страниц сайта, включая страницы кафедр и «Профессордук-окутуучулук курам»)",
+  "https://kit.nsu.kg/wp-json/wp/v2/pages (36 страниц сайта кафедры МТ)",
+  "https://kit.nsu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b6%d3%a9%d0%bd%d2%af%d0%bd%d0%b4%d3%a9/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d0%b6%d0%b0%d0%bd%d0%b0-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/%d0%bc%d0%b0%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%82%d1%83%d1%80%d0%b0/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d0%bd%d1%83%d0%bd-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d0%bd%d1%83%d0%bd-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8/%d1%80%d0%b5%d1%81%d0%bf%d1%83%d0%b1%d0%bb%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%81%d0%b8%d0%bc%d0%bf%d0%be%d0%b7%d0%b8%d1%83%d0%bc/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%82%d0%b0%d0%b1%d0%b8%d0%b3%d0%b8%d0%b9-%d0%b8%d0%bb%d0%b8%d0%bc%d0%b4%d0%b8%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%82%d0%b0%d0%b1%d0%b8%d0%b3%d0%b8%d0%b9-%d0%b8%d0%bb%d0%b8%d0%bc%d0%b4%d0%b8%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4/%d0%b8%d0%bb%d0%b8%d0%bc%d0%b8%d0%b9-%d0%b8%d1%88-%d1%87%d0%b0%d1%80%d0%b0/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%82%d0%b0%d0%b1%d0%b8%d0%b3%d0%b8%d0%b9-%d0%b8%d0%bb%d0%b8%d0%bc%d0%b4%d0%b8%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%82%d0%b0%d1%80%d1%8b%d1%85-%d0%b6%d0%b0%d0%bd%d0%b0-%d1%81%d0%be%d1%86%d0%b8%d0%b0%d0%bb%d0%b4%d1%8b%d0%ba-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b1%d0%b8/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%84%d0%b8%d0%b7%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%84%d0%b8%d0%b7%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/%d0%b8%d1%88%d0%bc%d0%b5%d1%80%d0%b4%d2%af%d2%af%d0%bb%d2%af%d0%b3%d2%af/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/fakultetter-aralyk-chet-tilder-kaf/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/fakultetter-aralyk-chet-tilder-kaf/professorduk-okutuuchuluk-kuram/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/german-tilderi-kafedrasy/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/german-tilderi-kafedrasy/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/kyrgyz-tilderi-zhana-adabiyaty-kafedra/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/kyrgyz-tilderi-zhana-adabiyaty-kafedra/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b1%d0%b8%d0%b7%d0%bd%d0%b5%d1%81-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b1%d0%b0%d1%88%d0%ba%d0%b0%d1%80%d1%83%d1%83-%d1%84%d0%b0%d0%ba%d1%83%d0%bb/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b1%d0%b8%d0%b7%d0%bd%d0%b5%d1%81-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b1%d0%b0%d1%88%d0%ba%d0%b0%d1%80%d1%83%d1%83-%d1%84%d0%b0%d0%ba%d1%83%d0%bb/%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d0%b4%d0%b8%d0%ba-%d1%8d%d1%81%d0%b5%d0%bf-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%bc%d0%b5%d0%bd/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b1%d0%b8%d0%b7%d0%bd%d0%b5%d1%81-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b1%d0%b0%d1%88%d0%ba%d0%b0%d1%80%d1%83%d1%83-%d1%84%d0%b0%d0%ba%d1%83%d0%bb/%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d0%b4%d0%b8%d0%ba-%d1%8d%d1%81%d0%b5%d0%bf-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%bc%d0%b5%d0%bd/%d0%b0%d1%87%d1%8b%d0%ba-%d1%81%d0%b0%d0%b1%d0%b0%d0%ba/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b1%d0%b8%d0%b7%d0%bd%d0%b5%d1%81-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b1%d0%b0%d1%88%d0%ba%d0%b0%d1%80%d1%83%d1%83-%d1%84%d0%b0%d0%ba%d1%83%d0%bb/%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d0%b4%d0%b8%d0%ba-%d1%8d%d1%81%d0%b5%d0%bf-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%bc%d0%b5%d0%bd/21-%d0%b0%d0%bf%d1%80%d0%b5%d0%bb%d1%8f-2016-%d0%b3%d0%be%d0%b4%d0%b0-%d1%81%d0%be%d1%81%d1%82%d0%be%d1%8f%d0%bb%d0%b0%d1%81%d1%8c-%d0%be%d0%bb%d0%b8%d0%bc%d0%bf%d0%b8%d0%b0%d0%b4%d0%b0-%d0%bf%d0%be/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b1%d0%b8%d0%b7%d0%bd%d0%b5%d1%81-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b1%d0%b0%d1%88%d0%ba%d0%b0%d1%80%d1%83%d1%83-%d1%84%d0%b0%d0%ba%d1%83%d0%bb/%d0%b4%d0%b5%d0%bd%d0%b5-%d1%82%d0%b0%d1%80%d0%b1%d0%b8%d1%8f-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b/",
+  "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b1%d0%b8%d0%b7%d0%bd%d0%b5%d1%81-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b1%d0%b0%d1%88%d0%ba%d0%b0%d1%80%d1%83%d1%83-%d1%84%d0%b0%d0%ba%d1%83%d0%bb/%d0%b4%d0%b5%d0%bd%d0%b5-%d1%82%d0%b0%d1%80%d0%b1%d0%b8%d1%8f-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d0%bd%d1%8b%d0%bd-%d0%be%d0%ba%d1%83%d1%83-%d0%bc%d0%b5%d1%82%d0%be%d0%b4%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b8%d1%88%d1%82%d0%b5%d1%80%d0%b8/",
+  "https://nsu.kg/%d0%b4%d0%b5%d0%bd%d0%b5-%d1%82%d0%b0%d1%80%d0%b1%d0%b8%d1%8f-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b%d0%bd%d1%8b%d0%bd-%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4/",
+  "https://nsu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d0%bd%d1%8b%d0%bd-%d0%b8%d0%b9%d0%b3%d0%b8%d0%bb%d0%b8%d0%ba%d1%82%d0%b5%d1%80%d0%b8/",
+  "https://nsu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b6%d1%b3%d0%bd%d2%af%d0%bd%d0%b4%d1%b3/",
+  "https://nsu.kg/%d0%be%d0%bc%d1%83%d1%80%d0%b0%d0%bb%d0%b8%d0%b5%d0%b2%d0%b0-%d0%b4%d0%b0%d0%bc%d0%b8%d1%80%d0%b0-%d0%ba%d0%b5%d0%bc%d0%b5%d0%bb%d0%be%d0%b2%d0%bd%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8/",
+  "https://nsu.kg/%d0%be%d1%80%d1%83%d1%81-%d1%82%d0%b8%d0%bb%d0%b8-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b0%d0%b4%d0%b0%d0%b1%d0%b8%d1%8f%d1%82%d1%8b-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b-2/",
+  "https://nsu.kg/%d0%be%d1%82%d0%be%d1%80%d0%be%d0%b2%d0%b0-%d1%81%d0%b0%d0%b9%d1%80%d0%b0%d0%b3%d1%83%d0%bb-%d1%82%d1%83%d1%80%d1%81%d1%83%d0%bd%d0%be%d0%b2%d0%bd%d0%b0-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0/",
+  "https://nsu.kg/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d0%bd%d1%83%d0%bd-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8/",
+  "https://nsu.kg/%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%82%d0%b5%d0%b3%d0%b8-%d0%be%d0%ba%d1%83%d1%83-%d0%bc%d0%b5%d1%82%d0%be%d0%b4%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b8%d1%88%d1%82/",
+  "https://nsu.kg/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d1%8b-%d0%b6%d0%b0%d0%bd%d0%b0-%d1%82%d1%83%d1%80%d0%b8%d0%b7%d0%bc-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80/",
+  "https://nsu.kg/%d1%8d%d0%bb-%d0%b0%d1%80%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b1%d0%b0%d0%b9%d0%bb%d0%b0%d0%bd%d1%8b%d1%88%d1%82%d0%b0%d1%80-%d0%b1%d3%a9%d0%bb%d2%af%d0%bc%d2%af/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d1%81%d1%82%d1%83%d0%b4%d0%b5%d0%bd%d1%82%d1%82%d0%b5%d1%80-%d0%bc%d0%b5%d0%bd%d0%b5%d0%bd/"
+ ],
+ "notes": "Сайт nsu.kg на WordPress, все страницы выгружены через REST API. На многих страницах кафедр составы даны только инициалами (Фамилия И.О.), такие записи помечены initials_only. Страницы курамы кафедр «Физика, математика жана информатика», «Дене тарбия» (кафедранын курамы) и «Экономика...» (окутуучулар) пустые или без имён; kit.nsu.kg/курамы без текста (вероятно, картинка). Студенты, приглашённые лекторы других вузов (КМУ им. Арабаева, АУЦА, Манас) и руководители диссертаций исключены. Названия кафедр даны на кыргызском, как на сайте. Новостные посты (wp/v2/posts) не разбирались систематически.",
+ "professors": [
+  {
+   "last_name": "Мамытбеков",
+   "first_name": "Басылбек Токтобекович",
+   "department": "Аскерге чейинки даярдык жана дене тарбия",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b4%d0%b5%d0%bd%d0%b5-%d1%82%d0%b0%d1%80%d0%b1%d0%b8%d1%8f-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b%d0%bd%d1%8b%d0%bd-%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4/"
+  },
+  {
+   "last_name": "Шааева",
+   "first_name": "Т. Н.",
+   "department": "Аскерге чейинки даярдык жана дене тарбия",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b4%d0%b5%d0%bd%d0%b5-%d1%82%d0%b0%d1%80%d0%b1%d0%b8%d1%8f-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b%d0%bd%d1%8b%d0%bd-%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эгимбаева",
+   "first_name": "Жаныл Болоткановна",
+   "department": "Кыргыз жана орус тилдери",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%be%d1%80%d1%83%d1%81-%d1%82%d0%b8%d0%bb%d0%b8-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b0%d0%b4%d0%b0%d0%b1%d0%b8%d1%8f%d1%82%d1%8b-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b-2/"
+  },
+  {
+   "last_name": "Аман кызы",
+   "first_name": "Бакытгүл",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/kyrgyz-tilderi-zhana-adabiyaty-kafedra/"
+  },
+  {
+   "last_name": "Аскар уулу",
+   "first_name": "Т.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/kyrgyz-tilderi-zhana-adabiyaty-kafedra/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бийгелдиева",
+   "first_name": "Н. А.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/kyrgyz-tilderi-zhana-adabiyaty-kafedra/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Дюшеева",
+   "first_name": "Т. С.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/kyrgyz-tilderi-zhana-adabiyaty-kafedra/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жантаев",
+   "first_name": "А. С.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/kyrgyz-tilderi-zhana-adabiyaty-kafedra/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Исакбаева",
+   "first_name": "З. Т.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/kyrgyz-tilderi-zhana-adabiyaty-kafedra/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Саргашкаев",
+   "first_name": "Ж. А.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/kyrgyz-tilderi-zhana-adabiyaty-kafedra/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сатылган кызы",
+   "first_name": "Г.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/kyrgyz-tilderi-zhana-adabiyaty-kafedra/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Усеналиева",
+   "first_name": "Г. С.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/kyrgyz-tilderi-zhana-adabiyaty-kafedra/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чолпонбаев",
+   "first_name": "А. К.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/kyrgyz-tilderi-zhana-adabiyaty-kafedra/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Өмүрканов",
+   "first_name": "Т. А.",
+   "department": "Кыргыз тили жана адабияты",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/kyrgyz-tilderi-zhana-adabiyaty-kafedra/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ажыбаев",
+   "first_name": "Дуйшөнбек Мокешович",
+   "department": "Маалыматтык технологиялар",
+   "title": "доцент",
+   "source_url": "https://kit.nsu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b6%d3%a9%d0%bd%d2%af%d0%bd%d0%b4%d3%a9/"
+  },
+  {
+   "last_name": "Акылбекова",
+   "first_name": "Искра Кубанычбековна",
+   "department": "Маалыматтык технологиялар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d0%b6%d0%b0%d0%bd%d0%b0-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Бейшеналиева",
+   "first_name": "Уулкан Усенбековна",
+   "department": "Маалыматтык технологиялар",
+   "title": "доцент",
+   "source_url": "https://kit.nsu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b6%d3%a9%d0%bd%d2%af%d0%bd%d0%b4%d3%a9/"
+  },
+  {
+   "last_name": "Кулманбетова",
+   "first_name": "Сагынбүбү Мусековна",
+   "department": "Маалыматтык технологиялар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d0%b6%d0%b0%d0%bd%d0%b0-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Мамырбаев",
+   "first_name": "Адилет Кылычбекович",
+   "department": "Маалыматтык технологиялар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d0%b6%d0%b0%d0%bd%d0%b0-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Молдалиева",
+   "first_name": "Мизера Искендеровна",
+   "department": "Маалыматтык технологиялар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d0%b6%d0%b0%d0%bd%d0%b0-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Чекирова",
+   "first_name": "Гульмира Кожобековна",
+   "department": "Маалыматтык технологиялар",
+   "title": "доцент",
+   "source_url": "https://kit.nsu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b6%d3%a9%d0%bd%d2%af%d0%bd%d0%b4%d3%a9/"
+  },
+  {
+   "last_name": "Арыпбекова",
+   "first_name": "Дария Дженишбековна",
+   "department": "Орус тили жана адабияты",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/fakultetter-aralyk-chet-tilder-kaf/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Билимбек кызы",
+   "first_name": "Нурзат",
+   "department": "Орус тили жана адабияты",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/fakultetter-aralyk-chet-tilder-kaf/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Жунушбаева",
+   "first_name": "Бактыгуль Мадисовна",
+   "department": "Орус тили жана адабияты",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/fakultetter-aralyk-chet-tilder-kaf/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Иманалиева",
+   "first_name": "Жылдыз Кусеиновна",
+   "department": "Орус тили жана адабияты",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b6%d1%b3%d0%bd%d2%af%d0%bd%d0%b4%d1%b3/"
+  },
+  {
+   "last_name": "Касаболотова",
+   "first_name": "Гульзат Асековна",
+   "department": "Орус тили жана адабияты",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/fakultetter-aralyk-chet-tilder-kaf/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "А. М.",
+   "department": "Орус тили жана адабияты",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b6%d1%b3%d0%bd%d2%af%d0%bd%d0%b4%d1%b3/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Нагорнова",
+   "first_name": "Н. И.",
+   "department": "Орус тили жана адабияты",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b6%d1%b3%d0%bd%d2%af%d0%bd%d0%b4%d1%b3/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Таштанкулова",
+   "first_name": "Женишкүл Жээнчороевна",
+   "department": "Орус тили жана адабияты",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/fakultetter-aralyk-chet-tilder-kaf/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Асанкулова",
+   "first_name": "М. К.",
+   "department": "Педагогика, тарых, окутуунун технологиялары",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d0%bd%d1%83%d0%bd-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бакиров",
+   "first_name": "М. К.",
+   "department": "Педагогика, тарых, окутуунун технологиялары",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d0%bd%d1%83%d0%bd-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бектурова",
+   "first_name": "Эмилия Орозобековна",
+   "department": "Педагогика, тарых, окутуунун технологиялары",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%82%d0%b0%d1%80%d1%8b%d1%85-%d0%b6%d0%b0%d0%bd%d0%b0-%d1%81%d0%be%d1%86%d0%b8%d0%b0%d0%bb%d0%b4%d1%8b%d0%ba-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b1%d0%b8/"
+  },
+  {
+   "last_name": "Иманалиев",
+   "first_name": "Сыдык Садырбаевич",
+   "department": "Педагогика, тарых, окутуунун технологиялары",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d0%bd%d1%83%d0%bd-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8/"
+  },
+  {
+   "last_name": "Касымова",
+   "first_name": "Г. А.",
+   "department": "Педагогика, тарых, окутуунун технологиялары",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d0%bd%d1%83%d0%bd-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мамбеталиев",
+   "first_name": "Жолдошбек Тезекбаевич",
+   "department": "Педагогика, тарых, окутуунун технологиялары",
+   "title": "старший преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d0%bd%d1%83%d0%bd-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8/%d1%80%d0%b5%d1%81%d0%bf%d1%83%d0%b1%d0%bb%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%81%d0%b8%d0%bc%d0%bf%d0%be%d0%b7%d0%b8%d1%83%d0%bc/"
+  },
+  {
+   "last_name": "Омуров",
+   "first_name": "Айбек Нарынбекович",
+   "department": "Педагогика, тарых, окутуунун технологиялары",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d0%bd%d1%83%d0%bd-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8/%d1%80%d0%b5%d1%81%d0%bf%d1%83%d0%b1%d0%bb%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%81%d0%b8%d0%bc%d0%bf%d0%be%d0%b7%d0%b8%d1%83%d0%bc/"
+  },
+  {
+   "last_name": "Сартбекова",
+   "first_name": "Н. К.",
+   "department": "Педагогика, тарых, окутуунун технологиялары",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d0%bd%d1%83%d0%bd-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сияев",
+   "first_name": "Т. М.",
+   "department": "Педагогика, тарых, окутуунун технологиялары",
+   "title": "профессор",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d0%bd%d1%83%d0%bd-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Султаналиева",
+   "first_name": "Шайыркүл Карыпбековна",
+   "department": "Педагогика, тарых, окутуунун технологиялары",
+   "title": "профессор",
+   "source_url": "https://nsu.kg/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d0%bd%d1%83%d0%bd-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8/"
+  },
+  {
+   "last_name": "Эсеналиева",
+   "first_name": "Гүлжамал Өмүракуновна",
+   "department": "Педагогика, тарых, окутуунун технологиялары",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/"
+  },
+  {
+   "last_name": "Жусупбекова",
+   "first_name": "А. Т.",
+   "department": "Табигый-илимдик дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%82%d0%b0%d0%b1%d0%b8%d0%b3%d0%b8%d0%b9-%d0%b8%d0%bb%d0%b8%d0%bc%d0%b4%d0%b8%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4/%d0%b8%d0%bb%d0%b8%d0%bc%d0%b8%d0%b9-%d0%b8%d1%88-%d1%87%d0%b0%d1%80%d0%b0/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ибраева",
+   "first_name": "Назгуль Илиязовна",
+   "department": "Табигый-илимдик дисциплиналар",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b1%d0%b8%d0%b7%d0%bd%d0%b5%d1%81-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b1%d0%b0%d1%88%d0%ba%d0%b0%d1%80%d1%83%d1%83-%d1%84%d0%b0%d0%ba%d1%83%d0%bb/%d0%b4%d0%b5%d0%bd%d0%b5-%d1%82%d0%b0%d1%80%d0%b1%d0%b8%d1%8f-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0%d1%81%d1%8b/"
+  },
+  {
+   "last_name": "Кыдыралиев",
+   "first_name": "К. К.",
+   "department": "Табигый-илимдик дисциплиналар",
+   "title": "старший преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%82%d0%b0%d0%b1%d0%b8%d0%b3%d0%b8%d0%b9-%d0%b8%d0%bb%d0%b8%d0%bc%d0%b4%d0%b8%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4/%d0%b8%d0%bb%d0%b8%d0%bc%d0%b8%d0%b9-%d0%b8%d1%88-%d1%87%d0%b0%d1%80%d0%b0/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Омурова",
+   "first_name": "К. О.",
+   "department": "Табигый-илимдик дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%82%d0%b0%d0%b1%d0%b8%d0%b3%d0%b8%d0%b9-%d0%b8%d0%bb%d0%b8%d0%bc%d0%b4%d0%b8%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4/%d0%b8%d0%bb%d0%b8%d0%bc%d0%b8%d0%b9-%d0%b8%d1%88-%d1%87%d0%b0%d1%80%d0%b0/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Султакаева",
+   "first_name": "Н. М.",
+   "department": "Табигый-илимдик дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%82%d0%b0%d0%b1%d0%b8%d0%b3%d0%b8%d0%b9-%d0%b8%d0%bb%d0%b8%d0%bc%d0%b4%d0%b8%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4/%d0%b8%d0%bb%d0%b8%d0%bc%d0%b8%d0%b9-%d0%b8%d1%88-%d1%87%d0%b0%d1%80%d0%b0/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Такырбашова",
+   "first_name": "З. К.",
+   "department": "Табигый-илимдик дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%82%d0%b0%d0%b1%d0%b8%d0%b3%d0%b8%d0%b9-%d0%b8%d0%bb%d0%b8%d0%bc%d0%b4%d0%b8%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4/%d0%b8%d0%bb%d0%b8%d0%bc%d0%b8%d0%b9-%d0%b8%d1%88-%d1%87%d0%b0%d1%80%d0%b0/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Турдалиев",
+   "first_name": "И. К.",
+   "department": "Табигый-илимдик дисциплиналар",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%82%d0%b0%d0%b1%d0%b8%d0%b3%d0%b8%d0%b9-%d0%b8%d0%bb%d0%b8%d0%bc%d0%b4%d0%b8%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдылдаев",
+   "first_name": "Обозбек Талипович",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Асан уулу",
+   "first_name": "Кубат",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/%d0%bc%d0%b0%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%82%d1%83%d1%80%d0%b0/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/"
+  },
+  {
+   "last_name": "Асаналиева",
+   "first_name": "У. А.",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%be%d1%82%d0%be%d1%80%d0%be%d0%b2%d0%b0-%d1%81%d0%b0%d0%b9%d1%80%d0%b0%d0%b3%d1%83%d0%bb-%d1%82%d1%83%d1%80%d1%81%d1%83%d0%bd%d0%be%d0%b2%d0%bd%d0%b0-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Байбагышов",
+   "first_name": "Эрмек Муратканович",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/%d0%bc%d0%b0%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%82%d1%83%d1%80%d0%b0/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/"
+  },
+  {
+   "last_name": "Бекежанов",
+   "first_name": "Марлис Мелисович",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/%d0%bc%d0%b0%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%82%d1%83%d1%80%d0%b0/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/"
+  },
+  {
+   "last_name": "Бостонкулова",
+   "first_name": "Жылдыз Сагынбековна",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Дегембаева",
+   "first_name": "Надира Калчаевна",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Дюшекеев",
+   "first_name": "Кубанычбек Дооткулович",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Жапаров",
+   "first_name": "Нарынбек Турдалиевич",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Казыбекова",
+   "first_name": "Бурулкүл Асамидиновна",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Макеев",
+   "first_name": "Арзымкан Касымович",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/"
+  },
+  {
+   "last_name": "Мамбеталиева",
+   "first_name": "Кундуз Жамалбековна",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Молдалиев",
+   "first_name": "Эгенберди Дуйшекеевич",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Оторова",
+   "first_name": "Сайрагул Турсуновна",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Стамов",
+   "first_name": "А. К.",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сулайманов",
+   "first_name": "Бакытбек Базарбаевич",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Сыдыков",
+   "first_name": "Жолдош Сыдыкович",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/%d0%bc%d0%b0%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%82%d1%83%d1%80%d0%b0/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/"
+  },
+  {
+   "last_name": "Тазабек уулу",
+   "first_name": "Айбек",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Турусбеков",
+   "first_name": "Чойбек Жеңишович",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Чоробаева",
+   "first_name": "Нарынкүл Абдыкалыковна",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/%d0%bc%d0%b0%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%82%d1%83%d1%80%d0%b0/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/"
+  },
+  {
+   "last_name": "Чоробек кызы",
+   "first_name": "Айзат",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Чымырбаев",
+   "first_name": "Алымкул Бусурманкулович",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Шерматов",
+   "first_name": "Сагынбек Макеленович",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/professorduk-okutuuchuluk-kuram/"
+  },
+  {
+   "last_name": "Шерматова",
+   "first_name": "Илмира Кубанычбековна",
+   "department": "Техникалык, агрардык жана экологиялык дисциплиналар",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8-2/%d0%b0%d0%b3%d1%80%d0%b0%d1%80%d0%b4%d1%8b%d0%ba-%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8%d0%bd%d0%b0%d0%bb%d0%b0%d1%80-%d0%ba-2/%d0%bc%d0%b0%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%82%d1%83%d1%80%d0%b0/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/"
+  },
+  {
+   "last_name": "Биймурсаева",
+   "first_name": "Бурулбүбү Молдосалиевна",
+   "department": "Физика, математика жана информатика",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%84%d0%b8%d0%b7%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/"
+  },
+  {
+   "last_name": "Омуралиева",
+   "first_name": "М. Н.",
+   "department": "Физика, математика жана информатика",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b0-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/%d1%84%d0%b8%d0%b7%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/%d0%b8%d1%88%d0%bc%d0%b5%d1%80%d0%b4%d2%af%d2%af%d0%bb%d2%af%d0%b3%d2%af/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бекбоева",
+   "first_name": "М. А.",
+   "department": "Финансы и менеджмент",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d1%8d%d0%bb-%d0%b0%d1%80%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b1%d0%b0%d0%b9%d0%bb%d0%b0%d0%bd%d1%8b%d1%88%d1%82%d0%b0%d1%80-%d0%b1%d3%a9%d0%bb%d2%af%d0%bc%d2%af/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d1%81%d1%82%d1%83%d0%b4%d0%b5%d0%bd%d1%82%d1%82%d0%b5%d1%80-%d0%bc%d0%b5%d0%bd%d0%b5%d0%bd/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сарбагышова",
+   "first_name": "Айгуль Эсеновна",
+   "department": "Финансы и менеджмент",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d1%8d%d0%bb-%d0%b0%d1%80%d0%b0%d0%bb%d1%8b%d0%ba-%d0%b1%d0%b0%d0%b9%d0%bb%d0%b0%d0%bd%d1%8b%d1%88%d1%82%d0%b0%d1%80-%d0%b1%d3%a9%d0%bb%d2%af%d0%bc%d2%af/%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d0%b0%d1%80-%d1%81%d1%82%d1%83%d0%b4%d0%b5%d0%bd%d1%82%d1%82%d0%b5%d1%80-%d0%bc%d0%b5%d0%bd%d0%b5%d0%bd/"
+  },
+  {
+   "last_name": "Абразакова",
+   "first_name": "М. У.",
+   "department": "Чет тилдер",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/german-tilderi-kafedrasy/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Айдаралиева",
+   "first_name": "Айнура Сабыровна",
+   "department": "Чет тилдер",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/german-tilderi-kafedrasy/"
+  },
+  {
+   "last_name": "Акбекова",
+   "first_name": "Н. М.",
+   "department": "Чет тилдер",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/german-tilderi-kafedrasy/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Аттокурова",
+   "first_name": "С. А.",
+   "department": "Чет тилдер",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/german-tilderi-kafedrasy/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жапарова",
+   "first_name": "К. Э.",
+   "department": "Чет тилдер",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/german-tilderi-kafedrasy/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мамбеталиева",
+   "first_name": "А. М.",
+   "department": "Чет тилдер",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/german-tilderi-kafedrasy/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токтомамбетова",
+   "first_name": "Ж. А.",
+   "department": "Чет тилдер",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f-%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d0%b8/german-tilderi-kafedrasy/%d0%bf%d1%80%d0%be%d1%84%d0%b5%d1%81%d1%81%d0%be%d1%80%d0%b4%d1%83%d0%ba-%d0%be%d0%ba%d1%83%d1%82%d1%83%d1%83%d1%87%d1%83%d0%bb%d1%83%d0%ba-%d0%ba%d1%83%d1%80%d0%b0%d0%bc/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Андабеков",
+   "first_name": "Нурбек Сейитказиевич",
+   "department": "Экономика, туризм жана башкаруу",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d1%8b-%d0%b6%d0%b0%d0%bd%d0%b0-%d1%82%d1%83%d1%80%d0%b8%d0%b7%d0%bc-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80/"
+  },
+  {
+   "last_name": "Бекирова",
+   "first_name": "Динара Осмоналиевна",
+   "department": "Экономика, туризм жана башкаруу",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b1%d0%b8%d0%b7%d0%bd%d0%b5%d1%81-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b1%d0%b0%d1%88%d0%ba%d0%b0%d1%80%d1%83%d1%83-%d1%84%d0%b0%d0%ba%d1%83%d0%bb/%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d0%b4%d0%b8%d0%ba-%d1%8d%d1%81%d0%b5%d0%bf-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%bc%d0%b5%d0%bd/"
+  },
+  {
+   "last_name": "Исраилов",
+   "first_name": "Эрик Мукашович",
+   "department": "Экономика, туризм жана башкаруу",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d1%8b-%d0%b6%d0%b0%d0%bd%d0%b0-%d1%82%d1%83%d1%80%d0%b8%d0%b7%d0%bc-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80/"
+  },
+  {
+   "last_name": "Исраилов",
+   "first_name": "М. И.",
+   "department": "Экономика, туризм жана башкаруу",
+   "title": "профессор",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b1%d0%b8%d0%b7%d0%bd%d0%b5%d1%81-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b1%d0%b0%d1%88%d0%ba%d0%b0%d1%80%d1%83%d1%83-%d1%84%d0%b0%d0%ba%d1%83%d0%bb/%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d0%b4%d0%b8%d0%ba-%d1%8d%d1%81%d0%b5%d0%bf-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%bc%d0%b5%d0%bd/%d0%b0%d1%87%d1%8b%d0%ba-%d1%81%d0%b0%d0%b1%d0%b0%d0%ba/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Койчуманова",
+   "first_name": "И. Т.",
+   "department": "Экономика, туризм жана башкаруу",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b1%d0%b8%d0%b7%d0%bd%d0%b5%d1%81-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b1%d0%b0%d1%88%d0%ba%d0%b0%d1%80%d1%83%d1%83-%d1%84%d0%b0%d0%ba%d1%83%d0%bb/%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d0%b4%d0%b8%d0%ba-%d1%8d%d1%81%d0%b5%d0%bf-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%bc%d0%b5%d0%bd/21-%d0%b0%d0%bf%d1%80%d0%b5%d0%bb%d1%8f-2016-%d0%b3%d0%be%d0%b4%d0%b0-%d1%81%d0%be%d1%81%d1%82%d0%be%d1%8f%d0%bb%d0%b0%d1%81%d1%8c-%d0%be%d0%bb%d0%b8%d0%bc%d0%bf%d0%b8%d0%b0%d0%b4%d0%b0-%d0%bf%d0%be/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Нуралиева",
+   "first_name": "Н. М.",
+   "department": "Экономика, туризм жана башкаруу",
+   "title": "доцент",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b1%d0%b8%d0%b7%d0%bd%d0%b5%d1%81-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b1%d0%b0%d1%88%d0%ba%d0%b0%d1%80%d1%83%d1%83-%d1%84%d0%b0%d0%ba%d1%83%d0%bb/%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d0%b4%d0%b8%d0%ba-%d1%8d%d1%81%d0%b5%d0%bf-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%bc%d0%b5%d0%bd/21-%d0%b0%d0%bf%d1%80%d0%b5%d0%bb%d1%8f-2016-%d0%b3%d0%be%d0%b4%d0%b0-%d1%81%d0%be%d1%81%d1%82%d0%be%d1%8f%d0%bb%d0%b0%d1%81%d1%8c-%d0%be%d0%bb%d0%b8%d0%bc%d0%bf%d0%b8%d0%b0%d0%b4%d0%b0-%d0%bf%d0%be/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Саргашкаев",
+   "first_name": "Э. А.",
+   "department": "Экономика, туризм жана башкаруу",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b1%d0%b8%d0%b7%d0%bd%d0%b5%d1%81-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b1%d0%b0%d1%88%d0%ba%d0%b0%d1%80%d1%83%d1%83-%d1%84%d0%b0%d0%ba%d1%83%d0%bb/%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d0%b4%d0%b8%d0%ba-%d1%8d%d1%81%d0%b5%d0%bf-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%bc%d0%b5%d0%bd/%d0%b0%d1%87%d1%8b%d0%ba-%d1%81%d0%b0%d0%b1%d0%b0%d0%ba/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Супатаева",
+   "first_name": "Г. Т.",
+   "department": "Экономика, туризм жана башкаруу",
+   "title": "преподаватель",
+   "source_url": "https://nsu.kg/%d0%b1%d0%b8%d0%bb%d0%b8%d0%bc-%d0%b1%d0%b5%d1%80%d2%af%d2%af/fakultetter/%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b1%d0%b8%d0%b7%d0%bd%d0%b5%d1%81-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%b1%d0%b0%d1%88%d0%ba%d0%b0%d1%80%d1%83%d1%83-%d1%84%d0%b0%d0%ba%d1%83%d0%bb/%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d0%b4%d0%b8%d0%ba-%d1%8d%d1%81%d0%b5%d0%bf-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b0-%d0%b6%d0%b0%d0%bd%d0%b0-%d0%bc%d0%b5%d0%bd/%d0%b0%d1%87%d1%8b%d0%ba-%d1%81%d0%b0%d0%b1%d0%b0%d0%ba/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Өмүралиева",
+   "first_name": "Дамира Кемеловна",
+   "department": "Экономика, туризм жана башкаруу",
+   "title": "профессор",
+   "source_url": "https://nsu.kg/%d0%be%d0%bc%d1%83%d1%80%d0%b0%d0%bb%d0%b8%d0%b5%d0%b2%d0%b0-%d0%b4%d0%b0%d0%bc%d0%b8%d1%80%d0%b0-%d0%ba%d0%b5%d0%bc%d0%b5%d0%bb%d0%be%d0%b2%d0%bd%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8/"
+  }
+ ]
+}

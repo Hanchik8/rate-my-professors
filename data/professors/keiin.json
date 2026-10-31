@@ -1,0 +1,30 @@
+{
+ "code": "keiin",
+ "university": "Кейин Интернэшнл Институт (КИИ, Keiin International Institute), Ивановка",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://keiin.kg/wp-json/wp/v2/pages (44 страницы)",
+  "https://keiin.kg/wp-json/wp/v2/posts (1 запись)",
+  "https://keiin.kg/администрация/ и https://keiin.kg/en/administration-2/ (текста нет, вероятно картинки)",
+  "https://keiin.kg/en/mcinfo/, https://keiin.kg/it/ (страницы программ без имён)",
+  "https://aaopo.kg/uploads/topics/17439343929377.pdf",
+  "https://ictai.knu.kg/files/storage/app/teams/files/file_699559aa70dcd.pdf"
+ ],
+ "notes": "На официальном сайте keiin.kg нет страниц с преподавателями: страницы программ без имён, «Администрация» без текста (имена, видимо, на изображениях), wp-json отдаёт 1 запись блога. Две преподавательницы взяты из официального списка внешних экспертов агентства аккредитации ААОПО (aaopo.kg), где местом работы указан «Международный институт КЕЙИН», направление «Иностранный язык»; должность там не указана, title = преподаватель. Мусаев Бакытбек Малаевич (резюме на ictai.knu.kg: ст. преподаватель КИИ в 2021–2025) не включён, т.к. это прошлое место работы. Резюме на careerist.ru и профили LinkedIn не использовались как неофициальные.",
+ "professors": [
+  {
+   "last_name": "Кичатова",
+   "first_name": "Галина Викторовна",
+   "department": "Иностранный язык",
+   "title": "преподаватель",
+   "source_url": "https://aaopo.kg/uploads/topics/17439343929377.pdf"
+  },
+  {
+   "last_name": "Салимжанова",
+   "first_name": "Фания Вагизовна",
+   "department": "Иностранный язык",
+   "title": "преподаватель",
+   "source_url": "https://aaopo.kg/uploads/topics/17439343929377.pdf"
+  }
+ ]
+}

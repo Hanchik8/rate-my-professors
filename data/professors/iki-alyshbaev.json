@@ -1,0 +1,45 @@
+{
+ "code": "iki-alyshbaev",
+ "university": "Иссык-Кульский технико-экономический институт кооперации им. академика Ж. Алышбаева (ИИК), Каракол",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "web_search: сайт вуза не найден (reestr.kg, statsnet.co, erasmusplus.kg список вузов, wikimapia: только реквизиты)",
+  "https://arch.kyrlibnet.kg/?nadd=2338&npage=download",
+  "https://msukarakol.ucoz.org/index/vuzy/0-67",
+  "https://famous-scientists.ru/anketa/tultukov-bakytbek-tenirbergenovich-14888"
+ ],
+ "notes": "Официального сайта у института нет (поиск по названию даёт только реестры юрлиц, список вузов Эразмус+ и карту). Найдены: три автора статьи в архиве Кыргызской библиотечной сети с аффилиацией «Ысык-Кульский институт кооперации им. Ж. Алышбаева» (год статьи не указан, только инициалы, должности не указаны) и декан Кулдуков Бакыт на странице вузов сайта мэрии Каракола (отчество не указано). Ректор Кызаев А.К. не включён как руководитель. Данные отрывочные и могут быть устаревшими; в 2015 г. МОН рекомендовал преобразовать вуз в СПО (Sputnik), текущий статус «перерегистрировано».",
+ "professors": [
+  {
+   "last_name": "Кулдуков",
+   "first_name": "Бакыт",
+   "department": "Деканат",
+   "title": "преподаватель",
+   "source_url": "https://msukarakol.ucoz.org/index/vuzy/0-67"
+  },
+  {
+   "last_name": "Абдылдаев",
+   "first_name": "Э. К.",
+   "department": "Не указана",
+   "title": "преподаватель",
+   "source_url": "https://arch.kyrlibnet.kg/?nadd=2338&npage=download",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдылдаев",
+   "first_name": "Ч. Э.",
+   "department": "Не указана",
+   "title": "преподаватель",
+   "source_url": "https://arch.kyrlibnet.kg/?nadd=2338&npage=download",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тултуков",
+   "first_name": "Б. Т.",
+   "department": "Не указана",
+   "title": "преподаватель",
+   "source_url": "https://arch.kyrlibnet.kg/?nadd=2338&npage=download",
+   "initials_only": true
+  }
+ ]
+}
