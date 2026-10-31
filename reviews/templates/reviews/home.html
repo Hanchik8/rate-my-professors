@@ -21,6 +21,14 @@
   </select>
   <button type="submit" aria-label="{% translate 'Найти' %}">{% translate "Найти" %}</button>
 </form>
+{% if q %}
+{% querystring q=None page=None as reset_query %}
+{% firstof page_obj.paginator.count results|length as total %}
+<div class="search-summary">
+  <h2>{% blocktranslate with query=q total=total %}Результаты по запросу «{{ query }}»: {{ total }}{% endblocktranslate %}</h2>
+  <a class="reset-search" href="{% url 'home' %}{% if reset_query != '?' %}{{ reset_query }}{% endif %}">{% translate "Сбросить поиск" %}</a>
+</div>
+{% endif %}
 <ol class="cards">
   {% for r in results %}
   {% include "reviews/_professor_card.html" with r=r show_school=True show_difficulty=True %}

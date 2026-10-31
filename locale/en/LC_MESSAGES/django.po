@@ -926,3 +926,10 @@ msgstr "Compare professors by rating, difficulty and number of reviews."
 
 msgid "Для сравнения выберите от 2 до 3 преподавателей."
 msgstr "Choose 2 to 3 professors to compare."
+
+#, python-format
+msgid "Результаты по запросу «%(query)s»: %(total)s"
+msgstr "Results for “%(query)s”: %(total)s"
+
+msgid "Сбросить поиск"
+msgstr "Reset search"
