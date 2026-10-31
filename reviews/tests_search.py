@@ -619,8 +619,12 @@ class HomePaginationEmptyContractMixin(_ListedRepoMixin):
         self.assertIsNone(response.context["page_obj"])
         self.assertNotContains(response, 'class="pagination"')
         self.assertContains(response, "Ничего не нашлось")
-        self.assertContains(response, "Попробуйте сократить запрос или изменить фильтры.")
-        self.assertContains(response, "Сбросить фильтры")
+        self.assertContains(
+            response,
+            "По запросу «несуществующийпреподаватель» никого не нашли, "
+            "проверьте написание",
+        )
+        self.assertContains(response, "Сбросить поиск")
         self.assertContains(response, f'href="{reverse("home")}"')
 
     def test_empty_search_with_any_page_parameter_stays_empty(self):
@@ -777,11 +781,23 @@ class HomeEmptyStateRenderTests(_MemoryRepoTestCase):
     """An empty search result renders a hint and a link that resets filters."""
 
     EMPTY_STATE_TEXTS = {
-        "ru": ("Ничего не нашлось", "Попробуйте сократить запрос или изменить фильтры.",
+        "ru": ("Ничего не нашлось",
+               "По запросу «неттакого» никого не нашли, проверьте написание",
+               "Сбросить поиск"),
+        "ky": ("Эч нерсе табылган жок",
+               "«неттакого» суроосу боюнча эч ким табылган жок, жазылышын текшериңиз",
+               "Издөөнү тазалоо"),
+        "en": ("Nothing found",
+               "We couldn't find anyone for “неттакого”, check the spelling",
+               "Reset search"),
+    }
+
+    FILTER_EMPTY_TEXTS = {
+        "ru": ("Ничего не нашлось", "С этими фильтрами никого нет",
                "Сбросить фильтры"),
-        "ky": ("Эч нерсе табылган жок", "Суроону кыскартып же чыпкаларды өзгөртүп көрүңүз.",
+        "ky": ("Эч нерсе табылган жок", "Бул чыпкаларга эч ким туура келбейт",
                "Чыпкаларды тазалоо"),
-        "en": ("Nothing found", "Try a shorter query or change the filters.",
+        "en": ("Nothing found", "No one matches these filters",
                "Reset filters"),
     }
 
@@ -812,8 +828,32 @@ class HomeEmptyStateRenderTests(_MemoryRepoTestCase):
         self.assertEqual(list(response.context["results"]), [])
         self.assertContains(response, 'role="status"')
         self.assertContains(response, "Ничего не нашлось")
-        self.assertContains(response, "Попробуйте сократить запрос или изменить фильтры.")
-        self.assertContains(response, ">Сбросить фильтры</a>")
+        self.assertContains(
+            response,
+            "По запросу «неттакого» никого не нашли, проверьте написание",
+        )
+        self.assertContains(response, ">Сбросить поиск</a>")
+
+    def test_empty_state_distinguishes_query_from_filters(self):
+        query_response = self._empty_response()
+
+        self.assertContains(
+            query_response,
+            "По запросу «неттакого» никого не нашли, проверьте написание",
+        )
+        self.assertContains(query_response, ">Сбросить поиск</a>")
+        self.assertNotContains(query_response, "С этими фильтрами никого нет")
+        self.assertNotContains(query_response, ">Сбросить фильтры</a>")
+
+        filter_response = self.client.get(reverse("home"), {"city": "Атлантида"})
+
+        self.assertContains(filter_response, "С этими фильтрами никого нет")
+        self.assertContains(filter_response, ">Сбросить фильтры</a>")
+        self.assertNotContains(
+            filter_response,
+            "По запросу «неттакого» никого не нашли, проверьте написание",
+        )
+        self.assertNotContains(filter_response, ">Сбросить поиск</a>")
 
     def test_reset_link_targets_home_without_query_parameters(self):
         response = self._empty_response(city="Ош", department="Несуществующая")

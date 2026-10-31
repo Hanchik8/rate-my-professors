@@ -119,6 +119,13 @@ def home(request):
         )},
     )
     page_results, page_obj = _paginate_request(request, data["results"])
+    has_filters = bool(school.strip() or city.strip() or department.strip())
+    if has_filters:
+        empty_state = "filters"
+    elif q.strip():
+        empty_state = "query"
+    else:
+        empty_state = ""
     return render(request, "reviews/home.html", {
         "q": q, "school": school, "city": city,
         "department": department, "sort": sort,
@@ -127,6 +134,7 @@ def home(request):
         "departments": options["departments"],
         "results": page_results,
         "page_obj": page_obj,
+        "empty_state": empty_state,
     })
 
 

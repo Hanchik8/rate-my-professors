@@ -313,6 +313,13 @@ msgstr "Try a shorter query or change the filters."
 msgid "Сбросить фильтры"
 msgstr "Reset filters"
 
+#, python-format
+msgid "По запросу «%(query)s» никого не нашли, проверьте написание"
+msgstr "We couldn't find anyone for “%(query)s”, check the spelling"
+
+msgid "С этими фильтрами никого нет"
+msgstr "No one matches these filters"
+
 msgid "Первая"
 msgstr "First"
 

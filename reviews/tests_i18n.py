@@ -374,9 +374,15 @@ class HomeTemplateTranslationTests(TestCase):
     }
 
     EMPTY_STATE = {
-        "ru": ("Ничего не нашлось", "Попробуйте сократить запрос или изменить фильтры.", "Сбросить фильтры"),
-        "ky": ("Эч нерсе табылган жок", "Суроону кыскартып же чыпкаларды өзгөртүп көрүңүз.", "Чыпкаларды тазалоо"),
-        "en": ("Nothing found", "Try a shorter query or change the filters.", "Reset filters"),
+        "ru": ("Ничего не нашлось",
+               "По запросу «zzz-no-such-professor» никого не нашли, проверьте написание",
+               "Сбросить поиск"),
+        "ky": ("Эч нерсе табылган жок",
+               "«zzz-no-such-professor» суроосу боюнча эч ким табылган жок, жазылышын текшериңиз",
+               "Издөөнү тазалоо"),
+        "en": ("Nothing found",
+               "We couldn't find anyone for “zzz-no-such-professor”, check the spelling",
+               "Reset search"),
     }
 
     def test_home_template_wraps_all_literal_text(self):

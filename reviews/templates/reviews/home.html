@@ -35,8 +35,16 @@
   {% empty %}
   <li class="empty empty-state" role="status">
     <strong class="empty-state-title">{% translate "Ничего не нашлось" %}</strong>
+    {% if empty_state == "query" %}
+    <p>{% blocktranslate with query=q %}По запросу «{{ query }}» никого не нашли, проверьте написание{% endblocktranslate %}</p>
+    <a class="empty-state-action" href="{% url 'home' %}">{% translate "Сбросить поиск" %}</a>
+    {% elif empty_state == "filters" %}
+    <p>{% translate "С этими фильтрами никого нет" %}</p>
+    <a class="empty-state-action" href="{% url 'home' %}">{% translate "Сбросить фильтры" %}</a>
+    {% else %}
     <p>{% translate "Попробуйте сократить запрос или изменить фильтры." %}</p>
     <a class="empty-state-action" href="{% url 'home' %}">{% translate "Сбросить фильтры" %}</a>
+    {% endif %}
   </li>
   {% endfor %}
 </ol>
