@@ -3,24 +3,24 @@
    (see reviews/tests.py: DesignContrastTests). */
 :root{
   color-scheme:light dark;
-  --bg:#faf8ff;
+  --bg:#fafafa;
   --surface:#ffffff;
-  --ink:#101828;
-  --muted:#475467;
-  --line:#ebe5fb;
-  --line-strong:#98a2b3;
-  --accent:#7c3aed;
-  --accent-strong:#6d28d9;
+  --ink:#0a0a0a;
+  --muted:#525252;
+  --line:#e5e5e5;
+  --line-strong:#a3a3a3;
+  --accent:#111111;
+  --accent-strong:#000000;
   --on-accent:#ffffff;
   --good-bg:#d3f8df; --good-ink:#05603a;
   --mid-bg:#fef0c7;  --mid-ink:#93370d;
   --bad-bg:#fee4e2;  --bad-ink:#b42318;
-  --none-bg:#eef2f6; --none-ink:#475467;
+  --none-bg:#f1f1f1; --none-ink:#525252;
   --star:#b54708;
-  --star-empty:#cdd5df;
-  --focus:#7c3aed;
-  --focus-ring:rgb(124 58 237 / .35);
-  --top-bg:rgb(255 255 255 / .88);
+  --star-empty:#d4d4d4;
+  --focus:#111111;
+  --focus-ring:rgb(17 17 17 / .3);
+  --top-bg:rgb(255 255 255 / .9);
   --shadow:0 1px 2px rgb(16 24 40 / .06),0 1px 3px rgb(16 24 40 / .1);
   --shadow-lg:0 12px 24px -6px rgb(16 24 40 / .12);
   --radius:.75rem;
@@ -37,24 +37,24 @@
 /* Dark theme: follows the OS/browser preference, no toggle or JS needed. */
 @media (prefers-color-scheme:dark){
   :root{
-    --bg:#120c22;
-    --surface:#1c1530;
-    --ink:#e8ecf4;
-    --muted:#a8b3c7;
-    --line:#352a52;
-    --line-strong:#5b6b8c;
-    --accent:#c4b5fd;
-    --accent-strong:#ddd6fe;
-    --on-accent:#101828;
+    --bg:#0a0a0a;
+    --surface:#171717;
+    --ink:#f5f5f5;
+    --muted:#a3a3a3;
+    --line:#2e2e2e;
+    --line-strong:#6b6b6b;
+    --accent:#f5f5f5;
+    --accent-strong:#ffffff;
+    --on-accent:#0a0a0a;
     --good-bg:#0d3b23; --good-ink:#6ee7b7;
     --mid-bg:#422a06;  --mid-ink:#fcd34d;
     --bad-bg:#4c1210;  --bad-ink:#fca5a5;
-    --none-bg:#1e2938; --none-ink:#a8b3c7;
+    --none-bg:#1f1f1f; --none-ink:#a3a3a3;
     --star:#fbbf24;
-    --star-empty:#3c4a63;
-    --focus:#c4b5fd;
-    --focus-ring:rgb(196 181 253 / .45);
-    --top-bg:rgb(28 21 48 / .88);
+    --star-empty:#404040;
+    --focus:#f5f5f5;
+    --focus-ring:rgb(245 245 245 / .4);
+    --top-bg:rgb(23 23 23 / .9);
     --shadow:0 1px 2px rgb(0 0 0 / .4),0 1px 3px rgb(0 0 0 / .5);
     --shadow-lg:0 12px 24px -6px rgb(0 0 0 / .6);
   }
