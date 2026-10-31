@@ -212,7 +212,7 @@ SECURE_REFERRER_POLICY = os.environ.get(
     "SECURE_REFERRER_POLICY", "strict-origin-when-cross-origin"
 )
 
-# ProfLens does not use these browser features, so disable them by default.
+# PrepodRate does not use these browser features, so disable them by default.
 PERMISSIONS_POLICY = "camera=(), microphone=(), geolocation=()"
 
 # Minimal Content-Security-Policy: only same-origin resources are allowed and

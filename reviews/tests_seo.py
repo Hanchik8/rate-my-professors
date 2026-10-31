@@ -218,7 +218,7 @@ class ErrorPageTests(TestCase):
 
 
 DEFAULT_DESCRIPTION = (
-    "ProfLens — отзывы о преподавателях вузов Кыргызстана: "
+    "PrepodRate — отзывы о преподавателях вузов Кыргызстана: "
     "рейтинги, сложность курсов и советы студентов."
 )
 
@@ -251,11 +251,11 @@ class MetaTagsTestMixin:
 class HomeMetaTagsTests(MetaTagsTestMixin, TestCase):
     def test_default_meta_tags_are_rendered(self):
         html = self.html(reverse("home"))
-        self.assertIn("<title>ProfLens</title>", html)
+        self.assertIn("<title>PrepodRate</title>", html)
         self.assertIn(
             f'<meta name="description" content="{DEFAULT_DESCRIPTION}">', html
         )
-        self.assertIn('<meta property="og:title" content="ProfLens">', html)
+        self.assertIn('<meta property="og:title" content="PrepodRate">', html)
         self.assertIn(
             f'<meta property="og:description" content="{DEFAULT_DESCRIPTION}">', html
         )
@@ -284,7 +284,7 @@ class ProfessorMetaTagsTests(MetaTagsTestMixin, TestCase):
         school = self.repo.school(prof.school_id)
         html = self.html(reverse("professor", args=[prof.slug]))
 
-        title = f"{prof.full_name} — ProfLens"
+        title = f"{prof.full_name} — PrepodRate"
         description = (
             f"Отзывы студентов о преподавателе {prof.full_name} "
             f"({prof.department}, {school.name}): рейтинг, сложность и советы."
@@ -300,7 +300,7 @@ class SchoolMetaTagsTests(MetaTagsTestMixin, TestCase):
         school = self.repo.schools()[0]
         html = self.html(reverse("school_detail", args=[school.slug]))
 
-        title = f"{school.name} — ProfLens"
+        title = f"{school.name} — PrepodRate"
         description = (
             f"Преподаватели и отзывы студентов вуза {school.name} "
             f"({school.city}): рейтинги, кафедры и советы."

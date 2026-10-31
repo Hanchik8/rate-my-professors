@@ -114,4 +114,4 @@ class AboutI18nTests(TestCase):
             with self.subTest(language=lang):
                 response = self.client.get(reverse("about"), HTTP_ACCEPT_LANGUAGE=lang)
                 self.assertContains(response, heading, msg_prefix=f"heading '{heading}' not found for {lang}")
-                self.assertContains(response, "ProfLens")
+                self.assertContains(response, "PrepodRate")

@@ -1,5 +1,5 @@
 {% extends "reviews/base.html" %}{% load i18n %}
-{% block title %}{% if editing %}{% translate "Изменить отзыв" %}{% else %}{% blocktranslate with name=prof.full_name %}Оценить {{ name }}{% endblocktranslate %}{% endif %} — ProfLens{% endblock %}
+{% block title %}{% if editing %}{% translate "Изменить отзыв" %}{% else %}{% blocktranslate with name=prof.full_name %}Оценить {{ name }}{% endblocktranslate %}{% endif %} — PrepodRate{% endblock %}
 {% block content %}
 <h1>{% if editing %}{% translate "Изменить отзыв" %}{% else %}{% blocktranslate with name=prof.full_name %}Оценить {{ name }}{% endblocktranslate %}{% endif %}</h1>
   <p class="muted">{% translate "Отзыв появится после проверки модератором." %} <a href="{{ url }}">{% translate "Правила" %}</a>.</p>

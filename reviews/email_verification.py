@@ -72,10 +72,10 @@ def seconds_until_resend(record, now=None):
 
 def _send(user, code):
     minutes = int(_ttl().total_seconds() // 60)
-    subject = _("Код подтверждения ProfLens: %(code)s") % {"code": code}
+    subject = _("Код подтверждения PrepodRate: %(code)s") % {"code": code}
     body = _(
-        "Ваш код подтверждения ProfLens: %(code)s\n\n"
-        "Код действует %(minutes)s минут. Если вы не регистрировались на ProfLens, "
+        "Ваш код подтверждения PrepodRate: %(code)s\n\n"
+        "Код действует %(minutes)s минут. Если вы не регистрировались на PrepodRate, "
         "просто проигнорируйте это письмо."
     ) % {"code": code, "minutes": minutes}
     send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [user.email])
