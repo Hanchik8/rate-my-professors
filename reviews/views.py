@@ -8,18 +8,20 @@ live in small private helpers below.
 from django import forms
 from django.conf import settings
 from django.contrib import messages
+from django.conf import settings
 from django.contrib.auth import login
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.core.paginator import Paginator
+from django.core.exceptions import ValidationError
 from django.db import connection
-from django.http import Http404, HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse
 import json
 from django.shortcuts import redirect, render, resolve_url
 from django.urls import reverse
 from django.utils.http import url_has_allowed_host_and_scheme
 from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy
 from django.views.decorators.http import require_http_methods, require_POST
 from django.views.defaults import page_not_found, server_error
 
@@ -29,13 +31,18 @@ from .caching import (
     options_cache_key,
     school_cache_key,
 )
-from .constants import PAGE_SIZE
 from .forms import ProfessorForm, ReportForm, ReviewForm
 from .geo import REGION_CODES, REGION_PREFIX, build_locations, filter_schools, parse_place, region_for_city, region_name
-from . import email_verification, services
+from . import email_verification, services, view_helpers
 from .models import EmailVerification as EmailVerificationModel
 from .store import repo
 from .throttle import is_rate_limited, rate_limit
+from .view_helpers import (
+    _is_author,
+    _object_or_404,
+    _paginate,
+    _paginate_request,
+)
 
 
 def handler404(request, exception=None):
@@ -62,24 +69,6 @@ def health(request):
 def healthz(request):
     """Return a database-independent liveness response."""
     return JsonResponse({"status": "ok"})
-
-
-def _paginate(items, page_number):
-    """Return ``(page_items, page_obj)`` for ``items``.
-
-    ``page_obj`` is ``None`` when everything fits on one page, so templates
-    can omit pagination controls while still using a flat result list.
-    """
-    paginator = Paginator(items, PAGE_SIZE)
-    page_obj = paginator.get_page(page_number)
-    if paginator.num_pages <= 1:
-        return items, None
-    return page_obj.object_list, page_obj
-
-
-def _paginate_request(request, items):
-    """Paginate ``items`` using the page number from the request query string."""
-    return _paginate(items, request.GET.get("page"))
 
 
 def _form_for_request(request, form_class, **kwargs):
@@ -161,6 +150,13 @@ def home(request):
         )},
     )
     page_results, page_obj = _paginate_request(request, data["results"])
+    has_filters = bool(school.strip() or city.strip() or department.strip())
+    if has_filters:
+        empty_state = "filters"
+    elif q.strip():
+        empty_state = "query"
+    else:
+        empty_state = ""
     return render(request, "reviews/home.html", {
         "q": q, "school": school, "city": place,
         "department": department, "sort": sort,
@@ -172,19 +168,30 @@ def home(request):
         "departments": options["departments"],
         "results": page_results,
         "page_obj": page_obj,
+        "empty_state": empty_state,
+    })
+
+
+def top(request):
+    """Show the 20 highest-rated professors with at least three reviews."""
+    school = request.GET.get("school", "").strip()
+    department = request.GET.get("department", "").strip()
+    results = [
+        row for row in repo.search(school_slug=school, department=department)
+        if row["stats"]["count"] >= 3
+    ][:20]
+    return render(request, "reviews/top.html", {
+        "results": results,
+        "schools": repo.schools(),
+        "departments": repo.departments(),
+        "school": school,
+        "department": department,
     })
 
 
 def _professor_or_404(slug):
     """Fetch an approved professor by slug or raise ``Http404``."""
     return _object_or_404(repo.professor(slug), _("Professor not found"))
-
-
-def _object_or_404(obj, message):
-    """Return ``obj`` or raise ``Http404`` with the supplied message."""
-    if obj is None:
-        raise Http404(message)
-    return obj
 
 
 def professor_detail(request, slug):
@@ -203,6 +210,11 @@ def professor_detail(request, slug):
         "@context": "https://schema.org",
         "@type": "Person",
         "name": prof.full_name,
+        "url": (
+            f"{settings.SITE_URL}{reverse('professor', args=[prof.slug])}"
+            if settings.SITE_URL
+            else request.build_absolute_uri(reverse("professor", args=[prof.slug]))
+        ),
     }
     if stats["count"]:
         person_schema["aggregateRating"] = {
@@ -220,6 +232,57 @@ def professor_detail(request, slug):
         "sort_options": [("new", "сначала новые"), ("old", "сначала старые"), ("high", "сначала высокая оценка"),
                          ("low", "сначала низкая оценка"), ("helpful", "сначала полезные")],
         "report_form": ReportForm(auto_id=False),
+    })
+
+
+def _compare_ids(raw_ids):
+    """Return unique, non-empty professor ids preserving their query order."""
+    ids = []
+    seen = set()
+    for raw in raw_ids.split(","):
+        professor_id = raw.strip()
+        if professor_id and professor_id not in seen:
+            seen.add(professor_id)
+            ids.append(professor_id)
+    return ids
+
+
+def _compare_error(request, message):
+    """Render the comparison page with a friendly validation message."""
+    return render(
+        request,
+        "reviews/compare.html",
+        {"error": message, "professors": []},
+        status=404,
+    )
+
+
+def compare(request):
+    """Show up to three approved professors side by side."""
+    ids = _compare_ids(",".join(request.GET.getlist("ids")))
+    if not 2 <= len(ids) <= 3:
+        return _compare_error(
+            request,
+            _("Для сравнения выберите от 2 до 3 преподавателей."),
+        )
+
+    professors = []
+    for professor_id in ids:
+        try:
+            prof = repo.professor_by_id(professor_id)
+        except (ValidationError, ValueError, TypeError):
+            prof = None
+        if prof is None or getattr(prof, "status", "approved") != "approved":
+            return _compare_error(request, _("Professor not found"))
+        professors.append({
+            "prof": prof,
+            "stats": repo.stats(prof.id),
+            "school": repo.school(prof.school_id),
+        })
+
+    return render(request, "reviews/compare.html", {
+        "professors": professors,
+        "error": "",
     })
 
 
@@ -272,30 +335,14 @@ def about(request):
     return render(request, "reviews/about.html")
 
 
-@login_required
-def profile(request):
-    """Show the current user's reviews and their moderation status."""
-    return render(request, "reviews/profile.html", {
-        "reviews": repo.reviews_for_user(request.user),
-    })
-
-
-def _is_author(obj, user):
-    """Return whether ``obj`` belongs to ``user`` (ids compare as strings)."""
-    return obj.author_id is not None and str(obj.author_id) == str(user.id)
-
-
 def _owned_review_or_404(review_id, user):
     """Fetch a review owned by ``user`` or raise ``Http404``."""
-    review = _review_or_404(review_id)
-    if not _is_author(review, user):
-        raise Http404(_("Review not found"))
-    return review
+    return view_helpers._owned_review_or_404(repo, review_id, user)
 
 
 def _professor_for_review(review):
     """Return the professor a review belongs to."""
-    return repo.professor_by_id(review.professor_id)
+    return view_helpers._professor_for_review(repo, review)
 
 
 def _review_initial(review):
@@ -310,37 +357,6 @@ def _review_initial(review):
         "tags": review.tags,
         "comment": review.comment,
     }
-
-
-@require_http_methods(["GET", "POST"])
-@login_required
-@rate_limit("review")
-def review_edit(request, review_id):
-    review = _owned_review_or_404(review_id, request.user)
-    prof = _professor_for_review(review)
-    initial = None if request.method == "POST" else _review_initial(review)
-    form = _form_for_request(request, ReviewForm, initial=initial)
-    if _is_valid_post(request, form):
-        repo.update_review(review_id, form.cleaned_data)
-        messages.success(request, _("Отзыв отправлен на модерацию."))
-        return redirect("profile")
-    return render(
-        request,
-        "reviews/review_form.html",
-        _review_form_context(prof, form, editing=True),
-    )
-
-
-@require_http_methods(["GET", "POST"])
-@login_required
-@rate_limit("review")
-def review_delete(request, review_id):
-    review = _owned_review_or_404(review_id, request.user)
-    if request.method == "POST":
-        repo.delete_review(review_id)
-        messages.success(request, _("Отзыв удалён."))
-        return redirect("profile")
-    return render(request, "reviews/review_confirm_delete.html", {"review": review})
 
 
 def _save_review(form, prof, request):
@@ -399,46 +415,16 @@ def review_new(request, slug):
 
 def _redirect_to_review(review):
     """Redirect back to the review's anchor on its professor page."""
-    prof = _professor_for_review(review)
-    if prof:
-        return redirect(reverse("professor", args=[prof.slug]) + f"#review-{review.id}")
-    return redirect("home")
+    return view_helpers._redirect_to_review(repo, review)
 
 
 def _review_or_404(review_id):
     """Fetch a review or raise ``Http404`` when it does not exist."""
-    return _object_or_404(repo.review(review_id), _("Review not found"))
+    return view_helpers._review_or_404(repo, review_id)
 
 
-@require_POST
-@login_required
-@rate_limit("vote")
-def review_vote(request, review_id):
-    """Record a helpful / not-helpful vote on a review."""
-    review = _review_or_404(review_id)
-    if _is_author(review, request.user):
-        messages.warning(request, _("Нельзя голосовать за свой отзыв."))
-        return _redirect_to_review(review)
-    try:
-        repo.vote(review_id, helpful=request.POST.get("vote") == "up", user=request.user)
-    except ValueError:
-        messages.warning(request, _("Вы уже голосовали за этот отзыв."))
-    return _redirect_to_review(review)
-
-
-@require_POST
-@login_required
-@rate_limit("report")
-def review_report(request, review_id):
-    """Flag a review for moderator attention with a validated reason."""
-    review = _review_or_404(review_id)
-    form = ReportForm(request.POST)
-    if not form.is_valid():
-        messages.error(request, _("Выберите корректную причину жалобы."))
-        return _redirect_to_review(review)
-    repo.report(review_id, user=request.user, reason=form.cleaned_data["reason"])
-    messages.success(request, _("Жалоба отправлена модератору."))
-    return _redirect_to_review(review)
+from .views_votes import review_report, review_vote
+from .views_profile import profile, review_delete, review_edit
 
 
 def _requested_next_url(request):
@@ -512,19 +498,22 @@ def _normalize_email(email):
 class EmailSignupForm(forms.Form):
     """Self-service signup that uses the email address as the username."""
 
-    email = forms.EmailField(label=_("Email"))
-    password1 = forms.CharField(label=_("Пароль"), widget=forms.PasswordInput)
-    password2 = forms.CharField(label=_("Повторите пароль"), widget=forms.PasswordInput)
+    email = forms.EmailField(label=gettext_lazy("Email"))
+    password1 = forms.CharField(label=gettext_lazy("Пароль"), widget=forms.PasswordInput)
+    password2 = forms.CharField(label=gettext_lazy("Повторите пароль"), widget=forms.PasswordInput)
 
     def clean_email(self):
         """Normalize the email and reject duplicates (case-insensitive).
 
-        The error is deliberately generic: a signup page must not reveal
-        whether an account with this address already exists.
+        The signup page offers login and password-reset links, but never
+        reveals whether the existing account has already confirmed its email.
         """
         email = _normalize_email(self.cleaned_data["email"])
         if User.objects.filter(email__iexact=email).exists() or User.objects.filter(username__iexact=email).exists():
-            raise forms.ValidationError(_("Не удалось зарегистрироваться. Проверьте введённые данные."))
+            self.duplicate_email = True
+            raise forms.ValidationError(
+                _("Этот email уже зарегистрирован. Войдите или восстановите пароль.")
+            )
         return email
 
     def clean(self):
@@ -573,7 +562,12 @@ def _start_verification(request, user):
     if email_verification.issue_code(user):
         messages.success(request, _("Мы отправили 6-значный код на %(email)s. Введите его, чтобы завершить регистрацию.") % {"email": user.email})
     else:
-        messages.error(request, _("Не удалось отправить письмо с кодом. Попробуйте отправить код ещё раз чуть позже."))
+        _email_delivery_failed(request)
+
+
+def _email_delivery_failed(request):
+    """Show the shared error message when a verification email cannot be sent."""
+    messages.error(request, _("Не удалось отправить письмо с кодом. Попробуйте отправить код ещё раз чуть позже."))
 
 
 @require_http_methods(["GET", "POST"])
@@ -593,7 +587,10 @@ def signup(request):
         login(request, user)
         messages.success(request, _("Регистрация выполнена. Добро пожаловать!"))
         return redirect("home")
-    return render(request, "registration/signup.html", {"form": form})
+    return render(request, "registration/signup.html", {
+        "form": form,
+        "duplicate_email": getattr(form, "duplicate_email", False),
+    })
 
 
 def _pending_user(request):
@@ -615,7 +612,7 @@ def _handle_resend(request, user):
     elif result.delivered:
         messages.success(request, _("Новый код отправлен на %(email)s.") % {"email": user.email})
     else:
-        messages.error(request, _("Не удалось отправить письмо с кодом. Попробуйте отправить код ещё раз чуть позже."))
+        _email_delivery_failed(request)
     return redirect("signup_verify")
 
 

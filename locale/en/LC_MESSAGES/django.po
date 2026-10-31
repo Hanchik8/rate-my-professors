@@ -10,6 +10,15 @@ msgstr ""
 msgid "Предмет"
 msgstr "Subject"
 
+msgid "Лучшие"
+msgstr "Top"
+
+msgid "Лучшие преподаватели"
+msgstr "Top Professors"
+
+msgid "Пока нет преподавателей для рейтинга."
+msgstr "There are no professors in the rankings yet."
+
 msgid "Например: Алгоритмы, Общая физика, Микроэкономика"
 msgstr "For example: Algorithms, General Physics, Microeconomics"
 
@@ -72,6 +81,48 @@ msgstr "Last name"
 
 msgid "Кафедра"
 msgstr "Department"
+
+msgid "Информатика"
+msgstr "Computer Science"
+
+msgid "Математика"
+msgstr "Mathematics"
+
+msgid "Физика"
+msgstr "Physics"
+
+msgid "Экономика"
+msgstr "Economics"
+
+msgid "История"
+msgstr "History"
+
+msgid "Биология"
+msgstr "Biology"
+
+msgid "Лингвистика"
+msgstr "Linguistics"
+
+msgid "Психология"
+msgstr "Psychology"
+
+msgid "Международные отношения"
+msgstr "International Relations"
+
+msgid "Химия"
+msgstr "Chemistry"
+
+msgid "Филология"
+msgstr "Philology"
+
+msgid "Право"
+msgstr "Law"
+
+msgid "Инженерия"
+msgstr "Engineering"
+
+msgid "Медицина"
+msgstr "Medicine"
 
 #| msgid "Сложность"
 msgid "Должность"
@@ -250,8 +301,11 @@ msgstr "Rating %(rating)s out of 5"
 msgid "Нет оценок"
 msgstr "No ratings"
 
-msgid "отзывов"
-msgstr "ratings"
+#, python-format
+msgid "%(counter)s отзыв"
+msgid_plural "%(counter)s отзывов"
+msgstr[0] "%(counter)s review"
+msgstr[1] "%(counter)s reviews"
 
 msgid "Сложность"
 msgstr "Difficulty"
@@ -268,6 +322,16 @@ msgstr "Try a shorter query or change the filters."
 msgid "Сбросить фильтры"
 msgstr "Reset filters"
 
+#, python-format
+msgid "По запросу «%(query)s» никого не нашли, проверьте написание"
+msgstr "We couldn't find anyone for “%(query)s”, check the spelling"
+
+msgid "С этими фильтрами никого нет"
+msgstr "No one matches these filters"
+
+msgid "Первая"
+msgstr "First"
+
 msgid "Назад"
 msgstr "Previous"
 
@@ -277,6 +341,9 @@ msgstr "Page %(n)s of %(t)s"
 
 msgid "Вперёд"
 msgstr "Next"
+
+msgid "Последняя"
+msgstr "Last"
 
 msgid "Пойдут снова"
 msgstr "Would take again"
@@ -305,9 +372,6 @@ msgstr "newest"
 msgid "сначала полезные"
 msgstr "most helpful"
 
-msgid "сначала новые"
-msgstr "newest"
-
 msgid "сначала старые"
 msgstr "oldest"
 
@@ -316,9 +380,6 @@ msgstr "highest rating first"
 
 msgid "сначала низкая оценка"
 msgstr "lowest rating first"
-
-msgid "сначала полезные"
-msgstr "most helpful"
 
 msgid "Newest"
 msgstr "Newest"
@@ -427,11 +488,17 @@ msgstr "Professors"
 msgid "Пока нет преподавателей."
 msgstr "No professors yet."
 
+msgid "Добавьте преподавателя, чтобы студенты могли делиться опытом."
+msgstr "Add a professor so students can share their experiences."
+
 msgid "Отзыв отправлен на модерацию. Спасибо!"
 msgstr "Review submitted for moderation. Thank you!"
 
 msgid "Вы уже голосовали за этот отзыв."
 msgstr "You have already voted on this review."
+
+msgid "Ваш голос учтён. Спасибо!"
+msgstr "Your vote has been recorded. Thank you!"
 
 msgid "Жалоба отправлена модератору."
 msgstr "Report sent to a moderator."
@@ -474,6 +541,9 @@ msgstr "Repeat password"
 
 msgid "Не удалось зарегистрироваться. Проверьте введённые данные."
 msgstr "Could not sign up. Please check the information you entered."
+
+msgid "Этот email уже зарегистрирован. Войдите или восстановите пароль."
+msgstr "This email is already registered. Log in or reset your password."
 
 msgid "Пароли не совпадают."
 msgstr "Passwords do not match."
@@ -520,6 +590,9 @@ msgstr ""
 
 msgid "Одобрить выбранных преподавателей"
 msgstr "Approve selected professors"
+
+msgid "Отклонить выбранных преподавателей"
+msgstr "Reject selected professors"
 
 msgid "Одобрить выбранные отзывы"
 msgstr "Approve selected reviews"
@@ -848,6 +921,28 @@ msgstr "The code has expired. Request a new code."
 
 msgid "Уже подтвердили? Войдите"
 msgstr "Already confirmed? Log in"
+
+msgid "Сравнение преподавателей"
+msgstr "Compare professors"
+
+msgid "Сравнить"
+msgstr "Compare"
+
+msgid "Средний балл"
+msgstr "Average score"
+
+msgid "Сравнение преподавателей по рейтингу, сложности и числу отзывов."
+msgstr "Compare professors by rating, difficulty and number of reviews."
+
+msgid "Для сравнения выберите от 2 до 3 преподавателей."
+msgstr "Choose 2 to 3 professors to compare."
+
+#, python-format
+msgid "Результаты по запросу «%(query)s»: %(total)s"
+msgstr "Results for “%(query)s”: %(total)s"
+
+msgid "Сбросить поиск"
+msgstr "Reset search"
 
 msgid "Подтвердите email на ProfLens"
 msgstr "Confirm your email on ProfLens"

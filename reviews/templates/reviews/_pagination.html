@@ -1,0 +1,21 @@
+{% load i18n pagination %}
+<div class="pagination">
+  {% if page_obj.has_previous %}
+  <a href="{% page_url 1 %}" aria-label="{% blocktranslate with n=1 t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{% translate "Первая" %}</a>
+  <a rel="prev" href="{% page_url page_obj.previous_page_number %}" aria-label="{% blocktranslate with n=page_obj.previous_page_number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{% translate "Назад" %}</a>
+  {% endif %}
+  {% pagination_pages page_obj as pages %}
+  <span class="pagination-pages">
+    {% for page_number in pages %}
+    {% if page_number is None %}<span aria-hidden="true">…</span>
+    {% elif page_number == page_obj.number %}<span aria-current="page" aria-label="{% blocktranslate with n=page_number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{{ page_number }}</span>
+    {% else %}<a href="{% page_url page_number %}" aria-label="{% blocktranslate with n=page_number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{{ page_number }}</a>
+    {% endif %}
+    {% endfor %}
+  </span>
+  {% if page_obj.has_next %}
+  <a rel="next" href="{% page_url page_obj.next_page_number %}" aria-label="{% blocktranslate with n=page_obj.next_page_number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{% translate "Вперёд" %}</a>
+  <a href="{% page_url page_obj.paginator.num_pages %}" aria-label="{% blocktranslate with n=page_obj.paginator.num_pages t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{% translate "Последняя" %}</a>
+  {% endif %}
+  <span class="pagination-status">{% blocktranslate with n=page_obj.number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}</span>
+</div>

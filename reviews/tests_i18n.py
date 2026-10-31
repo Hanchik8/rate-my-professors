@@ -14,7 +14,7 @@ from pathlib import Path
 from types import SimpleNamespace
 
 from django.template.loader import render_to_string
-from django.test import RequestFactory, TestCase
+from django.test import RequestFactory, SimpleTestCase, TestCase
 from django.urls import reverse
 from django.utils import translation
 
@@ -49,6 +49,9 @@ def parse_po(path):
             mode = "id"
         elif line.startswith("msgstr "):
             msgstr = ast.literal_eval(line[len("msgstr "):])
+            mode = "str"
+        elif line.startswith("msgstr[0]"):
+            msgstr = ast.literal_eval(line[len("msgstr[0]"):])
             mode = "str"
         elif line.startswith('"'):
             chunk = ast.literal_eval(line)
@@ -95,7 +98,12 @@ def template_translatable_strings():
 
 
 def template_blocktranslate_strings():
-    """``{% blocktranslate %}`` strings converted to gettext ``%(var)s`` form."""
+    """``{% blocktranslate %}`` strings converted to gettext ``%(var)s`` form.
+
+    For ``{% blocktranslate count %}`` blocks the singular part (the gettext
+    ``msgid``) is extracted; the ``{% plural %}`` counterpart lives in the
+    catalog as ``msgid_plural``.
+    """
     found = set()
     pattern = re.compile(
         r"\{%\s*blocktranslate(?:[^%]*)%\}(.*?)\{%\s*endblocktranslate\s*%\}",
@@ -104,7 +112,8 @@ def template_blocktranslate_strings():
     for path in TEMPLATES_DIR.rglob("*.html"):
         text = path.read_text(encoding="utf-8")
         for match in pattern.finditer(text):
-            body = " ".join(match.group(1).split())
+            body = re.split(r"\{%\s*plural\s*%\}", match.group(1))[0]
+            body = " ".join(body.split())
             found.add(re.sub(r"\{\{\s*(\w+)\s*\}\}", r"%(\1)s", body))
     return found
 
@@ -275,6 +284,50 @@ class FormAndMessageTranslationTests(TestCase):
                     self.assertEqual(translation.gettext(msgid), value)
 
 
+class SignupFormRenderTranslationTests(TestCase):
+    """Signup labels and form errors render in the active language."""
+
+    LABELS = {
+        "en": ("Password", "Repeat password"),
+        "ky": ("Сырсөз", "Сырсөздү кайталаңыз"),
+    }
+
+    ERRORS = {
+        "en": {
+            "mismatch": "Passwords do not match.",
+            "short": "Password must be at least 8 characters.",
+        },
+        "ky": {
+            "mismatch": "Сырсөздөр дал келбейт.",
+            "short": "Сырсөз кеминде 8 белгиден турушу керек.",
+        },
+    }
+
+    def test_signup_labels_render_in_en_and_ky(self):
+        for lang, (password, confirmation) in self.LABELS.items():
+            with self.subTest(lang=lang):
+                response = self.client.get(reverse("signup"), HTTP_ACCEPT_LANGUAGE=lang)
+                self.assertEqual(response.status_code, 200)
+                self.assertContains(response, password)
+                self.assertContains(response, confirmation)
+                self.assertNotContains(response, "Пароль*")
+
+    def test_signup_errors_render_in_en_and_ky(self):
+        cases = {
+            "mismatch": {"password1": "pass12345", "password2": "different-pass"},
+            "short": {"password1": "short", "password2": "short"},
+        }
+        for lang, expected in self.ERRORS.items():
+            for case, passwords in cases.items():
+                with self.subTest(lang=lang, case=case):
+                    data = {"email": f"{case}-{lang}@example.com", **passwords}
+                    response = self.client.post(
+                        reverse("signup"), data, HTTP_ACCEPT_LANGUAGE=lang
+                    )
+                    self.assertEqual(response.status_code, 200)
+                    self.assertContains(response, expected[case])
+
+
 class HomeTemplateTranslationTests(TestCase):
     """Home page labels are wrapped for translation and resolve per locale."""
 
@@ -321,9 +374,15 @@ class HomeTemplateTranslationTests(TestCase):
     }
 
     EMPTY_STATE = {
-        "ru": ("Ничего не нашлось", "Попробуйте сократить запрос или изменить фильтры.", "Сбросить фильтры"),
-        "ky": ("Эч нерсе табылган жок", "Суроону кыскартып же чыпкаларды өзгөртүп көрүңүз.", "Чыпкаларды тазалоо"),
-        "en": ("Nothing found", "Try a shorter query or change the filters.", "Reset filters"),
+        "ru": ("Ничего не нашлось",
+               "По запросу «zzz-no-such-professor» никого не нашли, проверьте написание",
+               "Сбросить поиск"),
+        "ky": ("Эч нерсе табылган жок",
+               "«zzz-no-such-professor» суроосу боюнча эч ким табылган жок, жазылышын текшериңиз",
+               "Издөөнү тазалоо"),
+        "en": ("Nothing found",
+               "We couldn't find anyone for “zzz-no-such-professor”, check the spelling",
+               "Reset search"),
     }
 
     def test_home_template_wraps_all_literal_text(self):
@@ -461,6 +520,19 @@ class RenderedTemplateTranslationTests(TestCase):
                 for value in forbidden.get(lang, []):
                     self.assertNotIn(value, html)
 
+    def test_department_names_render_in_english_but_filter_value_is_preserved(self):
+        from django.template.loader import render_to_string
+
+        with translation.override("en"):
+            html = render_to_string("reviews/home.html", {
+                "departments": ["Информатика"],
+                "department": "Информатика",
+                "cities": [], "schools": [], "results": [], "q": "",
+                "city": "", "school": "", "sort": "rating",
+                "page_obj": None,
+            })
+        self.assertIn('value="Информатика" selected>Computer Science</option>', html)
+
     def test_ratings_and_review_dates_use_locale_formats(self):
         expected = {
             "ru": ("4,5", "25 октября 2025 г.", "Дата отзыва:"),
@@ -542,6 +614,18 @@ class KyrgyzPageRenderTests(TestCase):
 
 
 class LanguageAlternatesTests(TestCase):
+    def test_language_query_parameter_selects_language_and_sets_cookie(self):
+        response = self.client.get("/?language=en")
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, '<html lang="en"')
+        self.assertEqual(response.cookies["django_language"].value, "en")
+
+    def test_alternate_links_keep_query_parameters_encoded_once(self):
+        response = self.client.get("/?q=hello%20world&language=ru")
+        html = response.content.decode()
+        self.assertIn('href="http://testserver/?q=hello+world&amp;language=ky"', html)
+        self.assertNotIn("language=ru&amp;language=ky", html)
+
     def test_html_pages_have_language_and_alternate_links(self):
         for path in ("/", "/rules/", "/about/", "/accounts/login/", "/accounts/signup/"):
             for lang in ("ky", "ru", "en"):
@@ -560,3 +644,113 @@ class LanguageAlternatesTests(TestCase):
         for lang, expected in (("ru", "4,5"), ("ky", "4.5"), ("en", "4.5")):
             with self.subTest(lang=lang), translation.override(lang):
                 self.assertEqual(localize(4.5), expected)
+
+
+KEY_TRANSLATIONS = {
+    "Узнайте, какие занятия на самом деле — до записи на курс.": {
+        "ru": "Узнайте, какие занятия на самом деле — до записи на курс.",
+        "ky": "Сабактар чындыгында кандай өтөрүн — жазылуудан мурда билип алыңыз.",
+        "en": "Find out what a class is really like before you enroll.",
+    },
+    "Имя преподавателя или кафедра": {
+        "ru": "Имя преподавателя или кафедра",
+        "ky": "Окутуучунун аты же кафедра",
+        "en": "Professor name or department",
+    },
+    "Найти": {
+        "ru": "Найти",
+        "ky": "Табуу",
+        "en": "Find",
+    },
+    "Все вузы": {
+        "ru": "Все вузы",
+        "ky": "Бардык ЖОЖдор",
+        "en": "All schools",
+    },
+    "Правила": {
+        "ru": "Правила",
+        "ky": "Эрежелер",
+        "en": "Rules",
+    },
+    "О проекте": {
+        "ru": "О проекте",
+        "ky": "Долбоор жөнүндө",
+        "en": "About",
+    },
+    "Вход": {
+        "ru": "Вход",
+        "ky": "Кирүү",
+        "en": "Log in",
+    },
+    "Регистрация": {
+        "ru": "Регистрация",
+        "ky": "Катталуу",
+        "en": "Sign up",
+    },
+    "Username": {
+        "ru": "Имя пользователя",
+        "ky": "Колдонуучунун аты",
+        "en": "Username",
+    },
+    "Please enter a correct %(username)s and password. Note that both fields may be case-sensitive.": {
+        "ru": "Введите правильные %(username)s и пароль. Оба поля могут быть чувствительны к регистру.",
+        "ky": "Туура %(username)s жана сырсөздү киргизиңиз. Эки талаа тең регистрге сезимтал болушу мүмкүн.",
+        "en": "Please enter a correct %(username)s and password. Note that both fields may be case-sensitive.",
+    },
+    "This account is inactive.": {
+        "ru": "Этот аккаунт неактивен.",
+        "ky": "Бул аккаунт активдүү эмес.",
+        "en": "This account is inactive.",
+    },
+    "Оценить преподавателя": {
+        "ru": "Оценить преподавателя",
+        "ky": "Окутуучуну баалоо",
+        "en": "Rate this professor",
+    },
+    "Добавьте преподавателя, чтобы студенты могли делиться опытом.": {
+        "ru": "Добавьте преподавателя, чтобы студенты могли делиться опытом.",
+        "ky": "Студенттер тажрыйбасы менен бөлүшүшү үчүн окутуучуну кошуңуз.",
+        "en": "Add a professor so students can share their experiences.",
+    },
+    "Отзыв появится после проверки модератором.": {
+        "ru": "Отзыв появится после проверки модератором.",
+        "ky": "Сын-пикир модератор текшергенден кийин чыгат.",
+        "en": "The review will appear after a moderator approves it.",
+    },
+    "Страница не найдена": {
+        "ru": "Страница не найдена",
+        "ky": "Барак табылган жок",
+        "en": "Page not found",
+    },
+    "Ошибка сервера": {
+        "ru": "Ошибка сервера",
+        "ky": "Сервер катасы",
+        "en": "Server error",
+    },
+}
+
+
+class KeyStringTranslationsTests(SimpleTestCase):
+    """Key labels used on prominent pages resolve to translations in all locales."""
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.catalogs = {
+            lang: parse_po(LOCALE_DIR / lang / "LC_MESSAGES" / "django.po")
+            for lang in ("ru", "ky", "en")
+        }
+
+    def test_key_strings_exist_with_expected_translation(self):
+        for msgid, expected in KEY_TRANSLATIONS.items():
+            for lang, value in expected.items():
+                with self.subTest(lang=lang, msgid=msgid):
+                    catalog = self.catalogs[lang]
+                    self.assertIn(msgid, catalog, f"{lang} catalog is missing {msgid!r}")
+                    self.assertTrue(catalog[msgid], f"empty {lang} translation for {msgid!r}")
+                    self.assertEqual(catalog[msgid], value)
+
+    def test_key_strings_are_localized_for_ky(self):
+        for msgid, expected in KEY_TRANSLATIONS.items():
+            with self.subTest(msgid=msgid):
+                self.assertNotEqual(expected["ky"], msgid)

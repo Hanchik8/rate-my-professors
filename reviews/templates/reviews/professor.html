@@ -1,4 +1,4 @@
-{% extends "reviews/base.html" %}{% load i18n l10n static %}
+{% extends "reviews/base.html" %}{% load i18n l10n static departments %}
 {% block title %}{{ prof.full_name }} — ProfLens{% endblock %}
 {% block description %}{% blocktranslate with name=prof.full_name dept=prof.department school=school.display_name %}Отзывы студентов о преподавателе {{ name }} ({{ dept }}, {{ school }}): рейтинг, сложность и советы.{% endblocktranslate %}{% endblock %}
 {% block og_title %}{{ prof.full_name }} — ProfLens{% endblock %}
@@ -15,7 +15,7 @@
   <div class="tile big {{ stats.tone }}">{% if stats.count %}{{ stats.overall|floatformat:1|localize }}{% else %}-{% endif %}</div>
   <div>
     <h1>{{ prof.full_name }}</h1>
-    <p class="sub">{% translate prof.title %} — {{ prof.department }}, <a href="{% url 'school_detail' school.slug %}">{{ school.display_name }}</a></p>
+    <p class="sub">{% translate prof.title %} — {% translate_department prof.department %}, <a href="{% url 'school_detail' school.slug %}">{{ school.display_name }}</a></p>
   </div>
   {% if stats.count %}
   <span class="stars" role="img" aria-label="{% blocktranslate with rating=stats.overall %}Рейтинг {{ rating }} из 5{% endblocktranslate %}"><span aria-hidden="true">★★★★★</span><span class="s-fill" aria-hidden="true" style="width:{% widthratio stats.overall 5 100 %}%">★★★★★</span></span>
@@ -33,7 +33,7 @@
 {% endif %}
 <ul class="dist{% if not stats.count %} dist--empty{% endif %}" aria-label="{% translate 'Распределение оценок' %}">
   {% for d in stats.distribution %}
-  <li><span>{{ d.score|localize }}</span><span class="bar"><i style="width:{{ d.pct }}%"></i></span><span>{{ d.count|localize }}</span></li>
+  <li aria-label="{% blocktranslate with rating=d.score %}Рейтинг {{ rating }} из 5{% endblocktranslate %}, {% translate 'Отзывов' %}: {{ d.count|localize }}"><span class="dist-score">{{ d.score|localize }}<span aria-hidden="true">★</span></span><span class="bar"><i style="width:{{ d.pct }}%"></i></span><span>{{ d.count|localize }}</span></li>
   {% endfor %}
 </ul>
 {% if stats.count and stats.top_tags %}<p class="tags">{% translate "Студенты отмечают:" %} {% for tag in stats.top_tags %}{% translate tag %}{% if not forloop.last %}, {% endif %}{% endfor %}</p>{% endif %}
@@ -43,7 +43,7 @@
 {% url 'professor' prof.slug as prof_url %}
 <div class="share" data-share>
   <button class="btn share-btn" type="button" data-share-button
-          data-share-url="{{ request.scheme }}://{{ request.get_host }}{{ prof_url }}"
+          data-share-url="{{ site_url }}{{ prof_url }}"
           data-share-copied="{% translate 'Ссылка скопирована' %}"
           aria-label="{% translate 'Поделиться' %}: {{ prof.full_name }}" hidden>
     {% translate "Поделиться" %}
@@ -51,7 +51,7 @@
   <p class="share-fallback">
     <label for="share-url">{% translate "Ссылка на страницу преподавателя" %}</label>
     <input id="share-url" class="share-url" type="url" readonly data-share-field
-           value="{{ request.scheme }}://{{ request.get_host }}{{ prof_url }}">
+           value="{{ site_url }}{{ prof_url }}">
   </p>
   <p class="share-status muted" role="status" data-share-status hidden></p>
 </div>

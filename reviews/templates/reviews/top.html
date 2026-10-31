@@ -1,0 +1,22 @@
+{% extends "reviews/base.html" %}{% load i18n departments %}
+{% block title %}{% translate "Лучшие преподаватели" %} — ProfLens{% endblock %}
+{% block content %}
+<h1>{% translate "Лучшие преподаватели" %}</h1>
+<form class="search" method="get">
+  <select name="school" aria-label="{% translate 'Вуз' %}">
+    <option value="">{% translate "Все вузы" %}</option>
+    {% for s in schools %}<option value="{{ s.slug }}"{% if s.slug == school %} selected{% endif %}>{{ s.name }}</option>{% endfor %}
+  </select>
+  <select name="department" aria-label="{% translate 'Кафедра' %}">
+    <option value="">{% translate "Все кафедры" %}</option>
+    {% for d in departments %}<option value="{{ d }}"{% if d == department %} selected{% endif %}>{% translate_department d %}</option>{% endfor %}
+  </select>
+  <button type="submit">{% translate "Найти" %}</button>
+</form>
+<ol class="cards">
+  {% for r in results %}
+  {% include "reviews/_professor_card.html" with r=r show_school=True show_difficulty=True place=forloop.counter %}
+  {% empty %}<li class="empty" role="status">{% translate "Пока нет преподавателей для рейтинга." %}</li>
+  {% endfor %}
+</ol>
+{% endblock %}

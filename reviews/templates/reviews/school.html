@@ -28,15 +28,16 @@
   {% empty %}
   <li class="empty empty-state" role="status">
     <strong class="empty-state-title">{% translate "Пока нет преподавателей." %}</strong>
+    <p>{% translate "Добавьте преподавателя, чтобы студенты могли делиться опытом." %}</p>
     <a class="empty-state-action" href="{% url 'add_professor' %}">{% translate "Добавить преподавателя" %}</a>
   </li>
   {% endfor %}
 </ol>
 {% if page_obj %}
 <div class="pagination">
-  {% if page_obj.has_previous %}<a href="?page={{ page_obj.previous_page_number }}">{% translate "Назад" %}</a>{% endif %}
-  <span>{% blocktranslate with n=page_obj.number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}</span>
-  {% if page_obj.has_next %}<a href="?page={{ page_obj.next_page_number }}">{% translate "Вперёд" %}</a>{% endif %}
+  {% if page_obj.has_previous %}<a href="?page={{ page_obj.previous_page_number }}" aria-label="{% blocktranslate with n=page_obj.previous_page_number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{% translate "Назад" %}</a>{% endif %}
+  <span aria-current="page">{% blocktranslate with n=page_obj.number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}</span>
+  {% if page_obj.has_next %}<a href="?page={{ page_obj.next_page_number }}" aria-label="{% blocktranslate with n=page_obj.next_page_number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{% translate "Вперёд" %}</a>{% endif %}
 </div>
 {% endif %}
 {% endblock %}

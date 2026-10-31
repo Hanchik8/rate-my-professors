@@ -1,16 +1,18 @@
-{% load i18n l10n %}
+{% load i18n l10n departments %}
 <li>
+  {% if place %}<span class="top-rank">{{ place }}.</span>{% endif %}
   <a class="card" href="{% url 'professor' r.prof.slug %}">
     <span class="tile {{ r.stats.tone }}">{% if r.stats.count %}{{ r.stats.overall|floatformat:1|localize }}{% else %}-{% endif %}</span>
     <span class="card-body">
       <span class="card-name">{{ r.prof.full_name }}</span>
-      <span class="card-sub">{{ r.prof.department }}{% if show_school %} — {{ r.school.display_name }}{% endif %}</span>
+      <span class="card-sub">{% translate_department r.prof.department %}{% if show_school %} — {{ r.school.display_name }}{% endif %}</span>
       {% if r.stats.count %}
       <span class="stars" role="img" aria-label="{% blocktranslate with rating=r.stats.overall %}Рейтинг {{ rating }} из 5{% endblocktranslate %}"><span aria-hidden="true">★★★★★</span><span class="s-fill" aria-hidden="true" style="width:{% widthratio r.stats.overall 5 100 %}%">★★★★★</span></span>
       {% else %}
       <span class="stars" role="img" aria-label="{% translate 'Нет оценок' %}"><span aria-hidden="true">★★★★★</span></span>
       {% endif %}
-      <span class="card-meta">{{ r.stats.count|localize }} {% translate "отзывов" %}{% if show_difficulty %} · {% translate "Сложность" %} {% if r.stats.count %}{{ r.stats.difficulty|floatformat:1|localize }}{% else %}-{% endif %}{% endif %}</span>
+      <span class="card-meta">{% blocktranslate count counter=r.stats.count %}{{ counter }} отзыв{% plural %}{{ counter }} отзывов{% endblocktranslate %}{% if show_difficulty %} · {% translate "Сложность" %} {% if r.stats.count %}{{ r.stats.difficulty|floatformat:1|localize }}{% else %}-{% endif %}{% endif %}</span>
     </span>
   </a>
+  <a class="btn card-compare" href="{% url 'compare' %}?ids={{ r.prof.id }}" aria-label="{% translate 'Сравнить' %}: {{ r.prof.full_name }}">{% translate "Сравнить" %}</a>
 </li>

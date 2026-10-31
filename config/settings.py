@@ -84,6 +84,14 @@ if _is_test:
 else:
     SECRET_KEY = os.environ.get("SECRET_KEY") or DEFAULT_SECRET_KEY
 ALLOWED_HOSTS = _get_allowed_hosts(os.environ.get("ALLOWED_HOSTS"), _is_test)
+SITE_URL = os.environ.get("SITE_URL", "").strip().rstrip("/")
+USE_X_FORWARDED_HOST = _parse_bool(os.environ.get("USE_X_FORWARDED_HOST"), False)
+_secure_proxy_ssl_header = os.environ.get("SECURE_PROXY_SSL_HEADER")
+SECURE_PROXY_SSL_HEADER = (
+    tuple(part.strip() for part in _secure_proxy_ssl_header.split("=", 1))
+    if _secure_proxy_ssl_header and "=" in _secure_proxy_ssl_header
+    else (("HTTP_X_FORWARDED_PROTO", "https") if not DEBUG else None)
+)
 # Trusted origins for CSRF come from the environment, same as SECRET_KEY and
 # ALLOWED_HOSTS above; they are required for HTTPS deployments behind a proxy.
 CSRF_TRUSTED_ORIGINS = _get_csrf_trusted_origins(os.environ.get("CSRF_TRUSTED_ORIGINS"))
@@ -199,12 +207,13 @@ X_FRAME_OPTIONS = _get_x_frame_options()
 DATA_UPLOAD_MAX_MEMORY_SIZE = 2_621_440
 FILE_UPLOAD_MAX_MEMORY_SIZE = 2_621_440
 
-# Referrer-Policy limits how much of our URLs leak to third parties; "same-origin"
-# is a safe, privacy-preserving default that can be tightened per deployment.
-SECURE_REFERRER_POLICY = os.environ.get("SECURE_REFERRER_POLICY", "same-origin")
+# Referrer-Policy limits how much of our URLs leak to third parties.
+SECURE_REFERRER_POLICY = os.environ.get(
+    "SECURE_REFERRER_POLICY", "strict-origin-when-cross-origin"
+)
 
 # ProfLens does not use these browser features, so disable them by default.
-PERMISSIONS_POLICY = "camera=(), geolocation=(), microphone=()"
+PERMISSIONS_POLICY = "camera=(), microphone=(), geolocation=()"
 
 # Minimal Content-Security-Policy: only same-origin resources are allowed and
 # objects/framing/base-uri/form targets are locked down. Inline styles remain
@@ -235,6 +244,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 INSTALLED_APPS = [
+    "reviews.apps.ReviewsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -242,7 +252,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
-    "reviews.apps.ReviewsConfig",
 ]
 MIDDLEWARE = [
     # Answers /healthz before host checks and HTTPS redirects (Docker / load balancers).
@@ -257,6 +266,7 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.locale.LocaleMiddleware",
+    "reviews.middleware.QueryLanguageMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
@@ -274,6 +284,7 @@ else:
                       "whitenoise.middleware.WhiteNoiseMiddleware")
 ROOT_URLCONF = "config.urls"
 WSGI_APPLICATION = "config.wsgi.application"
+REPO_BACKEND = os.environ.get("REPO_BACKEND", "")
 TEMPLATES = [{
     "BACKEND": "django.template.backends.django.DjangoTemplates",
     "APP_DIRS": True,
@@ -284,11 +295,14 @@ TEMPLATES = [{
         "django.contrib.messages.context_processors.messages",
         "django.template.context_processors.i18n",
         "reviews.context_processors.site",
+        "reviews.context_processors.repository_mode",
+        "reviews.context_processors.site_url",
     ]},
 }]
 
 # Database: DATABASE_URL for Postgres, fallback to SQLite for local dev / tests
 _db_url = os.environ.get("DATABASE_URL", "")
+_conn_max_age = _get_int_setting("CONN_MAX_AGE", 0 if DEBUG else 60)
 if _db_url:
     # simple parse: postgres://user:pass@host:port/dbname  -> use psycopg
     # we rely on dj-database-url style but keep stdlib only
@@ -302,12 +316,15 @@ if _db_url:
         "HOST": u.hostname or "",
         "PORT": str(u.port or ""),
         "OPTIONS": dict(parse_qsl(u.query)),
-        # keep connections open between requests, check them before reuse
-        "CONN_MAX_AGE": _get_int_setting("DB_CONN_MAX_AGE", 60),
+        "CONN_MAX_AGE": _get_int_setting("DB_CONN_MAX_AGE", _conn_max_age),
         "CONN_HEALTH_CHECKS": True,
     }}
 else:
-    DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}}
+    DATABASES = {"default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+        "CONN_MAX_AGE": _conn_max_age,
+    }}
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
@@ -420,3 +437,7 @@ LOGGING = {
         "django.security": {"handlers": ["console"], "level": "WARNING", "propagate": False},
     },
 }
+
+# Tests: a fast hasher. PBKDF2 cost ~1.2s per login/create_user and doubled the suite time.
+if _is_test:
+    PASSWORD_HASHERS = ["django.contrib.auth.hashers.MD5PasswordHasher"]

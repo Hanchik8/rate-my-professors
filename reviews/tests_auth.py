@@ -1,15 +1,19 @@
 """Authentication flows and access-control checks for login/signup/logout."""
 from urllib.parse import parse_qs, urlparse
 
+from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
+from django.core import mail
 from django.core.cache import cache
-from django.test import TestCase
+from django.test import TestCase, override_settings
 from django.urls import reverse
 
 from .repository import InMemoryRepository
 from .seed import seed
 
 PASSWORD = "pass12345"
+ENUM_PASSWORD = "correct-pass-123"
+WRONG_PASSWORD = "wrong-secret-pass-456"
 
 
 def _valid_review(overrides=None):
@@ -260,3 +264,187 @@ class AnonymousPermissionTests(_AuthTestCase):
         r = self.client.get(reverse("add_professor"))
         self.assertEqual(r.status_code, 302)
         self.assertIn(reverse("login"), r.url)
+
+
+@override_settings(RATELIMIT_ENABLE=False, EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+class PasswordResetTests(TestCase):
+    def setUp(self):
+        self.user = get_user_model().objects.create_user(
+            username="reset@example.com", email="reset@example.com", password="old-password-123"
+        )
+
+    def test_sends_reset_email(self):
+        response = self.client.post(reverse("password_reset"), {"email": self.user.email})
+        self.assertRedirects(response, reverse("password_reset_done"))
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertIn("/accounts/reset/", mail.outbox[0].body)
+        self.assertIn("Чтобы задать новый пароль", mail.outbox[0].body)
+
+    def test_reset_pages_use_site_templates(self):
+        urls = [
+            reverse("password_reset"),
+            reverse("password_reset_done"),
+            reverse("password_reset_confirm", kwargs={"uidb64": "invalid", "token": "invalid"}),
+            reverse("password_reset_complete"),
+        ]
+        for url in urls:
+            with self.subTest(url=url):
+                response = self.client.get(url)
+                self.assertEqual(response.status_code, 200)
+                self.assertNotContains(response, "Django administration")
+                self.assertNotContains(response, "/admin/")
+                self.assertContains(response, 'class="top"')
+
+    def test_reset_pages_follow_selected_language(self):
+        for language in ("ru", "ky", "en"):
+            with self.subTest(language=language):
+                response = self.client.get(reverse("password_reset"), HTTP_ACCEPT_LANGUAGE=language)
+                self.assertEqual(response.status_code, 200)
+                self.assertContains(response, f'<html lang="{language}"', html=False)
+
+    def test_unknown_email_uses_same_confirmation(self):
+        response = self.client.post(reverse("password_reset"), {"email": "missing@example.com"})
+        self.assertRedirects(response, reverse("password_reset_done"))
+        self.assertEqual(len(mail.outbox), 0)
+
+    @override_settings(RATELIMIT_ENABLE=True, RATELIMIT={"login": (1, 60)})
+    def test_reset_form_is_rate_limited_by_login_policy(self):
+        self.client.post(reverse("password_reset"), {"email": "missing@example.com"})
+        response = self.client.post(reverse("password_reset"), {"email": "missing@example.com"})
+        self.assertEqual(response.status_code, 429)
+
+
+class DuplicateSignupTests(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username="taken@example.com",
+            email="taken@example.com",
+            password=ENUM_PASSWORD,
+        )
+
+    def _signup(self, email, **extra):
+        return self.client.post(
+            reverse("signup"),
+            {"email": email, "password1": ENUM_PASSWORD, "password2": ENUM_PASSWORD},
+            **extra,
+        )
+
+    def test_duplicate_email_shows_login_and_password_reset_links(self):
+        response = self._signup("taken@example.com")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("email", response.context["form"].errors)
+        self.assertContains(response, "Этот email уже зарегистрирован.")
+        self.assertContains(response, f'href="{reverse("login")}"')
+        self.assertContains(response, f'href="{reverse("password_reset")}"')
+        self.assertContains(response, "Войти")
+        self.assertContains(response, "Забыли пароль?")
+        self.assertNotIn("_auth_user_id", self.client.session)
+
+    def test_message_is_identical_for_confirmed_and_unconfirmed_accounts(self):
+        confirmed = self._signup("taken@example.com")
+        self.user.is_active = False
+        self.user.save(update_fields=["is_active"])
+        unconfirmed = self._signup("TAKEN@EXAMPLE.COM")
+
+        self.assertEqual(confirmed.status_code, unconfirmed.status_code)
+        self.assertEqual(
+            list(confirmed.context["form"].errors["email"]),
+            list(unconfirmed.context["form"].errors["email"]),
+        )
+        for response in (confirmed, unconfirmed):
+            self.assertNotContains(response, "подтвержд")
+            self.assertNotContains(response, "confirmed")
+
+    def test_message_is_translated_in_en_and_ky(self):
+        expected = {
+            "en": "This email is already registered.",
+            "ky": "Бул email мурунтан эле катталган.",
+        }
+        for lang, text in expected.items():
+            with self.subTest(lang=lang):
+                response = self._signup(
+                    "taken@example.com", HTTP_ACCEPT_LANGUAGE=lang
+                )
+                self.assertContains(response, text)
+
+
+class LoginEnumerationTests(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username="known@example.com",
+            email="known@example.com",
+            password=ENUM_PASSWORD,
+        )
+
+    def _login(self, username, password):
+        return self.client.post(
+            reverse("login"), {"username": username, "password": password}
+        )
+
+    def test_unknown_and_existing_accounts_show_the_same_error(self):
+        existing = self._login("known@example.com", WRONG_PASSWORD)
+        unknown = self._login("unknown@example.com", WRONG_PASSWORD)
+
+        self.assertEqual(existing.status_code, 200)
+        self.assertEqual(unknown.status_code, 200)
+        self.assertEqual(
+            list(existing.context["form"].non_field_errors()),
+            list(unknown.context["form"].non_field_errors()),
+        )
+        self.assertNotIn("_auth_user_id", self.client.session)
+
+    def test_inactive_account_is_not_disclosed(self):
+        self.user.is_active = False
+        self.user.save(update_fields=["is_active"])
+        inactive = self._login("known@example.com", ENUM_PASSWORD)
+        unknown = self._login("unknown@example.com", ENUM_PASSWORD)
+
+        self.assertEqual(inactive.status_code, 200)
+        self.assertEqual(
+            list(inactive.context["form"].non_field_errors()),
+            list(unknown.context["form"].non_field_errors()),
+        )
+
+    def test_failed_login_view_does_not_log_the_password(self):
+        with self.assertLogs("security", level="WARNING") as logs:
+            response = self._login("known@example.com", WRONG_PASSWORD)
+
+        self.assertEqual(response.status_code, 200)
+        output = "\n".join(logs.output)
+        self.assertIn("known@example.com", output)
+        self.assertNotIn(WRONG_PASSWORD, output)
+
+
+class SignupEnumerationTests(TestCase):
+    def setUp(self):
+        User.objects.create_user(
+            username="taken@example.com",
+            email="taken@example.com",
+            password=ENUM_PASSWORD,
+        )
+
+    def _signup(self, email, password=ENUM_PASSWORD):
+        return self.client.post(
+            reverse("signup"),
+            {"email": email, "password1": password, "password2": password},
+        )
+
+    def test_duplicate_email_does_not_reveal_the_account(self):
+        response = self._signup("taken@example.com")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("email", response.context["form"].errors)
+        rendered = response.content.decode().lower()
+        for disclosure in ("уже существует", "already exists", "колдонуучу бар"):
+            with self.subTest(disclosure=disclosure):
+                self.assertNotIn(disclosure, rendered)
+        self.assertNotIn("_auth_user_id", self.client.session)
+
+    def test_duplicate_check_is_case_insensitive_and_generic(self):
+        response = self._signup("TAKEN@EXAMPLE.COM")
+
+        self.assertEqual(response.status_code, 200)
+        message = " ".join(response.context["form"].errors["email"]).lower()
+        self.assertNotIn("уже существует", message)
+        self.assertNotIn("already exists", message)

@@ -575,6 +575,18 @@ class ProfessorViewTests(_MemoryRepoTestCase):
         self.assertContains(r, '<span class="bar"><i style="width:')
         self.assertContains(r, ">5<")
 
+    def test_distribution_rows_render_star_bars_and_aria_labels(self):
+        prof = self.prof()
+        r = self.client.get(reverse("professor", args=[prof.slug]))
+        self.assertContains(r, 'class="dist-score"')
+        self.assertContains(r, "★")
+        for row in r.context["stats"]["distribution"]:
+            self.assertContains(
+                r,
+                f'aria-label="Рейтинг {row["score"]} из 5, Отзывов: {row["count"]}"',
+            )
+            self.assertContains(r, f'<span class="bar"><i style="width:{row["pct"]}%"></i></span>')
+
     def test_distribution_empty_state_when_no_reviews(self):
         school = self.repo.add_school("Test School", "Test City")
         new_prof = self.repo.add_professor(school.id, "Test", "Professor", "Test Dept", "преподаватель")
@@ -928,11 +940,11 @@ class SecuritySettingsTests(TestCase):
 
     def test_referrer_policy_configured(self):
         from django.conf import settings
-        self.assertEqual(settings.SECURE_REFERRER_POLICY, "same-origin")
+        self.assertEqual(settings.SECURE_REFERRER_POLICY, "strict-origin-when-cross-origin")
 
     def test_permissions_policy_configured(self):
         from django.conf import settings
-        self.assertEqual(settings.PERMISSIONS_POLICY, "camera=(), geolocation=(), microphone=()")
+        self.assertEqual(settings.PERMISSIONS_POLICY, "camera=(), microphone=(), geolocation=()")
 
     @override_settings(DEBUG=True)
     def test_security_headers_are_emitted(self):
@@ -944,11 +956,13 @@ class SecuritySettingsTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers.get("X-Content-Type-Options"), "nosniff")
         self.assertEqual(response.headers.get("X-Frame-Options"), "DENY")
-        self.assertEqual(response.headers.get("Referrer-Policy"), "same-origin")
+        self.assertEqual(
+            response.headers.get("Referrer-Policy"), "strict-origin-when-cross-origin"
+        )
         self.assertNotIn("Strict-Transport-Security", response.headers)
         self.assertEqual(
             response.headers.get("Permissions-Policy"),
-            "camera=(), geolocation=(), microphone=()",
+            "camera=(), microphone=(), geolocation=()",
         )
 
     def test_csp_header_is_emitted(self):

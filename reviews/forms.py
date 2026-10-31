@@ -13,6 +13,19 @@ from .sanitize import clean_text
 
 SCORES = [(5, "5"), (4, "4"), (3, "3"), (2, "2"), (1, "1")]
 
+_TOO_SHORT_MESSAGE = _("Отзыв должен содержать не менее %(n)d символов.")
+_TOO_LONG_MESSAGE = _("Отзыв должен содержать не более %(n)d символов.")
+
+
+def _reason_max_length():
+    """Return the model-enforced maximum length of a report reason."""
+    return Report._meta.get_field("reason").max_length
+
+
+def _string_choices(values):
+    """Return ``[(str(v), str(v))]`` choices for a list of stored values."""
+    return [(str(value), str(value)) for value in values]
+
 
 class _AutofocusChoiceMixin:
     """Put ``autofocus`` on the first option of a choice group.
@@ -98,16 +111,17 @@ class ReportForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["reason"].widget.attrs["maxlength"] = Report._meta.get_field("reason").max_length
+        self.fields["reason"].widget.attrs["maxlength"] = _reason_max_length()
 
     def clean(self):
         cleaned_data = super().clean()
         reason = self.data.get(self.add_prefix("reason"), "") if self.is_bound else ""
-        if len(reason) > Report._meta.get_field("reason").max_length:
+        maximum = _reason_max_length()
+        if len(reason) > maximum:
             self.add_error("reason", forms.ValidationError(
-                _("Отзыв должен содержать не более %(n)d символов."),
+                _TOO_LONG_MESSAGE,
                 code="max_length",
-                params={"n": Report._meta.get_field("reason").max_length},
+                params={"n": maximum},
             ))
         return cleaned_data
 
@@ -143,11 +157,11 @@ class ReviewForm(forms.Form):
         label=_("Пошли бы снова к этому преподавателю?"),
     )
     grade = forms.ChoiceField(
-        choices=[("", _("Предпочитаю не указывать"))] + [(str(g), str(g)) for g in GRADES],
+        choices=[("", _("Предпочитаю не указывать"))] + _string_choices(GRADES),
         required=False, label=_("Полученная оценка"),
     )
     tags = forms.MultipleChoiceField(
-        choices=[(str(t), str(t)) for t in TAGS],
+        choices=_string_choices(TAGS),
         required=False, widget=AutofocusCheckboxSelectMultiple,
         label=_("Теги"), help_text=_("Выберите до 3"),
     )
@@ -175,8 +189,8 @@ class ReviewForm(forms.Form):
         comment = clean_text(self.cleaned_data["comment"])
         _ensure_length(
             comment, MIN_COMMENT_LENGTH, MAX_COMMENT_LENGTH,
-            too_short=_("Отзыв должен содержать не менее %(n)d символов."),
-            too_long=_("Отзыв должен содержать не более %(n)d символов."),
+            too_short=_TOO_SHORT_MESSAGE,
+            too_long=_TOO_LONG_MESSAGE,
         )
         return comment
 

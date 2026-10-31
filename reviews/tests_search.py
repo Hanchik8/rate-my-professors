@@ -1,4 +1,4 @@
-"""Focused coverage for professor search, filters and pagination.
+"""Coverage for professor search, filters, pagination and empty states.
 
 The repository contract mixin runs against both storage backends so search
 semantics cannot drift between the in-memory and ORM implementations.
@@ -8,12 +8,52 @@ from html import unescape
 from urllib.parse import parse_qs, urlsplit
 
 from django.core.cache import cache
-from django.test import TestCase
+from django.core.paginator import Paginator
+from django.template.loader import render_to_string
+from django.test import RequestFactory, SimpleTestCase, TestCase
 from django.urls import reverse
 
+from .constants import PAGE_SIZE
 from .django_repo import DjangoRepository
 from .repository import InMemoryRepository
 from .tests import _MemoryRepoTestCase, _repo_review
+
+
+class _ListedRepoMixin:
+    def _make_repo(self):
+        raise NotImplementedError
+
+    def setUp(self):
+        cache.clear()
+        import reviews.views as views
+        from reviews import store as store_mod
+
+        self.repo = self._make_repo()
+        self._orig_store_repo = store_mod.repo
+        self._orig_views_repo = views.repo
+        store_mod.repo = self.repo
+        views.repo = self.repo
+        self.school = self.repo.add_school("Тестовый список", "Бишкек")
+
+    def tearDown(self):
+        import reviews.views as views
+        from reviews import store as store_mod
+
+        store_mod.repo = self._orig_store_repo
+        views.repo = self._orig_views_repo
+        cache.clear()
+        super().tearDown()
+
+    def _add_professors(self, count, *, school=None, prefix="Список",
+                        department="Пагинация границ"):
+        school = school or self.school
+        return [
+            self.repo.add_professor(
+                school.id, f"{prefix}{i:02d}", f"Профессор{i:02d}",
+                department, "доцент",
+            )
+            for i in range(count)
+        ]
 
 
 class SearchContractMixin:
@@ -64,6 +104,32 @@ class SearchContractMixin:
         self.assertEqual(self._ids(q="ФИЗИКА"), {self.ivan.id})
         self.assertEqual(self._ids(q="о'Ко"), {self.john.id})
         self.assertEqual(self._ids(q="ИВАн ПЕТРОВ"), {self.ivan.id})
+
+    def test_query_word_order_does_not_matter(self):
+        gulnara = self.repo.add_professor(
+            self.bishkek.id, "Гульнара", "Асанова", "Лингвистика", "доцент"
+        )
+        self.assertEqual(self._ids(q="Гульнара Асанова"), {gulnara.id})
+        self.assertEqual(self._ids(q="Асанова Гульнара"), {gulnara.id})
+        self.assertEqual(self._ids(q="Иван Петров"), {self.ivan.id})
+        self.assertEqual(self._ids(q="Петров Иван"), {self.ivan.id})
+        self.assertEqual(self._ids(q="  Петров   Иван  "), {self.ivan.id})
+
+    def test_latin_query_matches_cyrillic_professor_names(self):
+        asanova = self.repo.add_professor(
+            self.bishkek.id, "Гульнара", "Асанова", "Лингвистика", "доцент"
+        )
+        bekboev = self.repo.add_professor(
+            self.bishkek.id, "Айбек", "Бекбоев", "Физика", "доцент"
+        )
+        self.assertEqual(self._ids(q="Asanova"), {asanova.id})
+        self.assertEqual(self._ids(q="Bekboev"), {bekboev.id})
+        self.assertEqual(self._ids(q="Bekboev Физика"), {bekboev.id})
+
+    def test_query_requires_every_word_to_match(self):
+        self.assertEqual(self._ids(q="Иван Смирнова"), set())
+        self.assertEqual(self._ids(q="Петров Физика"), {self.ivan.id})
+        self.assertEqual(self._ids(q="Смирнова Физика"), set())
 
     def test_query_is_insensitive_to_yo_and_e(self):
         with_yo = self.repo.add_professor(
@@ -164,6 +230,202 @@ class MemorySearchContractTests(SearchContractMixin, TestCase):
 class DjangoSearchContractTests(SearchContractMixin, TestCase):
     def _make(self):
         return DjangoRepository()
+
+
+class SearchSpecialsContractMixin(_ListedRepoMixin):
+    """Wildcards, quotes and control bytes match literally, never broadly."""
+
+    def setUp(self):
+        super().setUp()
+        self.john = self.repo.add_professor(
+            self.school.id, "Джон", "О'Коннор", "Каф%едра_1", "доцент"
+        )
+        self.ivan = self.repo.add_professor(
+            self.school.id, "Иван", "Петров", "Физика", "доцент"
+        )
+
+    def _ids(self, **kwargs):
+        return {row["prof"].id for row in self.repo.search(**kwargs)}
+
+    def test_wildcard_characters_match_only_literal_occurrences(self):
+        for q in ("%", "_", "'", "каф%едра_1", "о'коннор"):
+            with self.subTest(q=q):
+                self.assertEqual(self._ids(q=q), {self.john.id})
+
+    def test_doubled_wildcards_and_absent_characters_match_nothing(self):
+        for q in ("%%", "__", '"', "`"):
+            with self.subTest(q=q):
+                self.assertEqual(self._ids(q=q), set())
+
+    def test_plain_professor_never_matches_bare_wildcard(self):
+        for q in ("%", "_", "'"):
+            with self.subTest(q=q):
+                self.assertNotIn(self.ivan.id, self._ids(q=q))
+
+    def test_control_characters_in_query_are_safe_and_match_nothing(self):
+        for q in ("\x00", "a\x00b", "\x1b[31m"):
+            with self.subTest(q=q):
+                self.assertEqual(self._ids(q=q), set())
+
+    def test_view_search_treats_wildcards_literally(self):
+        response = self.client.get(reverse("home"), {"q": "%"})
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            [row["prof"].id for row in response.context["results"]],
+            [self.john.id],
+        )
+
+    def test_view_search_with_quote_finds_only_literal_match(self):
+        response = self.client.get(reverse("home"), {"q": "'"})
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            [row["prof"].id for row in response.context["results"]],
+            [self.john.id],
+        )
+
+    def test_empty_and_whitespace_query_lists_everything_on_first_page(self):
+        self._add_professors(PAGE_SIZE + 1)
+
+        for q in ("", "   ", "\t\n"):
+            with self.subTest(q=q):
+                response = self.client.get(reverse("home"), {"q": q})
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(response.context["page_obj"].number, 1)
+                self.assertEqual(response.context["page_obj"].paginator.num_pages, 2)
+                self.assertEqual(len(response.context["results"]), PAGE_SIZE)
+
+
+class PageNumberFallbackContractMixin(_ListedRepoMixin):
+    """Any ``page`` value yields a valid page, never a crash or a blank list."""
+
+    def _url(self):
+        raise NotImplementedError
+
+    def setUp(self):
+        super().setUp()
+        self._add_professors(PAGE_SIZE + 1)
+        self._last_page = 2
+
+    def _results_on_page(self, number):
+        return PAGE_SIZE if number == 1 else 1
+
+    def test_exotic_page_values_fall_back_to_a_valid_page(self):
+        cases = (
+            ("", 1), ("abc", 1), ("1.5", 1), ("1e10", 1),
+            ("2", 2), (" 2 ", 2), ("٢", 2),
+            ("0", 2), ("-1", 2), ("+3", 2),
+        )
+        for page, expected in cases:
+            with self.subTest(page=page):
+                response = self.client.get(self._url(), {"page": page})
+                self.assertEqual(response.status_code, 200)
+                page_obj = response.context["page_obj"]
+                self.assertEqual(page_obj.number, expected)
+                self.assertEqual(page_obj.paginator.num_pages, self._last_page)
+                self.assertEqual(
+                    len(response.context["results"]),
+                    self._results_on_page(expected),
+                )
+
+    def test_huge_numeric_page_values_fall_back_to_last_page(self):
+        for page in ("9" * 1000, "-" + "9" * 1000, "٩" * 100):
+            with self.subTest(page=page[:12]):
+                response = self.client.get(self._url(), {"page": page})
+                self.assertEqual(response.status_code, 200)
+                page_obj = response.context["page_obj"]
+                self.assertEqual(page_obj.number, self._last_page)
+                self.assertEqual(
+                    len(response.context["results"]),
+                    self._results_on_page(self._last_page),
+                )
+
+    def test_special_query_with_exotic_page_shows_empty_state(self):
+        response = self.client.get(
+            reverse("home"), {"q": "<script>x</script>", "page": "1e10"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(list(response.context["results"]), [])
+        self.assertIsNone(response.context["page_obj"])
+        self.assertContains(response, "Ничего не нашлось")
+        self.assertNotContains(response, "<script>x</script>")
+
+
+class HomeMarkupSafetyTests(_ListedRepoMixin, TestCase):
+    """Markup payloads in the query string render escaped, never executable."""
+
+    def _make_repo(self):
+        return InMemoryRepository()
+
+    def test_script_tag_in_query_is_escaped_and_finds_nothing(self):
+        response = self.client.get(
+            reverse("home"), {"q": "<script>alert(1)</script>"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(list(response.context["results"]), [])
+        self.assertNotContains(response, "<script>alert(1)</script>")
+        self.assertContains(response, "&lt;script&gt;alert(1)&lt;/script&gt;")
+        self.assertContains(response, "Ничего не нашлось")
+
+    def test_attribute_breakout_payload_stays_inside_value_attribute(self):
+        payload = '"><img src=x onerror=alert(1)>'
+        response = self.client.get(reverse("home"), {"q": payload})
+
+        self.assertEqual(response.status_code, 200)
+        self.assertNotContains(response, "<img src=x")
+        self.assertNotContains(response, 'value=""><img')
+        html = response.content.decode()
+        match = re.search(
+            r'<input\b[^>]*\bname="q"[^>]*value="([^"]*)"', html
+        )
+        self.assertIsNotNone(match, "search input must echo the query as its value")
+        self.assertEqual(match.group(1), "&quot;&gt;&lt;img src=x onerror=alert(1)&gt;")
+
+    def test_markup_payloads_in_filters_render_no_raw_tags(self):
+        for param in ("school", "city", "department"):
+            with self.subTest(param=param):
+                response = self.client.get(
+                    reverse("home"), {param: "<script>x</script>"}
+                )
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(list(response.context["results"]), [])
+                self.assertNotContains(response, "<script>x</script>")
+
+    def test_control_characters_in_query_do_not_crash(self):
+        for q in ("\x00", "a\x00b", "\x1b[31m"):
+            with self.subTest(q=q):
+                response = self.client.get(reverse("home"), {"q": q})
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(list(response.context["results"]), [])
+
+
+class MemorySearchSpecialsTests(SearchSpecialsContractMixin, TestCase):
+    def _make_repo(self):
+        return InMemoryRepository()
+
+
+class DjangoSearchSpecialsTests(SearchSpecialsContractMixin, TestCase):
+    def _make_repo(self):
+        return DjangoRepository()
+
+
+class HomePaginationEdgeTests(PageNumberFallbackContractMixin, TestCase):
+    def _make_repo(self):
+        return InMemoryRepository()
+
+    def _url(self):
+        return reverse("home")
+
+
+class SchoolPaginationEdgeTests(PageNumberFallbackContractMixin, TestCase):
+    def _make_repo(self):
+        return InMemoryRepository()
+
+    def _url(self):
+        return reverse("school_detail", args=[self.school.slug])
 
 
 class HomeSearchPaginationTests(_MemoryRepoTestCase):
@@ -346,15 +608,196 @@ class HomeSearchPaginationTests(_MemoryRepoTestCase):
                 self.assertContains(response, "Ничего не нашлось")
 
 
+class HomePaginationEmptyContractMixin(_ListedRepoMixin):
+    def test_empty_search_has_no_pagination_and_shows_empty_state(self):
+        response = self.client.get(
+            reverse("home"), {"q": "несуществующийпреподаватель"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(list(response.context["results"]), [])
+        self.assertIsNone(response.context["page_obj"])
+        self.assertNotContains(response, 'class="pagination"')
+        self.assertContains(response, "Ничего не нашлось")
+        self.assertContains(
+            response,
+            "По запросу «несуществующийпреподаватель» никого не нашли, "
+            "проверьте написание",
+        )
+        self.assertContains(response, "Сбросить поиск")
+        self.assertContains(response, f'href="{reverse("home")}"')
+
+    def test_empty_search_with_any_page_parameter_stays_empty(self):
+        for page in ("2", "999", "abc", "0", "-1"):
+            with self.subTest(page=page):
+                response = self.client.get(
+                    reverse("home"), {"q": "несуществующийпреподаватель", "page": page}
+                )
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(list(response.context["results"]), [])
+                self.assertIsNone(response.context["page_obj"])
+                self.assertNotContains(response, 'class="pagination"')
+                self.assertContains(response, "Ничего не нашлось")
+
+    def test_unmatched_query_with_existing_filters_shows_empty_state(self):
+        self._add_professors(3, department="Существующая кафедра")
+
+        response = self.client.get(reverse("home"), {
+            "q": "несуществующийпреподаватель",
+            "school": self.school.slug,
+            "city": self.school.city,
+            "department": "Существующая кафедра",
+        })
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(list(response.context["results"]), [])
+        self.assertIsNone(response.context["page_obj"])
+        self.assertContains(response, "Ничего не нашлось")
+        self.assertNotContains(response, 'class="pagination"')
+
+    def test_exactly_page_size_results_have_no_pagination(self):
+        self._add_professors(PAGE_SIZE, department="Граница ровно")
+
+        response = self.client.get(
+            reverse("home"), {"department": "Граница ровно"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context["results"]), PAGE_SIZE)
+        self.assertIsNone(response.context["page_obj"])
+        self.assertNotContains(response, 'class="pagination"')
+
+    def test_page_size_plus_one_splits_into_two_pages(self):
+        professors = self._add_professors(
+            PAGE_SIZE + 1, department="Граница плюс один"
+        )
+        params = {"department": "Граница плюс один"}
+
+        first = self.client.get(reverse("home"), params)
+        second = self.client.get(reverse("home"), {**params, "page": 2})
+        out_of_range = self.client.get(reverse("home"), {**params, "page": 999})
+
+        self.assertEqual(first.context["page_obj"].paginator.num_pages, 2)
+        self.assertEqual(len(first.context["results"]), PAGE_SIZE)
+        self.assertEqual(second.context["page_obj"].number, 2)
+        self.assertEqual(len(second.context["results"]), 1)
+        self.assertEqual(out_of_range.context["page_obj"].number, 2)
+        self.assertEqual(len(out_of_range.context["results"]), 1)
+
+        first_ids = {row["prof"].id for row in first.context["results"]}
+        second_ids = {row["prof"].id for row in second.context["results"]}
+        self.assertFalse(first_ids & second_ids)
+        self.assertEqual(first_ids | second_ids, {p.id for p in professors})
+
+    def test_pagination_links_preserve_query_filter_and_sort(self):
+        self._add_professors(
+            PAGE_SIZE + 1, prefix="Ссылка", department="Ссылки пагинации"
+        )
+        params = {
+            "q": "Профессор",
+            "department": "Ссылки пагинации",
+            "sort": "reviews",
+        }
+
+        response = self.client.get(reverse("home"), params)
+        match = re.search(r'href="([^"]*page=2[^"]*)"', response.content.decode())
+
+        self.assertIsNotNone(match)
+        query = parse_qs(urlsplit(unescape(match.group(1))).query)
+        self.assertEqual(query.get("q"), ["Профессор"])
+        self.assertEqual(query.get("department"), ["Ссылки пагинации"])
+        self.assertEqual(query.get("sort"), ["reviews"])
+        self.assertEqual(query.get("page"), ["2"])
+
+
+class SchoolPaginationEmptyContractMixin(_ListedRepoMixin):
+    def test_school_without_professors_shows_empty_state_without_pagination(self):
+        response = self.client.get(
+            reverse("school_detail", args=[self.school.slug])
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(list(response.context["results"]), [])
+        self.assertIsNone(response.context["page_obj"])
+        self.assertContains(response, "Пока нет преподавателей")
+        self.assertContains(response, "Добавьте преподавателя, чтобы студенты могли делиться опытом.")
+        self.assertContains(response, f'href="{reverse("add_professor")}"')
+        self.assertNotContains(response, 'class="pagination"')
+
+    def test_school_exactly_page_size_results_have_no_pagination(self):
+        self._add_professors(PAGE_SIZE)
+
+        response = self.client.get(
+            reverse("school_detail", args=[self.school.slug])
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context["results"]), PAGE_SIZE)
+        self.assertIsNone(response.context["page_obj"])
+        self.assertNotContains(response, 'class="pagination"')
+
+    def test_school_page_size_plus_one_splits_into_two_pages(self):
+        professors = self._add_professors(PAGE_SIZE + 1)
+        url = reverse("school_detail", args=[self.school.slug])
+
+        first = self.client.get(url)
+        second = self.client.get(url, {"page": 2})
+        out_of_range = self.client.get(url, {"page": 999})
+
+        self.assertEqual(first.context["page_obj"].paginator.num_pages, 2)
+        self.assertEqual(len(first.context["results"]), PAGE_SIZE)
+        self.assertEqual(second.context["page_obj"].number, 2)
+        self.assertEqual(len(second.context["results"]), 1)
+        self.assertEqual(out_of_range.context["page_obj"].number, 2)
+        self.assertEqual(len(out_of_range.context["results"]), 1)
+
+        first_ids = {row["prof"].id for row in first.context["results"]}
+        second_ids = {row["prof"].id for row in second.context["results"]}
+        self.assertFalse(first_ids & second_ids)
+        self.assertEqual(first_ids | second_ids, {p.id for p in professors})
+
+
+class MemoryHomePaginationEmptyTests(HomePaginationEmptyContractMixin, TestCase):
+    def _make_repo(self):
+        return InMemoryRepository()
+
+
+class DjangoHomePaginationEmptyTests(HomePaginationEmptyContractMixin, TestCase):
+    def _make_repo(self):
+        return DjangoRepository()
+
+
+class MemorySchoolPaginationEmptyTests(SchoolPaginationEmptyContractMixin, TestCase):
+    def _make_repo(self):
+        return InMemoryRepository()
+
+
+class DjangoSchoolPaginationEmptyTests(SchoolPaginationEmptyContractMixin, TestCase):
+    def _make_repo(self):
+        return DjangoRepository()
+
+
 class HomeEmptyStateRenderTests(_MemoryRepoTestCase):
     """An empty search result renders a hint and a link that resets filters."""
 
     EMPTY_STATE_TEXTS = {
-        "ru": ("Ничего не нашлось", "Попробуйте сократить запрос или изменить фильтры.",
+        "ru": ("Ничего не нашлось",
+               "По запросу «неттакого» никого не нашли, проверьте написание",
+               "Сбросить поиск"),
+        "ky": ("Эч нерсе табылган жок",
+               "«неттакого» суроосу боюнча эч ким табылган жок, жазылышын текшериңиз",
+               "Издөөнү тазалоо"),
+        "en": ("Nothing found",
+               "We couldn't find anyone for “неттакого”, check the spelling",
+               "Reset search"),
+    }
+
+    FILTER_EMPTY_TEXTS = {
+        "ru": ("Ничего не нашлось", "С этими фильтрами никого нет",
                "Сбросить фильтры"),
-        "ky": ("Эч нерсе табылган жок", "Суроону кыскартып же чыпкаларды өзгөртүп көрүңүз.",
+        "ky": ("Эч нерсе табылган жок", "Бул чыпкаларга эч ким туура келбейт",
                "Чыпкаларды тазалоо"),
-        "en": ("Nothing found", "Try a shorter query or change the filters.",
+        "en": ("Nothing found", "No one matches these filters",
                "Reset filters"),
     }
 
@@ -385,8 +828,32 @@ class HomeEmptyStateRenderTests(_MemoryRepoTestCase):
         self.assertEqual(list(response.context["results"]), [])
         self.assertContains(response, 'role="status"')
         self.assertContains(response, "Ничего не нашлось")
-        self.assertContains(response, "Попробуйте сократить запрос или изменить фильтры.")
-        self.assertContains(response, ">Сбросить фильтры</a>")
+        self.assertContains(
+            response,
+            "По запросу «неттакого» никого не нашли, проверьте написание",
+        )
+        self.assertContains(response, ">Сбросить поиск</a>")
+
+    def test_empty_state_distinguishes_query_from_filters(self):
+        query_response = self._empty_response()
+
+        self.assertContains(
+            query_response,
+            "По запросу «неттакого» никого не нашли, проверьте написание",
+        )
+        self.assertContains(query_response, ">Сбросить поиск</a>")
+        self.assertNotContains(query_response, "С этими фильтрами никого нет")
+        self.assertNotContains(query_response, ">Сбросить фильтры</a>")
+
+        filter_response = self.client.get(reverse("home"), {"city": "Атлантида"})
+
+        self.assertContains(filter_response, "С этими фильтрами никого нет")
+        self.assertContains(filter_response, ">Сбросить фильтры</a>")
+        self.assertNotContains(
+            filter_response,
+            "По запросу «неттакого» никого не нашли, проверьте написание",
+        )
+        self.assertNotContains(filter_response, ">Сбросить поиск</a>")
 
     def test_reset_link_targets_home_without_query_parameters(self):
         response = self._empty_response(city="Ош", department="Несуществующая")
@@ -426,3 +893,63 @@ class HomeEmptyStateRenderTests(_MemoryRepoTestCase):
                         continue
                     for text in other_texts:
                         self.assertNotContains(response, text)
+
+
+class SearchIndicatorTests(_MemoryRepoTestCase):
+    def test_query_shows_header_and_reset_link_preserving_filters(self):
+        cache.clear()
+        response = self.client.get(
+            "/", {"q": "Айбек", "city": "Бишкек", "sort": "reviews"}
+        )
+        total = len(response.context["results"])
+
+        self.assertContains(response, f"Результаты по запросу «Айбек»: {total}")
+        self.assertContains(response, ">Сбросить поиск</a>")
+
+        html = response.content.decode()
+        anchor = re.search(r'<a\b[^>]*class="reset-search"[^>]*>', html)
+        self.assertIsNotNone(anchor)
+        href = unescape(re.search(r'href="([^"]*)"', anchor.group(0)).group(1))
+        target = urlsplit(href)
+        query = parse_qs(target.query)
+
+        self.assertEqual(target.path, reverse("home"))
+        self.assertNotIn("q", query)
+        self.assertEqual(query.get("city"), ["Бишкек"])
+        self.assertEqual(query.get("sort"), ["reviews"])
+
+        without_query = self.client.get("/")
+        self.assertNotContains(without_query, "Результаты по запросу")
+        self.assertNotContains(without_query, "Сбросить поиск")
+        cache.clear()
+
+
+class PaginationRenderTests(SimpleTestCase):
+    def test_renders_window_edges_and_preserves_filters(self):
+        page_obj = Paginator(list(range(250)), 10).get_page(5)
+        request = RequestFactory().get("/", {
+            "q": "смит",
+            "department": "Физика",
+            "sort": "reviews",
+            "page": "5",
+        })
+
+        html = render_to_string(
+            "reviews/_pagination.html",
+            {"page_obj": page_obj, "request": request},
+        )
+
+        self.assertRegex(html, r'aria-current="page"[^>]*>5</span>')
+        self.assertIn("…", html)
+        for label in ("Первая", "Назад", "Вперёд", "Последняя"):
+            self.assertIn(f">{label}</a>", html)
+
+        match = re.search(r'href="([^"]*page=6[^"]*)"', html)
+        self.assertIsNotNone(match)
+        query = parse_qs(urlsplit(unescape(match.group(1))).query)
+        self.assertEqual(query, {
+            "q": ["смит"],
+            "department": ["Физика"],
+            "sort": ["reviews"],
+            "page": ["6"],
+        })

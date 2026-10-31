@@ -1,4 +1,4 @@
-{% extends "reviews/base.html" %}{% load i18n l10n static %}
+{% extends "reviews/base.html" %}{% load i18n l10n static departments %}
 {% block content %}
 <h1>{% translate "Узнайте, какие занятия на самом деле — до записи на курс." %}</h1>
 <form class="search" method="get" role="search" aria-label="{% translate 'Поиск' %}">
@@ -25,7 +25,7 @@
   </select>
   <select name="department" aria-label="{% translate 'Кафедра' %}">
     <option value="">{% translate "Все кафедры" %}</option>
-    {% for d in departments %}<option value="{{ d }}"{% if d == department %} selected{% endif %}>{{ d }}</option>{% endfor %}
+    {% for d in departments %}<option value="{{ d }}"{% if d == department %} selected{% endif %}>{% translate_department d %}</option>{% endfor %}
   </select>
   <select name="sort" aria-label="{% translate 'Сортировка' %}">
     <option value="rating"{% if sort == "rating" %} selected{% endif %}>{% translate "По рейтингу" %}</option>
@@ -33,23 +33,33 @@
   </select>
   <button type="submit" aria-label="{% translate 'Найти' %}">{% translate "Найти" %}</button>
 </form>
+{% if q %}
+{% querystring q=None page=None as reset_query %}
+{% firstof page_obj.paginator.count results|length as total %}
+<div class="search-summary">
+  <h2>{% blocktranslate with query=q total=total %}Результаты по запросу «{{ query }}»: {{ total }}{% endblocktranslate %}</h2>
+  <a class="reset-search" href="{% url 'home' %}{% if reset_query != '?' %}{{ reset_query }}{% endif %}">{% translate "Сбросить поиск" %}</a>
+</div>
+{% endif %}
 <ol class="cards">
   {% for r in results %}
   {% include "reviews/_professor_card.html" with r=r show_school=True show_difficulty=True %}
   {% empty %}
   <li class="empty empty-state" role="status">
     <strong class="empty-state-title">{% translate "Ничего не нашлось" %}</strong>
+    {% if empty_state == "query" %}
+    <p>{% blocktranslate with query=q %}По запросу «{{ query }}» никого не нашли, проверьте написание{% endblocktranslate %}</p>
+    <a class="empty-state-action" href="{% url 'home' %}">{% translate "Сбросить поиск" %}</a>
+    {% elif empty_state == "filters" %}
+    <p>{% translate "С этими фильтрами никого нет" %}</p>
+    <a class="empty-state-action" href="{% url 'home' %}">{% translate "Сбросить фильтры" %}</a>
+    {% else %}
     <p>{% translate "Попробуйте сократить запрос или изменить фильтры." %}</p>
     <a class="empty-state-action" href="{% url 'home' %}">{% translate "Сбросить фильтры" %}</a>
+    {% endif %}
   </li>
   {% endfor %}
 </ol>
-{% if page_obj %}
-<div class="pagination">
-  {% if page_obj.has_previous %}<a href="?q={{ q|urlencode }}&school={{ school|urlencode }}&city={{ city|urlencode }}&department={{ department|urlencode }}&sort={{ sort|urlencode }}&page={{ page_obj.previous_page_number }}" aria-label="{% blocktranslate with n=page_obj.previous_page_number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{% translate "Назад" %}</a>{% endif %}
-  <span aria-current="page">{% blocktranslate with n=page_obj.number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}</span>
-  {% if page_obj.has_next %}<a href="?q={{ q|urlencode }}&school={{ school|urlencode }}&city={{ city|urlencode }}&department={{ department|urlencode }}&sort={{ sort|urlencode }}&page={{ page_obj.next_page_number }}" aria-label="{% blocktranslate with n=page_obj.next_page_number t=page_obj.paginator.num_pages %}Страница {{ n }} из {{ t }}{% endblocktranslate %}">{% translate "Вперёд" %}</a>{% endif %}
-</div>
-{% endif %}
+{% if page_obj %}{% include "reviews/_pagination.html" %}{% endif %}
 <script src="{% static 'reviews/filters.js' %}" defer></script>
 {% endblock %}

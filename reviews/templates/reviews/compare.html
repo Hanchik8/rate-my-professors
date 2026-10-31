@@ -1,0 +1,55 @@
+{% extends "reviews/base.html" %}{% load i18n l10n departments %}
+{% block title %}{% translate "Сравнение преподавателей" %} — ProfLens{% endblock %}
+{% block description %}{% translate "Сравнение преподавателей по рейтингу, сложности и числу отзывов." %}{% endblock %}
+{% block content %}
+<nav class="breadcrumbs" aria-label="{% translate 'Хлебные крошки' %}">
+  <ol>
+    <li><a href="{% url 'home' %}">{% translate "Главная" %}</a></li>
+    <li aria-current="page">{% translate "Сравнение преподавателей" %}</li>
+  </ol>
+</nav>
+<h1>{% translate "Сравнение преподавателей" %}</h1>
+{% if error %}
+<section class="empty empty-state" role="alert">
+  <strong class="empty-state-title">{{ error }}</strong>
+  <p><a class="empty-state-action" href="{% url 'home' %}">{% translate "Вернуться на главную" %}</a></p>
+</section>
+{% else %}
+<div class="compare-wrap">
+  <table class="compare">
+    <caption>{% translate "Сравнение преподавателей" %}</caption>
+    <thead>
+      <tr>
+        <th scope="col">{% translate "ФИО" %}</th>
+        {% for item in professors %}
+        <th scope="col"><a href="{% url 'professor' item.prof.slug %}">{{ item.prof.full_name }}</a></th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{% translate "Кафедра" %}</th>
+        {% for item in professors %}<td>{% translate_department item.prof.department %}</td>{% endfor %}
+      </tr>
+      <tr>
+        <th scope="row">{% translate "Средний балл" %}</th>
+        {% for item in professors %}<td>{% if item.stats.count %}{{ item.stats.overall|floatformat:1|localize }} / 5{% else %}-{% endif %}</td>{% endfor %}
+      </tr>
+      <tr>
+        <th scope="row">{% translate "Отзывов" %}</th>
+        {% for item in professors %}<td>{{ item.stats.count|localize }}</td>{% endfor %}
+      </tr>
+      <tr>
+        <th scope="row">{% translate "Сложность" %}</th>
+        {% for item in professors %}<td>{% if item.stats.count %}{{ item.stats.difficulty|floatformat:1|localize }} / 5{% else %}-{% endif %}</td>{% endfor %}
+      </tr>
+      <tr>
+        <th scope="row">{% translate "Пойдут снова" %}</th>
+        {% for item in professors %}<td>{% if item.stats.wta_pct is not None %}{{ item.stats.wta_pct|floatformat:1|localize }}%{% else %}-{% endif %}</td>{% endfor %}
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% endblock %}
+{% block page_tools %}{% include "reviews/_back_to_top.html" %}{% endblock %}

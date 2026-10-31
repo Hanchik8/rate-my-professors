@@ -129,6 +129,48 @@ def normalize_search_text(value: str | None) -> str:
     return (value or "").casefold().replace("ё", "е").strip()
 
 
+def search_terms(value: str | None) -> list[str]:
+    """Split normalized search input into words that must all match (AND)."""
+    return normalize_search_text(value).split()
+
+
+_LATIN_TO_CYRILLIC = {
+    "shch": "щ", "yo": "ё", "zh": "ж", "kh": "х", "ts": "ц",
+    "ch": "ч", "sh": "ш", "yu": "ю", "ya": "я",
+    "a": "а", "b": "б", "v": "в", "g": "г", "d": "д", "e": "е",
+    "z": "з", "i": "и", "j": "ж", "k": "к", "l": "л", "m": "м",
+    "n": "н", "o": "о", "p": "п", "r": "р", "s": "с", "t": "т",
+    "u": "у", "f": "ф", "h": "х", "c": "к", "y": "ы", "x": "кс",
+    "w": "в", "q": "к",
+}
+
+
+def transliterate_search_term(value: str) -> str:
+    """Convert a Latin search token to a simple Cyrillic approximation."""
+    value = value.casefold()
+    result = []
+    index = 0
+    tokens = sorted(_LATIN_TO_CYRILLIC, key=len, reverse=True)
+    while index < len(value):
+        for token in tokens:
+            if value.startswith(token, index):
+                result.append(_LATIN_TO_CYRILLIC[token])
+                index += len(token)
+                break
+        else:
+            result.append(value[index])
+            index += 1
+    return "".join(result)
+
+
+def search_terms_with_transliteration(value: str | None) -> list[str]:
+    """Return original and Latin-to-Cyrillic alternatives for each term."""
+    return [
+        "|".join(dict.fromkeys((term, normalize_search_text(transliterate_search_term(term)))))
+        for term in search_terms(value)
+    ]
+
+
 def _tone(overall: float) -> str:
     """Map an average overall score to the CSS tone token used by templates."""
     return "good" if overall >= 4 else "mid" if overall >= 3 else "bad"
@@ -414,7 +456,7 @@ class InMemoryRepository:
         region: str = "",
     ) -> list[dict[str, Any]]:
         """Search approved professors with optional filters and sorting."""
-        q = normalize_search_text(q)
+        terms = search_terms_with_transliteration(q)
         region = region.strip()
         school_slug = school_slug.strip()
         city = city.strip()
@@ -432,7 +474,8 @@ class InMemoryRepository:
                 continue
             if department and p.department != department:
                 continue
-            if q and q not in normalize_search_text(f"{p.full_name} {p.department}"):
+            haystack = normalize_search_text(f"{p.full_name} {p.department}")
+            if terms and not all(any(variant in haystack for variant in term.split("|")) for term in terms):
                 continue
             out.append({"prof": p, "school": school, "stats": self.stats(p.id)})
         out.sort(key=_search_sort_key(sort))
