@@ -1,0 +1,186 @@
+{
+ "code": "dipacademy",
+ "university": "Дипломатическая академия МИД КР им. К. Дикамбаева",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://dipacademy.kg/prepady/",
+  "https://dipacademy.kg/prepodavateli/",
+  "https://dipacademy.kg/5214-2/",
+  "https://dipacademy.kg/mejd-otn-pr/",
+  "https://dipacademy.kg/diplomaticheskaja-i-konsulskaja-sluzhba/",
+  "https://dipacademy.kg/gosudarstvennogo-i-inostrannyh-jazykov/",
+  "https://dipacademy.kg/sotrudniki",
+  "https://dipacademy.kg/wp-json/wp/v2/pages"
+ ],
+ "notes": "Списки ППС найдены на страницах prepady, prepodavateli и 5214-2 и в персональных страницах (через WP REST API). И.о. профессора отнесены к профессору. Для Амин Фатхи Мухаммад порядок имени неочевиден, фамилией взято Мухаммад; для Эркин Минавар сохранен порядок как на сайте. Директор ЦАМО, ректор и сотрудники ОМСиПК не включены. Члены диссовета и почетные профессора не включены как внешние.",
+ "professors": [
+  {
+   "last_name": "Джоробекова",
+   "first_name": "Айнур Эшимбековна",
+   "department": "Международные отношения и право",
+   "title": "профессор",
+   "source_url": "https://dipacademy.kg/dzhorobekova-ajnur-jeshimbekovna/"
+  },
+  {
+   "last_name": "Курманов",
+   "first_name": "Зайнидин Карпекович",
+   "department": "Международные отношения и право",
+   "title": "профессор",
+   "source_url": "https://dipacademy.kg/kurmanov-zajnidin-karpekovich/"
+  },
+  {
+   "last_name": "Иманалиева",
+   "first_name": "Лидия Адамкалыевна",
+   "department": "Международные отношения и право",
+   "title": "профессор",
+   "source_url": "https://dipacademy.kg/imanalieva-lidija-adamkalyevna/"
+  },
+  {
+   "last_name": "Оролбаева",
+   "first_name": "Ирина Абдыевна",
+   "department": "Международные отношения и право",
+   "title": "профессор",
+   "source_url": "https://dipacademy.kg/orolbaeva-irina-abdyevna/"
+  },
+  {
+   "last_name": "Султанбеков",
+   "first_name": "Кубатбек Черикчиевич",
+   "department": "Международные отношения и право",
+   "title": "профессор",
+   "source_url": "https://dipacademy.kg/sultanbekov-kubatbek-cherikchievich/"
+  },
+  {
+   "last_name": "Маликов",
+   "first_name": "Кадыр Курманбекович",
+   "department": "Международные отношения и право",
+   "title": "профессор",
+   "source_url": "https://dipacademy.kg/malikov-kadyr-kurmanbekovich/"
+  },
+  {
+   "last_name": "Кашкараева",
+   "first_name": "Чинара Кайбулдаевна",
+   "department": "Международные отношения и право",
+   "title": "старший преподаватель",
+   "source_url": "https://dipacademy.kg/kashkaraeva-chinara-kajbuldaevna/"
+  },
+  {
+   "last_name": "Нурматов",
+   "first_name": "Темирбек Асанович",
+   "department": "Международные отношения и право",
+   "title": "доцент",
+   "source_url": "https://dipacademy.kg/nurmatov-temirbek-asanovich/"
+  },
+  {
+   "last_name": "Ишеналиева",
+   "first_name": "Айнура Калыковна",
+   "department": "Международные отношения и право",
+   "title": "доцент",
+   "source_url": "https://dipacademy.kg/ishenalieva-ajnura-kalykovna/"
+  },
+  {
+   "last_name": "Тен",
+   "first_name": "Андрей Валерьевич",
+   "department": "Международные отношения и право",
+   "title": "профессор",
+   "source_url": "https://dipacademy.kg/ten-andrej-valerevich/"
+  },
+  {
+   "last_name": "Кушбаков",
+   "first_name": "Чынгыз Замирбекович",
+   "department": "Международные отношения и право",
+   "title": "доцент",
+   "source_url": "https://dipacademy.kg/kushbakov-chyngyz-zamirbekovich/"
+  },
+  {
+   "last_name": "Зурдинов",
+   "first_name": "Абай Аширалиевич",
+   "department": "Международные отношения и право",
+   "title": "доцент",
+   "source_url": "https://dipacademy.kg/zurdinov-abaj-ashiralievich/"
+  },
+  {
+   "last_name": "Керимбекова",
+   "first_name": "Рита Абдыкуловна",
+   "department": "Мировая экономика и международный менеджмент",
+   "title": "доцент",
+   "source_url": "https://dipacademy.kg/kerimbekova-rita-abdykulovna/"
+  },
+  {
+   "last_name": "Абдурашитов",
+   "first_name": "Акасбек",
+   "department": "Мировая экономика и международный менеджмент",
+   "title": "профессор",
+   "source_url": "https://dipacademy.kg/prepodavateli/"
+  },
+  {
+   "last_name": "Мансурходжаев",
+   "first_name": "Алим Сайдумарович",
+   "department": "Мировая экономика и международный менеджмент",
+   "title": "доцент",
+   "source_url": "https://dipacademy.kg/5071-2/"
+  },
+  {
+   "last_name": "Фреюк",
+   "first_name": "Григорий Васильевич",
+   "department": "Мировая экономика и международный менеджмент",
+   "title": "доцент",
+   "source_url": "https://dipacademy.kg/5076-2/"
+  },
+  {
+   "last_name": "Алыбаева",
+   "first_name": "Гульдаана Джапаркуловна",
+   "department": "Мировая экономика и международный менеджмент",
+   "title": "доцент",
+   "source_url": "https://dipacademy.kg/5080-2/"
+  },
+  {
+   "last_name": "Алыбаев",
+   "first_name": "Султан Туйгунбекович",
+   "department": "Мировая экономика и международный менеджмент",
+   "title": "старший преподаватель",
+   "source_url": "https://dipacademy.kg/alybaev-sultan-tujgunbekovich/"
+  },
+  {
+   "last_name": "Доромбекова",
+   "first_name": "Айнур Осконбековна",
+   "department": "Государственный и иностранные языки",
+   "title": "доцент",
+   "source_url": "https://dipacademy.kg/5219-2/"
+  },
+  {
+   "last_name": "Анарбаев",
+   "first_name": "Арслан Алиевич",
+   "department": "Государственный и иностранные языки",
+   "title": "профессор",
+   "source_url": "https://dipacademy.kg/5222-2/"
+  },
+  {
+   "last_name": "Аманова",
+   "first_name": "Ажар Юнусовна",
+   "department": "Государственный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://dipacademy.kg/5224-2/"
+  },
+  {
+   "last_name": "Эркин",
+   "first_name": "Минавар",
+   "department": "Государственный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://dipacademy.kg/5226-2/"
+  },
+  {
+   "last_name": "Байгазиева",
+   "first_name": "Мээрим Шаршеновна",
+   "department": "Государственный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://dipacademy.kg/5230-2/"
+  },
+  {
+   "last_name": "Мухаммад",
+   "first_name": "Амин Фатхи",
+   "department": "Государственный и иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://dipacademy.kg/amin-fathi-muhammad/"
+  }
+ ]
+}

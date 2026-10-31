@@ -68,3 +68,13 @@ class PrepareProductionTests(TestCase):
         call_command("prepare_production", "--yes", stdout=StringIO())
         self.assertEqual((Review.objects.count(), Professor.objects.count(), School.objects.count()), (0, 0, 1))
         self.assertEqual(list(User.objects.values_list("username", flat=True)), ["a@example.com"])
+
+
+class RealNamesNotMangledTests(TestCase):
+    def test_names_resembling_degrees_survive(self):
+        for last, first in [("Петросян", "Карен"), ("Дворкин", "Михаил Ицкович"), ("Керн", "Питер"),
+                            ("Мамбетова", "Калыйкан"), ("Мукудин уулу", "Кубан")]:
+            rec = clean_record({"last_name": last, "first_name": first})
+            self.assertEqual((rec["last_name"], rec["first_name"]), (last, first))
+        rec = clean_record({"last_name": "Асанов", "first_name": "Бакыт к.т.н. доц."})
+        self.assertEqual(rec["first_name"], "Бакыт")

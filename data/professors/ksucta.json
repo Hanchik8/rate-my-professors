@@ -1,0 +1,1194 @@
+{
+ "code": "ksucta",
+ "university": "КГУСТА им. Н. Исанова",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://www.ksucta.kg (домен продаётся, сайта вуза нет)",
+  "https://ksucta.edu.kg (неофициальный SEO-сайт, не использован)",
+  "https://kstu.kg/instituty/ki-si-imnisanova",
+  "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/zagolovok-po-umolchaniju",
+  "https://kstu.kg/instituty/institut-putei-soobshchenija/kafedry",
+  "https://kstu.kg/instituty/iaid/kafedry",
+  "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/arkhitektura/sochtav-kafedry",
+  "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry",
+  "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/gradostroitelstvo/sostav-kafedry",
+  "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/nachertatelnaja-geometrija-i-grafika/sostav-kafedry",
+  "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/restavracija-i-rekonstrukcija-arkhitekturnogo-nasledija/sostav-kafedry",
+  "https://kstu.kg/bokovoe-menju/instituty/institut-putei-soobshchenija/avtomobilnye-dorogi-mosty-i-tonneli/sostav-kafedry",
+  "https://kstu.kg/bokovoe-menju/instituty/institut-putei-soobshchenija/zheleznye-dorogi/sostav-kafedry",
+  "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry",
+  "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/ehkspluatacija-transportnykh-i-tekhnologicheskikh-mashin/zagolovok-po-umolchaniju",
+  "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/geodezija-i-geoinformatika/sostav-kafedry",
+  "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry",
+  "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proizvodstvo-i-ehkspertiza-stroitelnykh-materialov-izdelii-i-konstrukcii/sostav-kafedry",
+  "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnaja-mekhanika-i-gidrotekhnicheskoe-stroitelstvo/zagolovok-po-umolchaniju",
+  "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2",
+  "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/teplogazosnabzhenie-i-ventiljacija/sostav-kafedry",
+  "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/vodosnabzhenie-i-vodootvedenie/sostav-kafedry"
+ ],
+ "notes": "КГУСТА им. Н. Исанова в 2022 году присоединён к КГТУ им. И. Раззакова (Указ УП №243 от 18.07.2022, ПКМ №414 от 29.07.2022), его подразделения работают как кампус им. Н. Исанова в составе КГТУ. Домен ksucta.kg выставлен на продажу, собственного сайта нет. Поэтому в файл включены преподаватели кафедр-наследников КГУСТА на kstu.kg: Кыргызский инженерно-строительный институт им. Н. Исанова (8 кафедр), Институт путей сообщения (кафедры дорог, мостов и тоннелей, выделены из КИСИ) и архитектурные кафедры Института архитектуры и дизайна (Архитектура, Дизайн архитектурной среды, Градостроительство, Архитектурная реновация, Начертательная геометрия и графика). Отнесение ИАД к наследию КГУСТА сделано по пути URL и истории (архитектурный факультет КГУСТА), кафедры «Дизайн» и «Художественное проектирование изделий» из бывшего технологического факультета КГТУ оставлены в kstu.json. Источник каждой записи страница kstu.kg. Эти же люди в kstu.json не дублируются. Если в ProfLens КГУСТА и КГТУ нужно объединить, достаточно слить два файла. Лаборанты исключены.",
+ "professors": [
+  {
+   "last_name": "Курбанбаев",
+   "first_name": "Алайбек Борбоевич",
+   "department": "Автомобильные и железные дороги, мосты и тоннели",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Темир",
+   "first_name": "Болотбек",
+   "department": "Автомобильные и железные дороги, мосты и тоннели",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Апсеметов",
+   "first_name": "Мухтар Чуканович",
+   "department": "Автомобильные и железные дороги, мосты и тоннели",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Маданбеков",
+   "first_name": "Нуржан Жоломанович",
+   "department": "Автомобильные и железные дороги, мосты и тоннели",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Алыкулов",
+   "first_name": "Кошойбек Калманбетович",
+   "department": "Автомобильные и железные дороги, мосты и тоннели",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Жумабаев",
+   "first_name": "Рыскул Азимбекович",
+   "department": "Автомобильные и железные дороги, мосты и тоннели",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Кинджебаев",
+   "first_name": "Вячеслав Абдуллаевич",
+   "department": "Автомобильные и железные дороги, мосты и тоннели",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Курманбек уулу",
+   "first_name": "Нурлан",
+   "department": "Автомобильные и железные дороги, мосты и тоннели",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Айдаралиев",
+   "first_name": "Алтынбек Евгеньевич",
+   "department": "Автомобильные и железные дороги, мосты и тоннели",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Шекербеков",
+   "first_name": "Уланбек Турсунбекович",
+   "department": "Автомобильные и железные дороги, мосты и тоннели",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Аскар кызы",
+   "first_name": "Нурайым",
+   "department": "Железные дороги",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-putei-soobshchenija/zheleznye-dorogi/sostav-kafedry"
+  },
+  {
+   "last_name": "Осмонканов",
+   "first_name": "Нурбек Анарбекович",
+   "department": "Автомобильные дороги, мосты и тоннели",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-putei-soobshchenija/avtomobilnye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Аубакирова",
+   "first_name": "Динара Кадыркуловна",
+   "department": "Автомобильные и железные дороги, мосты и тоннели",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Приходько",
+   "first_name": "Алексей Анатольевич",
+   "department": "Автомобильные и железные дороги, мосты и тоннели",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Турдубай уулу",
+   "first_name": "Султан",
+   "department": "Автомобильные и железные дороги, мосты и тоннели",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Джуматов",
+   "first_name": "Бауржан Аликович",
+   "department": "Автомобильные и железные дороги, мосты и тоннели",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/avtomobilnye-i-zheleznye-dorogi-mosty-i-tonneli/sostav-kafedry"
+  },
+  {
+   "last_name": "Каримов",
+   "first_name": "Ташмухамед Халмухамедович",
+   "department": "Водоснабжение и водоотведение",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/vodosnabzhenie-i-vodootvedenie/sostav-kafedry"
+  },
+  {
+   "last_name": "Фролова",
+   "first_name": "Галина Петровна",
+   "department": "Водоснабжение и водоотведение",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/vodosnabzhenie-i-vodootvedenie/sostav-kafedry"
+  },
+  {
+   "last_name": "Байгазы кызы",
+   "first_name": "Назира",
+   "department": "Водоснабжение и водоотведение",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/vodosnabzhenie-i-vodootvedenie/sostav-kafedry"
+  },
+  {
+   "last_name": "Осмонов",
+   "first_name": "Жанибек Исаевич",
+   "department": "Водоснабжение и водоотведение",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/vodosnabzhenie-i-vodootvedenie/sostav-kafedry"
+  },
+  {
+   "last_name": "Муратбекова",
+   "first_name": "Аида Муратбековна",
+   "department": "Водоснабжение и водоотведение",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/vodosnabzhenie-i-vodootvedenie/sostav-kafedry"
+  },
+  {
+   "last_name": "Калманбетова",
+   "first_name": "Гульзат Калыбековна",
+   "department": "Водоснабжение и водоотведение",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/vodosnabzhenie-i-vodootvedenie/sostav-kafedry"
+  },
+  {
+   "last_name": "Сабыкенова",
+   "first_name": "Нуржан Чынгысовна",
+   "department": "Водоснабжение и водоотведение",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/vodosnabzhenie-i-vodootvedenie/sostav-kafedry"
+  },
+  {
+   "last_name": "Токушев",
+   "first_name": "Замирбек Музураимович",
+   "department": "Водоснабжение и водоотведение",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/vodosnabzhenie-i-vodootvedenie/sostav-kafedry"
+  },
+  {
+   "last_name": "Бекболот кызы",
+   "first_name": "Айгерим",
+   "department": "Водоснабжение и водоотведение",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/vodosnabzhenie-i-vodootvedenie/sostav-kafedry"
+  },
+  {
+   "last_name": "Исмаилов",
+   "first_name": "Нурсултан Ырысбекович",
+   "department": "Геодезия и геоинформатика",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/geodezija-i-geoinformatika/sostav-kafedry"
+  },
+  {
+   "last_name": "Чымыров",
+   "first_name": "Акылбек Уркалыйевич",
+   "department": "Геодезия и геоинформатика",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/geodezija-i-geoinformatika/sostav-kafedry"
+  },
+  {
+   "last_name": "Чортомбаев",
+   "first_name": "Улан Тыргоотович",
+   "department": "Геодезия и геоинформатика",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/geodezija-i-geoinformatika/sostav-kafedry"
+  },
+  {
+   "last_name": "Родионова",
+   "first_name": "Елена Геннадьевна",
+   "department": "Геодезия и геоинформатика",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/geodezija-i-geoinformatika/sostav-kafedry"
+  },
+  {
+   "last_name": "Памирбек кызы",
+   "first_name": "Мэрим",
+   "department": "Геодезия и геоинформатика",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/geodezija-i-geoinformatika/sostav-kafedry"
+  },
+  {
+   "last_name": "Дуулатов",
+   "first_name": "Элдияр Сапарбекович",
+   "department": "Геодезия и геоинформатика",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/geodezija-i-geoinformatika/sostav-kafedry"
+  },
+  {
+   "last_name": "Кудабаев",
+   "first_name": "Мирлан Дилдемуратович",
+   "department": "Геодезия и геоинформатика",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/geodezija-i-geoinformatika/sostav-kafedry"
+  },
+  {
+   "last_name": "Урмамбетова",
+   "first_name": "Татыгул Кубанычбековна",
+   "department": "Геодезия и геоинформатика",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/geodezija-i-geoinformatika/sostav-kafedry"
+  },
+  {
+   "last_name": "Чымырова",
+   "first_name": "Салтанат Асанбаевна",
+   "department": "Геодезия и геоинформатика",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/geodezija-i-geoinformatika/sostav-kafedry"
+  },
+  {
+   "last_name": "Алимбекова",
+   "first_name": "Нагима Акылбековна",
+   "department": "Геодезия и геоинформатика",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/geodezija-i-geoinformatika/sostav-kafedry"
+  },
+  {
+   "last_name": "Тыныбекова",
+   "first_name": "Алина Тыныбековна",
+   "department": "Геодезия и геоинформатика",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/geodezija-i-geoinformatika/sostav-kafedry"
+  },
+  {
+   "last_name": "Калыков",
+   "first_name": "Айдар Салмоорбекович",
+   "department": "Геодезия и геоинформатика",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/geodezija-i-geoinformatika/sostav-kafedry"
+  },
+  {
+   "last_name": "Мелисова",
+   "first_name": "Эрдиана Мелисовна",
+   "department": "Геодезия и геоинформатика",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/geodezija-i-geoinformatika/sostav-kafedry"
+  },
+  {
+   "last_name": "Сыдыков",
+   "first_name": "Ызатбек Каныбекович",
+   "department": "Проектирование, возведение зданий и сейсмостойкое строительство",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Андашев",
+   "first_name": "Акылбек Жээнбекович",
+   "department": "Проектирование, возведение зданий и сейсмостойкое строительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Маматов",
+   "first_name": "Жаныбек Ысакович",
+   "department": "Проектирование, возведение зданий и сейсмостойкое строительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Шаимбетов",
+   "first_name": "Джекшенбек Акматович",
+   "department": "Проектирование, возведение зданий и сейсмостойкое строительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Камчыбеков",
+   "first_name": "Мураталы Пакирович",
+   "department": "Проектирование, возведение зданий и сейсмостойкое строительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Кокоев",
+   "first_name": "Рысбек Саипович",
+   "department": "Проектирование, возведение зданий и сейсмостойкое строительство",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Матозимов",
+   "first_name": "Бердикул Суюмбаевич",
+   "department": "Проектирование, возведение зданий и сейсмостойкое строительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Сулайманов",
+   "first_name": "Шералы Токтосунович",
+   "department": "Проектирование, возведение зданий и сейсмостойкое строительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Юнусалиев",
+   "first_name": "Элмурад Махамматякубович",
+   "department": "Проектирование, возведение зданий и сейсмостойкое строительство",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Омурова",
+   "first_name": "Астра Абдылдабековна",
+   "department": "Проектирование, возведение зданий и сейсмостойкое строительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Кыдырова",
+   "first_name": "Жанаркуль Дуйшонбековна",
+   "department": "Проектирование, возведение зданий и сейсмостойкое строительство",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Улумбекова",
+   "first_name": "Диана Сергеевна",
+   "department": "Проектирование, возведение зданий и сейсмостойкое строительство",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Омурзакова",
+   "first_name": "Айгерим Исаевна",
+   "department": "Проектирование, возведение зданий и сейсмостойкое строительство",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Алиева",
+   "first_name": "Динара Карыповна",
+   "department": "Проектирование, возведение зданий и сейсмостойкое строительство",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proektirovanie-vozvedenie-zdanii-i-seismostoikoe-stroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Абдыкалыков",
+   "first_name": "Акымбек Абдыкалыкович",
+   "department": "Производство и экспертиза строительных материалов, изделий и конструкций",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proizvodstvo-i-ehkspertiza-stroitelnykh-materialov-izdelii-i-konstrukcii/sostav-kafedry"
+  },
+  {
+   "last_name": "Болотов",
+   "first_name": "Таалайбек Турсункулович",
+   "department": "Производство и экспертиза строительных материалов, изделий и конструкций",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proizvodstvo-i-ehkspertiza-stroitelnykh-materialov-izdelii-i-konstrukcii/sostav-kafedry"
+  },
+  {
+   "last_name": "Джусупова",
+   "first_name": "Махават Абдысадыковна",
+   "department": "Производство и экспертиза строительных материалов, изделий и конструкций",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proizvodstvo-i-ehkspertiza-stroitelnykh-materialov-izdelii-i-konstrukcii/sostav-kafedry"
+  },
+  {
+   "last_name": "Абдыраимов",
+   "first_name": "Жамалидин Абдыраимович",
+   "department": "Производство и экспертиза строительных материалов, изделий и конструкций",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proizvodstvo-i-ehkspertiza-stroitelnykh-materialov-izdelii-i-konstrukcii/sostav-kafedry"
+  },
+  {
+   "last_name": "Омурбеков",
+   "first_name": "Ислан Кадырбекович",
+   "department": "Производство и экспертиза строительных материалов, изделий и конструкций",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proizvodstvo-i-ehkspertiza-stroitelnykh-materialov-izdelii-i-konstrukcii/sostav-kafedry"
+  },
+  {
+   "last_name": "Сарбаева",
+   "first_name": "Надира Маматкуловна",
+   "department": "Производство и экспертиза строительных материалов, изделий и конструкций",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proizvodstvo-i-ehkspertiza-stroitelnykh-materialov-izdelii-i-konstrukcii/sostav-kafedry"
+  },
+  {
+   "last_name": "Жанузакова",
+   "first_name": "Умут Шермуканбетовна",
+   "department": "Производство и экспертиза строительных материалов, изделий и конструкций",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/proizvodstvo-i-ehkspertiza-stroitelnykh-materialov-izdelii-i-konstrukcii/sostav-kafedry"
+  },
+  {
+   "last_name": "Курдюмова",
+   "first_name": "Валентина Мифодьевна",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Темикеев",
+   "first_name": "Конушбек Темикеевич",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Джаманкулов",
+   "first_name": "Кенешбек Мусаевич",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Токторалиев",
+   "first_name": "Эркин Торокулович",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Муканбет кызы",
+   "first_name": "Эркинай",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Эргешбай уулу",
+   "first_name": "Арапжан",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Дыйканбаева",
+   "first_name": "Назгул Аргынбаевна",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Омурканова",
+   "first_name": "Азиза Таалайбековна",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Уранова",
+   "first_name": "Медина Урановна",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Рахмединов",
+   "first_name": "Эркин Эмилбекович",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Черных-Рашевский",
+   "first_name": "Иван Александрович",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Масылканова",
+   "first_name": "Бактыгуль Алыкановна",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Байгубатова",
+   "first_name": "Назгул Муканбетовна",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Канатбеков",
+   "first_name": "Нуржигит Канатбекович",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Байбеков",
+   "first_name": "Нурбек Байбекович",
+   "department": "Строительные конструкции, здания и сооружения",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnye-konstrukcii-zdanija-i-sooruzhenija/zagolovok-po-umolchaniju-2"
+  },
+  {
+   "last_name": "Суйунтбекова",
+   "first_name": "Индийка Амантаевна",
+   "department": "Строительная механика и гидротехническое строительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnaja-mekhanika-i-gidrotekhnicheskoe-stroitelstvo/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Кутуев",
+   "first_name": "Мухамедий Дадиевич",
+   "department": "Строительная механика и гидротехническое строительство",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnaja-mekhanika-i-gidrotekhnicheskoe-stroitelstvo/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Исабеков",
+   "first_name": "Тилек Асанакунович",
+   "department": "Строительная механика и гидротехническое строительство",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnaja-mekhanika-i-gidrotekhnicheskoe-stroitelstvo/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Логинов",
+   "first_name": "Геннадий Иванович",
+   "department": "Строительная механика и гидротехническое строительство",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnaja-mekhanika-i-gidrotekhnicheskoe-stroitelstvo/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Аджыгулова",
+   "first_name": "Гульмира Сагыналиевна",
+   "department": "Строительная механика и гидротехническое строительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnaja-mekhanika-i-gidrotekhnicheskoe-stroitelstvo/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Баялиев",
+   "first_name": "Алтынбек Жакыпбекович",
+   "department": "Строительная механика и гидротехническое строительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnaja-mekhanika-i-gidrotekhnicheskoe-stroitelstvo/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Токтогонов",
+   "first_name": "Асет Токтогонович",
+   "department": "Строительная механика и гидротехническое строительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnaja-mekhanika-i-gidrotekhnicheskoe-stroitelstvo/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Джылкычиев",
+   "first_name": "Мирлан Кубанычбекович",
+   "department": "Строительная механика и гидротехническое строительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnaja-mekhanika-i-gidrotekhnicheskoe-stroitelstvo/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Осмонов",
+   "first_name": "Жаныбек Исаевич",
+   "department": "Строительная механика и гидротехническое строительство",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnaja-mekhanika-i-gidrotekhnicheskoe-stroitelstvo/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Кадыракунова",
+   "first_name": "Алина Бакытбековна",
+   "department": "Строительная механика и гидротехническое строительство",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnaja-mekhanika-i-gidrotekhnicheskoe-stroitelstvo/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Токтогулова",
+   "first_name": "Умутай Аваскуловна",
+   "department": "Строительная механика и гидротехническое строительство",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnaja-mekhanika-i-gidrotekhnicheskoe-stroitelstvo/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Сюй",
+   "first_name": "Чже",
+   "department": "Строительная механика и гидротехническое строительство",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/stroitelnaja-mekhanika-i-gidrotekhnicheskoe-stroitelstvo/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Боронбаев",
+   "first_name": "Эркин Капарович",
+   "department": "Теплогазоснабжение и вентиляция",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/teplogazosnabzhenie-i-ventiljacija/sostav-kafedry"
+  },
+  {
+   "last_name": "Абдирашитова",
+   "first_name": "Нургул Абдилакимовна",
+   "department": "Теплогазоснабжение и вентиляция",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/teplogazosnabzhenie-i-ventiljacija/sostav-kafedry"
+  },
+  {
+   "last_name": "Бекбаева",
+   "first_name": "Августина Константиновна",
+   "department": "Теплогазоснабжение и вентиляция",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/teplogazosnabzhenie-i-ventiljacija/sostav-kafedry"
+  },
+  {
+   "last_name": "Солдатова",
+   "first_name": "Асель Мукаевна",
+   "department": "Теплогазоснабжение и вентиляция",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/teplogazosnabzhenie-i-ventiljacija/sostav-kafedry"
+  },
+  {
+   "last_name": "Муханова",
+   "first_name": "Камиля Кубанычбековна",
+   "department": "Теплогазоснабжение и вентиляция",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/teplogazosnabzhenie-i-ventiljacija/sostav-kafedry"
+  },
+  {
+   "last_name": "Жыргалбаева",
+   "first_name": "Нургуль Мамбетжановна",
+   "department": "Теплогазоснабжение и вентиляция",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/teplogazosnabzhenie-i-ventiljacija/sostav-kafedry"
+  },
+  {
+   "last_name": "Шамшиева",
+   "first_name": "Жылдыз Байышбековна",
+   "department": "Теплогазоснабжение и вентиляция",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/teplogazosnabzhenie-i-ventiljacija/sostav-kafedry"
+  },
+  {
+   "last_name": "Шаршеналиев",
+   "first_name": "Адылбек Куручбекович",
+   "department": "Теплогазоснабжение и вентиляция",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/teplogazosnabzhenie-i-ventiljacija/sostav-kafedry"
+  },
+  {
+   "last_name": "Айткулов",
+   "first_name": "Медетбек Ашыркулович",
+   "department": "Теплогазоснабжение и вентиляция",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/teplogazosnabzhenie-i-ventiljacija/sostav-kafedry"
+  },
+  {
+   "last_name": "Суюнтбеков",
+   "first_name": "Ислам Эсенкулович",
+   "department": "Транспортно-технологические машины",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/ehkspluatacija-transportnykh-i-tekhnologicheskikh-mashin/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Асанов",
+   "first_name": "Арстанбек Авлезович",
+   "department": "Транспортно-технологические машины",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/ehkspluatacija-transportnykh-i-tekhnologicheskikh-mashin/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Раджапова",
+   "first_name": "Нааркуль Абдрахмановна",
+   "department": "Транспортно-технологические машины",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/ehkspluatacija-transportnykh-i-tekhnologicheskikh-mashin/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Нышанбаева",
+   "first_name": "Астра Бекболотовна",
+   "department": "Транспортно-технологические машины",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/ehkspluatacija-transportnykh-i-tekhnologicheskikh-mashin/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Джунуспаев",
+   "first_name": "Кубат Тенирбергенович",
+   "department": "Транспортно-технологические машины",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/ehkspluatacija-transportnykh-i-tekhnologicheskikh-mashin/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Кыдыралиев",
+   "first_name": "Медербек Сапарбекович",
+   "department": "Транспортно-технологические машины",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/ehkspluatacija-transportnykh-i-tekhnologicheskikh-mashin/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Джолдошев",
+   "first_name": "Бекжан Кумушбекович",
+   "department": "Транспортно-технологические машины",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/ehkspluatacija-transportnykh-i-tekhnologicheskikh-mashin/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Сыдыков",
+   "first_name": "Максат Аралбекович",
+   "department": "Транспортно-технологические машины",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/kyrgyzskii-inzhenerno-stroitelnyi-institut-im-n-isanova/ehkspluatacija-transportnykh-i-tekhnologicheskikh-mashin/zagolovok-po-umolchaniju"
+  },
+  {
+   "last_name": "Искендеров",
+   "first_name": "Уланбек Жолдошбекович",
+   "department": "Архитектура",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/arkhitektura/sochtav-kafedry"
+  },
+  {
+   "last_name": "Омуралиев",
+   "first_name": "Дуйшен Жунушевич",
+   "department": "Архитектура",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/arkhitektura/sochtav-kafedry"
+  },
+  {
+   "last_name": "Ташкулов",
+   "first_name": "Уланбек Байышович",
+   "department": "Архитектура",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/arkhitektura/sochtav-kafedry"
+  },
+  {
+   "last_name": "Амыркулов",
+   "first_name": "Мамасыдык Байышович",
+   "department": "Архитектура",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/arkhitektura/sochtav-kafedry"
+  },
+  {
+   "last_name": "Каепкулов",
+   "first_name": "Каныбек Аскарбекович",
+   "department": "Архитектура",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/arkhitektura/sochtav-kafedry"
+  },
+  {
+   "last_name": "Назарбаев",
+   "first_name": "Кайратбек Токтогазиевич",
+   "department": "Архитектура",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/arkhitektura/sochtav-kafedry"
+  },
+  {
+   "last_name": "Тагайбек уулу",
+   "first_name": "Муктар",
+   "department": "Архитектура",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/arkhitektura/sochtav-kafedry"
+  },
+  {
+   "last_name": "Саманчиев",
+   "first_name": "Шухрат Кубанычбекович",
+   "department": "Архитектура",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/arkhitektura/sochtav-kafedry"
+  },
+  {
+   "last_name": "Рысбеков",
+   "first_name": "Бекмамат Жаныбекович",
+   "department": "Архитектура",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/arkhitektura/sochtav-kafedry"
+  },
+  {
+   "last_name": "Садырбеков",
+   "first_name": "Мирбек Садырбекович",
+   "department": "Архитектура",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/arkhitektura/sochtav-kafedry"
+  },
+  {
+   "last_name": "Алиев",
+   "first_name": "Самат Алиевич",
+   "department": "Архитектура",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/arkhitektura/sochtav-kafedry"
+  },
+  {
+   "last_name": "Багдавлетова",
+   "first_name": "Эльмира Амангельдыевна",
+   "department": "Архитектура",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/arkhitektura/sochtav-kafedry"
+  },
+  {
+   "last_name": "Кубанычбеков",
+   "first_name": "Анарбек",
+   "department": "Архитектура",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/arkhitektura/sochtav-kafedry"
+  },
+  {
+   "last_name": "Кожалиев",
+   "first_name": "Акылбек Джалилбекович",
+   "department": "Дизайн архитектурной среды",
+   "title": "профессор",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Мукимова",
+   "first_name": "Сайёра Рустамовна",
+   "department": "Дизайн архитектурной среды",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Кожобаева",
+   "first_name": "Салтанат Толонбаевна",
+   "department": "Дизайн архитектурной среды",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Чотуралиев",
+   "first_name": "Бадалбек Бабанович",
+   "department": "Дизайн архитектурной среды",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Сатаркулов",
+   "first_name": "Айбек Сыдыкбекович",
+   "department": "Дизайн архитектурной среды",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Арзиматов",
+   "first_name": "Нурудин Кабылович",
+   "department": "Дизайн архитектурной среды",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Майымбетов",
+   "first_name": "Бакытек Токназарович",
+   "department": "Дизайн архитектурной среды",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Кадыркулов",
+   "first_name": "Дуйшенбек Абибуллаевич",
+   "department": "Дизайн архитектурной среды",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Очокеев",
+   "first_name": "Алмаз Болотбекович",
+   "department": "Дизайн архитектурной среды",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Кожокулова",
+   "first_name": "Айгуль Насымкуловна",
+   "department": "Дизайн архитектурной среды",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Шуточкина",
+   "first_name": "Лариса Николаевна",
+   "department": "Дизайн архитектурной среды",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Картайган кызы",
+   "first_name": "Мира",
+   "department": "Дизайн архитектурной среды",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Мамыров",
+   "first_name": "Ильяз Джекшенбекович",
+   "department": "Дизайн архитектурной среды",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Турдубеков",
+   "first_name": "Болотбек Климович",
+   "department": "Дизайн архитектурной среды",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Бейшеев",
+   "first_name": "Марат Каныбекович",
+   "department": "Дизайн архитектурной среды",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Кенешбек уулу",
+   "first_name": "Аскат",
+   "department": "Дизайн архитектурной среды",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Свиридова",
+   "first_name": "Светлана Владимировна",
+   "department": "Дизайн архитектурной среды",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Клочко",
+   "first_name": "Наталья Ивановна",
+   "department": "Дизайн архитектурной среды",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Султаналиев",
+   "first_name": "Алтынбек Жоробекович",
+   "department": "Дизайн архитектурной среды",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Кобогонова",
+   "first_name": "Сайкал Жумабековна",
+   "department": "Дизайн архитектурной среды",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/dizain-arkhitekturnoi-sredy/sostav-kafedry"
+  },
+  {
+   "last_name": "Филатова",
+   "first_name": "Татьяна Аркадьевна",
+   "department": "Архитектурная реновация",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/restavracija-i-rekonstrukcija-arkhitekturnogo-nasledija/sostav-kafedry"
+  },
+  {
+   "last_name": "Насирдинова",
+   "first_name": "Айгуль Мамытовна",
+   "department": "Архитектурная реновация",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/restavracija-i-rekonstrukcija-arkhitekturnogo-nasledija/sostav-kafedry"
+  },
+  {
+   "last_name": "Глазунова",
+   "first_name": "Алена Владимировна",
+   "department": "Архитектурная реновация",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/restavracija-i-rekonstrukcija-arkhitekturnogo-nasledija/sostav-kafedry"
+  },
+  {
+   "last_name": "Каткова",
+   "first_name": "Наталья Сергеевна",
+   "department": "Архитектурная реновация",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/restavracija-i-rekonstrukcija-arkhitekturnogo-nasledija/sostav-kafedry"
+  },
+  {
+   "last_name": "Галимзянова",
+   "first_name": "Карина Викторовна",
+   "department": "Архитектурная реновация",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/restavracija-i-rekonstrukcija-arkhitekturnogo-nasledija/sostav-kafedry"
+  },
+  {
+   "last_name": "Молдалиева",
+   "first_name": "Искра Табылдиевна",
+   "department": "Архитектурная реновация",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/restavracija-i-rekonstrukcija-arkhitekturnogo-nasledija/sostav-kafedry"
+  },
+  {
+   "last_name": "Мусакеев",
+   "first_name": "Нияз Темирбекович",
+   "department": "Архитектурная реновация",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/restavracija-i-rekonstrukcija-arkhitekturnogo-nasledija/sostav-kafedry"
+  },
+  {
+   "last_name": "Бектемирова",
+   "first_name": "Зулайка Алимахаметовна",
+   "department": "Архитектурная реновация",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/restavracija-i-rekonstrukcija-arkhitekturnogo-nasledija/sostav-kafedry"
+  },
+  {
+   "last_name": "Байчубекова",
+   "first_name": "Бегайым Темирбековна",
+   "department": "Архитектурная реновация",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/restavracija-i-rekonstrukcija-arkhitekturnogo-nasledija/sostav-kafedry"
+  },
+  {
+   "last_name": "Шаршенова",
+   "first_name": "Кайыргуль Сыргаковна",
+   "department": "Архитектурная реновация",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/restavracija-i-rekonstrukcija-arkhitekturnogo-nasledija/sostav-kafedry"
+  },
+  {
+   "last_name": "Табалдиев",
+   "first_name": "Эрнис Мелисбекович",
+   "department": "Архитектурная реновация",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/restavracija-i-rekonstrukcija-arkhitekturnogo-nasledija/sostav-kafedry"
+  },
+  {
+   "last_name": "Байчубекова",
+   "first_name": "Мырзайым Тамирбековна",
+   "department": "Архитектурная реновация",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/restavracija-i-rekonstrukcija-arkhitekturnogo-nasledija/sostav-kafedry"
+  },
+  {
+   "last_name": "Сасыкеев",
+   "first_name": "Уланбек Толосунович",
+   "department": "Градостроительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/gradostroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Кенешов",
+   "first_name": "Толобой Сейдакматович",
+   "department": "Градостроительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/gradostroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Усенов",
+   "first_name": "Султанбек Джумабаевич",
+   "department": "Градостроительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/gradostroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Омурканова",
+   "first_name": "Айзаада Камчыбековна",
+   "department": "Градостроительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/gradostroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Мазманов",
+   "first_name": "Яков Сергеевич",
+   "department": "Градостроительство",
+   "title": "доцент",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/gradostroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Ибраев",
+   "first_name": "Миржан Елбекович",
+   "department": "Градостроительство",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/gradostroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Аширалиева",
+   "first_name": "Эльмира Дженишбековна",
+   "department": "Градостроительство",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/gradostroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Сатенов",
+   "first_name": "Айбек Эмирович",
+   "department": "Градостроительство",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/gradostroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Акималиев",
+   "first_name": "Ислам Анарбекович",
+   "department": "Градостроительство",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/gradostroitelstvo/sostav-kafedry"
+  },
+  {
+   "last_name": "Турдакун уулу",
+   "first_name": "Нургазы",
+   "department": "Начертательная геометрия и графика",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/nachertatelnaja-geometrija-i-grafika/sostav-kafedry"
+  },
+  {
+   "last_name": "Толон уулу",
+   "first_name": "Талантбек",
+   "department": "Начертательная геометрия и графика",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/nachertatelnaja-geometrija-i-grafika/sostav-kafedry"
+  },
+  {
+   "last_name": "Арыков",
+   "first_name": "Бообек Абдрасулович",
+   "department": "Начертательная геометрия и графика",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/nachertatelnaja-geometrija-i-grafika/sostav-kafedry"
+  },
+  {
+   "last_name": "Эсенгулов",
+   "first_name": "Муктарбек Кенешбекович",
+   "department": "Начертательная геометрия и графика",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/nachertatelnaja-geometrija-i-grafika/sostav-kafedry"
+  },
+  {
+   "last_name": "Кайназарова",
+   "first_name": "Тунук Жаныбековна",
+   "department": "Начертательная геометрия и графика",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/nachertatelnaja-geometrija-i-grafika/sostav-kafedry"
+  },
+  {
+   "last_name": "Омурканов",
+   "first_name": "Нурлан Анатаевич",
+   "department": "Начертательная геометрия и графика",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/nachertatelnaja-geometrija-i-grafika/sostav-kafedry"
+  },
+  {
+   "last_name": "Мамытбекова",
+   "first_name": "Замира Мусакановна",
+   "department": "Начертательная геометрия и графика",
+   "title": "старший преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/nachertatelnaja-geometrija-i-grafika/sostav-kafedry"
+  },
+  {
+   "last_name": "Тентимишев",
+   "first_name": "Турат Туйтуевич",
+   "department": "Начертательная геометрия и графика",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/nachertatelnaja-geometrija-i-grafika/sostav-kafedry"
+  },
+  {
+   "last_name": "Толобек уулу",
+   "first_name": "Тыныбек",
+   "department": "Начертательная геометрия и графика",
+   "title": "преподаватель",
+   "source_url": "https://kstu.kg/bokovoe-menju/instituty/institut-arkhitektury-i-dizaina/nachertatelnaja-geometrija-i-grafika/sostav-kafedry"
+  }
+ ]
+}

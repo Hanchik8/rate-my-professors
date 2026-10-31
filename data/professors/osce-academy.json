@@ -1,0 +1,365 @@
+{
+ "code": "osce-academy",
+ "university": "Академия ОБСЕ в Бишкеке (OSCE Academy in Bishkek)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://osce-academy.net/academics/faculty/ba-in-economics/",
+  "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/",
+  "https://osce-academy.net/academics/faculty/ma-programme-in-economic-governance-and-development/",
+  "https://osce-academy.net/academics/faculty/ma-in-politics-and-security/",
+  "https://osce-academy.net/academics/faculty/"
+ ],
+ "notes": "Имена на латинице как на сайте. Для преподавателей, указанных только на общей странице Faculty без привязки к программе, department = Faculty.",
+ "professors": [
+  {
+   "last_name": "Juraev",
+   "first_name": "Javlon",
+   "department": "BA in Economics",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ba-in-economics/"
+  },
+  {
+   "last_name": "Abdraeva",
+   "first_name": "Begimai",
+   "department": "BA in Economics",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ba-in-economics/"
+  },
+  {
+   "last_name": "Tilenbaeva",
+   "first_name": "Nurgul",
+   "department": "BA in Economics",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ba-in-economics/"
+  },
+  {
+   "last_name": "Igamberdiev",
+   "first_name": "Bakhtiiar",
+   "department": "BA in Economics",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ba-in-economics/"
+  },
+  {
+   "last_name": "Momunalieva",
+   "first_name": "Anara",
+   "department": "BA in Economics",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ba-in-economics/"
+  },
+  {
+   "last_name": "Chigibaeva",
+   "first_name": "Elena",
+   "department": "BA in Economics",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ba-in-economics/"
+  },
+  {
+   "last_name": "Komar",
+   "first_name": "Eldar",
+   "department": "BA in Economics",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ba-in-economics/"
+  },
+  {
+   "last_name": "Anvar kyzy",
+   "first_name": "Saikal",
+   "department": "BA in Economics",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ba-in-economics/"
+  },
+  {
+   "last_name": "Dunn",
+   "first_name": "Gregory J",
+   "department": "BA in Economics",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ba-in-economics/"
+  },
+  {
+   "last_name": "Khalilov",
+   "first_name": "Akram",
+   "department": "BA in Economics",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ba-in-economics/"
+  },
+  {
+   "last_name": "Urmambetov",
+   "first_name": "Baktybek",
+   "department": "BA in Economics",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ba-in-economics/"
+  },
+  {
+   "last_name": "Toktogulova",
+   "first_name": "Mukaram",
+   "department": "BA in Economics",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ba-in-economics/"
+  },
+  {
+   "last_name": "Ashirov",
+   "first_name": "Almaz",
+   "department": "BA in Economics",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ba-in-economics/"
+  },
+  {
+   "last_name": "Kamalov",
+   "first_name": "Zalkar",
+   "department": "BA in Economics",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ba-in-economics/"
+  },
+  {
+   "last_name": "Orunbaev",
+   "first_name": "Sagynbek",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Danziger",
+   "first_name": "Nick",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Modonesi",
+   "first_name": "Claudia",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Mälksoo",
+   "first_name": "Lauri",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Fokala",
+   "first_name": "Elvis",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Strasser",
+   "first_name": "Barbara",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Atadjanov",
+   "first_name": "Rustam",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Della Sala",
+   "first_name": "Vincent",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Pala",
+   "first_name": "Claudio",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Javier",
+   "first_name": "Francisco Romero",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Mihr",
+   "first_name": "Anja",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Petri",
+   "first_name": "Ariadna",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Tegizbekova",
+   "first_name": "Zhyldyz",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Toktogazieva",
+   "first_name": "Saniia",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Hayes",
+   "first_name": "Michael",
+   "department": "MA in Human Rights and Sustainability",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-human-rights-and-sustainability/"
+  },
+  {
+   "last_name": "Muktarbek kyzy",
+   "first_name": "Akylai",
+   "department": "MA in Economic Governance and Development",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-programme-in-economic-governance-and-development/"
+  },
+  {
+   "last_name": "Sabyrbekov",
+   "first_name": "Rahat",
+   "department": "MA in Economic Governance and Development",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-programme-in-economic-governance-and-development/"
+  },
+  {
+   "last_name": "Overland",
+   "first_name": "Indra",
+   "department": "MA in Economic Governance and Development",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-programme-in-economic-governance-and-development/"
+  },
+  {
+   "last_name": "Vakulchuk",
+   "first_name": "Roman",
+   "department": "MA in Economic Governance and Development",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-programme-in-economic-governance-and-development/"
+  },
+  {
+   "last_name": "Akizhanov",
+   "first_name": "Kuat",
+   "department": "MA in Economic Governance and Development",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-programme-in-economic-governance-and-development/"
+  },
+  {
+   "last_name": "Jinkner",
+   "first_name": "John D",
+   "department": "MA in Economic Governance and Development",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-programme-in-economic-governance-and-development/"
+  },
+  {
+   "last_name": "Gruszczynski",
+   "first_name": "Lukasz",
+   "department": "MA in Economic Governance and Development",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-programme-in-economic-governance-and-development/"
+  },
+  {
+   "last_name": "Gumaa",
+   "first_name": "Waleed",
+   "department": "MA in Economic Governance and Development",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-programme-in-economic-governance-and-development/"
+  },
+  {
+   "last_name": "Jenish",
+   "first_name": "Nurbek",
+   "department": "MA in Economic Governance and Development",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-programme-in-economic-governance-and-development/"
+  },
+  {
+   "last_name": "Mirzabaev",
+   "first_name": "Alisher",
+   "department": "MA in Economic Governance and Development",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-programme-in-economic-governance-and-development/"
+  },
+  {
+   "last_name": "Christophe",
+   "first_name": "Barbara",
+   "department": "MA in Politics and Security",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-politics-and-security/"
+  },
+  {
+   "last_name": "Mayer",
+   "first_name": "Sebastian",
+   "department": "MA in Politics and Security",
+   "title": "доцент",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-politics-and-security/"
+  },
+  {
+   "last_name": "Dzhuraev",
+   "first_name": "Emilbek",
+   "department": "MA in Politics and Security",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-politics-and-security/"
+  },
+  {
+   "last_name": "Portela",
+   "first_name": "Clara",
+   "department": "MA in Politics and Security",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-politics-and-security/"
+  },
+  {
+   "last_name": "Dzhuraev",
+   "first_name": "Shairbek",
+   "department": "MA in Politics and Security",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-politics-and-security/"
+  },
+  {
+   "last_name": "Gabdulhakov",
+   "first_name": "Rashid",
+   "department": "MA in Politics and Security",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-politics-and-security/"
+  },
+  {
+   "last_name": "Irrera",
+   "first_name": "Daniela",
+   "department": "MA in Politics and Security",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-politics-and-security/"
+  },
+  {
+   "last_name": "Blakkisrud",
+   "first_name": "Helge",
+   "department": "MA in Politics and Security",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-politics-and-security/"
+  },
+  {
+   "last_name": "Dunay",
+   "first_name": "Pal",
+   "department": "MA in Politics and Security",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-politics-and-security/"
+  },
+  {
+   "last_name": "Leksyutina",
+   "first_name": "Yana",
+   "department": "MA in Politics and Security",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-politics-and-security/"
+  },
+  {
+   "last_name": "Jalil",
+   "first_name": "Rouslan",
+   "department": "MA in Politics and Security",
+   "title": "преподаватель",
+   "source_url": "https://osce-academy.net/academics/faculty/ma-in-politics-and-security/"
+  }
+ ]
+}

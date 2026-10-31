@@ -1,0 +1,149 @@
+{
+ "code": "academy-mvd",
+ "university": "Академия МВД Кыргызской Республики имени генерал-майора милиции Э. А. Алиева",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://academy-mvd.kg/",
+  "https://academy-mvd.kg/grpd/",
+  "https://academy-mvd.kg/ap-i-ad/",
+  "https://academy-mvd.kg/kst-i-p/",
+  "https://academy-mvd.kg/yazykovaya-kafedra/",
+  "https://academy-mvd.kg/opd/",
+  "https://academy-mvd.kg/v-i-tsp/",
+  "https://academy-mvd.kg/gpd/",
+  "https://academy-mvd.kg/ug-prava/",
+  "https://academy-mvd.kg/ug-process/",
+  "https://academy-mvd.kg/ord-2/",
+  "https://academy-mvd.kg/bfp/",
+  "https://academy-mvd.kg/%d0%bc%d0%b5%d0%b6%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%81%d0%ba%d0%b0%d1%8f-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3-%d0%be%d1%88/",
+  "https://academy-mvd.kg/rukovodstvo/"
+ ],
+ "notes": "Страницы кафедр (сайт отвечает очень медленно) называют в основном только начальника кафедры, полные составы ППС не опубликованы; исторические руководители кафедр не включались. Межфакультетская кафедра в г. Ош дана с полным составом. Должность начальника кафедры без указания степени отнесена к \"преподаватель\".",
+ "professors": [
+  {
+   "last_name": "Тагаева",
+   "first_name": "Асель Манаповна",
+   "department": "Гражданско-правовые дисциплины",
+   "title": "доцент",
+   "source_url": "https://academy-mvd.kg/grpd/"
+  },
+  {
+   "last_name": "Осмонов",
+   "first_name": "У. Э.",
+   "department": "Административное право и административная деятельность",
+   "title": "преподаватель",
+   "source_url": "https://academy-mvd.kg/ap-i-ad/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эркинбаев",
+   "first_name": "Усен Шаршенович",
+   "department": "Криминалистика, специальная техника и психология",
+   "title": "доцент",
+   "source_url": "https://academy-mvd.kg/kst-i-p/"
+  },
+  {
+   "last_name": "Шукуров",
+   "first_name": "К. Б.",
+   "department": "Языковая подготовка",
+   "title": "преподаватель",
+   "source_url": "https://academy-mvd.kg/yazykovaya-kafedra/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кадырова",
+   "first_name": "Ч. А.",
+   "department": "Общественно-политические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://academy-mvd.kg/opd/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Аблаев",
+   "first_name": "А. Б.",
+   "department": "Военная и тактико-специальная подготовка",
+   "title": "преподаватель",
+   "source_url": "https://academy-mvd.kg/v-i-tsp/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Момбекова",
+   "first_name": "Дамира Максымбековна",
+   "department": "Государственно-правовые дисциплины",
+   "title": "доцент",
+   "source_url": "https://academy-mvd.kg/gpd/"
+  },
+  {
+   "last_name": "Исмаилов",
+   "first_name": "Рустам Тахирович",
+   "department": "Уголовное право",
+   "title": "доцент",
+   "source_url": "https://academy-mvd.kg/ug-prava/"
+  },
+  {
+   "last_name": "Осмоналиев",
+   "first_name": "Т. А.",
+   "department": "Уголовный процесс",
+   "title": "доцент",
+   "source_url": "https://academy-mvd.kg/ug-process/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Женишов",
+   "first_name": "Болот Женишович",
+   "department": "Оперативно-розыскная деятельность",
+   "title": "преподаватель",
+   "source_url": "https://academy-mvd.kg/ord-2/"
+  },
+  {
+   "last_name": "Камчыбеков",
+   "first_name": "Н. А.",
+   "department": "Физическая подготовка",
+   "title": "преподаватель",
+   "source_url": "https://academy-mvd.kg/bfp/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Курманалиев",
+   "first_name": "Урмат Маматкадырович",
+   "department": "Межфакультетская кафедра г. Ош",
+   "title": "преподаватель",
+   "source_url": "https://academy-mvd.kg/%d0%bc%d0%b5%d0%b6%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%81%d0%ba%d0%b0%d1%8f-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3-%d0%be%d1%88/"
+  },
+  {
+   "last_name": "Абдылдаева",
+   "first_name": "Назира Кочкорбаевна",
+   "department": "Межфакультетская кафедра г. Ош",
+   "title": "профессор",
+   "source_url": "https://academy-mvd.kg/%d0%bc%d0%b5%d0%b6%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%81%d0%ba%d0%b0%d1%8f-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3-%d0%be%d1%88/"
+  },
+  {
+   "last_name": "Эмилканова",
+   "first_name": "Зарема Жуманалыевна",
+   "department": "Межфакультетская кафедра г. Ош",
+   "title": "доцент",
+   "source_url": "https://academy-mvd.kg/%d0%bc%d0%b5%d0%b6%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%81%d0%ba%d0%b0%d1%8f-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3-%d0%be%d1%88/"
+  },
+  {
+   "last_name": "Шамшиева",
+   "first_name": "Диляра Усмановна",
+   "department": "Межфакультетская кафедра г. Ош",
+   "title": "старший преподаватель",
+   "source_url": "https://academy-mvd.kg/%d0%bc%d0%b5%d0%b6%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%81%d0%ba%d0%b0%d1%8f-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3-%d0%be%d1%88/"
+  },
+  {
+   "last_name": "Исаева",
+   "first_name": "Айгуль Таалайбековна",
+   "department": "Межфакультетская кафедра г. Ош",
+   "title": "преподаватель",
+   "source_url": "https://academy-mvd.kg/%d0%bc%d0%b5%d0%b6%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%81%d0%ba%d0%b0%d1%8f-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3-%d0%be%d1%88/"
+  },
+  {
+   "last_name": "Айтибаев",
+   "first_name": "Исламбек Абдашимович",
+   "department": "Межфакультетская кафедра г. Ош",
+   "title": "преподаватель",
+   "source_url": "https://academy-mvd.kg/%d0%bc%d0%b5%d0%b6%d1%84%d0%b0%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d0%b5%d1%82%d1%81%d0%ba%d0%b0%d1%8f-%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3-%d0%be%d1%88/"
+  }
+ ]
+}

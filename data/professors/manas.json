@@ -1,0 +1,2680 @@
+{
+ "code": "manas",
+ "university": "Кыргызско-Турецкий университет «Манас» (Kırgızistan-Türkiye Manas Üniversitesi)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://www.manas.edu.kg/tr",
+  "https://rehber.manas.edu.kg/ (официальный Personel Rehberi, полный список 1030 сотрудников через https://rehber.manas.edu.kg/people-search)",
+  "https://ef.manas.edu.kg/tr/history/staff",
+  "https://ef.manas.edu.kg/tr/philology/staff",
+  "https://ef.manas.edu.kg/tr/philosophy/staff",
+  "https://ef.manas.edu.kg/tr/sociology/staff",
+  "https://ef.manas.edu.kg/tr/turkology/staff",
+  "https://fenf.manas.edu.kg/tr/biology/staff",
+  "https://fenf.manas.edu.kg/tr/informatics/staff",
+  "https://fenf.manas.edu.kg/tr/mathematics/staff",
+  "https://gsf.manas.edu.kg/tr/graphics/staff",
+  "https://gsf.manas.edu.kg/tr/music/staff",
+  "https://gsf.manas.edu.kg/tr/painting/staff",
+  "https://gsf.manas.edu.kg/tr/theater/staff",
+  "https://iibf.manas.edu.kg/tr/economics/staff",
+  "https://iibf.manas.edu.kg/tr/international_relations/staff",
+  "https://iibf.manas.edu.kg/tr/management/staff",
+  "https://ilef.manas.edu.kg/tr/journalism/staff",
+  "https://ilef.manas.edu.kg/tr/pr_advertising/staff",
+  "https://ilef.manas.edu.kg/tr/radio_tv/staff",
+  "https://ilhf.manas.edu.kg/tr/islamic/staff",
+  "https://ilhf.manas.edu.kg/tr/religious_studies/staff",
+  "https://ilhf.manas.edu.kg/tr/theology/staff",
+  "https://mf.manas.edu.kg/tr/chemical_engineering/staff",
+  "https://mf.manas.edu.kg/tr/computer_engineering/staff",
+  "https://mf.manas.edu.kg/tr/ecological_engineering/staff",
+  "https://mf.manas.edu.kg/tr/electric_electronics/staff",
+  "https://mf.manas.edu.kg/tr/food_engineering/staff",
+  "https://mf.manas.edu.kg/tr/industrial_engineering/staff",
+  "https://myo.manas.edu.kg/tr/administration_programs/staff",
+  "https://myo.manas.edu.kg/tr/technical_programs/staff",
+  "https://rehber.manas.edu.kg/edebiyat-fakultesi",
+  "https://rehber.manas.edu.kg/guzel-sanatlar-fakultesi",
+  "https://rehber.manas.edu.kg/lisansustu-egitim-enstitusu",
+  "https://rehber.manas.edu.kg/meslek-yuksekokulu",
+  "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu",
+  "https://sporf.manas.edu.kg/tr/physical_education/staff",
+  "https://sporf.manas.edu.kg/tr/trainers/staff",
+  "https://turf.manas.edu.kg/tr/hotel/staff",
+  "https://turf.manas.edu.kg/tr/restaurant/staff",
+  "https://turf.manas.edu.kg/tr/tourism_guides/staff",
+  "https://vetf.manas.edu.kg/tr/vet_science/staff",
+  "https://zf.manas.edu.kg/tr/animal_science/staff",
+  "https://zf.manas.edu.kg/tr/crop_protection/staff",
+  "https://zf.manas.edu.kg/tr/horticulture/staff",
+  "https://tf.manas.edu.kg/tr/administration",
+  "https://ef.manas.edu.kg/tr/synchronized_translations/staff",
+  "https://ydyo.manas.edu.kg/tr/foreign_languages/staff",
+  "https://ydyo.manas.edu.kg/tr/kyrgyz_language/staff",
+  "https://ydyo.manas.edu.kg/tr/turkey_turkish/staff",
+  "https://ydyo.manas.edu.kg/tr/language_instruction/staff",
+  "https://avesis.manas.edu.kg/"
+ ],
+ "notes": "Источники: страницы «Akademik Kadro» (/<bölüm>/staff) на поддоменах факультетов (ef, fenf, gsf, iibf, ilef, ilhf, mf, sporf, turf, vetf, zf, myo) и официальный справочник персонала rehber.manas.edu.kg (страницы подразделений, имена видны в HTML). Имена оставлены латиницей в турецкой транскрипции как на сайте (tr-версия); фамилии на сайте набраны ЗАГЛАВНЫМИ, приведены к обычному регистру по турецким правилам (İSMAİLOVA → İsmailova); кыргызские «X KIZI/UULU» оставлены в фамилии. Названия подразделений даны по-турецки как на сайте. Маппинг званий: Prof.Dr. → профессор; Doç.Dr. → доцент; Yrd.Doç.Dr./Dr.Öğr.Üyesi → старший преподаватель; Öğr.Gör., Öğr.Gör.Dr., Dr. (Öğretim Görevlisi), Arş.Gör. → преподаватель. Если человек числится и на кафедре (Bölüm), и в Lisansüstü Eğitim Enstitüsü, оставлена кафедра. Исключены: административный персонал (Memur, Uzman, Şef, Teknisyen, Laborant, секретари и т.п.), а также лица с учёной степенью, числящиеся только на административных должностях ректората (ректор-вакиль, директора бюро/ТВ/общежитий, член этического совета). Не удалось: Tıp Fakültesi (медфакультет) не публикует состав, на сайте и в справочнике только декан (он числится на кафедре Uygulamalı Matematik ve Enformatik); страница ef.manas.edu.kg/tr/synchronized_translations/staff из-за ошибки сайта выводит весь справочник университета, поэтому преподаватели Mütercim-Tercümanlık взяты из rehber; страницы /staff Высшей школы иностранных языков (ydyo) пусты, её преподаватели (в т.ч. подготовительное отделение турецкого и кыргызского языков) взяты из rehber; avesis.manas.edu.kg содержит только договоры, без профилей. Записей только с инициалами нет.",
+ "professors": [
+  {
+   "last_name": "Camangulov",
+   "first_name": "Dayır",
+   "department": "Antrenörlük Eğitimi Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://sporf.manas.edu.kg/tr/trainers/staff"
+  },
+  {
+   "last_name": "Demirhan",
+   "first_name": "Bilal",
+   "department": "Antrenörlük Eğitimi Bölümü",
+   "title": "профессор",
+   "source_url": "https://sporf.manas.edu.kg/tr/trainers/staff"
+  },
+  {
+   "last_name": "Kaykı",
+   "first_name": "Saltanat",
+   "department": "Antrenörlük Eğitimi Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://sporf.manas.edu.kg/tr/trainers/staff"
+  },
+  {
+   "last_name": "Nurseyitov",
+   "first_name": "Akim",
+   "department": "Antrenörlük Eğitimi Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://sporf.manas.edu.kg/tr/trainers/staff"
+  },
+  {
+   "last_name": "Sabraliyeva",
+   "first_name": "Tahmira",
+   "department": "Antrenörlük Eğitimi Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://sporf.manas.edu.kg/tr/trainers/staff"
+  },
+  {
+   "last_name": "Soyer",
+   "first_name": "Fikret",
+   "department": "Antrenörlük Eğitimi Bölümü",
+   "title": "профессор",
+   "source_url": "https://sporf.manas.edu.kg/tr/trainers/staff"
+  },
+  {
+   "last_name": "Aslantaş",
+   "first_name": "Rafet",
+   "department": "Bahçe ve Tarla Bitkileri Bölümü",
+   "title": "профессор",
+   "source_url": "https://zf.manas.edu.kg/tr/horticulture/staff"
+  },
+  {
+   "last_name": "Caanbayev",
+   "first_name": "Mederbek",
+   "department": "Bahçe ve Tarla Bitkileri Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://zf.manas.edu.kg/tr/horticulture/staff"
+  },
+  {
+   "last_name": "Polat",
+   "first_name": "Refik",
+   "department": "Bahçe ve Tarla Bitkileri Bölümü",
+   "title": "профессор",
+   "source_url": "https://zf.manas.edu.kg/tr/horticulture/staff"
+  },
+  {
+   "last_name": "Pordel Maragheh",
+   "first_name": "Farzaneh",
+   "department": "Bahçe ve Tarla Bitkileri Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://zf.manas.edu.kg/tr/horticulture/staff"
+  },
+  {
+   "last_name": "Zeinalzadeh Tabrizi",
+   "first_name": "Hossein",
+   "department": "Bahçe ve Tarla Bitkileri Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://zf.manas.edu.kg/tr/horticulture/staff"
+  },
+  {
+   "last_name": "Özden",
+   "first_name": "Eren",
+   "department": "Bahçe ve Tarla Bitkileri Bölümü",
+   "title": "доцент",
+   "source_url": "https://zf.manas.edu.kg/tr/horticulture/staff"
+  },
+  {
+   "last_name": "İsayeva",
+   "first_name": "Venera",
+   "department": "Bahçe ve Tarla Bitkileri Bölümü",
+   "title": "доцент",
+   "source_url": "https://zf.manas.edu.kg/tr/horticulture/staff"
+  },
+  {
+   "last_name": "Abdırahmanova",
+   "first_name": "Dzhiparkul",
+   "department": "Beden Eğitimi ve Spor Öğretmenliği Bölümü",
+   "title": "профессор",
+   "source_url": "https://sporf.manas.edu.kg/tr/physical_education/staff"
+  },
+  {
+   "last_name": "Abdırakmanov",
+   "first_name": "Almas",
+   "department": "Beden Eğitimi ve Spor Öğretmenliği Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://sporf.manas.edu.kg/tr/physical_education/staff"
+  },
+  {
+   "last_name": "Akmatov",
+   "first_name": "Aydar",
+   "department": "Beden Eğitimi ve Spor Öğretmenliği Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://sporf.manas.edu.kg/tr/physical_education/staff"
+  },
+  {
+   "last_name": "Alimcanov",
+   "first_name": "Şamşarbek",
+   "department": "Beden Eğitimi ve Spor Öğretmenliği Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://sporf.manas.edu.kg/tr/physical_education/staff"
+  },
+  {
+   "last_name": "Boljirova",
+   "first_name": "Emilya",
+   "department": "Beden Eğitimi ve Spor Öğretmenliği Bölümü",
+   "title": "доцент",
+   "source_url": "https://sporf.manas.edu.kg/tr/physical_education/staff"
+  },
+  {
+   "last_name": "Canuzakov",
+   "first_name": "Kanat",
+   "department": "Beden Eğitimi ve Spor Öğretmenliği Bölümü",
+   "title": "профессор",
+   "source_url": "https://sporf.manas.edu.kg/tr/physical_education/staff"
+  },
+  {
+   "last_name": "Kasmaliyeva",
+   "first_name": "Anarkan",
+   "department": "Beden Eğitimi ve Spor Öğretmenliği Bölümü",
+   "title": "доцент",
+   "source_url": "https://sporf.manas.edu.kg/tr/physical_education/staff"
+  },
+  {
+   "last_name": "Kazakbayeva",
+   "first_name": "Arina",
+   "department": "Beden Eğitimi ve Spor Öğretmenliği Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://sporf.manas.edu.kg/tr/physical_education/staff"
+  },
+  {
+   "last_name": "Nurbek Uulu",
+   "first_name": "Samat",
+   "department": "Beden Eğitimi ve Spor Öğretmenliği Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://sporf.manas.edu.kg/tr/physical_education/staff"
+  },
+  {
+   "last_name": "Çakar",
+   "first_name": "Atilla",
+   "department": "Beden Eğitimi ve Spor Öğretmenliği Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://sporf.manas.edu.kg/tr/physical_education/staff"
+  },
+  {
+   "last_name": "Cumabaeva",
+   "first_name": "Çinara",
+   "department": "Bilgisayar Mühendisliği Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/computer_engineering/staff"
+  },
+  {
+   "last_name": "Sait Kızı",
+   "first_name": "Aycarkın",
+   "department": "Bilgisayar Mühendisliği Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/computer_engineering/staff"
+  },
+  {
+   "last_name": "Sultanov",
+   "first_name": "Rayımbek",
+   "department": "Bilgisayar Mühendisliği Bölümü",
+   "title": "доцент",
+   "source_url": "https://mf.manas.edu.kg/tr/computer_engineering/staff"
+  },
+  {
+   "last_name": "İsmailova",
+   "first_name": "Rita",
+   "department": "Bilgisayar Mühendisliği Bölümü",
+   "title": "профессор",
+   "source_url": "https://mf.manas.edu.kg/tr/computer_engineering/staff"
+  },
+  {
+   "last_name": "Şarşembayev",
+   "first_name": "Bakıt",
+   "department": "Bilgisayar Mühendisliği Bölümü",
+   "title": "доцент",
+   "source_url": "https://mf.manas.edu.kg/tr/computer_engineering/staff"
+  },
+  {
+   "last_name": "Şeker",
+   "first_name": "Abdulkadir",
+   "department": "Bilgisayar Mühendisliği Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/computer_engineering/staff"
+  },
+  {
+   "last_name": "Dönmez",
+   "first_name": "Mehmet Kenan",
+   "department": "Bilgisayar Programcılığı Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Kazakbayeva",
+   "first_name": "Zamirgül",
+   "department": "Bilgisayar Programcılığı Programı",
+   "title": "доцент",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Bobuşova",
+   "first_name": "Saykal",
+   "department": "Bitki Koruma Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://zf.manas.edu.kg/tr/crop_protection/staff"
+  },
+  {
+   "last_name": "Coldoşbekova",
+   "first_name": "Sezim",
+   "department": "Bitki Koruma Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://zf.manas.edu.kg/tr/crop_protection/staff"
+  },
+  {
+   "last_name": "Esenali Uulu",
+   "first_name": "Tair",
+   "department": "Bitki Koruma Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://zf.manas.edu.kg/tr/crop_protection/staff"
+  },
+  {
+   "last_name": "Güçlü",
+   "first_name": "Coşkun",
+   "department": "Bitki Koruma Bölümü",
+   "title": "доцент",
+   "source_url": "https://zf.manas.edu.kg/tr/crop_protection/staff"
+  },
+  {
+   "last_name": "Konurbayeva",
+   "first_name": "Mahabat",
+   "department": "Bitki Koruma Bölümü",
+   "title": "доцент",
+   "source_url": "https://zf.manas.edu.kg/tr/crop_protection/staff"
+  },
+  {
+   "last_name": "Aldayarov",
+   "first_name": "Nurbek",
+   "department": "Biyoloji Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/biology/staff"
+  },
+  {
+   "last_name": "Barış",
+   "first_name": "Özlem",
+   "department": "Biyoloji Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/biology/staff"
+  },
+  {
+   "last_name": "Beyşenaliyeva",
+   "first_name": "Salkın",
+   "department": "Biyoloji Bölümü",
+   "title": "доцент",
+   "source_url": "https://fenf.manas.edu.kg/tr/biology/staff"
+  },
+  {
+   "last_name": "Kurmanbekova",
+   "first_name": "Gülbübü",
+   "department": "Biyoloji Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/biology/staff"
+  },
+  {
+   "last_name": "Kıdıraliyeva",
+   "first_name": "Bermet",
+   "department": "Biyoloji Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://fenf.manas.edu.kg/tr/biology/staff"
+  },
+  {
+   "last_name": "Uğurlu",
+   "first_name": "Emin",
+   "department": "Biyoloji Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/biology/staff"
+  },
+  {
+   "last_name": "Çekirov",
+   "first_name": "Kadırbay",
+   "department": "Biyoloji Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/biology/staff"
+  },
+  {
+   "last_name": "İmanberdiyeva",
+   "first_name": "Nazgül",
+   "department": "Biyoloji Bölümü",
+   "title": "доцент",
+   "source_url": "https://fenf.manas.edu.kg/tr/biology/staff"
+  },
+  {
+   "last_name": "İsakova",
+   "first_name": "Caynagül",
+   "department": "Biyoloji Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/biology/staff"
+  },
+  {
+   "last_name": "Şarşenaliyeva",
+   "first_name": "Gülnara",
+   "department": "Biyoloji Bölümü",
+   "title": "доцент",
+   "source_url": "https://fenf.manas.edu.kg/tr/biology/staff"
+  },
+  {
+   "last_name": "Usubaliyev",
+   "first_name": "Bircan",
+   "department": "Biyoteknoloji Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/lisansustu-egitim-enstitusu"
+  },
+  {
+   "last_name": "Yılmaz",
+   "first_name": "Raşit",
+   "department": "Büro Yön. ve Yönetici Asist. Prog.",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Çelik",
+   "first_name": "Ali",
+   "department": "Dil Hazırlık Bölümü Başkanlığı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Akyüz",
+   "first_name": "Hüseyin",
+   "department": "Din Bilimleri Bölümü",
+   "title": "профессор",
+   "source_url": "https://ilhf.manas.edu.kg/tr/religious_studies/staff"
+  },
+  {
+   "last_name": "Colaliyeva",
+   "first_name": "Cazgül",
+   "department": "Din Bilimleri Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilhf.manas.edu.kg/tr/religious_studies/staff"
+  },
+  {
+   "last_name": "Kridj",
+   "first_name": "Abdulbasit",
+   "department": "Din Bilimleri Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilhf.manas.edu.kg/tr/religious_studies/staff"
+  },
+  {
+   "last_name": "Kurmanbekova",
+   "first_name": "Altınay",
+   "department": "Din Bilimleri Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilhf.manas.edu.kg/tr/religious_studies/staff"
+  },
+  {
+   "last_name": "Murzaraimov",
+   "first_name": "Bakıtbek",
+   "department": "Din Bilimleri Bölümü",
+   "title": "доцент",
+   "source_url": "https://ilhf.manas.edu.kg/tr/religious_studies/staff"
+  },
+  {
+   "last_name": "Rahmatillaeva",
+   "first_name": "Dilnoza",
+   "department": "Din Bilimleri Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilhf.manas.edu.kg/tr/religious_studies/staff"
+  },
+  {
+   "last_name": "Akparaliyev",
+   "first_name": "Ruslan",
+   "department": "Elektrik ve Elektronik Mühendisliği Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/electric_electronics/staff"
+  },
+  {
+   "last_name": "Düzkaya",
+   "first_name": "Hıdır",
+   "department": "Elektrik ve Elektronik Mühendisliği Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/electric_electronics/staff"
+  },
+  {
+   "last_name": "Karadeniz",
+   "first_name": "Mehmet",
+   "department": "Elektrik ve Elektronik Mühendisliği Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/electric_electronics/staff"
+  },
+  {
+   "last_name": "Savaşçıhabeş",
+   "first_name": "Asuman",
+   "department": "Elektrik ve Elektronik Mühendisliği Bölümü",
+   "title": "доцент",
+   "source_url": "https://mf.manas.edu.kg/tr/electric_electronics/staff"
+  },
+  {
+   "last_name": "Sezgin",
+   "first_name": "Erhan",
+   "department": "Elektrik ve Elektronik Mühendisliği Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/electric_electronics/staff"
+  },
+  {
+   "last_name": "Turduev",
+   "first_name": "Mirbek",
+   "department": "Elektrik ve Elektronik Mühendisliği Bölümü",
+   "title": "профессор",
+   "source_url": "https://mf.manas.edu.kg/tr/electric_electronics/staff"
+  },
+  {
+   "last_name": "Adanbayev",
+   "first_name": "Aybek",
+   "department": "Endüstri Mühendisliği Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/industrial_engineering/staff"
+  },
+  {
+   "last_name": "Gören",
+   "first_name": "Selçuk",
+   "department": "Endüstri Mühendisliği Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/industrial_engineering/staff"
+  },
+  {
+   "last_name": "Özyörük",
+   "first_name": "Bahar",
+   "department": "Endüstri Mühendisliği Bölümü",
+   "title": "доцент",
+   "source_url": "https://mf.manas.edu.kg/tr/industrial_engineering/staff"
+  },
+  {
+   "last_name": "Öksüz",
+   "first_name": "Yücel",
+   "department": "Eğitim Bilimleri Bölümü",
+   "title": "профессор",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Asanbekov",
+   "first_name": "Nurzak",
+   "department": "Felsefe Ana Bilim Dalı",
+   "title": "доцент",
+   "source_url": "https://rehber.manas.edu.kg/lisansustu-egitim-enstitusu"
+  },
+  {
+   "last_name": "Babatayev",
+   "first_name": "Abdiraşit",
+   "department": "Felsefe Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ef.manas.edu.kg/tr/philosophy/staff"
+  },
+  {
+   "last_name": "Eshenkulova",
+   "first_name": "Kishimjan",
+   "department": "Felsefe Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://ef.manas.edu.kg/tr/philosophy/staff"
+  },
+  {
+   "last_name": "Urmanbetova",
+   "first_name": "Cıldız",
+   "department": "Felsefe Bölümü",
+   "title": "профессор",
+   "source_url": "https://ef.manas.edu.kg/tr/philosophy/staff"
+  },
+  {
+   "last_name": "Naymanova",
+   "first_name": "Çolpon",
+   "department": "Filoloji Bölümü",
+   "title": "профессор",
+   "source_url": "https://ef.manas.edu.kg/tr/philology/staff"
+  },
+  {
+   "last_name": "Işın",
+   "first_name": "Alper",
+   "department": "Gastronomi ve Mutfak Sanatları Bölümü",
+   "title": "доцент",
+   "source_url": "https://turf.manas.edu.kg/tr/restaurant/staff"
+  },
+  {
+   "last_name": "Kıdıraliev",
+   "first_name": "Nurudin",
+   "department": "Gastronomi ve Mutfak Sanatları Bölümü",
+   "title": "профессор",
+   "source_url": "https://turf.manas.edu.kg/tr/restaurant/staff"
+  },
+  {
+   "last_name": "Samatova",
+   "first_name": "Gülmira",
+   "department": "Gastronomi ve Mutfak Sanatları Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://turf.manas.edu.kg/tr/restaurant/staff"
+  },
+  {
+   "last_name": "Sormaz",
+   "first_name": "Ümit",
+   "department": "Gastronomi ve Mutfak Sanatları Bölümü",
+   "title": "профессор",
+   "source_url": "https://turf.manas.edu.kg/tr/restaurant/staff"
+  },
+  {
+   "last_name": "Turdubekova",
+   "first_name": "Sapargül",
+   "department": "Gastronomi ve Mutfak Sanatları Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://turf.manas.edu.kg/tr/restaurant/staff"
+  },
+  {
+   "last_name": "Turganbayeva",
+   "first_name": "Nadira",
+   "department": "Gastronomi ve Mutfak Sanatları Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://turf.manas.edu.kg/tr/restaurant/staff"
+  },
+  {
+   "last_name": "İsakova",
+   "first_name": "Dinara",
+   "department": "Gastronomi ve Mutfak Sanatları Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://turf.manas.edu.kg/tr/restaurant/staff"
+  },
+  {
+   "last_name": "Abdullayev",
+   "first_name": "Ravşan",
+   "department": "Gazetecilik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/journalism/staff"
+  },
+  {
+   "last_name": "Akman",
+   "first_name": "Erdoğan",
+   "department": "Gazetecilik Bölümü",
+   "title": "доцент",
+   "source_url": "https://ilef.manas.edu.kg/tr/journalism/staff"
+  },
+  {
+   "last_name": "Ayhan",
+   "first_name": "Niyazi",
+   "department": "Gazetecilik Bölümü",
+   "title": "доцент",
+   "source_url": "https://ilef.manas.edu.kg/tr/journalism/staff"
+  },
+  {
+   "last_name": "Narmamatova",
+   "first_name": "Topçugül",
+   "department": "Gazetecilik Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/journalism/staff"
+  },
+  {
+   "last_name": "Okyay",
+   "first_name": "Zeki",
+   "department": "Gazetecilik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/journalism/staff"
+  },
+  {
+   "last_name": "Orunbekov",
+   "first_name": "Bakıtbek",
+   "department": "Gazetecilik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/journalism/staff"
+  },
+  {
+   "last_name": "Stanalıyeva",
+   "first_name": "Gülzada",
+   "department": "Gazetecilik Bölümü",
+   "title": "доцент",
+   "source_url": "https://ilef.manas.edu.kg/tr/journalism/staff"
+  },
+  {
+   "last_name": "Yıldırım",
+   "first_name": "Besim",
+   "department": "Gazetecilik Bölümü",
+   "title": "профессор",
+   "source_url": "https://ilef.manas.edu.kg/tr/journalism/staff"
+  },
+  {
+   "last_name": "Amandıkov",
+   "first_name": "Mar",
+   "department": "Grafik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/graphics/staff"
+  },
+  {
+   "last_name": "Badahşanova",
+   "first_name": "Aytbübü",
+   "department": "Grafik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/graphics/staff"
+  },
+  {
+   "last_name": "Erdoğan",
+   "first_name": "Sezer",
+   "department": "Grafik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/graphics/staff"
+  },
+  {
+   "last_name": "Erdoğan Çakar",
+   "first_name": "Banu",
+   "department": "Grafik Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/graphics/staff"
+  },
+  {
+   "last_name": "Monoldorov",
+   "first_name": "Maksat",
+   "department": "Grafik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/graphics/staff"
+  },
+  {
+   "last_name": "Samatbek Uulu",
+   "first_name": "Sancar",
+   "department": "Grafik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/graphics/staff"
+  },
+  {
+   "last_name": "Ceylan",
+   "first_name": "Alpaslan",
+   "department": "Güzel Sanatlar Fakültesi",
+   "title": "профессор",
+   "source_url": "https://rehber.manas.edu.kg/guzel-sanatlar-fakultesi"
+  },
+  {
+   "last_name": "Adil Akay Tegin",
+   "first_name": "Ruslan",
+   "department": "Gıda Mühendisliği Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/food_engineering/staff"
+  },
+  {
+   "last_name": "Bodoşov",
+   "first_name": "Aybek",
+   "department": "Gıda Mühendisliği Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/food_engineering/staff"
+  },
+  {
+   "last_name": "Deydiev",
+   "first_name": "Anarseyit",
+   "department": "Gıda Mühendisliği Bölümü",
+   "title": "доцент",
+   "source_url": "https://mf.manas.edu.kg/tr/food_engineering/staff"
+  },
+  {
+   "last_name": "Kasımakunova",
+   "first_name": "Aydaykan",
+   "department": "Gıda Mühendisliği Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/food_engineering/staff"
+  },
+  {
+   "last_name": "Kulmırzaev",
+   "first_name": "Asılbek",
+   "department": "Gıda Mühendisliği Bölümü",
+   "title": "профессор",
+   "source_url": "https://mf.manas.edu.kg/tr/food_engineering/staff"
+  },
+  {
+   "last_name": "Macitova",
+   "first_name": "Ayçürök",
+   "department": "Gıda Mühendisliği Bölümü",
+   "title": "доцент",
+   "source_url": "https://mf.manas.edu.kg/tr/food_engineering/staff"
+  },
+  {
+   "last_name": "Usubaliyeva",
+   "first_name": "Aygül",
+   "department": "Gıda Mühendisliği Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/food_engineering/staff"
+  },
+  {
+   "last_name": "Özbekova",
+   "first_name": "Cıldızay",
+   "department": "Gıda Mühendisliği Bölümü",
+   "title": "доцент",
+   "source_url": "https://mf.manas.edu.kg/tr/food_engineering/staff"
+  },
+  {
+   "last_name": "Artışeva",
+   "first_name": "Meerim",
+   "department": "Halkla İlişkiler ve Reklamcılık Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/pr_advertising/staff"
+  },
+  {
+   "last_name": "Darı",
+   "first_name": "Abdülhakim Bahadır",
+   "department": "Halkla İlişkiler ve Reklamcılık Bölümü",
+   "title": "доцент",
+   "source_url": "https://ilef.manas.edu.kg/tr/pr_advertising/staff"
+  },
+  {
+   "last_name": "Kabatay Kızı",
+   "first_name": "Aynura",
+   "department": "Halkla İlişkiler ve Reklamcılık Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/pr_advertising/staff"
+  },
+  {
+   "last_name": "Maksutova",
+   "first_name": "Begayım",
+   "department": "Halkla İlişkiler ve Reklamcılık Bölümü",
+   "title": "доцент",
+   "source_url": "https://ilef.manas.edu.kg/tr/pr_advertising/staff"
+  },
+  {
+   "last_name": "Muktarova",
+   "first_name": "Kanışay",
+   "department": "Halkla İlişkiler ve Reklamcılık Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/pr_advertising/staff"
+  },
+  {
+   "last_name": "Narinova",
+   "first_name": "Venera",
+   "department": "Halkla İlişkiler ve Reklamcılık Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/pr_advertising/staff"
+  },
+  {
+   "last_name": "Ömürbekov",
+   "first_name": "Kanıbek",
+   "department": "Halkla İlişkiler ve Reklamcılık Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/pr_advertising/staff"
+  },
+  {
+   "last_name": "Ünal",
+   "first_name": "Uğur",
+   "department": "Halkla İlişkiler ve Reklamcılık Bölümü",
+   "title": "профессор",
+   "source_url": "https://ilef.manas.edu.kg/tr/pr_advertising/staff"
+  },
+  {
+   "last_name": "Borkoyev",
+   "first_name": "Bakıt",
+   "department": "Kimya Mühendisliği Bölümü",
+   "title": "профессор",
+   "source_url": "https://mf.manas.edu.kg/tr/chemical_engineering/staff"
+  },
+  {
+   "last_name": "Demir Kıvrak",
+   "first_name": "Hilal",
+   "department": "Kimya Mühendisliği Bölümü",
+   "title": "профессор",
+   "source_url": "https://mf.manas.edu.kg/tr/chemical_engineering/staff"
+  },
+  {
+   "last_name": "Saliyeva",
+   "first_name": "Kalıypa",
+   "department": "Kimya Mühendisliği Bölümü",
+   "title": "профессор",
+   "source_url": "https://mf.manas.edu.kg/tr/chemical_engineering/staff"
+  },
+  {
+   "last_name": "Ömürzak Uulu",
+   "first_name": "Emil",
+   "department": "Kimya Mühendisliği Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/chemical_engineering/staff"
+  },
+  {
+   "last_name": "Şaykieva",
+   "first_name": "Nurzat",
+   "department": "Kimya Mühendisliği Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/chemical_engineering/staff"
+  },
+  {
+   "last_name": "Sagınbayeva",
+   "first_name": "Burul",
+   "department": "Kırgız Dili ve Edebiyatı",
+   "title": "профессор",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Abdrahmanova",
+   "first_name": "Sagina",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Beyşeyeva",
+   "first_name": "Aynur",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Bokoeva",
+   "first_name": "Camila",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Dcunusaliyev",
+   "first_name": "Bakıtbek",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Dcunuşaliyeva",
+   "first_name": "Aida",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Macitova",
+   "first_name": "Zamira",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Mamadiyev",
+   "first_name": "Askatbek",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Murzakmatova",
+   "first_name": "Nazgül",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Narkulova",
+   "first_name": "Saatkan",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Nurdin Kızı",
+   "first_name": "Gülzat",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Toktonalieva",
+   "first_name": "Kıyal",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Tolokova",
+   "first_name": "Elmira",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Turatbek Kızı",
+   "first_name": "Venera",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Üsönaliev",
+   "first_name": "Toyçubay",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "İbrayeva",
+   "first_name": "Mira",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "İsmailov",
+   "first_name": "Altınbek",
+   "department": "Kırgızca Öğretimi Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Alimova",
+   "first_name": "Cıldız",
+   "department": "Kırgızca-Türkiye Türkçesi Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Askarova",
+   "first_name": "Rahat",
+   "department": "Kırgızca-Türkiye Türkçesi Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Dağıstan",
+   "first_name": "Serdar",
+   "department": "Kırgızca-Türkiye Türkçesi Programı",
+   "title": "старший преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Eşkenov",
+   "first_name": "Döölötbek",
+   "department": "Kırgızca-Türkiye Türkçesi Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Gümüş",
+   "first_name": "Muhittin",
+   "department": "Kırgızca-Türkiye Türkçesi Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Kulalieva",
+   "first_name": "Kaliya",
+   "department": "Kırgızca-Türkiye Türkçesi Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Cumaliyeva",
+   "first_name": "Gülnura",
+   "department": "Kırgızca-İngilizce Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Karıbekova",
+   "first_name": "Nurgül",
+   "department": "Kırgızca-İngilizce Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Kinaliyeva",
+   "first_name": "Meerim",
+   "department": "Kırgızca-İngilizce Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Muhamedcanova",
+   "first_name": "Gülşat",
+   "department": "Matematik Ana Bilim Dalı",
+   "title": "доцент",
+   "source_url": "https://rehber.manas.edu.kg/lisansustu-egitim-enstitusu"
+  },
+  {
+   "last_name": "Abdıldayeva",
+   "first_name": "Elmira",
+   "department": "Matematik Bölümü",
+   "title": "доцент",
+   "source_url": "https://fenf.manas.edu.kg/tr/mathematics/staff"
+  },
+  {
+   "last_name": "Ablabekov",
+   "first_name": "Baktıbay",
+   "department": "Matematik Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/mathematics/staff"
+  },
+  {
+   "last_name": "Asanov",
+   "first_name": "Avıt",
+   "department": "Matematik Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/mathematics/staff"
+  },
+  {
+   "last_name": "Bayzakov",
+   "first_name": "Asan",
+   "department": "Matematik Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/mathematics/staff"
+  },
+  {
+   "last_name": "Esengul Kızı",
+   "first_name": "Peyil",
+   "department": "Matematik Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://fenf.manas.edu.kg/tr/mathematics/staff"
+  },
+  {
+   "last_name": "Kamali",
+   "first_name": "Muhammet",
+   "department": "Matematik Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/mathematics/staff"
+  },
+  {
+   "last_name": "Karaşeva",
+   "first_name": "Tamara",
+   "department": "Matematik Bölümü",
+   "title": "доцент",
+   "source_url": "https://fenf.manas.edu.kg/tr/mathematics/staff"
+  },
+  {
+   "last_name": "Matanova",
+   "first_name": "Kalıskan",
+   "department": "Matematik Bölümü",
+   "title": "доцент",
+   "source_url": "https://fenf.manas.edu.kg/tr/mathematics/staff"
+  },
+  {
+   "last_name": "Turkmanov",
+   "first_name": "Cıldızbek",
+   "department": "Matematik Bölümü",
+   "title": "доцент",
+   "source_url": "https://fenf.manas.edu.kg/tr/mathematics/staff"
+  },
+  {
+   "last_name": "Urdaletova",
+   "first_name": "Anarkül",
+   "department": "Matematik Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/mathematics/staff"
+  },
+  {
+   "last_name": "Şarşembiyeva",
+   "first_name": "Farizat",
+   "department": "Matematik Bölümü",
+   "title": "доцент",
+   "source_url": "https://fenf.manas.edu.kg/tr/mathematics/staff"
+  },
+  {
+   "last_name": "Karimkulov",
+   "first_name": "Aslidin",
+   "department": "Mobilya ve Dekorasyon Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Öcal",
+   "first_name": "Mustafa",
+   "department": "Mobilya ve Dekorasyon Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Aliyeva",
+   "first_name": "Nasikat",
+   "department": "Muhasebe Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Atmaca",
+   "first_name": "Serhat",
+   "department": "Muhasebe Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Kasieva",
+   "first_name": "Aida",
+   "department": "Mütercim-Tercümanlık Böl.",
+   "title": "профессор",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Cumakunov",
+   "first_name": "Rısbek",
+   "department": "Müzik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/music/staff"
+  },
+  {
+   "last_name": "Dobulbekova",
+   "first_name": "Aybarçın",
+   "department": "Müzik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/music/staff"
+  },
+  {
+   "last_name": "Koyçukulova",
+   "first_name": "Klara",
+   "department": "Müzik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/music/staff"
+  },
+  {
+   "last_name": "Kurmanbek Uulu",
+   "first_name": "İslam",
+   "department": "Müzik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/music/staff"
+  },
+  {
+   "last_name": "Nasırambekova",
+   "first_name": "Elvira",
+   "department": "Müzik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/music/staff"
+  },
+  {
+   "last_name": "Sagınbayeva",
+   "first_name": "Aynura",
+   "department": "Müzik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/music/staff"
+  },
+  {
+   "last_name": "Saralayeva",
+   "first_name": "Ayşa",
+   "department": "Müzik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/music/staff"
+  },
+  {
+   "last_name": "Tilençiev",
+   "first_name": "Karagul",
+   "department": "Müzik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/music/staff"
+  },
+  {
+   "last_name": "Usal",
+   "first_name": "Gökhan",
+   "department": "Müzik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/music/staff"
+  },
+  {
+   "last_name": "Yılgın",
+   "first_name": "Necip",
+   "department": "Müzik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/music/staff"
+  },
+  {
+   "last_name": "İbrayev",
+   "first_name": "Anarbek",
+   "department": "Müzik Bölümü",
+   "title": "доцент",
+   "source_url": "https://gsf.manas.edu.kg/tr/music/staff"
+  },
+  {
+   "last_name": "Davlyatov",
+   "first_name": "Ulukbek",
+   "department": "Otomotiv Programı",
+   "title": "профессор",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Kalnazarov",
+   "first_name": "Ulukbek",
+   "department": "Otomotiv Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Çiftçi",
+   "first_name": "Mehmet Rüştü",
+   "department": "Otomotiv Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Şener",
+   "first_name": "Ubeydullah",
+   "department": "Pazarlama Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Abdımalikova",
+   "first_name": "Camila",
+   "department": "Radyo, Televizyon ve Sinema Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/radio_tv/staff"
+  },
+  {
+   "last_name": "Bekbolotov",
+   "first_name": "Akcol",
+   "department": "Radyo, Televizyon ve Sinema Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/radio_tv/staff"
+  },
+  {
+   "last_name": "Camankulova",
+   "first_name": "Regina",
+   "department": "Radyo, Televizyon ve Sinema Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/radio_tv/staff"
+  },
+  {
+   "last_name": "Ergeşov",
+   "first_name": "Marat",
+   "department": "Radyo, Televizyon ve Sinema Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/radio_tv/staff"
+  },
+  {
+   "last_name": "Kaparova",
+   "first_name": "Çınara",
+   "department": "Radyo, Televizyon ve Sinema Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/radio_tv/staff"
+  },
+  {
+   "last_name": "Kostyuk",
+   "first_name": "Şirin",
+   "department": "Radyo, Televizyon ve Sinema Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/radio_tv/staff"
+  },
+  {
+   "last_name": "Mamatkulova",
+   "first_name": "Nargiza",
+   "department": "Radyo, Televizyon ve Sinema Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/radio_tv/staff"
+  },
+  {
+   "last_name": "Mambetaliev",
+   "first_name": "Stambulbek",
+   "department": "Radyo, Televizyon ve Sinema Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/radio_tv/staff"
+  },
+  {
+   "last_name": "Süyündukov",
+   "first_name": "Artıkpay",
+   "department": "Radyo, Televizyon ve Sinema Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/radio_tv/staff"
+  },
+  {
+   "last_name": "Yoğurtçu",
+   "first_name": "Gökçe",
+   "department": "Radyo, Televizyon ve Sinema Bölümü",
+   "title": "доцент",
+   "source_url": "https://ilef.manas.edu.kg/tr/radio_tv/staff"
+  },
+  {
+   "last_name": "Şahin",
+   "first_name": "Müslim",
+   "department": "Radyo, Televizyon ve Sinema Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilef.manas.edu.kg/tr/radio_tv/staff"
+  },
+  {
+   "last_name": "Alimbekov",
+   "first_name": "Akmatali",
+   "department": "Rehberlik ve Psikolojik Danışmanlık Programı",
+   "title": "профессор",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Boobekova",
+   "first_name": "Kadiyan",
+   "department": "Rehberlik ve Psikolojik Danışmanlık Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Cumatayeva",
+   "first_name": "Asılgül",
+   "department": "Rehberlik ve Psikolojik Danışmanlık Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Gül",
+   "first_name": "Yavuz Ercan",
+   "department": "Rehberlik ve Psikolojik Danışmanlık Programı",
+   "title": "доцент",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Nusubaliyeva",
+   "first_name": "Eliza",
+   "department": "Rehberlik ve Psikolojik Danışmanlık Programı",
+   "title": "доцент",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Tairova",
+   "first_name": "Kalbübü",
+   "department": "Rehberlik ve Psikolojik Danışmanlık Programı",
+   "title": "доцент",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Yalçın",
+   "first_name": "Süleyman Barbaros",
+   "department": "Rehberlik ve Psikolojik Danışmanlık Programı",
+   "title": "профессор",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Beyşeyev",
+   "first_name": "Nurlanbek",
+   "department": "Resim Bölümü",
+   "title": "доцент",
+   "source_url": "https://gsf.manas.edu.kg/tr/painting/staff"
+  },
+  {
+   "last_name": "Canapilov",
+   "first_name": "Adilet",
+   "department": "Resim Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/painting/staff"
+  },
+  {
+   "last_name": "Hamidjanov",
+   "first_name": "Azamat",
+   "department": "Resim Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/painting/staff"
+  },
+  {
+   "last_name": "Mambetova",
+   "first_name": "Burulkan",
+   "department": "Resim Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/painting/staff"
+  },
+  {
+   "last_name": "Musakeev",
+   "first_name": "Temirbek",
+   "department": "Resim Bölümü",
+   "title": "профессор",
+   "source_url": "https://gsf.manas.edu.kg/tr/painting/staff"
+  },
+  {
+   "last_name": "Abdıgaziyeva",
+   "first_name": "Nazira",
+   "department": "Rus Dili ve Edebiyatı Programı",
+   "title": "доцент",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Colamanova",
+   "first_name": "Elena",
+   "department": "Rus Dili ve Edebiyatı Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Kudayberdiyeva",
+   "first_name": "Gulmira",
+   "department": "Rus Dili ve Edebiyatı Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Narozya",
+   "first_name": "Alla",
+   "department": "Rus Dili ve Edebiyatı Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Yankın",
+   "first_name": "Natalya",
+   "department": "Rus Dili ve Edebiyatı Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Abduvalieva",
+   "first_name": "Gülsanam",
+   "department": "Rusça-Türkiye Türkçesi Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Babatürk",
+   "first_name": "Leyla",
+   "department": "Rusça-Türkiye Türkçesi Programı",
+   "title": "старший преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Sabirova",
+   "first_name": "Mukadas",
+   "department": "Rusça-Türkiye Türkçesi Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Sıdıkova",
+   "first_name": "Çolpon",
+   "department": "Rusça-Türkiye Türkçesi Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Almasbek Uulu",
+   "first_name": "Sonkölbek",
+   "department": "Sahne Sanatları Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/theater/staff"
+  },
+  {
+   "last_name": "Gülbeyaz",
+   "first_name": "Kürşad",
+   "department": "Sahne Sanatları Bölümü",
+   "title": "профессор",
+   "source_url": "https://gsf.manas.edu.kg/tr/theater/staff"
+  },
+  {
+   "last_name": "Isakova",
+   "first_name": "Aelita",
+   "department": "Sahne Sanatları Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/theater/staff"
+  },
+  {
+   "last_name": "Kalmuratov",
+   "first_name": "İlimbek",
+   "department": "Sahne Sanatları Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/theater/staff"
+  },
+  {
+   "last_name": "Karayeva",
+   "first_name": "Elvira",
+   "department": "Sahne Sanatları Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/theater/staff"
+  },
+  {
+   "last_name": "Taşmambetova",
+   "first_name": "Taalaykül",
+   "department": "Sahne Sanatları Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/theater/staff"
+  },
+  {
+   "last_name": "Toktobekova",
+   "first_name": "Nurcan",
+   "department": "Sahne Sanatları Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/theater/staff"
+  },
+  {
+   "last_name": "Tınaliyeva",
+   "first_name": "Gülmira",
+   "department": "Sahne Sanatları Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://gsf.manas.edu.kg/tr/theater/staff"
+  },
+  {
+   "last_name": "Alimov",
+   "first_name": "Ulanbek",
+   "department": "Seyahat İşletmeciliği ve Turizm Rehberliği Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://turf.manas.edu.kg/tr/tourism_guides/staff"
+  },
+  {
+   "last_name": "Okul",
+   "first_name": "Turan",
+   "department": "Seyahat İşletmeciliği ve Turizm Rehberliği Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://turf.manas.edu.kg/tr/tourism_guides/staff"
+  },
+  {
+   "last_name": "Sulaymankulova",
+   "first_name": "Anipa",
+   "department": "Seyahat İşletmeciliği ve Turizm Rehberliği Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://turf.manas.edu.kg/tr/tourism_guides/staff"
+  },
+  {
+   "last_name": "Turdumambetov",
+   "first_name": "Bakıt",
+   "department": "Seyahat İşletmeciliği ve Turizm Rehberliği Bölümü",
+   "title": "доцент",
+   "source_url": "https://turf.manas.edu.kg/tr/tourism_guides/staff"
+  },
+  {
+   "last_name": "Tören",
+   "first_name": "Emrullah",
+   "department": "Seyahat İşletmeciliği ve Turizm Rehberliği Bölümü",
+   "title": "доцент",
+   "source_url": "https://turf.manas.edu.kg/tr/tourism_guides/staff"
+  },
+  {
+   "last_name": "Sırgabayev",
+   "first_name": "Samarbek",
+   "department": "Sosyoloji Ana Bilim Dalı",
+   "title": "доцент",
+   "source_url": "https://rehber.manas.edu.kg/lisansustu-egitim-enstitusu"
+  },
+  {
+   "last_name": "Şarşembiyeva",
+   "first_name": "Taalay",
+   "department": "Sosyoloji Ana Bilim Dalı",
+   "title": "доцент",
+   "source_url": "https://rehber.manas.edu.kg/lisansustu-egitim-enstitusu"
+  },
+  {
+   "last_name": "Beşirli",
+   "first_name": "Hayati",
+   "department": "Sosyoloji Bölümü",
+   "title": "профессор",
+   "source_url": "https://ef.manas.edu.kg/tr/sociology/staff"
+  },
+  {
+   "last_name": "Suleymanova",
+   "first_name": "Nurgül",
+   "department": "Sosyoloji Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ef.manas.edu.kg/tr/sociology/staff"
+  },
+  {
+   "last_name": "Yaman",
+   "first_name": "Ali",
+   "department": "Sosyoloji Bölümü",
+   "title": "профессор",
+   "source_url": "https://ef.manas.edu.kg/tr/sociology/staff"
+  },
+  {
+   "last_name": "Ünal",
+   "first_name": "Ali",
+   "department": "Sosyoloji Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ef.manas.edu.kg/tr/sociology/staff"
+  },
+  {
+   "last_name": "İsakov",
+   "first_name": "Baktıbek",
+   "department": "Sosyoloji Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://ef.manas.edu.kg/tr/sociology/staff"
+  },
+  {
+   "last_name": "Abdıkulova",
+   "first_name": "Roza",
+   "department": "Tarih Bölümü",
+   "title": "доцент",
+   "source_url": "https://ef.manas.edu.kg/tr/history/staff"
+  },
+  {
+   "last_name": "Altımışova",
+   "first_name": "Zuhra",
+   "department": "Tarih Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://ef.manas.edu.kg/tr/history/staff"
+  },
+  {
+   "last_name": "Alımbayev",
+   "first_name": "Ceenbek",
+   "department": "Tarih Bölümü",
+   "title": "профессор",
+   "source_url": "https://ef.manas.edu.kg/tr/history/staff"
+  },
+  {
+   "last_name": "Aşık",
+   "first_name": "Alpaslan",
+   "department": "Tarih Bölümü",
+   "title": "профессор",
+   "source_url": "https://ef.manas.edu.kg/tr/history/staff"
+  },
+  {
+   "last_name": "Belek",
+   "first_name": "Kayrat",
+   "department": "Tarih Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://ef.manas.edu.kg/tr/history/staff"
+  },
+  {
+   "last_name": "Buyar",
+   "first_name": "Cengiz",
+   "department": "Tarih Bölümü",
+   "title": "профессор",
+   "source_url": "https://ef.manas.edu.kg/tr/history/staff"
+  },
+  {
+   "last_name": "Ceylan",
+   "first_name": "Nezahat",
+   "department": "Tarih Bölümü",
+   "title": "профессор",
+   "source_url": "https://ef.manas.edu.kg/tr/history/staff"
+  },
+  {
+   "last_name": "Jalali",
+   "first_name": "Leila",
+   "department": "Tarih Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ef.manas.edu.kg/tr/history/staff"
+  },
+  {
+   "last_name": "Kocobekov",
+   "first_name": "Muratbek",
+   "department": "Tarih Bölümü",
+   "title": "профессор",
+   "source_url": "https://ef.manas.edu.kg/tr/history/staff"
+  },
+  {
+   "last_name": "Mokeev",
+   "first_name": "Anvarbek",
+   "department": "Tarih Bölümü",
+   "title": "профессор",
+   "source_url": "https://ef.manas.edu.kg/tr/history/staff"
+  },
+  {
+   "last_name": "Tabaldiev",
+   "first_name": "Kubatbek",
+   "department": "Tarih Bölümü",
+   "title": "профессор",
+   "source_url": "https://ef.manas.edu.kg/tr/history/staff"
+  },
+  {
+   "last_name": "Acıgulova",
+   "first_name": "Gülmira",
+   "department": "Teknik Programlar Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://myo.manas.edu.kg/tr/technical_programs/staff"
+  },
+  {
+   "last_name": "Arı",
+   "first_name": "Hasan Hüseyin",
+   "department": "Temel Bilimler Bölümü",
+   "title": "профессор",
+   "source_url": "https://vetf.manas.edu.kg/tr/vet_science/staff"
+  },
+  {
+   "last_name": "Cunuşova",
+   "first_name": "Ayday",
+   "department": "Temel Bilimler Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://vetf.manas.edu.kg/tr/vet_science/staff"
+  },
+  {
+   "last_name": "Kadıraliyeva",
+   "first_name": "Nariste",
+   "department": "Temel Bilimler Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://vetf.manas.edu.kg/tr/vet_science/staff"
+  },
+  {
+   "last_name": "Salıkov",
+   "first_name": "Ruslan",
+   "department": "Temel Bilimler Bölümü",
+   "title": "профессор",
+   "source_url": "https://vetf.manas.edu.kg/tr/vet_science/staff"
+  },
+  {
+   "last_name": "Tülöbayev",
+   "first_name": "Askarbek",
+   "department": "Temel Bilimler Bölümü",
+   "title": "профессор",
+   "source_url": "https://vetf.manas.edu.kg/tr/vet_science/staff"
+  },
+  {
+   "last_name": "Yıldırım",
+   "first_name": "Serkan",
+   "department": "Temel Bilimler Bölümü",
+   "title": "профессор",
+   "source_url": "https://vetf.manas.edu.kg/tr/vet_science/staff"
+  },
+  {
+   "last_name": "İstanbullugil",
+   "first_name": "Fatih Ramazan",
+   "department": "Temel Bilimler Bölümü",
+   "title": "доцент",
+   "source_url": "https://vetf.manas.edu.kg/tr/vet_science/staff"
+  },
+  {
+   "last_name": "Şen",
+   "first_name": "İsmail",
+   "department": "Temel Bilimler Bölümü",
+   "title": "профессор",
+   "source_url": "https://vetf.manas.edu.kg/tr/vet_science/staff"
+  },
+  {
+   "last_name": "Asanova",
+   "first_name": "Kımbat",
+   "department": "Turizm ve Otel İşletmeciliği Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://turf.manas.edu.kg/tr/hotel/staff"
+  },
+  {
+   "last_name": "Ertürk",
+   "first_name": "Müjdat",
+   "department": "Turizm ve Otel İşletmeciliği Bölümü",
+   "title": "профессор",
+   "source_url": "https://turf.manas.edu.kg/tr/hotel/staff"
+  },
+  {
+   "last_name": "Gündoğdu",
+   "first_name": "İbrahim",
+   "department": "Turizm ve Otel İşletmeciliği Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://turf.manas.edu.kg/tr/hotel/staff"
+  },
+  {
+   "last_name": "Margazieva",
+   "first_name": "Narıngül",
+   "department": "Turizm ve Otel İşletmeciliği Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://turf.manas.edu.kg/tr/hotel/staff"
+  },
+  {
+   "last_name": "Yayla",
+   "first_name": "İsa",
+   "department": "Turizm ve Otel İşletmeciliği Bölümü",
+   "title": "доцент",
+   "source_url": "https://turf.manas.edu.kg/tr/hotel/staff"
+  },
+  {
+   "last_name": "Acar",
+   "first_name": "Serdar",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Adıgüzel",
+   "first_name": "Ayşe",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Akkaş",
+   "first_name": "Zinnur",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Aktaş",
+   "first_name": "Adil",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Altun",
+   "first_name": "Zafer",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Aslan",
+   "first_name": "Gül",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Ata Kalın",
+   "first_name": "Emine Nur",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Atar",
+   "first_name": "Murat",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Babatürk",
+   "first_name": "Semih",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Barcın Kırdemir",
+   "first_name": "Sibel",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Bayır",
+   "first_name": "Murat",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Bağlan",
+   "first_name": "Bilal",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Başkapan",
+   "first_name": "Fatih",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Bindaş Doğdu",
+   "first_name": "Eda",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Bozok",
+   "first_name": "Kemal",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Danışmant",
+   "first_name": "Pelin",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Doyuran",
+   "first_name": "Levent",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Güler",
+   "first_name": "Hakan",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Gündüz",
+   "first_name": "Yusuf",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Güngül",
+   "first_name": "Aynur",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Gürpınar",
+   "first_name": "Doğan",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Karakaya Nergiz",
+   "first_name": "Ebru",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Kaçar",
+   "first_name": "Güler",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Kiyat",
+   "first_name": "Arzu",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Kurt",
+   "first_name": "Furkan",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Nergiz",
+   "first_name": "Rifat",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Saldıran",
+   "first_name": "Memet",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Satıcıoğlu",
+   "first_name": "Hüseyin",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Selçuk",
+   "first_name": "Işın Bilge Kağan",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Serçe",
+   "first_name": "Fatih",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Sümer",
+   "first_name": "Mehmet Akif",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Taş",
+   "first_name": "Ahmet",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Taş",
+   "first_name": "Kübra Merve",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Taş Tosun",
+   "first_name": "Yasemin",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Topay",
+   "first_name": "Tarık",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Uysal",
+   "first_name": "Seçkin",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Varol",
+   "first_name": "Hüseyin",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Yaman Taş",
+   "first_name": "Süveyda",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Yoğurtçu",
+   "first_name": "Kadir",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Yıldırım",
+   "first_name": "Kenan",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Yıldız",
+   "first_name": "Büşra Nur",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Çakıcı",
+   "first_name": "Erkan",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Çatal",
+   "first_name": "Oğuz Alparslan",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Çelik",
+   "first_name": "Gökcan",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Çelik",
+   "first_name": "Özkan",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "İnalöz",
+   "first_name": "Ahmet Buğra",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "İnalöz",
+   "first_name": "Müzeyyen",
+   "department": "Türkiye Türkçesi Hazırlık Koordinatörlüğü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Abdiev",
+   "first_name": "Taalaybek",
+   "department": "Türkoloji Bölümü",
+   "title": "доцент",
+   "source_url": "https://ef.manas.edu.kg/tr/turkology/staff"
+  },
+  {
+   "last_name": "Aydoğmuş",
+   "first_name": "Erdal",
+   "department": "Türkoloji Bölümü",
+   "title": "доцент",
+   "source_url": "https://ef.manas.edu.kg/tr/turkology/staff"
+  },
+  {
+   "last_name": "Aşlar",
+   "first_name": "Halit",
+   "department": "Türkoloji Bölümü",
+   "title": "доцент",
+   "source_url": "https://ef.manas.edu.kg/tr/turkology/staff"
+  },
+  {
+   "last_name": "Calbiyeva",
+   "first_name": "Zarina",
+   "department": "Türkoloji Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ef.manas.edu.kg/tr/turkology/staff"
+  },
+  {
+   "last_name": "Cılkıçieva",
+   "first_name": "Çınar",
+   "department": "Türkoloji Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ef.manas.edu.kg/tr/turkology/staff"
+  },
+  {
+   "last_name": "Kasapoğlu Çengel",
+   "first_name": "Hülya",
+   "department": "Türkoloji Bölümü",
+   "title": "профессор",
+   "source_url": "https://ef.manas.edu.kg/tr/turkology/staff"
+  },
+  {
+   "last_name": "Rakimbek Uulu",
+   "first_name": "Mirzat",
+   "department": "Türkoloji Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://ef.manas.edu.kg/tr/turkology/staff"
+  },
+  {
+   "last_name": "Şabdanaliyev",
+   "first_name": "Negizbek",
+   "department": "Türkoloji Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://ef.manas.edu.kg/tr/turkology/staff"
+  },
+  {
+   "last_name": "Abdıkadırova",
+   "first_name": "Ediliya",
+   "department": "Uluslararası İlişkiler Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://iibf.manas.edu.kg/tr/international_relations/staff"
+  },
+  {
+   "last_name": "Coldoşov",
+   "first_name": "Altınbek",
+   "department": "Uluslararası İlişkiler Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://iibf.manas.edu.kg/tr/international_relations/staff"
+  },
+  {
+   "last_name": "Gürbüz",
+   "first_name": "Yunus Emre",
+   "department": "Uluslararası İlişkiler Bölümü",
+   "title": "профессор",
+   "source_url": "https://iibf.manas.edu.kg/tr/international_relations/staff"
+  },
+  {
+   "last_name": "Serbest",
+   "first_name": "Murat Bürkan",
+   "department": "Uluslararası İlişkiler Bölümü",
+   "title": "доцент",
+   "source_url": "https://iibf.manas.edu.kg/tr/international_relations/staff"
+  },
+  {
+   "last_name": "Topal",
+   "first_name": "Coşkun",
+   "department": "Uluslararası İlişkiler Bölümü",
+   "title": "профессор",
+   "source_url": "https://iibf.manas.edu.kg/tr/international_relations/staff"
+  },
+  {
+   "last_name": "Uslu",
+   "first_name": "Nasuh",
+   "department": "Uluslararası İlişkiler Bölümü",
+   "title": "профессор",
+   "source_url": "https://iibf.manas.edu.kg/tr/international_relations/staff"
+  },
+  {
+   "last_name": "Çotayev",
+   "first_name": "Zakir",
+   "department": "Uluslararası İlişkiler Bölümü",
+   "title": "доцент",
+   "source_url": "https://iibf.manas.edu.kg/tr/international_relations/staff"
+  },
+  {
+   "last_name": "Abılayeva",
+   "first_name": "Ella",
+   "department": "Uygulamalı Matematik ve Enformatik Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://fenf.manas.edu.kg/tr/informatics/staff"
+  },
+  {
+   "last_name": "Altıntaş",
+   "first_name": "İsmet",
+   "department": "Uygulamalı Matematik ve Enformatik Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/informatics/staff"
+  },
+  {
+   "last_name": "Karakeev",
+   "first_name": "Taalaybek",
+   "department": "Uygulamalı Matematik ve Enformatik Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/informatics/staff"
+  },
+  {
+   "last_name": "Omurov",
+   "first_name": "Maksat",
+   "department": "Uygulamalı Matematik ve Enformatik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://fenf.manas.edu.kg/tr/informatics/staff"
+  },
+  {
+   "last_name": "Temirov",
+   "first_name": "Mayrambek",
+   "department": "Uygulamalı Matematik ve Enformatik Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://fenf.manas.edu.kg/tr/informatics/staff"
+  },
+  {
+   "last_name": "Yavuz",
+   "first_name": "Mehmet",
+   "department": "Uygulamalı Matematik ve Enformatik Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/informatics/staff"
+  },
+  {
+   "last_name": "Çelik",
+   "first_name": "Ercan",
+   "department": "Uygulamalı Matematik ve Enformatik Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/informatics/staff"
+  },
+  {
+   "last_name": "İmaş Kızı",
+   "first_name": "Meerim",
+   "department": "Uygulamalı Matematik ve Enformatik Bölümü",
+   "title": "профессор",
+   "source_url": "https://fenf.manas.edu.kg/tr/informatics/staff"
+  },
+  {
+   "last_name": "Ahmatova",
+   "first_name": "Aynura",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Alişeva",
+   "first_name": "Rahat",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Apsamatova",
+   "first_name": "Gülnara",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Asılbekova",
+   "first_name": "Ayida",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Bakalova",
+   "first_name": "Aycan",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Bayızbekova",
+   "first_name": "Anara",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Caylobayeva",
+   "first_name": "Zarina",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Ceenbekova",
+   "first_name": "Svetlana",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Dcangandiyeva",
+   "first_name": "Çolpon",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Elebayeva",
+   "first_name": "Aygül",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Mendeşeva",
+   "first_name": "Meerim",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Musayeva",
+   "first_name": "Tolkun",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Parmanasova",
+   "first_name": "Svetlana",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Saadakova",
+   "first_name": "Bermet",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Sakelova",
+   "first_name": "Ayzada",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Toktomatova",
+   "first_name": "Altınay",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Vayskanova",
+   "first_name": "Saliya",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Ükübayeva",
+   "first_name": "Bübüsara",
+   "department": "Yabancı Diller Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/yabanci-diller-yuksekokulu"
+  },
+  {
+   "last_name": "Mamatov",
+   "first_name": "Nurlan",
+   "department": "Zootekni Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://zf.manas.edu.kg/tr/animal_science/staff"
+  },
+  {
+   "last_name": "Dolaz",
+   "first_name": "Mustafa",
+   "department": "Çevre Mühendisliği Bölümü",
+   "title": "профессор",
+   "source_url": "https://mf.manas.edu.kg/tr/ecological_engineering/staff"
+  },
+  {
+   "last_name": "Kemelov",
+   "first_name": "Kubat",
+   "department": "Çevre Mühendisliği Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://mf.manas.edu.kg/tr/ecological_engineering/staff"
+  },
+  {
+   "last_name": "Maymekov",
+   "first_name": "Zarlık",
+   "department": "Çevre Mühendisliği Bölümü",
+   "title": "профессор",
+   "source_url": "https://mf.manas.edu.kg/tr/ecological_engineering/staff"
+  },
+  {
+   "last_name": "İskakova",
+   "first_name": "Canıl",
+   "department": "Çevre Mühendisliği Bölümü",
+   "title": "доцент",
+   "source_url": "https://mf.manas.edu.kg/tr/ecological_engineering/staff"
+  },
+  {
+   "last_name": "Gong",
+   "first_name": "Yuan",
+   "department": "Çin Dili ve Edebiyatı Programı",
+   "title": "доцент",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Nain",
+   "first_name": "Zhang",
+   "department": "Çin Dili ve Edebiyatı Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Tuerxun",
+   "first_name": "Reyila",
+   "department": "Çin Dili ve Edebiyatı Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Abdraliyeva",
+   "first_name": "Gülzaada",
+   "department": "Çocuk Gelişimi Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Avcı",
+   "first_name": "Murat",
+   "department": "İktisadi ve İdari Programlar Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://myo.manas.edu.kg/tr/administration_programs/staff"
+  },
+  {
+   "last_name": "Öztürk",
+   "first_name": "Madina",
+   "department": "İktisadi ve İdari Programlar Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Akcan",
+   "first_name": "Ahmet Tayfur",
+   "department": "İktisat Ana Bilim Dalı",
+   "title": "профессор",
+   "source_url": "https://rehber.manas.edu.kg/lisansustu-egitim-enstitusu"
+  },
+  {
+   "last_name": "Abdieva",
+   "first_name": "Raziyahan",
+   "department": "İktisat Bölümü",
+   "title": "доцент",
+   "source_url": "https://iibf.manas.edu.kg/tr/economics/staff"
+  },
+  {
+   "last_name": "Aseinov",
+   "first_name": "Dastan",
+   "department": "İktisat Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://iibf.manas.edu.kg/tr/economics/staff"
+  },
+  {
+   "last_name": "Baygonuşeva",
+   "first_name": "Damira",
+   "department": "İktisat Bölümü",
+   "title": "доцент",
+   "source_url": "https://iibf.manas.edu.kg/tr/economics/staff"
+  },
+  {
+   "last_name": "Doruk",
+   "first_name": "Ömer Tuğsal",
+   "department": "İktisat Bölümü",
+   "title": "доцент",
+   "source_url": "https://iibf.manas.edu.kg/tr/economics/staff"
+  },
+  {
+   "last_name": "Ganiev",
+   "first_name": "Cunus",
+   "department": "İktisat Bölümü",
+   "title": "доцент",
+   "source_url": "https://iibf.manas.edu.kg/tr/economics/staff"
+  },
+  {
+   "last_name": "Karımşakov",
+   "first_name": "Kamalbek",
+   "department": "İktisat Bölümü",
+   "title": "профессор",
+   "source_url": "https://iibf.manas.edu.kg/tr/economics/staff"
+  },
+  {
+   "last_name": "Turdaliyeva",
+   "first_name": "Aynura",
+   "department": "İktisat Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://iibf.manas.edu.kg/tr/economics/staff"
+  },
+  {
+   "last_name": "Öskönbayeva",
+   "first_name": "Zamira",
+   "department": "İktisat Bölümü",
+   "title": "доцент",
+   "source_url": "https://iibf.manas.edu.kg/tr/economics/staff"
+  },
+  {
+   "last_name": "Muradilov",
+   "first_name": "Daniyar",
+   "department": "İlahiyat Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilhf.manas.edu.kg/tr/theology/staff"
+  },
+  {
+   "last_name": "Baygobılova",
+   "first_name": "Gülnara",
+   "department": "İngiliz Dili ve Edebiyatı Programı",
+   "title": "преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Bekturova",
+   "first_name": "Anarkan",
+   "department": "İngiliz Dili ve Edebiyatı Programı",
+   "title": "старший преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Kaliyeva",
+   "first_name": "Kanıkey",
+   "department": "İngiliz Dili ve Edebiyatı Programı",
+   "title": "старший преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Çımanova",
+   "first_name": "Cıldız",
+   "department": "İngiliz Dili ve Edebiyatı Programı",
+   "title": "старший преподаватель",
+   "source_url": "https://rehber.manas.edu.kg/edebiyat-fakultesi"
+  },
+  {
+   "last_name": "Baktıgulov",
+   "first_name": "Kadanbay",
+   "department": "İnşaat Programı",
+   "title": "доцент",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Sipahi",
+   "first_name": "Serkan",
+   "department": "İnşaat Programı",
+   "title": "доцент",
+   "source_url": "https://rehber.manas.edu.kg/meslek-yuksekokulu"
+  },
+  {
+   "last_name": "Bekmurzayeva",
+   "first_name": "Mirgül",
+   "department": "İslam Bilimleri Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilhf.manas.edu.kg/tr/islamic/staff"
+  },
+  {
+   "last_name": "Kalmurza Uulu",
+   "first_name": "Ulanbek",
+   "department": "İslam Bilimleri Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilhf.manas.edu.kg/tr/islamic/staff"
+  },
+  {
+   "last_name": "Kariev",
+   "first_name": "Aiitmamat",
+   "department": "İslam Bilimleri Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://ilhf.manas.edu.kg/tr/islamic/staff"
+  },
+  {
+   "last_name": "Murataliyev",
+   "first_name": "Sabır",
+   "department": "İslam Bilimleri Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilhf.manas.edu.kg/tr/islamic/staff"
+  },
+  {
+   "last_name": "Orunbekov",
+   "first_name": "Şohimardan",
+   "department": "İslam Bilimleri Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilhf.manas.edu.kg/tr/islamic/staff"
+  },
+  {
+   "last_name": "Sotvoldiyev",
+   "first_name": "Khaiitmirza",
+   "department": "İslam Bilimleri Bölümü",
+   "title": "преподаватель",
+   "source_url": "https://ilhf.manas.edu.kg/tr/islamic/staff"
+  },
+  {
+   "last_name": "Abdıldayev",
+   "first_name": "Muratali",
+   "department": "İşletme Bölümü",
+   "title": "старший преподаватель",
+   "source_url": "https://iibf.manas.edu.kg/tr/management/staff"
+  },
+  {
+   "last_name": "Ardıç",
+   "first_name": "Kadir",
+   "department": "İşletme Bölümü",
+   "title": "профессор",
+   "source_url": "https://iibf.manas.edu.kg/tr/management/staff"
+  },
+  {
+   "last_name": "Maksudunov",
+   "first_name": "Azamat",
+   "department": "İşletme Bölümü",
+   "title": "доцент",
+   "source_url": "https://iibf.manas.edu.kg/tr/management/staff"
+  },
+  {
+   "last_name": "Najimudınova",
+   "first_name": "Seyil",
+   "department": "İşletme Bölümü",
+   "title": "доцент",
+   "source_url": "https://iibf.manas.edu.kg/tr/management/staff"
+  },
+  {
+   "last_name": "Özer",
+   "first_name": "Gökhan",
+   "department": "İşletme Bölümü",
+   "title": "профессор",
+   "source_url": "https://iibf.manas.edu.kg/tr/management/staff"
+  }
+ ]
+}

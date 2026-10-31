@@ -1,0 +1,4533 @@
+{
+ "code": "knu",
+ "university": "Кыргызский национальный университет им. Ж. Баласагына",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://www.knu.kg/ky/ru/faculties",
+  "https://www.knu.kg/ky/ru/institutes",
+  "https://www.knu.kg/ky/faculties",
+  "https://www.knu.kg/ky/institutes",
+  "https://www-old.knu.kg/ru/index.php?option=com_content&view=section&id=44&Itemid=88",
+  "https://ictai.knu.kg/",
+  "https://ifl.knu.kg/"
+ ],
+ "notes": "в работе",
+ "professors": [
+  {
+   "last_name": "Рыспаев",
+   "first_name": "Амантур Орозалиевич",
+   "department": "Институт компьютерных технологий и искусственного интеллекта",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/ryspaev-amantur-orozalievic"
+  },
+  {
+   "last_name": "Шекеев",
+   "first_name": "Кубан Рыспаевич",
+   "department": "Прикладной искусственный интеллект",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/sekeev-kuban-ryspaevic"
+  },
+  {
+   "last_name": "Бейшеев",
+   "first_name": "Акылбек Токтобекович",
+   "department": "Прикладной искусственный интеллект",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/beiseev-akylbek-toktobekovic"
+  },
+  {
+   "last_name": "Омуралиева",
+   "first_name": "Бакыт Байышовна",
+   "department": "Прикладной искусственный интеллект",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/omuralieva-bakyt-baiysovna"
+  },
+  {
+   "last_name": "Кожоев",
+   "first_name": "Кутман Тагайбекович",
+   "department": "Прикладной искусственный интеллект",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/kozoev-kutman-tagaibekovic"
+  },
+  {
+   "last_name": "Жолдошбеков",
+   "first_name": "Нурсултан Жолдошбекович",
+   "department": "Прикладной искусственный интеллект",
+   "title": "преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/zoldosbekov-nursultan-zoldosbekovic"
+  },
+  {
+   "last_name": "Нам",
+   "first_name": "Инна Эроновна",
+   "department": "Информационные системы и технологии",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/nam-inna-eronovna"
+  },
+  {
+   "last_name": "Какишов",
+   "first_name": "Жылдызбек Каныбекович",
+   "department": "Информационные системы и технологии",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/kakisov-zyldyzbek-kanybekovic"
+  },
+  {
+   "last_name": "Урусова",
+   "first_name": "Индира Руслановна",
+   "department": "Информационные системы и технологии",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/urusova-indira-ruslanovna"
+  },
+  {
+   "last_name": "Джентаева",
+   "first_name": "Кызылкуль Бекбосуновна",
+   "department": "Информационные системы и технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/dzentaeva-kyzylkul-bekbosunovna"
+  },
+  {
+   "last_name": "Назаралиева",
+   "first_name": "Венера Кыштобаевна",
+   "department": "Информационные системы и технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/nazaralieva-venera-kystobaevna"
+  },
+  {
+   "last_name": "Мусуралиева",
+   "first_name": "Диана Эркебековна",
+   "department": "Информационные системы и технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/musuralieva-diana-erkebekovna"
+  },
+  {
+   "last_name": "Туратбекова",
+   "first_name": "Айпери Туратбековна",
+   "department": "Информационные системы и технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/turatbekova-aiperi-turatbekovna"
+  },
+  {
+   "last_name": "Джунушалиева",
+   "first_name": "Бурул Алмазбековна",
+   "department": "Информационные системы и технологии",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/dzunusalieva-burul-almazbekovna"
+  },
+  {
+   "last_name": "Мусаев",
+   "first_name": "Бакытбек Малаевич",
+   "department": "Информационная безопасность",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/musaev-bakytbek-malaevic"
+  },
+  {
+   "last_name": "Кожомбердиева",
+   "first_name": "Назгуль Бакировна",
+   "department": "Информационная безопасность",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/kozomberdieva-nazgul-bakirovna"
+  },
+  {
+   "last_name": "Джээнбаева",
+   "first_name": "Гулгаакы Абдыкааровна",
+   "department": "Информационная безопасность",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/dzeenbaeva-gulgaaky-abdykaarovna"
+  },
+  {
+   "last_name": "Солтонбеков",
+   "first_name": "Жалил Жетигенович",
+   "department": "Информационная безопасность",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/soltonbekov-zalil-zetigenovic"
+  },
+  {
+   "last_name": "Жадилов",
+   "first_name": "Бакир Мусаевич",
+   "department": "Информационная безопасность",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/zadilov-bakir-musaevic"
+  },
+  {
+   "last_name": "Имангазиев",
+   "first_name": "Рустам Мэлисович",
+   "department": "Информационная безопасность",
+   "title": "преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/imangaziev-rustam-melisovic"
+  },
+  {
+   "last_name": "Мусаев",
+   "first_name": "Канат Салахатович",
+   "department": "Информационная безопасность",
+   "title": "преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/musaev-kanat-salaxatovic"
+  },
+  {
+   "last_name": "Курбанбаева",
+   "first_name": "Тажикан Нажимидиновна",
+   "department": "Информационная безопасность",
+   "title": "преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/kurbanbaeva-tazikan-nazimidinovna"
+  },
+  {
+   "last_name": "Темиров",
+   "first_name": "Майрамбек Акбагышович",
+   "department": "Информатика и вычислительная техника",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/temirov-mairambek-akbagysovic"
+  },
+  {
+   "last_name": "Болотбаев",
+   "first_name": "Дамир Сарымсакович",
+   "department": "Информатика и вычислительная техника",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/bolotbaev-damir-sarymsakovic"
+  },
+  {
+   "last_name": "Кабаева",
+   "first_name": "Зарина Сарыгуловна",
+   "department": "Информатика и вычислительная техника",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/kabaeva-zarina-sarygulovna"
+  },
+  {
+   "last_name": "Дакинова",
+   "first_name": "Замира Кеншбековна",
+   "department": "Информатика и вычислительная техника",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/dakinova-zamira-kensbekovna"
+  },
+  {
+   "last_name": "Эстебесова",
+   "first_name": "Нуржамал Токтогазыевна",
+   "department": "Информатика и вычислительная техника",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/estebesova-nurzamal-toktogazyevna"
+  },
+  {
+   "last_name": "Касымова",
+   "first_name": "Тумар Джапашевна",
+   "department": "Информационные технологии",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/kasymova-tumar-dzapasevna"
+  },
+  {
+   "last_name": "Рослова",
+   "first_name": "Инна Николаевна",
+   "department": "Информационные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/roslova-inna-nikolaevna"
+  },
+  {
+   "last_name": "Изотов",
+   "first_name": "Александр Олегович",
+   "department": "Информационные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/izotov-aleksandr-olegovic"
+  },
+  {
+   "last_name": "Жумадылова",
+   "first_name": "Айтурсун Жумадыловна",
+   "department": "Информационные технологии",
+   "title": "преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/zumadylova-aitursun-zumadylovna"
+  },
+  {
+   "last_name": "Нуржанова",
+   "first_name": "Сабира Акматбековна",
+   "department": "Бизнес-информатика",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/nurzanova-sabira-akmatbekovna"
+  },
+  {
+   "last_name": "Жумабекова",
+   "first_name": "Нурия Жумабековна",
+   "department": "Бизнес-информатика",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/zumabekova-nuriia-zumabekovna"
+  },
+  {
+   "last_name": "Шевелев",
+   "first_name": "Александр Степанович",
+   "department": "Бизнес-информатика",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/sevelev-aleksandr-stepanovic"
+  },
+  {
+   "last_name": "Турганбаева",
+   "first_name": "Нуржан Жолдошпаевна",
+   "department": "Бизнес-информатика",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/turganbaeva-nurzan-zoldospaevna"
+  },
+  {
+   "last_name": "Баялиева",
+   "first_name": "Эльзат Жанболотовна",
+   "department": "Программная инженерия",
+   "title": "преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/baialieva-elzat-zanbolotovna"
+  },
+  {
+   "last_name": "Баячорова",
+   "first_name": "Батыйгул Жумадыловна",
+   "department": "Программная инженерия",
+   "title": "профессор",
+   "source_url": "https://ictai.knu.kg/guides/baiacorova-batyigul-zumadylovna"
+  },
+  {
+   "last_name": "Мураталиева",
+   "first_name": "Венера Тологоновна",
+   "department": "Программная инженерия",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/muratalieva-venera-tologonovna"
+  },
+  {
+   "last_name": "Бегалиев",
+   "first_name": "Самыйбек Алтынбекович",
+   "department": "Программная инженерия",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/begaliev-samyibek-altynbekovic"
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Махабат Бейшенбековна",
+   "department": "Программная инженерия",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/sydykova-maxabat-beisenbekovna"
+  },
+  {
+   "last_name": "Кулбачаев",
+   "first_name": "Данияр Кожоналиевич",
+   "department": "Программная инженерия",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/kulbacaev-daniiar-kozonalievic"
+  },
+  {
+   "last_name": "Омуров",
+   "first_name": "Максат Таалайбкович",
+   "department": "Программная инженерия",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/omurov-maksat-taalaibkovic"
+  },
+  {
+   "last_name": "Ажигулов",
+   "first_name": "Марклен Муталович",
+   "department": "Программная инженерия",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/azigulov-marklen-mutalovic"
+  },
+  {
+   "last_name": "Сейдрахманов",
+   "first_name": "Турдакун Назаркулович",
+   "department": "Программная инженерия",
+   "title": "старший преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/seidraxmanov-turdakun-nazarkulovic"
+  },
+  {
+   "last_name": "Бектурова",
+   "first_name": "Айканым Бектуровна",
+   "department": "Программная инженерия",
+   "title": "преподаватель",
+   "source_url": "https://ictai.knu.kg/guides/bekturova-aikanym-bekturovna"
+  },
+  {
+   "last_name": "Панков",
+   "first_name": "Павел Сергеевич",
+   "department": "Программная инженерия",
+   "title": "профессор",
+   "source_url": "https://ictai.knu.kg/guides/pankov-pavel-sergeevic"
+  },
+  {
+   "last_name": "Байзаков",
+   "first_name": "Асан Байзакович",
+   "department": "Программная инженерия",
+   "title": "профессор",
+   "source_url": "https://ictai.knu.kg/guides/baizakov-asan-baizakovic"
+  },
+  {
+   "last_name": "Исаева",
+   "first_name": "Гулмира Сейтназировна",
+   "department": "Программная инженерия",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/isaeva-gulmira-seitnazirovna"
+  },
+  {
+   "last_name": "Жумабаева",
+   "first_name": "Чинара Насиридиновна",
+   "department": "Программная инженерия",
+   "title": "доцент",
+   "source_url": "https://ictai.knu.kg/guides/zumabaeva-cinara-nasiridinovna"
+  },
+  {
+   "last_name": "Костюк",
+   "first_name": "Ширин Аалиевна",
+   "department": "Институт журналистики и коммуникации",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/ЖКИ-жетекчилик-П.Джаныбекова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Алдашова",
+   "first_name": "Гуланда Мурадиловна",
+   "department": "Институт журналистики и коммуникации",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/ЖКИ-жетекчилик-П.Джаныбекова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Желденбаева",
+   "first_name": "Жаркын Желденбаевна",
+   "department": "Институт журналистики и коммуникации",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/ЖКИ-жетекчилик-П.Джаныбекова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Абдикеримова",
+   "first_name": "Жибек Токтобаевна",
+   "department": "Институт журналистики и коммуникации",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/ЖКИ-жетекчилик-П.Джаныбекова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Кожомбердиева",
+   "first_name": "Жылдыз Телемишевна",
+   "department": "Институт журналистики и коммуникации",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/ЖКИ-жетекчилик-П.Джаныбекова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Дуйшекеева",
+   "first_name": "Айна Талгарбековна",
+   "department": "Институт журналистики и коммуникации",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/ЖКИ-жетекчилик-П.Джаныбекова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Акматбекова",
+   "first_name": "Жанара Адылбековна",
+   "department": "Институт журналистики и коммуникации",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/ЖКИ-жетекчилик-П.Джаныбекова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Калчаева",
+   "first_name": "Лира Темирбековна",
+   "department": "Институт журналистики и коммуникации",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/ЖКИ-жетекчилик-П.Джаныбекова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Жолдошева",
+   "first_name": "Асель Шарипжановна",
+   "department": "Социология и социальная работа",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Руководство-института-Г.Байбосунова-28.05.2026.pdf"
+  },
+  {
+   "last_name": "Байбосунова",
+   "first_name": "Гүлзат Усөнбековна",
+   "department": "Институт социально-гуманитарных наук",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Руководство-института-Г.Байбосунова-28.05.2026.pdf"
+  },
+  {
+   "last_name": "Усубалиева",
+   "first_name": "Айнура Абдыжапаровна",
+   "department": "Социология и социальная работа",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Руководство-института-Г.Байбосунова-28.05.2026.pdf"
+  },
+  {
+   "last_name": "Малтабаров",
+   "first_name": "Бакытбек Амирович",
+   "department": "Институт социально-гуманитарных наук",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Руководство-института-Г.Байбосунова-28.05.2026.pdf"
+  },
+  {
+   "last_name": "Жусубалиев",
+   "first_name": "Абдикайым Рысбаевич",
+   "department": "Социология и социальная работа",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/prez_kaf_ssr_2024.pdf"
+  },
+  {
+   "last_name": "Матиев",
+   "first_name": "Болот Тилекович",
+   "department": "Социология и социальная работа",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/prez_kaf_ssr_2024.pdf"
+  },
+  {
+   "last_name": "Жунушова",
+   "first_name": "Сайкал Орозовна",
+   "department": "Социология и социальная работа",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/prez_kaf_ssr_2024.pdf"
+  },
+  {
+   "last_name": "Асангулова",
+   "first_name": "Жайнагул Эсенбековна",
+   "department": "Социология и социальная работа",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/prez_kaf_ssr_2024.pdf"
+  },
+  {
+   "last_name": "Бедельбаева",
+   "first_name": "Айнура Замирбековна",
+   "department": "Социология и социальная работа",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/prez_kaf_ssr_2024.pdf"
+  },
+  {
+   "last_name": "Кошбакова",
+   "first_name": "Батмахан Муктаровна",
+   "department": "Социология и социальная работа",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/prez_kaf_ssr_2024.pdf"
+  },
+  {
+   "last_name": "Шайылдаева",
+   "first_name": "Асель Кокоевна",
+   "department": "Социология и социальная работа",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/prez_kaf_ssr_2024.pdf"
+  },
+  {
+   "last_name": "Турдубаева",
+   "first_name": "Сезим Торубаевна",
+   "department": "Социология и социальная работа",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/prez_kaf_ssr_2024.pdf"
+  },
+  {
+   "last_name": "Ниязова",
+   "first_name": "Жанна Кенжебековна",
+   "department": "Психология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Камчыбек уулу",
+   "first_name": "Мырзабек",
+   "department": "Психология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Гулина Мелисбековна",
+   "department": "Психология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Кемелова",
+   "first_name": "Венера Кемеловна",
+   "department": "Психология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Байгажанова",
+   "first_name": "Гульзира Кулназаровна",
+   "department": "Психология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Мусуралиева",
+   "first_name": "Лариса Чинтемировна",
+   "department": "Психология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Шакирова",
+   "first_name": "Сымбат Ауесбековна",
+   "department": "Психология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Наралиева",
+   "first_name": "Бермет Каратаевна",
+   "department": "Психология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Джунушалиева",
+   "first_name": "Замира Айболотовна",
+   "department": "Психология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Мещерякова",
+   "first_name": "Елена Юрьевна",
+   "department": "Психология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Кудайбердиева",
+   "first_name": "Динара Момуновна",
+   "department": "Психология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Рыбьянова",
+   "first_name": "Елена Геннадьевна",
+   "department": "Психология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Алиева",
+   "first_name": "Айнура Абдурасуловна",
+   "department": "Психология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Данилова",
+   "first_name": "Наталья Геннадьевна",
+   "department": "Психология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Турдубаева",
+   "first_name": "Рахат Шекеновна",
+   "department": "Психология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Кубатбеков",
+   "first_name": "Медер Мирпазылович",
+   "department": "Психология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Урджигитова",
+   "first_name": "Гулина Джумашевна",
+   "department": "Психология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Талгарбекова",
+   "first_name": "Эльнура Бекболотовна",
+   "department": "Психология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Каныбекова",
+   "first_name": "Бермет Каныбековна",
+   "department": "Психология",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Бекджанова",
+   "first_name": "Асылнур Асылбековна",
+   "department": "Психология",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_psh_ru.pdf"
+  },
+  {
+   "last_name": "Баялиева",
+   "first_name": "Айсулу Суютбековна",
+   "department": "Педагогика высшей школы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Карабалаева",
+   "first_name": "Гульмира Таштановна",
+   "department": "Педагогика высшей школы",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Асипова",
+   "first_name": "Нурбубу Асаналиевна",
+   "department": "Педагогика высшей школы",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Раимкулова",
+   "first_name": "Ажарбубу Супуровна",
+   "department": "Педагогика высшей школы",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Сатыбекова",
+   "first_name": "Майрам Абдыкуловна",
+   "department": "Педагогика высшей школы",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Нужный",
+   "first_name": "Вячеслав Александрович",
+   "department": "Педагогика высшей школы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Байтокова",
+   "first_name": "Айнура Сыйлашовна",
+   "department": "Педагогика высшей школы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Асаналиева",
+   "first_name": "Чынара Ниязалиевна",
+   "department": "Педагогика высшей школы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Калибекова",
+   "first_name": "Дамира Тологоновна",
+   "department": "Педагогика высшей школы",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Мусакулов",
+   "first_name": "Таир Маматович",
+   "department": "Педагогика высшей школы",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Темиралиева",
+   "first_name": "Танара Кубатовна",
+   "department": "Педагогика высшей школы",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Айтымбетова",
+   "first_name": "Динара Анарбековна",
+   "department": "Педагогика высшей школы",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Нурбекова",
+   "first_name": "Самара Нурбековна",
+   "department": "Педагогика высшей школы",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Аркабаева",
+   "first_name": "Айзада Саматовна",
+   "department": "Педагогика высшей школы",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Нурсулуу Нурбековна",
+   "department": "Педагогика высшей школы",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Анарбаева",
+   "first_name": "Айбарчын Кемелбековна",
+   "department": "Педагогика высшей школы",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/05/Кафедра-педагогики-высшей-школы-К.Эшатова-19.05.2026.pdf"
+  },
+  {
+   "last_name": "Алымкулов",
+   "first_name": "Замирбек Аманбекович",
+   "department": "Философия, теория и история культуры",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kaf_ftik_2024_ru.pdf"
+  },
+  {
+   "last_name": "Нусупов",
+   "first_name": "Чолпонбай Токбаевич",
+   "department": "Философия, теория и история культуры",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kaf_ftik_2024_ru.pdf"
+  },
+  {
+   "last_name": "Абыкеева-Султаналиева",
+   "first_name": "Таалайгул Бакаевна",
+   "department": "Философия, теория и история культуры",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kaf_ftik_2024_ru.pdf"
+  },
+  {
+   "last_name": "Сааданбекова",
+   "first_name": "Чолпон Идрисовна",
+   "department": "Философия, теория и история культуры",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kaf_ftik_2024_ru.pdf"
+  },
+  {
+   "last_name": "Касымова",
+   "first_name": "Назира Омуркуловна",
+   "department": "Философия, теория и история культуры",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kaf_ftik_2024_ru.pdf"
+  },
+  {
+   "last_name": "Качкынова",
+   "first_name": "Аида Турдубековна",
+   "department": "Философия, теория и история культуры",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kaf_ftik_2024_ru.pdf"
+  },
+  {
+   "last_name": "Апсаматова",
+   "first_name": "Эльвира Джумабековна",
+   "department": "Философия, теория и история культуры",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kaf_ftik_2024_ru.pdf"
+  },
+  {
+   "last_name": "Имангожоев",
+   "first_name": "Таалайбек Асанович",
+   "department": "Философия, теория и история культуры",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kaf_ftik_2024_ru.pdf"
+  },
+  {
+   "last_name": "Союзбек кызы",
+   "first_name": "Гулгакы",
+   "department": "Философия, теория и история культуры",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kaf_ftik_2024_ru.pdf"
+  },
+  {
+   "last_name": "Омурова",
+   "first_name": "Толкун Омуровна",
+   "department": "Религиоведение и теология",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_rit_07_12_2023_fin.pdf"
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Динара Аскарбековна",
+   "department": "Религиоведение и теология",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_rit_07_12_2023_fin.pdf"
+  },
+  {
+   "last_name": "Канаев",
+   "first_name": "Алмасбек Бектурганович",
+   "department": "Религиоведение и теология",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_rit_07_12_2023_fin.pdf"
+  },
+  {
+   "last_name": "Иманбеков",
+   "first_name": "Улан Талапкерович",
+   "department": "Религиоведение и теология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_rit_07_12_2023_fin.pdf"
+  },
+  {
+   "last_name": "Шаршеналиев",
+   "first_name": "Улан Алтымышович",
+   "department": "Религиоведение и теология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_rit_07_12_2023_fin.pdf"
+  },
+  {
+   "last_name": "Бекматов",
+   "first_name": "Нурболот Кубанычбекович",
+   "department": "Религиоведение и теология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_rit_07_12_2023_fin.pdf"
+  },
+  {
+   "last_name": "Молдобаева",
+   "first_name": "Аймира Дамировна",
+   "department": "Религиоведение и теология",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/kaf_rit_07_12_2023_fin.pdf"
+  },
+  {
+   "last_name": "Адылбек кызы",
+   "first_name": "Гулназ",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Мааткеримов",
+   "first_name": "Нурсапар Оролбекович",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Гудимова",
+   "first_name": "Альбина Николаевна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Абдымомунова",
+   "first_name": "Гульжамыш Асековна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Конгайтиева",
+   "first_name": "Сууракан Амановна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Кулуева",
+   "first_name": "Сейдана Сатаровна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Юсупова",
+   "first_name": "Алтынай Маматовна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Кайдиева",
+   "first_name": "Назира Капарбековна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Укелеева",
+   "first_name": "Астра Зарылбековна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Жуматаева",
+   "first_name": "Асылгул Саринжиевна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Эгамбердиева",
+   "first_name": "Айсулуу Абдухалиловна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Алгожоева",
+   "first_name": "Жыпар Бектурсуновна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Оторбекова",
+   "first_name": "Айнагуль Махмутовна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Исмаилова",
+   "first_name": "Суусар Салыбековна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Эсенканова",
+   "first_name": "Анаркан Кулубековна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Кабылова",
+   "first_name": "Света Амантуровна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Назарбекова",
+   "first_name": "Бурмагуль Жээнбековна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Сейталиев",
+   "first_name": "Максат Есенович",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Омурова",
+   "first_name": "Алтынай Абдырахмановна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Сманова",
+   "first_name": "Чолпон Абасовна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Кубаталиева",
+   "first_name": "Каныкей",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Көчөрова",
+   "first_name": "Айнек Карыпбаевна",
+   "department": "Дошкольная и школьная педагогика и образовательные технологии",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-ДШПиОТ-Н.Кайдиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Кулбаев",
+   "first_name": "Аслан Касымалиевич",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кулбаев-Аслан-Касымалиевич-А.Парманасова-23.11.2024.pdf"
+  },
+  {
+   "last_name": "Парманасова",
+   "first_name": "Айсулу Джээналиевна",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/Парманасова-А.А.pdf"
+  },
+  {
+   "last_name": "Супатаева",
+   "first_name": "Жылдыз Эсенбековна",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Супатаева-Жылдыз-Эсенбековна-А.Парманасова-23.11.2024.pdf"
+  },
+  {
+   "last_name": "Дуйшонбекова",
+   "first_name": "Гулайым",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/Резюме-Дуйшонбекова-Г._пдф.pdf"
+  },
+  {
+   "last_name": "Иманалиева",
+   "first_name": "Таалайгуль Ишенбековна",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/Резюме-Иманалиева-Т.-И.-2024_пдф.pdf"
+  },
+  {
+   "last_name": "Алимбеков",
+   "first_name": "Кенешбек",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/Алимбеков-К.А.pdf"
+  },
+  {
+   "last_name": "Маниева",
+   "first_name": "Чурок Акаевна",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/Маниева-Ч.А.pdf"
+  },
+  {
+   "last_name": "Ныязбекова",
+   "first_name": "Рысайым",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/Ныязбекова-Р.М.pdf"
+  },
+  {
+   "last_name": "Орозонова",
+   "first_name": "Азык Абдыкасымовна",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/Орозонова-А.А.pdf"
+  },
+  {
+   "last_name": "Джаныбекова",
+   "first_name": "Гулзада Турдубековна",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Джаныбекова-Гулзада-Турдубековна-А.Парманасова-23.11.2024.pdf"
+  },
+  {
+   "last_name": "Карыбаева",
+   "first_name": "Асель Сакешевна",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Карыбаева-Асель-Сакешевна-А.Парманасова-23.11.2024.pdf"
+  },
+  {
+   "last_name": "Касымалиева",
+   "first_name": "Клара Руслановна",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Касымалиева-Клара-Руслановна-А.Парманасова-23.11.2024.pdf"
+  },
+  {
+   "last_name": "Коомбаев",
+   "first_name": "Абдиш Абазович",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Коомбаев-Абдиш-Абазович-А.Парманасова-23.11.2024.pdf"
+  },
+  {
+   "last_name": "Кубатбекова",
+   "first_name": "Айнура Сатымбаевна",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кубатбекова-Айнура-Сатымбаевна-А.Парманасова-23.11.2024.pdf"
+  },
+  {
+   "last_name": "Куватпеков",
+   "first_name": "Каныбек Бакбергенович",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Куватпеков-Каныбек-Бакбергенович-А.Парманасова-23.11.2024.pdf"
+  },
+  {
+   "last_name": "Макембаева",
+   "first_name": "Диана Искендербековна",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Макембаева-Диана-Искендербековна-А.Парманасова-23.11.2024.pdf"
+  },
+  {
+   "last_name": "Мукамбетова",
+   "first_name": "Асель Абдыкеримовна",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Мукамбетова-Асель-Абдыкеримовна-А.Парманасова-23.11.2024.pdf"
+  },
+  {
+   "last_name": "Осмоналиев",
+   "first_name": "Кайрат",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Осмоналиев-Кайрат-А.Парманасова-23.11.2024.pdf"
+  },
+  {
+   "last_name": "Осмоналиева",
+   "first_name": "Назикгул Жетигеновна",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Осмоналиева-Назикгул-Жетигеновна-А.Парманасова-23.11.2024.pdf"
+  },
+  {
+   "last_name": "Шерипов",
+   "first_name": "Нурлан Турганбекович",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Шерипов-Нурлан-Турганбекович-А.Парманасова-23.11.2024.pdf"
+  },
+  {
+   "last_name": "Эратов",
+   "first_name": "Искендер Тажибаевич",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Эратов-Искендер-Тажибаевич-А.Парманасова-23.11.2024.pdf"
+  },
+  {
+   "last_name": "Чубарь",
+   "first_name": "Елена",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/Елена-Чубарь-Резюме-1.doc"
+  },
+  {
+   "last_name": "Исламова",
+   "first_name": "Нурайым",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/Исламова-Нурайым-Резюме-.doc"
+  },
+  {
+   "last_name": "Сулайманова",
+   "first_name": "Клара Кырбашевна",
+   "department": "Экономика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-Б.-Садыкова-21.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Рахматова",
+   "first_name": "Мавлюда Убайдулаевна",
+   "department": "Экономика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-Б.-Садыкова-21.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Баймурзаева",
+   "first_name": "Назгуль Сатыбалдыевна",
+   "department": "Экономика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-Б.-Садыкова-21.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Темиров",
+   "first_name": "Назар Жакшылыкович",
+   "department": "Экономика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-Б.-Садыкова-21.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Окенова",
+   "first_name": "Айгуль Омурбековна",
+   "department": "Экономика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-Б.-Садыкова-21.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Михайлова",
+   "first_name": "Ирина Васильевна",
+   "department": "Экономика",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-Б.-Садыкова-21.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Исламова",
+   "first_name": "Фируза Хуззятовна",
+   "department": "Экономика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-Б.-Садыкова-21.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Мельхер",
+   "first_name": "Ольга Владимировна",
+   "department": "Экономика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-Б.-Садыкова-21.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Джусуева",
+   "first_name": "Айсулуу Эсенгуловна",
+   "department": "Экономика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-Б.-Садыкова-21.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Эрмекова",
+   "first_name": "Гулькаир Муратпековна",
+   "department": "Экономика",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-Б.-Садыкова-21.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Садыкова",
+   "first_name": "Бермет Садыковна",
+   "department": "Экономика",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-Б.-Садыкова-21.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Усенов",
+   "first_name": "Эрнис Койчуманович",
+   "department": "Экономика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-Б.-Садыкова-21.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Москаленко",
+   "first_name": "Ольга Александровна",
+   "department": "Экономика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-Б.-Садыкова-21.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Алапаева",
+   "first_name": "Тамара Ормонбековна",
+   "department": "Экономика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-Б.-Садыкова-21.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Секиева",
+   "first_name": "Роза Абылмажиновна",
+   "department": "Финансы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Саякбаева",
+   "first_name": "Айганыш Апышевна",
+   "department": "Финансы",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "Нуриза Мусаевна",
+   "department": "Финансы",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Дженалиева",
+   "first_name": "Мария Аширбековна",
+   "department": "Финансы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Макеева",
+   "first_name": "Светлана Болотовна",
+   "department": "Финансы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Самудинова",
+   "first_name": "Динара Искендеровна",
+   "department": "Финансы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Нурмукамбетова",
+   "first_name": "Жаркынай Курманбековна",
+   "department": "Финансы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Аташова",
+   "first_name": "Айзада Курманбаевна",
+   "department": "Финансы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Шамыратова",
+   "first_name": "Нургуль Шейшенаалиевна",
+   "department": "Финансы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Эсенгелди кызы",
+   "first_name": "Алтынай",
+   "department": "Финансы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Султаналиева",
+   "first_name": "Бегайым Абдыбековна",
+   "department": "Финансы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Сейталиева",
+   "first_name": "Жылдыз Усеновна",
+   "department": "Финансы",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Кадырбердиева",
+   "first_name": "Гулида Садыбакасовна",
+   "department": "Финансы",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Токтобаева",
+   "first_name": "Айнура Болотовна",
+   "department": "Финансы",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Султаналиева",
+   "first_name": "Сайкал Абдыбековна",
+   "department": "Финансы",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-С.Султаналиева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Есеналиева",
+   "first_name": "Бактыгул Баховна",
+   "department": "Банковское дело и налогообложение",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-БДиН-Э.Курамаева-14.11.2024.pdf"
+  },
+  {
+   "last_name": "Идинов",
+   "first_name": "Кубанычбек Идинович",
+   "department": "Банковское дело и налогообложение",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-БДиН-Э.Курамаева-14.11.2024.pdf"
+  },
+  {
+   "last_name": "Макембаева",
+   "first_name": "Рита Бектуровна",
+   "department": "Банковское дело и налогообложение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-БДиН-Э.Курамаева-14.11.2024.pdf"
+  },
+  {
+   "last_name": "Карабекова",
+   "first_name": "Аида Камилжановна",
+   "department": "Банковское дело и налогообложение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-БДиН-Э.Курамаева-14.11.2024.pdf"
+  },
+  {
+   "last_name": "Рысбаева",
+   "first_name": "Алымбүбү Каримовна",
+   "department": "Банковское дело и налогообложение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-БДиН-Э.Курамаева-14.11.2024.pdf"
+  },
+  {
+   "last_name": "Имаралиева",
+   "first_name": "Тамара Сабыровна",
+   "department": "Банковское дело и налогообложение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-БДиН-Э.Курамаева-14.11.2024.pdf"
+  },
+  {
+   "last_name": "Курамаева",
+   "first_name": "Эльмира Дунгановна",
+   "department": "Банковское дело и налогообложение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-БДиН-Э.Курамаева-14.11.2024.pdf"
+  },
+  {
+   "last_name": "Мырзахматова",
+   "first_name": "Жылдыз Бахтияровна",
+   "department": "Банковское дело и налогообложение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-БДиН-Э.Курамаева-14.11.2024.pdf"
+  },
+  {
+   "last_name": "Джоробекова",
+   "first_name": "Гулбарчын Абдуматовна",
+   "department": "Банковское дело и налогообложение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-БДиН-Э.Курамаева-14.11.2024.pdf"
+  },
+  {
+   "last_name": "Сейитова",
+   "first_name": "Жибек Болотбековна",
+   "department": "Банковское дело и налогообложение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-БДиН-Э.Курамаева-14.11.2024.pdf"
+  },
+  {
+   "last_name": "Царёва",
+   "first_name": "Оксана Анатольевна",
+   "department": "Банковское дело и налогообложение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-БДиН-Э.Курамаева-14.11.2024.pdf"
+  },
+  {
+   "last_name": "Ержанова",
+   "first_name": "Шаригат Джолдыбековна",
+   "department": "Банковское дело и налогообложение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-БДиН-Э.Курамаева-14.11.2024.pdf"
+  },
+  {
+   "last_name": "Тилекеева",
+   "first_name": "Бактыгуль Сагыновна",
+   "department": "Банковское дело и налогообложение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-БДиН-Э.Курамаева-14.11.2024.pdf"
+  },
+  {
+   "last_name": "Буйлашова",
+   "first_name": "Гүлай Дүйшөнбековна",
+   "department": "Банковское дело и налогообложение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/ППС-кафедры-БДиН-Э.Курамаева-14.11.2024.pdf"
+  },
+  {
+   "last_name": "Ботобеков",
+   "first_name": "Арстаналы Ботобекович",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Кулова",
+   "first_name": "Эркин Усеналиевна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Сабырова",
+   "first_name": "Гульзат Жумадиловна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Омуралиева",
+   "first_name": "Дамира Кемеловна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Акматова",
+   "first_name": "Зуура Акматовна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Копобаева",
+   "first_name": "Жылдыз Кенжебековна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Султанова",
+   "first_name": "Анарахан Адамалиевна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Джеентаева",
+   "first_name": "Эльмира Шейшенбековна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Ишекеева",
+   "first_name": "Бактыгуль Шаршенбековна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Сариева",
+   "first_name": "Шайкул Каптагаевна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Касымов",
+   "first_name": "Акылбек Худайкулович",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Рыспаева",
+   "first_name": "Нази Сыдыкбековна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Араева",
+   "first_name": "Аида Кылычбековна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Назарбекова",
+   "first_name": "Эмилия Умбетовна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Ибрагимов",
+   "first_name": "Нурбек Кыргызович",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Имангазиева",
+   "first_name": "Оксана Узаковна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Айдарбеков",
+   "first_name": "Мырзаким Аманович",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Баялиев",
+   "first_name": "Табылды Раевич",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Субаналиева",
+   "first_name": "Гульназира Токтогоновна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Сапалов",
+   "first_name": "Алишер Алмазович",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Асанканов",
+   "first_name": "Адилбек Зоодонбекович",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Оторбай кызы",
+   "first_name": "Нурзат",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Закирова",
+   "first_name": "Жибек Талайбековна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Нудель",
+   "first_name": "Сара Акылбековна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Бятова",
+   "first_name": "Каухар-Дина Викторовна",
+   "department": "Бухгалтерский учет, анализ и аудит",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/5-Фото-ППСс-резюме-О.Имангазиева-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Сманалиев",
+   "first_name": "Кынатбек Мойнокович",
+   "department": "Юридический институт",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/08/1.-Сманалиев-К.М.-директор-юридического-института-А.Бузурманкулов-15.08.2024.pdf"
+  },
+  {
+   "last_name": "Мамытова",
+   "first_name": "Асель Казыбековна",
+   "department": "Англистика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Садыкова",
+   "first_name": "Сымбат Зарылкановна",
+   "department": "Англистика",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Мукарапова",
+   "first_name": "Асель Камчибековна",
+   "department": "Англистика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Даражан Эсенгуловна",
+   "department": "Англистика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Акунова",
+   "first_name": "Гульнара Такеевна",
+   "department": "Англистика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Джумагулова",
+   "first_name": "Нурай Султангазиевна",
+   "department": "Англистика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Алишова",
+   "first_name": "Изат Култаевна",
+   "department": "Англистика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Гамалина",
+   "first_name": "Кристина Сергеевна",
+   "department": "Англистика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Нарынбек кызы",
+   "first_name": "Мээрим",
+   "department": "Англистика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Имашбекова",
+   "first_name": "Нуржамал Джумашбековна",
+   "department": "Англистика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Султанова",
+   "first_name": "Махбурат Абдурахманова",
+   "department": "Англистика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Келдибекова",
+   "first_name": "Алина Султанбековна",
+   "department": "Англистика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Атабаева",
+   "first_name": "Жаныл Раимбердиевна",
+   "department": "Англистика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Ибраева",
+   "first_name": "Бермет Эдиковна",
+   "department": "Англистика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Карагулова",
+   "first_name": "Гульмира Насирдиновна",
+   "department": "Англистика",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Киндербаева",
+   "first_name": "Нуркыз Кажибековна",
+   "department": "Англистика",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-англистики-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Акчекеева",
+   "first_name": "Мария Султановна",
+   "department": "Романо-германские языки",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-романо-германских-языков-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Гузиеева",
+   "first_name": "Зухра Кадыевна",
+   "department": "Романо-германские языки",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-романо-германских-языков-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Заипова",
+   "first_name": "Таджихан Фазыловна",
+   "department": "Романо-германские языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-романо-германских-языков-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Джолоева",
+   "first_name": "Роза Намековна",
+   "department": "Романо-германские языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-романо-германских-языков-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Бакашова",
+   "first_name": "Чолпон Кемеловна",
+   "department": "Романо-германские языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-романо-германских-языков-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Азыгалиева",
+   "first_name": "Бактыгуль Камчыбековна",
+   "department": "Романо-германские языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-романо-германских-языков-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Босумбаева",
+   "first_name": "Турар Райымбековна",
+   "department": "Романо-германские языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-романо-германских-языков-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Жаныбек кызы",
+   "first_name": "Айзада",
+   "department": "Романо-германские языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-романо-германских-языков-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Мамутова",
+   "first_name": "Замира Джумабековна",
+   "department": "Романо-германские языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-романо-германских-языков-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Молдоташева",
+   "first_name": "Салтанат Ишенбаевна",
+   "department": "Романо-германские языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-романо-германских-языков-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Самсалиев",
+   "first_name": "Алтынбек Мураталиевич",
+   "department": "Романо-германские языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-романо-германских-языков-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Телемишев",
+   "first_name": "Расул Вайсхалиевич",
+   "department": "Романо-германские языки",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-романо-германских-языков-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Олжобаев",
+   "first_name": "Каныбек Абдыракманович",
+   "department": "Корейский язык",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-корейского-языка-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Ан",
+   "first_name": "Гиль Джин",
+   "department": "Корейский язык",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-корейского-языка-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Айдарбекова",
+   "first_name": "Чынара Сатылгановна",
+   "department": "Корейский язык",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-корейского-языка-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Байзакова",
+   "first_name": "Бермет Нуркуловна",
+   "department": "Корейский язык",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-корейского-языка-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Со",
+   "first_name": "Хонг Джонг",
+   "department": "Корейский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-корейского-языка-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Со",
+   "first_name": "Гивон",
+   "department": "Корейский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-корейского-языка-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Шаршенова",
+   "first_name": "Равшан Малаевна",
+   "department": "Перевод и переводоведение",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-перевода-и-переводоведения-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Исабекова",
+   "first_name": "Бюбюнар Абдрахмановна",
+   "department": "Перевод и переводоведение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-перевода-и-переводоведения-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Садыкова",
+   "first_name": "Назгуль Абдыкадыровна",
+   "department": "Перевод и переводоведение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-перевода-и-переводоведения-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Садыкова",
+   "first_name": "Аянкуль Сапарбековна",
+   "department": "Перевод и переводоведение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-перевода-и-переводоведения-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Туйтеева",
+   "first_name": "Нурида Бактыбековна",
+   "department": "Перевод и переводоведение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-перевода-и-переводоведения-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Жумабай уулу",
+   "first_name": "Абдразак",
+   "department": "Перевод и переводоведение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-перевода-и-переводоведения-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Кылычбеков",
+   "first_name": "Арсен Бекташевич",
+   "department": "Перевод и переводоведение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-перевода-и-переводоведения-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Тагайбекова",
+   "first_name": "Айжаркын Тагайбековна",
+   "department": "Перевод и переводоведение",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-перевода-и-переводоведения-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Садырова",
+   "first_name": "Азиза Рашитовна",
+   "department": "Перевод и переводоведение",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-перевода-и-переводоведения-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Мураталиева",
+   "first_name": "Айдина Жамгырчиевна",
+   "department": "Перевод и переводоведение",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-перевода-и-переводоведения-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Дооронбекова",
+   "first_name": "Бермет Дооронбековна",
+   "department": "Перевод и переводоведение",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-перевода-и-переводоведения-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Калдыбаева",
+   "first_name": "Бегимай Бактыбековна",
+   "department": "Перевод и переводоведение",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-перевода-и-переводоведения-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Катибова",
+   "first_name": "Муслимат Замирбековна",
+   "department": "Перевод и переводоведение",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-перевода-и-переводоведения-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Тукешова",
+   "first_name": "Гульнура Ырысбековна",
+   "department": "Перевод и переводоведение",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Кафедра-перевода-и-переводоведения-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Уметов",
+   "first_name": "Кенжебай Каратаевич",
+   "department": "Институт иностранных языков",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/06/Руководство-Г.Кубанычбекова-23.06.2026.pdf"
+  },
+  {
+   "last_name": "Кадырбекова",
+   "first_name": "Памира Кадырбековна",
+   "department": "Институт иностранных языков",
+   "title": "профессор",
+   "source_url": "https://ifl.knu.kg/index.php/fakultet/okmushtuular-ke-eshi"
+  },
+  {
+   "last_name": "Усенканов",
+   "first_name": "Джумабай Осмонбекович",
+   "department": "Теоретическая и общая физика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.1.-Кафедра-ТОФ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Урусов",
+   "first_name": "Руслан Мухтарович",
+   "department": "Теоретическая и общая физика",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.1.-Кафедра-ТОФ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Байтереков",
+   "first_name": "Алымбек Токоевич",
+   "department": "Теоретическая и общая физика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.1.-Кафедра-ТОФ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Кайрыев",
+   "first_name": "Нурланбек Жутанович",
+   "department": "Теоретическая и общая физика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.1.-Кафедра-ТОФ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Бакирова",
+   "first_name": "Элизат Медеткановна",
+   "department": "Теоретическая и общая физика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.1.-Кафедра-ТОФ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Толбаева",
+   "first_name": "Гульмира Кадыркуловна",
+   "department": "Теоретическая и общая физика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.1.-Кафедра-ТОФ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Мурзакулова",
+   "first_name": "Илимкүл Чороевна",
+   "department": "Теоретическая и общая физика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.1.-Кафедра-ТОФ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Бакирова",
+   "first_name": "Нурзат Медеткановна",
+   "department": "Теоретическая и общая физика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.1.-Кафедра-ТОФ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Мамбетакунов",
+   "first_name": "Эсенбек",
+   "department": "Технология обучения физике и естествознания",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.2.-Кафедра-ТОФЕ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Исаева",
+   "first_name": "Рапия Уркасымовна",
+   "department": "Технология обучения физике и естествознания",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.2.-Кафедра-ТОФЕ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Джумабаев",
+   "first_name": "Бердибек Абдраимович",
+   "department": "Технология обучения физике и естествознания",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.2.-Кафедра-ТОФЕ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Исмаилова",
+   "first_name": "Гулзат Дерденбаевна",
+   "department": "Технология обучения физике и естествознания",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.2.-Кафедра-ТОФЕ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Дооталиева",
+   "first_name": "Айчурок Суйуналиевна",
+   "department": "Технология обучения физике и естествознания",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.2.-Кафедра-ТОФЕ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Ибраев",
+   "first_name": "Абдыжапар Надырбекович",
+   "department": "Технология обучения физике и естествознания",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.2.-Кафедра-ТОФЕ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Калыбеков",
+   "first_name": "Абакир",
+   "department": "Технология обучения физике и естествознания",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.2.-Кафедра-ТОФЕ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Орехова",
+   "first_name": "Ирина Дмитриевна",
+   "department": "Технология обучения физике и естествознания",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.2.-Кафедра-ТОФЕ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Бейшекеева",
+   "first_name": "Гульмира Джумабаевна",
+   "department": "Техническая физика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.4.-Кафедра-ТФ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Ибрагимов",
+   "first_name": "Рахманберди Шабданович",
+   "department": "Техническая физика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.4.-Кафедра-ТФ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Винокурова",
+   "first_name": "Ольга Сергеевна",
+   "department": "Техническая физика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.4.-Кафедра-ТФ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Мамытова",
+   "first_name": "Динара Каныбековна",
+   "department": "Техническая физика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.4.-Кафедра-ТФ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Дуйшеев",
+   "first_name": "Азамат Болотович",
+   "department": "Техническая физика",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.4.-Кафедра-ТФ-С.Токтогонов-07.07.2026.pdf"
+  },
+  {
+   "last_name": "Локшина",
+   "first_name": "Ирина Михайловна",
+   "department": "Органическая химия и образовательные технологии",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ОХиОТ-факультета-Химии-и-ХТ.pdf"
+  },
+  {
+   "last_name": "Сарымзакова",
+   "first_name": "Роза Копбаевна",
+   "department": "Органическая химия и образовательные технологии",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ОХиОТ-факультета-Химии-и-ХТ.pdf"
+  },
+  {
+   "last_name": "Шерова",
+   "first_name": "Мирра Аттокуровна",
+   "department": "Органическая химия и образовательные технологии",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ОХиОТ-факультета-Химии-и-ХТ.pdf"
+  },
+  {
+   "last_name": "Хаперская",
+   "first_name": "Лидия Степановна",
+   "department": "Органическая химия и образовательные технологии",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ОХиОТ-факультета-Химии-и-ХТ.pdf"
+  },
+  {
+   "last_name": "Ибрагимова",
+   "first_name": "Айзаада Алмазбековна",
+   "department": "Органическая химия и образовательные технологии",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ОХиОТ-факультета-Химии-и-ХТ.pdf"
+  },
+  {
+   "last_name": "Эралиева",
+   "first_name": "Махбида Гапаровна",
+   "department": "Органическая химия и образовательные технологии",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ОХиОТ-факультета-Химии-и-ХТ.pdf"
+  },
+  {
+   "last_name": "Сулейманова",
+   "first_name": "Шафика Саматовна",
+   "department": "Ботаника и физиология растений",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/25.03-Руководство-факультета-Нуркыз-Туменбаева.pdf"
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "Кундуз Эркинбековна",
+   "department": "Ботаника и физиология растений",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/25.03-Руководство-факультета-Нуркыз-Туменбаева.pdf"
+  },
+  {
+   "last_name": "Сооданбекова",
+   "first_name": "Алтынкыз",
+   "department": "Зоология, физиология человека и животных",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/25.03-Руководство-факультета-Нуркыз-Туменбаева.pdf"
+  },
+  {
+   "last_name": "Рыскулова",
+   "first_name": "Гульмира Кенешовна",
+   "department": "Общая биология, экология и лабораторное дело",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/25.03-Руководство-факультета-Нуркыз-Туменбаева.pdf"
+  },
+  {
+   "last_name": "Жунусов",
+   "first_name": "Урмат Төрөкулович",
+   "department": "Факультет биологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/25.03-Руководство-факультета-Нуркыз-Туменбаева.pdf"
+  },
+  {
+   "last_name": "Ахматова",
+   "first_name": "Айгуль Токтосуновна",
+   "department": "Зоология, физиология человека и животных",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/27.03-Кафедра-зоологии-Айгуль_Ахматова-испр.-27.03.2024.pdf"
+  },
+  {
+   "last_name": "Кадырова",
+   "first_name": "Бубуаим",
+   "department": "Зоология, физиология человека и животных",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/27.03-Кафедра-зоологии-Айгуль_Ахматова-испр.-27.03.2024.pdf"
+  },
+  {
+   "last_name": "Шаршеева",
+   "first_name": "Бакен Кенешбековна",
+   "department": "Зоология, физиология человека и животных",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/27.03-Кафедра-зоологии-Айгуль_Ахматова-испр.-27.03.2024.pdf"
+  },
+  {
+   "last_name": "Джантаева",
+   "first_name": "Гульмира Алимовна",
+   "department": "Зоология, физиология человека и животных",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/27.03-Кафедра-зоологии-Айгуль_Ахматова-испр.-27.03.2024.pdf"
+  },
+  {
+   "last_name": "Иманалиев",
+   "first_name": "Тынчтыкбек Ишенбекович",
+   "department": "Зоология, физиология человека и животных",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/27.03-Кафедра-зоологии-Айгуль_Ахматова-испр.-27.03.2024.pdf"
+  },
+  {
+   "last_name": "Токтосунов",
+   "first_name": "Тимур Асанович",
+   "department": "Общая биология, экология и лабораторное дело",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/30.03.2024-Кафедра-общей-биологии-экологии-и-ЛД-рус.-вар.-окн.pdf"
+  },
+  {
+   "last_name": "Асанакунов",
+   "first_name": "Бакыт Ашымович",
+   "department": "Общая биология, экология и лабораторное дело",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/30.03.2024-Кафедра-общей-биологии-экологии-и-ЛД-рус.-вар.-окн.pdf"
+  },
+  {
+   "last_name": "Аубекерова",
+   "first_name": "Наталья Галиевна",
+   "department": "Общая биология, экология и лабораторное дело",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/30.03.2024-Кафедра-общей-биологии-экологии-и-ЛД-рус.-вар.-окн.pdf"
+  },
+  {
+   "last_name": "Карипова",
+   "first_name": "Назгул Токталиевна",
+   "department": "Общая биология, экология и лабораторное дело",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/30.03.2024-Кафедра-общей-биологии-экологии-и-ЛД-рус.-вар.-окн.pdf"
+  },
+  {
+   "last_name": "Домашов",
+   "first_name": "Илья Анатольевич",
+   "department": "Общая биология, экология и лабораторное дело",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/30.03.2024-Кафедра-общей-биологии-экологии-и-ЛД-рус.-вар.-окн.pdf"
+  },
+  {
+   "last_name": "Акматцияева",
+   "first_name": "Рахат Жанышовна",
+   "department": "Общая биология, экология и лабораторное дело",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/30.03.2024-Кафедра-общей-биологии-экологии-и-ЛД-рус.-вар.-окн.pdf"
+  },
+  {
+   "last_name": "Эралиева",
+   "first_name": "Нургуль Мухтаровна",
+   "department": "Общая биология, экология и лабораторное дело",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/30.03.2024-Кафедра-общей-биологии-экологии-и-ЛД-рус.-вар.-окн.pdf"
+  },
+  {
+   "last_name": "Нарынбек уулу",
+   "first_name": "Курманбек",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Жумашев",
+   "first_name": "Касымалы Жумашевич",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Супатаев",
+   "first_name": "Турдалы Абылкасымович",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Торобекова",
+   "first_name": "Тамара Аскаровна",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Теңирбердиев",
+   "first_name": "Нурбек Казымалиевич",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Осмонбекова",
+   "first_name": "Раушан Болотбековна",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Эркимбаева",
+   "first_name": "Гульджан Шейшеновна",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Чуңгулов",
+   "first_name": "Жолдошбек Карыпбекович",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Джумалиева",
+   "first_name": "Гульнара Медеровна",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Асенгемир",
+   "first_name": "Андрей Викторович",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Сарсеитова",
+   "first_name": "Аида Шамшибековна",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Кадыралиева",
+   "first_name": "Бермет Кайратбековна",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Шаршеев",
+   "first_name": "Болот Ишенбаевич",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Байсеитова",
+   "first_name": "Махабат Ратбековна",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Сатыбалдиева",
+   "first_name": "Аида Туголбаевна",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Кенжебек уулу",
+   "first_name": "Асанбек",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Мамбеталиева",
+   "first_name": "Алтын Акматбековна",
+   "department": "Туризм, рекреационная география и экология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/кафедра-ТРГиЭ.pdf"
+  },
+  {
+   "last_name": "Кендирбаева",
+   "first_name": "Алмагул Джумадыловна",
+   "department": "Физическая и экономическая география",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Кулматов",
+   "first_name": "Темир Нурдинович",
+   "department": "Физическая и экономическая география",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Токторова",
+   "first_name": "Рыскул Алманбаевна",
+   "department": "Физическая и экономическая география",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Ниязов",
+   "first_name": "Тургунбек Зайнидинович",
+   "department": "Физическая и экономическая география",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Дуйшонакунов",
+   "first_name": "Мураталы Турганалиевич",
+   "department": "Физическая и экономическая география",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Приходько",
+   "first_name": "Лилия Анатольевна",
+   "department": "Физическая и экономическая география",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Оморов",
+   "first_name": "Ибрагим Оморович",
+   "department": "Физическая и экономическая география",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Анкашов",
+   "first_name": "Ырыскулбек Байтурович",
+   "department": "Физическая и экономическая география",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Базарова",
+   "first_name": "Гульмира Ымановна",
+   "department": "Физическая и экономическая география",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Бусурманкулова",
+   "first_name": "Асем Омурбековна",
+   "department": "Физическая и экономическая география",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Дарылкан кызы",
+   "first_name": "Койсун",
+   "department": "Физическая и экономическая география",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Топбаев",
+   "first_name": "Октябрь Асанбекович",
+   "department": "Физическая и экономическая география",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Жолочиева",
+   "first_name": "Эльнура Токтобековна",
+   "department": "Физическая и экономическая география",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Осмоналиева",
+   "first_name": "Чынара Чатыркуловна",
+   "department": "Физическая и экономическая география",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Жакияева",
+   "first_name": "Майрам Апсаматовна",
+   "department": "Физическая и экономическая география",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Жолдошбеков",
+   "first_name": "Эмилбек Жолдошбекович",
+   "department": "Физическая и экономическая география",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf"
+  },
+  {
+   "last_name": "Коротенко",
+   "first_name": "Галина Николаевна",
+   "department": "Теория и практика русского языка",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tpr.pdf"
+  },
+  {
+   "last_name": "Кульчицкая",
+   "first_name": "Лариса Григорьевна",
+   "department": "Теория и практика русского языка",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tpr.pdf"
+  },
+  {
+   "last_name": "Абылова",
+   "first_name": "Алмаш Камчыбековна",
+   "department": "Теория и практика русского языка",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tpr.pdf"
+  },
+  {
+   "last_name": "Джораева",
+   "first_name": "Рано Турсуновна",
+   "department": "Теория и практика русского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tpr.pdf"
+  },
+  {
+   "last_name": "Егорова",
+   "first_name": "Ирина Юрьевна",
+   "department": "Теория и практика русского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tpr.pdf"
+  },
+  {
+   "last_name": "Ким",
+   "first_name": "Алла Викторовна",
+   "department": "Теория и практика русского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tpr.pdf"
+  },
+  {
+   "last_name": "Абдулова",
+   "first_name": "Виктория Рашидовна",
+   "department": "Теория и практика русского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tpr.pdf"
+  },
+  {
+   "last_name": "Бабич",
+   "first_name": "Евгения Петровна",
+   "department": "Теория и практика русского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tpr.pdf"
+  },
+  {
+   "last_name": "Алмакаева",
+   "first_name": "Олеся Владимировна",
+   "department": "Теория и практика русского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tpr.pdf"
+  },
+  {
+   "last_name": "Пешехонова",
+   "first_name": "Инна Александровна",
+   "department": "Теория и практика русского языка",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tpr.pdf"
+  },
+  {
+   "last_name": "Стшалка",
+   "first_name": "Ига Беата",
+   "department": "Теория и практика русского языка",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tpr.pdf"
+  },
+  {
+   "last_name": "Дюшебекова",
+   "first_name": "Бактыгуль Тукеновна",
+   "department": "Теория и история русской и зарубежной литературы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tirzl.pdf"
+  },
+  {
+   "last_name": "Сардарбек кызы",
+   "first_name": "Нурайым",
+   "department": "Теория и история русской и зарубежной литературы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tirzl.pdf"
+  },
+  {
+   "last_name": "Буржубаева",
+   "first_name": "Дария Токушевна",
+   "department": "Теория и история русской и зарубежной литературы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tirzl.pdf"
+  },
+  {
+   "last_name": "Крутиков",
+   "first_name": "Денис Александрович",
+   "department": "Теория и история русской и зарубежной литературы",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tirzl.pdf"
+  },
+  {
+   "last_name": "Яковлева",
+   "first_name": "Лариса Эмильевна",
+   "department": "Теория и история русской и зарубежной литературы",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tirzl.pdf"
+  },
+  {
+   "last_name": "Епанешникова",
+   "first_name": "Людмила Васильевна",
+   "department": "Теория и история русской и зарубежной литературы",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tirzl.pdf"
+  },
+  {
+   "last_name": "Симакова",
+   "first_name": "Дарья Андреевна",
+   "department": "Теория и история русской и зарубежной литературы",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_tirzl.pdf"
+  },
+  {
+   "last_name": "Чепекова",
+   "first_name": "Гульмира Саалиевна",
+   "department": "Русский язык как иностранный",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_ru_inos.pdf"
+  },
+  {
+   "last_name": "Акпаралиев",
+   "first_name": "Джоомарт Абдылдаевич",
+   "department": "Русский язык как иностранный",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_ru_inos.pdf"
+  },
+  {
+   "last_name": "Авдуева",
+   "first_name": "Зарифа Слхоевна",
+   "department": "Русский язык как иностранный",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_ru_inos.pdf"
+  },
+  {
+   "last_name": "Окулич-Казарина",
+   "first_name": "Анна Валерьевна",
+   "department": "Русский язык как иностранный",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_ru_inos.pdf"
+  },
+  {
+   "last_name": "Касымалиева",
+   "first_name": "Кайркул Эсенгуловна",
+   "department": "Русский язык как иностранный",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_ru_inos.pdf"
+  },
+  {
+   "last_name": "Акназарова",
+   "first_name": "Гулумкан Анварбековна",
+   "department": "Русский язык как иностранный",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/02/frsf_kaf_ru_inos.pdf"
+  },
+  {
+   "last_name": "Нукеева",
+   "first_name": "Медина Анарбековна",
+   "department": "Кыргызско-европейский факультет",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2025/09/Резюме-Нукеевой-М.А.-23.09.2025.pdf"
+  },
+  {
+   "last_name": "Сатыбалдиева",
+   "first_name": "Айгерим Туманбековна",
+   "department": "Экономика и управление",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Резюме-Сатыбалдиева-А.Т.-А.Сатыбалдиева-25.112024.pdf"
+  },
+  {
+   "last_name": "Дубова",
+   "first_name": "Юлия Сергеевна",
+   "department": "Кыргызско-европейский факультет",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Резюме-Дубова-Ю.С.-А.Сатыбалдиева-25.112024.pdf"
+  },
+  {
+   "last_name": "Рачковская",
+   "first_name": "Ирина Николаевна",
+   "department": "Кыргызско-европейский факультет",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Резюме-Рачковская-И.Н.pdf"
+  },
+  {
+   "last_name": "Омурова",
+   "first_name": "Жылдыз Намировна",
+   "department": "Кыргызско-европейский факультет",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Резюме-Омуровой-Ж.Н.pdf"
+  },
+  {
+   "last_name": "Сарыгулова",
+   "first_name": "Роза Калыгуловна",
+   "department": "Кыргызско-европейский факультет",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/resume-Roza_Sarygulova-А.Сатыбалдиева-25.112024.pdf"
+  },
+  {
+   "last_name": "Бейбутова",
+   "first_name": "Рысбюбю Алджамбаевна",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Джуманалиев",
+   "first_name": "Тынчболот Дадыйевич",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Дононбаев",
+   "first_name": "Алим Дононбаевич",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Кыскараева",
+   "first_name": "Гульнара Узаковна",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Бейшенов",
+   "first_name": "Мурат Бейшенович",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Каблуков",
+   "first_name": "Евгений Николаевич",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Молдалиев",
+   "first_name": "Орозбек Абдысаламович",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Казак кызы",
+   "first_name": "Нургуль",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Койбагарова",
+   "first_name": "Кульнара Тентимишовна",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Тургунбаева",
+   "first_name": "Айгуль Мамадалиевна",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Хоролец",
+   "first_name": "Елена Георгиевна",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Абдырасулова",
+   "first_name": "Женишгул Садыковна",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Тохтокоджаева",
+   "first_name": "Замира Розамовна",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Усенбаева",
+   "first_name": "Жылдыз Рысбековна",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Абдыжапарова",
+   "first_name": "Бубуйра Самыйбековна",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Курманов",
+   "first_name": "Зайнидин Карпекович",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Аркабаева",
+   "first_name": "Гульзыйнат Насырбековна",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Джаманкулов",
+   "first_name": "Джанат Медетович",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Аламанов",
+   "first_name": "Саламат Куленбекович",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Абылмейизова",
+   "first_name": "Бермет Умуткуловна",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Дуйшенова",
+   "first_name": "Нариза Толобековна",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Мырзанаева",
+   "first_name": "Медина Кененбаевна",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Иванов",
+   "first_name": "Сергей Сергеевич",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Базаркулова",
+   "first_name": "Гульбайра Сабырдиновна",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Чой",
+   "first_name": "Джин Хи",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Со",
+   "first_name": "Ян Сук",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf"
+  },
+  {
+   "last_name": "Базакеева",
+   "first_name": "Кундузгуль Жаманчаевна",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Искаков",
+   "first_name": "Издевалды Искакович",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Нурматова",
+   "first_name": "Гулсайра Асановна",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Сатыбалдиева",
+   "first_name": "Асель Курманбековна",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Кадыр уулу",
+   "first_name": "Алмазбек",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Сыдыкбаев",
+   "first_name": "Чолпонбек Медеркулович",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Искакова",
+   "first_name": "Эльвира Издевалдыевна",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Жолдубай кызы",
+   "first_name": "Назгуль",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Айдашов",
+   "first_name": "Нурбек Саманчиевич",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Акунова",
+   "first_name": "Анара Медетбековна",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Орозалиева",
+   "first_name": "Мунара Муратбековна",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Джапарова",
+   "first_name": "Гульнара Эрмековна",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Суймонова",
+   "first_name": "Жылдыз Муратбековна",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Кенжебекова",
+   "first_name": "Баян Кенжебековна",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Союзова",
+   "first_name": "Анара Анаркуловна",
+   "department": "Факультет государственного и муниципального управления",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/04/06-Руководство-факультета-Ж.Суймонова-25.04.2024.pdf"
+  },
+  {
+   "last_name": "Ибраимов",
+   "first_name": "Рахатбек Турсанович",
+   "department": "Таможенное дело и правоведение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Сарсеитова",
+   "first_name": "Нуржамал Шамшыбековна",
+   "department": "Таможенное дело и правоведение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Жантаева",
+   "first_name": "Гульмира Гульджигитовна",
+   "department": "Таможенное дело и правоведение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Канаева",
+   "first_name": "Ильмира Бектургановна",
+   "department": "Таможенное дело и правоведение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Токталиева",
+   "first_name": "Асель Карыбековна",
+   "department": "Таможенное дело и правоведение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Тойчубек уулу",
+   "first_name": "Алтынбек",
+   "department": "Таможенное дело и правоведение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Базлакунова",
+   "first_name": "Астра Ташыбековна",
+   "department": "Таможенное дело и правоведение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Кожогулов",
+   "first_name": "Мирбек Акылбекович",
+   "department": "Таможенное дело и правоведение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Сталбек уулу",
+   "first_name": "Куралбек",
+   "department": "Таможенное дело и правоведение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Багышбекова",
+   "first_name": "Гулжан Муратбековна",
+   "department": "Таможенное дело и правоведение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Сардарбекова",
+   "first_name": "Айпери Куланбековна",
+   "department": "Таможенное дело и правоведение",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Муратбекова",
+   "first_name": "Салтанат Муратбековна",
+   "department": "Таможенное дело и правоведение",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Бавланкулова",
+   "first_name": "Динара Джумаковна",
+   "department": "Таможенное дело и правоведение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Керимканова",
+   "first_name": "Жаныл Жусуповна",
+   "department": "Таможенное дело и правоведение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Кожомбердиев",
+   "first_name": "Бакир Кожомбердиевич",
+   "department": "Таможенное дело и правоведение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Кыдыргычова",
+   "first_name": "Замира Автандиловна",
+   "department": "Таможенное дело и правоведение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Усупбаева",
+   "first_name": "Гульмира Куменовна",
+   "department": "Таможенное дело и правоведение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Шадыханова",
+   "first_name": "Дамира Сабыровна",
+   "department": "Таможенное дело и правоведение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/Кафедра-таможенного-дела-и-правоведения-Н.Сарсеитова-21.07.2026.pdf"
+  },
+  {
+   "last_name": "Соколова",
+   "first_name": "Галина Викторовна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Осмоналиев",
+   "first_name": "Бакыт Догдурбаевич",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Моргачев",
+   "first_name": "Иван Алексеевич",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Стрихорова",
+   "first_name": "Галина Викторовна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Анапияева",
+   "first_name": "Чолпон Джумашевна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Колесникова",
+   "first_name": "Екатерина Николаевна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Алиева",
+   "first_name": "Айдай Нурлановна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Раева",
+   "first_name": "Токтобубу Тойшукеевна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Кангельдиев",
+   "first_name": "Бактыбек Сыргакович",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Малаканова",
+   "first_name": "Жанылкан Усмановна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Нагаева",
+   "first_name": "Ирина Искандеровна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Султанова",
+   "first_name": "Гулзат Советбековна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Жумабаев",
+   "first_name": "Кенешбек Барыктабасович",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Акынбаева",
+   "first_name": "Аида Абдыкапаровна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Кылчыкбаев",
+   "first_name": "Тилек Эмильбаевич",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Джумалиева",
+   "first_name": "Сейил Талантбековна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Ибраев",
+   "first_name": "Таалайбек Урманович",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Бабаканова",
+   "first_name": "Жылдыз Айтбосуновна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Иманалиева",
+   "first_name": "Акжолтой Айдарбековна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Мамбетов",
+   "first_name": "Орозбай Бейшенович",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Тюлебаев",
+   "first_name": "Султанбек Казакбаевич",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Дюшеева",
+   "first_name": "Сымбат Батырбековна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Кыдыкова",
+   "first_name": "Нурзада Замирбековна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Иязбеков",
+   "first_name": "Белек Асанкадырович",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Жылкыбаева",
+   "first_name": "Айжан Батырбековна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Амангельдиева",
+   "first_name": "Миргуль Догдурбаевна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Гапарова",
+   "first_name": "Кымбат Батырбековна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Дикомбаева",
+   "first_name": "Шаиркуль Курмамбековна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Сарчаева",
+   "first_name": "Аида Садыралиевна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Кельдибаев",
+   "first_name": "Дженишбек Кудайбергенович",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Алсеитов",
+   "first_name": "Чынгыз Садырбекович",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Адылбекова",
+   "first_name": "Мээрим Мыктыбековна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Кожоканова",
+   "first_name": "Гулшайыр Эсеновна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Чыныбаева",
+   "first_name": "Нургуль Женишевна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Эмильбек уулу",
+   "first_name": "Айтолду",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Ажибеков",
+   "first_name": "Доктурбек Абдыкеримович",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Кудайбергенова",
+   "first_name": "Анара Кыдыргановна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Салибаев",
+   "first_name": "Нурлан Кочкорович",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Искакова",
+   "first_name": "Фарида Кубановна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Куланбаева",
+   "first_name": "Умут Талантовна",
+   "department": "Юридические и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/03/2.-Кафедра-Юридических-и-гумантарных-дисциплин-ГЕНФ-Каракол-Ж.Бабьаканова-06.03.2026.pdf"
+  },
+  {
+   "last_name": "Осмонов",
+   "first_name": "Эльгиз Уметкалиевич",
+   "department": "Гуманитарные и естественные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/Кафедра-гуманитарно-естественных-дисциплин-05.04-Ж.Бабаканова.pdf"
+  },
+  {
+   "last_name": "Шаршембиев",
+   "first_name": "Кусейин Асанович",
+   "department": "Гуманитарные и естественные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/Кафедра-гуманитарно-естественных-дисциплин-05.04-Ж.Бабаканова.pdf"
+  },
+  {
+   "last_name": "Салюев",
+   "first_name": "Анвар Абдузаевич",
+   "department": "Гуманитарные и естественные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/Кафедра-гуманитарно-естественных-дисциплин-05.04-Ж.Бабаканова.pdf"
+  },
+  {
+   "last_name": "Малаев",
+   "first_name": "Таалайбек Шейшекеевич",
+   "department": "Гуманитарные и естественные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/Кафедра-гуманитарно-естественных-дисциплин-05.04-Ж.Бабаканова.pdf"
+  },
+  {
+   "last_name": "Жумашев",
+   "first_name": "Эстебес Намазалиевич",
+   "department": "Гуманитарные и естественные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/Кафедра-гуманитарно-естественных-дисциплин-05.04-Ж.Бабаканова.pdf"
+  },
+  {
+   "last_name": "Тиленбаева",
+   "first_name": "Нурпери Айтбосуновна",
+   "department": "Гуманитарные и естественные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/Кафедра-гуманитарно-естественных-дисциплин-05.04-Ж.Бабаканова.pdf"
+  },
+  {
+   "last_name": "Амантуров",
+   "first_name": "Ринат Курстанович",
+   "department": "Юридические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2024/04/Кафедра-юридических-дисциплин-05.04-Ж.Бабаканова.pdf"
+  },
+  {
+   "last_name": "Иманалиев",
+   "first_name": "Сыдык Садырбаевич",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Жетекчилик-Аскар-28.01.2026.pdf"
+  },
+  {
+   "last_name": "Сыдыков",
+   "first_name": "Жолдошбек Сыдыкович",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Жетекчилик-Аскар-28.01.2026.pdf"
+  },
+  {
+   "last_name": "Төлөбекова",
+   "first_name": "Зейнура Сагындыковна",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Жетекчилик-Аскар-28.01.2026.pdf"
+  },
+  {
+   "last_name": "Сопуева",
+   "first_name": "Айшабүбү Аттокуровна",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Жетекчилик-Аскар-28.01.2026.pdf"
+  },
+  {
+   "last_name": "Жеденбаева",
+   "first_name": "Жылдыз Осмоновна",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Жетекчилик-Аскар-28.01.2026.pdf"
+  },
+  {
+   "last_name": "Ыдырысова",
+   "first_name": "Динара Кудайбергеновна",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Жетекчилик-Аскар-28.01.2026.pdf"
+  },
+  {
+   "last_name": "Кадыров",
+   "first_name": "Рысбек Зарлыкович",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Жетекчилик-Аскар-28.01.2026.pdf"
+  },
+  {
+   "last_name": "Арсарбек кызы",
+   "first_name": "Светлана",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Жетекчилик-Аскар-28.01.2026.pdf"
+  },
+  {
+   "last_name": "Уранбекова",
+   "first_name": "Калича Уранбековна",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Жетекчилик-Аскар-28.01.2026.pdf"
+  },
+  {
+   "last_name": "Нурсейитова",
+   "first_name": "Сезим Нурсейитовна",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Жетекчилик-Аскар-28.01.2026.pdf"
+  },
+  {
+   "last_name": "Талантбекова",
+   "first_name": "Мырзайым Талантбековна",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Жетекчилик-Аскар-28.01.2026.pdf"
+  },
+  {
+   "last_name": "Советов",
+   "first_name": "Бекзат",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Жетекчилик-Аскар-28.01.2026.pdf"
+  },
+  {
+   "last_name": "Жумабеков",
+   "first_name": "Нурбол Жумабекович",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Жетекчилик-Аскар-28.01.2026.pdf"
+  },
+  {
+   "last_name": "Эсембаева",
+   "first_name": "Мухрахан Кушубаковна",
+   "department": "Гуманитарно-естественнонаучный факультет в Таласской области",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2025/03/1.-ГЕНФ-Талас-Общие-сведения-Н.Сманалиева-03.03.2025.pdf"
+  },
+  {
+   "last_name": "Атамкулова",
+   "first_name": "Бюкадыча Шейкимбаевна",
+   "department": "Гуманитарно-естественнонаучный факультет в Таласской области",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2025/03/1.-ГЕНФ-Талас-Общие-сведения-Н.Сманалиева-03.03.2025.pdf"
+  },
+  {
+   "last_name": "Нуралиев",
+   "first_name": "Руслан Орозбекович",
+   "department": "Гуманитарно-естественнонаучный факультет в Таласской области",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2025/03/1.-ГЕНФ-Талас-Общие-сведения-Н.Сманалиева-03.03.2025.pdf"
+  },
+  {
+   "last_name": "Калыкеева",
+   "first_name": "Афина Амановна",
+   "department": "Гуманитарно-естественнонаучный факультет в Таласской области",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2025/03/1.-ГЕНФ-Талас-Общие-сведения-Н.Сманалиева-03.03.2025.pdf"
+  },
+  {
+   "last_name": "Коргонбаева",
+   "first_name": "Асел Колпочбековна",
+   "department": "Гуманитарно-естественнонаучный факультет в Таласской области",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2025/03/1.-ГЕНФ-Талас-Общие-сведения-Н.Сманалиева-03.03.2025.pdf"
+  },
+  {
+   "last_name": "Шаймарданова",
+   "first_name": "Венера Рашидовна",
+   "department": "Гуманитарно-естественнонаучный факультет в Таласской области",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2025/03/1.-ГЕНФ-Талас-Общие-сведения-Н.Сманалиева-03.03.2025.pdf"
+  },
+  {
+   "last_name": "Сагынбаева",
+   "first_name": "Нурпейил Токтоназаровна",
+   "department": "Гуманитарно-естественнонаучный факультет в Таласской области",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2025/03/1.-ГЕНФ-Талас-Общие-сведения-Н.Сманалиева-03.03.2025.pdf"
+  },
+  {
+   "last_name": "Алыбаева",
+   "first_name": "Рапия Айтышевна",
+   "department": "Гуманитарно-естественнонаучный факультет в Таласской области",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2025/03/1.-ГЕНФ-Талас-Общие-сведения-Н.Сманалиева-03.03.2025.pdf"
+  },
+  {
+   "last_name": "Асаналиева",
+   "first_name": "Нургуль Мукамбетовна",
+   "department": "Гуманитарно-естественнонаучный факультет в Таласской области",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2025/03/1.-ГЕНФ-Талас-Общие-сведения-Н.Сманалиева-03.03.2025.pdf"
+  },
+  {
+   "last_name": "Жакыпова",
+   "first_name": "Кулуйпа Рыскулбековна",
+   "department": "Гуманитарно-естественнонаучный факультет в Таласской области",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2025/03/1.-ГЕНФ-Талас-Общие-сведения-Н.Сманалиева-03.03.2025.pdf"
+  },
+  {
+   "last_name": "Абдыраева",
+   "first_name": "Гулмира Рахматилаевна",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Ош",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2025/01/Ош-шаарындагы-ГТИФтин-түзүмү-А.Мойдунов-17.01.2025.pdf"
+  },
+  {
+   "last_name": "Абдуллаев",
+   "first_name": "Давлатбек Шарапович",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Ош",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2025/01/Ош-шаарындагы-ГТИФтин-түзүмү-А.Мойдунов-17.01.2025.pdf"
+  },
+  {
+   "last_name": "Умаралиев",
+   "first_name": "Элдербек Стамбекович",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Ош",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2025/01/Ош-шаарындагы-ГТИФтин-түзүмү-А.Мойдунов-17.01.2025.pdf"
+  },
+  {
+   "last_name": "Омурова",
+   "first_name": "Жамыйкат Орозобековна",
+   "department": "Регионоведение и кыргызоведение",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Презентация-кафедры-РиК-А.Шаршенбек-кызы-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Чороев",
+   "first_name": "Тынчтыкбек Кадырмамбетович",
+   "department": "Регионоведение и кыргызоведение",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Презентация-кафедры-РиК-А.Шаршенбек-кызы-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Кылычев",
+   "first_name": "Акылбек Мукаевич",
+   "department": "Регионоведение и кыргызоведение",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Презентация-кафедры-РиК-А.Шаршенбек-кызы-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Каулбекова",
+   "first_name": "Ракия Абдрасуловна",
+   "department": "Регионоведение и кыргызоведение",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Презентация-кафедры-РиК-А.Шаршенбек-кызы-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Токтосунов",
+   "first_name": "Тилек Жакыпович",
+   "department": "Регионоведение и кыргызоведение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Презентация-кафедры-РиК-А.Шаршенбек-кызы-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Шаршенбек кызы",
+   "first_name": "Айпери",
+   "department": "Регионоведение и кыргызоведение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Презентация-кафедры-РиК-А.Шаршенбек-кызы-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Жантелиева",
+   "first_name": "Нурзада Гарибовна",
+   "department": "Регионоведение и кыргызоведение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Презентация-кафедры-РиК-А.Шаршенбек-кызы-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Джумагулова",
+   "first_name": "Акылай Анаркуловна",
+   "department": "Регионоведение и кыргызоведение",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Презентация-кафедры-РиК-А.Шаршенбек-кызы-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Мусакожоева",
+   "first_name": "Таалайкуль Бекмуратовна",
+   "department": "Регионоведение и кыргызоведение",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Презентация-кафедры-РиК-А.Шаршенбек-кызы-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Ырысбеков",
+   "first_name": "Арген Ырысбекович",
+   "department": "Регионоведение и кыргызоведение",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Презентация-кафедры-РиК-А.Шаршенбек-кызы-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Айтмурзаева",
+   "first_name": "Акылай Айтмурзаевна",
+   "department": "Регионоведение и кыргызоведение",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Презентация-кафедры-РиК-А.Шаршенбек-кызы-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Жумабаева",
+   "first_name": "Айдай Бектемировна",
+   "department": "Регионоведение и кыргызоведение",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Презентация-кафедры-РиК-А.Шаршенбек-кызы-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Кармышакова",
+   "first_name": "Шаида Кармышаковна",
+   "department": "Регионоведение и кыргызоведение",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Презентация-кафедры-РиК-А.Шаршенбек-кызы-21.11.2024.pdf"
+  },
+  {
+   "last_name": "Асанов",
+   "first_name": "Темиркул Ишекеевич",
+   "department": "История Кыргызстана",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Жакыпбеков",
+   "first_name": "Жаныбек",
+   "department": "История Кыргызстана",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Бедельбаев",
+   "first_name": "Аскарбек",
+   "department": "История Кыргызстана",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Момбекова",
+   "first_name": "Жыргал Канаевна",
+   "department": "История Кыргызстана",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Мамбетова",
+   "first_name": "Калыйкан",
+   "department": "История Кыргызстана",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Жанакеева",
+   "first_name": "Анаркуль Тологоновна",
+   "department": "История Кыргызстана",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Султаналиева",
+   "first_name": "Назира Ишенбековна",
+   "department": "История Кыргызстана",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Асантурова",
+   "first_name": "Таалайкүл",
+   "department": "История Кыргызстана",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Мамытова",
+   "first_name": "Алтынай Билаловна",
+   "department": "История Кыргызстана",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Толобаева",
+   "first_name": "Элида Анарбековна",
+   "department": "История Кыргызстана",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Кадыралиева",
+   "first_name": "Нуриза Шералкановна",
+   "department": "История Кыргызстана",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Жалиева",
+   "first_name": "Бурул Хамидовна",
+   "department": "История Кыргызстана",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Арзыгулова",
+   "first_name": "Суракан",
+   "department": "История Кыргызстана",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Өтөмбаева",
+   "first_name": "Сагынбүбү Ниязбековна",
+   "department": "История Кыргызстана",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Сатимкулова",
+   "first_name": "Манзура Акбаралиевна",
+   "department": "История Кыргызстана",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Амирбек кызы",
+   "first_name": "Гулбарчын",
+   "department": "История Кыргызстана",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедранын-тарыхы-Г.Амирбек-кызы-20.11.2024.pdf"
+  },
+  {
+   "last_name": "Кушубеков",
+   "first_name": "Алымбек Тынысбекович",
+   "department": "Археология, этнология, источниковедение и историография",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-археологии-К.Касымкулов-22.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Асипбаева",
+   "first_name": "Майрам Бейшенакуновна",
+   "department": "История стран Азии и Африки",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-истории-стран-Азии-и-Африки-Г.Чодолдоева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Исабекова",
+   "first_name": "Мархамат",
+   "department": "История стран Азии и Африки",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-истории-стран-Азии-и-Африки-Г.Чодолдоева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Шейшеканов",
+   "first_name": "Турдубек Бейшенакунович",
+   "department": "История стран Азии и Африки",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-истории-стран-Азии-и-Африки-Г.Чодолдоева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Абдырахманов",
+   "first_name": "Төлөбек Абылович",
+   "department": "История стран Азии и Африки",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-истории-стран-Азии-и-Африки-Г.Чодолдоева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Галиева",
+   "first_name": "Зайраш Идрисовна",
+   "department": "История стран Азии и Африки",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-истории-стран-Азии-и-Африки-Г.Чодолдоева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Жалиева",
+   "first_name": "Бегайым Самидиновна",
+   "department": "История стран Азии и Африки",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-истории-стран-Азии-и-Африки-Г.Чодолдоева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Чодолдоева",
+   "first_name": "Гүлзат Жусуповна",
+   "department": "История стран Азии и Африки",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-истории-стран-Азии-и-Африки-Г.Чодолдоева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Иманкулов",
+   "first_name": "Муратбек Калматович",
+   "department": "История стран Азии и Африки",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-истории-стран-Азии-и-Африки-Г.Чодолдоева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Алымкожоев",
+   "first_name": "Өмүрбек Жумадилович",
+   "department": "История стран Азии и Африки",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-истории-стран-Азии-и-Африки-Г.Чодолдоева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Шейшенов",
+   "first_name": "Айдар Таалайбекович",
+   "department": "История стран Азии и Африки",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-истории-стран-Азии-и-Африки-Г.Чодолдоева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Эшалиев",
+   "first_name": "Айбек Толенович",
+   "department": "История стран Азии и Африки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-истории-стран-Азии-и-Африки-Г.Чодолдоева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Тиллабердиева",
+   "first_name": "Сейилкан",
+   "department": "История стран Азии и Африки",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-истории-стран-Азии-и-Африки-Г.Чодолдоева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Мамедова",
+   "first_name": "Малахат Шамильевна",
+   "department": "История стран Азии и Африки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-истории-стран-Азии-и-Африки-Г.Чодолдоева-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Чаргынов",
+   "first_name": "Темирлан Таштанбекович",
+   "department": "Археология, этнология, источниковедение и историография",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-археологии-К.Касымкулов-22.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Батырбаева",
+   "first_name": "Шайыркул Джолдошевна",
+   "department": "Археология, этнология, источниковедение и историография",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-археологии-К.Касымкулов-22.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Бикбулатова",
+   "first_name": "Аниса Рифовна",
+   "department": "Археология, этнология, источниковедение и историография",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-археологии-К.Касымкулов-22.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Сырдыбаев",
+   "first_name": "Туратбек Токтобекович",
+   "department": "Археология, этнология, источниковедение и историография",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-археологии-К.Касымкулов-22.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Эралиев",
+   "first_name": "Салайдин Нуралиевич",
+   "department": "Археология, этнология, источниковедение и историография",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-археологии-К.Касымкулов-22.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Солтобаев",
+   "first_name": "Орозбек Асекович",
+   "department": "Археология, этнология, источниковедение и историография",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-археологии-К.Касымкулов-22.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Жумалиева",
+   "first_name": "Сайкал Чубаковна",
+   "department": "Археология, этнология, источниковедение и историография",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-археологии-К.Касымкулов-22.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Орозахунова",
+   "first_name": "Замира Жумабековна",
+   "department": "Археология, этнология, источниковедение и историография",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-археологии-К.Касымкулов-22.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Токобаев",
+   "first_name": "Сыймык Исмаилович",
+   "department": "Археология, этнология, источниковедение и историография",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-археологии-К.Касымкулов-22.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Сайпидинова",
+   "first_name": "Карлыгач Сыргакбековна",
+   "department": "Археология, этнология, источниковедение и историография",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-археологии-К.Касымкулов-22.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Кадыралиева",
+   "first_name": "Мираида Кайратбековна",
+   "department": "Археология, этнология, источниковедение и историография",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-археологии-К.Касымкулов-22.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Касымкулов",
+   "first_name": "Келдибек Намазбекович",
+   "department": "Археология, этнология, источниковедение и историография",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-археологии-К.Касымкулов-22.11.2024-1.pdf"
+  },
+  {
+   "last_name": "Арзыматова",
+   "first_name": "Айнура Атыгаевна",
+   "department": "История стран Европы и Америки",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Слайд-кафедры-История-стран-Европы-и-Америки-А.Арзыатова-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Алимова",
+   "first_name": "Бермет Мурзабековна",
+   "department": "История стран Европы и Америки",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Слайд-кафедры-История-стран-Европы-и-Америки-А.Арзыатова-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Карыева",
+   "first_name": "Анара Карыевна",
+   "department": "История стран Европы и Америки",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Слайд-кафедры-История-стран-Европы-и-Америки-А.Арзыатова-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Жолдошов",
+   "first_name": "Рыскул",
+   "department": "История стран Европы и Америки",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Слайд-кафедры-История-стран-Европы-и-Америки-А.Арзыатова-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Момошева",
+   "first_name": "Назира Керимбековна",
+   "department": "История стран Европы и Америки",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Слайд-кафедры-История-стран-Европы-и-Америки-А.Арзыатова-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Торогелдиева",
+   "first_name": "Эльвира Эсенболовна",
+   "department": "История стран Европы и Америки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Слайд-кафедры-История-стран-Европы-и-Америки-А.Арзыатова-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Эсенбаева",
+   "first_name": "Айгерим Салбаровна",
+   "department": "История стран Европы и Америки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Слайд-кафедры-История-стран-Европы-и-Америки-А.Арзыатова-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Анарбекова",
+   "first_name": "Наргиза Анарбековна",
+   "department": "История стран Европы и Америки",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Слайд-кафедры-История-стран-Европы-и-Америки-А.Арзыатова-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Джемуратова",
+   "first_name": "Жибек Абдулхафизовна",
+   "department": "История стран Европы и Америки",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Слайд-кафедры-История-стран-Европы-и-Америки-А.Арзыатова-22.11.2024.pdf"
+  },
+  {
+   "last_name": "Айтбаев",
+   "first_name": "А. А.",
+   "department": "Философия, теория и история культуры",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/kaf_ftik_2024_ru.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кожогелдиева",
+   "first_name": "М. А.",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/РЕЗЮМЕ-Кожогелдиевой-М.А.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ануфриева",
+   "first_name": "О. В.",
+   "department": "Институт переподготовки и повышения квалификации кадров",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/рюземе-Ануфриева-О.В.doc",
+   "initials_only": true
+  },
+  {
+   "last_name": "Молдошева",
+   "first_name": "Ж.",
+   "department": "Технология обучения физике и естествознания",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.2.-Кафедра-ТОФЕ-С.Токтогонов-07.07.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бейшеналиева",
+   "first_name": "Д. Р.",
+   "department": "Технология обучения физике и естествознания",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.2.-Кафедра-ТОФЕ-С.Токтогонов-07.07.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осмоналиев",
+   "first_name": "К.",
+   "department": "Электроника и наноэлектроника",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.3.-Кафедра-ЭНЭ-С.Токтогонов-07.07.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токтогонов",
+   "first_name": "С. А.",
+   "department": "Электроника и наноэлектроника",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.3.-Кафедра-ЭНЭ-С.Токтогонов-07.07.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кадышев",
+   "first_name": "С. К.",
+   "department": "Электроника и наноэлектроника",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.3.-Кафедра-ЭНЭ-С.Токтогонов-07.07.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кожоева",
+   "first_name": "С. Т.",
+   "department": "Электроника и наноэлектроника",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.3.-Кафедра-ЭНЭ-С.Токтогонов-07.07.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдылдаев",
+   "first_name": "О. Т.",
+   "department": "Электроника и наноэлектроника",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.3.-Кафедра-ЭНЭ-С.Токтогонов-07.07.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Таштанбаев",
+   "first_name": "Н. О.",
+   "department": "Электроника и наноэлектроника",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.3.-Кафедра-ЭНЭ-С.Токтогонов-07.07.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ганыева",
+   "first_name": "А. С.",
+   "department": "Электроника и наноэлектроника",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.3.-Кафедра-ЭНЭ-С.Токтогонов-07.07.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Баязова",
+   "first_name": "А. А.",
+   "department": "Электроника и наноэлектроника",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.3.-Кафедра-ЭНЭ-С.Токтогонов-07.07.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Саргазаков",
+   "first_name": "Т. Дж.",
+   "department": "Техническая физика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.4.-Кафедра-ТФ-С.Токтогонов-07.07.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тоялиев",
+   "first_name": "С.",
+   "department": "Техническая физика",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.4.-Кафедра-ТФ-С.Токтогонов-07.07.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мукашева",
+   "first_name": "А. Б.",
+   "department": "Техническая физика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.4.-Кафедра-ТФ-С.Токтогонов-07.07.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Турдумамбетов",
+   "first_name": "М.",
+   "department": "Техническая физика",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2026/07/4.4.-Кафедра-ТФ-С.Токтогонов-07.07.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Карабаев",
+   "first_name": "С. О.",
+   "department": "ЮНЕСКО физической и коллоидной химии",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ЮНЕСКО-ФХиХТ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мусабекова",
+   "first_name": "З. Р.",
+   "department": "ЮНЕСКО физической и коллоидной химии",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ЮНЕСКО-ФХиХТ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ли",
+   "first_name": "С. П.",
+   "department": "ЮНЕСКО физической и коллоидной химии",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ЮНЕСКО-ФХиХТ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Гайнуллина",
+   "first_name": "И. П.",
+   "department": "ЮНЕСКО физической и коллоидной химии",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ЮНЕСКО-ФХиХТ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Субанкулова",
+   "first_name": "Д. А.",
+   "department": "ЮНЕСКО физической и коллоидной химии",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ЮНЕСКО-ФХиХТ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джунушалиева",
+   "first_name": "А. К.",
+   "department": "ЮНЕСКО физической и коллоидной химии",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ЮНЕСКО-ФХиХТ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токтосапиева",
+   "first_name": "Б. Т.",
+   "department": "ЮНЕСКО физической и коллоидной химии",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ЮНЕСКО-ФХиХТ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джапаралиев",
+   "first_name": "Н. Т.",
+   "department": "Ботаника и физиология растений",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/История-кафедры-ботаники-и-физиологии-растений-Э.Сыдыкова-21.10.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Юсупов",
+   "first_name": "Т. Т.",
+   "department": "Ботаника и физиология растений",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/История-кафедры-ботаники-и-физиологии-растений-Э.Сыдыкова-21.10.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шекеков",
+   "first_name": "А. Ш.",
+   "department": "Ботаника и физиология растений",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/История-кафедры-ботаники-и-физиологии-растений-Э.Сыдыкова-21.10.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мырзабекова",
+   "first_name": "У. Д.",
+   "department": "Ботаника и физиология растений",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/10/История-кафедры-ботаники-и-физиологии-растений-Э.Сыдыкова-21.10.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Аламанов",
+   "first_name": "С. К.",
+   "department": "Физическая и экономическая география",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Солпуева",
+   "first_name": "Д. Т.",
+   "department": "Физическая и экономическая география",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Иванов",
+   "first_name": "В. К.",
+   "department": "Физическая и экономическая география",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эсенкул уулу",
+   "first_name": "Т.",
+   "department": "Физическая и экономическая география",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдрахманова",
+   "first_name": "Г. У.",
+   "department": "Физическая и экономическая география",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Каныбек кызы",
+   "first_name": "Б.",
+   "department": "Физическая и экономическая география",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/03/Кафедра-ФжЭГ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Доненко",
+   "first_name": "Т. В.",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Акилова",
+   "first_name": "П. О.",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кайыпова",
+   "first_name": "Е. А.",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Элебесова",
+   "first_name": "Дж. К.",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сыдыгалиева",
+   "first_name": "М. Д.",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Асанова",
+   "first_name": "Г. Т.",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сатимкулова",
+   "first_name": "А. К.",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Рахимова",
+   "first_name": "А. А.",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "М. А.",
+   "department": "Факультет международных отношений и востоковедения",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Список-наград-ППС-ФМОиВ.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Оторова",
+   "first_name": "С.",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "доцент",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Биз-тууралуу-Аскар-28.01.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жумаев",
+   "first_name": "М.",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "старший преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Биз-тууралуу-Аскар-28.01.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ашымов",
+   "first_name": "Э.",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Биз-тууралуу-Аскар-28.01.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мамбеттоктоева",
+   "first_name": "Н.",
+   "department": "Гуманитарно-естественнонаучный факультет в г. Нарын",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/wp-content/uploads/2026/01/Биз-тууралуу-Аскар-28.01.2026.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Азизбекова",
+   "first_name": "Ч. С.",
+   "department": "История Кыргызстана",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-Истории-Кыргызстана-Г.Амибек-кызы-25.11.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чекирова",
+   "first_name": "А. М.",
+   "department": "История Кыргызстана",
+   "title": "преподаватель",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-Истории-Кыргызстана-Г.Амибек-кызы-25.11.2024.pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Асанканов",
+   "first_name": "А. А.",
+   "department": "Археология, этнология, источниковедение и историография",
+   "title": "профессор",
+   "source_url": "https://www.knu.kg/ky/ru/wp-content/uploads/sites/2/2024/11/Кафедра-археологии-К.Касымкулов-22.11.2024-1.pdf",
+   "initials_only": true
+  }
+ ]
+}

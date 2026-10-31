@@ -1,0 +1,586 @@
+{
+ "code": "kai",
+ "university": "Кыргызский авиационный институт им. И. Абдраимова",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://kai.kg/ru/end/sostav/",
+  "https://kai.kg/ru/lte-vs-i-outs/sostav/",
+  "https://kai.kg/ru/spetsialnykh-distsiplin/sostav/",
+  "https://kai.kg/ru/obshcheobrazovatelnykh-distsiplin/sostav/",
+  "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/",
+  "https://kai.kg/ru/iazykov/sostav/",
+  "https://kai.kg/ru/fakultet-grazhdanskoi-aviatsii/sostav/",
+  "https://kai.kg/ru/otdelenie-spo/sostav/",
+  "https://kai.kg/ru/rukovodstvo/"
+ ],
+ "notes": "Взяты страницы Состав двух кафедр и четырех цикловых комиссий. Составы деканата ФГА и отделения СПО содержат только менеджеров и методистов, не включены. Лаборанты исключены.",
+ "professors": [
+  {
+   "last_name": "Сальпиева",
+   "first_name": "Нургуль Шаршенбековна",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "доцент",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Салмоорбекова",
+   "first_name": "Рита Бобуевна",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "профессор",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Садовская",
+   "first_name": "Оксана Анатольевна",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "доцент",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Исмаилова",
+   "first_name": "Жыргал Кусейиновна",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "доцент",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Малабаев",
+   "first_name": "Саламат Касымбекович",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "доцент",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Джанганаева",
+   "first_name": "Гульмира Усеновна",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "старший преподаватель",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Джумагулова",
+   "first_name": "Венера Рыспековна",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "старший преподаватель",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Мурат кызы",
+   "first_name": "Назгуль",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "старший преподаватель",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Рысбекова",
+   "first_name": "Дилбара Акжоловна",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "старший преподаватель",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Тентимишова",
+   "first_name": "Чолпон Шейшеевна",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "старший преподаватель",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Усубалиева",
+   "first_name": "Нургуль Рыстаевна",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "старший преподаватель",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Абыкаева",
+   "first_name": "Нурдиана Абылбековна",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Алиева",
+   "first_name": "Кыял Женишовна",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Крикун",
+   "first_name": "Иляна Сергеевна",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Жаркынбаев",
+   "first_name": "Толкунбек Жаркынбаевич",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Касманбетова",
+   "first_name": "Сауле Эмелбековна",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Темирова",
+   "first_name": "Ибадат Орозмаматовна",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Токтосунов",
+   "first_name": "Кубанычбек Тентиевич",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Токтоналиев",
+   "first_name": "Эржан Джунушович",
+   "department": "Естественно-научные дисциплины (ЕНД)",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/end/sostav/"
+  },
+  {
+   "last_name": "Гапарова",
+   "first_name": "Жанара Тахтахуновна",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "доцент",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Советбеков",
+   "first_name": "Болотбек Советбекович",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Курманов",
+   "first_name": "Улан Эсембекович",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "доцент",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Кулматова",
+   "first_name": "Венера Шаарпековна",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "доцент",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Болотов",
+   "first_name": "Эркинбай Алманбетович",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "доцент",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Матковский",
+   "first_name": "Виталий Павлович",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "старший преподаватель",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Козионов",
+   "first_name": "Борис Борисович",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "старший преподаватель",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Алаев",
+   "first_name": "Шавкет Нурмухаммедович",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "старший преподаватель",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Иванькова",
+   "first_name": "Ольга Эдуардовна",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "старший преподаватель",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Абдраимов",
+   "first_name": "Эдилбек Сатилович",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "старший преподаватель",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Исраилов",
+   "first_name": "Талант Мелисович",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "старший преподаватель",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Панин",
+   "first_name": "Алексей Викторович",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "старший преподаватель",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Аралбаев",
+   "first_name": "Мелис Качкынович",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "старший преподаватель",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Абдыразаев",
+   "first_name": "Нурлан Кожоевич",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Шукуров",
+   "first_name": "Таалайбек Садиевич",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Абдыжалилова",
+   "first_name": "Айдина Руслановна",
+   "department": "Летная и техническая эксплуатация ВС и ОУТС",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/lte-vs-i-outs/sostav/"
+  },
+  {
+   "last_name": "Байышова",
+   "first_name": "Эльнура Байышовна",
+   "department": "Цикловая комиссия специальных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/spetsialnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Даиров",
+   "first_name": "Рахимбек Даирович",
+   "department": "Цикловая комиссия специальных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/spetsialnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Глебов",
+   "first_name": "Георгий Анатольевич",
+   "department": "Цикловая комиссия специальных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/spetsialnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Нуркулова",
+   "first_name": "Замира Маданбековна",
+   "department": "Цикловая комиссия специальных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/spetsialnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Асабов",
+   "first_name": "Евгений Анатольевич",
+   "department": "Цикловая комиссия специальных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/spetsialnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Галлямов",
+   "first_name": "Булат Наильевич",
+   "department": "Цикловая комиссия специальных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/spetsialnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Сатыбекова",
+   "first_name": "Айжан Болатовна",
+   "department": "Цикловая комиссия специальных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/spetsialnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Жолдошбаев",
+   "first_name": "Арстаналы Доолоталиевич",
+   "department": "Цикловая комиссия специальных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/spetsialnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Айтматов",
+   "first_name": "Алтынбек Шербаевич",
+   "department": "Цикловая комиссия специальных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/spetsialnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Байдылдаев",
+   "first_name": "Талгат Байдоолотович",
+   "department": "Цикловая комиссия специальных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/spetsialnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Эргешова",
+   "first_name": "Жайнагуль Манасбековна",
+   "department": "Цикловая комиссия общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshcheobrazovatelnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Уракеев",
+   "first_name": "Самат Нурланович",
+   "department": "Цикловая комиссия общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshcheobrazovatelnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Абдыкадыр кызы",
+   "first_name": "Гулзада",
+   "department": "Цикловая комиссия общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshcheobrazovatelnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Сокушева",
+   "first_name": "Жыпариза Аманкуловна",
+   "department": "Цикловая комиссия общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshcheobrazovatelnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Турар кызы",
+   "first_name": "Жанара",
+   "department": "Цикловая комиссия общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshcheobrazovatelnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Садамкулова",
+   "first_name": "Кенже Исакуновна",
+   "department": "Цикловая комиссия общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshcheobrazovatelnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "Бегайым Майрамбековна",
+   "department": "Цикловая комиссия общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshcheobrazovatelnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Момункулова",
+   "first_name": "Жылдыз Сабырбековна",
+   "department": "Цикловая комиссия общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshcheobrazovatelnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Рысмендеева",
+   "first_name": "Оксана Сагыновна",
+   "department": "Цикловая комиссия общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshcheobrazovatelnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Нурбекова",
+   "first_name": "Миланда Нурбековна",
+   "department": "Цикловая комиссия общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshcheobrazovatelnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Мукаева",
+   "first_name": "Наргиза Джолдошбековна",
+   "department": "Цикловая комиссия общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshcheobrazovatelnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Аманалиева",
+   "first_name": "Айдай Турдугуловна",
+   "department": "Цикловая комиссия общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshcheobrazovatelnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Асангазиева",
+   "first_name": "Алина Шаршембиевна",
+   "department": "Цикловая комиссия общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshcheobrazovatelnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Кыдыралиев",
+   "first_name": "Эрмек Махмудович",
+   "department": "Цикловая комиссия общетехнических и профессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Керимакунова",
+   "first_name": "Эркингул Мааткариевна",
+   "department": "Цикловая комиссия общетехнических и профессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Турусбекова",
+   "first_name": "Асель Турусбековна",
+   "department": "Цикловая комиссия общетехнических и профессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Аскарова",
+   "first_name": "Назгул Аскаровна",
+   "department": "Цикловая комиссия общетехнических и профессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Жумашалиева",
+   "first_name": "Асема Нургазиевна",
+   "department": "Цикловая комиссия общетехнических и профессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Базарбаева",
+   "first_name": "Чолпон Намазбековна",
+   "department": "Цикловая комиссия общетехнических и профессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Мавланова",
+   "first_name": "Тансулуу Бердибековна",
+   "department": "Цикловая комиссия общетехнических и профессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Исакова",
+   "first_name": "Жийдегул Аскаровна",
+   "department": "Цикловая комиссия общетехнических и профессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Мурзабаева",
+   "first_name": "Жумагул Абдиныйманжановна",
+   "department": "Цикловая комиссия общетехнических и профессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Мырзабекова",
+   "first_name": "Ноориза Мырзабековна",
+   "department": "Цикловая комиссия общетехнических и профессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Жаныбек уулу",
+   "first_name": "Сталбек",
+   "department": "Цикловая комиссия общетехнических и профессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Назарова",
+   "first_name": "Чинара Маматовна",
+   "department": "Цикловая комиссия общетехнических и профессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Ысаков",
+   "first_name": "Мунар Ысакович",
+   "department": "Цикловая комиссия общетехнических и профессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Умарбекова",
+   "first_name": "Зумрат Абабакировна",
+   "department": "Цикловая комиссия общетехнических и профессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/obshchetekhnicheskikh-i-professionalnykh-distsiplin/sostav/"
+  },
+  {
+   "last_name": "Иматов",
+   "first_name": "Эрмек Турдалиевич",
+   "department": "Цикловая комиссия языков",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/iazykov/sostav/"
+  },
+  {
+   "last_name": "Эмчиева",
+   "first_name": "Аида Музиновна",
+   "department": "Цикловая комиссия языков",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/iazykov/sostav/"
+  },
+  {
+   "last_name": "Курманкулова",
+   "first_name": "Назира Кадырбековна",
+   "department": "Цикловая комиссия языков",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/iazykov/sostav/"
+  },
+  {
+   "last_name": "Стамкулова",
+   "first_name": "Жыпара Икрамовна",
+   "department": "Цикловая комиссия языков",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/iazykov/sostav/"
+  },
+  {
+   "last_name": "Акимканова",
+   "first_name": "Айнура Дуйшенбековна",
+   "department": "Цикловая комиссия языков",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/iazykov/sostav/"
+  },
+  {
+   "last_name": "Асылбекова",
+   "first_name": "Чынара Жумакожоевна",
+   "department": "Цикловая комиссия языков",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/iazykov/sostav/"
+  },
+  {
+   "last_name": "Алымкулова",
+   "first_name": "Назгул Замирбековна",
+   "department": "Цикловая комиссия языков",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/iazykov/sostav/"
+  },
+  {
+   "last_name": "Кыркбаева",
+   "first_name": "Гульмайрам Надырбековна",
+   "department": "Цикловая комиссия языков",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/iazykov/sostav/"
+  },
+  {
+   "last_name": "Сапарбек уулу",
+   "first_name": "Азамат",
+   "department": "Цикловая комиссия языков",
+   "title": "преподаватель",
+   "source_url": "https://kai.kg/ru/iazykov/sostav/"
+  }
+ ]
+}

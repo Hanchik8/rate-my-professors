@@ -22,7 +22,7 @@ from reviews.models import Professor, School
 
 TITLES = {"профессор", "доцент", "старший преподаватель", "преподаватель"}
 _NAME_RE = re.compile(r"^[^\W\d_]+(?:[ '’.-]+[^\W\d_]+)*\.?$")
-_DEGREE_RE = re.compile(r"\b(д\.?\s?[а-я]+\.?\s?н\.?|к\.?\s?[а-я]+\.?\s?н\.?|ph\.?\s?d\.?|проф\.|доц\.)", re.I)
+_DEGREE_RE = re.compile(r"(?<!\w)(?:[дк]\.\s?[а-я]{1,4}\.(?:\s?-\s?[а-я]{1,4}\.)?\s?н\.?|ph\.\s?d\.?|phd|проф\.|доц\.)", re.I)
 
 
 def _clean(value: str, limit: int) -> str:

@@ -1,0 +1,908 @@
+{
+ "code": "mukr",
+ "university": "Международный университет Кыргызской Республики (МУКР)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://mukr.iuk.kg/",
+  "https://mukr.iuk.kg/kafedry",
+  "https://mukr.iuk.kg/rukovodstvo",
+  "https://mukr.iuk.kg/kafedra-sovr-yazikov",
+  "https://mukr.iuk.kg/kafedra-vostokovedenie",
+  "https://mukr.iuk.kg/kafedra-program-ingineriy",
+  "https://mukr.iuk.kg/kafedra-psihologii",
+  "https://mukr.iuk.kg/kafedra-mejd-biznesa",
+  "https://mukr.iuk.kg/kafedra-filologii",
+  "https://mukr.iuk.kg/kafedra-economicy",
+  "https://mukr.iuk.kg/kafedra-mejd-prava",
+  "https://mukr.iuk.kg/vysh-shkola-bakalavr-i-mag"
+ ],
+ "notes": "Использованы страницы направлений/кафедр (таблицы ППС и отчёты кафедр). По направлению Психология опубликован только руководитель; по кафедре Современных языков полные ФИО только у заведующей, остальные преподаватели взяты из отчёта о повышении квалификации ППС кафедры (инициалы). Ректорат и административные отделы не включены.",
+ "professors": [
+  {
+   "last_name": "Касымова",
+   "first_name": "Алтынай Авазбековна",
+   "department": "Современные языки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-sovr-yazikov"
+  },
+  {
+   "last_name": "Нуралиев",
+   "first_name": "Нурлан Акимбекович",
+   "department": "Востоковедение и общественные науки",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Алымкулов",
+   "first_name": "Марат Сапарбекович",
+   "department": "Востоковедение и общественные науки",
+   "title": "профессор",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Джаманкулов",
+   "first_name": "Жанат Медетович",
+   "department": "Востоковедение и общественные науки",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Тайлакова",
+   "first_name": "Алаида Акылбаевна",
+   "department": "Востоковедение и общественные науки",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Омурзакова",
+   "first_name": "Жылдыз Кубанычбековна",
+   "department": "Востоковедение и общественные науки",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Молдокеева",
+   "first_name": "Алина Болотбековна",
+   "department": "Востоковедение и общественные науки",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Алиева",
+   "first_name": "Мира Жоомартовна",
+   "department": "Востоковедение и общественные науки",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Колопов",
+   "first_name": "Альберт Сексенбаевич",
+   "department": "Востоковедение и общественные науки",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Кельгенбаева",
+   "first_name": "Камиля Абдуманаповна",
+   "department": "Востоковедение и общественные науки",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Айгул Мендибековна",
+   "department": "Востоковедение и общественные науки",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Дубанаева",
+   "first_name": "Сезим Аманбековна",
+   "department": "Востоковедение и общественные науки",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Джолдошев",
+   "first_name": "Азиз Канатбекович",
+   "department": "Востоковедение и общественные науки",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Осмоналиева",
+   "first_name": "Елена Масылбековна",
+   "department": "Востоковедение и общественные науки",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Усонов",
+   "first_name": "Манас Усонович",
+   "department": "Востоковедение и общественные науки",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Жангазиева",
+   "first_name": "Элмира Аббатовна",
+   "department": "Востоковедение и общественные науки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Тагаев",
+   "first_name": "Бостон Атакозуевич",
+   "department": "Востоковедение и общественные науки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Жеткинчекова",
+   "first_name": "Элена Таалайбековна",
+   "department": "Востоковедение и общественные науки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Майрамбекова",
+   "first_name": "Гулкайыр Майрамбековна",
+   "department": "Востоковедение и общественные науки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Кутукеев",
+   "first_name": "Алиаскар Нуробекович",
+   "department": "Востоковедение и общественные науки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Эгемкулова",
+   "first_name": "Нагима Нурланбековна",
+   "department": "Востоковедение и общественные науки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Токторбаев",
+   "first_name": "Нургелди Кубанычбекович",
+   "department": "Востоковедение и общественные науки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Кутманалиева",
+   "first_name": "Аида Болотовна",
+   "department": "Востоковедение и общественные науки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-vostokovedenie"
+  },
+  {
+   "last_name": "Сулайманова",
+   "first_name": "Айгул Ишеналиевна",
+   "department": "Психология",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-psihologii"
+  },
+  {
+   "last_name": "Семенов",
+   "first_name": "Сергей Рудольфович",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Тулеев",
+   "first_name": "Расул Джумабекович",
+   "department": "Управление бизнесом",
+   "title": "профессор",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Исмаилова",
+   "first_name": "Чолпон Джумаевна",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Халикова",
+   "first_name": "Аида Акрамовна",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Субанкулова",
+   "first_name": "Перизат Калыбековна",
+   "department": "Управление бизнесом",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Тулегенова",
+   "first_name": "Жибек Каныбековна",
+   "department": "Управление бизнесом",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Мусуралиева",
+   "first_name": "Зыйнат Тойматовна",
+   "department": "Управление бизнесом",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Шерлиева",
+   "first_name": "Инна Анатольевна",
+   "department": "Управление бизнесом",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Ибраимкулов",
+   "first_name": "Шамиль Сардарбекович",
+   "department": "Управление бизнесом",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Асангулова",
+   "first_name": "Назик Кенжебековна",
+   "department": "Управление бизнесом",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Оторчиева",
+   "first_name": "Айзада Жолойевна",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Адиева",
+   "first_name": "Айнура Абдужалаловна",
+   "department": "Управление бизнесом",
+   "title": "профессор",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Ормонова",
+   "first_name": "Алина Анарбековна",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Асылбаев",
+   "first_name": "Айдар Баймолдаевич",
+   "department": "Управление бизнесом",
+   "title": "профессор",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Урматова",
+   "first_name": "Бермет Урматовна",
+   "department": "Управление бизнесом",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Аюпов",
+   "first_name": "Асылбек Нургазиевич",
+   "department": "Управление бизнесом",
+   "title": "профессор",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Абдыкадыров",
+   "first_name": "Калыбек Джусукеевич",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Мамбетова",
+   "first_name": "Айнура Айыповна",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Краснов",
+   "first_name": "Артем Юрьевич",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Сариева",
+   "first_name": "Шайгул Каптагаевна",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Омурканов",
+   "first_name": "Ырысбек Калыкович",
+   "department": "Управление бизнесом",
+   "title": "профессор",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa"
+  },
+  {
+   "last_name": "Наркозиев",
+   "first_name": "Аман Карашевич",
+   "department": "Филология и коммуникации",
+   "title": "профессор",
+   "source_url": "https://mukr.iuk.kg/kafedra-filologii"
+  },
+  {
+   "last_name": "Мырзагулов",
+   "first_name": "Милан Мырзагулович",
+   "department": "Филология и коммуникации",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-filologii"
+  },
+  {
+   "last_name": "Жумагулова",
+   "first_name": "Эркаим Жамыркановна",
+   "department": "Филология и коммуникации",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-filologii"
+  },
+  {
+   "last_name": "Темирова",
+   "first_name": "Рона Кулматовна",
+   "department": "Филология и коммуникации",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-filologii"
+  },
+  {
+   "last_name": "Кожоналиева",
+   "first_name": "Жазгуль Асимкановна",
+   "department": "Филология и коммуникации",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-filologii"
+  },
+  {
+   "last_name": "Исаева",
+   "first_name": "Айнура Адылбековна",
+   "department": "Филология и коммуникации",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-filologii"
+  },
+  {
+   "last_name": "Эмильбекова",
+   "first_name": "Асель Болотбековна",
+   "department": "Филология и коммуникации",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-filologii"
+  },
+  {
+   "last_name": "Суеркулова",
+   "first_name": "Аида Казакбаевна",
+   "department": "Филология и коммуникации",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-filologii"
+  },
+  {
+   "last_name": "Таштанова",
+   "first_name": "Нуркыз Дуйшонбековна",
+   "department": "Филология и коммуникации",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-filologii"
+  },
+  {
+   "last_name": "Рысбекова",
+   "first_name": "Анара Рысбековна",
+   "department": "Филология и коммуникации",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-filologii"
+  },
+  {
+   "last_name": "Рыспакова",
+   "first_name": "Мээрим Доктурбаевна",
+   "department": "Филология и коммуникации",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-filologii"
+  },
+  {
+   "last_name": "Талипбекова",
+   "first_name": "Бермет Талипбековна",
+   "department": "Филология и коммуникации",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-filologii"
+  },
+  {
+   "last_name": "Сазыкулова",
+   "first_name": "Зульфия Шекербековна",
+   "department": "Филология и коммуникации",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-filologii"
+  },
+  {
+   "last_name": "Абдыров",
+   "first_name": "Толонбек Шакирович",
+   "department": "Экономика и ГМУ",
+   "title": "профессор",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy"
+  },
+  {
+   "last_name": "Карасартов",
+   "first_name": "Бакытбек Бегимбаевич",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-prava"
+  },
+  {
+   "last_name": "Атабекова",
+   "first_name": "Нургуль Каримовна",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-prava"
+  },
+  {
+   "last_name": "Ахматов",
+   "first_name": "Айбек Болотбекович",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-prava"
+  },
+  {
+   "last_name": "Ибрагимов",
+   "first_name": "Турар Кыдыкович",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-prava"
+  },
+  {
+   "last_name": "Алимова",
+   "first_name": "Ширин Давлятовна",
+   "department": "Юриспруденция",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-prava"
+  },
+  {
+   "last_name": "Токтобаев",
+   "first_name": "Темир Токтомышевич",
+   "department": "Юриспруденция",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-prava"
+  },
+  {
+   "last_name": "Кыдыралиева",
+   "first_name": "Салтанат Чолпонбаевна",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-prava"
+  },
+  {
+   "last_name": "Сулайманова",
+   "first_name": "Ф. Э.",
+   "department": "Современные языки",
+   "title": "профессор",
+   "source_url": "https://mukr.iuk.kg/kafedra-sovr-yazikov",
+   "initials_only": true
+  },
+  {
+   "last_name": "Казыбаева",
+   "first_name": "Д. Р.",
+   "department": "Современные языки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-sovr-yazikov",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдыжапарова",
+   "first_name": "К. А.",
+   "department": "Современные языки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-sovr-yazikov",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сарымсакова",
+   "first_name": "А. А.",
+   "department": "Современные языки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-sovr-yazikov",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Н. А.",
+   "department": "Современные языки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-sovr-yazikov",
+   "initials_only": true
+  },
+  {
+   "last_name": "Аманова",
+   "first_name": "А. Ю.",
+   "department": "Современные языки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-sovr-yazikov",
+   "initials_only": true
+  },
+  {
+   "last_name": "Манапбаев",
+   "first_name": "И. К.",
+   "department": "Программная инженерия",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-program-ingineriy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сагындыков",
+   "first_name": "М. К.",
+   "department": "Программная инженерия",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-program-ingineriy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Досболова",
+   "first_name": "Ф. К.",
+   "department": "Программная инженерия",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-program-ingineriy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жээналиева",
+   "first_name": "Н. М.",
+   "department": "Программная инженерия",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-program-ingineriy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Ж. Р.",
+   "department": "Программная инженерия",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-program-ingineriy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Каныбеков",
+   "first_name": "К. К.",
+   "department": "Программная инженерия",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-program-ingineriy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Молдосанов",
+   "first_name": "У. Н.",
+   "department": "Программная инженерия",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-program-ingineriy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ниязалиев",
+   "first_name": "Б. М.",
+   "department": "Программная инженерия",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-program-ingineriy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Куканов",
+   "first_name": "Р. А.",
+   "department": "Программная инженерия",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-program-ingineriy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Баракова",
+   "first_name": "Ж. Т.",
+   "department": "Программная инженерия",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-program-ingineriy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Григорьева",
+   "first_name": "И. В.",
+   "department": "Программная инженерия",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-program-ingineriy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Элебесова",
+   "first_name": "Г. Ч.",
+   "department": "Программная инженерия",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-program-ingineriy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Исаков",
+   "first_name": "С. Н.",
+   "department": "Управление бизнесом",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-biznesa",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алымкулова",
+   "first_name": "А. С.",
+   "department": "Экономика и ГМУ",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Аскарбек",
+   "first_name": "К. К.",
+   "department": "Экономика и ГМУ",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Дуйшеналиева",
+   "first_name": "А. Д.",
+   "department": "Экономика и ГМУ",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Зулпуева",
+   "first_name": "А. М.",
+   "department": "Экономика и ГМУ",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бекенов",
+   "first_name": "С. С.",
+   "department": "Экономика и ГМУ",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Казак",
+   "first_name": "К. Н.",
+   "department": "Экономика и ГМУ",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Конурбаева",
+   "first_name": "Д. М.",
+   "department": "Экономика и ГМУ",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Пак",
+   "first_name": "Е. А.",
+   "department": "Экономика и ГМУ",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бакытбекова",
+   "first_name": "А. Б.",
+   "department": "Экономика и ГМУ",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токталиева",
+   "first_name": "К. А.",
+   "department": "Экономика и ГМУ",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Акылбеков",
+   "first_name": "Б. Р.",
+   "department": "Экономика и ГМУ",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ибраева",
+   "first_name": "Ж. А.",
+   "department": "Экономика и ГМУ",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Баетов",
+   "first_name": "Б. И.",
+   "department": "Экономика и ГМУ",
+   "title": "профессор",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Гусева",
+   "first_name": "В. И.",
+   "department": "Экономика и ГМУ",
+   "title": "профессор",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токсобаева",
+   "first_name": "Б. А.",
+   "department": "Экономика и ГМУ",
+   "title": "профессор",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Гапурбаева",
+   "first_name": "Ш. Р.",
+   "department": "Экономика и ГМУ",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Исагалиева",
+   "first_name": "А. К.",
+   "department": "Экономика и ГМУ",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Султанова",
+   "first_name": "А. А.",
+   "department": "Экономика и ГМУ",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Халилова",
+   "first_name": "М. В.",
+   "department": "Экономика и ГМУ",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Умарова",
+   "first_name": "П. К.",
+   "department": "Экономика и ГМУ",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-economicy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Курманалиева",
+   "first_name": "А. А.",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-prava",
+   "initials_only": true
+  },
+  {
+   "last_name": "Суталинова",
+   "first_name": "Н. А.",
+   "department": "Юриспруденция",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-prava",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ибрагимов",
+   "first_name": "Р. К.",
+   "department": "Юриспруденция",
+   "title": "старший преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-prava",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шейшекеева",
+   "first_name": "Г. С.",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-prava",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джумабеков",
+   "first_name": "Т. Б.",
+   "department": "Юриспруденция",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-prava",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джоробеков",
+   "first_name": "Ж. М.",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-prava",
+   "initials_only": true
+  },
+  {
+   "last_name": "Казанлыева",
+   "first_name": "З. А.",
+   "department": "Юриспруденция",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-mejd-prava",
+   "initials_only": true
+  },
+  {
+   "last_name": "Зарипова",
+   "first_name": "М. Э.",
+   "department": "Современные языки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-sovr-yazikov",
+   "initials_only": true
+  },
+  {
+   "last_name": "Исмаилова",
+   "first_name": "А. А.",
+   "department": "Современные языки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-sovr-yazikov",
+   "initials_only": true
+  },
+  {
+   "last_name": "Коңурбаева",
+   "first_name": "Т. Д.",
+   "department": "Современные языки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-sovr-yazikov",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осмонкулова",
+   "first_name": "С. Ж.",
+   "department": "Современные языки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-sovr-yazikov",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шапетова",
+   "first_name": "Т. Д.",
+   "department": "Современные языки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-sovr-yazikov",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кылычбаева",
+   "first_name": "Э. О.",
+   "department": "Современные языки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-sovr-yazikov",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кускакбаева",
+   "first_name": "Ч. Э.",
+   "department": "Современные языки",
+   "title": "преподаватель",
+   "source_url": "https://mukr.iuk.kg/kafedra-sovr-yazikov",
+   "initials_only": true
+  }
+ ]
+}

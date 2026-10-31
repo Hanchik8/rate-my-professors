@@ -1,0 +1,309 @@
+{
+ "code": "imu",
+ "university": "International Medical University (Международный медицинский университет, ММУ)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://imu.edu.kg/en/structure-1",
+  "https://imu.edu.kg/en/structure-1/chairs",
+  "https://imu.edu.kg/en/structure-1/chairs/department-of-morphology,-pathology-and-public-health/chair-staff-1",
+  "https://imu.edu.kg/en/structure-1/chairs/chair-of-pediatrics,-obstetrics-and-gynecology-1/chair-staff-2",
+  "https://imu.edu.kg/en/structure-1/chairs/chair-of-dentistry/chair-staff-3",
+  "https://imu.edu.kg/en/structure-1/chairs/chair-of-pharmacy/chair-staff-4",
+  "https://imu.edu.kg/en/structure-1/chairs/chair-of-natural-sciences-and-humanities/chair-staff-5",
+  "https://imu.edu.kg/en/structure-1/chairs/department-of-internal-diseases-and-family-medicine"
+ ],
+ "notes": "Сейчас домен imu.edu.kg при прямом запросе отдаёт подменённую страницу казино (для fetch и curl), в Wayback страниц структуры нет. Списки взяты из поисковой копии официальных страниц \"Chair staff\" (английская версия), поэтому имена латиницей как на сайте. Полностью получены составы 5 кафедр (морфология и общ. здоровье, педиатрия и акушерство, стоматология, фармация, естественно-гуманитарные). По кафедре внутренних болезней видны только заведующий Akmatov N.A. (он же Akmatov Nurdan Amangeldievich с кафедры педиатрии, оставлен один раз) и Akhunzade S.A.; кафедра хирургических дисциплин не найдена. \"Adylbek u. I.\" пропущен (неполное имя). Candidate of sciences без звания отнесён к \"доцент\".",
+ "professors": [
+  {
+   "last_name": "Duishenov",
+   "first_name": "Almazbek Junusbekovich",
+   "department": "Morphology, pathology and public health",
+   "title": "доцент",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/department-of-morphology,-pathology-and-public-health/chair-staff-1"
+  },
+  {
+   "last_name": "Asanov",
+   "first_name": "Aidarali Parmonovich",
+   "department": "Morphology, pathology and public health",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/department-of-morphology,-pathology-and-public-health/chair-staff-1"
+  },
+  {
+   "last_name": "Kaikieva",
+   "first_name": "Mahabat Baktybekovna",
+   "department": "Morphology, pathology and public health",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/department-of-morphology,-pathology-and-public-health/chair-staff-1"
+  },
+  {
+   "last_name": "Abdumalikova",
+   "first_name": "Asel Kachibekovna",
+   "department": "Morphology, pathology and public health",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/department-of-morphology,-pathology-and-public-health/chair-staff-1"
+  },
+  {
+   "last_name": "Muhammad",
+   "first_name": "Talha",
+   "department": "Morphology, pathology and public health",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/department-of-morphology,-pathology-and-public-health/chair-staff-1"
+  },
+  {
+   "last_name": "Sharshenbekova",
+   "first_name": "Altynay",
+   "department": "Morphology, pathology and public health",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/department-of-morphology,-pathology-and-public-health/chair-staff-1"
+  },
+  {
+   "last_name": "Mukanbaev",
+   "first_name": "Kasymbek Mukanbaevich",
+   "department": "Pediatrics, obstetrics and gynecology",
+   "title": "доцент",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pediatrics,-obstetrics-and-gynecology-1/chair-staff-2"
+  },
+  {
+   "last_name": "Kanybekov",
+   "first_name": "Samat Kanybekovich",
+   "department": "Pediatrics, obstetrics and gynecology",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pediatrics,-obstetrics-and-gynecology-1/chair-staff-2"
+  },
+  {
+   "last_name": "Kalybekov",
+   "first_name": "Tugolbay Nuralievich",
+   "department": "Pediatrics, obstetrics and gynecology",
+   "title": "доцент",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pediatrics,-obstetrics-and-gynecology-1/chair-staff-2"
+  },
+  {
+   "last_name": "Akmatov",
+   "first_name": "Nurdan Amangeldievich",
+   "department": "Pediatrics, obstetrics and gynecology",
+   "title": "доцент",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pediatrics,-obstetrics-and-gynecology-1/chair-staff-2"
+  },
+  {
+   "last_name": "Akylbek kyzy",
+   "first_name": "Nurzhamal",
+   "department": "Pediatrics, obstetrics and gynecology",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pediatrics,-obstetrics-and-gynecology-1/chair-staff-2"
+  },
+  {
+   "last_name": "Muhammad",
+   "first_name": "Faridullah Khan",
+   "department": "Pediatrics, obstetrics and gynecology",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pediatrics,-obstetrics-and-gynecology-1/chair-staff-2"
+  },
+  {
+   "last_name": "Sadykov",
+   "first_name": "Almaz Zholdoshalievich",
+   "department": "Pediatrics, obstetrics and gynecology",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pediatrics,-obstetrics-and-gynecology-1/chair-staff-2"
+  },
+  {
+   "last_name": "Saliev",
+   "first_name": "Omurbek Baktybaevich",
+   "department": "Pediatrics, obstetrics and gynecology",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pediatrics,-obstetrics-and-gynecology-1/chair-staff-2"
+  },
+  {
+   "last_name": "Zholdubaeva",
+   "first_name": "Kanykei Shakirovna",
+   "department": "Pediatrics, obstetrics and gynecology",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pediatrics,-obstetrics-and-gynecology-1/chair-staff-2"
+  },
+  {
+   "last_name": "Uraimov",
+   "first_name": "Elaman Toktobolotovich",
+   "department": "Pediatrics, obstetrics and gynecology",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pediatrics,-obstetrics-and-gynecology-1/chair-staff-2"
+  },
+  {
+   "last_name": "Ashymov",
+   "first_name": "Zh. D.",
+   "department": "Dentistry",
+   "title": "профессор",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-dentistry/chair-staff-3",
+   "initials_only": true
+  },
+  {
+   "last_name": "Kuttubaeva",
+   "first_name": "K. B.",
+   "department": "Dentistry",
+   "title": "профессор",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-dentistry/chair-staff-3",
+   "initials_only": true
+  },
+  {
+   "last_name": "Cholokova",
+   "first_name": "G. S.",
+   "department": "Dentistry",
+   "title": "профессор",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-dentistry/chair-staff-3",
+   "initials_only": true
+  },
+  {
+   "last_name": "Dzhumaev",
+   "first_name": "A. T.",
+   "department": "Dentistry",
+   "title": "доцент",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-dentistry/chair-staff-3",
+   "initials_only": true
+  },
+  {
+   "last_name": "Abaskanova",
+   "first_name": "P. D.",
+   "department": "Dentistry",
+   "title": "старший преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-dentistry/chair-staff-3",
+   "initials_only": true
+  },
+  {
+   "last_name": "Kaiduev",
+   "first_name": "A. K.",
+   "department": "Dentistry",
+   "title": "старший преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-dentistry/chair-staff-3",
+   "initials_only": true
+  },
+  {
+   "last_name": "Abdyldaeva",
+   "first_name": "S. E.",
+   "department": "Dentistry",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-dentistry/chair-staff-3",
+   "initials_only": true
+  },
+  {
+   "last_name": "Kydyeva",
+   "first_name": "A. S.",
+   "department": "Dentistry",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-dentistry/chair-staff-3",
+   "initials_only": true
+  },
+  {
+   "last_name": "Kim",
+   "first_name": "E. V.",
+   "department": "Dentistry",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-dentistry/chair-staff-3",
+   "initials_only": true
+  },
+  {
+   "last_name": "Niyazbekov",
+   "first_name": "Zh. B.",
+   "department": "Dentistry",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-dentistry/chair-staff-3",
+   "initials_only": true
+  },
+  {
+   "last_name": "Abdullaev",
+   "first_name": "Zhumadil Nishanbaevich",
+   "department": "Pharmacy",
+   "title": "доцент",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pharmacy/chair-staff-4"
+  },
+  {
+   "last_name": "Kozhomberdieva",
+   "first_name": "Nurgul Turarovna",
+   "department": "Pharmacy",
+   "title": "старший преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pharmacy/chair-staff-4"
+  },
+  {
+   "last_name": "Karymshakov",
+   "first_name": "Adylbek Esenbekovich",
+   "department": "Pharmacy",
+   "title": "старший преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pharmacy/chair-staff-4"
+  },
+  {
+   "last_name": "Ashirbekova",
+   "first_name": "Sabina Ashirbekovna",
+   "department": "Pharmacy",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pharmacy/chair-staff-4"
+  },
+  {
+   "last_name": "Akmatalieva",
+   "first_name": "Perizat",
+   "department": "Pharmacy",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pharmacy/chair-staff-4"
+  },
+  {
+   "last_name": "Sultanova",
+   "first_name": "Ulana Sultanovna",
+   "department": "Pharmacy",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pharmacy/chair-staff-4"
+  },
+  {
+   "last_name": "Isabaeva",
+   "first_name": "Alina Aybekovna",
+   "department": "Pharmacy",
+   "title": "преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-pharmacy/chair-staff-4"
+  },
+  {
+   "last_name": "Ibraimov",
+   "first_name": "Osmonakun Ibraimovich",
+   "department": "Natural sciences and humanities",
+   "title": "профессор",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-natural-sciences-and-humanities/chair-staff-5"
+  },
+  {
+   "last_name": "Ismailov",
+   "first_name": "Japar Avazovich",
+   "department": "Natural sciences and humanities",
+   "title": "доцент",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-natural-sciences-and-humanities/chair-staff-5"
+  },
+  {
+   "last_name": "Sydykov",
+   "first_name": "Aibek Belekovich",
+   "department": "Natural sciences and humanities",
+   "title": "доцент",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-natural-sciences-and-humanities/chair-staff-5"
+  },
+  {
+   "last_name": "Shabolotova",
+   "first_name": "Venera Estebesovna",
+   "department": "Natural sciences and humanities",
+   "title": "старший преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-natural-sciences-and-humanities/chair-staff-5"
+  },
+  {
+   "last_name": "Tarpanbaeva",
+   "first_name": "Jamila Makishovna",
+   "department": "Natural sciences and humanities",
+   "title": "старший преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-natural-sciences-and-humanities/chair-staff-5"
+  },
+  {
+   "last_name": "Takyrbashova",
+   "first_name": "Gulzamira Kalygulovna",
+   "department": "Natural sciences and humanities",
+   "title": "старший преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/chair-of-natural-sciences-and-humanities/chair-staff-5"
+  },
+  {
+   "last_name": "Akhunzade",
+   "first_name": "S. A.",
+   "department": "Internal diseases and family medicine",
+   "title": "старший преподаватель",
+   "source_url": "https://imu.edu.kg/en/structure-1/chairs/department-of-internal-diseases-and-family-medicine",
+   "initials_only": true
+  }
+ ]
+}

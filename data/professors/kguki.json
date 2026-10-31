@@ -1,0 +1,111 @@
+{
+ "code": "kguki",
+ "university": "Кыргызский национальный университет культуры и искусств имени Б. Бейшеналиевой",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://kguki.kg/",
+  "https://kguki.kg/rukovodstvo/",
+  "https://kguki.kg/art-management-3/",
+  "https://kguki.kg/folkmusic/",
+  "https://kguki.kg/stages/",
+  "https://kguki.kg/theater/",
+  "https://kguki.kg/movie/",
+  "https://kguki.kg/universitet/",
+  "https://kguki.kg/education/",
+  "https://kguki.kg/science-2/"
+ ],
+ "notes": "На сайте опубликованы только заведующие кафедрами и деканы (полных списков ППС нет). Привязка заведующих к кафедрам на страницах факультетов местами противоречива (карточка и всплывающее окно расходятся), поэтому для спорных указан факультет. Ректор и проректоры не включены. Кафедры факультета народной музыки без указания заведующих. Учёные звания не указаны, title по умолчанию \"преподаватель\".",
+ "professors": [
+  {
+   "last_name": "Асангазиева",
+   "first_name": "Мээрим Белековна",
+   "department": "Социально-культурная деятельность",
+   "title": "преподаватель",
+   "source_url": "https://kguki.kg/art-management-3/"
+  },
+  {
+   "last_name": "Маженова",
+   "first_name": "Замира Турарбековна",
+   "department": "Социально-культурная деятельность",
+   "title": "преподаватель",
+   "source_url": "https://kguki.kg/art-management-3/"
+  },
+  {
+   "last_name": "Сейталиева",
+   "first_name": "Нурзада Түгөлбековна",
+   "department": "Хореография",
+   "title": "преподаватель",
+   "source_url": "https://kguki.kg/art-management-3/"
+  },
+  {
+   "last_name": "Орозов",
+   "first_name": "Бекзат Эсенбаевич",
+   "department": "Эстрада",
+   "title": "преподаватель",
+   "source_url": "https://kguki.kg/stages/"
+  },
+  {
+   "last_name": "Мамытова",
+   "first_name": "Айзат Жумагазиевна",
+   "department": "Факультет эстрады",
+   "title": "преподаватель",
+   "source_url": "https://kguki.kg/stages/"
+  },
+  {
+   "last_name": "Корпобаева",
+   "first_name": "Мариам Керималиевна",
+   "department": "Музыкально-теоретические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://kguki.kg/stages/"
+  },
+  {
+   "last_name": "Орунбаева",
+   "first_name": "Наргиза Темирбековна",
+   "department": "Музыкальное образование",
+   "title": "преподаватель",
+   "source_url": "https://kguki.kg/stages/"
+  },
+  {
+   "last_name": "Сөлпүева",
+   "first_name": "Анара Капарбековна",
+   "department": "Режиссура и актерское мастерство",
+   "title": "преподаватель",
+   "source_url": "https://kguki.kg/theater/"
+  },
+  {
+   "last_name": "Курманбекова",
+   "first_name": "Буруш Курманбековна",
+   "department": "Киноискусство",
+   "title": "преподаватель",
+   "source_url": "https://kguki.kg/movie/"
+  },
+  {
+   "last_name": "Урматбеков",
+   "first_name": "Чынасыл Урматбекович",
+   "department": "Театральный факультет",
+   "title": "преподаватель",
+   "source_url": "https://kguki.kg/rukovodstvo/"
+  },
+  {
+   "last_name": "Бейшеналиева",
+   "first_name": "Мерим Искендеровна",
+   "department": "Факультет арт-менеджмент",
+   "title": "преподаватель",
+   "source_url": "https://kguki.kg/rukovodstvo/"
+  },
+  {
+   "last_name": "Юсупова",
+   "first_name": "Таберик Ришатовна",
+   "department": "Факультет кино",
+   "title": "преподаватель",
+   "source_url": "https://kguki.kg/rukovodstvo/"
+  },
+  {
+   "last_name": "Бакытбек уулу",
+   "first_name": "Исабек",
+   "department": "Факультет народной музыки",
+   "title": "преподаватель",
+   "source_url": "https://kguki.kg/rukovodstvo/"
+  }
+ ]
+}

@@ -1,0 +1,173 @@
+{
+ "code": "adam",
+ "university": "Университет Адам (Бишкекская финансово-экономическая академия)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://bafe.edu.kg/ru/",
+  "https://bafe.edu.kg/ru/education/departments/",
+  "https://bafe.edu.kg/ru/about/management/",
+  "https://bafe.edu.kg/ru/education/activities/economic-program/",
+  "https://bafe.edu.kg/ru/education/activities/management-program/",
+  "https://bafe.edu.kg/ru/education/activities/tourism-program/",
+  "https://bafe.edu.kg/ru/education/activities/it-program/"
+ ],
+ "notes": "Сайт из базы bafe.edu.kg (он же adam.edu.kg / adam.kg). Использованы страницы программ с разделами ППС и резюме преподавателей. Страницы программ Экономика, Менеджмент и Туризм содержат один общий список ППС, поэтому department общий. Имена в творительном падеже (соавторы в списках публикаций) не включены. Батырканова Г.Д. указана как к.э.н., доцент и одновременно проректор по науке; включена как доцент.",
+ "professors": [
+  {
+   "last_name": "Абдынасыров",
+   "first_name": "Уран Тойбаевич",
+   "department": "Экономика, менеджмент и туризм",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/economic-program/"
+  },
+  {
+   "last_name": "Аманбаева",
+   "first_name": "Чынара Шамбетовна",
+   "department": "Экономика, менеджмент и туризм",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/economic-program/"
+  },
+  {
+   "last_name": "Жумабекова",
+   "first_name": "Нурия Жумабековна",
+   "department": "Экономика, менеджмент и туризм",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/economic-program/"
+  },
+  {
+   "last_name": "Батырканова",
+   "first_name": "Гульнара Джээнбековна",
+   "department": "Экономика, менеджмент и туризм",
+   "title": "доцент",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/economic-program/"
+  },
+  {
+   "last_name": "Ким",
+   "first_name": "Светлана Александровна",
+   "department": "Экономика, менеджмент и туризм",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/economic-program/"
+  },
+  {
+   "last_name": "Сарбагышева",
+   "first_name": "Гульмира Эсенгуловна",
+   "department": "Экономика, менеджмент и туризм",
+   "title": "доцент",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/economic-program/"
+  },
+  {
+   "last_name": "Чуракаева",
+   "first_name": "Елена Владимировна",
+   "department": "Экономика, менеджмент и туризм",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/economic-program/"
+  },
+  {
+   "last_name": "Шаршеева",
+   "first_name": "Асель Нуралыевна",
+   "department": "Экономика, менеджмент и туризм",
+   "title": "старший преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/economic-program/"
+  },
+  {
+   "last_name": "Шакеева",
+   "first_name": "Аида Туратбековна",
+   "department": "Экономика, менеджмент и туризм",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/economic-program/"
+  },
+  {
+   "last_name": "Суханалиева",
+   "first_name": "Кундуз Казакбаевна",
+   "department": "Экономика, менеджмент и туризм",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/economic-program/"
+  },
+  {
+   "last_name": "Чотонова",
+   "first_name": "Чинара Усеналиевна",
+   "department": "Экономика, менеджмент и туризм",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/economic-program/"
+  },
+  {
+   "last_name": "Мураталиева",
+   "first_name": "Венера Женишбековна",
+   "department": "Информационные системы и технологии",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/it-program/"
+  },
+  {
+   "last_name": "Жамангулов",
+   "first_name": "Азат Айтбекович",
+   "department": "Информационные системы и технологии",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/it-program/"
+  },
+  {
+   "last_name": "Иманалиева",
+   "first_name": "Чинара Анваровна",
+   "department": "Информационные системы и технологии",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/it-program/"
+  },
+  {
+   "last_name": "Донбаева",
+   "first_name": "Гулайым Чыныбековна",
+   "department": "Информационные системы и технологии",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/it-program/"
+  },
+  {
+   "last_name": "Варшакидзе",
+   "first_name": "Абида Наждатовна",
+   "department": "Информационные системы и технологии",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/it-program/"
+  },
+  {
+   "last_name": "Суеркулова",
+   "first_name": "Замира Темиркуловна",
+   "department": "Информационные системы и технологии",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/it-program/"
+  },
+  {
+   "last_name": "Жалилова",
+   "first_name": "Гулнарида Расулбековна",
+   "department": "Информационные системы и технологии",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/it-program/"
+  },
+  {
+   "last_name": "Садыкова",
+   "first_name": "Алиман Даниловна",
+   "department": "Информационные системы и технологии",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/it-program/"
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Римма Чынарбековна",
+   "department": "Информационные системы и технологии",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/it-program/"
+  },
+  {
+   "last_name": "Назарбаева",
+   "first_name": "Н. Ш.",
+   "department": "Информационные системы и технологии",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/it-program/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Адешева",
+   "first_name": "М. М.",
+   "department": "Информационные системы и технологии",
+   "title": "преподаватель",
+   "source_url": "https://bafe.edu.kg/ru/education/activities/it-program/",
+   "initials_only": true
+  }
+ ]
+}
