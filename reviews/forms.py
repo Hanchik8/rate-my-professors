@@ -3,6 +3,8 @@
 All user-supplied free text is passed through ``sanitize.clean_text`` so the
 form layer and the repositories agree on what "clean" input looks like.
 """
+import re
+
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
@@ -10,6 +12,13 @@ from .constants import MAX_COMMENT_LENGTH, MIN_COMMENT_LENGTH
 from .models import Report
 from .repository import GRADES, TAGS
 from .sanitize import clean_text
+
+# Contacts and links are banned by the rules: links, bare domains, emails, phones.
+_LINK_RE = re.compile(r"(https?://|www\.|\b[\w.-]+\.(?:kg|ru|com|net|org|me|io|su|info|biz)\b|@\w)", re.IGNORECASE)
+_PHONE_RE = re.compile(r"(?:\+?\d[\s()-]*){9,}")
+_NAME_RE = re.compile(r"^[^\W\d_]+(?:[ '’.-][^\W\d_]+)*\.?$")
+_CONTACTS_MESSAGE = _("Уберите ссылки, email и номера телефонов — это запрещено правилами.")
+_NAME_MESSAGE = _("Только буквы, пробел, дефис или апостроф.")
 
 SCORES = [(5, "5"), (4, "4"), (3, "3"), (2, "2"), (1, "1")]
 
@@ -192,6 +201,8 @@ class ReviewForm(forms.Form):
             too_short=_TOO_SHORT_MESSAGE,
             too_long=_TOO_LONG_MESSAGE,
         )
+        if _LINK_RE.search(comment) or _PHONE_RE.search(comment):
+            raise forms.ValidationError(_CONTACTS_MESSAGE)
         return comment
 
     def clean_tags(self):
@@ -230,12 +241,18 @@ class ProfessorForm(forms.Form):
             self.fields["school"].choices = [(str(s.id), s.name) for s in schools]
 
     def clean_first_name(self):
-        """Sanitize the first name."""
-        return self._clean_required_text("first_name", 40)
+        """Sanitize the first name and allow letters only."""
+        return self._clean_name("first_name")
 
     def clean_last_name(self):
-        """Sanitize the last name."""
-        return self._clean_required_text("last_name", 40)
+        """Sanitize the last name and allow letters only."""
+        return self._clean_name("last_name")
+
+    def _clean_name(self, field):
+        value = self._clean_required_text(field, 40)
+        if not _NAME_RE.match(" ".join(value.split())):
+            raise forms.ValidationError(_NAME_MESSAGE)
+        return value
 
     def clean_department(self):
         """Sanitize the department name."""

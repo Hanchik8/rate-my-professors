@@ -11,6 +11,7 @@ from django.contrib import messages
 from django.conf import settings
 from django.contrib.auth import login
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
@@ -449,8 +450,21 @@ def _auth_success_url(request, default_setting):
     return _safe_next_url(request, resolve_url(default_setting))
 
 
+class EmailLoginForm(AuthenticationForm):
+    """Login form whose username field is labelled and typed as an email."""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        field = self.fields["username"]
+        field.label = gettext_lazy("Email")
+        field.widget.input_type = "email"
+        field.widget.attrs["autocomplete"] = "email"
+
+
 class ThrottledLoginView(auth_views.LoginView):
     """Login view with a simple per-IP attempt limit backed by the cache."""
+
+    authentication_form = EmailLoginForm
 
     def post(self, request, *args, **kwargs):
         """Reject the request when the per-IP login rate limit is exceeded."""
