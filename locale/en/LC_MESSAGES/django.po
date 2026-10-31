@@ -949,3 +949,11 @@ msgstr "Results for “%(query)s”: %(total)s"
 
 msgid "Сбросить поиск"
 msgstr "Reset search"
+
+#: reviews/forms.py
+msgid "Уберите ссылки, email и номера телефонов — это запрещено правилами."
+msgstr "Remove links, emails and phone numbers — the rules do not allow them."
+
+#: reviews/forms.py
+msgid "Только буквы, пробел, дефис или апостроф."
+msgstr "Letters, spaces, hyphens or apostrophes only."

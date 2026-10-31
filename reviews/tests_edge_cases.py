@@ -192,3 +192,48 @@ class ModelAndAdminEdgeTests(TestCase):
         ReportAdmin(Report, admin.site).mark_reviewed(None, Report.objects.all())
         report.refresh_from_db()
         self.assertEqual(report.status, Report.STATUS_REVIEWED)
+
+
+class ContactAndNameValidationTests(TestCase):
+    def _review(self, comment):
+        from .forms import ReviewForm
+        form = ReviewForm()
+        data = {"course": "Алгебра", "term": "", "overall": "5", "difficulty": "3",
+                "would_take_again": "yes", "grade": "", "tags": [], "comment": comment}
+        return ReviewForm(data=data)
+
+    def test_comment_with_contacts_is_rejected(self):
+        for comment in ("Пишите мне на qa@mail.ru, всё расскажу подробно",
+                        "Звоните +996 555 123 456, расскажу про экзамен",
+                        "Все ответы лежат на сайте answers.kg, заходите",
+                        "Ссылка https://example.org на конспекты лекций"):
+            with self.subTest(comment=comment):
+                form = self._review(comment)
+                self.assertFalse(form.is_valid())
+                self.assertIn("comment", form.errors)
+
+    def test_ordinary_comment_with_years_and_times_is_accepted(self):
+        form = self._review("Учебный год 2025-2026, экзамен в 9:00, т.е. рано, но честно.")
+        self.assertTrue(form.is_valid(), form.errors)
+
+    def test_professor_names_must_be_letters(self):
+        base = {"school": "s1", "department": "Математика", "title": "доцент"}
+        schools = [mock.Mock(id="s1", name="Вуз")]
+        for first, last, valid in (("Анна-Мария", "О’Нил", True), ("Иван3", "Петров", False),
+                                   ("Иван", "http://x", False)):
+            with self.subTest(first=first, last=last):
+                form = ProfessorForm(data={**base, "first_name": first, "last_name": last}, schools=schools)
+                self.assertEqual(form.is_valid(), valid, form.errors)
+
+
+class LoginFormLabelTests(TestCase):
+    def test_login_asks_for_email_not_username(self):
+        response = self.client.get(reverse("login"))
+        self.assertContains(response, 'type="email"')
+        self.assertNotContains(response, "Имя пользователя")
+
+
+class EmptySearchResetLinkTests(TestCase):
+    def test_empty_search_shows_a_single_reset_link(self):
+        response = self.client.get(reverse("home"), {"q": "zzqxнетакого"})
+        self.assertEqual(response.content.decode().count("Сбросить поиск"), 1)
