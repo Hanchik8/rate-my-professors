@@ -1,7 +1,7 @@
 {% extends "reviews/base.html" %}{% load i18n l10n static departments %}
 {% block content %}
 <h1>{% translate "Узнайте, какие занятия на самом деле — до записи на курс." %}</h1>
-<form class="search" method="get" role="search" aria-label="{% translate 'Поиск' %}">
+<form class="search" id="search" method="get" role="search" aria-label="{% translate 'Поиск' %}">
   <input type="search" name="q" value="{{ q }}" placeholder="{% translate 'Имя преподавателя или кафедра' %}" aria-label="{% translate 'Поиск' %}">
   <select name="city" id="f-city" aria-label="{% translate 'Город' %}">
     <option value="">{% translate "Все города" %}</option>

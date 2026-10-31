@@ -1,4 +1,4 @@
-# ---- ProfLens production image ----
+# ---- PrepodRate production image ----
 FROM python:3.13-slim AS base
 
 ENV PYTHONDONTWRITEBYTECODE=1 \

@@ -1,16 +1,16 @@
-/* ProfLens — design system (no external assets, system fonts only).
+/* PrepodRate — design system (no external assets, system fonts only).
    Contrast pairs verified against WCAG 2.1 AA in BOTH light and dark themes
    (see reviews/tests.py: DesignContrastTests). */
 :root{
   color-scheme:light dark;
-  --bg:#f3f5f9;
+  --bg:#faf8ff;
   --surface:#ffffff;
   --ink:#101828;
   --muted:#475467;
-  --line:#e3e8ef;
+  --line:#ebe5fb;
   --line-strong:#98a2b3;
-  --accent:#3538cd;
-  --accent-strong:#2b31b0;
+  --accent:#7c3aed;
+  --accent-strong:#6d28d9;
   --on-accent:#ffffff;
   --good-bg:#d3f8df; --good-ink:#05603a;
   --mid-bg:#fef0c7;  --mid-ink:#93370d;
@@ -18,8 +18,8 @@
   --none-bg:#eef2f6; --none-ink:#475467;
   --star:#b54708;
   --star-empty:#cdd5df;
-  --focus:#3538cd;
-  --focus-ring:rgb(53 56 205 / .35);
+  --focus:#7c3aed;
+  --focus-ring:rgb(124 58 237 / .35);
   --top-bg:rgb(255 255 255 / .88);
   --shadow:0 1px 2px rgb(16 24 40 / .06),0 1px 3px rgb(16 24 40 / .1);
   --shadow-lg:0 12px 24px -6px rgb(16 24 40 / .12);
@@ -37,14 +37,14 @@
 /* Dark theme: follows the OS/browser preference, no toggle or JS needed. */
 @media (prefers-color-scheme:dark){
   :root{
-    --bg:#0b1220;
-    --surface:#141d31;
+    --bg:#120c22;
+    --surface:#1c1530;
     --ink:#e8ecf4;
     --muted:#a8b3c7;
-    --line:#2b3850;
+    --line:#352a52;
     --line-strong:#5b6b8c;
-    --accent:#a5b4fc;
-    --accent-strong:#c3c9fd;
+    --accent:#c4b5fd;
+    --accent-strong:#ddd6fe;
     --on-accent:#101828;
     --good-bg:#0d3b23; --good-ink:#6ee7b7;
     --mid-bg:#422a06;  --mid-ink:#fcd34d;
@@ -52,9 +52,9 @@
     --none-bg:#1e2938; --none-ink:#a8b3c7;
     --star:#fbbf24;
     --star-empty:#3c4a63;
-    --focus:#a5b4fc;
-    --focus-ring:rgb(165 180 252 / .45);
-    --top-bg:rgb(20 29 49 / .88);
+    --focus:#c4b5fd;
+    --focus-ring:rgb(196 181 253 / .45);
+    --top-bg:rgb(28 21 48 / .88);
     --shadow:0 1px 2px rgb(0 0 0 / .4),0 1px 3px rgb(0 0 0 / .5);
     --shadow-lg:0 12px 24px -6px rgb(0 0 0 / .6);
   }
@@ -368,3 +368,8 @@ textarea{resize:vertical}
 .compare-actions{margin-top:1rem}
 .compare-remove{font-size:.85rem;font-weight:400}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Visible "find a professor" call to action in the header. */
+.nav a.nav-cta{background:var(--accent);color:var(--on-accent);padding:.45rem .95rem;border-radius:999px;font-weight:600;text-decoration:none;white-space:nowrap}
+.nav a.nav-cta:hover{background:var(--accent-strong);color:var(--on-accent)}
+#search{scroll-margin-top:5rem}
