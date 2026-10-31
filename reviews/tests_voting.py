@@ -192,6 +192,22 @@ class VotingEdgeViewTestsMixin:
         self.assertEqual(r.status_code, 302)
         self.assertEqual(self.repo.review(review.id).helpful, before + 1)
 
+    # --- ownership --------------------------------------------------------
+    def test_other_user_cannot_edit_or_delete_review(self):
+        author = self.login("owner@example.com")
+        review = self.authored_review(author)
+        stranger = User.objects.create_user(
+            username="stranger@example.com", email="stranger@example.com", password="pass12345"
+        )
+        self.client.force_login(stranger)
+
+        edit = self.client.get(reverse("review_edit", args=[review.id]))
+        delete = self.client.post(reverse("review_delete", args=[review.id]))
+
+        self.assertEqual(edit.status_code, 404)
+        self.assertEqual(delete.status_code, 404)
+        self.assertIsNotNone(self.repo.review(review.id))
+
 
 class MemoryVotingEdgeViewTests(VotingEdgeViewTestsMixin, _VotingViewMixin, TestCase):
     use_django = False
