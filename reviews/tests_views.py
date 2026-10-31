@@ -1,16 +1,27 @@
-"""Edge-case tests: professor search/filter/sort and form validation.
+"""View-level tests: search edges, shared helpers and HTTP method security."""
+from types import SimpleNamespace
 
-Kept separate from tests.py to group boundary/validation coverage. The
-repository contract block runs the same assertions against both backends so
-the in-memory and ORM implementations cannot drift apart.
-"""
-from django.test import TestCase
+from django import forms
+from django.conf import settings
+from django.contrib.auth.models import User
+from django.core.cache import cache
+from django.test import Client, RequestFactory, SimpleTestCase, TestCase, override_settings
 from django.urls import reverse
 
 from .django_repo import DjangoRepository
 from .forms import ReviewForm
 from .repository import InMemoryRepository
+from .seed import seed
 from .tests import _MemoryRepoTestCase, _repo_review, _valid
+from .views import (
+    SafeLogoutView,
+    ThrottledLoginView,
+    _auth_success_url,
+    _is_author,
+    _is_valid_post,
+    _requested_next_url,
+    _review_form_context,
+)
 
 
 # ---------------------------------------------------------------------------
@@ -142,7 +153,8 @@ class HomeSearchEdgeViewTests(_MemoryRepoTestCase):
 
 
 # ---------------------------------------------------------------------------
-# Form validation edge cases: empty, overlong, invalid rating
+# Form validation edge cases: empty form, whitespace and enum choices
+# (rating and length boundaries are covered in tests_reviews.py)
 # ---------------------------------------------------------------------------
 class ReviewFormValidationEdgeTests(TestCase):
     def test_empty_form_reports_required_fields(self):
@@ -151,43 +163,10 @@ class ReviewFormValidationEdgeTests(TestCase):
         for field in ("course", "overall", "difficulty", "would_take_again", "comment"):
             self.assertIn(field, form.errors)
 
-    def test_invalid_overall_ratings_are_rejected(self):
-        for value in ("", "0", "6", "abc", "4.5", "-1"):
-            with self.subTest(overall=value):
-                form = ReviewForm(_valid({"overall": value}))
-                self.assertFalse(form.is_valid())
-                self.assertIn("overall", form.errors)
-
-    def test_invalid_difficulty_ratings_are_rejected(self):
-        for value in ("", "0", "6", "abc"):
-            with self.subTest(difficulty=value):
-                form = ReviewForm(_valid({"difficulty": value}))
-                self.assertFalse(form.is_valid())
-                self.assertIn("difficulty", form.errors)
-
-    def test_boundary_ratings_are_accepted(self):
-        for value in ("1", "5"):
-            with self.subTest(overall=value):
-                form = ReviewForm(_valid({"overall": value, "difficulty": value}))
-                self.assertTrue(form.is_valid(), form.errors)
-
     def test_whitespace_only_course_is_rejected(self):
         form = ReviewForm(_valid({"course": "   "}))
         self.assertFalse(form.is_valid())
         self.assertIn("course", form.errors)
-
-    def test_overlong_course_and_term_are_rejected(self):
-        form = ReviewForm(_valid({"course": "я" * 81}))
-        self.assertFalse(form.is_valid())
-        self.assertIn("course", form.errors)
-        form2 = ReviewForm(_valid({"term": "я" * 21}))
-        self.assertFalse(form2.is_valid())
-        self.assertIn("term", form2.errors)
-
-    def test_overlong_comment_is_rejected(self):
-        form = ReviewForm(_valid({"comment": "я" * 1001}))
-        self.assertFalse(form.is_valid())
-        self.assertIn("comment", form.errors)
 
     def test_boundary_lengths_are_accepted(self):
         form = ReviewForm(_valid({"course": "я" * 80, "term": "я" * 20, "comment": "я" * 1000}))
@@ -253,3 +232,199 @@ class ReportFormValidationTests(TestCase):
         self.assertFalse(oversized.is_valid())
         self.assertIn("reason", oversized.errors)
         self.assertEqual(ReportForm().fields["reason"].widget.attrs["maxlength"], max_length)
+
+
+# ---------------------------------------------------------------------------
+# Shared helpers used by the HTTP views
+# ---------------------------------------------------------------------------
+class _SampleForm(forms.Form):
+    name = forms.CharField()
+
+
+class IsAuthorTests(SimpleTestCase):
+    def test_matching_ids_are_compared_as_strings(self):
+        review = SimpleNamespace(author_id=7)
+        self.assertTrue(_is_author(review, SimpleNamespace(id="7")))
+
+    def test_different_ids_are_not_the_author(self):
+        review = SimpleNamespace(author_id=7)
+        self.assertFalse(_is_author(review, SimpleNamespace(id=8)))
+
+    def test_missing_author_is_never_the_author(self):
+        review = SimpleNamespace(author_id=None)
+        self.assertFalse(_is_author(review, SimpleNamespace(id=None)))
+        self.assertFalse(_is_author(review, SimpleNamespace(id=7)))
+
+
+class IsValidPostTests(SimpleTestCase):
+    def setUp(self):
+        self.factory = RequestFactory()
+
+    def test_get_request_is_not_a_valid_post(self):
+        request = self.factory.get("/")
+        self.assertFalse(_is_valid_post(request, _SampleForm()))
+
+    def test_valid_post_is_accepted(self):
+        request = self.factory.post("/", {"name": "ok"})
+        self.assertTrue(_is_valid_post(request, _SampleForm(request.POST)))
+
+    def test_invalid_post_is_rejected(self):
+        request = self.factory.post("/", {})
+        self.assertFalse(_is_valid_post(request, _SampleForm(request.POST)))
+
+
+class RequestedNextUrlTests(SimpleTestCase):
+    def setUp(self):
+        self.factory = RequestFactory()
+
+    def test_post_next_takes_precedence_over_get_next(self):
+        request = self.factory.post("/?next=/from-get", {"next": "/from-post"})
+
+        self.assertEqual(_requested_next_url(request), "/from-post")
+
+    def test_safe_get_next_is_used_when_post_next_is_missing(self):
+        request = self.factory.get("/?next=/from-get")
+
+        self.assertEqual(_requested_next_url(request), "/from-get")
+
+    def test_external_next_is_rejected(self):
+        request = self.factory.get("/?next=https://evil.example/")
+
+        self.assertIsNone(_requested_next_url(request))
+
+
+class AuthSuccessUrlTests(SimpleTestCase):
+    def setUp(self):
+        self.factory = RequestFactory()
+
+    @override_settings(LOGIN_REDIRECT_URL="/after-login/")
+    def test_login_uses_safe_next_or_login_default(self):
+        view = ThrottledLoginView()
+        view.request = self.factory.get("/?next=/requested/")
+        self.assertEqual(view.get_success_url(), "/requested/")
+        view.request = self.factory.get("/?next=https://evil.example/")
+        self.assertEqual(view.get_success_url(), "/after-login/")
+
+    @override_settings(LOGOUT_REDIRECT_URL="/after-logout/")
+    def test_logout_uses_its_configured_default(self):
+        view = SafeLogoutView()
+        view.request = self.factory.get("/")
+        self.assertEqual(view.get_success_url(), "/after-logout/")
+
+    @override_settings(LOGIN_REDIRECT_URL="/fallback/")
+    def test_helper_resolves_the_configured_default(self):
+        request = self.factory.get("/")
+        self.assertEqual(_auth_success_url(request, settings.LOGIN_REDIRECT_URL), "/fallback/")
+
+
+class ReviewFormContextTests(SimpleTestCase):
+    def setUp(self):
+        self.prof = SimpleNamespace(slug="prof")
+        self.form = _SampleForm()
+
+    def test_new_review_context_includes_account_urls(self):
+        context = _review_form_context(self.prof, self.form)
+
+        self.assertEqual(context["url"], reverse("rules"))
+        self.assertEqual(context["login_url"], reverse("login"))
+        self.assertEqual(context["signup_url"], reverse("signup"))
+        self.assertNotIn("editing", context)
+
+    def test_edit_review_context_marks_editing_and_omits_account_urls(self):
+        context = _review_form_context(self.prof, self.form, editing=True)
+
+        self.assertEqual(context["url"], reverse("rules"))
+        self.assertTrue(context["editing"])
+        self.assertNotIn("login_url", context)
+        self.assertNotIn("signup_url", context)
+
+
+# ---------------------------------------------------------------------------
+# HTTP method restrictions and CSRF enforcement for state-changing views
+# ---------------------------------------------------------------------------
+class ViewMethodSecurityTests(TestCase):
+    def setUp(self):
+        cache.clear()
+        import reviews.views as views
+        from reviews import store
+
+        self.repo = InMemoryRepository()
+        seed(self.repo)
+        self._orig_repo = store.repo
+        self._orig_view_repo = views.repo
+        store.repo = self.repo
+        views.repo = self.repo
+        self.prof = self.repo.search("Айбек")[0]["prof"]
+        self.review = self.repo.reviews_for(self.prof.id)[0]
+        self.user = User.objects.create_user(
+            username="methods@example.com",
+            email="methods@example.com",
+            password="pass12345",
+        )
+
+    def tearDown(self):
+        import reviews.views as views
+        from reviews import store
+
+        store.repo = self._orig_repo
+        views.repo = self._orig_view_repo
+
+    def _owned_review(self):
+        self.repo.add_review(
+            self.prof.id,
+            {
+                "course": "Курс для проверки методов",
+                "term": "Осень 2025",
+                "overall": 4,
+                "difficulty": 3,
+                "would_take_again": True,
+                "grade": "A",
+                "tags": [],
+                "comment": "Достаточно содержательный комментарий для проверки методов.",
+            },
+            user=self.user,
+        )
+        return self.repo.review(self.repo.reviews_for_user(self.user)[0]["review"].id)
+
+    def test_post_only_views_reject_get(self):
+        urls = [
+            reverse("review_vote", args=[self.review.id]),
+            reverse("review_report", args=[self.review.id]),
+        ]
+        for url in urls:
+            with self.subTest(url=url):
+                response = Client().get(url)
+                self.assertEqual(response.status_code, 405)
+
+    def test_form_views_reject_unsupported_methods(self):
+        owned_review = self._owned_review()
+        self.client.force_login(self.user)
+        urls = [
+            reverse("review_new", args=[self.prof.slug]),
+            reverse("review_edit", args=[owned_review.id]),
+            reverse("review_delete", args=[owned_review.id]),
+            reverse("add_professor"),
+            reverse("signup"),
+        ]
+        for url in urls:
+            with self.subTest(url=url):
+                response = self.client.put(url)
+                self.assertEqual(response.status_code, 405)
+
+    def test_state_changing_views_reject_missing_csrf_token(self):
+        owned_review = self._owned_review()
+        client = Client(enforce_csrf_checks=True)
+        client.force_login(self.user)
+        urls = [
+            reverse("review_new", args=[self.prof.slug]),
+            reverse("review_edit", args=[owned_review.id]),
+            reverse("review_delete", args=[owned_review.id]),
+            reverse("review_vote", args=[self.review.id]),
+            reverse("review_report", args=[self.review.id]),
+            reverse("add_professor"),
+            reverse("signup"),
+            reverse("login"),
+        ]
+        for url in urls:
+            with self.subTest(url=url):
+                self.assertEqual(client.post(url, {}).status_code, 403)
