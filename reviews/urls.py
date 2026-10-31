@@ -7,6 +7,7 @@ from .views import SafeLogoutView, ThrottledLoginView
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("top/", views.top, name="top"),
     path("health/", views.health, name="health"),
     path("healthz", views.healthz, name="healthz"),
     path("rules/", views.rules, name="rules"),

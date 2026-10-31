@@ -138,6 +138,23 @@ def home(request):
     })
 
 
+def top(request):
+    """Show the 20 highest-rated professors with at least three reviews."""
+    school = request.GET.get("school", "").strip()
+    department = request.GET.get("department", "").strip()
+    results = [
+        row for row in repo.search(school_slug=school, department=department)
+        if row["stats"]["count"] >= 3
+    ][:20]
+    return render(request, "reviews/top.html", {
+        "results": results,
+        "schools": repo.schools(),
+        "departments": repo.departments(),
+        "school": school,
+        "department": department,
+    })
+
+
 def _professor_or_404(slug):
     """Fetch an approved professor by slug or raise ``Http404``."""
     return _object_or_404(repo.professor(slug), _("Professor not found"))

@@ -20,6 +20,7 @@
       <span class="burger" aria-hidden="true"></span>
     </button>
     <nav class="nav" id="site-nav" aria-label="{% translate 'Основная навигация' %}">
+      <a href="{% url 'top' %}"{% if request.resolver_match.url_name == 'top' %} aria-current="page"{% endif %}>{% translate "Лучшие" %}</a>
       <a href="{% url 'rules' %}"{% if request.resolver_match.url_name == 'rules' %} aria-current="page"{% endif %}>{% translate "Правила" %}</a>
       <a href="{% url 'add_professor' %}"{% if request.resolver_match.url_name == 'add_professor' %} aria-current="page"{% endif %}>{% translate "Добавить преподавателя" %}</a>
       {% if user.is_authenticated %}

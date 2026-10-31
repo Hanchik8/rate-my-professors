@@ -1,5 +1,6 @@
 {% load i18n l10n departments %}
 <li>
+  {% if place %}<span class="top-rank">{{ place }}.</span>{% endif %}
   <a class="card" href="{% url 'professor' r.prof.slug %}">
     <span class="tile {{ r.stats.tone }}">{% if r.stats.count %}{{ r.stats.overall|floatformat:1|localize }}{% else %}-{% endif %}</span>
     <span class="card-body">

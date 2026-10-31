@@ -10,6 +10,15 @@ msgstr ""
 msgid "Предмет"
 msgstr "Subject"
 
+msgid "Лучшие"
+msgstr "Top"
+
+msgid "Лучшие преподаватели"
+msgstr "Top Professors"
+
+msgid "Пока нет преподавателей для рейтинга."
+msgstr "There are no professors in the rankings yet."
+
 msgid "Например: Алгоритмы, Общая физика, Микроэкономика"
 msgstr "For example: Algorithms, General Physics, Microeconomics"
 
