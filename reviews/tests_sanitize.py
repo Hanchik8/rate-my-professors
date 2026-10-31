@@ -5,12 +5,17 @@ Django's autoescaping renders it as text.  These tests therefore pin down
 both halves of that contract - control-character hygiene in the sanitizer and
 HTML/XSS escaping at the rendering boundary.
 """
-from django.test import SimpleTestCase
+from unittest.mock import patch
+
+from django.core.cache import cache
+from django.test import RequestFactory, SimpleTestCase, override_settings
 from django.urls import reverse
 
+from . import services
 from .constants import MAX_COMMENT_LENGTH, MIN_COMMENT_LENGTH
 from .sanitize import clean_text, strip_control_chars
 from .tests import _MemoryRepoTestCase, _repo_review
+from .throttle import is_rate_limited
 
 
 class StripControlCharsTests(SimpleTestCase):
@@ -32,10 +37,11 @@ class StripControlCharsTests(SimpleTestCase):
         value += "".join(chr(code) for code in range(0x7F, 0xA0))
         self.assertEqual(strip_control_chars(value), "")
 
-    def test_empty_and_none_values(self):
-        for value in ("", None):
+    def test_falsy_values_return_empty_string(self):
+        for value in ("", None, 0, False):
             with self.subTest(value=value):
                 self.assertEqual(strip_control_chars(value), "")
+                self.assertEqual(clean_text(value), "")
 
     def test_keeps_ordinary_text_html_and_unicode_untouched(self):
         value = '<b>Отзыв</b> про курс — 100% полезно! <img src="x.png"> 😀'
@@ -63,6 +69,7 @@ class CleanTextTests(SimpleTestCase):
     def test_normalizes_crlf_and_lone_cr_to_lf(self):
         self.assertEqual(clean_text("a\r\nb\rc\rd"), "a\nb\nc\nd")
         self.assertEqual(clean_text("a\r\n\r\nb"), "a\n\nb")
+        self.assertEqual(clean_text("a\r\x00b\r\nc"), "a\nb\nc")
 
     def test_preserves_internal_tabs_and_newlines_but_trims_outer_space(self):
         self.assertEqual(clean_text(" \t a\tb\nc \n "), "a\tb\nc")
@@ -151,3 +158,77 @@ class ReviewTextXssTests(_MemoryRepoTestCase):
         )
         self.assertEqual(review.course, "Алгоритмы")
         self.assertEqual(review.comment, "Полезный курс с практикой и примерами.")
+
+
+class ThrottleTests(SimpleTestCase):
+    def setUp(self):
+        cache.clear()
+        self.addCleanup(cache.clear)
+        self.request = RequestFactory().post("/")
+        self.request.META["REMOTE_ADDR"] = "192.0.2.1"
+
+    @override_settings(RATELIMIT_ENABLE=True, RATELIMIT={"test": (2, 10)})
+    def test_allows_limit_then_rejects_excess_hits(self):
+        self.assertFalse(is_rate_limited(self.request, "test"))
+        self.assertFalse(is_rate_limited(self.request, "test"))
+        self.assertTrue(is_rate_limited(self.request, "test"))
+
+    @override_settings(RATELIMIT_ENABLE=True, RATELIMIT={"test": (1, 10)})
+    def test_fixed_window_resets_when_cache_entry_expires(self):
+        now = [100.0]
+        with patch("django.core.cache.backends.locmem.time.time", side_effect=lambda: now[0]):
+            self.assertFalse(is_rate_limited(self.request, "test"))
+            self.assertTrue(is_rate_limited(self.request, "test"))
+            now[0] = 111.0
+            self.assertFalse(is_rate_limited(self.request, "test"))
+
+    @override_settings(RATELIMIT_ENABLE=True, RATELIMIT={"test": (1, 10)})
+    def test_counters_are_independent_per_subject(self):
+        other_request = RequestFactory().post("/")
+        other_request.META["REMOTE_ADDR"] = "192.0.2.2"
+        self.assertFalse(is_rate_limited(self.request, "test"))
+        self.assertTrue(is_rate_limited(self.request, "test"))
+        self.assertFalse(is_rate_limited(other_request, "test"))
+
+    @override_settings(RATELIMIT_ENABLE=True, RATELIMIT={"test": (1, 10)})
+    def test_authenticated_user_is_independent_of_other_users(self):
+        user_a, user_b = _User("alice"), _User("bob")
+        self.assertFalse(is_rate_limited(self.request, "test", user_a))
+        self.assertTrue(is_rate_limited(self.request, "test", user_a))
+        self.assertFalse(is_rate_limited(self.request, "test", user_b))
+
+
+class _User:
+    is_authenticated = True
+
+    def __init__(self, username):
+        self.username = username
+
+    def get_username(self):
+        return self.username
+
+
+class ProfessorListingDefaultsTests(SimpleTestCase):
+    def test_search_uses_empty_filters_and_rating_sort_by_default(self):
+        class Repository:
+            def search(self, *args):
+                self.args = args
+                return ["result"]
+
+        repository = Repository()
+
+        self.assertEqual(services.search_professors(repository), ["result"])
+        self.assertEqual(repository.args, ("", "", "", "", "rating"))
+
+    def test_school_listing_returns_repository_result_unchanged(self):
+        expected = object()
+
+        class Repository:
+            def search(self, *args):
+                self.args = args
+                return expected
+
+        repository = Repository()
+
+        self.assertIs(services.professors_for_school(repository, "slug"), expected)
+        self.assertEqual(repository.args, ("", "slug", "", "", "rating"))
