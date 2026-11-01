@@ -1,7 +1,7 @@
 {% extends "reviews/base.html" %}{% load i18n l10n %}
-{% block title %}{{ school.name }} — PrepodRate{% endblock %}
+{% block title %}{{ school.name }} — RateProfessor{% endblock %}
 {% block description %}{% blocktranslate with name=school.name city=school.city %}Преподаватели и отзывы студентов вуза {{ name }} ({{ city }}): рейтинги, кафедры и советы.{% endblocktranslate %}{% endblock %}
-{% block og_title %}{{ school.name }} — PrepodRate{% endblock %}
+{% block og_title %}{{ school.name }} — RateProfessor{% endblock %}
 {% block og_description %}{% blocktranslate with name=school.name city=school.city %}Преподаватели и отзывы студентов вуза {{ name }} ({{ city }}): рейтинги, кафедры и советы.{% endblocktranslate %}{% endblock %}
 {% block content %}
 <nav class="breadcrumbs" aria-label="{% translate 'Хлебные крошки' %}">
