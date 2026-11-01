@@ -1130,19 +1130,20 @@ class DesignAssetsTests(TestCase):
         self.assertIn(":focus-visible", css)
         self.assertIn("color-scheme", css)  # declared in base.html meta + tokens
 
-    def test_css_supports_dark_color_scheme(self):
+    def test_site_is_always_light(self):
+        # Owner request 2026-11-01: white background, black buttons with white
+        # text, regardless of the visitor's OS dark mode.
         css = STATIC_CSS.read_text(encoding="utf-8")
-        self.assertIn("prefers-color-scheme:dark", css.replace(" ", ""))
-        self.assertIn("color-scheme:lightdark", css.replace(" ", ""))
-        # Dark block must re-declare the core tokens, not rely on light values.
-        dark = re.search(r"prefers-color-scheme\s*:\s*dark[^{]*\{\s*:root\s*\{([^}]*)\}", css)
-        self.assertIsNotNone(dark)
-        for token in ("--bg:", "--surface:", "--ink:", "--muted:", "--accent:"):
-            self.assertIn(token, dark.group(1))
+        self.assertNotIn("prefers-color-scheme:dark", css.replace(" ", ""))
+        self.assertIn("color-scheme:light;", css.replace(" ", ""))
+        root = re.search(r":root\s*\{([^}]*)\}", css).group(1)
+        self.assertIn("--bg:#ffffff", root.replace(" ", ""))
+        self.assertIn("--accent:#111111", root.replace(" ", ""))
+        self.assertIn("--on-accent:#ffffff", root.replace(" ", ""))
 
-    def test_base_template_declares_light_and_dark_color_scheme(self):
+    def test_base_template_declares_light_color_scheme(self):
         html = (TEMPLATES_DIR / "reviews" / "base.html").read_text(encoding="utf-8")
-        self.assertIn('<meta name="color-scheme" content="light dark">', html)
+        self.assertIn('<meta name="color-scheme" content="light">', html)
 
     def test_focus_visible_style_is_prominent(self):
         css = STATIC_CSS.read_text(encoding="utf-8")
@@ -1172,13 +1173,10 @@ class DesignAssetsTests(TestCase):
         self.assertIn('addEventListener("submit"', source)
         self.assertIn("disabled = true", source)
 
-    def test_css_has_submit_loading_state_for_both_themes(self):
+    def test_css_has_submit_loading_state(self):
         css = STATIC_CSS.read_text(encoding="utf-8")
         self.assertIn(".is-loading::after", css)
         self.assertIn("@keyframes submit-spin", css)
-        self.assertRegex(
-            css, r"@media\s*\(prefers-color-scheme\s*:\s*dark\)\s*\{[^}]*\.is-loading"
-        )
 
 
 class DesignContrastTests(TestCase):
@@ -1190,14 +1188,6 @@ class DesignContrastTests(TestCase):
         root = re.search(r":root\s*\{([^}]*)\}", css).group(1)
         return dict(re.findall(r"--([a-z0-9-]+)\s*:\s*(#[0-9a-fA-F]{6})", root))
 
-    @classmethod
-    def _dark_tokens(cls):
-        css = STATIC_CSS.read_text(encoding="utf-8")
-        dark = re.search(
-            r"prefers-color-scheme\s*:\s*dark[^{]*\{\s*:root\s*\{([^}]*)\}", css
-        )
-        assert dark, "dark theme block with :root tokens not found in style.css"
-        return dict(re.findall(r"--([a-z0-9-]+)\s*:\s*(#[0-9a-fA-F]{6})", dark.group(1)))
 
     @staticmethod
     def _luminance(hex_color):
@@ -1234,45 +1224,10 @@ class DesignContrastTests(TestCase):
         self.assertGreaterEqual(self._ratio(t["on-accent"], t["accent"]), 4.5)
         self.assertGreaterEqual(self._ratio(t["on-accent"], t["accent-strong"]), 4.5)
 
-    # --- Dark theme (prefers-color-scheme: dark) ---
-
-    def test_dark_theme_redeclares_all_core_tokens(self):
-        light, dark = self._tokens(), self._dark_tokens()
-        core = {"bg", "surface", "ink", "muted", "line", "accent", "accent-strong",
-                "on-accent", "good-bg", "good-ink", "mid-bg", "mid-ink",
-                "bad-bg", "bad-ink", "none-bg", "none-ink", "star", "star-empty",
-                "focus"}
-        self.assertTrue(core.issubset(dark.keys()))
-        for name in core:
-            with self.subTest(token=name):
-                self.assertNotEqual(light[name], dark[name])
-
-    def test_dark_text_pairs_meet_aa_4_5(self):
-        t = self._dark_tokens()
-        pairs = [
-            ("ink", "bg"), ("ink", "surface"),
-            ("muted", "bg"), ("muted", "surface"),
-            ("accent", "surface"), ("accent", "bg"),
-            ("good-ink", "good-bg"), ("mid-ink", "mid-bg"),
-            ("bad-ink", "bad-bg"), ("none-ink", "none-bg"),
-        ]
-        for fg, bg in pairs:
-            with self.subTest(pair=f"dark {fg} on {bg}"):
-                self.assertGreaterEqual(self._ratio(t[fg], t[bg]), 4.5)
-
-    def test_dark_star_graphic_meets_3_to_1(self):
-        t = self._dark_tokens()
-        self.assertGreaterEqual(self._ratio(t["star"], t["surface"]), 3.0)
-
-    def test_dark_button_text_on_accent_meets_aa(self):
-        t = self._dark_tokens()
-        self.assertGreaterEqual(self._ratio(t["on-accent"], t["accent"]), 4.5)
-        self.assertGreaterEqual(self._ratio(t["on-accent"], t["accent-strong"]), 4.5)
-
     def test_focus_ring_visible_on_page_backgrounds(self):
         # Focus indicator is a non-text UI component: WCAG 1.4.11 needs >= 3:1
         # against the colors it sits on, in both themes.
-        for name, tokens in (("light", self._tokens()), ("dark", self._dark_tokens())):
+        for name, tokens in (("light", self._tokens()),):
             for surface in ("bg", "surface"):
                 with self.subTest(theme=name, surface=surface):
                     self.assertGreaterEqual(

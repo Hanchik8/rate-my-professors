@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <meta name="referrer" content="same-origin">
 <link rel="icon" href="{% static 'reviews/favicon.svg' %}" type="image/svg+xml">
 {% if request %}{% for code, name in LANGUAGES %}<link rel="alternate" hreflang="{{ code }}" href="{{ site_url }}{{ request.path }}?{% if request.alternate_query_string %}{{ request.alternate_query_string }}&amp;{% endif %}language={{ code }}">{% endfor %}{% endif %}
