@@ -78,7 +78,45 @@ def _send(user, code):
         "Код действует %(minutes)s минут. Если вы не регистрировались на RateProfessor, "
         "просто проигнорируйте это письмо."
     ) % {"code": code, "minutes": minutes}
-    send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [user.email])
+    send_mail(
+        subject,
+        body,
+        settings.DEFAULT_FROM_EMAIL,
+        [user.email],
+        html_message=_html_body(code, minutes),
+    )
+
+
+def _html_body(code, minutes):
+    """Branded HTML version of the verification email (plain text stays the fallback)."""
+    from django.utils.html import escape
+
+    site = getattr(settings, "SITE_URL", "").rstrip("/")
+    logo = f"{site}/static/reviews/email-logo.png" if site else ""
+    logo_html = (
+        f'<img src="{escape(logo)}" width="48" height="48" alt="RateProfessor" '
+        'style="display:block;border-radius:10px">'
+        if logo
+        else ""
+    )
+    intro = escape(_("Ваш код подтверждения RateProfessor:"))
+    note = escape(
+        _(
+            "Код действует %(minutes)s минут. Если вы не регистрировались на RateProfessor, "
+            "просто проигнорируйте это письмо."
+        )
+        % {"minutes": minutes}
+    )
+    return (
+        '<div style="background:#f5f5f5;padding:24px 0;font-family:Arial,Helvetica,sans-serif">'
+        '<div style="max-width:440px;margin:0 auto;background:#ffffff;border-radius:12px;padding:28px">'
+        f'<table role="presentation"><tr><td>{logo_html}</td>'
+        '<td style="padding-left:12px;font-size:20px;font-weight:bold;color:#111111">RateProfessor</td></tr></table>'
+        f'<p style="font-size:15px;color:#333333;margin:24px 0 8px">{intro}</p>'
+        f'<p style="font-size:32px;letter-spacing:6px;font-weight:bold;color:#111111;margin:0 0 20px">{escape(code)}</p>'
+        f'<p style="font-size:13px;color:#777777;margin:0">{note}</p>'
+        "</div></div>"
+    )
 
 
 def issue_code(user):
