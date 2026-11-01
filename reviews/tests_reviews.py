@@ -369,4 +369,3 @@ class ReviewSummaryRenderTests(TestCase):
         self.assertIn("var(--line)", summary.group(0))
         self.assertIn("var(--muted)", count_block.group(0))
         self.assertIsNotNone(text_block)
-        self.assertIn("@media (prefers-color-scheme:dark)", css)

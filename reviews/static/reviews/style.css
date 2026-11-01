@@ -1,9 +1,9 @@
 /* PrepodRate — design system (no external assets, system fonts only).
-   Contrast pairs verified against WCAG 2.1 AA in BOTH light and dark themes
+   Contrast pairs verified against WCAG 2.1 AA in the light theme (site is always light: white background, black buttons)
    (see reviews/tests.py: DesignContrastTests). */
 :root{
-  color-scheme:light dark;
-  --bg:#fafafa;
+  color-scheme:light;
+  --bg:#ffffff;
   --surface:#ffffff;
   --ink:#0a0a0a;
   --muted:#525252;
@@ -32,33 +32,9 @@
 .message.success{border-left-color:#039855}.message.warning{border-left-color:#dc6803}.message.error{border-left-color:#d92d20}.message.info{border-left-color:#1570ef}
 .message-close{flex:none;border:0;background:transparent;color:inherit;font:inherit;font-size:1.5rem;line-height:1;cursor:pointer;padding:.2rem .4rem;border-radius:.3rem}
 .message-close:hover{background:var(--bg)}
-@media(prefers-color-scheme:dark){.message{box-shadow:0 2px 8px rgb(0 0 0 / 25%)}.message.success{border-left-color:#32d583}.message.warning{border-left-color:#fdb022}.message.error{border-left-color:#f97066}.message.info{border-left-color:#53b1fd}}
 
-/* Dark theme: follows the OS/browser preference, no toggle or JS needed. */
-@media (prefers-color-scheme:dark){
-  :root{
-    --bg:#0a0a0a;
-    --surface:#171717;
-    --ink:#f5f5f5;
-    --muted:#a3a3a3;
-    --line:#2e2e2e;
-    --line-strong:#6b6b6b;
-    --accent:#f5f5f5;
-    --accent-strong:#ffffff;
-    --on-accent:#0a0a0a;
-    --good-bg:#0d3b23; --good-ink:#6ee7b7;
-    --mid-bg:#422a06;  --mid-ink:#fcd34d;
-    --bad-bg:#4c1210;  --bad-ink:#fca5a5;
-    --none-bg:#1f1f1f; --none-ink:#a3a3a3;
-    --star:#fbbf24;
-    --star-empty:#404040;
-    --focus:#f5f5f5;
-    --focus-ring:rgb(245 245 245 / .4);
-    --top-bg:rgb(23 23 23 / .9);
-    --shadow:0 1px 2px rgb(0 0 0 / .4),0 1px 3px rgb(0 0 0 / .5);
-    --shadow-lg:0 12px 24px -6px rgb(0 0 0 / .6);
-  }
-}
+
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 /* Long URLs, emails, and unbroken names must not force a narrow viewport wider. */
@@ -177,9 +153,7 @@ button.secondary:hover{background:var(--bg);color:var(--ink)}
   animation:submit-spin .7s linear infinite}
 @keyframes submit-spin{to{transform:rotate(360deg)}}
 /* Spinner inherits currentColor, so it stays legible in both themes. */
-@media (prefers-color-scheme:dark){
-  .is-loading::after{border-top-color:var(--on-accent)}
-}
+
 input,select,textarea{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);
   max-width:100%;min-width:0;border-radius:.65rem;padding:.6rem .75rem;transition:border-color .15s ease}
 input:hover,select:hover,textarea:hover{border-color:var(--line-strong)}
