@@ -6,6 +6,8 @@
 <meta name="color-scheme" content="light">
 <meta name="referrer" content="same-origin">
 <link rel="icon" href="{% static 'reviews/favicon.svg' %}" type="image/svg+xml">
+<link rel="icon" href="{% static 'reviews/favicon-32.png' %}" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="{% static 'reviews/apple-touch-icon.png' %}">
 {% if request %}{% for code, name in LANGUAGES %}<link rel="alternate" hreflang="{{ code }}" href="{{ site_url }}{{ request.path }}?{% if request.alternate_query_string %}{{ request.alternate_query_string }}&amp;{% endif %}language={{ code }}">{% endfor %}{% endif %}
 <title>{% block title %}RateProfessor{% endblock %}</title>
 <meta name="description" content="{% block description %}{% translate "RateProfessor — отзывы о преподавателях вузов Кыргызстана: рейтинги, сложность курсов и советы студентов." %}{% endblock %}">
