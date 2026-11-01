@@ -1,0 +1,515 @@
+{
+ "code": "alatoo",
+ "university": "Международный университет Ала-Тоо (МУА)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://alatoo.edu.kg/",
+  "https://alatoo.edu.kg/en",
+  "https://alatoo.edu.kg/faculties-and-departments/",
+  "https://alatoo.edu.kg/faculty-of-engineering-and-informatics/",
+  "https://alatoo.edu.kg/faculty-of-economics-and-administrative-sciences-s/",
+  "https://alatoo.edu.kg/faculty-of-social-sciences/",
+  "https://alatoo.edu.kg/faculty-of-medicine/",
+  "https://alatoo.edu.kg/faculty-of-humanities/",
+  "https://alatoo.edu.kg/hr-department/departments-services/",
+  "https://alatoo.edu.kg/senate/",
+  "https://alatoo.edu.kg/computer-science/rectorate/",
+  "https://alatoo.edu.kg/distancelearningcenter-dic/ky/elementor-19860/",
+  "https://alatoo.edu.kg/computer-science/состав-сотрудников/ (копия Wayback 2024, список пуст)",
+  "https://alatoo.edu.kg/applied-mathematics-and-informatics/ky/состав-сотрудников/ (пусто)",
+  "https://college.alatoo.edu.kg/learning/staff (колледж, не включён)"
+ ],
+ "notes": "Сайт alatoo.edu.kg 31.10.2026 недоступен напрямую: curl получает 403/523 от Cloudflare, браузер видит 523 Origin is unreachable на всех подсайтах. Данные взяты из доступных копий официальных страниц (через индекс web_fetch и Wayback): справочник отдела кадров «Отделы + Услуги» (поимённо по кафедрам, но, судя по составу ректората, он устаревший), страница Учёного совета (актуальная, с должностями и степенями), страница руководства факультета инженерии и информатики и страница команды Центра дистанционного обучения (две последние видны только в поисковом индексе, текст которого совпадает с официальной страницей). Страницы «Состав сотрудников» кафедральных подсайтов в Wayback сохранены пустыми (список рендерится скриптом), остальные подсайты (экономика, менеджмент, право, МО, психология, журналистика, лингвистика, филология, педагогика, медицина) не открылись. Методисты, сотрудники административных отделов, ректор, президент, начальник отдела кадров исключены. Преподаватели IT & Business колледжа (школьный уровень, «учитель») не включены. Должность в справочнике кадров у всех «преподаватель»/«заведующий»; для заведующих и деканов без указанного звания поставлено «преподаватель», для членов Учёного совета звание взято со страницы (к.н., доцент → доцент; д.н., профессор → профессор; и.о. профессора без д.н. → доцент; PhD без звания → преподаватель). Имена в справочнике кадров записаны как «Имя Фамилия», переставлены. Имя Daniiar Satybaldiev на сайте только латиницей.",
+ "professors": [
+  {
+   "last_name": "Незихоглу",
+   "first_name": "Халим",
+   "department": "Факультет информатики и инженерии",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Жанкурт",
+   "first_name": "Сельчук",
+   "department": "Информатики и вычислительной техники",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Шамбетова",
+   "first_name": "Бурул",
+   "department": "Институт магистратуры, аспирантуры и PhD",
+   "title": "старший преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Ажикулова",
+   "first_name": "Каныкей",
+   "department": "Информатики и вычислительной техники",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Аслан",
+   "first_name": "Тахир",
+   "department": "Информатики и вычислительной техники",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Имтияз",
+   "first_name": "Мухаммед",
+   "department": "Информатики и вычислительной техники",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Исаев",
+   "first_name": "Руслан",
+   "department": "Факультет инженерии и информатики",
+   "title": "доцент",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Маматалиев",
+   "first_name": "Жуманияз",
+   "department": "Информатики и вычислительной техники",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Муслу",
+   "first_name": "Иса",
+   "department": "Прикладной математики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Гурбуз",
+   "first_name": "Омер",
+   "department": "Прикладной математики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Гурбуз",
+   "first_name": "Хатиже",
+   "department": "Прикладной математики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Кожа",
+   "first_name": "Эрхан",
+   "department": "Прикладной математики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Акмолдоев",
+   "first_name": "Кыялбек",
+   "department": "Факультет экономики и управления",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Капаров",
+   "first_name": "Нурдин",
+   "department": "Менеджмента",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Бекимбетова",
+   "first_name": "Турдукан",
+   "department": "Факультет экономики и управления",
+   "title": "старший преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Аширов",
+   "first_name": "Улан",
+   "department": "Менеджмента",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Шамурзаева",
+   "first_name": "Айлуна",
+   "department": "Экономики",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Нуркасымов",
+   "first_name": "Улан",
+   "department": "Экономики",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Борбугулов",
+   "first_name": "Малик",
+   "department": "Экономики",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Исмаилов",
+   "first_name": "Нурлан",
+   "department": "Юриспруденции",
+   "title": "доцент",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Тегизбекова",
+   "first_name": "Жылдыз",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Маралбаева",
+   "first_name": "Алия",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Алмаз уулу",
+   "first_name": "Атай",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Гусейнова",
+   "first_name": "Мавлюда",
+   "department": "Международных отношений",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Мурат кызы",
+   "first_name": "Эльвира",
+   "department": "Международных отношений",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Конжак",
+   "first_name": "Ибрахим",
+   "department": "Факультет гуманитарных наук",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Кулжабаева",
+   "first_name": "Айдай",
+   "department": "Общего английского языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Каримова",
+   "first_name": "Шурубубу",
+   "department": "Общего английского языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Закиров",
+   "first_name": "Алимжан",
+   "department": "Общего английского языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Жакишева",
+   "first_name": "Салтанат",
+   "department": "Общего английского языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Акылбек уулу",
+   "first_name": "Назарбек",
+   "department": "Общего английского языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Хоффман",
+   "first_name": "Жозеф",
+   "department": "Общего английского языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Жолчиева",
+   "first_name": "Айнуру",
+   "department": "Педагогики и психологии",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Петросян",
+   "first_name": "Карен",
+   "department": "Педагогики и психологии",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Попова",
+   "first_name": "Виктория",
+   "department": "Педагогики и психологии",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Каипова",
+   "first_name": "Гулаида",
+   "department": "Преподавания английского языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Эшенкулова",
+   "first_name": "Адина",
+   "department": "Преподавания английского языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Умерова",
+   "first_name": "Нурия",
+   "department": "Преподавания английского языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Курт",
+   "first_name": "Назира",
+   "department": "Преподавания английского языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Иренчиева",
+   "first_name": "Гульнура",
+   "department": "Преподавания английского языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Батыралиева",
+   "first_name": "Бактыгуль",
+   "department": "Преподавания английского языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Ялчинкая",
+   "first_name": "Ирина",
+   "department": "Преподавания английского языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Краммарич",
+   "first_name": "Раян",
+   "department": "Преподавания английского языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Мырзакулов",
+   "first_name": "Ильяз",
+   "department": "Отдел турецкого языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Таваш",
+   "first_name": "Муслим",
+   "department": "Отдел турецкого языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Есим",
+   "first_name": "Казим",
+   "department": "Отдел турецкого языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Байрам",
+   "first_name": "Хилал",
+   "department": "Отдел турецкого языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Гуламжан кызы",
+   "first_name": "Умида",
+   "department": "Отдел турецкого языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Усупова",
+   "first_name": "Нурзат",
+   "department": "Отдел турецкого языка",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Сайдалиева",
+   "first_name": "Алтынай",
+   "department": "Межфакультетская кафедра",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Майрыкова",
+   "first_name": "Меерим",
+   "department": "Межфакультетская кафедра общеобразовательных дисциплин",
+   "title": "доцент",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Алымбекова",
+   "first_name": "Суракан",
+   "department": "Межфакультетская кафедра",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Казакова",
+   "first_name": "Нурзат",
+   "department": "Филологии",
+   "title": "доцент",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Пекташ",
+   "first_name": "Зеки",
+   "department": "Медицинский факультет",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Гумуштекин",
+   "first_name": "Кенан",
+   "department": "Медицинский факультет",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Алымкулова",
+   "first_name": "Наргиза",
+   "department": "Международный центр дистанционного образования",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Калдыбаева",
+   "first_name": "Элнура",
+   "department": "Институт по повышению квалификации и инновации",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/hr-department/departments-services/"
+  },
+  {
+   "last_name": "Жусупекова",
+   "first_name": "Кундуз",
+   "department": "Институт повышения квалификации и непрерывного образования",
+   "title": "доцент",
+   "source_url": "https://alatoo.edu.kg/senate/"
+  },
+  {
+   "last_name": "Бег",
+   "first_name": "Мирза Масрур Али",
+   "department": "",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/senate/"
+  },
+  {
+   "last_name": "Калдыбаев",
+   "first_name": "Салидин",
+   "department": "",
+   "title": "профессор",
+   "source_url": "https://alatoo.edu.kg/senate/"
+  },
+  {
+   "last_name": "Алияскаров",
+   "first_name": "Бекчоро",
+   "department": "Факультет гуманитарных наук",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/senate/"
+  },
+  {
+   "last_name": "Эдилова",
+   "first_name": "Мариям",
+   "department": "",
+   "title": "профессор",
+   "source_url": "https://alatoo.edu.kg/senate/"
+  },
+  {
+   "last_name": "Осмоналиев",
+   "first_name": "Кудайберген",
+   "department": "Медицинский факультет",
+   "title": "старший преподаватель",
+   "source_url": "https://alatoo.edu.kg/senate/"
+  },
+  {
+   "last_name": "Усупова",
+   "first_name": "Элнура",
+   "department": "Центр дистанционного обучения",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/senate/"
+  },
+  {
+   "last_name": "Эрмаков",
+   "first_name": "Андрей",
+   "department": "Факультет инженерии и информатики",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/computer-science/rectorate/"
+  },
+  {
+   "last_name": "Аманов",
+   "first_name": "Руслан",
+   "department": "Факультет инженерии и информатики",
+   "title": "профессор",
+   "source_url": "https://alatoo.edu.kg/computer-science/rectorate/"
+  },
+  {
+   "last_name": "Матанов",
+   "first_name": "Шералы",
+   "department": "Прикладной математики и информатики",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/computer-science/rectorate/"
+  },
+  {
+   "last_name": "Satybaldiev",
+   "first_name": "Daniiar",
+   "department": "Информатики и вычислительной техники",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/computer-science/rectorate/"
+  },
+  {
+   "last_name": "Такенова",
+   "first_name": "Жылдыз",
+   "department": "Педагогика (Центр дистанционного обучения)",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/distancelearningcenter-dic/ky/elementor-19860/"
+  },
+  {
+   "last_name": "Кутманова",
+   "first_name": "Уулбубу",
+   "department": "Центр дистанционного обучения",
+   "title": "преподаватель",
+   "source_url": "https://alatoo.edu.kg/distancelearningcenter-dic/ky/elementor-19860/"
+  }
+ ]
+}

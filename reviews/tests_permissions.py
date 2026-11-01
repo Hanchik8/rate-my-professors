@@ -116,3 +116,36 @@ class AnonymousProtectedPagesTests(_PermissionsTestCase):
         self.assert_login_redirect(self.client.get(url), url)
         self.assert_login_redirect(self.client.post(url), url)
         self.assertIsNotNone(self.repo.review(self.review.id))
+
+
+class OtherUserReviewAccessTests(_PermissionsTestCase):
+    """An authenticated user cannot change or remove another user's review."""
+
+    def setUp(self):
+        super().setUp()
+        self.author = self.create_user("author@example.com")
+        self.other = self.create_user("other@example.com")
+        self.owned_review = self.repo.add_review(
+            self.prof.id,
+            _valid_review({"course": "Чужой курс"}),
+            user=self.author,
+        )
+        self.client.force_login(self.other)
+
+    def test_other_user_cannot_edit_review(self):
+        url = reverse("review_edit", args=[self.owned_review.id])
+        before = self.repo.review(self.owned_review.id)
+
+        self.assertEqual(self.client.get(url).status_code, 404)
+        self.assertEqual(self.client.post(url, _valid_review()).status_code, 404)
+
+        after = self.repo.review(self.owned_review.id)
+        self.assertEqual(after.comment, before.comment)
+        self.assertEqual(after.status, before.status)
+
+    def test_other_user_cannot_delete_review(self):
+        url = reverse("review_delete", args=[self.owned_review.id])
+
+        self.assertEqual(self.client.get(url).status_code, 404)
+        self.assertEqual(self.client.post(url).status_code, 404)
+        self.assertIsNotNone(self.repo.review(self.owned_review.id))

@@ -1,0 +1,872 @@
+{
+ "code": "iuca",
+ "university": "Международный университет в Центральной Азии (МУЦА), Токмок",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://www.iuca.kg (сайт на Wix, данные получены браузером)",
+  "https://www.iuca.kg/academic-programs/ba",
+  "https://www.iuca.kg/academic-programs/ir",
+  "https://www.iuca.kg/academic-programs/it",
+  "https://www.iuca.kg/academic-programs/law",
+  "https://www.iuca.kg/academic-programs/lng",
+  "https://www.iuca.kg/academic-programs/lngc",
+  "https://www.iuca.kg/academic-programs/ma-ped",
+  "https://www.iuca.kg/academic-programs/ped"
+ ],
+ "notes": "Сайт www.iuca.kg на Wix рендерится JS, web_fetch получает пустой каркас, поэтому страницы программ просмотрены браузером (только чтение). Составы взяты из блоков «Профессорско-преподавательский состав» на страницах 8 академических программ (BA, IR, IT, LAW, LNG, LNGC, PED, MA-PED). Большая часть карточек только с инициалами (initials_only). Дубли карточек одного человека (краткая и подробная, разные программы) объединены: Ким С.А., Сарбанов У.К., Сулейман Шакдар (IR, LAW), Джон Росслин Кларк (IR, LNG), Приска Прист (Приест П.), Тынаева Н.Т., Булатова В.А., Асекова Ж.Д., Куланбаева З.А., Андрианова Н.А.; «Эсенгул Чинар» и «Чинара Э.» в IR считаны одним человеком (оставлена полная форма). «Кайрат к. Г.» и «Аалы у С.» на сайте сокращены, записаны как «Кайрат кызы» и «Аалы уулу». «Сайфудиновна М.Т.» оставлена как на сайте (похоже на опечатку). Ассистент главы магистратуры и сотрудники офисов (страница /офисы) исключены. Маппинг: и.о. профессора → доцент, PhD без звания → преподаватель, MBA+доцент → доцент.",
+ "professors": [
+  {
+   "last_name": "Асанов",
+   "first_name": "Р. А.",
+   "department": "Информационные технологии",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/it",
+   "initials_only": true
+  },
+  {
+   "last_name": "Байбагысова",
+   "first_name": "Д. Ж.",
+   "department": "Информационные технологии",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/it",
+   "initials_only": true
+  },
+  {
+   "last_name": "Болотбек уулу",
+   "first_name": "Нурсултан",
+   "department": "Информационные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/it"
+  },
+  {
+   "last_name": "Вейс",
+   "first_name": "П. Л.",
+   "department": "Информационные технологии",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/it",
+   "initials_only": true
+  },
+  {
+   "last_name": "Витт",
+   "first_name": "Р. Г.",
+   "department": "Информационные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/it",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джиюцан",
+   "first_name": "А. Н.",
+   "department": "Информационные технологии",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/it",
+   "initials_only": true
+  },
+  {
+   "last_name": "Исламова",
+   "first_name": "А. Г.",
+   "department": "Информационные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/it",
+   "initials_only": true
+  },
+  {
+   "last_name": "Касымова",
+   "first_name": "Т. Д.",
+   "department": "Информационные технологии",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/it",
+   "initials_only": true
+  },
+  {
+   "last_name": "Нармухамедов",
+   "first_name": "Р. Т.",
+   "department": "Информационные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/it",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осипова",
+   "first_name": "Н. Н.",
+   "department": "Информационные технологии",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/it",
+   "initials_only": true
+  },
+  {
+   "last_name": "Рослова",
+   "first_name": "И. Н.",
+   "department": "Информационные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/it",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тарасов",
+   "first_name": "И. С.",
+   "department": "Информационные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/it",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шартон",
+   "first_name": "А. А.",
+   "department": "Информационные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/it",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдрахманова",
+   "first_name": "Р. Д.",
+   "department": "Лингвистика. Английский язык",
+   "title": "профессор",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдылдаева",
+   "first_name": "А. Т.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абоки",
+   "first_name": "Ловина",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng"
+  },
+  {
+   "last_name": "Айтиева",
+   "first_name": "М. М.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алымкулова",
+   "first_name": "Ж. Д.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бриколт",
+   "first_name": "Дэннис",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng"
+  },
+  {
+   "last_name": "Вальваков",
+   "first_name": "Р. В.",
+   "department": "Лингвистика. Английский язык",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джелджемишева",
+   "first_name": "Н. Т.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Дубина",
+   "first_name": "Т. Н.",
+   "department": "Лингвистика. Английский язык",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кларк",
+   "first_name": "Джон Росслин",
+   "department": "Лингвистика. Английский язык",
+   "title": "профессор",
+   "source_url": "https://www.iuca.kg/academic-programs/lng"
+  },
+  {
+   "last_name": "Маккамбаева",
+   "first_name": "А. К.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Максакова",
+   "first_name": "А. Е.",
+   "department": "Лингвистика. Английский язык",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мамбеталиева",
+   "first_name": "А. Н.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Миясаров",
+   "first_name": "И. А.",
+   "department": "Лингвистика. Английский язык",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Муканова",
+   "first_name": "М. А.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мырзадаирова",
+   "first_name": "А. Р.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Прист",
+   "first_name": "Приска",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng"
+  },
+  {
+   "last_name": "Рузиева",
+   "first_name": "Н. В.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сайфудиновна",
+   "first_name": "М. Т.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сатарова",
+   "first_name": "З. К.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Серикова",
+   "first_name": "Л. М.",
+   "department": "Лингвистика. Английский язык",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Социалова",
+   "first_name": "Н. Н.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сулайманова",
+   "first_name": "А. Ф.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токтобаева",
+   "first_name": "М. Э.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Фоли",
+   "first_name": "Ларисса Энн",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng"
+  },
+  {
+   "last_name": "Цой",
+   "first_name": "М. И.",
+   "department": "Лингвистика. Английский язык",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шашева",
+   "first_name": "Е. В.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эгембердиева",
+   "first_name": "А. А.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эмилова",
+   "first_name": "Н. Э.",
+   "department": "Лингвистика. Английский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lng",
+   "initials_only": true
+  },
+  {
+   "last_name": "Аламанова",
+   "first_name": "А. С.",
+   "department": "Лингвистика. Китайский язык",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc",
+   "initials_only": true
+  },
+  {
+   "last_name": "Аламанова",
+   "first_name": "С. С.",
+   "department": "Лингвистика. Китайский язык",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алиев",
+   "first_name": "К. Н.",
+   "department": "Лингвистика. Китайский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc",
+   "initials_only": true
+  },
+  {
+   "last_name": "Асизбекова",
+   "first_name": "Б. А.",
+   "department": "Лингвистика. Китайский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жаныбекова",
+   "first_name": "Ж. Ж.",
+   "department": "Лингвистика. Китайский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ишенова",
+   "first_name": "А. К.",
+   "department": "Лингвистика. Китайский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кайрат кызы",
+   "first_name": "Г.",
+   "department": "Лингвистика. Китайский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кулданбаева",
+   "first_name": "Н. К.",
+   "department": "Лингвистика. Китайский язык",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ли",
+   "first_name": "Джин",
+   "department": "Лингвистика. Китайский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc"
+  },
+  {
+   "last_name": "Матмусаева",
+   "first_name": "Ф. А.",
+   "department": "Лингвистика. Китайский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "С. С.",
+   "department": "Лингвистика. Китайский язык",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc",
+   "initials_only": true
+  },
+  {
+   "last_name": "Хейк",
+   "first_name": "Айви",
+   "department": "Лингвистика. Китайский язык",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc"
+  },
+  {
+   "last_name": "Шавралиева",
+   "first_name": "Гульбара Орозбаевна",
+   "department": "Лингвистика. Китайский язык",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc"
+  },
+  {
+   "last_name": "Шаршенбек уулу",
+   "first_name": "Тилек",
+   "department": "Лингвистика. Китайский язык",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc"
+  },
+  {
+   "last_name": "Абдыкеримов",
+   "first_name": "Марат Омурбекович",
+   "department": "Международные отношения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ir"
+  },
+  {
+   "last_name": "Азизова",
+   "first_name": "Акбермет Бакытовна",
+   "department": "Международные отношения",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ir"
+  },
+  {
+   "last_name": "Картанбаева",
+   "first_name": "М. А.",
+   "department": "Международные отношения",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ir",
+   "initials_only": true
+  },
+  {
+   "last_name": "Карыпов",
+   "first_name": "Бакай Курманбекович",
+   "department": "Международные отношения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ir"
+  },
+  {
+   "last_name": "Карыпов",
+   "first_name": "Мурат Курманбекович",
+   "department": "Международные отношения",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ir"
+  },
+  {
+   "last_name": "Макаров",
+   "first_name": "Анатолий Вячеславович",
+   "department": "Международные отношения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ir"
+  },
+  {
+   "last_name": "Остров",
+   "first_name": "Б. Ч.",
+   "department": "Международные отношения",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ir",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сулейман",
+   "first_name": "Шакдар",
+   "department": "Международные отношения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ir"
+  },
+  {
+   "last_name": "Султанкулова",
+   "first_name": "Мээрим Аязбековна",
+   "department": "Международные отношения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ir"
+  },
+  {
+   "last_name": "Шайдылдаева",
+   "first_name": "Наргиза Мыктыбековна",
+   "department": "Международные отношения",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ir"
+  },
+  {
+   "last_name": "Эсенгул",
+   "first_name": "Чинар",
+   "department": "Международные отношения",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ir"
+  },
+  {
+   "last_name": "Абдылдабеков",
+   "first_name": "Билимбек Абдылдабекович",
+   "department": "Педагогика и психология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ma-ped"
+  },
+  {
+   "last_name": "Андрианова",
+   "first_name": "Наталья Алексеевна",
+   "department": "Педагогика и психология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ped"
+  },
+  {
+   "last_name": "Асекова",
+   "first_name": "Жылдыз Дуйшебаевна",
+   "department": "Педагогика и психология",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ped"
+  },
+  {
+   "last_name": "Булатова",
+   "first_name": "Виктория Александровна",
+   "department": "Педагогика и психология",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/lngc"
+  },
+  {
+   "last_name": "Бурыгина",
+   "first_name": "Л. Г.",
+   "department": "Педагогика и психология",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ped",
+   "initials_only": true
+  },
+  {
+   "last_name": "Глушкова",
+   "first_name": "Марина Юрьевна",
+   "department": "Педагогика и психология",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ma-ped"
+  },
+  {
+   "last_name": "Давыдова",
+   "first_name": "Ю. А.",
+   "department": "Педагогика и психология",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ped",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мавлеева",
+   "first_name": "С. Т.",
+   "department": "Педагогика и психология",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ped",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "Н. К.",
+   "department": "Педагогика и психология",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ped",
+   "initials_only": true
+  },
+  {
+   "last_name": "Низовская",
+   "first_name": "Ирина Анатольевна",
+   "department": "Педагогика и психология",
+   "title": "профессор",
+   "source_url": "https://www.iuca.kg/academic-programs/ped"
+  },
+  {
+   "last_name": "Ниненко",
+   "first_name": "Иван Сергеевич",
+   "department": "Педагогика и психология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ma-ped"
+  },
+  {
+   "last_name": "Ржавская",
+   "first_name": "А. П.",
+   "department": "Педагогика и психология",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ped",
+   "initials_only": true
+  },
+  {
+   "last_name": "Рослякова",
+   "first_name": "Елена Александровна",
+   "department": "Педагогика и психология",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ped"
+  },
+  {
+   "last_name": "Токтомаметов",
+   "first_name": "Алмазбек Даткабекович",
+   "department": "Педагогика и психология",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ma-ped"
+  },
+  {
+   "last_name": "Абыкеева",
+   "first_name": "М. А.",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ba",
+   "initials_only": true
+  },
+  {
+   "last_name": "Гайдаров",
+   "first_name": "Р. С.",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ba",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джумабаев",
+   "first_name": "А. М.",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ba",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кабак",
+   "first_name": "Д. И.",
+   "department": "Управление бизнесом",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ba",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ким",
+   "first_name": "Светлана Александровна",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ma-ped"
+  },
+  {
+   "last_name": "Линовицкий",
+   "first_name": "Д. А.",
+   "department": "Управление бизнесом",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ba",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мамадияров",
+   "first_name": "И. Т.",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ba",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "В. А.",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ba",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мухамедьярова",
+   "first_name": "В. А.",
+   "department": "Управление бизнесом",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/ba",
+   "initials_only": true
+  },
+  {
+   "last_name": "Приист",
+   "first_name": "Джеральд",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ba"
+  },
+  {
+   "last_name": "Сарбанов",
+   "first_name": "У. К.",
+   "department": "Управление бизнесом",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ba",
+   "initials_only": true
+  },
+  {
+   "last_name": "Аалы уулу",
+   "first_name": "С.",
+   "department": "Юриспруденция",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдрахматова",
+   "first_name": "А. Б.",
+   "department": "Юриспруденция",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алымкулова",
+   "first_name": "Н. Ж.",
+   "department": "Юриспруденция",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Андашев",
+   "first_name": "У. Т.",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Арстанбек кызы",
+   "first_name": "Айпери",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/law"
+  },
+  {
+   "last_name": "Бошкулов",
+   "first_name": "М. О.",
+   "department": "Юриспруденция",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Женишева",
+   "first_name": "Н. Ж.",
+   "department": "Юриспруденция",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жумаканова",
+   "first_name": "Ж. М. К.",
+   "department": "Юриспруденция",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Исаев",
+   "first_name": "Атайбек Докдурбаевич",
+   "department": "Юриспруденция",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/law"
+  },
+  {
+   "last_name": "Калыбаев",
+   "first_name": "С. Ж.",
+   "department": "Юриспруденция",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Караева",
+   "first_name": "Ж. И.",
+   "department": "Юриспруденция",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ковальчук",
+   "first_name": "Ж.",
+   "department": "Юриспруденция",
+   "title": "старший преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Куланбаева",
+   "first_name": "Зульфия Абдиловна",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/ma-ped"
+  },
+  {
+   "last_name": "Сабурканова",
+   "first_name": "Асель Маралбековна",
+   "department": "Юриспруденция",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/law"
+  },
+  {
+   "last_name": "Салянова",
+   "first_name": "А. Ж.",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сулайманова",
+   "first_name": "Ч. Н.",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Талантбекова",
+   "first_name": "А. Т.",
+   "department": "Юриспруденция",
+   "title": "преподаватель",
+   "source_url": "https://www.iuca.kg/academic-programs/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Турсунбаева",
+   "first_name": "Н. С.",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/law",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тынаева",
+   "first_name": "Назгул Талантбеков",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://www.iuca.kg/academic-programs/law"
+  }
+ ]
+}

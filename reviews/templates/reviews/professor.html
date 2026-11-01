@@ -1,7 +1,7 @@
-{% extends "reviews/base.html" %}{% load i18n l10n %}
-{% block title %}{{ prof.full_name }} — ProfLens{% endblock %}
+{% extends "reviews/base.html" %}{% load i18n l10n static departments %}
+{% block title %}{{ prof.full_name }} — PrepodRate{% endblock %}
 {% block description %}{% blocktranslate with name=prof.full_name dept=prof.department school=school.name %}Отзывы студентов о преподавателе {{ name }} ({{ dept }}, {{ school }}): рейтинг, сложность и советы.{% endblocktranslate %}{% endblock %}
-{% block og_title %}{{ prof.full_name }} — ProfLens{% endblock %}
+{% block og_title %}{{ prof.full_name }} — PrepodRate{% endblock %}
 {% block og_description %}{% blocktranslate with name=prof.full_name dept=prof.department school=school.name %}Отзывы студентов о преподавателе {{ name }} ({{ dept }}, {{ school }}): рейтинг, сложность и советы.{% endblocktranslate %}{% endblock %}
 {% block content %}
 <nav class="breadcrumbs" aria-label="{% translate 'Хлебные крошки' %}">
@@ -15,7 +15,7 @@
   <div class="tile big {{ stats.tone }}">{% if stats.count %}{{ stats.overall|floatformat:1|localize }}{% else %}-{% endif %}</div>
   <div>
     <h1>{{ prof.full_name }}</h1>
-    <p class="sub">{% translate prof.title %} — {{ prof.department }}, <a href="{% url 'school_detail' school.slug %}">{{ school.name }}</a></p>
+    <p class="sub">{% translate prof.title %} — {% translate_department prof.department %}, <a href="{% url 'school_detail' school.slug %}">{{ school.name }}</a></p>
   </div>
   {% if stats.count %}
   <span class="stars" role="img" aria-label="{% blocktranslate with rating=stats.overall %}Рейтинг {{ rating }} из 5{% endblocktranslate %}"><span aria-hidden="true">★★★★★</span><span class="s-fill" aria-hidden="true" style="width:{% widthratio stats.overall 5 100 %}%">★★★★★</span></span>
@@ -26,21 +26,45 @@
 
 {% if stats.count %}
 <dl class="facts">
-  <div><dt>{% translate "Пойдут снова" %}</dt><dd>{{ stats.wta_pct|localize }}%</dd></div>
+  <div><dt>{% translate "Пойдут снова" %}</dt><dd>{{ stats.wta_pct|floatformat:1|localize }}%</dd></div>
   <div><dt>{% translate "Сложность" %}</dt><dd>{{ stats.difficulty|floatformat:1|localize }} / 5</dd></div>
   <div><dt>{% translate "Отзывов" %}</dt><dd>{{ stats.count|localize }}</dd></div>
 </dl>
 {% endif %}
 <ul class="dist{% if not stats.count %} dist--empty{% endif %}" aria-label="{% translate 'Распределение оценок' %}">
   {% for d in stats.distribution %}
-  <li><span>{{ d.score|localize }}</span><span class="bar"><i style="width:{{ d.pct }}%"></i></span><span>{{ d.count|localize }}</span></li>
+  <li aria-label="{% blocktranslate with rating=d.score %}Рейтинг {{ rating }} из 5{% endblocktranslate %}, {% translate 'Отзывов' %}: {{ d.count|localize }}"><span class="dist-score">{{ d.score|localize }}<span aria-hidden="true">★</span></span><span class="bar"><i style="width:{{ d.pct }}%"></i></span><span>{{ d.count|localize }}</span></li>
   {% endfor %}
 </ul>
 {% if stats.count and stats.top_tags %}<p class="tags">{% translate "Студенты отмечают:" %} {% for tag in stats.top_tags %}{% translate tag %}{% if not forloop.last %}, {% endif %}{% endfor %}</p>{% endif %}
 
 <p><a class="btn" href="{% url 'review_new' prof.slug %}">{% translate "Оценить преподавателя" %}</a></p>
 
+{% url 'professor' prof.slug as prof_url %}
+<div class="share" data-share>
+  <button class="btn share-btn" type="button" data-share-button
+          data-share-url="{{ site_url }}{{ prof_url }}"
+          data-share-copied="{% translate 'Ссылка скопирована' %}"
+          aria-label="{% translate 'Поделиться' %}: {{ prof.full_name }}" hidden>
+    {% translate "Поделиться" %}
+  </button>
+  <p class="share-fallback">
+    <label for="share-url">{% translate "Ссылка на страницу преподавателя" %}</label>
+    <input id="share-url" class="share-url" type="url" readonly data-share-field
+           value="{{ site_url }}{{ prof_url }}">
+  </p>
+  <p class="share-status muted" role="status" data-share-status hidden></p>
+</div>
+<script src="{% static 'reviews/share.js' %}" defer></script>
+
 <h2>{% translate "Отзывы" %}</h2>
+<div class="review-summary" role="group" aria-label="{% if stats.count %}{% translate 'Средний рейтинг' %}: {{ stats.overall|floatformat:1|localize }} / 5, {% translate 'Отзывов' %}: {{ stats.count|localize }}{% else %}{% translate 'Нет оценок' %}{% endif %}">
+  <span class="tile small {{ stats.tone }}">{% if stats.count %}{{ stats.overall|floatformat:1|localize }}{% else %}-{% endif %}</span>
+  <span class="review-summary-text">
+    <span class="review-summary-label">{% translate "Средний рейтинг" %}</span>
+    <span class="review-summary-count">{% translate "Отзывов" %}: {{ stats.count|localize }}</span>
+  </span>
+</div>
 {% if reviews %}
 <p class="sort">{% translate "Сортировка:" %}
   {% for value, label in sort_options %}{% if not forloop.first %}, {% endif %}{% if sort == value %}<strong>{% translate label %}</strong>{% else %}<a href="?sort={{ value }}">{% translate label %}</a>{% endif %}{% endfor %}
@@ -76,11 +100,12 @@
 </div>
 {% endif %}
 {% else %}
-<section class="empty empty-state" aria-labelledby="empty-reviews-title">
+<section class="empty empty-state" role="status" aria-labelledby="empty-reviews-title">
   <h3 class="empty-state-title" id="empty-reviews-title">{% translate "Отзывы" %}</h3>
   <p>{% blocktranslate with name=prof.full_name %}Пока нет отзывов. Станьте первым, кто оценит {{ name }}.{% endblocktranslate %}</p>
   <a class="btn empty-state-action" href="{% url 'review_new' prof.slug %}">{% translate "Оценить преподавателя" %}</a>
 </section>
 {% endif %}
+<script type="application/ld+json">{{ person_jsonld|safe }}</script>
 {% endblock %}
 {% block page_tools %}{% include "reviews/_back_to_top.html" %}{% endblock %}

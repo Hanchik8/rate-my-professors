@@ -1,0 +1,37 @@
+{
+ "code": "at",
+ "university": "Академия туризма",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://at.edu.kg/",
+  "https://at.edu.kg/about/index.htm",
+  "https://at.edu.kg/departments/index.htm",
+  "https://at.edu.kg/departments/tourism.htm",
+  "https://at.edu.kg/departments/service.htm",
+  "https://at.edu.kg/departments/linguistics.htm"
+ ],
+ "notes": "Сайт публикует только заведующих тремя кафедрами; страницы кафедр без списков преподавателей. Руководство академии (ректор, обращения) не включено.",
+ "professors": [
+  {
+   "last_name": "Джапарова",
+   "first_name": "Нургуль Сулаймановна",
+   "department": "Туризм",
+   "title": "преподаватель",
+   "source_url": "https://at.edu.kg/departments/index.htm"
+  },
+  {
+   "last_name": "Косицына",
+   "first_name": "Татьяна Владимировна",
+   "department": "Сервис",
+   "title": "преподаватель",
+   "source_url": "https://at.edu.kg/departments/index.htm"
+  },
+  {
+   "last_name": "Абдужабарова",
+   "first_name": "Мухабат Кадыржановна",
+   "department": "Лингвистика",
+   "title": "преподаватель",
+   "source_url": "https://at.edu.kg/departments/index.htm"
+  }
+ ]
+}

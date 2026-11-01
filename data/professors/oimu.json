@@ -1,0 +1,471 @@
+{
+ "code": "oimu",
+ "university": "Ошский международный медицинский университет",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://oimu.kg/ru/allTeacher",
+  "https://oimu.kg/ru/page/152",
+  "https://oimu.kg/ru/page/224",
+  "https://oimu.kg/ru/page/230",
+  "https://oimu.kg/ru/page/260",
+  "https://oimu.kg/ru/page/353",
+  "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf",
+  "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf"
+ ],
+ "notes": "Сайт oimu.kg. Основа: паспорта кафедр клинических дисциплин и естественно-гуманитарных дисциплин 2025-2026 (PDF на сайте) и страница 'Наши сотрудники'. Во втором паспорте только инициалы. Для кафедры биомедицинских дисциплин состав на сайте не опубликован. Должности: к.м.н./PhD без звания приравнены к 'доцент' по правилу; совместители включены. Сайт блокировал частые запросы, часть страниц получена через web_fetch.",
+ "professors": [
+  {
+   "last_name": "Chaurasia",
+   "first_name": "Jitendra Kumar",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf"
+  },
+  {
+   "last_name": "Абдугулова",
+   "first_name": "А. А.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдуллаева",
+   "first_name": "Б. А.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абытбек кызы",
+   "first_name": "А.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алиева",
+   "first_name": "Чынара Мукашевна",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/ru/allTeacher"
+  },
+  {
+   "last_name": "Аргынбаева",
+   "first_name": "А. Т.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Батырова",
+   "first_name": "Каныкей",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/ru/allTeacher"
+  },
+  {
+   "last_name": "Бекмурзаев",
+   "first_name": "Бектурган",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/ru/allTeacher"
+  },
+  {
+   "last_name": "Ботобекова",
+   "first_name": "Н. К.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джолдубаев",
+   "first_name": "С. Д.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джумаев",
+   "first_name": "Равшанбек Мамадиевич",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/ru/allTeacher"
+  },
+  {
+   "last_name": "Жаныбек кызы",
+   "first_name": "К.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Иматали кызы",
+   "first_name": "К.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Исаева",
+   "first_name": "М. А.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кочконбаева",
+   "first_name": "С. И.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кудайбаков",
+   "first_name": "И. Ж.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Курбаналиев",
+   "first_name": "А. Ы.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "профессор",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мамажанова",
+   "first_name": "М. Н.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Момунова",
+   "first_name": "А. А.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Муратов",
+   "first_name": "Жанибек Кудайбакович",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "профессор",
+   "source_url": "https://oimu.kg/ru/allTeacher"
+  },
+  {
+   "last_name": "Ниязбеков",
+   "first_name": "Б. Н.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Орозматов",
+   "first_name": "Т. Т.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Орунбаева",
+   "first_name": "Б. М.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осмонбекова",
+   "first_name": "Г. М.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Кайыргул",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/ru/allTeacher"
+  },
+  {
+   "last_name": "Сакибаева",
+   "first_name": "А. К.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сатыбалдиев",
+   "first_name": "Б. С.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сиддики",
+   "first_name": "Мохд Файзан",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf"
+  },
+  {
+   "last_name": "Сулайманов",
+   "first_name": "Б. И.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Султанмахмутова",
+   "first_name": "Н. С.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тайирбек уулу",
+   "first_name": "Э.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ташматова",
+   "first_name": "Назгул Маматумаровна",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/ru/allTeacher"
+  },
+  {
+   "last_name": "Тешебаева",
+   "first_name": "У. Т.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токтоназарова",
+   "first_name": "Нуриза",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/ru/allTeacher"
+  },
+  {
+   "last_name": "Чыныкеева",
+   "first_name": "Г. Э.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Юсупова",
+   "first_name": "Р. О.",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11776403891_Kafedranyn_pasportu.._(1).pdf",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдимомунова",
+   "first_name": "Бегимай Токтоболотовна",
+   "department": "Клинических дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Абсатаров",
+   "first_name": "Эрлан Мирланович",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Алимова",
+   "first_name": "Муслима Хасилжанова",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Арынов",
+   "first_name": "Замирбек Сапарбаевич",
+   "department": "Клинических дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Аттокурова",
+   "first_name": "Гульмира Нишанбаевна",
+   "department": "Клинических дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Жолдошев",
+   "first_name": "Сапарбай Тезекбаевич",
+   "department": "Клинических дисциплин",
+   "title": "профессор",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Кадыркулова",
+   "first_name": "Жамиля Узгеновна",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Караев",
+   "first_name": "Азизбек Паизбекович",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Каримов",
+   "first_name": "Медер Болотбекович",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Курманалиев",
+   "first_name": "Нурлан Камбаралиевич",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Курманкулов",
+   "first_name": "Арстанбек Шергазиевич",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Мамашов",
+   "first_name": "Нурбек",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Нишанкулова",
+   "first_name": "Эльнура Дилмуратжановна",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Омурзакова",
+   "first_name": "Айсулуу Эрмековна",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Садыкова",
+   "first_name": "Гулкумар Жолдубаевна",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Саид Али Аббас",
+   "first_name": "Рахат",
+   "department": "Клинических дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Сакибаев",
+   "first_name": "Кыялбек Шерикбаевич",
+   "department": "Клинических дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/ru/allTeacher"
+  },
+  {
+   "last_name": "Салиева",
+   "first_name": "Сабира Тургунбаевна",
+   "department": "Клинических дисциплин",
+   "title": "доцент",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Султанова",
+   "first_name": "Тахмина Маликовна",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Танабаева",
+   "first_name": "Айпери Зарлыковна",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Тогузакова",
+   "first_name": "Жылдыз Абдыканыевна",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Турсунова",
+   "first_name": "Вероника Давидовна",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Эргешбаев",
+   "first_name": "Медер Мурзапаязович",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Эргешов",
+   "first_name": "Нурсултан Таджидинович",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  },
+  {
+   "last_name": "Эшиев",
+   "first_name": "Абдырахман",
+   "department": "Клинических дисциплин",
+   "title": "профессор",
+   "source_url": "https://oimu.kg/storage/uploads/files/11768990058_pasport_kkd.pdf"
+  }
+ ]
+}

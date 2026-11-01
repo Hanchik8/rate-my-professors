@@ -1,0 +1,1284 @@
+{
+ "code": "auca",
+ "university": "Американский университет в Центральной Азии (AUCA)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://www.auca.kg/en/directory/",
+  "https://www.auca.kg/en/sitemap/",
+  "https://www.auca.kg/en/sfwfaculty/",
+  "https://www.auca.kg/en/p20392195/",
+  "https://www.auca.kg/en/full_time_faculty/",
+  "https://www.auca.kg/en/economics_faculty_staff/",
+  "https://www.auca.kg/en/p6085520222/",
+  "https://www.auca.kg/en/psyc_dept_faculty_staff/",
+  "https://www.auca.kg/en/soc_dept_people/",
+  "https://www.auca.kg/en/core_faculty/",
+  "https://www.auca.kg/en/p20897822/",
+  "https://www.auca.kg/en/law_faculty_staff/",
+  "https://www.auca.kg/en/law_faculty_visiting_part_time/",
+  "https://www.auca.kg/en/las_new_about_team_faculty/",
+  "https://www.auca.kg/en/p3246/",
+  "https://www.auca.kg/en/las_upd_people/",
+  "https://www.auca.kg/en/las_faulty/",
+  "https://www.auca.kg/en/jmc_faculty/",
+  "https://www.auca.kg/en/p5888011016/",
+  "https://www.auca.kg/en/icp_faculty_staff/",
+  "https://www.auca.kg/en/tcma_faculty_staff/"
+ ],
+ "notes": "Основа: University Directory (auca.kg/en/directory) по академическим департаментам, дополнено страницами программ (Software Engineering, TCMA, MACAS, Economics full-time, LAS Human Rights core faculty, UPD, IBL visiting/part-time). Офис-менеджеры, координаторы, сотрудники Tian Shan Policy Center, MLDC, CASI-координатор исключены. Страницы jmc_faculty, las_faulty, full_time_faculty, p20392195 (Applied Math faculty) без текста в статическом HTML (вероятно, JS), их состав покрыт директорией. Для внештатных/visiting без указанной должности и для людей только со страниц программ без должности поставлено \"преподаватель\". Имена латиницей как на сайте; инициалы среднего имени (James G. Hart, Bruce S. Tung, Elida K. Nogoibaeva) отброшены по правилу формата. Должности по маппингу: Professor→профессор, Associate→доцент, Assistant Professor→старший преподаватель, Instructor→преподаватель.",
+ "professors": [
+  {
+   "last_name": "Sklyar",
+   "first_name": "Sergey",
+   "department": "Applied Mathematics and Informatics",
+   "title": "профессор",
+   "source_url": "https://www.auca.kg/en/directory/1/"
+  },
+  {
+   "last_name": "Urmambetov",
+   "first_name": "Bakyt",
+   "department": "Applied Mathematics and Informatics",
+   "title": "профессор",
+   "source_url": "https://www.auca.kg/en/directory/3/"
+  },
+  {
+   "last_name": "Burova",
+   "first_name": "Elena",
+   "department": "Applied Mathematics and Informatics",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/6/"
+  },
+  {
+   "last_name": "Musuralieva",
+   "first_name": "Elmira",
+   "department": "Applied Mathematics and Informatics",
+   "title": "профессор",
+   "source_url": "https://www.auca.kg/en/directory/159/"
+  },
+  {
+   "last_name": "Kerimkulova",
+   "first_name": "Elmira",
+   "department": "Applied Mathematics and Informatics",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/8/"
+  },
+  {
+   "last_name": "Atamanov",
+   "first_name": "Enver",
+   "department": "Applied Mathematics and Informatics",
+   "title": "профессор",
+   "source_url": "https://www.auca.kg/en/directory/160/"
+  },
+  {
+   "last_name": "Altynnikova",
+   "first_name": "Lyubov",
+   "department": "Applied Mathematics and Informatics",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/7/"
+  },
+  {
+   "last_name": "Dolmatova",
+   "first_name": "Polina",
+   "department": "Applied Mathematics and Informatics",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/5/"
+  },
+  {
+   "last_name": "Kydyraliev",
+   "first_name": "Syrgak",
+   "department": "Applied Mathematics and Informatics",
+   "title": "профессор",
+   "source_url": "https://www.auca.kg/en/directory/4/"
+  },
+  {
+   "last_name": "Imanaliev",
+   "first_name": "Taalaibek",
+   "department": "Applied Mathematics and Informatics",
+   "title": "профессор",
+   "source_url": "https://www.auca.kg/en/directory/2/"
+  },
+  {
+   "last_name": "Shapakova",
+   "first_name": "Zarina",
+   "department": "Applied Mathematics and Informatics",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/205/"
+  },
+  {
+   "last_name": "Kudabaev",
+   "first_name": "Zarylbek",
+   "department": "Economics",
+   "title": "профессор",
+   "source_url": "https://www.auca.kg/en/directory/95/"
+  },
+  {
+   "last_name": "Muktarbek kyzy",
+   "first_name": "Akylai",
+   "department": "Economics",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/101/"
+  },
+  {
+   "last_name": "Kyrgyzbaeva",
+   "first_name": "Asel",
+   "department": "Economics",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/96/"
+  },
+  {
+   "last_name": "Nurieva",
+   "first_name": "Gulnara",
+   "department": "Economics",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/99/"
+  },
+  {
+   "last_name": "Kydyralieva",
+   "first_name": "Kanaiym",
+   "department": "Economics",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/103/"
+  },
+  {
+   "last_name": "Konstants",
+   "first_name": "Liudmila",
+   "department": "Economics",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/100/"
+  },
+  {
+   "last_name": "Jenish",
+   "first_name": "Nazgul",
+   "department": "Economics",
+   "title": "профессор",
+   "source_url": "https://www.auca.kg/en/directory/102/"
+  },
+  {
+   "last_name": "Jenish",
+   "first_name": "Nurbek",
+   "department": "Economics",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/94/"
+  },
+  {
+   "last_name": "Ukueva",
+   "first_name": "Nurgul",
+   "department": "Economics",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/653/"
+  },
+  {
+   "last_name": "Tilenbaeva",
+   "first_name": "Nurgul",
+   "department": "Economics",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/577/"
+  },
+  {
+   "last_name": "Kasymov",
+   "first_name": "Ulan",
+   "department": "Economics",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/695/"
+  },
+  {
+   "last_name": "Ormukov",
+   "first_name": "Cholponbek",
+   "department": "Environmental Sustainability and Climate Science",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/475/"
+  },
+  {
+   "last_name": "Asanov",
+   "first_name": "Baktyiar",
+   "department": "Environmental Sustainability and Climate Science",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/110/"
+  },
+  {
+   "last_name": "Nurgaziev",
+   "first_name": "Mairambek",
+   "department": "Environmental Sustainability and Climate Science",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/109/"
+  },
+  {
+   "last_name": "Orunbaev",
+   "first_name": "Sagynbek",
+   "department": "Environmental Sustainability and Climate Science",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/112/"
+  },
+  {
+   "last_name": "Bakenov",
+   "first_name": "Almaz",
+   "department": "Software Engineering",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/12/"
+  },
+  {
+   "last_name": "Ignatiev",
+   "first_name": "Anatoly",
+   "department": "Software Engineering",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/639/"
+  },
+  {
+   "last_name": "Toksaitov",
+   "first_name": "Dmitrii",
+   "department": "Software Engineering",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/13/"
+  },
+  {
+   "last_name": "Osmonov",
+   "first_name": "Melis",
+   "department": "Software Engineering",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/640/"
+  },
+  {
+   "last_name": "Dzhumalieva",
+   "first_name": "Aizhana",
+   "department": "Journalism and Mass Communication",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/144/"
+  },
+  {
+   "last_name": "Kuvatova",
+   "first_name": "Jyldyz",
+   "department": "Journalism and Mass Communication",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/51/"
+  },
+  {
+   "last_name": "Karabaev",
+   "first_name": "Daniyar",
+   "department": "Liberal Arts and Sciences",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/173/"
+  },
+  {
+   "last_name": "Popova",
+   "first_name": "Anguelina",
+   "department": "Liberal Arts and Sciences",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/199/"
+  },
+  {
+   "last_name": "Sagynaly",
+   "first_name": "Bakytbek",
+   "department": "Liberal Arts and Sciences",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/660/"
+  },
+  {
+   "last_name": "Chotaeva",
+   "first_name": "Cholpon",
+   "department": "Liberal Arts and Sciences",
+   "title": "профессор",
+   "source_url": "https://www.auca.kg/en/directory/33/"
+  },
+  {
+   "last_name": "Usenov",
+   "first_name": "Daniiar",
+   "department": "Liberal Arts and Sciences",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/622/"
+  },
+  {
+   "last_name": "Chigibaeva",
+   "first_name": "Elena",
+   "department": "Liberal Arts and Sciences",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/635/"
+  },
+  {
+   "last_name": "Proyaeva",
+   "first_name": "Eleonora",
+   "department": "Liberal Arts and Sciences",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/662/"
+  },
+  {
+   "last_name": "Djunushalieva",
+   "first_name": "Gulnara",
+   "department": "Liberal Arts and Sciences",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/702/"
+  },
+  {
+   "last_name": "Kangeldieva",
+   "first_name": "Janara",
+   "department": "Liberal Arts and Sciences",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/661/"
+  },
+  {
+   "last_name": "Nicharapova",
+   "first_name": "Jildiz",
+   "department": "Liberal Arts and Sciences",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/636/"
+  },
+  {
+   "last_name": "Baiborieva",
+   "first_name": "Zhamilia",
+   "department": "Liberal Arts and Sciences",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/547/"
+  },
+  {
+   "last_name": "Turdalieva",
+   "first_name": "Cholpon",
+   "department": "General Education",
+   "title": "профессор",
+   "source_url": "https://www.auca.kg/en/directory/36/"
+  },
+  {
+   "last_name": "Jacquesson",
+   "first_name": "Svetlana",
+   "department": "Master of Arts in Central Asian Studies",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/49/"
+  },
+  {
+   "last_name": "Conde",
+   "first_name": "Mary Bernadette",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/446/"
+  },
+  {
+   "last_name": "Sheraliev",
+   "first_name": "Khiradmand",
+   "department": "International and Comparative Politics",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/616/"
+  },
+  {
+   "last_name": "Bettie",
+   "first_name": "Melissa",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/699/"
+  },
+  {
+   "last_name": "Aidarova",
+   "first_name": "Aida",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/564/"
+  },
+  {
+   "last_name": "Sarybaeva",
+   "first_name": "Aijamal",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/169/"
+  },
+  {
+   "last_name": "Zaitsev",
+   "first_name": "Alexandr",
+   "department": "General Education",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/155/"
+  },
+  {
+   "last_name": "Halmurzaeva",
+   "first_name": "Altynay",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/162/"
+  },
+  {
+   "last_name": "An",
+   "first_name": "Hye Jin",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/698/"
+  },
+  {
+   "last_name": "Baker",
+   "first_name": "Christopher",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/92/"
+  },
+  {
+   "last_name": "Arykbaeva",
+   "first_name": "Diana",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/84/"
+  },
+  {
+   "last_name": "Galimova",
+   "first_name": "Ekaterina",
+   "department": "General Education",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/166/"
+  },
+  {
+   "last_name": "Karypkulova",
+   "first_name": "Eleonora",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/167/"
+  },
+  {
+   "last_name": "Supataeva",
+   "first_name": "Elvira",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/631/"
+  },
+  {
+   "last_name": "Zhumalieva",
+   "first_name": "Elvira",
+   "department": "General Education",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/701/"
+  },
+  {
+   "last_name": "Babich",
+   "first_name": "Irina",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/85/"
+  },
+  {
+   "last_name": "Hart",
+   "first_name": "James",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/426/"
+  },
+  {
+   "last_name": "Alymidin kyzy",
+   "first_name": "Jiydegul",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/629/"
+  },
+  {
+   "last_name": "Toktogulova",
+   "first_name": "Mukaram",
+   "department": "General Education",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/37/"
+  },
+  {
+   "last_name": "Duishonakunov",
+   "first_name": "Murataly",
+   "department": "General Education",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/630/"
+  },
+  {
+   "last_name": "Faizullina",
+   "first_name": "Natalia",
+   "department": "General Education",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/198/"
+  },
+  {
+   "last_name": "Volkova",
+   "first_name": "Natalya",
+   "department": "General Education",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/157/"
+  },
+  {
+   "last_name": "Voitekhina",
+   "first_name": "Olga",
+   "department": "General Education",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/609/"
+  },
+  {
+   "last_name": "Uljevic",
+   "first_name": "Srdjan",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/610/"
+  },
+  {
+   "last_name": "Ryskulova",
+   "first_name": "Tynarkul",
+   "department": "General Education",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/632/"
+  },
+  {
+   "last_name": "Kambaralieva",
+   "first_name": "Uulkan",
+   "department": "General Education",
+   "title": "профессор",
+   "source_url": "https://www.auca.kg/en/directory/165/"
+  },
+  {
+   "last_name": "Skopintseva",
+   "first_name": "Valentina",
+   "department": "General Education",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/703/"
+  },
+  {
+   "last_name": "Hardin",
+   "first_name": "Valeriy",
+   "department": "General Education",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/163/"
+  },
+  {
+   "last_name": "Mambetova",
+   "first_name": "Zamira",
+   "department": "General Education",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/700/"
+  },
+  {
+   "last_name": "Samudinova",
+   "first_name": "Zaripa",
+   "department": "General Education",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/164/"
+  },
+  {
+   "last_name": "Karzhoev",
+   "first_name": "Adilet",
+   "department": "Television, Cinema and Media Arts",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/64/"
+  },
+  {
+   "last_name": "Usuvaliev",
+   "first_name": "Sultan",
+   "department": "Television, Cinema and Media Arts",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/704/"
+  },
+  {
+   "last_name": "Koichubekov",
+   "first_name": "Zhumanazar",
+   "department": "Television, Cinema and Media Arts",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/558/"
+  },
+  {
+   "last_name": "Arzieva",
+   "first_name": "Aikokul",
+   "department": "Anthropology and International Development",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/557/"
+  },
+  {
+   "last_name": "Abdykanova",
+   "first_name": "Aida",
+   "department": "Anthropology and International Development",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/35/"
+  },
+  {
+   "last_name": "Çavdar",
+   "first_name": "Ayşe",
+   "department": "Anthropology and International Development",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/613/"
+  },
+  {
+   "last_name": "Atsungur",
+   "first_name": "Görkem",
+   "department": "International and Comparative Politics",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/83/"
+  },
+  {
+   "last_name": "Tasic",
+   "first_name": "Mirko",
+   "department": "International and Comparative Politics",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/618/"
+  },
+  {
+   "last_name": "Akchurina",
+   "first_name": "Viktoria",
+   "department": "International and Comparative Politics",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/692/"
+  },
+  {
+   "last_name": "Muratalieva",
+   "first_name": "Zamira",
+   "department": "International and Comparative Politics",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/691/"
+  },
+  {
+   "last_name": "Matala",
+   "first_name": "Nathaniel",
+   "department": "International and Comparative Politics",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/584/"
+  },
+  {
+   "last_name": "Kalygulova",
+   "first_name": "Sabyrkul",
+   "department": "Master of Arts in Teaching",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/637/"
+  },
+  {
+   "last_name": "Chattopadhay",
+   "first_name": "Tamo",
+   "department": "Master of Arts in Teaching",
+   "title": "профессор",
+   "source_url": "https://www.auca.kg/en/directory/81/"
+  },
+  {
+   "last_name": "Alibaeva",
+   "first_name": "Elizabeth",
+   "department": "Master of Arts in Teaching",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/462/"
+  },
+  {
+   "last_name": "Alybaeva",
+   "first_name": "Alisa",
+   "department": "Master of Arts in Teaching",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/569/"
+  },
+  {
+   "last_name": "Mamatova",
+   "first_name": "Makhinur",
+   "department": "Psychology",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/22/"
+  },
+  {
+   "last_name": "Bagdasarova",
+   "first_name": "Nina",
+   "department": "Psychology",
+   "title": "профессор",
+   "source_url": "https://www.auca.kg/en/directory/26/"
+  },
+  {
+   "last_name": "Bakyt kyzy",
+   "first_name": "Chynara",
+   "department": "Psychology",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/679/"
+  },
+  {
+   "last_name": "Kurmanova",
+   "first_name": "Gulnara",
+   "department": "Psychology",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/556/"
+  },
+  {
+   "last_name": "Gohlke",
+   "first_name": "Hanna",
+   "department": "Psychology",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/709/"
+  },
+  {
+   "last_name": "Aitkulova",
+   "first_name": "Kylym",
+   "department": "Psychology",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/623/"
+  },
+  {
+   "last_name": "Suyarkulova",
+   "first_name": "Mokhira",
+   "department": "Psychology",
+   "title": "профессор",
+   "source_url": "https://www.auca.kg/en/directory/45/"
+  },
+  {
+   "last_name": "Tolomushev",
+   "first_name": "Ulan",
+   "department": "Psychology",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/673/"
+  },
+  {
+   "last_name": "Gorborukova",
+   "first_name": "Galina",
+   "department": "Sociology",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/41/"
+  },
+  {
+   "last_name": "Chokkalingam",
+   "first_name": "Mahendran",
+   "department": "Sociology",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/43/"
+  },
+  {
+   "last_name": "Ablezova",
+   "first_name": "Mehrigiul",
+   "department": "Sociology",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/42/"
+  },
+  {
+   "last_name": "Mateeva",
+   "first_name": "Kamila",
+   "department": "International and Business Law",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/116/"
+  },
+  {
+   "last_name": "Bholenath",
+   "first_name": "",
+   "department": "International and Business Law",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/560/"
+  },
+  {
+   "last_name": "Jeenbaev",
+   "first_name": "Azim",
+   "department": "International and Business Law",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/633/"
+  },
+  {
+   "last_name": "Esenkulova",
+   "first_name": "Begaiym",
+   "department": "International and Business Law",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/118/"
+  },
+  {
+   "last_name": "Seiitbekova",
+   "first_name": "Begaiym",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/705/"
+  },
+  {
+   "last_name": "Asanbaeva",
+   "first_name": "Dinara",
+   "department": "International and Business Law",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/117/"
+  },
+  {
+   "last_name": "Lozanoska",
+   "first_name": "Jana",
+   "department": "International and Business Law",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/693/"
+  },
+  {
+   "last_name": "Kasybekova",
+   "first_name": "Kanykei",
+   "department": "International and Business Law",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/119/"
+  },
+  {
+   "last_name": "Ryskulov",
+   "first_name": "Urmat",
+   "department": "Business Administration",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/142/"
+  },
+  {
+   "last_name": "Abdraeva",
+   "first_name": "Begimai",
+   "department": "Business Administration",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/376/"
+  },
+  {
+   "last_name": "Anvar kyzy",
+   "first_name": "Saikal",
+   "department": "Business Administration",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/138/"
+  },
+  {
+   "last_name": "Kibekbaev",
+   "first_name": "Azamat",
+   "department": "Business Administration",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/375/"
+  },
+  {
+   "last_name": "Sultakeev",
+   "first_name": "Kadyrbek",
+   "department": "Business Administration",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/561/"
+  },
+  {
+   "last_name": "Nizaeva",
+   "first_name": "Mirgul",
+   "department": "Business Administration",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/621/"
+  },
+  {
+   "last_name": "Korosteleva",
+   "first_name": "Natalia",
+   "department": "Business Administration",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/508/"
+  },
+  {
+   "last_name": "Albanova",
+   "first_name": "Nazgul",
+   "department": "Business Administration",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/143/"
+  },
+  {
+   "last_name": "Madmarov",
+   "first_name": "Nurbek",
+   "department": "Business Administration",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/562/"
+  },
+  {
+   "last_name": "Ishkinina",
+   "first_name": "Saliia",
+   "department": "Business Administration",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/497/"
+  },
+  {
+   "last_name": "Asan uulu",
+   "first_name": "Talant",
+   "department": "Business Administration",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/511/"
+  },
+  {
+   "last_name": "Yoo",
+   "first_name": "So Jin",
+   "department": "Business Administration",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/672/"
+  },
+  {
+   "last_name": "Talasbek kyzy",
+   "first_name": "Bermet",
+   "department": "Master of Business Administration",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/153/"
+  },
+  {
+   "last_name": "Karalaeva",
+   "first_name": "Elima",
+   "department": "Master of Business Administration",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/141/"
+  },
+  {
+   "last_name": "Kadyrova",
+   "first_name": "Kamilya",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/203/"
+  },
+  {
+   "last_name": "Izzuddin",
+   "first_name": "",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/689/"
+  },
+  {
+   "last_name": "Taalaibekova",
+   "first_name": "Aizharkyn",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/565/"
+  },
+  {
+   "last_name": "Berman",
+   "first_name": "Avi",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/687/"
+  },
+  {
+   "last_name": "Tung",
+   "first_name": "Bruce",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/601/"
+  },
+  {
+   "last_name": "Catone",
+   "first_name": "Casey",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/688/"
+  },
+  {
+   "last_name": "Sollohub",
+   "first_name": "Francesca",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/690/"
+  },
+  {
+   "last_name": "Kasymova",
+   "first_name": "Jarkyn",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/209/"
+  },
+  {
+   "last_name": "Qonunov",
+   "first_name": "Khurshedsho",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/210/"
+  },
+  {
+   "last_name": "Ibrahim",
+   "first_name": "Layan",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/686/"
+  },
+  {
+   "last_name": "DeKastle",
+   "first_name": "Maria",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/505/"
+  },
+  {
+   "last_name": "Antonova",
+   "first_name": "Mariya",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/220/"
+  },
+  {
+   "last_name": "Andersen",
+   "first_name": "Nicholas Durham",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/566/"
+  },
+  {
+   "last_name": "Mamashev",
+   "first_name": "Roman",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/206/"
+  },
+  {
+   "last_name": "Bulatova",
+   "first_name": "Sureiya",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/directory/208/"
+  },
+  {
+   "last_name": "Asanov",
+   "first_name": "Temir",
+   "department": "New Generation Academy (Preparatory Programs)",
+   "title": "доцент",
+   "source_url": "https://www.auca.kg/en/directory/207/"
+  },
+  {
+   "last_name": "Jumabek uulu",
+   "first_name": "Zarlyk",
+   "department": "Software Engineering",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/sfwfaculty/"
+  },
+  {
+   "last_name": "Esenalieva",
+   "first_name": "Gulzat",
+   "department": "Software Engineering",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/sfwfaculty/"
+  },
+  {
+   "last_name": "Abdykerimov",
+   "first_name": "Adilet",
+   "department": "Software Engineering",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/sfwfaculty/"
+  },
+  {
+   "last_name": "Campeau",
+   "first_name": "Louis-Philippe",
+   "department": "Master of Arts in Central Asian Studies",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/core_faculty/"
+  },
+  {
+   "last_name": "Karamoldoeva",
+   "first_name": "Nurzhamal",
+   "department": "Television, Cinema and Media Arts",
+   "title": "старший преподаватель",
+   "source_url": "https://www.auca.kg/en/tcma_faculty_staff/"
+  },
+  {
+   "last_name": "Toktogul",
+   "first_name": "Guljan",
+   "department": "Television, Cinema and Media Arts",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/tcma_faculty_staff/"
+  },
+  {
+   "last_name": "Orozoeva",
+   "first_name": "Kanykei",
+   "department": "Television, Cinema and Media Arts",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/tcma_faculty_staff/"
+  },
+  {
+   "last_name": "Djakypova",
+   "first_name": "Meerim",
+   "department": "Economics",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/p6085520222/"
+  },
+  {
+   "last_name": "Nogoibaeva",
+   "first_name": "Elida",
+   "department": "Liberal Arts and Sciences (Human Rights)",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/p3246/"
+  },
+  {
+   "last_name": "Toktogazieva",
+   "first_name": "Saniia",
+   "department": "Liberal Arts and Sciences (Human Rights)",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/p3246/"
+  },
+  {
+   "last_name": "Tiulegenov",
+   "first_name": "Medet",
+   "department": "Liberal Arts and Sciences (Human Rights)",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/p3246/"
+  },
+  {
+   "last_name": "Fearey",
+   "first_name": "Seth",
+   "department": "Anthropology and International Development",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/las_upd_people/"
+  },
+  {
+   "last_name": "Nastridinov",
+   "first_name": "Emil",
+   "department": "Anthropology and International Development",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/las_upd_people/"
+  },
+  {
+   "last_name": "Akhmetov",
+   "first_name": "Meder",
+   "department": "Liberal Arts and Sciences",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/las_upd_people/"
+  },
+  {
+   "last_name": "Toktosunov",
+   "first_name": "Baitur",
+   "department": "Liberal Arts and Sciences",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/las_upd_people/"
+  },
+  {
+   "last_name": "Nigmatov",
+   "first_name": "Otabek",
+   "department": "Anthropology and International Development",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/las_upd_people/"
+  },
+  {
+   "last_name": "Kessell",
+   "first_name": "Steven",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Gruszczynski",
+   "first_name": "Lukasz",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Emmert",
+   "first_name": "Frank",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Solis",
+   "first_name": "Paul",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Vishnevskiy",
+   "first_name": "Alexander",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Pillai",
+   "first_name": "Jayarethanam",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Harutyunyan",
+   "first_name": "Khachik",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Huffman",
+   "first_name": "Max",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Shin",
+   "first_name": "Galina",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Slesarev",
+   "first_name": "Sergei",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Chubarova",
+   "first_name": "Aisulu",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Usupbaeva",
+   "first_name": "Saltanat",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Madaliev",
+   "first_name": "Rustam",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Dosmambetov",
+   "first_name": "Azizbek",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Bekniyazova",
+   "first_name": "Minay",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Trossen",
+   "first_name": "Arthur",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Tagaeva",
+   "first_name": "Zhyldyz",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Sydykova",
+   "first_name": "Venera",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Shutii",
+   "first_name": "Viktoriia",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Sarandrea",
+   "first_name": "Lucio Valerio",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Alenkina",
+   "first_name": "Natalia",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Alieva",
+   "first_name": "Aicholpon",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Pak",
+   "first_name": "Natalia",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Batyrbekov",
+   "first_name": "Chyngyz",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  },
+  {
+   "last_name": "Raiymkulov",
+   "first_name": "Eldiiar",
+   "department": "International and Business Law",
+   "title": "преподаватель",
+   "source_url": "https://www.auca.kg/en/law_faculty_visiting_part_time/"
+  }
+ ]
+}

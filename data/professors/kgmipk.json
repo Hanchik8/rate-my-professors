@@ -1,0 +1,214 @@
+{
+ "code": "kgmipk",
+ "university": "Кыргызский государственный медицинский институт переподготовки и повышения квалификации им. С.Б. Даниярова (КГМИПиПК)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://ksmi.kg/",
+  "https://ksmi.kg/%d1%80%d1%83%d0%ba%d0%be%d0%b2%d0%be%d0%b4%d1%81%d1%82%d0%b2%d0%be/",
+  "https://ksmi.kg/%d1%81%d1%82%d1%80%d1%83%d0%ba%d1%82%d1%83%d1%80%d0%bd%d1%8b%d0%b5-%d0%bf%d0%be%d0%b4%d1%80%d0%b0%d0%b7%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d1%8f/",
+  "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/"
+ ],
+ "notes": "Официальный сайт найден поиском: ksmi.kg. Отдельных страниц кафедр с составом на сайте нет (структура перечисляет только факультеты). Использован состав приемной комиссии, где перечислены заведующие кафедрами и курсами с учёными степенями (только инициалы). Ректор, проректоры, деканы и заведующая отделом дистанционного обучения не включены как административные. Заведующие курсами (профессорский/доцентский курс) включены как преподаватели соответствующих направлений.",
+ "professors": [
+  {
+   "last_name": "Шукурова",
+   "first_name": "В. К.",
+   "department": "Педиатрии",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Молдоташева",
+   "first_name": "А. К.",
+   "department": "Анестезиологии и реаниматологии",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Байсекеев",
+   "first_name": "Т. А.",
+   "department": "Сердечно-сосудистой хирургии с циклом проктологии",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Назаркулов",
+   "first_name": "С. Д.",
+   "department": "Психиатрии, психотерапии и наркологии",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Каримов",
+   "first_name": "Ж. М.",
+   "department": "Неврологии и нейрохирургии",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Анаркулов",
+   "first_name": "Б. С.",
+   "department": "Травматологии, ортопедии и медицины катастроф",
+   "title": "профессор",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мурзалиев",
+   "first_name": "А. Д.",
+   "department": "Стоматологии",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токтогулова",
+   "first_name": "Н. А.",
+   "department": "Внутренних болезней",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тобокалова",
+   "first_name": "С. Т.",
+   "department": "Инфекционных болезней",
+   "title": "профессор",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бейшембаев",
+   "first_name": "А. М.",
+   "department": "Онкологии, гематологии, лучевой диагностики и терапии",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чапыев",
+   "first_name": "М. Б.",
+   "department": "Пластической и реконструктивной хирургии",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Канаев",
+   "first_name": "Р. А.",
+   "department": "Восточной медицины",
+   "title": "профессор",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сулайманов",
+   "first_name": "Ж. С.",
+   "department": "Специализированной хирургической помощи в офтальмологии и оториноларингологии",
+   "title": "профессор",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кибец",
+   "first_name": "Е. А.",
+   "department": "Акушерства, гинекологии и репродуктологии",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Соромбаева",
+   "first_name": "Н. О.",
+   "department": "Общественного здравоохранения с курсом инфекционного контроля",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдыкеева",
+   "first_name": "З. Т.",
+   "department": "Клинической лабораторной диагностики",
+   "title": "преподаватель",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ниязов",
+   "first_name": "Б. С.",
+   "department": "Общей хирургии",
+   "title": "профессор",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Урмамбетова",
+   "first_name": "Ж. С.",
+   "department": "Фармации и клинической фармакологии",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чубаков",
+   "first_name": "Т. Ч.",
+   "department": "Фтизиопульмонологии",
+   "title": "профессор",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жороев",
+   "first_name": "М. Н.",
+   "department": "Детской хирургии",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жумагазиев",
+   "first_name": "Т. С.",
+   "department": "Урологии",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Султаналиева",
+   "first_name": "Р. Б.",
+   "department": "Эндокринологии",
+   "title": "профессор",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мукашев",
+   "first_name": "М. Ш.",
+   "department": "Судебно-медицинской экспертизы",
+   "title": "профессор",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Полупанов",
+   "first_name": "А. Г.",
+   "department": "Кардиологии",
+   "title": "профессор",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Садыкова",
+   "first_name": "Д. А.",
+   "department": "Дерматовенерологии и дерматокосметологии",
+   "title": "доцент",
+   "source_url": "https://ksmi.kg/%d0%bf%d1%80%d0%b8%d0%b5%d0%bc%d0%bd%d0%b0%d1%8f-%d0%ba%d0%be%d0%bc%d0%b8%d1%81%d1%81%d0%b8%d1%8f/",
+   "initials_only": true
+  }
+ ]
+}

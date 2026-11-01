@@ -1,0 +1,53 @@
+{
+ "code": "chu",
+ "university": "Чуйский университет имени С. Мамбеткалиева",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://chu.kg/",
+  "https://chu.kg/%d0%b3%d0%bb%d0%b0%d0%b2%d0%bd%d0%b0%d1%8f/%d0%be-%d0%bd%d0%b0%d1%81/",
+  "https://edu.chu.kg/?page_id=1661",
+  "https://edu.chu.kg/?page_id=1662",
+  "https://www.urvak.ru/authors/9396/",
+  "https://urvak.ru/authors/6097/",
+  "https://www.urvak.ru/authors/8089/",
+  "https://rreconomic.ru/journal/author/2037/"
+ ],
+ "notes": "На сайте chu.kg страницы программ (филология, педагогика, экономика, юриспруденция) без ФИО преподавателей; раздел edu.chu.kg \"Руководство. Педагогический состав\" содержит только учредителя и проректоров, педагогический состав не заполнен. На сайте названа только руководитель-профессор. Остальные 4 записи взяты из авторских профилей научных журналов (Юр-ВАК, Научный результат), где указаны место работы, кафедра и должность; актуальность этих профилей не проверена. Проректор по АХЧ не включён.",
+ "professors": [
+  {
+   "last_name": "Мамбеткалиева",
+   "first_name": "Чолпон Султановна",
+   "department": "Руководство",
+   "title": "профессор",
+   "source_url": "https://chu.kg/%d0%b3%d0%bb%d0%b0%d0%b2%d0%bd%d0%b0%d1%8f/%d0%be-%d0%bd%d0%b0%d1%81/"
+  },
+  {
+   "last_name": "Базарбаев",
+   "first_name": "Алмаз Сатыбалдиевич",
+   "department": "Специальные юридические дисциплины",
+   "title": "профессор",
+   "source_url": "https://www.urvak.ru/authors/9396/"
+  },
+  {
+   "last_name": "Атабеков",
+   "first_name": "Кайрат Кулбакович",
+   "department": "Специальные юридические дисциплины",
+   "title": "доцент",
+   "source_url": "https://urvak.ru/authors/6097/"
+  },
+  {
+   "last_name": "Абылаев",
+   "first_name": "Адилет",
+   "department": "Специальные юридические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.urvak.ru/authors/8089/"
+  },
+  {
+   "last_name": "Бакаева",
+   "first_name": "Мээрим Азизбековна",
+   "department": "Экономика и финансы",
+   "title": "преподаватель",
+   "source_url": "https://rreconomic.ru/journal/author/2037/"
+  }
+ ]
+}

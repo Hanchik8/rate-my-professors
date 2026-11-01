@@ -1,0 +1,318 @@
+{
+ "code": "avicenna",
+ "university": "Международный медицинский университет «Авиценна»",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://avicenna.edu.kg/",
+  "https://avicenna.edu.kg/professors/",
+  "https://avicenna.edu.kg/departments/kafedra-klinicheskih-discziplin/",
+  "https://avicenna.edu.kg/departments/kafedra-estestvenno-gumanitarnyh-discziplin/",
+  "https://avicenna.edu.kg/departments/kafedra-morfo-biologicheskih-discziplin/",
+  "https://avicenna.edu.kg/departments/kafedra-stomatologii/"
+ ],
+ "notes": "Официальный сайт найден поиском: avicenna.edu.kg (доступен только через fetch-индекс, напрямую закрыт бот-проверкой). Использованы общий список \"Преподавательский состав\" и таблицы ППС 4 кафедр. На кафедральных страницах в основном инициалы; если тот же человек есть с полным ФИО в общем списке, оставлена полная запись. Абдыкадырова А.Ж. (кафедра) и Абдыкадырова Алина Джалиловна (общий список, зав. кафедрой клинических дисциплин) считаются одним человеком. Dr. Vivek R. Mishra = Мишра Вивек Раман, Доктор Ясин Хуснаин = Хуснаин Ясин. Абдимомун к. Г. пропущена (некорректный формат имени). Двое из общего списка без кафедры (Акылбекова, Токторова) с department \"Преподавательский состав\".",
+ "professors": [
+  {
+   "last_name": "Курбанов",
+   "first_name": "Омурбек Туратович",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Суркеев",
+   "first_name": "Ислам Бахтыбекович",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Орозбаева",
+   "first_name": "Акүмүт",
+   "department": "Морфо-биологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Иманалиева",
+   "first_name": "Айпери",
+   "department": "Морфо-биологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Валламова",
+   "first_name": "Кундузай",
+   "department": "Морфо-биологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Токтомушева",
+   "first_name": "Айжан",
+   "department": "Морфо-биологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Акылбекова",
+   "first_name": "Алина Канатовна",
+   "department": "Преподавательский состав",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Нурмамытова",
+   "first_name": "Айдай",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Беркулов",
+   "first_name": "Данияр Абдысатарович",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Токторова",
+   "first_name": "Айканым Эгембердиевна",
+   "department": "Преподавательский состав",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Абдувалиева",
+   "first_name": "Айсулуу",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Айманбетова",
+   "first_name": "Гулнара Минбаевна",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Окенова",
+   "first_name": "Алтынай Океновна",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Кибишева",
+   "first_name": "Кристина Игоревна",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Абдыкадырова",
+   "first_name": "Алина Джалиловна",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Абдурахманова",
+   "first_name": "Татына Алмазбековна",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/professors/"
+  },
+  {
+   "last_name": "Осмоналиева",
+   "first_name": "Н. А.",
+   "department": "Клинические дисциплины",
+   "title": "доцент",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-klinicheskih-discziplin/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Байгазаков",
+   "first_name": "А. Т.",
+   "department": "Клинические дисциплины",
+   "title": "профессор",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-klinicheskih-discziplin/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Юсуфова",
+   "first_name": "М. А.",
+   "department": "Клинические дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-klinicheskih-discziplin/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Буйлашев",
+   "first_name": "Т. С.",
+   "department": "Клинические дисциплины",
+   "title": "профессор",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-klinicheskih-discziplin/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кубатбеков",
+   "first_name": "Р. К.",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-klinicheskih-discziplin/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мишра",
+   "first_name": "Вивек Раман",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-klinicheskih-discziplin/"
+  },
+  {
+   "last_name": "Забих",
+   "first_name": "Уллах",
+   "department": "Клинические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-klinicheskih-discziplin/"
+  },
+  {
+   "last_name": "Шабданова",
+   "first_name": "Элмира Асанбековна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-estestvenno-gumanitarnyh-discziplin/"
+  },
+  {
+   "last_name": "Омурова",
+   "first_name": "Айна Молдогазиевна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-estestvenno-gumanitarnyh-discziplin/"
+  },
+  {
+   "last_name": "Байбосунов",
+   "first_name": "Карыбек Сынжыбекович",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-estestvenno-gumanitarnyh-discziplin/"
+  },
+  {
+   "last_name": "Рыскулова",
+   "first_name": "Айыма Рыскуловна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-estestvenno-gumanitarnyh-discziplin/"
+  },
+  {
+   "last_name": "Бердибекова",
+   "first_name": "Медина Бердибековна",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-estestvenno-gumanitarnyh-discziplin/"
+  },
+  {
+   "last_name": "Арапов",
+   "first_name": "Темиркул Байышович",
+   "department": "Естественно-гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-estestvenno-gumanitarnyh-discziplin/"
+  },
+  {
+   "last_name": "Аманбеков",
+   "first_name": "А. А.",
+   "department": "Морфо-биологические дисциплины",
+   "title": "доцент",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-morfo-biologicheskih-discziplin/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токсонбаева",
+   "first_name": "Э. Б.",
+   "department": "Морфо-биологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-morfo-biologicheskih-discziplin/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кулов",
+   "first_name": "Б. Б.",
+   "department": "Морфо-биологические дисциплины",
+   "title": "профессор",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-morfo-biologicheskih-discziplin/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Козьмина",
+   "first_name": "Ю. В.",
+   "department": "Морфо-биологические дисциплины",
+   "title": "доцент",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-morfo-biologicheskih-discziplin/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Авайс",
+   "first_name": "Натиг",
+   "department": "Морфо-биологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-morfo-biologicheskih-discziplin/"
+  },
+  {
+   "last_name": "Хуснаин",
+   "first_name": "Ясин",
+   "department": "Морфо-биологические дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-morfo-biologicheskih-discziplin/"
+  },
+  {
+   "last_name": "Амираев",
+   "first_name": "Р. У.",
+   "department": "Стоматология",
+   "title": "доцент",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-stomatologii/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Даутова",
+   "first_name": "А. И.",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-stomatologii/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Амираев",
+   "first_name": "У. А.",
+   "department": "Стоматология",
+   "title": "профессор",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-stomatologii/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Юлдашев",
+   "first_name": "И. М.",
+   "department": "Стоматология",
+   "title": "профессор",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-stomatologii/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жантаева",
+   "first_name": "Ж. З.",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-stomatologii/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Коомбаев",
+   "first_name": "А. К.",
+   "department": "Стоматология",
+   "title": "преподаватель",
+   "source_url": "https://avicenna.edu.kg/departments/kafedra-stomatologii/",
+   "initials_only": true
+  }
+ ]
+}

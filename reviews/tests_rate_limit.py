@@ -115,6 +115,74 @@ class ReportRateLimitTests(_MemoryRepoTestCase):
         )
 
 
+@override_settings(
+    RATELIMIT_ENABLE=True,
+    RATELIMIT={"login": (2, 60), "signup": (2, 60), "review": (2, 60)},
+)
+class AuthenticationRateLimitTests(TestCase):
+    def setUp(self):
+        cache.clear()
+        self.addCleanup(cache.clear)
+
+    def test_login_attempts_are_limited_per_ip(self):
+        url = reverse("login")
+        data = {"username": "missing@example.com", "password": "wrong"}
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.1").status_code, 200)
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.1").status_code, 200)
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.1").status_code, 429)
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.2").status_code, 200)
+
+    def test_signup_attempts_are_limited_per_ip(self):
+        url = reverse("signup")
+        data = {"email": "bad", "password1": "password", "password2": "password"}
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.1").status_code, 200)
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.1").status_code, 200)
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.1").status_code, 429)
+        self.assertEqual(self.client.post(url, data, REMOTE_ADDR="10.0.0.2").status_code, 200)
+
+
+@override_settings(RATELIMIT_ENABLE=True, RATELIMIT={"review": (1, 60)})
+class AnonymousReviewRateLimitTests(_MemoryRepoTestCase):
+    def test_review_submission_is_limited_per_ip(self):
+        self.login()
+        url = reverse("review_new", args=[self.professor().slug])
+        self.assertEqual(self.client.post(url, _valid(), REMOTE_ADDR="10.0.0.1").status_code, 302)
+        self.assertEqual(self.client.post(url, _valid(), REMOTE_ADDR="10.0.0.1").status_code, 429)
+
+
+@override_settings(RATELIMIT_ENABLE=True, RATELIMIT={"review": (1, 60)})
+class ReviewManagementRateLimitTests(_MemoryRepoTestCase):
+    def setUp(self):
+        super().setUp()
+        self.user = self.login()
+        self.prof = self.professor()
+        self.review = self.repo.add_review(
+            self.prof.id,
+            {
+                "course": "Курс для редактирования",
+                "term": "Осень 2025",
+                "overall": 4,
+                "difficulty": 3,
+                "would_take_again": True,
+                "grade": "A",
+                "tags": [],
+                "comment": "Содержательный комментарий для теста управления отзывом.",
+            },
+            user=self.user,
+        )
+
+    def test_review_edit_and_delete_posts_are_limited(self):
+        edit_url = reverse("review_edit", args=[self.review.id])
+        delete_url = reverse("review_delete", args=[self.review.id])
+        self.assertNotEqual(self.client.post(edit_url, {}).status_code, 429)
+        self.assertEqual(self.client.post(delete_url).status_code, 429)
+
+    def test_professor_submission_is_limited(self):
+        url = reverse("add_professor")
+        self.assertEqual(self.client.post(url, {}).status_code, 200)
+        self.assertEqual(self.client.post(url, {}).status_code, 429)
+
+
 class RateLimitDefaultsTests(TestCase):
     def test_review_and_report_allow_five_posts_per_minute(self):
         self.assertEqual(RATE_LIMITS["review"], (5, 60))

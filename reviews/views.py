@@ -1,4 +1,4 @@
-"""HTTP views for the ProfLens review app.
+"""HTTP views for the PrepodRate review app.
 
 Views stay thin: they translate request parameters into repository calls
 and render templates, so that no storage detail leaks into the request
@@ -8,17 +8,21 @@ live in small private helpers below.
 from django import forms
 from django.conf import settings
 from django.contrib import messages
+from django.conf import settings
 from django.contrib.auth import login
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.core.paginator import Paginator
+from django.core.exceptions import ValidationError
 from django.db import connection
-from django.http import Http404, HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse
+import json
 from django.shortcuts import redirect, render, resolve_url
 from django.urls import reverse
 from django.utils.http import url_has_allowed_host_and_scheme
 from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy
 from django.views.decorators.http import require_http_methods, require_POST
 from django.views.defaults import page_not_found, server_error
 
@@ -28,10 +32,17 @@ from .caching import (
     options_cache_key,
     school_cache_key,
 )
-from .constants import PAGE_SIZE
 from .forms import ProfessorForm, ReportForm, ReviewForm
+from . import email_verification, services, view_helpers
+from .models import EmailVerification as EmailVerificationModel
 from .store import repo
 from .throttle import is_rate_limited, rate_limit
+from .view_helpers import (
+    _is_author,
+    _object_or_404,
+    _paginate,
+    _paginate_request,
+)
 
 
 def handler404(request, exception=None):
@@ -58,19 +69,6 @@ def health(request):
 def healthz(request):
     """Return a database-independent liveness response."""
     return JsonResponse({"status": "ok"})
-
-
-def _paginate(items, page_number):
-    """Return ``(page_items, page_obj)`` for ``items``.
-
-    ``page_obj`` is ``None`` when everything fits on one page, so templates
-    can omit pagination controls while still using a flat result list.
-    """
-    paginator = Paginator(items, PAGE_SIZE)
-    page_obj = paginator.get_page(page_number)
-    if paginator.num_pages <= 1:
-        return items, None
-    return page_obj.object_list, page_obj
 
 
 def _form_for_request(request, form_class, **kwargs):
@@ -107,8 +105,18 @@ def _home_options():
     return get_or_set(options_cache_key(), lambda: {
         "schools": repo.schools(),
         "cities": repo.cities(),
-        "departments": repo.departments(),
     })
+
+
+def _department_choices(school, department):
+    """Departments of the chosen school only; without a school the list would hold
+    every department of every university (over a thousand options)."""
+    school = school.strip()
+    choices = repo.departments(school) if school else []
+    department = department.strip()
+    if department and department not in choices:
+        choices = [department] + choices
+    return choices
 
 
 def home(request):
@@ -117,30 +125,50 @@ def home(request):
     options = _home_options()
     data = get_or_set(
         home_cache_key(q, school, city, department, sort),
-        lambda: {"results": repo.search(q, school, city, department, sort)},
+        lambda: {"results": services.search_professors(
+            repo, q, school=school, city=city, department=department, sort=sort,
+        )},
     )
-    page_results, page_obj = _paginate(data["results"], request.GET.get("page"))
+    page_results, page_obj = _paginate_request(request, data["results"])
+    has_filters = bool(school.strip() or city.strip() or department.strip())
+    if has_filters:
+        empty_state = "filters"
+    elif q.strip():
+        empty_state = "query"
+    else:
+        empty_state = ""
     return render(request, "reviews/home.html", {
         "q": q, "school": school, "city": city,
         "department": department, "sort": sort,
         "schools": options["schools"],
         "cities": options["cities"],
-        "departments": options["departments"],
+        "departments": _department_choices(school, department),
         "results": page_results,
         "page_obj": page_obj,
+        "empty_state": empty_state,
+    })
+
+
+def top(request):
+    """Show the 20 highest-rated professors with at least three reviews."""
+    school = request.GET.get("school", "").strip()
+    department = request.GET.get("department", "").strip()
+    results = [
+        row for row in repo.search(school_slug=school, department=department)
+        if row["stats"]["count"] >= 3
+    ][:20]
+    return render(request, "reviews/top.html", {
+        "results": results,
+        "schools": repo.schools(),
+        "departments": _department_choices(school, department),
+        "school": school,
+        "department": department,
     })
 
 
 def _professor_or_404(slug):
     """Fetch an approved professor by slug or raise ``Http404``."""
     return _object_or_404(repo.professor(slug), _("Professor not found"))
-
-
-def _object_or_404(obj, message):
-    """Return ``obj`` or raise ``Http404`` with the supplied message."""
-    if obj is None:
-        raise Http404(message)
-    return obj
 
 
 def professor_detail(request, slug):
@@ -153,13 +181,139 @@ def professor_detail(request, slug):
         aliases={"newest": "new"},
     )
     all_reviews = repo.reviews_for(prof.id, sort)
-    reviews, page_obj = _paginate(all_reviews, request.GET.get("page"))
+    reviews, page_obj = _paginate_request(request, all_reviews)
+    stats = repo.stats(prof.id)
+    person_schema = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": prof.full_name,
+        "url": (
+            f"{settings.SITE_URL}{reverse('professor', args=[prof.slug])}"
+            if settings.SITE_URL
+            else request.build_absolute_uri(reverse("professor", args=[prof.slug]))
+        ),
+    }
+    if stats["count"]:
+        person_schema["aggregateRating"] = {
+            "@type": "AggregateRating",
+            "ratingValue": stats["overall"],
+            "reviewCount": stats["count"],
+        }
+    person_jsonld = json.dumps(person_schema, ensure_ascii=False)
+    person_jsonld = (person_jsonld.replace("&", "\\u0026")
+                     .replace("<", "\\u003c").replace(">", "\\u003e"))
     return render(request, "reviews/professor.html", {
-        "prof": prof, "school": repo.school(prof.school_id), "stats": repo.stats(prof.id),
+        "prof": prof, "school": repo.school(prof.school_id), "stats": stats,
+        "person_jsonld": person_jsonld,
         "reviews": reviews, "sort": sort, "page_obj": page_obj,
         "sort_options": [("new", "сначала новые"), ("old", "сначала старые"), ("high", "сначала высокая оценка"),
                          ("low", "сначала низкая оценка"), ("helpful", "сначала полезные")],
         "report_form": ReportForm(auto_id=False),
+    })
+
+
+def _compare_ids(raw_ids):
+    """Return unique, non-empty professor ids preserving their query order."""
+    ids = []
+    seen = set()
+    for raw in raw_ids.split(","):
+        professor_id = raw.strip()
+        if professor_id and professor_id not in seen:
+            seen.add(professor_id)
+            ids.append(professor_id)
+    return ids
+
+
+def _compare_error(request, message):
+    """Render the comparison page with a friendly validation message."""
+    return render(
+        request,
+        "reviews/compare.html",
+        {"error": message, "professors": []},
+        status=404,
+    )
+
+
+COMPARE_SESSION_KEY = "compare_ids"
+COMPARE_MAX = 3
+
+
+def _compare_professor(professor_id):
+    """Return an approved professor by id, or ``None`` for unknown/invalid ids."""
+    try:
+        prof = repo.professor_by_id(professor_id)
+    except (ValidationError, ValueError, TypeError):
+        return None
+    if prof is None or getattr(prof, "status", "approved") != "approved":
+        return None
+    return prof
+
+
+def _compare_rows(professors):
+    return [
+        {"prof": prof, "stats": repo.stats(prof.id), "school": repo.school(prof.school_id)}
+        for prof in professors
+    ]
+
+
+def _compare_from_session(request):
+    """Manage the visitor's comparison list (``add``/``remove``/``clear``) kept in the session."""
+    selected = [i for i in request.session.get(COMPARE_SESSION_KEY, []) if isinstance(i, str)]
+    changed = False
+    add_id = request.GET.get("add", "").strip()
+    if add_id:
+        if add_id not in selected and _compare_professor(add_id) is not None:
+            selected = (selected + [add_id])[-COMPARE_MAX:]
+            changed = True
+    remove_id = request.GET.get("remove", "").strip()
+    if remove_id and remove_id in selected:
+        selected.remove(remove_id)
+        changed = True
+    if request.GET.get("clear"):
+        selected, changed = [], True
+    if changed or add_id or remove_id:
+        request.session[COMPARE_SESSION_KEY] = selected
+        return redirect("compare")
+    professors = [p for p in (_compare_professor(i) for i in selected) if p is not None]
+    if len(professors) != len(selected):
+        request.session[COMPARE_SESSION_KEY] = [p.id for p in professors]
+    share_url = ""
+    if len(professors) >= 2:
+        share_url = request.build_absolute_uri(reverse("compare")) + "?ids=" + ",".join(p.id for p in professors)
+    return render(request, "reviews/compare.html", {
+        "professors": _compare_rows(professors),
+        "error": "",
+        "session_mode": True,
+        "need_more": len(professors) < 2,
+        "can_add": len(professors) < COMPARE_MAX,
+        "share_url": share_url,
+    })
+
+
+def compare(request):
+    """Compare up to three approved professors side by side.
+
+    ``?ids=a,b[,c]`` is a shareable comparison. Without ``ids`` the page shows
+    the visitor's own list, filled one professor at a time by the "Сравнить"
+    buttons on the cards (``?add=<id>``).
+    """
+    if "ids" not in request.GET:
+        return _compare_from_session(request)
+    ids = _compare_ids(",".join(request.GET.getlist("ids")))
+    if not 2 <= len(ids) <= COMPARE_MAX:
+        return _compare_error(
+            request,
+            _("Для сравнения выберите от 2 до 3 преподавателей."),
+        )
+    professors = []
+    for professor_id in ids:
+        prof = _compare_professor(professor_id)
+        if prof is None:
+            return _compare_error(request, _("Professor not found"))
+        professors.append(prof)
+    return render(request, "reviews/compare.html", {
+        "professors": _compare_rows(professors),
+        "error": "",
     })
 
 
@@ -168,18 +322,25 @@ def _school_or_404(slug):
     return _object_or_404(repo.school_by_slug(slug), _("School not found"))
 
 
-def _school_context(school, page_number):
+def _school_context(school, request):
     """Build the template context for a school page."""
+    # Search already returns batched stats for every approved professor; reuse
+    # them here instead of issuing the separate school_stats query set.
     data = get_or_set(school_cache_key(school.slug), lambda: {
-        "results": repo.search("", school_slug=school.slug),
-        "stats": repo.school_stats(school.id),
+        "results": services.professors_for_school(repo, school.slug),
     })
     results = data["results"]
-    page_results, page_obj = _paginate(results, page_number)
+    rated = [r["stats"]["overall"] for r in results if r["stats"]["count"]]
+    stats = {
+        "prof_count": len(results),
+        "review_count": sum(r["stats"]["count"] for r in results),
+        "avg_overall": round(sum(rated) / len(rated), 1) if rated else 0,
+    }
+    page_results, page_obj = _paginate_request(request, results)
     return {
         "school": school,
         "results": page_results,
-        "stats": data["stats"],
+        "stats": stats,
         "departments": sorted({r["prof"].department for r in results}),
         "page_obj": page_obj,
     }
@@ -191,7 +352,7 @@ def school_detail(request, slug):
     return render(
         request,
         "reviews/school.html",
-        _school_context(school, request.GET.get("page")),
+        _school_context(school, request),
     )
 
 
@@ -205,30 +366,14 @@ def about(request):
     return render(request, "reviews/about.html")
 
 
-@login_required
-def profile(request):
-    """Show the current user's reviews and their moderation status."""
-    return render(request, "reviews/profile.html", {
-        "reviews": repo.reviews_for_user(request.user),
-    })
-
-
-def _is_author(obj, user):
-    """Return whether ``obj`` belongs to ``user`` (ids compare as strings)."""
-    return obj.author_id is not None and str(obj.author_id) == str(user.id)
-
-
 def _owned_review_or_404(review_id, user):
     """Fetch a review owned by ``user`` or raise ``Http404``."""
-    review = _review_or_404(review_id)
-    if not _is_author(review, user):
-        raise Http404(_("Review not found"))
-    return review
+    return view_helpers._owned_review_or_404(repo, review_id, user)
 
 
 def _professor_for_review(review):
     """Return the professor a review belongs to."""
-    return repo.professor_by_id(review.professor_id)
+    return view_helpers._professor_for_review(repo, review)
 
 
 def _review_initial(review):
@@ -243,35 +388,6 @@ def _review_initial(review):
         "tags": review.tags,
         "comment": review.comment,
     }
-
-
-@require_http_methods(["GET", "POST"])
-@login_required
-def review_edit(request, review_id):
-    review = _owned_review_or_404(review_id, request.user)
-    prof = _professor_for_review(review)
-    initial = None if request.method == "POST" else _review_initial(review)
-    form = _form_for_request(request, ReviewForm, initial=initial)
-    if _is_valid_post(request, form):
-        repo.update_review(review_id, form.cleaned_data)
-        messages.success(request, _("Отзыв отправлен на модерацию."))
-        return redirect("profile")
-    return render(
-        request,
-        "reviews/review_form.html",
-        _review_form_context(prof, form, editing=True),
-    )
-
-
-@require_http_methods(["GET", "POST"])
-@login_required
-def review_delete(request, review_id):
-    review = _owned_review_or_404(review_id, request.user)
-    if request.method == "POST":
-        repo.delete_review(review_id)
-        messages.success(request, _("Отзыв удалён."))
-        return redirect("profile")
-    return render(request, "reviews/review_confirm_delete.html", {"review": review})
 
 
 def _save_review(form, prof, request):
@@ -330,50 +446,20 @@ def review_new(request, slug):
 
 def _redirect_to_review(review):
     """Redirect back to the review's anchor on its professor page."""
-    prof = _professor_for_review(review)
-    if prof:
-        return redirect(reverse("professor", args=[prof.slug]) + f"#review-{review.id}")
-    return redirect("home")
+    return view_helpers._redirect_to_review(repo, review)
 
 
 def _review_or_404(review_id):
     """Fetch a review or raise ``Http404`` when it does not exist."""
-    return _object_or_404(repo.review(review_id), _("Review not found"))
+    return view_helpers._review_or_404(repo, review_id)
 
 
-@require_POST
-@login_required
-@rate_limit("vote")
-def review_vote(request, review_id):
-    """Record a helpful / not-helpful vote on a review."""
-    review = _review_or_404(review_id)
-    if _is_author(review, request.user):
-        messages.warning(request, _("Нельзя голосовать за свой отзыв."))
-        return _redirect_to_review(review)
-    try:
-        repo.vote(review_id, helpful=request.POST.get("vote") == "up", user=request.user)
-    except ValueError:
-        messages.warning(request, _("Вы уже голосовали за этот отзыв."))
-    return _redirect_to_review(review)
+from .views_votes import review_report, review_vote
+from .views_profile import profile, review_delete, review_edit
 
 
-@require_POST
-@login_required
-@rate_limit("report")
-def review_report(request, review_id):
-    """Flag a review for moderator attention with a validated reason."""
-    review = _review_or_404(review_id)
-    form = ReportForm(request.POST)
-    if not form.is_valid():
-        messages.error(request, _("Выберите корректную причину жалобы."))
-        return _redirect_to_review(review)
-    repo.report(review_id, user=request.user, reason=form.cleaned_data["reason"])
-    messages.success(request, _("Жалоба отправлена модератору."))
-    return _redirect_to_review(review)
-
-
-def _safe_next_url(request, default):
-    """Return the requested ``next`` URL only if it stays on this host."""
+def _requested_next_url(request):
+    """Return a ``next`` URL from the request, preferring POST data."""
     target = request.POST.get("next") or request.GET.get("next")
     if target and url_has_allowed_host_and_scheme(
         url=target,
@@ -381,11 +467,41 @@ def _safe_next_url(request, default):
         require_https=request.is_secure(),
     ):
         return target
-    return default
+    return None
+
+
+def _safe_next_url(request, default):
+    """Return the requested ``next`` URL only if it stays on this host."""
+    return _requested_next_url(request) or default
+
+
+def _auth_success_url(request, default_setting):
+    """Return a safe requested URL, or the resolved auth redirect default."""
+    return _safe_next_url(request, resolve_url(default_setting))
+
+
+class EmailLoginForm(AuthenticationForm):
+    """Login form whose username field is labelled and typed as an email."""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        field = self.fields["username"]
+        field.label = gettext_lazy("Email")
+        field.widget.input_type = "email"
+        field.widget.attrs["autocomplete"] = "email"
+        field.widget.attrs["autocapitalize"] = "none"
+
+    def clean_username(self):
+        """Accept the email in any letter case (phones capitalize the first letter)."""
+        username = (self.cleaned_data.get("username") or "").strip()
+        match = User.objects.filter(username__iexact=username).values_list("username", flat=True).first()
+        return match or username
 
 
 class ThrottledLoginView(auth_views.LoginView):
     """Login view with a simple per-IP attempt limit backed by the cache."""
+
+    authentication_form = EmailLoginForm
 
     def post(self, request, *args, **kwargs):
         """Reject the request when the per-IP login rate limit is exceeded."""
@@ -397,9 +513,24 @@ class ThrottledLoginView(auth_views.LoginView):
 
     def get_success_url(self):
         """Redirect to a validated local ``next`` URL, else to the default."""
-        return _safe_next_url(
-            self.request, resolve_url(settings.LOGIN_REDIRECT_URL)
-        )
+        return _auth_success_url(self.request, settings.LOGIN_REDIRECT_URL)
+
+    def form_invalid(self, form):
+        """Explain that an unconfirmed account needs its email code first.
+
+        The hint only appears when the password is correct, so it does not
+        reveal which addresses are registered.
+        """
+        username = _normalize_email(form.data.get("username", "") or "")
+        password = form.data.get("password", "") or ""
+        user = User.objects.filter(username__iexact=username, is_active=False).first() if username else None
+        if user is not None and password and user.check_password(password) and (
+            EmailVerificationModel.objects.filter(user=user).exists()
+        ):
+            self.request.session[VERIFY_SESSION_KEY] = user.email
+            form._errors.clear()
+            return self.render_to_response(self.get_context_data(form=form, unverified=True))
+        return super().form_invalid(form)
 
 
 class SafeLogoutView(auth_views.LogoutView):
@@ -407,9 +538,7 @@ class SafeLogoutView(auth_views.LogoutView):
 
     def get_success_url(self):
         """Redirect to a validated local ``next`` URL, else to the default."""
-        return _safe_next_url(
-            self.request, resolve_url(settings.LOGOUT_REDIRECT_URL)
-        )
+        return _auth_success_url(self.request, settings.LOGOUT_REDIRECT_URL)
 
 
 def _normalize_email(email):
@@ -420,15 +549,22 @@ def _normalize_email(email):
 class EmailSignupForm(forms.Form):
     """Self-service signup that uses the email address as the username."""
 
-    email = forms.EmailField(label=_("Email"))
-    password1 = forms.CharField(label=_("Пароль"), widget=forms.PasswordInput)
-    password2 = forms.CharField(label=_("Повторите пароль"), widget=forms.PasswordInput)
+    email = forms.EmailField(label=gettext_lazy("Email"), widget=forms.EmailInput(attrs={"autocapitalize": "none", "autocomplete": "email"}))
+    password1 = forms.CharField(label=gettext_lazy("Пароль"), widget=forms.PasswordInput)
+    password2 = forms.CharField(label=gettext_lazy("Повторите пароль"), widget=forms.PasswordInput)
 
     def clean_email(self):
-        """Normalize the email and reject duplicates (case-insensitive)."""
+        """Normalize the email and reject duplicates (case-insensitive).
+
+        The signup page offers login and password-reset links, but never
+        reveals whether the existing account has already confirmed its email.
+        """
         email = _normalize_email(self.cleaned_data["email"])
         if User.objects.filter(email__iexact=email).exists() or User.objects.filter(username__iexact=email).exists():
-            raise forms.ValidationError(_("Пользователь с таким email уже существует."))
+            self.duplicate_email = True
+            raise forms.ValidationError(
+                _("Этот email уже зарегистрирован. Войдите или восстановите пароль.")
+            )
         return email
 
     def clean(self):
@@ -454,19 +590,121 @@ class EmailSignupForm(forms.Form):
         return user
 
 
+VERIFY_SESSION_KEY = "verify_email"
+
+
+class VerifyCodeForm(forms.Form):
+    """Six-digit email confirmation code."""
+
+    code = forms.RegexField(
+        label=_("Код из письма"),
+        regex=r"^\s*\d{6}\s*$",
+        max_length=12,
+        error_messages={"invalid": _("Введите 6 цифр из письма.")},
+        widget=forms.TextInput(attrs={
+            "inputmode": "numeric", "autocomplete": "one-time-code", "pattern": "[0-9]{6}", "maxlength": "6",
+        }),
+    )
+
+
+def _start_verification(request, user):
+    """Send the first code and remember whom the verify page is for."""
+    request.session[VERIFY_SESSION_KEY] = user.email
+    if email_verification.issue_code(user):
+        messages.success(request, _("Мы отправили 6-значный код на %(email)s. Введите его, чтобы завершить регистрацию.") % {"email": user.email})
+    else:
+        _email_delivery_failed(request)
+
+
+def _email_delivery_failed(request):
+    """Show the shared error message when a verification email cannot be sent."""
+    messages.error(request, _("Не удалось отправить письмо с кодом. Попробуйте отправить код ещё раз чуть позже."))
+
+
 @require_http_methods(["GET", "POST"])
 @rate_limit("signup")
 def signup(request):
-    """Register a new user and log them in immediately."""
+    """Register a new user; confirm the email by code before the first login."""
     if request.user.is_authenticated:
         return redirect("home")
     form = _form_for_request(request, EmailSignupForm)
     if _is_valid_post(request, form):
         user = form.save()
+        if email_verification.is_required():
+            user.is_active = False
+            user.save(update_fields=["is_active"])
+            _start_verification(request, user)
+            return redirect("signup_verify")
         login(request, user)
         messages.success(request, _("Регистрация выполнена. Добро пожаловать!"))
         return redirect("home")
-    return render(request, "registration/signup.html", {"form": form})
+    return render(request, "registration/signup.html", {
+        "form": form,
+        "duplicate_email": getattr(form, "duplicate_email", False),
+    })
+
+
+def _pending_user(request):
+    """Return the inactive user whose email is waiting for confirmation."""
+    email = request.session.get(VERIFY_SESSION_KEY)
+    if not email:
+        return None
+    return User.objects.filter(username__iexact=email, is_active=False).first()
+
+
+def _handle_resend(request, user):
+    if is_rate_limited(request, "resend"):
+        result = None
+    else:
+        result = email_verification.resend_code(user)
+    if result is None or not result.sent:
+        wait = result.wait if result else email_verification.resend_interval()
+        messages.warning(request, _("Новый код можно запросить через %(seconds)s с.") % {"seconds": wait})
+    elif result.delivered:
+        messages.success(request, _("Новый код отправлен на %(email)s.") % {"email": user.email})
+    else:
+        _email_delivery_failed(request)
+    return redirect("signup_verify")
+
+
+_VERIFY_ERRORS = {
+    email_verification.WRONG: lambda: _("Неверный код. Проверьте письмо и попробуйте ещё раз."),
+    email_verification.EXPIRED: lambda: _("Срок действия кода истёк. Запросите новый код."),
+    email_verification.LOCKED: lambda: _("Слишком много неверных попыток. Запросите новый код."),
+    email_verification.MISSING: lambda: _("Код не найден. Запросите новый код."),
+}
+
+
+@require_http_methods(["GET", "POST"])
+@rate_limit("verify")
+def signup_verify(request):
+    """Enter the emailed code to activate the account, or ask for a new one."""
+    if request.user.is_authenticated:
+        return redirect("home")
+    user = _pending_user(request)
+    if user is None:
+        request.session.pop(VERIFY_SESSION_KEY, None)
+        messages.info(request, _("Подтверждать нечего: войдите или зарегистрируйтесь."))
+        return redirect("login")
+    if request.method == "POST" and request.POST.get("action") == "resend":
+        return _handle_resend(request, user)
+    form = _form_for_request(request, VerifyCodeForm)
+    if _is_valid_post(request, form):
+        status = email_verification.check_code(user, form.cleaned_data["code"].strip())
+        if status == email_verification.OK:
+            user.is_active = True
+            user.save(update_fields=["is_active"])
+            request.session.pop(VERIFY_SESSION_KEY, None)
+            login(request, user, backend="django.contrib.auth.backends.ModelBackend")
+            messages.success(request, _("Email подтверждён. Добро пожаловать!"))
+            return redirect("home")
+        form.add_error("code", _VERIFY_ERRORS[status]())
+    context = {
+        "form": form,
+        "email": user.email,
+        "resend_wait": email_verification.seconds_until_resend(getattr(user, "email_verification", None)),
+    }
+    return render(request, "registration/signup_verify.html", context)
 
 
 def _professor_args(form):
@@ -505,16 +743,27 @@ def _submit_professor(form, user):
     return True
 
 
+def _existing_professor(form):
+    """Return the professor that made ``form`` fail the duplicate check."""
+    data = form.cleaned_data
+    return repo.professor_by_name(
+        data["school"], data["first_name"], data["last_name"],
+    )
+
+
 @require_http_methods(["GET", "POST"])
 @login_required
+@rate_limit("review")
 def add_professor(request):
     """Allow a logged-in user to submit a professor for moderation."""
     schools = repo.schools()
     form = _form_for_request(request, ProfessorForm, schools=schools)
-    if _is_valid_post(request, form) and _submit_professor(form, request.user):
-        messages.success(request, _("Преподаватель отправлен на модерацию."))
-        return redirect("home")
-    return render(request, "reviews/add_professor.html", {
-        "form": form,
-        **_account_urls(),
-    })
+    context = {"form": form, **_account_urls()}
+    if _is_valid_post(request, form):
+        if _submit_professor(form, request.user):
+            messages.success(request, _("Преподаватель отправлен на модерацию."))
+            return redirect("home")
+        existing = _existing_professor(form)
+        if existing is not None:
+            context["professor"] = existing
+    return render(request, "reviews/add_professor.html", context)

@@ -1,0 +1,906 @@
+{
+ "code": "batsu",
+ "university": "Баткенский государственный университет (БатГУ)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+  "https://batmu.kg/ru/",
+  "http://batmu.kg/ru/category/kafedralar-tabiyat-taanuu-zhana-pedagogika-fakulteti/",
+  "https://batmu.kg/ru/2022/04/26/rektor/",
+  "http://batmu.kg/ru/2018/01/31/pedagogika-kafedrasy/",
+  "http://batmu.kg/ru/2018/01/31/filologiyalyk-bilim-beruu-kafedrasy/",
+  "https://batmu.kg/en/2022/06/14/kyrgyz-tili-zhana-taryx-kafedrasy-2/ (не открылась)"
+ ],
+ "notes": "Сайт batmu.kg и new.batmu.kg из песочницы и браузера недоступны в реальном времени (таймаут/ошибка сертификата); данные взяты через web_fetch (new.batmu.kg) и копии Wayback Machine (batmu.kg). Основной объём: таблица «Баткен мамлекеттик университетинин окумуштуулары» на new.batmu.kg (2016-2017 уч. год: преподаватели с учёной степенью, полные ФИО) и список научных трудов ИПС БатГУ на той же странице (в основном инициалы, initials_only). Эти данные 2016 года и могут быть устаревшими; кафедра в них не указана, поэтому department = «Баткенский государственный университет», title по степени (д.н. → профессор, к.н. → доцент), для списка трудов — преподаватель. Руководство и заведующие кафедрами (2022-2024) взяты со страниц batmu.kg через Wayback. Полных составов кафедр на сайте нет; страницы кафедр /en/2022/06/14/... и кафедры социально-экономики и права не архивированы; составы Кызыл-Кыйского и Сулюктинского институтов только в AVN (требует логина).",
+ "professors": [
+  {
+   "last_name": "Гыязов",
+   "first_name": "Айдарбек Токторович",
+   "department": "Ректорат",
+   "title": "профессор",
+   "source_url": "https://batmu.kg/ru/2022/04/26/rektor/"
+  },
+  {
+   "last_name": "Миралы кызы",
+   "first_name": "Анара",
+   "department": "Ректорат",
+   "title": "доцент",
+   "source_url": "http://batmu.kg/ru/2022/04/30/okuu-ishteri-boyuncha-prorektor/"
+  },
+  {
+   "last_name": "Саматова",
+   "first_name": "Абиба Абдиламитовна",
+   "department": "Естествознание и математика",
+   "title": "доцент",
+   "source_url": "https://batmu.kg/2021/04/21/ilim-uyushturuu-zhana-mamlekettik-til-boyuncha-prorektor/"
+  },
+  {
+   "last_name": "Абдипатта уулу",
+   "first_name": "Жумабек",
+   "department": "Ректорат",
+   "title": "преподаватель",
+   "source_url": "https://batmu.kg/2016/04/25/el-aralyk-bajlanyshtar-prorektor/"
+  },
+  {
+   "last_name": "Усонов",
+   "first_name": "Муса Мурзапарович",
+   "department": "Ректорат",
+   "title": "преподаватель",
+   "source_url": "https://batmu.kg/2016/04/24/ekonomika-zhana-finansy-boyuncha-prorektor/"
+  },
+  {
+   "last_name": "Көкчөева",
+   "first_name": "Сапаргүл Акматалиевна",
+   "department": "Филологическое образование",
+   "title": "преподаватель",
+   "source_url": "http://batmu.kg/ru/category/kafedralar-tabiyat-taanuu-zhana-pedagogika-fakulteti/"
+  },
+  {
+   "last_name": "Юлдашев",
+   "first_name": "Мамашарип Бабаевич",
+   "department": "Филологическое образование",
+   "title": "преподаватель",
+   "source_url": "http://batmu.kg/ru/2018/01/31/filologiyalyk-bilim-beruu-kafedrasy/"
+  },
+  {
+   "last_name": "Аззамбаев",
+   "first_name": "Ураимберди Аззамбаевич",
+   "department": "Педагогическое образование",
+   "title": "преподаватель",
+   "source_url": "http://batmu.kg/ru/category/kafedralar-tabiyat-taanuu-zhana-pedagogika-fakulteti/"
+  },
+  {
+   "last_name": "Айдарова",
+   "first_name": "Мисилимкан Довлатовна",
+   "department": "Педагогическое образование",
+   "title": "доцент",
+   "source_url": "http://batmu.kg/ru/2018/01/31/pedagogika-kafedrasy/"
+  },
+  {
+   "last_name": "Асанова",
+   "first_name": "Сакина Алимбековна",
+   "department": "Естествознание и математика",
+   "title": "преподаватель",
+   "source_url": "http://batmu.kg/ru/category/kafedralar-tabiyat-taanuu-zhana-pedagogika-fakulteti/"
+  },
+  {
+   "last_name": "Зулпуев",
+   "first_name": "Абдивап Момунович",
+   "department": "Баткенский государственный университет",
+   "title": "профессор",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Тухтаев",
+   "first_name": "Турсунбай Махмудович",
+   "department": "Баткенский государственный университет",
+   "title": "профессор",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Примов",
+   "first_name": "Эркембек Бозуланович",
+   "department": "Баткенский государственный университет",
+   "title": "профессор",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Тайиров",
+   "first_name": "Миталип Муратович",
+   "department": "Баткенский государственный университет",
+   "title": "профессор",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Дехконов",
+   "first_name": "Норали",
+   "department": "Баткенский государственный университет",
+   "title": "профессор",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Мусурманова",
+   "first_name": "Гульмира Садировна",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Гайыпова",
+   "first_name": "Бүназарат Абабакировна",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Машрабов",
+   "first_name": "Абдумалик Амирович",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Кадыров",
+   "first_name": "Кудайберди Сайдиевич",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Холбеков",
+   "first_name": "Нуридин Олимович",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Кадыров",
+   "first_name": "Абдинаби Азамбаевич",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Кошматова",
+   "first_name": "Жылдыз Жанышбаевна",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Шеров",
+   "first_name": "Шайырбек Бийжанович",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Мурзалиева",
+   "first_name": "Аймактым",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Джанботоев",
+   "first_name": "Равшан",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Бабаев",
+   "first_name": "Сайфулло Бабаевич",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Момунова",
+   "first_name": "Гүлзат Ачыловна",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Мурзакулов",
+   "first_name": "Курбанали Ергашевич",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Хидирова",
+   "first_name": "Чолпонай Хабибуллаевна",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Курбонов",
+   "first_name": "Абдукаюм Давлятович",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Абдуллаев",
+   "first_name": "Рузимурод Мамаджаенович",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Толубаев",
+   "first_name": "Жоро Осмонович",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Асамидинов",
+   "first_name": "Фазлидин Мамадалиевич",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Балтабаев",
+   "first_name": "Абдурахман Газыбекович",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Сражидинов",
+   "first_name": "Адылбек Сражидинович",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Анапияев",
+   "first_name": "Каныбек Турдалиевич",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Бердиев",
+   "first_name": "Абдулла Бердиевич",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Зулпиев",
+   "first_name": "Султан Момунович",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Эрматов",
+   "first_name": "Алмаз Кудайбердиевич",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Базиева",
+   "first_name": "Алия Мансуровна",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Зулпуев",
+   "first_name": "Руслан Абдувапович",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Разыков",
+   "first_name": "Толкунбек Суюнбаевич",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Өмурзакова",
+   "first_name": "Гульнара",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Азимбаев",
+   "first_name": "Базарбай",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Мийзамов",
+   "first_name": "Мамашарип",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Боркошев",
+   "first_name": "Меражидин",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Жороев",
+   "first_name": "Исламкул Маматкулович",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Кошуев",
+   "first_name": "Абдижамил Жумаевич",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Максутов",
+   "first_name": "Замирбек",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Абдикеримов",
+   "first_name": "Абибилла",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Миталипов",
+   "first_name": "Камалидин Миталипович",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Пакыров",
+   "first_name": "Курсан",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Каранова",
+   "first_name": "Толгонай Нурбаевна",
+   "department": "Баткенский государственный университет",
+   "title": "доцент",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Тешебаев",
+   "first_name": "Абдимитал Кубатбаевич",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Таиров",
+   "first_name": "К. А.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алишеров",
+   "first_name": "А. Т.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Нажимидинова",
+   "first_name": "А. Э.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эргешали кызы",
+   "first_name": "Актилек",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/"
+  },
+  {
+   "last_name": "Бекмаматов",
+   "first_name": "З. М.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тагаев",
+   "first_name": "Х. К.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джумабаева",
+   "first_name": "З. Б.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сеитбурханов",
+   "first_name": "А. Г.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бөрүбаева",
+   "first_name": "Г. Н.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Исмаилова",
+   "first_name": "А.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алимов",
+   "first_name": "И. А.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джоробаева",
+   "first_name": "М. А.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тиллаева",
+   "first_name": "Г. М.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шарапова",
+   "first_name": "Ю. П.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алимбаева",
+   "first_name": "А. К.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ахмаджанов",
+   "first_name": "М. А.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сатыбаев",
+   "first_name": "А. Д.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Насиров",
+   "first_name": "М. Т.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Маташева",
+   "first_name": "Г. И.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Зулпуев",
+   "first_name": "С. М.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джумабаева",
+   "first_name": "Д. Б.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Турсунбекова",
+   "first_name": "С.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Расулова",
+   "first_name": "З. А.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сейтмуратова",
+   "first_name": "А. Ж.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Камбарова",
+   "first_name": "А. К.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шерова",
+   "first_name": "А. К.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдиева",
+   "first_name": "А. М.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Авязова",
+   "first_name": "А. М.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Дооранов",
+   "first_name": "Н. А.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Төрөев",
+   "first_name": "Ы. Т.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Байгесеков",
+   "first_name": "А. М.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сайдалиев",
+   "first_name": "М. Д.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тагаев",
+   "first_name": "М.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Элмуратов",
+   "first_name": "Ш. З.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эралиев",
+   "first_name": "Ы. С.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Канназарова",
+   "first_name": "Б. Ү.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кумарбаев",
+   "first_name": "Р. М.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Камбаров",
+   "first_name": "А. К.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ботобекова",
+   "first_name": "Д. У.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шадиев",
+   "first_name": "М. И.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ханкелдиев",
+   "first_name": "Ш. Х.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Темирбаев",
+   "first_name": "М. М.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Орунбаев",
+   "first_name": "Т. А.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Турдуев",
+   "first_name": "К. Т.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Акбаров",
+   "first_name": "Т. Х.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Курбанова",
+   "first_name": "М. А.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Маматова",
+   "first_name": "А. М.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кулдашве",
+   "first_name": "З. А.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Султанова",
+   "first_name": "С.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Давранова",
+   "first_name": "Г.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сулайманова",
+   "first_name": "Д.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мурзахмедова",
+   "first_name": "Н. С.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Темиров",
+   "first_name": "Н. С.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мурзаев",
+   "first_name": "М. С.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бабаев",
+   "first_name": "Д. Б.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Көчкөнов",
+   "first_name": "А.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Касымов",
+   "first_name": "Т.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алтыбаева",
+   "first_name": "М.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Таиров",
+   "first_name": "Х.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мусаева",
+   "first_name": "Б.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кайымова",
+   "first_name": "Ф.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мадумарова",
+   "first_name": "М.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Асанов",
+   "first_name": "А.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Искандаров",
+   "first_name": "С.",
+   "department": "Баткенский государственный университет",
+   "title": "преподаватель",
+   "source_url": "https://new.batmu.kg/2016/10/batken-mamlekettik-universitetinin-okumushtuuulary/",
+   "initials_only": true
+  }
+ ]
+}

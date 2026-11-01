@@ -342,6 +342,32 @@ class RepositoryContractMixin:
         self.assertEqual(st["tone"], "good")
         self.assertIn("Интересные лекции", st["top_tags"])
 
+    def test_only_approved_reviews_are_public_and_counted_in_rating(self):
+        s = self._school()
+        p = self._prof(s.id)
+        pending = self.repo.add_review(
+            p.id, _repo_review(course="Ожидает", overall=1), status="pending"
+        )
+        approved = self.repo.add_review(
+            p.id, _repo_review(course="Одобрен", overall=5), status="approved"
+        )
+        rejected = self.repo.add_review(
+            p.id, _repo_review(course="Отклонён", overall=1), status="rejected"
+        )
+
+        self.assertEqual([r.id for r in self.repo.reviews_for(p.id)], [approved.id])
+        self.assertEqual(
+            {r.id for r in self.repo.reviews_for(p.id, include_pending=True)},
+            {pending.id, approved.id, rejected.id},
+        )
+        stats = self.repo.stats(p.id)
+        self.assertEqual(stats["count"], 1)
+        self.assertEqual(stats["overall"], 5.0)
+        self.assertEqual(
+            [(row["score"], row["count"]) for row in stats["distribution"]],
+            [(5, 1), (4, 0), (3, 0), (2, 0), (1, 0)],
+        )
+
     def test_stats_tone_thresholds_are_shared_between_backends(self):
         s = self._school()
         cases = [(5, "good"), (4, "good"), (3, "mid"), (2, "bad"), (1, "bad")]
@@ -587,6 +613,18 @@ class ProfessorViewTests(_MemoryRepoTestCase):
         self.assertContains(r, '<span class="bar"><i style="width:')
         self.assertContains(r, ">5<")
 
+    def test_distribution_rows_render_star_bars_and_aria_labels(self):
+        prof = self.prof()
+        r = self.client.get(reverse("professor", args=[prof.slug]))
+        self.assertContains(r, 'class="dist-score"')
+        self.assertContains(r, "★")
+        for row in r.context["stats"]["distribution"]:
+            self.assertContains(
+                r,
+                f'aria-label="Рейтинг {row["score"]} из 5, Отзывов: {row["count"]}"',
+            )
+            self.assertContains(r, f'<span class="bar"><i style="width:{row["pct"]}%"></i></span>')
+
     def test_distribution_empty_state_when_no_reviews(self):
         school = self.repo.add_school("Test School", "Test City")
         new_prof = self.repo.add_professor(school.id, "Test", "Professor", "Test Dept", "преподаватель")
@@ -710,18 +748,70 @@ class AddProfessorViewTests(_MemoryRepoTestCase):
         self.assertIsNotNone(self.repo.professor(p.slug))
         self.assertEqual(len(self.repo.search("Тестов")), 1)
 
+    def test_duplicate_ignores_case_and_spaces_and_links_existing(self):
+        self.login()
+        school = self.repo.schools()[0]
+        existing = self.repo.add_professor(
+            school.id, "Иван  Иванович", "Петров", "Физика", "доцент"
+        )
+        before = len(self.repo._professors)
+        data = {"school": str(school.id), "first_name": "  иван   иванович ",
+                "last_name": " ПЕТРОВ ", "department": "Математика", "title": "профессор"}
+        r = self.client.post(reverse("add_professor"), data)
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, "уже есть в этом вузе")
+        self.assertEqual(len(self.repo._professors), before)
+        self.assertEqual(r.context["professor"].id, existing.id)
+        self.assertContains(r, reverse("professor", args=[existing.slug]))
+
+    def test_trims_names_and_rejects_empty_or_overlong_cleaned_text(self):
+        self.login()
+        school = self.repo.schools()[0]
+        data = self._data(school)
+        data.update(first_name="  Иван  ", last_name=" Петров ", department=" Кафедра ")
+        self.assertEqual(self.client.post(reverse("add_professor"), data).status_code, 302)
+        professor = next(p for p in self.repo._professors.values() if p.first_name == "Иван")
+        self.assertEqual((professor.first_name, professor.last_name, professor.department),
+                         ("Иван", "Петров", "Кафедра"))
+
+        data.update(first_name=" \t ")
+        response = self.client.post(reverse("add_professor"), data)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("first_name", response.context["form"].errors)
+
+        data.update(first_name="А" * 41)
+        response = self.client.post(reverse("add_professor"), data)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("first_name", response.context["form"].errors)
+
+    def test_invalid_choices_and_escaped_text_echo(self):
+        self.login()
+        school = self.repo.schools()[0]
+        data = self._data(school)
+        data.update(first_name="<script>alert(1)</script>", title="admin")
+        response = self.client.post(reverse("add_professor"), data)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("title", response.context["form"].errors)
+        self.assertContains(response, "&lt;script&gt;alert(1)&lt;/script&gt;")
+        self.assertNotContains(response, "<script>alert(1)</script>")
+
+        data.update(title="доцент", school="invalid-school")
+        response = self.client.post(reverse("add_professor"), data)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("school", response.context["form"].errors)
+
 
 # ---------------------------------------------------------------------------
 # Auth / signup views
 # ---------------------------------------------------------------------------
 class AuthViewTests(TestCase):
-    def test_signup_creates_user_and_logs_in(self):
+    def test_signup_creates_inactive_user_pending_email_code(self):
         r = self.client.post(reverse("signup"), {
             "email": "new@example.com", "password1": "pass12345", "password2": "pass12345"})
         self.assertEqual(r.status_code, 302)
-        self.assertEqual(r.url, reverse("home"))
-        self.assertTrue(User.objects.filter(username="new@example.com").exists())
-        self.assertIn("_auth_user_id", self.client.session)
+        self.assertEqual(r.url, reverse("signup_verify"))
+        self.assertFalse(User.objects.get(username="new@example.com").is_active)
+        self.assertNotIn("_auth_user_id", self.client.session)
 
     def test_signup_duplicate_email(self):
         User.objects.create_user(username="dup@example.com", email="dup@example.com", password="pass12345")
@@ -823,6 +913,23 @@ class DjangoViewCoverageTests(TestCase):
         self.client.post(reverse("review_report", args=[review.id]))
         self.assertEqual(Report.objects.filter(review_id=review.id).count(), 1)
 
+    def test_add_professor_duplicate_ignores_case_and_spaces_and_links_existing(self):
+        from reviews.models import Professor
+        school = self.repo.schools()[0]
+        existing = self.repo.add_professor(
+            school.id, "Иван  Иванович", "Петров", "Физика", "доцент"
+        )
+        self.login()
+        before = Professor.objects.count()
+        data = {"school": str(school.id), "first_name": "  иван   иванович ",
+                "last_name": " ПЕТРОВ ", "department": "Математика", "title": "профессор"}
+        r = self.client.post(reverse("add_professor"), data)
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, "уже есть в этом вузе")
+        self.assertEqual(Professor.objects.count(), before)
+        self.assertEqual(r.context["professor"].id, existing.id)
+        self.assertContains(r, reverse("professor", args=[existing.slug]))
+
 
 # ---------------------------------------------------------------------------
 # Security settings hardening
@@ -871,11 +978,11 @@ class SecuritySettingsTests(TestCase):
 
     def test_referrer_policy_configured(self):
         from django.conf import settings
-        self.assertEqual(settings.SECURE_REFERRER_POLICY, "same-origin")
+        self.assertEqual(settings.SECURE_REFERRER_POLICY, "strict-origin-when-cross-origin")
 
     def test_permissions_policy_configured(self):
         from django.conf import settings
-        self.assertEqual(settings.PERMISSIONS_POLICY, "camera=(), geolocation=(), microphone=()")
+        self.assertEqual(settings.PERMISSIONS_POLICY, "camera=(), microphone=(), geolocation=()")
 
     @override_settings(DEBUG=True)
     def test_security_headers_are_emitted(self):
@@ -887,11 +994,13 @@ class SecuritySettingsTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers.get("X-Content-Type-Options"), "nosniff")
         self.assertEqual(response.headers.get("X-Frame-Options"), "DENY")
-        self.assertEqual(response.headers.get("Referrer-Policy"), "same-origin")
+        self.assertEqual(
+            response.headers.get("Referrer-Policy"), "strict-origin-when-cross-origin"
+        )
         self.assertNotIn("Strict-Transport-Security", response.headers)
         self.assertEqual(
             response.headers.get("Permissions-Policy"),
-            "camera=(), geolocation=(), microphone=()",
+            "camera=(), microphone=(), geolocation=()",
         )
 
     def test_csp_header_is_emitted(self):
@@ -1987,10 +2096,10 @@ class QueryEfficiencyTests(TestCase):
 
     def test_home_view_query_count_is_constant(self):
         self.client.get(reverse("home"))
-        with self.assertNumQueries(6):
+        with self.assertNumQueries(5):
             self.client.get(reverse("home"))
         self._add_load()
-        with self.assertNumQueries(6):
+        with self.assertNumQueries(5):
             self.client.get(reverse("home"))
 
     def test_professor_view_query_count_is_constant(self):
@@ -2006,10 +2115,10 @@ class QueryEfficiencyTests(TestCase):
     def test_school_view_query_count_is_constant(self):
         school = self.repo.schools()[0]
         self.client.get(reverse("school_detail", args=[school.slug]))
-        with self.assertNumQueries(7):
+        with self.assertNumQueries(4):
             self.client.get(reverse("school_detail", args=[school.slug]))
         self._add_load()
-        with self.assertNumQueries(7):
+        with self.assertNumQueries(4):
             self.client.get(reverse("school_detail", args=[school.slug]))
 
     def test_home_list_query_count_does_not_grow_per_professor(self):
@@ -2017,7 +2126,7 @@ class QueryEfficiencyTests(TestCase):
         self.client.get(reverse("home"))  # warm session/messages storage
         self._add_schools(4)
         self._add_load(professors=12, reviews_each=3)
-        with self.assertNumQueries(6):
+        with self.assertNumQueries(5):
             self.client.get(reverse("home"))
 
     def test_professor_list_query_count_is_flat_across_catalog_sizes(self):
@@ -2204,7 +2313,12 @@ class PerfIndexDeclarationTests(TestCase):
         expected = {
             School: {"school_city_idx", "school_name_idx"},
             Professor: {"prof_status_idx", "prof_school_status_idx", "prof_dept_idx", "prof_name_idx"},
-            Review: {"review_prof_status_idx", "review_status_created_idx"},
+            Review: {
+                "review_prof_status_idx",
+                "review_prof_status_created_idx",
+                "review_status_created_idx",
+                "review_author_created_idx",
+            },
         }
         for model, names in expected.items():
             declared = {idx.name for idx in model._meta.indexes}
@@ -2212,6 +2326,18 @@ class PerfIndexDeclarationTests(TestCase):
                 self.assertTrue(
                     names.issubset(declared), f"{model.__name__} missing {names - declared}"
                 )
+
+    def test_profile_and_professor_review_indexes_match_queries(self):
+        from .models import Review
+
+        indexes = {idx.name: idx.fields for idx in Review._meta.indexes}
+        self.assertEqual(
+            indexes.get("review_author_created_idx"), ["author", "-created_at"]
+        )
+        self.assertEqual(
+            indexes.get("review_prof_status_created_idx"),
+            ["professor", "status", "-created_at"],
+        )
 
 
 class MigrationsUpToDateTests(TestCase):
@@ -2222,7 +2348,7 @@ class MigrationsUpToDateTests(TestCase):
         # migrations; call_command surfaces that as SystemExit.
         from django.core.management import call_command
 
-        call_command("makemigrations", check=True, verbosity=0)
+        call_command("makemigrations", check=True, dry_run=True, verbosity=0)
 
 
 # ---------------------------------------------------------------------------
@@ -2308,6 +2434,14 @@ class EmptyStateTests(_MemoryRepoTestCase):
         self.assertContains(r, "Пока нет преподавателей")
         self.assertContains(r, "Пока нет кафедр")
         self.assertNotContains(r, 'class="card"')
+
+    def test_school_empty_states_are_announced_and_offer_next_step(self):
+        school = self.repo.add_school("Пустой вуз", "Бишкек")
+        r = self.client.get(reverse("school_detail", args=[school.slug]))
+
+        self.assertContains(r, 'class="empty empty-state" role="status"', count=2)
+        self.assertContains(r, 'class="empty-state-title"', count=2)
+        self.assertContains(r, f'href="{reverse("add_professor")}"')
 
     def test_home_without_matches_shows_empty_state(self):
         r = self.client.get(reverse("home"), {"q": "неттакого"})
@@ -2592,6 +2726,11 @@ class LoginRateLimitTests(TestCase):
         self.assertEqual(self._post(ip="10.0.0.1").status_code, 429)
         self.assertEqual(self._post(ip="10.0.0.2").status_code, 200)
 
+    def test_login_get_page_is_not_limited(self):
+        for _ in range(3):
+            self._post()
+        self.assertEqual(self.client.get(reverse("login")).status_code, 200)
+
 
 @_THROTTLE_SETTINGS
 class SignupRateLimitTests(TestCase):
@@ -2870,7 +3009,7 @@ class MessagesRenderTests(_MemoryRepoTestCase):
         self.assertContains(response, 'aria-label="Закрыть уведомление"')
         self.assertContains(response, "reviews/base.js")
         self.assertContains(response, "reviews/messages.js")
-        self.assertNotRegex(response.content.decode(), r"<script(?![^>]*\bsrc=)[^>]*>\s*[^\s<]")
+        self.assertNotRegex(response.content.decode(), r"<script(?![^>]*\bsrc=)(?![^>]*type=[\"']application/ld\+json[\"'])[^>]*>\s*[^\s<]")
 
     def test_error_message_uses_alert_role(self):
         self.login()

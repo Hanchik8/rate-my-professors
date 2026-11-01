@@ -3,7 +3,7 @@ from django.contrib.auth.models import Permission, User
 from django.test import TestCase
 from django.urls import reverse
 
-from .admin import ReviewAdmin
+from .admin import ProfessorAdmin, ReviewAdmin
 from .models import Professor, Review, School
 
 
@@ -24,6 +24,12 @@ class ReviewAdminModerationTests(TestCase):
             username="staff@example.com", email="staff@example.com", password="pass12345", is_staff=True
         )
         self.staff.user_permissions.add(Permission.objects.get(codename="change_review"))
+        self.staff_without_permissions = User.objects.create_user(
+            username="staff-no-permissions@example.com",
+            email="staff-no-permissions@example.com",
+            password="pass12345",
+            is_staff=True,
+        )
         self.superuser = User.objects.create_superuser(
             username="admin@example.com", email="admin@example.com", password="pass12345"
         )
@@ -68,6 +74,24 @@ class ReviewAdminModerationTests(TestCase):
         review.refresh_from_db()
         self.assertEqual(review.status, "pending")
 
+    def test_staff_without_permissions_gets_forbidden(self):
+        self.client.force_login(self.staff_without_permissions)
+        self.assertEqual(self.client.get(self._changelist_url()).status_code, 403)
+
+        review = self._review()
+        response = self._run_action("approve_selected", [review])
+        self.assertEqual(response.status_code, 403)
+        review.refresh_from_db()
+        self.assertEqual(review.status, "pending")
+
+    def test_anonymous_cannot_run_moderation_action(self):
+        review = self._review()
+        response = self._run_action("approve_selected", [review])
+        self.assertEqual(response.status_code, 302)
+        self.assertIn("/admin/login/", response.url)
+        review.refresh_from_db()
+        self.assertEqual(review.status, "pending")
+
     def test_staff_with_permission_can_access_admin(self):
         self.client.force_login(self.staff)
         self.assertEqual(self.client.get(reverse("admin:index")).status_code, 200)
@@ -102,6 +126,34 @@ class ReviewAdminModerationTests(TestCase):
 
         self.client.force_login(self.superuser)
         response = self._run_action("reject_selected", [selected])
+
+        self.assertEqual(response.status_code, 302)
+        selected.refresh_from_db()
+        untouched.refresh_from_db()
+        self.assertEqual(selected.status, "rejected")
+        self.assertEqual(untouched.status, "approved")
+
+    def test_professor_admin_registers_approve_and_reject_actions(self):
+        professor_admin = ProfessorAdmin(Professor, admin.site)
+        self.assertIn("approve_selected", professor_admin.actions)
+        self.assertIn("reject_selected", professor_admin.actions)
+
+    def test_reject_action_moderates_only_selected_professors(self):
+        selected = self.professor
+        untouched = Professor.objects.create(
+            school=self.school,
+            first_name="Пётр",
+            last_name="Петров",
+            department="Математика",
+            title="Профессор",
+            status="approved",
+        )
+
+        self.client.force_login(self.superuser)
+        response = self.client.post(
+            reverse("admin:reviews_professor_changelist"),
+            {"action": "reject_selected", "_selected_action": [str(selected.pk)]},
+        )
 
         self.assertEqual(response.status_code, 302)
         selected.refresh_from_db()

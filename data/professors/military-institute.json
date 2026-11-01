@@ -1,0 +1,28 @@
+{
+ "code": "military-institute",
+ "university": "Военный институт Вооружённых сил Кыргызской Республики",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "http://miafkr.edu.kg",
+  "https://web.archive.org/web/20220930101458/http://miafkr.edu.kg/ru/o-vuze/rukovodstvo/",
+  "https://web.archive.org/web/20220930104219/http://miafkr.edu.kg/zhozh-zhonyndo/kafedralar/",
+  "http://miafkr.edu.kg/o-vuze/kafedryi/kafedra-pogranichnoy-deyatelnosti/prepodavatelskiy-sostav/"
+ ],
+ "notes": "Сайт miafkr.edu.kg из нашей сети не открывается (DNS/туннель), Google его не индексирует. По архиву Wayback: страница \"Преподавательский состав\" без ФИО, список 8 кафедр без людей, подстраницы кафедр не архивированы. Две записи кафедры пограничной деятельности взяты из поискового сниппета DuckDuckGo этой страницы сайта (18.11.2025), live-копию открыть не удалось. Начальник института не включён как административная должность. Учёных степеней на сайте нет, только воинские звания.",
+ "professors": [
+  {
+   "last_name": "Сапиев",
+   "first_name": "Шумкар Талипбекович",
+   "department": "Пограничная деятельность",
+   "title": "преподаватель",
+   "source_url": "http://miafkr.edu.kg/o-vuze/kafedryi/kafedra-pogranichnoy-deyatelnosti/prepodavatelskiy-sostav/"
+  },
+  {
+   "last_name": "Токтошев",
+   "first_name": "Жылдызбек Майрамбекович",
+   "department": "Пограничная деятельность",
+   "title": "старший преподаватель",
+   "source_url": "http://miafkr.edu.kg/o-vuze/kafedryi/kafedra-pogranichnoy-deyatelnosti/prepodavatelskiy-sostav/"
+  }
+ ]
+}

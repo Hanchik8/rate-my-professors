@@ -1,0 +1,24 @@
+{
+ "code": "krao",
+ "university": "Кыргызско-Российская академия образования (КРАО)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://ru.krao.kg/",
+  "https://ru.krao.kg/kafedri.html",
+  "https://ru.krao.kg/professors.html",
+  "https://ru.krao.kg/rukovodstvo-krao.html",
+  "https://ru.krao.kg/strukturakrao.html",
+  "https://ru.krao.kg/abiturient.html",
+  "https://ru.krao.kg/magistratura.html"
+ ],
+ "notes": "Сайт не публикует состав кафедр: страница \"Преподаватели\" (professors.html) содержит только вакансии и трудовой договор, страница \"Кафедры\" только описания трёх кафедр. На главной перечислены учредители (не преподаватели), они не включены. Включена только ректор, указанная как доктор психологических наук, профессор. Проректоры по АХЧ, секретарь, отдел кадров и зав. магистратурой не включены как административные. Веб-поиск дополнительных имён не дал.",
+ "professors": [
+  {
+   "last_name": "Шакеева",
+   "first_name": "Чинара Асановна",
+   "department": "Ректорат",
+   "title": "профессор",
+   "source_url": "https://ru.krao.kg/rukovodstvo-krao.html"
+  }
+ ]
+}

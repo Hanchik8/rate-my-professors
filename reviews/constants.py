@@ -18,4 +18,7 @@ RATE_LIMITS = {
     "review": (5, 60),
     "report": (5, 60),
     "vote": (60, 60),
+    # Email confirmation: code submissions per IP, and at most one resend a minute.
+    "verify": (10, 60),
+    "resend": (1, 60),
 }

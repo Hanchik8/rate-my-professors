@@ -10,6 +10,15 @@ msgstr ""
 msgid "Предмет"
 msgstr "Subject"
 
+msgid "Лучшие"
+msgstr "Top"
+
+msgid "Лучшие преподаватели"
+msgstr "Top Professors"
+
+msgid "Пока нет преподавателей для рейтинга."
+msgstr "There are no professors in the rankings yet."
+
 msgid "Например: Алгоритмы, Общая физика, Микроэкономика"
 msgstr "For example: Algorithms, General Physics, Microeconomics"
 
@@ -72,6 +81,48 @@ msgstr "Last name"
 
 msgid "Кафедра"
 msgstr "Department"
+
+msgid "Информатика"
+msgstr "Computer Science"
+
+msgid "Математика"
+msgstr "Mathematics"
+
+msgid "Физика"
+msgstr "Physics"
+
+msgid "Экономика"
+msgstr "Economics"
+
+msgid "История"
+msgstr "History"
+
+msgid "Биология"
+msgstr "Biology"
+
+msgid "Лингвистика"
+msgstr "Linguistics"
+
+msgid "Психология"
+msgstr "Psychology"
+
+msgid "Международные отношения"
+msgstr "International Relations"
+
+msgid "Химия"
+msgstr "Chemistry"
+
+msgid "Филология"
+msgstr "Philology"
+
+msgid "Право"
+msgstr "Law"
+
+msgid "Инженерия"
+msgstr "Engineering"
+
+msgid "Медицина"
+msgstr "Medicine"
 
 #| msgid "Сложность"
 msgid "Должность"
@@ -250,8 +301,11 @@ msgstr "Rating %(rating)s out of 5"
 msgid "Нет оценок"
 msgstr "No ratings"
 
-msgid "отзывов"
-msgstr "ratings"
+#, python-format
+msgid "%(counter)s отзыв"
+msgid_plural "%(counter)s отзывов"
+msgstr[0] "%(counter)s review"
+msgstr[1] "%(counter)s reviews"
 
 msgid "Сложность"
 msgstr "Difficulty"
@@ -268,6 +322,16 @@ msgstr "Try a shorter query or change the filters."
 msgid "Сбросить фильтры"
 msgstr "Reset filters"
 
+#, python-format
+msgid "По запросу «%(query)s» никого не нашли, проверьте написание"
+msgstr "We couldn't find anyone for “%(query)s”, check the spelling"
+
+msgid "С этими фильтрами никого нет"
+msgstr "No one matches these filters"
+
+msgid "Первая"
+msgstr "First"
+
 msgid "Назад"
 msgstr "Previous"
 
@@ -277,6 +341,9 @@ msgstr "Page %(n)s of %(t)s"
 
 msgid "Вперёд"
 msgstr "Next"
+
+msgid "Последняя"
+msgstr "Last"
 
 msgid "Пойдут снова"
 msgstr "Would take again"
@@ -304,25 +371,34 @@ msgstr "newest"
 
 msgid "сначала полезные"
 msgstr "most helpful"
+
 msgid "сначала новые"
 msgstr "newest"
+
 msgid "сначала старые"
 msgstr "oldest"
+
 msgid "сначала высокая оценка"
 msgstr "highest rating first"
+
 msgid "сначала низкая оценка"
 msgstr "lowest rating first"
+
 msgid "сначала полезные"
 msgstr "most helpful"
 
 msgid "Newest"
 msgstr "Newest"
+
 msgid "Oldest"
 msgstr "Oldest"
+
 msgid "Highest rating"
 msgstr "Highest rating"
+
 msgid "Lowest rating"
 msgstr "Lowest rating"
+
 msgid "Most helpful"
 msgstr "Most helpful"
 
@@ -362,11 +438,11 @@ msgid "Чтобы оставить отзыв,"
 msgstr "To leave a review,"
 
 msgid ""
-"ProfLens — отзывы только об учёбе: как преподаватель объясняет, оценивает, "
-"ведёт занятия. Сайт не для сведения счётов."
+"PrepodRate — отзывы только об учёбе: как преподаватель объясняет, оценивает,"
+" ведёт занятия. Сайт не для сведения счётов."
 msgstr ""
-"ProfLens — reviews about academics only: how a professor explains, grades, "
-"and teaches. This site is not for settling scores."
+"PrepodRate — reviews about academics only: how a professor explains, grades,"
+" and teaches. This site is not for settling scores."
 
 msgid "Только об учёбе — без оскорблений, угроз, дискриминации."
 msgstr "Only about academics — no insults, threats, or discrimination."
@@ -418,11 +494,17 @@ msgstr "Professors"
 msgid "Пока нет преподавателей."
 msgstr "No professors yet."
 
+msgid "Добавьте преподавателя, чтобы студенты могли делиться опытом."
+msgstr "Add a professor so students can share their experiences."
+
 msgid "Отзыв отправлен на модерацию. Спасибо!"
 msgstr "Review submitted for moderation. Thank you!"
 
 msgid "Вы уже голосовали за этот отзыв."
 msgstr "You have already voted on this review."
+
+msgid "Ваш голос учтён. Спасибо!"
+msgstr "Your vote has been recorded. Thank you!"
 
 msgid "Жалоба отправлена модератору."
 msgstr "Report sent to a moderator."
@@ -463,8 +545,11 @@ msgstr "Password"
 msgid "Повторите пароль"
 msgstr "Repeat password"
 
-msgid "Пользователь с таким email уже существует."
-msgstr "A user with this email already exists."
+msgid "Не удалось зарегистрироваться. Проверьте введённые данные."
+msgstr "Could not sign up. Please check the information you entered."
+
+msgid "Этот email уже зарегистрирован. Войдите или восстановите пароль."
+msgstr "This email is already registered. Log in or reset your password."
 
 msgid "Пароли не совпадают."
 msgstr "Passwords do not match."
@@ -512,6 +597,9 @@ msgstr ""
 msgid "Одобрить выбранных преподавателей"
 msgstr "Approve selected professors"
 
+msgid "Отклонить выбранных преподавателей"
+msgstr "Reject selected professors"
+
 msgid "Одобрить выбранные отзывы"
 msgstr "Approve selected reviews"
 
@@ -543,16 +631,20 @@ msgid "О проекте"
 msgstr "About"
 
 msgid ""
-"ProfLens — независимый сайт отзывов о преподавателях вузов Кыргызстана. Мы "
-"собираем честные мнения студентов, чтобы помочь выбрать курсы и "
+"PrepodRate — независимый сайт отзывов о преподавателях вузов Кыргызстана. Мы"
+" собираем честные мнения студентов, чтобы помочь выбрать курсы и "
 "преподавателей осознанно."
 msgstr ""
-"ProfLens is an independent review site for university professors in "
+"PrepodRate is an independent review site for university professors in "
 "Kyrgyzstan. We collect honest student opinions to help you choose courses "
 "and professors wisely."
 
-msgid "Наша миссия — сделать учебный процесс прозрачнее, а выбор преподавателя — информированным."
-msgstr "Our mission is to make the education process more transparent and the choice of a professor informed."
+msgid ""
+"Наша миссия — сделать учебный процесс прозрачнее, а выбор преподавателя — "
+"информированным."
+msgstr ""
+"Our mission is to make the education process more transparent and the choice"
+" of a professor informed."
 
 msgid "Как это работает"
 msgstr "How it works"
@@ -575,8 +667,8 @@ msgid ""
 "Отзывы доступны всем — без регистрации, бесплатно, на трёх языках (русский, "
 "кыргызский, английский)."
 msgstr ""
-"Reviews are available to everyone — no registration, free of charge, in three "
-"languages (Russian, Kyrgyz, English)."
+"Reviews are available to everyone — no registration, free of charge, in "
+"three languages (Russian, Kyrgyz, English)."
 
 msgid "Конфиденциальность"
 msgstr "Privacy"
@@ -629,37 +721,275 @@ msgstr "Rejected"
 
 msgid "Изменить"
 msgstr "Edit"
+
 msgid "Удалить"
 msgstr "Delete"
+
 msgid "Изменить отзыв"
 msgstr "Edit review"
+
 msgid "Сохранить изменения"
 msgstr "Save changes"
+
 msgid "Вы уверены, что хотите удалить этот отзыв?"
 msgstr "Are you sure you want to delete this review?"
+
 msgid "Отзыв удалён."
 msgstr "Review deleted."
+
 msgid "Отзыв отправлен на модерацию."
 msgstr "Review submitted for moderation."
+
 msgid "Удалить отзыв"
 msgstr "Delete review"
 
-msgid "ProfLens — отзывы о преподавателях вузов Кыргызстана: рейтинги, сложность курсов и советы студентов."
-msgstr "ProfLens — reviews of university professors in Kyrgyzstan: ratings, course difficulty and student advice."
+msgid ""
+"PrepodRate — отзывы о преподавателях вузов Кыргызстана: рейтинги, сложность "
+"курсов и советы студентов."
+msgstr ""
+"PrepodRate — reviews of university professors in Kyrgyzstan: ratings, course"
+" difficulty and student advice."
 
-msgid "Отзывы студентов о преподавателе %(name)s (%(dept)s, %(school)s): рейтинг, сложность и советы."
-msgstr "Student reviews of professor %(name)s (%(dept)s, %(school)s): rating, difficulty and advice."
+msgid ""
+"Отзывы студентов о преподавателе %(name)s (%(dept)s, %(school)s): рейтинг, "
+"сложность и советы."
+msgstr ""
+"Student reviews of professor %(name)s (%(dept)s, %(school)s): rating, "
+"difficulty and advice."
 
-msgid "Преподаватели и отзывы студентов вуза %(name)s (%(city)s): рейтинги, кафедры и советы."
-msgstr "Professors and student reviews at %(name)s (%(city)s): ratings, departments and advice."
+msgid ""
+"Преподаватели и отзывы студентов вуза %(name)s (%(city)s): рейтинги, кафедры"
+" и советы."
+msgstr ""
+"Professors and student reviews at %(name)s (%(city)s): ratings, departments "
+"and advice."
 
 # Strings rendered by Django's built-in login form.
 msgid "Username"
 msgstr "Username"
 
 #, python-format
-msgid "Please enter a correct %(username)s and password. Note that both fields may be case-sensitive."
-msgstr "Please enter a correct %(username)s and password. Note that both fields may be case-sensitive."
+msgid ""
+"Please enter a correct %(username)s and password. Note that both fields may "
+"be case-sensitive."
+msgstr ""
+"Please enter a correct %(username)s and password. Note that both fields may "
+"be case-sensitive."
 
 msgid "This account is inactive."
 msgstr "This account is inactive."
+
+msgid "Забыли пароль?"
+msgstr "Forgot password?"
+
+msgid "Сброс пароля"
+msgstr "Password reset"
+
+msgid "Укажите адрес электронной почты, связанный с аккаунтом."
+msgstr "Enter the email address associated with your account."
+
+msgid "Отправить ссылку"
+msgstr "Send link"
+
+msgid "Проверьте почту"
+msgstr "Check your email"
+
+msgid ""
+"Если аккаунт с таким адресом существует, мы отправили инструкции по сбросу "
+"пароля."
+msgstr ""
+"If an account exists for that address, we have sent password reset "
+"instructions."
+
+msgid "Новый пароль"
+msgstr "New password"
+
+msgid "Сохранить пароль"
+msgstr "Save password"
+
+msgid "Ссылка недействительна или уже использована."
+msgstr "This link is invalid or has already been used."
+
+msgid "Пароль изменён"
+msgstr "Password changed"
+
+msgid "Теперь вы можете войти с новым паролем."
+msgstr "You can now sign in with your new password."
+
+msgid "Чтобы задать новый пароль, перейдите по ссылке:"
+msgstr "To set a new password, follow this link:"
+
+msgid "Сброс пароля PrepodRate"
+msgstr "PrepodRate password reset"
+
+msgid "Поделиться"
+msgstr "Share"
+
+msgid "Ссылка на страницу преподавателя"
+msgstr "Link to the professor page"
+
+msgid "Ссылка скопирована"
+msgstr "Link copied"
+
+msgid "Email подтверждён. Добро пожаловать!"
+msgstr "Email confirmed. Welcome!"
+
+msgid ""
+"Аккаунт ещё не подтверждён. Введите код, который мы отправили на ваш email."
+msgstr ""
+"Your account is not confirmed yet. Enter the code we sent to your email."
+
+#, python-format
+msgid ""
+"Ваш код подтверждения PrepodRate: %(code)s\n"
+"\n"
+"Код действует %(minutes)s минут. Если вы не регистрировались на PrepodRate, просто проигнорируйте это письмо."
+msgstr ""
+"Your PrepodRate confirmation code: %(code)s\n"
+"\n"
+"The code is valid for %(minutes)s minutes. If you did not sign up for PrepodRate, just ignore this email."
+
+msgid "Введите 6 цифр из письма."
+msgstr "Enter the 6 digits from the email."
+
+msgid "Ввести код подтверждения"
+msgstr "Enter confirmation code"
+
+msgid "Код из письма"
+msgstr "Code from the email"
+
+msgid "Код не найден. Запросите новый код."
+msgstr "No code found. Request a new code."
+
+#, python-format
+msgid "Код подтверждения PrepodRate: %(code)s"
+msgstr "PrepodRate confirmation code: %(code)s"
+
+#, python-format
+msgid "Можно через %(seconds)s с"
+msgstr "Available in %(seconds)s s"
+
+#, python-format
+msgid ""
+"Мы отправили 6-значный код на %(email)s. Введите его, чтобы завершить "
+"регистрацию."
+msgstr "We sent a 6-digit code to %(email)s. Enter it to finish signing up."
+
+#, python-format
+msgid ""
+"Мы отправили 6-значный код на <strong>%(email)s</strong>. Код действует 10 "
+"минут."
+msgstr ""
+"We sent a 6-digit code to <strong>%(email)s</strong>. The code is valid for "
+"10 minutes."
+
+msgid "Не пришло письмо? Проверьте папку «Спам» или запросите новый код."
+msgstr "No email? Check your spam folder or request a new code."
+
+msgid ""
+"Не удалось отправить письмо с кодом. Попробуйте отправить код ещё раз чуть "
+"позже."
+msgstr ""
+"We could not send the email with the code. Try sending the code again a "
+"little later."
+
+msgid "Неверный код. Проверьте письмо и попробуйте ещё раз."
+msgstr "Wrong code. Check the email and try again."
+
+#, python-format
+msgid "Новый код можно запросить через %(seconds)s с."
+msgstr "You can request a new code in %(seconds)s s."
+
+#, python-format
+msgid "Новый код отправлен на %(email)s."
+msgstr "A new code was sent to %(email)s."
+
+msgid "Отправить код ещё раз"
+msgstr "Send the code again"
+
+msgid "Подтвердить"
+msgstr "Confirm"
+
+msgid "Подтверждать нечего: войдите или зарегистрируйтесь."
+msgstr "Nothing to confirm: log in or sign up."
+
+msgid "Подтверждение email"
+msgstr "Email confirmation"
+
+msgid "Подтверждения email"
+msgstr "Email confirmations"
+
+msgid "Слишком много неверных попыток. Запросите новый код."
+msgstr "Too many wrong attempts. Request a new code."
+
+msgid "Срок действия кода истёк. Запросите новый код."
+msgstr "The code has expired. Request a new code."
+
+msgid "Уже подтвердили? Войдите"
+msgstr "Already confirmed? Log in"
+
+msgid "Сравнение преподавателей"
+msgstr "Compare professors"
+
+msgid "Сравнить"
+msgstr "Compare"
+
+msgid "Средний балл"
+msgstr "Average score"
+
+msgid "Сравнение преподавателей по рейтингу, сложности и числу отзывов."
+msgstr "Compare professors by rating, difficulty and number of reviews."
+
+msgid "Для сравнения выберите от 2 до 3 преподавателей."
+msgstr "Choose 2 to 3 professors to compare."
+
+#, python-format
+msgid "Результаты по запросу «%(query)s»: %(total)s"
+msgstr "Results for “%(query)s”: %(total)s"
+
+msgid "Сбросить поиск"
+msgstr "Reset search"
+
+#: reviews/forms.py
+msgid "Уберите ссылки, email и номера телефонов — это запрещено правилами."
+msgstr "Remove links, emails and phone numbers — the rules do not allow them."
+
+#: reviews/forms.py
+msgid "Только буквы, пробел, дефис или апостроф."
+msgstr "Letters, spaces, hyphens or apostrophes only."
+
+msgid "%(name)s добавлен(а) к сравнению."
+msgstr "%(name)s added to the comparison."
+
+msgid "Найдите ещё одного преподавателя и нажмите «Сравнить» на его карточке."
+msgstr "Find one more professor and press “Compare” on their card."
+
+msgid "Список сравнения пуст."
+msgstr "Your comparison list is empty."
+
+msgid "Нажмите «Сравнить» на карточках двух или трёх преподавателей."
+msgstr "Press “Compare” on the cards of two or three professors."
+
+msgid "Выбрать преподавателя"
+msgstr "Choose a professor"
+
+msgid "Убрать из сравнения"
+msgstr "Remove from comparison"
+
+msgid "Убрать"
+msgstr "Remove"
+
+msgid "Добавить ещё преподавателя"
+msgstr "Add another professor"
+
+msgid "Очистить сравнение"
+msgstr "Clear comparison"
+
+msgid "Ссылка на это сравнение"
+msgstr "Link to this comparison"
+
+msgid "Кафедра: сначала выберите вуз"
+msgstr "Department: choose a university first"
+
+msgid "Найти преподавателя"
+msgstr "Find a professor"

@@ -1,0 +1,21 @@
+{
+ "code": "atiso",
+ "university": "Академия труда и социальных отношений (АТиСО)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://atiso.kg",
+  "https://esma.kg",
+  "https://esma.kg/about",
+  "https://esma.kg/programs"
+ ],
+ "notes": "atiso.kg перенаправляет на esma.kg (Academy of Labor and Social Relations, сайт только на английском). Сайт из нашей сети напрямую не открывается, получен через fetch-индекс. Страниц кафедр и ППС нет, назван только ректор Prof. Askarbek A. Bekboev, Doctor of Philosophical Sciences (включён как профессор, имя латиницей как на сайте, отчество только инициалом).",
+ "professors": [
+  {
+   "last_name": "Bekboev",
+   "first_name": "Askarbek A.",
+   "department": "Rectorate",
+   "title": "профессор",
+   "source_url": "https://esma.kg/about"
+  }
+ ]
+}

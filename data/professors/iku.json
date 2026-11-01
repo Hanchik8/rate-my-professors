@@ -1,0 +1,550 @@
+{
+ "code": "iku",
+ "university": "Международный Кувейтский университет",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html",
+  "https://iku.kg/index.php/about/departments/department-of-arabic-philology.html",
+  "https://iku.kg/index.php/about/departments/department-of-journalism-and-public-relations.html",
+  "https://iku.kg/index.php/about/departments/department-of-linguistics.html",
+  "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html",
+  "https://iku.kg/index.php/about/departments/kafedra-yurisprudentsiya.html",
+  "https://iku.kg/index.php/about/departments/kafedra-piiit.html",
+  "https://iku.kg/index.php/about/departments/department-of-international-relations-and-jurisprudence.html"
+ ],
+ "notes": "Составы кафедр с карточками на страницах кафедр; часть ППС указана только инициалами. Лаборанты исключены. Разделы our-pride и information-technology-center отдают 403. Колледж МКУ без списка ППС.",
+ "professors": [
+  {
+   "last_name": "Ниязалиева",
+   "first_name": "Кундуз Насирдиновна",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html"
+  },
+  {
+   "last_name": "Идинов",
+   "first_name": "К. И.",
+   "department": "Экономика и менеджмент",
+   "title": "профессор",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Копобаева",
+   "first_name": "Жылдыз Кенжебековна",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html"
+  },
+  {
+   "last_name": "Джунусбаева",
+   "first_name": "Ч. И.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тойчубек уулу",
+   "first_name": "Алтынбек",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html"
+  },
+  {
+   "last_name": "Койчуева",
+   "first_name": "М. Т.",
+   "department": "Экономика и менеджмент",
+   "title": "профессор",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шалпыков",
+   "first_name": "К. А.",
+   "department": "Экономика и менеджмент",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токоева",
+   "first_name": "Гульмира Дуйшекеевна",
+   "department": "Экономика и менеджмент",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html"
+  },
+  {
+   "last_name": "Болджурова",
+   "first_name": "А. С.",
+   "department": "Экономика и менеджмент",
+   "title": "профессор",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Муктарбеков",
+   "first_name": "Нурлан Муктарбекович",
+   "department": "Экономика и менеджмент",
+   "title": "преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html"
+  },
+  {
+   "last_name": "Макешова",
+   "first_name": "П. Ш.",
+   "department": "Экономика и менеджмент",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джумабаева",
+   "first_name": "Джамиля Бекназаровна",
+   "department": "Экономика и менеджмент",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html"
+  },
+  {
+   "last_name": "Дуйшеналиева",
+   "first_name": "Зарина Токтоналиевна",
+   "department": "Экономика и менеджмент",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html"
+  },
+  {
+   "last_name": "Сапаралиев",
+   "first_name": "Т. Н.",
+   "department": "Экономика и менеджмент",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-economics-and-management.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мырзамамытов",
+   "first_name": "Иброгимжон Гафуржанович",
+   "department": "Арабская филология",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-arabic-philology.html"
+  },
+  {
+   "last_name": "Осконбаева",
+   "first_name": "Мээрим Сыдыкбековна",
+   "department": "Арабская филология",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-arabic-philology.html"
+  },
+  {
+   "last_name": "Шадыбеков",
+   "first_name": "Бараатали Жумабеков",
+   "department": "Арабская филология",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-arabic-philology.html"
+  },
+  {
+   "last_name": "Абдылдаева",
+   "first_name": "Гүлбарчын Ибраимовна",
+   "department": "Арабская филология",
+   "title": "преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-arabic-philology.html"
+  },
+  {
+   "last_name": "Рыспек кызы",
+   "first_name": "Гулкайыр",
+   "department": "Арабская филология",
+   "title": "преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-arabic-philology.html"
+  },
+  {
+   "last_name": "Конокбаев",
+   "first_name": "Нурсултан Толонмырзаевич",
+   "department": "Арабская филология",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-arabic-philology.html"
+  },
+  {
+   "last_name": "Сулиева",
+   "first_name": "Фикрия Амизовна",
+   "department": "Арабская филология",
+   "title": "преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-arabic-philology.html"
+  },
+  {
+   "last_name": "Ибраимова",
+   "first_name": "Зарифа Манаповна",
+   "department": "Арабская филология",
+   "title": "преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-arabic-philology.html"
+  },
+  {
+   "last_name": "Ташполотов",
+   "first_name": "Олжобай Абдимиталипович",
+   "department": "Арабская филология",
+   "title": "преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-arabic-philology.html"
+  },
+  {
+   "last_name": "Бекпаева",
+   "first_name": "Эльвира Кадыровна",
+   "department": "Арабская филология",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-arabic-philology.html"
+  },
+  {
+   "last_name": "Максутова",
+   "first_name": "Айзада Асанбековна",
+   "department": "Журналистика и связи с общественностью",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-journalism-and-public-relations.html"
+  },
+  {
+   "last_name": "Усубалиев",
+   "first_name": "Бейшебай Шенкеевич",
+   "department": "Журналистика и связи с общественностью",
+   "title": "профессор",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-journalism-and-public-relations.html"
+  },
+  {
+   "last_name": "Касымалиев",
+   "first_name": "А. Т.",
+   "department": "Журналистика и связи с общественностью",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-journalism-and-public-relations.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Койчуманова",
+   "first_name": "Н. М.",
+   "department": "Журналистика и связи с общественностью",
+   "title": "профессор",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-journalism-and-public-relations.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Курманали кызы",
+   "first_name": "Мира",
+   "department": "Журналистика и связи с общественностью",
+   "title": "профессор",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-journalism-and-public-relations.html"
+  },
+  {
+   "last_name": "Толонов",
+   "first_name": "М. Т.",
+   "department": "Журналистика и связи с общественностью",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-journalism-and-public-relations.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джаманбаева",
+   "first_name": "Т. К.",
+   "department": "Журналистика и связи с общественностью",
+   "title": "профессор",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-journalism-and-public-relations.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абласов",
+   "first_name": "К. Ж.",
+   "department": "Журналистика и связи с общественностью",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-journalism-and-public-relations.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Таалайбек кызы",
+   "first_name": "Мунара",
+   "department": "Журналистика и связи с общественностью",
+   "title": "преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-journalism-and-public-relations.html"
+  },
+  {
+   "last_name": "Кармышакова",
+   "first_name": "З. С.",
+   "department": "Журналистика и связи с общественностью",
+   "title": "профессор",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-journalism-and-public-relations.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эмильбекова",
+   "first_name": "А. Б.",
+   "department": "Журналистика и связи с общественностью",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-journalism-and-public-relations.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Каландарова",
+   "first_name": "Жамила Кабылбаевна",
+   "department": "Лингвистика",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-linguistics.html"
+  },
+  {
+   "last_name": "Арстаналы кызы",
+   "first_name": "Мунара",
+   "department": "Лингвистика",
+   "title": "преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-linguistics.html"
+  },
+  {
+   "last_name": "Рахматова",
+   "first_name": "А. Ж.",
+   "department": "Лингвистика",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-linguistics.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кадырбекова",
+   "first_name": "А. К.",
+   "department": "Лингвистика",
+   "title": "преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-linguistics.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мурзаев",
+   "first_name": "Н. Т.",
+   "department": "Лингвистика",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-linguistics.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токталиева",
+   "first_name": "Т. Ж.",
+   "department": "Лингвистика",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-linguistics.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шамбеталиев",
+   "first_name": "К. Ы.",
+   "department": "Лингвистика",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-linguistics.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Доктурбекова",
+   "first_name": "Н. Д.",
+   "department": "Лингвистика",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-linguistics.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Машанова",
+   "first_name": "Айнура Сапарбаевна",
+   "department": "Педагогика и прикладная информатика",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Байсеркее",
+   "first_name": "Аскарбек Эсенович",
+   "department": "Педагогика и прикладная информатика",
+   "title": "профессор",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Чепекова",
+   "first_name": "Гулмира Саалиевна",
+   "department": "Педагогика и прикладная информатика",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Зулпуева",
+   "first_name": "Кызай Абибиллаевна",
+   "department": "Педагогика и прикладная информатика",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Сарыбаева",
+   "first_name": "Салтанат Айтбаевна",
+   "department": "Педагогика и прикладная информатика",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Бабаев",
+   "first_name": "Доолотбай Бабаевич",
+   "department": "Педагогика и прикладная информатика",
+   "title": "профессор",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Ибраев",
+   "first_name": "Алмазбек Дуйшокович",
+   "department": "Педагогика и прикладная информатика",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Тургунбаев",
+   "first_name": "Эмильбек Кадырович",
+   "department": "Педагогика и прикладная информатика",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Курманалиева",
+   "first_name": "Рахат Акбалаевна",
+   "department": "Педагогика и прикладная информатика",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Джаркимбаева",
+   "first_name": "Чынара Токтошевна",
+   "department": "Педагогика и прикладная информатика",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Акмолдоев",
+   "first_name": "Тынычбек Бородоевич",
+   "department": "Педагогика и прикладная информатика",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Камбаралиев",
+   "first_name": "Үсөнбек Жолдошбекович",
+   "department": "Педагогика и прикладная информатика",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Абдраимова",
+   "first_name": "Махабат Асанбековна",
+   "department": "Педагогика и прикладная информатика",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Сейдекулова",
+   "first_name": "Күлсүнай Сейдекуловна",
+   "department": "Педагогика и прикладная информатика",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Исакова",
+   "first_name": "Жанна Жаманкуловна",
+   "department": "Педагогика и прикладная информатика",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-pedagogy-and-applied-informatics.html"
+  },
+  {
+   "last_name": "Карынов",
+   "first_name": "Чолпонбай Карыпбаевич",
+   "department": "Юриспруденция",
+   "title": "профессор",
+   "source_url": "https://iku.kg/index.php/about/departments/kafedra-yurisprudentsiya.html"
+  },
+  {
+   "last_name": "Исмаилов",
+   "first_name": "Аскарбек Кожомбекович",
+   "department": "Юриспруденция",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/kafedra-yurisprudentsiya.html"
+  },
+  {
+   "last_name": "Босумбаева",
+   "first_name": "Чинара Джоомартовна",
+   "department": "Юриспруденция",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/kafedra-yurisprudentsiya.html"
+  },
+  {
+   "last_name": "Кытыкенова",
+   "first_name": "Зарина Толобековна",
+   "department": "Юриспруденция",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/kafedra-yurisprudentsiya.html"
+  },
+  {
+   "last_name": "Чекироа",
+   "first_name": "К.",
+   "department": "Прикладная информатика и информационные технологии",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/kafedra-piiit.html",
+   "initials_only": true
+  },
+  {
+   "last_name": "Масалбеков",
+   "first_name": "Исабек Осмонкулович",
+   "department": "Прикладная информатика и информационные технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/kafedra-piiit.html"
+  },
+  {
+   "last_name": "Айтбек уулу",
+   "first_name": "Туратбек",
+   "department": "Прикладная информатика и информационные технологии",
+   "title": "преподаватель",
+   "source_url": "https://iku.kg/index.php/about/departments/kafedra-piiit.html"
+  },
+  {
+   "last_name": "Дуйшеева",
+   "first_name": "Роза Касымбаевна",
+   "department": "Международные отношения и юриспруденция",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-international-relations-and-jurisprudence.html"
+  },
+  {
+   "last_name": "Ормушев",
+   "first_name": "Асан Сулайманович",
+   "department": "Международные отношения и юриспруденция",
+   "title": "профессор",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-international-relations-and-jurisprudence.html"
+  },
+  {
+   "last_name": "Исаков",
+   "first_name": "Раат Исакович",
+   "department": "Международные отношения и юриспруденция",
+   "title": "профессор",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-international-relations-and-jurisprudence.html"
+  },
+  {
+   "last_name": "Турдумамбетов",
+   "first_name": "Акылбек Шайымкадырович",
+   "department": "Международные отношения и юриспруденция",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-international-relations-and-jurisprudence.html"
+  },
+  {
+   "last_name": "Ташиева",
+   "first_name": "Жамиля Кулназаровна",
+   "department": "Международные отношения и юриспруденция",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-international-relations-and-jurisprudence.html"
+  },
+  {
+   "last_name": "Асанбеков",
+   "first_name": "Муканмедий Керезович",
+   "department": "Международные отношения и юриспруденция",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-international-relations-and-jurisprudence.html"
+  },
+  {
+   "last_name": "Кокомбаев",
+   "first_name": "Кубатбек Султаналиевич",
+   "department": "Международные отношения и юриспруденция",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-international-relations-and-jurisprudence.html"
+  },
+  {
+   "last_name": "Калимова",
+   "first_name": "Софья Хамидовна",
+   "department": "Международные отношения и юриспруденция",
+   "title": "доцент",
+   "source_url": "https://iku.kg/index.php/about/departments/department-of-international-relations-and-jurisprudence.html"
+  }
+ ]
+}

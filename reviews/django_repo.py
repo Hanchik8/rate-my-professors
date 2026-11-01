@@ -14,7 +14,13 @@ from django.utils.text import slugify
 from .caching import get_or_set, invalidate_catalog_cache, stats_cache_key
 from .constants import MAX_COMMENT_LENGTH
 from .models import Professor, Report, Review, School, Tag, Vote
-from .repository import _search_sort_key, _tone
+from .repository import (
+    _search_sort_key,
+    _tone,
+    normalize_person_name,
+    normalize_search_text,
+    search_terms_with_transliteration,
+)
 from .sanitize import clean_text
 
 if TYPE_CHECKING:
@@ -50,16 +56,7 @@ class DjangoRepository:
     ) -> ProfessorDC:
         """Create a professor, rejecting duplicates in the same school."""
         school = School.objects.get(pk=school_id)
-        dup_qs = Professor.objects.filter(
-            school=school,
-            first_name__iexact=first.strip(),
-            last_name__iexact=last.strip(),
-        ).exclude(status="rejected")
-        if dup_qs.exists():
-            # fallback case-insensitive python check for SQLite
-            for p in Professor.objects.filter(school=school).exclude(status="rejected"):
-                if p.full_name.lower() == f"{first} {last}".lower():
-                    raise ValueError("duplicate professor")
+        if self.professor_by_name(school_id, first, last) is not None:
             raise ValueError("duplicate professor")
         base = slugify(f"{first} {last}", allow_unicode=True) or slugify(f"{first} {last}") or f"{first}-{last}".lower()
         slug = base
@@ -173,10 +170,13 @@ class DjangoRepository:
         # same city shows up once per school.
         return sorted(School.objects.order_by().values_list("city", flat=True).distinct())
 
-    def departments(self) -> list[str]:
-        """Return the sorted set of departments for approved professors."""
+    def departments(self, school_slug: str = "") -> list[str]:
+        """Return the sorted set of departments for approved professors (optionally of one school)."""
+        qs = Professor.objects.filter(status="approved")
+        if school_slug:
+            qs = qs.filter(school__slug=school_slug)
         return sorted(
-            Professor.objects.filter(status="approved")
+            qs
             .order_by()
             .values_list("department", flat=True)
             .distinct()
@@ -220,6 +220,15 @@ class DjangoRepository:
             )
         except Professor.DoesNotExist:
             return None
+
+    def professor_by_name(self, school_id: str, first: str, last: str) -> ProfessorDC | None:
+        """Return a non-rejected professor matching a normalized full name."""
+        key = normalize_person_name(first, last)
+        qs = Professor.objects.select_related("school").filter(school_id=school_id).exclude(status="rejected")
+        for professor in qs:
+            if normalize_person_name(professor.first_name, professor.last_name) == key:
+                return self._prof_to_dc(professor)
+        return None
 
     def professors_for_school(self, school_id: str) -> list[ProfessorDC]:
         """Return approved professors belonging to a school."""
@@ -389,13 +398,20 @@ class DjangoRepository:
             qs = qs.filter(school__slug=school_slug)
         if city:
             qs = qs.filter(school__city=city)
-        want_dept = department.lower().strip()
-        q = q.lower().strip()
-        # filter in python for case-insensitive unicode
+        want_dept = (department or "").lower().strip()
+        q = normalize_search_text(q)
+        # filter in python for case-insensitive unicode and ё/е equivalence
+        terms = search_terms_with_transliteration(q)
         profs = [
             p for p in qs
-            if (not want_dept or p.department.lower().strip() == want_dept)
-            and (not q or q in f"{p.full_name} {p.department}".lower())
+            if (not want_dept or (p.department or "").lower().strip() == want_dept)
+            and (
+                not terms
+                or all(
+                    any(variant in normalize_search_text(f"{p.full_name} {p.department}") for variant in term.split("|"))
+                    for term in terms
+                )
+            )
         ]
         stats_map = self._stats_map(p.pk for p in profs)
         out = []

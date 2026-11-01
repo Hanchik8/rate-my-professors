@@ -1,0 +1,1191 @@
+{
+ "code": "arabaev",
+ "university": "Кыргызский государственный университет им. И. Арабаева (КГУ)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://arabaevksu.edu.kg/",
+  "https://arabaevksu.edu.kg/institutes/biologiya-zhana-himiya-fakul-teti",
+  "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun",
+  "https://arabaevksu.edu.kg/institutes/chygysh-taanuu-zhana-el-aralyk-mamileler-fakul-teti",
+  "https://arabaevksu.edu.kg/institutes/dene-tarbiya-fakul-teti",
+  "https://arabaevksu.edu.kg/institutes/e-zh-maanaev-atyndagy-taryh-zhana-socialdyk-ukuktuk-bilim-ber-fakul-teti",
+  "https://arabaevksu.edu.kg/institutes/ekonomika-zhana-menedzhment-institutu",
+  "https://arabaevksu.edu.kg/institutes/el-aralyk-bilim-ber-programmalar-institutu",
+  "https://arabaevksu.edu.kg/institutes/fmf",
+  "https://arabaevksu.edu.kg/institutes/gumanitardyk-bilimder-fakul-teti",
+  "https://arabaevksu.edu.kg/institutes/iskusstvo-zhana-dizayn-fakul-teti",
+  "https://arabaevksu.edu.kg/institutes/kvalifikaciyany-zhogorulatuu-zhana-kadrlardy-kayra-dayardoo-institutu",
+  "https://arabaevksu.edu.kg/institutes/main-objective",
+  "https://arabaevksu.edu.kg/institutes/mamlekettik-til-zhana-madaniyat-institutu",
+  "https://arabaevksu.edu.kg/institutes/medicina-institutu",
+  "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti",
+  "https://arabaevksu.edu.kg/institutes/pedagogikalyk-kolledzh",
+  "https://arabaevksu.edu.kg/institutes/teologiyalyk-kolledzh",
+  "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu",
+  "https://init.kg/",
+  "https://init.kg/kafedra/kafedra-informacionnyh-tehnologij-v-obrazovanii/",
+  "https://init.kg/kafedra/kafedra-prikladnoj-informatiki/",
+  "https://init.kg/kafedra/otdelenie-gumanitarnyh-i-estestvenno-matematicheskih-disciplin/",
+  "https://init.kg/kafedra/otdelenie-srednego-professionalnogo-obrazovaniya/",
+  "http://old.arabaev.kg (не открылся, ошибка 522)"
+ ],
+ "notes": "Новый сайт arabaevksu.edu.kg отдаёт 403 без браузерного User-Agent; с UA открывается. Преподаватели опубликованы только во вкладке «Окутуучулук курам» на страницах институтов, и заполнены они лишь у части подразделений: Дүйнөлүк тилдер жана эл аралык мамилелер институту (в основном отделение СПО), Мамлекеттик тил жана маданият институту, Экономика жана менеджмент институту, Японтаануу институту, институт М.Р.Рахимовой (кошумча кесиптик билим берүү), Орус филологиясы факультети. У остальных 11 подразделений (физмат, медицина, педагогика и психология, естественные науки, история, искусство, спорт, теология, Кыргыз-Кытай институту, колледж и др.) вкладка пустая («Преподаватели пока не добавлены»). Слаги URL на сайте не совпадают с названиями (например, /institutes/medicina-institutu это институт Рахимовой), department взят из названия в меню или из поля «Место работы»/«Должность», если там указана кафедра. Добавлен институт новых информационных технологий КГУ (init.kg, официальный сайт института): 2 кафедры и 2 отделения СПО, там только фамилия и имя без отчества. Старый сайт old.arabaev.kg недоступен (522). В список попали и преподаватели отделений среднего профобразования при институтах (они числятся в составе вузовских подразделений).",
+ "professors": [
+  {
+   "last_name": "Абдыралиев",
+   "first_name": "Тилек Талипович",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Айсулуу",
+   "first_name": "Бакытова",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Алтынбекова",
+   "first_name": "Дилназ",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Байболотова",
+   "first_name": "Саламат Талантовна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Бактыяр кызы",
+   "first_name": "Аниса",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Бакытова",
+   "first_name": "Алина Бакытовна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Бектемирова",
+   "first_name": "Алия Куштарбековна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Джумалиева",
+   "first_name": "Айгуль Касымбековна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Жусубакун кызы",
+   "first_name": "Нургүл",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Ишенаалиева",
+   "first_name": "Айназик Ишенаалиевна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Кайырбек кызы",
+   "first_name": "Айдай",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Мадиева",
+   "first_name": "Эльзат Мадиевна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Назарбубаева",
+   "first_name": "Жылдыз Абдималиковна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Назирова",
+   "first_name": "Айнур Сталбековна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Назирова",
+   "first_name": "Замира Маматкаримовна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Нураида",
+   "first_name": "Зайнишова",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Омурова",
+   "first_name": "Айдана Омуровна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Райымбеков",
+   "first_name": "Нургазы Райымбекович",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Руслан кызы",
+   "first_name": "Алина",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Субанкулова",
+   "first_name": "Айдай Саматовна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Чынаргүл Жумабаевна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Табарбекова",
+   "first_name": "Гулжан Акжолтоевна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Уланбек кызы",
+   "first_name": "Гүлзина",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Шадиева",
+   "first_name": "Жылдыз Эрнисовна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Шамбетова",
+   "first_name": "Каиркуль Маратовна",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Элүүбек кызы",
+   "first_name": "Айжан",
+   "department": "Ш.Кадырова атындагы Дүйнөлүк тилдер жана эл аралык мамилелер институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/chet-tilder-zhana-komp-yuterdik-lingvistika-institutunun"
+  },
+  {
+   "last_name": "Абдраимова",
+   "first_name": "Бактыгуль Канболотовна",
+   "department": "Экономика жана менеджмент институту",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/ekonomika-zhana-menedzhment-institutu"
+  },
+  {
+   "last_name": "Абдыкалыкова",
+   "first_name": "Айсулуу Айтыкуловна",
+   "department": "Мамлекеттик тил жана маданият институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/mamlekettik-til-zhana-madaniyat-institutu"
+  },
+  {
+   "last_name": "Айтбаева",
+   "first_name": "Нуркан Барыновна",
+   "department": "Мамлекеттик тил жана маданият институту",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/mamlekettik-til-zhana-madaniyat-institutu"
+  },
+  {
+   "last_name": "Джапаров",
+   "first_name": "Нооманбек Рустамович",
+   "department": "Мамлекеттик тил жана маданият институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/mamlekettik-til-zhana-madaniyat-institutu"
+  },
+  {
+   "last_name": "Мамбеталиева",
+   "first_name": "Суусар Кубаталиевна",
+   "department": "Мамлекеттик тил жана маданият институту",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/mamlekettik-til-zhana-madaniyat-institutu"
+  },
+  {
+   "last_name": "Абдухамидова",
+   "first_name": "Батмахан Абдуакимовна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "профессор",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Абдыкеримова",
+   "first_name": "Айгуль Шариповна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Ажымамбетова",
+   "first_name": "Дилбара Темиркановна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Акиева",
+   "first_name": "Гульдана",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "профессор",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Акматов",
+   "first_name": "Кыялбек Камутович",
+   "department": "Педагогикалык жана гуманитардык билим берүүнүн инновациялык технологиялары",
+   "title": "профессор",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Акунова",
+   "first_name": "Саткын",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Бегалиева",
+   "first_name": "Динара Асылбековна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Бекбоева",
+   "first_name": "Токтобюбю Абдыкадыровна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Дамира",
+   "first_name": "Шаршенова",
+   "department": "Табигый илимдер STEM багыттары кафедрасы",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Жолдошалиева",
+   "first_name": "Наргиза Автандиловна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Жолдошев",
+   "first_name": "Нурбек Жакыпбекович",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Иманбердиева",
+   "first_name": "Нургуль Амановна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Калыйбубу",
+   "first_name": "Джунушалиева",
+   "department": "Табигый илимдер STEM багыттары кафедрасы",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Калысбек",
+   "first_name": "Жолалиев",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Кутуева",
+   "first_name": "Бурул Кенешовна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Мадиева",
+   "first_name": "Аида Маматбековна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Наркеева",
+   "first_name": "Назира Жусуповна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Новикова",
+   "first_name": "Светлана Васильевна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Рахимова",
+   "first_name": "Жибек Толеновна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Ризаева",
+   "first_name": "Рахат",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Сабитова",
+   "first_name": "Эльмира Сагындыковна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Сагынбаева",
+   "first_name": "Назира Орозалыевна",
+   "department": "Педагогикалык жана гуманитардык билим берүүнүн инновациялык технологиялары",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Усенгазиева",
+   "first_name": "Гулнара",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Усупова",
+   "first_name": "Мырзагүл Кадыевна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Шамканова",
+   "first_name": "Гульмира Джылкычиевна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Шаршембаева",
+   "first_name": "Лира Сыдыкбековна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Өмүрова",
+   "first_name": "Жүрсүн Касымбековна",
+   "department": "М.Р.Рахимова атындагы Кошумча кесиптик билим берүү институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/medicina-institutu"
+  },
+  {
+   "last_name": "Абдыгазиева",
+   "first_name": "Назира Каныметовна",
+   "department": "Орус филологиясы факультети",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Ажыбаева",
+   "first_name": "Айике Кылычбековна",
+   "department": "Орус филологиясы факультети",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Алыбаева",
+   "first_name": "Токтожан Кочкоровна",
+   "department": "Орус тилин жана адабиятын окутуунун теориясы жана методикасы кафедрасы",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Апышева",
+   "first_name": "Светлана Шаймергеновна",
+   "department": "Орус филологиясы факультети",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Арстанбекова",
+   "first_name": "Жамилийа Арстанбековна",
+   "department": "Орус тилин жана адабиятын окутуунун теориясы жана методикасы кафедрасы",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Асанбекова",
+   "first_name": "Эльмира Жекшеналиевна",
+   "department": "Орус тилинин практикалык курсу кафедрасы",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Асанова",
+   "first_name": "Айнура Токтобековна",
+   "department": "Орус филологиясы факультети",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Исабаева",
+   "first_name": "Венера Амангелдиевна",
+   "department": "Орус филологиясы факультети",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Исаева",
+   "first_name": "Адина Рашпековна",
+   "department": "Орус филологиясы факультети",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Итикулова",
+   "first_name": "Алмакан Тологоновна",
+   "department": "Орус филологиясы факультети",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Кариева",
+   "first_name": "Милена Тойчиевна",
+   "department": "Орус филологиясы факультети",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Коешева",
+   "first_name": "Эльмира Темиркуловна",
+   "department": "Орус филологиясы факультети",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Кочкорбаева",
+   "first_name": "Анара Шабданбековна",
+   "department": "Орус филологиясы факультети",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Марс кызы",
+   "first_name": "Шахзаада",
+   "department": "Орус филологиясы факультети",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Мураталина",
+   "first_name": "Айдай Шекербековна",
+   "department": "Орус филологиясы факультети",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Нарынбаева",
+   "first_name": "Нуржан Осмоновна",
+   "department": "Орус филологиясы факультети",
+   "title": "профессор",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Осмонакунова",
+   "first_name": "Айданек Эркинбековна",
+   "department": "Орус филологиясы факультети",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Сарымсакова",
+   "first_name": "Сонун Джолдошевна",
+   "department": "Орус филологиясы факультети",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Сегизбаева",
+   "first_name": "Назгуль Капаровна",
+   "department": "Орус филологиясы факультети",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Семенова",
+   "first_name": "Жийдегуль Азимовна",
+   "department": "Орус филологиясы факультети",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Сыдыгалиева",
+   "first_name": "Гульнар Джайлообековна",
+   "department": "Орус филологиясы факультети",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Тагаева",
+   "first_name": "Гульмира Сарыгуловна",
+   "department": "Орус филологиясы факультети",
+   "title": "профессор",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Тажиматова",
+   "first_name": "Гулумхан Калбаевна",
+   "department": "Орус филологиясы факультети",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Токомбаева",
+   "first_name": "Жамила Юсуповна",
+   "department": "Орус филологиясы факультети",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Толкунай",
+   "first_name": "Шамурзаева",
+   "department": "Орус филологиясы факультети",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Урманбетова",
+   "first_name": "Кундуз Таалайбековна",
+   "department": "Орус филологиясы факультети",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Хасанов",
+   "first_name": "Навруз Баротович",
+   "department": "Орус филологиясы факультети",
+   "title": "профессор",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Эркинбек кызы",
+   "first_name": "Наргиза",
+   "department": "Орус тилинин практикалык курсу кафедрасы",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Эрматова",
+   "first_name": "Клара Токтогуловна",
+   "department": "Орус филологиясы факультети",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/orus-filologiya-fakul-teti"
+  },
+  {
+   "last_name": "Абибилла кызы",
+   "first_name": "Гулзат",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Акматылдаева",
+   "first_name": "Гульмира Акбагышовна",
+   "department": "Японтаануу институту",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Алиева",
+   "first_name": "Адиля Рустамовна",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Алмазбек кызы",
+   "first_name": "Айдана",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Анарбай кызы",
+   "first_name": "Айдана",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Ахметова",
+   "first_name": "Эвроазия Дамировна",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Багышова",
+   "first_name": "Ширин",
+   "department": "Японтаануу институту",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Бактыбек кызы",
+   "first_name": "Айзат",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Бердибекова",
+   "first_name": "Бермет Бердибековна",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Джунушева",
+   "first_name": "Айрин Кайратовна",
+   "department": "Колдонмо информатика кафедрасы",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Жантемирова",
+   "first_name": "Калича Кенжебековна",
+   "department": "Японтаануу институту",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Исаева",
+   "first_name": "Майрам",
+   "department": "Японтаануу институту",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Исраилова",
+   "first_name": "Жылдыз",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Ишекеева",
+   "first_name": "Тамара Акылбековна",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Калмырза кызы",
+   "first_name": "Наргиза",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Касымбек кызы",
+   "first_name": "Тина",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Кумашева",
+   "first_name": "Жаңыл Илиязовна",
+   "department": "Японтаануу институту",
+   "title": "доцент",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Кылычбек",
+   "first_name": "Асаналиев",
+   "department": "Японтаануу институту",
+   "title": "старший преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Лебединская",
+   "first_name": "Жанна Григоревна",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Маматисакова",
+   "first_name": "Айдана Кадырмаматовна",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Молдалиева",
+   "first_name": "Айгул Ыдырысовна",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Муханбет уулу",
+   "first_name": "Сыймык",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Омурова",
+   "first_name": "Зийнагул Абрасуловна",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Осмоналиева",
+   "first_name": "Айгерим Курманбековна",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Рахимова",
+   "first_name": "Гульнара",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Токтогулова",
+   "first_name": "Гулира Абдылдабековна",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Толикова",
+   "first_name": "Нуриза Нурслановна",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Турдумбаева",
+   "first_name": "Мырзагул Дайырбековна",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Чолпон",
+   "first_name": "Турдуналиева",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Чубак уулу",
+   "first_name": "Сыргак",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Шаршеналиева",
+   "first_name": "А. О.",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu",
+   "initials_only": true
+  },
+  {
+   "last_name": "Элиза",
+   "first_name": "Абдрахманова",
+   "department": "Японтаануу институту",
+   "title": "преподаватель",
+   "source_url": "https://arabaevksu.edu.kg/institutes/yapontaanuu-institutu"
+  },
+  {
+   "last_name": "Эсенгулов",
+   "first_name": "Уланбек",
+   "department": "Информационных технологий в образовании (ИНИТ)",
+   "title": "доцент",
+   "source_url": "https://init.kg/kafedra/kafedra-informacionnyh-tehnologij-v-obrazovanii/"
+  },
+  {
+   "last_name": "Алымбаев",
+   "first_name": "Асангул",
+   "department": "Информационных технологий в образовании (ИНИТ)",
+   "title": "профессор",
+   "source_url": "https://init.kg/kafedra/kafedra-informacionnyh-tehnologij-v-obrazovanii/"
+  },
+  {
+   "last_name": "Бийбосунова",
+   "first_name": "Салтанат",
+   "department": "Информационных технологий в образовании (ИНИТ)",
+   "title": "доцент",
+   "source_url": "https://init.kg/kafedra/kafedra-informacionnyh-tehnologij-v-obrazovanii/"
+  },
+  {
+   "last_name": "Анаркулова",
+   "first_name": "Айнагул",
+   "department": "Информационных технологий в образовании (ИНИТ)",
+   "title": "старший преподаватель",
+   "source_url": "https://init.kg/kafedra/kafedra-informacionnyh-tehnologij-v-obrazovanii/"
+  },
+  {
+   "last_name": "Жолборсова",
+   "first_name": "Айнур",
+   "department": "Информационных технологий в образовании (ИНИТ)",
+   "title": "старший преподаватель",
+   "source_url": "https://init.kg/kafedra/kafedra-informacionnyh-tehnologij-v-obrazovanii/"
+  },
+  {
+   "last_name": "Жумагулов",
+   "first_name": "Бакытбек",
+   "department": "Информационных технологий в образовании (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/kafedra-informacionnyh-tehnologij-v-obrazovanii/"
+  },
+  {
+   "last_name": "Султанбаева",
+   "first_name": "Гулмира",
+   "department": "Информационных технологий в образовании (ИНИТ)",
+   "title": "доцент",
+   "source_url": "https://init.kg/kafedra/kafedra-informacionnyh-tehnologij-v-obrazovanii/"
+  },
+  {
+   "last_name": "Садыкова",
+   "first_name": "Лира",
+   "department": "Информационных технологий в образовании (ИНИТ)",
+   "title": "старший преподаватель",
+   "source_url": "https://init.kg/kafedra/kafedra-informacionnyh-tehnologij-v-obrazovanii/"
+  },
+  {
+   "last_name": "Иса кызы",
+   "first_name": "Барчын",
+   "department": "Информационных технологий в образовании (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/kafedra-informacionnyh-tehnologij-v-obrazovanii/"
+  },
+  {
+   "last_name": "Сартматова",
+   "first_name": "Астра",
+   "department": "Информационных технологий в образовании (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/kafedra-informacionnyh-tehnologij-v-obrazovanii/"
+  },
+  {
+   "last_name": "Султанакунова",
+   "first_name": "Айпери",
+   "department": "Информационных технологий в образовании (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/kafedra-informacionnyh-tehnologij-v-obrazovanii/"
+  },
+  {
+   "last_name": "Турдукожо кызы",
+   "first_name": "Нуршат",
+   "department": "Информационных технологий в образовании (ИНИТ)",
+   "title": "старший преподаватель",
+   "source_url": "https://init.kg/kafedra/kafedra-informacionnyh-tehnologij-v-obrazovanii/"
+  },
+  {
+   "last_name": "Бийбосунов",
+   "first_name": "Болотбек",
+   "department": "Прикладной информатики (ИНИТ)",
+   "title": "профессор",
+   "source_url": "https://init.kg/kafedra/kafedra-prikladnoj-informatiki/"
+  },
+  {
+   "last_name": "Бузурманкулова",
+   "first_name": "Айгуль",
+   "department": "Прикладной информатики (ИНИТ)",
+   "title": "доцент",
+   "source_url": "https://init.kg/kafedra/kafedra-prikladnoj-informatiki/"
+  },
+  {
+   "last_name": "Асанбекова",
+   "first_name": "Нурзат",
+   "department": "Прикладной информатики (ИНИТ)",
+   "title": "доцент",
+   "source_url": "https://init.kg/kafedra/kafedra-prikladnoj-informatiki/"
+  },
+  {
+   "last_name": "Кашкароева",
+   "first_name": "Алтын",
+   "department": "Прикладной информатики (ИНИТ)",
+   "title": "доцент",
+   "source_url": "https://init.kg/kafedra/kafedra-prikladnoj-informatiki/"
+  },
+  {
+   "last_name": "Барганалиева",
+   "first_name": "Жылдыз",
+   "department": "Прикладной информатики (ИНИТ)",
+   "title": "старший преподаватель",
+   "source_url": "https://init.kg/kafedra/kafedra-prikladnoj-informatiki/"
+  },
+  {
+   "last_name": "Мукудин уулу",
+   "first_name": "Кубан",
+   "department": "Прикладной информатики (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/kafedra-prikladnoj-informatiki/"
+  },
+  {
+   "last_name": "Смайылбек кызы",
+   "first_name": "Чолпон",
+   "department": "Прикладной информатики (ИНИТ)",
+   "title": "старший преподаватель",
+   "source_url": "https://init.kg/kafedra/kafedra-prikladnoj-informatiki/"
+  },
+  {
+   "last_name": "Турарбекова",
+   "first_name": "Назгул",
+   "department": "Прикладной информатики (ИНИТ)",
+   "title": "старший преподаватель",
+   "source_url": "https://init.kg/kafedra/kafedra-prikladnoj-informatiki/"
+  },
+  {
+   "last_name": "Садырова",
+   "first_name": "Максаткуль",
+   "department": "Прикладной информатики (ИНИТ)",
+   "title": "старший преподаватель",
+   "source_url": "https://init.kg/kafedra/kafedra-prikladnoj-informatiki/"
+  },
+  {
+   "last_name": "Муратаева",
+   "first_name": "Назира",
+   "department": "Прикладной информатики (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/kafedra-prikladnoj-informatiki/"
+  },
+  {
+   "last_name": "Досманова",
+   "first_name": "Анара",
+   "department": "Отделение гуманитарных и естественно-математических дисциплин (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-gumanitarnyh-i-estestvenno-matematicheskih-disciplin/"
+  },
+  {
+   "last_name": "Асангазиева",
+   "first_name": "Зээнбүбү",
+   "department": "Отделение гуманитарных и естественно-математических дисциплин (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-gumanitarnyh-i-estestvenno-matematicheskih-disciplin/"
+  },
+  {
+   "last_name": "Бейшекеева",
+   "first_name": "Рита",
+   "department": "Отделение гуманитарных и естественно-математических дисциплин (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-gumanitarnyh-i-estestvenno-matematicheskih-disciplin/"
+  },
+  {
+   "last_name": "Молдарынова",
+   "first_name": "Нургул",
+   "department": "Отделение гуманитарных и естественно-математических дисциплин (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-gumanitarnyh-i-estestvenno-matematicheskih-disciplin/"
+  },
+  {
+   "last_name": "Тентиева",
+   "first_name": "Эркингуль",
+   "department": "Отделение гуманитарных и естественно-математических дисциплин (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-gumanitarnyh-i-estestvenno-matematicheskih-disciplin/"
+  },
+  {
+   "last_name": "Сапаралиева",
+   "first_name": "Асел",
+   "department": "Отделение гуманитарных и естественно-математических дисциплин (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-gumanitarnyh-i-estestvenno-matematicheskih-disciplin/"
+  },
+  {
+   "last_name": "Бактыяр кызы",
+   "first_name": "Айжан",
+   "department": "Отделение гуманитарных и естественно-математических дисциплин (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-gumanitarnyh-i-estestvenno-matematicheskih-disciplin/"
+  },
+  {
+   "last_name": "Нурманбет кызы",
+   "first_name": "Мээрим",
+   "department": "Отделение гуманитарных и естественно-математических дисциплин (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-gumanitarnyh-i-estestvenno-matematicheskih-disciplin/"
+  },
+  {
+   "last_name": "Малаева",
+   "first_name": "Асель",
+   "department": "Отделение гуманитарных и естественно-математических дисциплин (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-gumanitarnyh-i-estestvenno-matematicheskih-disciplin/"
+  },
+  {
+   "last_name": "Исмаилова",
+   "first_name": "Махабат",
+   "department": "Отделение гуманитарных и естественно-математических дисциплин (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-gumanitarnyh-i-estestvenno-matematicheskih-disciplin/"
+  },
+  {
+   "last_name": "Бейшенбекова",
+   "first_name": "Алина",
+   "department": "Отделение гуманитарных и естественно-математических дисциплин (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-gumanitarnyh-i-estestvenno-matematicheskih-disciplin/"
+  },
+  {
+   "last_name": "Султанмахмутова",
+   "first_name": "Гуласел",
+   "department": "Отделение гуманитарных и естественно-математических дисциплин (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-gumanitarnyh-i-estestvenno-matematicheskih-disciplin/"
+  },
+  {
+   "last_name": "Сейтказиева",
+   "first_name": "Назгул",
+   "department": "Отделение среднего профессионального образования (ИНИТ)",
+   "title": "старший преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-srednego-professionalnogo-obrazovaniya/"
+  },
+  {
+   "last_name": "Акматалиева",
+   "first_name": "Гулдаркан",
+   "department": "Отделение среднего профессионального образования (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-srednego-professionalnogo-obrazovaniya/"
+  },
+  {
+   "last_name": "Тыналиева",
+   "first_name": "Чынара",
+   "department": "Отделение среднего профессионального образования (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-srednego-professionalnogo-obrazovaniya/"
+  },
+  {
+   "last_name": "Масиянова",
+   "first_name": "Айгуль",
+   "department": "Отделение среднего профессионального образования (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-srednego-professionalnogo-obrazovaniya/"
+  },
+  {
+   "last_name": "Ниязбеков",
+   "first_name": "Талгарбек",
+   "department": "Отделение среднего профессионального образования (ИНИТ)",
+   "title": "старший преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-srednego-professionalnogo-obrazovaniya/"
+  },
+  {
+   "last_name": "Ниязмаметова",
+   "first_name": "Сахинур",
+   "department": "Отделение среднего профессионального образования (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-srednego-professionalnogo-obrazovaniya/"
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Назира",
+   "department": "Отделение среднего профессионального образования (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-srednego-professionalnogo-obrazovaniya/"
+  },
+  {
+   "last_name": "Жумаева",
+   "first_name": "Айсулуу",
+   "department": "Отделение среднего профессионального образования (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-srednego-professionalnogo-obrazovaniya/"
+  },
+  {
+   "last_name": "Акимбек кызы",
+   "first_name": "Жазгул",
+   "department": "Отделение среднего профессионального образования (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-srednego-professionalnogo-obrazovaniya/"
+  },
+  {
+   "last_name": "Казыбекова",
+   "first_name": "Айзат",
+   "department": "Отделение среднего профессионального образования (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-srednego-professionalnogo-obrazovaniya/"
+  },
+  {
+   "last_name": "Анарбеков",
+   "first_name": "Табылды",
+   "department": "Отделение среднего профессионального образования (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-srednego-professionalnogo-obrazovaniya/"
+  },
+  {
+   "last_name": "Руслан уулу",
+   "first_name": "Эдил",
+   "department": "Отделение среднего профессионального образования (ИНИТ)",
+   "title": "преподаватель",
+   "source_url": "https://init.kg/kafedra/otdelenie-srednego-professionalnogo-obrazovaniya/"
+  }
+ ]
+}

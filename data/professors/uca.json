@@ -1,0 +1,287 @@
+{
+ "code": "uca",
+ "university": "University of Central Asia (Университет Центральной Азии), Нарын",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff",
+  "https://ucentralasia.org/schools/graduate-school-of-development/faculty-and-staff",
+  "https://ucentralasia.org/schools/school-of-professional-and-continuing-education/instructors-and-staff",
+  "https://ucentralasia.org (главная, навигация по школам)"
+ ],
+ "notes": "Сайт UCA (Нарын, кампусы также в Хороге и Текели) даёт имена только латиницей, сохранены как на сайте; порядок на сайте «Имя Фамилия», last_name = последнее слово. Включены преподаватели School of Arts and Sciences с кампусами Нарын или без указания кампуса; с явной пометкой «Khorog Campus» (Таджикистан) исключены (8 чел.). Из Graduate School of Development взяты только лица с преподавательскими званиями (professor/lecturer/dean), научные сотрудники (research fellows) без преподавательской должности, администрация, библиотекари, student life исключены. Из SPCE взяты только English Instructors в Кыргызстане. Маппинг: Professor → профессор, Associate Professor → доцент, Assistant Professor и Senior Lecturer → старший преподаватель, Lecturer/прочее → преподаватель. Interim Dean без звания → преподаватель.",
+ "professors": [
+  {
+   "last_name": "Alifbekova",
+   "first_name": "Marifat",
+   "department": "Aga Khan Humanities Project",
+   "title": "преподаватель",
+   "source_url": "https://ucentralasia.org/schools/graduate-school-of-development/faculty-and-staff"
+  },
+  {
+   "last_name": "Kurbonkhonov",
+   "first_name": "Obidkhon",
+   "department": "Aga Khan Humanities Project",
+   "title": "преподаватель",
+   "source_url": "https://ucentralasia.org/schools/graduate-school-of-development/faculty-and-staff"
+  },
+  {
+   "last_name": "Kolesova",
+   "first_name": "Elena",
+   "department": "Communications and Media",
+   "title": "доцент",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Palmer",
+   "first_name": "Lucy",
+   "department": "Communications and Media",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Sabiri",
+   "first_name": "Anisa Abidova",
+   "department": "Communications and Media",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Stanaliev",
+   "first_name": "Nursultan",
+   "department": "Communications and Media",
+   "title": "преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Fayaz",
+   "first_name": "Muhammad",
+   "department": "Computer Science",
+   "title": "доцент",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Goundar",
+   "first_name": "Sam",
+   "department": "Computer Science",
+   "title": "доцент",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Gulbarga",
+   "first_name": "Mohammad Imtiyaz",
+   "department": "Computer Science",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Muhametzhanova",
+   "first_name": "Gulshat",
+   "department": "Computer Science",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Ullah",
+   "first_name": "Rafi",
+   "department": "Computer Science",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Zubov",
+   "first_name": "Dmytro",
+   "department": "Computer Science",
+   "title": "доцент",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Boori",
+   "first_name": "Mukesh Singh",
+   "department": "Earth & Environmental Sciences",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Lom",
+   "first_name": "Nalan",
+   "department": "Earth & Environmental Sciences",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Moazzen",
+   "first_name": "Mohssen",
+   "department": "Earth & Environmental Sciences",
+   "title": "профессор",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Rahimjonov",
+   "first_name": "Ibrohim",
+   "department": "Earth & Environmental Sciences",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Samyn",
+   "first_name": "Denis",
+   "department": "Earth & Environmental Sciences",
+   "title": "доцент",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Teshebaeva",
+   "first_name": "Kanayim",
+   "department": "Earth & Environmental Sciences",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Kazemikhasragh",
+   "first_name": "Amirreza",
+   "department": "Global Economics",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Mirzoeva",
+   "first_name": "Sitora",
+   "department": "Global Economics",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Mirzosaidova",
+   "first_name": "Sedbegim",
+   "department": "Global Economics",
+   "title": "преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Musyck",
+   "first_name": "Bernard",
+   "department": "Global Economics",
+   "title": "доцент",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Naseem",
+   "first_name": "Anwar",
+   "department": "Global Economics",
+   "title": "доцент",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Yormirzoev",
+   "first_name": "Mirzobobo",
+   "department": "Global Economics",
+   "title": "доцент",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Gerry",
+   "first_name": "Christopher",
+   "department": "Graduate School of Development",
+   "title": "профессор",
+   "source_url": "https://ucentralasia.org/schools/graduate-school-of-development/faculty-and-staff"
+  },
+  {
+   "last_name": "Akbar",
+   "first_name": "Sajjad",
+   "department": "Math and Natural Sciences",
+   "title": "преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Canlas",
+   "first_name": "Ian Phil",
+   "department": "Math and Natural Sciences",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Hussain",
+   "first_name": "Azmat",
+   "department": "Math and Natural Sciences",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Kerimbaeva",
+   "first_name": "Siren",
+   "department": "Math and Natural Sciences",
+   "title": "преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Ashrafi",
+   "first_name": "Soheil",
+   "department": "School of Arts and Sciences",
+   "title": "преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Maiatskaia",
+   "first_name": "Kseniia",
+   "department": "School of Professional and Continuing Education",
+   "title": "преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-professional-and-continuing-education/instructors-and-staff"
+  },
+  {
+   "last_name": "Okhlopkina",
+   "first_name": "Tatiana",
+   "department": "School of Professional and Continuing Education",
+   "title": "преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-professional-and-continuing-education/instructors-and-staff"
+  },
+  {
+   "last_name": "Asanshoev",
+   "first_name": "Zohirbek",
+   "department": "Social Sciences and Humanities",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Goibnazarov",
+   "first_name": "Chorshanbe",
+   "department": "Social Sciences and Humanities",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Kazakbaeva",
+   "first_name": "Roza",
+   "department": "Social Sciences and Humanities",
+   "title": "доцент",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Lashkariev",
+   "first_name": "Amrisho",
+   "department": "Social Sciences and Humanities",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Menshikov",
+   "first_name": "Andrey",
+   "department": "Social Sciences and Humanities",
+   "title": "доцент",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Sheralieva",
+   "first_name": "Fariza",
+   "department": "Social Sciences and Humanities",
+   "title": "старший преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  },
+  {
+   "last_name": "Tursunalieva",
+   "first_name": "Meerim",
+   "department": "Social Sciences and Humanities",
+   "title": "преподаватель",
+   "source_url": "https://ucentralasia.org/schools/school-of-arts-and-sciences/faculty-and-staff"
+  }
+ ]
+}

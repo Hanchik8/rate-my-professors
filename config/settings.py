@@ -84,6 +84,14 @@ if _is_test:
 else:
     SECRET_KEY = os.environ.get("SECRET_KEY") or DEFAULT_SECRET_KEY
 ALLOWED_HOSTS = _get_allowed_hosts(os.environ.get("ALLOWED_HOSTS"), _is_test)
+SITE_URL = os.environ.get("SITE_URL", "").strip().rstrip("/")
+USE_X_FORWARDED_HOST = _parse_bool(os.environ.get("USE_X_FORWARDED_HOST"), False)
+_secure_proxy_ssl_header = os.environ.get("SECURE_PROXY_SSL_HEADER")
+SECURE_PROXY_SSL_HEADER = (
+    tuple(part.strip() for part in _secure_proxy_ssl_header.split("=", 1))
+    if _secure_proxy_ssl_header and "=" in _secure_proxy_ssl_header
+    else (("HTTP_X_FORWARDED_PROTO", "https") if not DEBUG else None)
+)
 # Trusted origins for CSRF come from the environment, same as SECRET_KEY and
 # ALLOWED_HOSTS above; they are required for HTTPS deployments behind a proxy.
 CSRF_TRUSTED_ORIGINS = _get_csrf_trusted_origins(os.environ.get("CSRF_TRUSTED_ORIGINS"))
@@ -180,19 +188,32 @@ globals().update(
     )
 )
 
-# Clickjacking protection is safe to enable in every environment.
-X_FRAME_OPTIONS = os.environ.get("X_FRAME_OPTIONS", "DENY")
+def _get_samesite_setting(name):
+    """Accept only restrictive SameSite values for application cookies."""
+    value = os.environ.get(name, "Lax").strip().capitalize()
+    return value if value in {"Lax", "Strict"} else "Lax"
+
+
+def _get_x_frame_options():
+    value = os.environ.get("X_FRAME_OPTIONS", "DENY").strip().upper()
+    return value if value in {"DENY", "SAMEORIGIN"} else "DENY"
+
+
+# Clickjacking protection is safe to enable in every environment. Do not allow
+# an environment typo or permissive value to silently disable the protection.
+X_FRAME_OPTIONS = _get_x_frame_options()
 
 # Limit request-body and in-memory file upload sizes to 2.5 MiB.
 DATA_UPLOAD_MAX_MEMORY_SIZE = 2_621_440
 FILE_UPLOAD_MAX_MEMORY_SIZE = 2_621_440
 
-# Referrer-Policy limits how much of our URLs leak to third parties; "same-origin"
-# is a safe, privacy-preserving default that can be tightened per deployment.
-SECURE_REFERRER_POLICY = os.environ.get("SECURE_REFERRER_POLICY", "same-origin")
+# Referrer-Policy limits how much of our URLs leak to third parties.
+SECURE_REFERRER_POLICY = os.environ.get(
+    "SECURE_REFERRER_POLICY", "strict-origin-when-cross-origin"
+)
 
-# ProfLens does not use these browser features, so disable them by default.
-PERMISSIONS_POLICY = "camera=(), geolocation=(), microphone=()"
+# PrepodRate does not use these browser features, so disable them by default.
+PERMISSIONS_POLICY = "camera=(), microphone=(), geolocation=()"
 
 # Minimal Content-Security-Policy: only same-origin resources are allowed and
 # objects/framing/base-uri/form targets are locked down. Inline styles remain
@@ -210,8 +231,9 @@ SECURE_CSP = {
 
 # Cookies must never be readable from JavaScript and stay same-site by default.
 SESSION_COOKIE_HTTPONLY = _get_bool_setting("SESSION_COOKIE_HTTPONLY", True)
-SESSION_COOKIE_SAMESITE = os.environ.get("SESSION_COOKIE_SAMESITE", "Lax")
-CSRF_COOKIE_SAMESITE = os.environ.get("CSRF_COOKIE_SAMESITE", "Lax")
+SESSION_COOKIE_SAMESITE = _get_samesite_setting("SESSION_COOKIE_SAMESITE")
+CSRF_COOKIE_HTTPONLY = _get_bool_setting("CSRF_COOKIE_HTTPONLY", True)
+CSRF_COOKIE_SAMESITE = _get_samesite_setting("CSRF_COOKIE_SAMESITE")
 
 # Password strength requirements enforced by Django auth / password reset.
 AUTH_PASSWORD_VALIDATORS = [
@@ -222,6 +244,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 INSTALLED_APPS = [
+    "reviews.apps.ReviewsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -229,7 +252,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
-    "reviews.apps.ReviewsConfig",
 ]
 MIDDLEWARE = [
     "django.middleware.gzip.GZipMiddleware",
@@ -242,11 +264,13 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.locale.LocaleMiddleware",
+    "reviews.middleware.QueryLanguageMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
 ]
 ROOT_URLCONF = "config.urls"
+REPO_BACKEND = os.environ.get("REPO_BACKEND", "")
 TEMPLATES = [{
     "BACKEND": "django.template.backends.django.DjangoTemplates",
     "APP_DIRS": True,
@@ -256,11 +280,14 @@ TEMPLATES = [{
         "django.contrib.auth.context_processors.auth",
         "django.contrib.messages.context_processors.messages",
         "django.template.context_processors.i18n",
+        "reviews.context_processors.repository_mode",
+        "reviews.context_processors.site_url",
     ]},
 }]
 
 # Database: DATABASE_URL for Postgres, fallback to SQLite for local dev / tests
 _db_url = os.environ.get("DATABASE_URL", "")
+_conn_max_age = _get_int_setting("CONN_MAX_AGE", 0 if DEBUG else 60)
 if _db_url:
     # simple parse: postgres://user:pass@host:port/dbname  -> use psycopg
     # we rely on dj-database-url style but keep stdlib only
@@ -273,9 +300,14 @@ if _db_url:
         "PASSWORD": u.password or "",
         "HOST": u.hostname or "",
         "PORT": str(u.port or ""),
+        "CONN_MAX_AGE": _conn_max_age,
     }}
 else:
-    DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}}
+    DATABASES = {"default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+        "CONN_MAX_AGE": _conn_max_age,
+    }}
 
 STATIC_URL = "static/"
 USE_I18N = True
@@ -292,6 +324,37 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+# SMTP delivery (free default: Gmail with a Google app password, see README).
+EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")
+EMAIL_PORT = _get_int_setting("EMAIL_PORT", 587)
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
+EMAIL_USE_TLS = _get_bool_setting("EMAIL_USE_TLS", True)
+EMAIL_TIMEOUT = _get_int_setting("EMAIL_TIMEOUT", 15)
+# Console output in DEBUG unless SMTP credentials are provided; SMTP otherwise.
+EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND") or (
+    "django.core.mail.backends.smtp.EmailBackend"
+    if EMAIL_HOST_USER or not DEBUG
+    else "django.core.mail.backends.console.EmailBackend"
+)
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL") or EMAIL_HOST_USER or "noreply@proflens.local"
+
+# Email confirmation by 6-digit code at signup. Set REQUIRE_EMAIL_VERIFICATION=False
+# when no SMTP account is configured; new accounts are then activated immediately.
+# "auto" turns it on only once EMAIL_HOST_USER and EMAIL_HOST_PASSWORD are filled in.
+def _get_email_verification(raw, smtp_ready):
+    value = (raw or "").strip().lower()
+    if value == "auto":
+        return smtp_ready
+    return _parse_bool(raw, default=True)
+
+
+REQUIRE_EMAIL_VERIFICATION = _get_email_verification(
+    os.environ.get("REQUIRE_EMAIL_VERIFICATION"), bool(EMAIL_HOST_USER and EMAIL_HOST_PASSWORD)
+)
+EMAIL_VERIFICATION_CODE_TTL = 600
+EMAIL_VERIFICATION_MAX_ATTEMPTS = 5
+EMAIL_VERIFICATION_RESEND_INTERVAL = 60
 
 # Rate limiting: simple fixed-window counters kept in the Django cache.
 # Disabled by default while running the test suite so unrelated tests cannot
@@ -315,3 +378,7 @@ CACHES = {
 # Catalog pages (home search, university lists and filter options) are cached
 # with django.core.cache; reviews/professors/schools invalidate the namespace.
 CATALOG_CACHE_TIMEOUT = int(os.environ.get("CATALOG_CACHE_TIMEOUT", "300"))
+
+# Tests: a fast hasher. PBKDF2 cost ~1.2s per login/create_user and doubled the suite time.
+if _is_test:
+    PASSWORD_HASHERS = ["django.contrib.auth.hashers.MD5PasswordHasher"]

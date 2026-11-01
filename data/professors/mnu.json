@@ -1,0 +1,1616 @@
+{
+ "code": "mnu",
+ "university": "Международный университет им. К.Ш. Токтомаматова (МНУ)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://edu.mnu.kg/%d0%b3%d1%83%d0%bc%d0%b0%d0%bd%d0%b8%d1%82%d0%b0%d1%80%d0%bd%d0%be-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b9-%d0%ba%d0%be%d0%bb%d0%bb%d0%b5%d0%b4%d0%b6/",
+  "https://edu.mnu.kg/%d0%b8%d0%bd%d1%81%d1%82%d0%b8%d1%82%d1%83%d1%82-%d0%bd%d0%b5%d0%bf%d1%80%d0%b5%d1%80%d1%8b%d0%b2%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%82%d0%ba%d1%80%d1%8b%d1%82%d0%be%d0%b3%d0%be-%d0%be%d0%b1%d1%80/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d1%83%d1%87%d0%b5%d1%82%d0%b0-%d0%b0%d0%bd%d0%b0%d0%bb%d0%b8%d0%b7/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d0%be%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2-%d1%82%d0%b5%d0%be%d1%80%d0%b8%d0%b8-%d0%bf%d0%b5/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d0%b9-%d0%b8/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b8-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%be%d0%b1%d1%89%d0%b5%d0%bc%d0%b5%d0%b4%d0%b8%d1%86%d0%b8%d0%bd%d1%81%d0%ba%d0%b8%d1%85-%d0%b4/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8-%d0%b8-%d0%bc%d0%b5%d1%82%d0%be%d0%b4%d0%b8%d0%ba%d0%b8-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d0%b2%d0%b5%d0%b4%d0%b5%d0%bd%d0%b8%d1%8f/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%83%d1%87%d0%b5%d1%82%d0%bd%d0%be-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%b7%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b9-%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d1%83%d1%80%d1%8b-%d0%b8-%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%bb%d0%be%d1%81%d0%be%d1%84%d0%b8%d0%b8-%d0%b8-%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bd%d0%b0%d1%83%d1%87/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%bc%d0%b5%d0%bd%d0%b5%d0%b4%d0%b6%d0%bc%d0%b5%d0%bd%d1%82%d0%b0-%d0%b8-%d1%82%d1%83%d1%80%d0%b8/",
+  "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/",
+  "https://edu.mnu.kg/%d0%bc%d0%b0%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%82%d1%83%d1%80%d0%b0/",
+  "https://edu.mnu.kg/%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d0%b9-%d0%ba%d1%8b%d1%80%d0%b3%d1%8b%d0%b7%d1%81%d0%ba%d0%be-%d1%82%d1%83%d1%80%d0%b5%d1%86%d0%ba%d0%b8%d0%b9-%d0%b8%d0%bd/",
+  "https://edu.mnu.kg/%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d0%b9-%d0%bc%d0%b5%d0%b4%d0%b8%d1%86%d0%b8%d0%bd%d1%81%d0%ba%d0%b8%d0%b9-%d0%ba%d0%be%d0%bb%d0%bb%d0%b5%d0%b4%d0%b6/",
+  "https://mnu.kg (редирект на edu.mnu.kg)"
+ ],
+ "notes": "Сайт МНУ им. К.Ш. Токтомаматова: mnu.kg переадресует на edu.mnu.kg (WordPress). Составы взяты со страниц кафедр/отделений (раздел «ППС кафедры», таблицы). Кафедра учетно-финансовых дисциплин: на странице только заведующий. Исключены методисты, офис-менеджеры, лаборанты, зав. лабораторией, директора без преподавательской должности. Запись «Кантороевна Гулзат Кантороевна» (каф. экономики и финансов, д.э.н.) пропущена: фамилия на сайте указана с ошибкой. Списки студентов на страницах кафедр проигнорированы. avn.mnu.kg требует логина.",
+ "professors": [
+  {
+   "last_name": "Жанузаков",
+   "first_name": "Болот Шакыевич",
+   "department": "Бухгалтерского учета, анализ и аудита",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d1%83%d1%87%d0%b5%d1%82%d0%b0-%d0%b0%d0%bd%d0%b0%d0%bb%d0%b8%d0%b7/"
+  },
+  {
+   "last_name": "Омурзаков",
+   "first_name": "Сатыбалды Ашимович",
+   "department": "Бухгалтерского учета, анализ и аудита",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d1%83%d1%87%d0%b5%d1%82%d0%b0-%d0%b0%d0%bd%d0%b0%d0%bb%d0%b8%d0%b7/"
+  },
+  {
+   "last_name": "Маткеримова",
+   "first_name": "Анаркан Маткасымовна",
+   "department": "Бухгалтерского учета, анализ и аудита",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d1%83%d1%87%d0%b5%d1%82%d0%b0-%d0%b0%d0%bd%d0%b0%d0%bb%d0%b8%d0%b7/"
+  },
+  {
+   "last_name": "Хамрабаев",
+   "first_name": "Абдурасул Абдусаттарович",
+   "department": "Бухгалтерского учета, анализ и аудита",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d1%83%d1%87%d0%b5%d1%82%d0%b0-%d0%b0%d0%bd%d0%b0%d0%bb%d0%b8%d0%b7/"
+  },
+  {
+   "last_name": "Мамытов",
+   "first_name": "Таштан Татыкулович",
+   "department": "Бухгалтерского учета, анализ и аудита",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d1%83%d1%87%d0%b5%d1%82%d0%b0-%d0%b0%d0%bd%d0%b0%d0%bb%d0%b8%d0%b7/"
+  },
+  {
+   "last_name": "Баимбетов",
+   "first_name": "Нурлан Жумабаевич",
+   "department": "Бухгалтерского учета, анализ и аудита",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d1%83%d1%87%d0%b5%d1%82%d0%b0-%d0%b0%d0%bd%d0%b0%d0%bb%d0%b8%d0%b7/"
+  },
+  {
+   "last_name": "Кокуева",
+   "first_name": "Эльмира Сатыбалдиевна",
+   "department": "Бухгалтерского учета, анализ и аудита",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d1%83%d1%87%d0%b5%d1%82%d0%b0-%d0%b0%d0%bd%d0%b0%d0%bb%d0%b8%d0%b7/"
+  },
+  {
+   "last_name": "Ганыбаева",
+   "first_name": "Уларкан Гапаровна",
+   "department": "Бухгалтерского учета, анализ и аудита",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d1%83%d1%87%d0%b5%d1%82%d0%b0-%d0%b0%d0%bd%d0%b0%d0%bb%d0%b8%d0%b7/"
+  },
+  {
+   "last_name": "Кадырбекова",
+   "first_name": "Чолпон Кадырбековна",
+   "department": "Бухгалтерского учета, анализ и аудита",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d1%83%d1%87%d0%b5%d1%82%d0%b0-%d0%b0%d0%bd%d0%b0%d0%bb%d0%b8%d0%b7/"
+  },
+  {
+   "last_name": "Мамыркулова",
+   "first_name": "Джамиля Рысбековна",
+   "department": "Бухгалтерского учета, анализ и аудита",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b1%d1%83%d1%85%d0%b3%d0%b0%d0%bb%d1%82%d0%b5%d1%80%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d1%83%d1%87%d0%b5%d1%82%d0%b0-%d0%b0%d0%bd%d0%b0%d0%bb%d0%b8%d0%b7/"
+  },
+  {
+   "last_name": "Пайзуллаева",
+   "first_name": "Курбанжан Убайдуллаевна",
+   "department": "Государственного, официального и иностранных языков",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/"
+  },
+  {
+   "last_name": "Исабеков",
+   "first_name": "Ильяс Ниязбекович",
+   "department": "Государственного, официального и иностранных языков",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/"
+  },
+  {
+   "last_name": "Алымкулов",
+   "first_name": "Алмазбек Абылкасымович",
+   "department": "Государственного, официального и иностранных языков",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/"
+  },
+  {
+   "last_name": "Шерматов",
+   "first_name": "Абдуназар Орунбаеаич",
+   "department": "Государственного, официального и иностранных языков",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/"
+  },
+  {
+   "last_name": "Мырзакулова",
+   "first_name": "Кундузкан Шамбетовна",
+   "department": "Государственного, официального и иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/"
+  },
+  {
+   "last_name": "Сопонова",
+   "first_name": "Айнура Аскаровна",
+   "department": "Государственного, официального и иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/"
+  },
+  {
+   "last_name": "Касымов",
+   "first_name": "Талгар Маматович",
+   "department": "Государственного, официального и иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/"
+  },
+  {
+   "last_name": "Узенбаева",
+   "first_name": "Уркия Шерманбетовна",
+   "department": "Государственного, официального и иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/"
+  },
+  {
+   "last_name": "Кадырбек кызы",
+   "first_name": "Гульзада",
+   "department": "Государственного, официального и иностранных языков",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/"
+  },
+  {
+   "last_name": "Келдибаева",
+   "first_name": "Розакан Тороевна",
+   "department": "Государственного, официального и иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/"
+  },
+  {
+   "last_name": "Усубалиева",
+   "first_name": "Клара Абдыгаппаровна",
+   "department": "Государственного, официального и иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/"
+  },
+  {
+   "last_name": "Мамадинова",
+   "first_name": "Айчурок Алимбековна",
+   "department": "Государственного, официального и иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/"
+  },
+  {
+   "last_name": "Култаева",
+   "first_name": "Айнаш Кошоновна",
+   "department": "Государственного, официального и иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/"
+  },
+  {
+   "last_name": "Эрмекова",
+   "first_name": "Зууракан Рысбаевна",
+   "department": "Государственного, официального и иностранных языков",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b3%d0%be%d1%81%d1%83%d0%b4%d0%b0%d1%80%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%84%d0%b8%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd/"
+  },
+  {
+   "last_name": "Мамадалиева",
+   "first_name": "Клара Акимовна",
+   "department": "Информационных технологий и математики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d0%b9-%d0%b8/"
+  },
+  {
+   "last_name": "Омошев",
+   "first_name": "Тологон Тенирович",
+   "department": "Информационных технологий и математики",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d0%b9-%d0%b8/"
+  },
+  {
+   "last_name": "Орозов",
+   "first_name": "Русланбек Назарбаевич",
+   "department": "Информационных технологий и математики",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d0%b9-%d0%b8/"
+  },
+  {
+   "last_name": "Канетова",
+   "first_name": "Динара Эменовна",
+   "department": "Информационных технологий и математики",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d0%b9-%d0%b8/"
+  },
+  {
+   "last_name": "Абдубекова",
+   "first_name": "Жумагул Анашбековна",
+   "department": "Информационных технологий и математики",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d0%b9-%d0%b8/"
+  },
+  {
+   "last_name": "Мамасадыков",
+   "first_name": "Мухаммад Халилович",
+   "department": "Информационных технологий и математики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d0%b9-%d0%b8/"
+  },
+  {
+   "last_name": "Топчубай уулу",
+   "first_name": "Замирбек",
+   "department": "Информационных технологий и математики",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d0%b9-%d0%b8/"
+  },
+  {
+   "last_name": "Сапарбек кызы",
+   "first_name": "Аймончок",
+   "department": "Информационных технологий и математики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d0%b9-%d0%b8/"
+  },
+  {
+   "last_name": "Жапаров",
+   "first_name": "Айдар Марсланбекович",
+   "department": "Информационных технологий и математики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d0%b9-%d0%b8/"
+  },
+  {
+   "last_name": "Чындөөлөтова",
+   "first_name": "Жийдегүл",
+   "department": "Информационных технологий и математики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d0%b9-%d0%b8/"
+  },
+  {
+   "last_name": "Шабданов",
+   "first_name": "Бектур Эдилбекович",
+   "department": "Информационных технологий и математики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d0%b9-%d0%b8/"
+  },
+  {
+   "last_name": "Амиракулов",
+   "first_name": "Урматбек Беделбаевич",
+   "department": "Физической культуры и спорта",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%b7%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b9-%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d1%83%d1%80%d1%8b-%d0%b8-%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0/"
+  },
+  {
+   "last_name": "Таштанов",
+   "first_name": "Малик Акунович",
+   "department": "Физической культуры и спорта",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%b7%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b9-%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d1%83%d1%80%d1%8b-%d0%b8-%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0/"
+  },
+  {
+   "last_name": "Садыков",
+   "first_name": "Кайратбек Эсенгелдиевич",
+   "department": "Физической культуры и спорта",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%b7%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b9-%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d1%83%d1%80%d1%8b-%d0%b8-%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0/"
+  },
+  {
+   "last_name": "Тургунбаев",
+   "first_name": "Кенжебек Наипбекович",
+   "department": "Физической культуры и спорта",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%b7%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b9-%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d1%83%d1%80%d1%8b-%d0%b8-%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0/"
+  },
+  {
+   "last_name": "Куванычбек уулу",
+   "first_name": "Чынгыз",
+   "department": "Физической культуры и спорта",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%b7%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b9-%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d1%83%d1%80%d1%8b-%d0%b8-%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0/"
+  },
+  {
+   "last_name": "Орозбеков",
+   "first_name": "Кубатбек Алимбекович",
+   "department": "Физической культуры и спорта",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%b7%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b9-%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d1%83%d1%80%d1%8b-%d0%b8-%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0/"
+  },
+  {
+   "last_name": "Коконбай уулу",
+   "first_name": "Бекболот",
+   "department": "Физической культуры и спорта",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%b7%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b9-%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d1%83%d1%80%d1%8b-%d0%b8-%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0/"
+  },
+  {
+   "last_name": "Таалайбеков",
+   "first_name": "Сагын Таалайбекович",
+   "department": "Физической культуры и спорта",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%b7%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b9-%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d1%83%d1%80%d1%8b-%d0%b8-%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0/"
+  },
+  {
+   "last_name": "Таалайбекова",
+   "first_name": "Айтурган Таалайбековна",
+   "department": "Физической культуры и спорта",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%b7%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b9-%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d1%83%d1%80%d1%8b-%d0%b8-%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0/"
+  },
+  {
+   "last_name": "Машаев",
+   "first_name": "Манас Аширбекович",
+   "department": "Физической культуры и спорта",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%b7%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b9-%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d1%83%d1%80%d1%8b-%d0%b8-%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0/"
+  },
+  {
+   "last_name": "Зулпукаров",
+   "first_name": "Алманбек Мухтарбекович",
+   "department": "Физической культуры и спорта",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%b7%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b9-%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d1%83%d1%80%d1%8b-%d0%b8-%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0/"
+  },
+  {
+   "last_name": "Алтаева",
+   "first_name": "Динара Исаковна",
+   "department": "Педагогики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Борубаев",
+   "first_name": "Таштан Борубаевич",
+   "department": "Педагогики",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Султанова",
+   "first_name": "Айжамал Абылкасымовна",
+   "department": "Педагогики",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Паязова",
+   "first_name": "Айсулуу Манаповна",
+   "department": "Педагогики",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Танырыкова",
+   "first_name": "Мисират Макамбаевна",
+   "department": "Педагогики",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Мамбеталиева",
+   "first_name": "Гулшайыр Муктарбековна",
+   "department": "Педагогики",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Жусупбаева",
+   "first_name": "Шайырбү Энилбаевна",
+   "department": "Педагогики",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Номадинова",
+   "first_name": "Гулдана Уланбековна",
+   "department": "Педагогики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Бокиева",
+   "first_name": "Умида Холбаевна",
+   "department": "Педагогики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Эшмуратова",
+   "first_name": "Гульшан Досмахидовна",
+   "department": "Педагогики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Баева",
+   "first_name": "Айжаңыл Чынтемировна",
+   "department": "Педагогики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8/"
+  },
+  {
+   "last_name": "Токтомаматова",
+   "first_name": "Нурзат Кантороевна",
+   "department": "Экономики и финансов",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Кантороева",
+   "first_name": "Айжамал Кантороевна",
+   "department": "Экономики и финансов",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Атаканов",
+   "first_name": "Болотбек Курманбаевич",
+   "department": "Экономики и финансов",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Гулзат Сагындыковна",
+   "department": "Экономики и финансов",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Пулатова",
+   "first_name": "Гулнара Тулановна",
+   "department": "Экономики и финансов",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Сартбаева",
+   "first_name": "Гульназ Пахирдиновна",
+   "department": "Экономики и финансов",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Кудайбердиева",
+   "first_name": "Жанара Арапбаевна",
+   "department": "Экономики и финансов",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Торогелдиева",
+   "first_name": "Акталина Бегимкуловна",
+   "department": "Экономики и финансов",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Ажиматова",
+   "first_name": "Наргиза Мырзакабуловна",
+   "department": "Экономики и финансов",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Калбаева",
+   "first_name": "Рахат Дуйшоевна",
+   "department": "Экономики и финансов",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Карагулова",
+   "first_name": "Айназ Ильясовна",
+   "department": "Экономики и финансов",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Сариева",
+   "first_name": "Ниссо Турсуновна",
+   "department": "Экономики и финансов",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Токтомаматова",
+   "first_name": "Даткайым Курманбековна",
+   "department": "Экономики и финансов",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Тыныбекова",
+   "first_name": "Гульназ Тыныбековна",
+   "department": "Экономики и финансов",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%b8-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2/"
+  },
+  {
+   "last_name": "Мырзабаева",
+   "first_name": "Нуржамал Сасалимовна",
+   "department": "Философии и естественно-научных дисциплин",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%bb%d0%be%d1%81%d0%be%d1%84%d0%b8%d0%b8-%d0%b8-%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bd%d0%b0%d1%83%d1%87/"
+  },
+  {
+   "last_name": "Дүйшеев",
+   "first_name": "Жеңиш Аматисакович",
+   "department": "Философии и естественно-научных дисциплин",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%bb%d0%be%d1%81%d0%be%d1%84%d0%b8%d0%b8-%d0%b8-%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bd%d0%b0%d1%83%d1%87/"
+  },
+  {
+   "last_name": "Калиев",
+   "first_name": "Азамат Сайитович",
+   "department": "Философии и естественно-научных дисциплин",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%bb%d0%be%d1%81%d0%be%d1%84%d0%b8%d0%b8-%d0%b8-%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bd%d0%b0%d1%83%d1%87/"
+  },
+  {
+   "last_name": "Кочкорова",
+   "first_name": "Гүлзада Саттаровна",
+   "department": "Философии и естественно-научных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%bb%d0%be%d1%81%d0%be%d1%84%d0%b8%d0%b8-%d0%b8-%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bd%d0%b0%d1%83%d1%87/"
+  },
+  {
+   "last_name": "Султанова",
+   "first_name": "Акмарал Токоевна",
+   "department": "Философии и естественно-научных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%bb%d0%be%d1%81%d0%be%d1%84%d0%b8%d0%b8-%d0%b8-%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bd%d0%b0%d1%83%d1%87/"
+  },
+  {
+   "last_name": "Пирматова",
+   "first_name": "Жамила Тилекмаматовна",
+   "department": "Философии и естественно-научных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%bb%d0%be%d1%81%d0%be%d1%84%d0%b8%d0%b8-%d0%b8-%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bd%d0%b0%d1%83%d1%87/"
+  },
+  {
+   "last_name": "Сатарова",
+   "first_name": "Жылдыз Садыржановна",
+   "department": "Философии и естественно-научных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%bb%d0%be%d1%81%d0%be%d1%84%d0%b8%d0%b8-%d0%b8-%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bd%d0%b0%d1%83%d1%87/"
+  },
+  {
+   "last_name": "Курбанбекова",
+   "first_name": "Кулпунай Канатовна",
+   "department": "Философии и естественно-научных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%bb%d0%be%d1%81%d0%be%d1%84%d0%b8%d0%b8-%d0%b8-%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bd%d0%b0%d1%83%d1%87/"
+  },
+  {
+   "last_name": "Салибаева",
+   "first_name": "Жайгүл Султановна",
+   "department": "Философии и естественно-научных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%bb%d0%be%d1%81%d0%be%d1%84%d0%b8%d0%b8-%d0%b8-%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bd%d0%b0%d1%83%d1%87/"
+  },
+  {
+   "last_name": "Бусурманова",
+   "first_name": "Динара Раимбердиевна",
+   "department": "Философии и естественно-научных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%bb%d0%be%d1%81%d0%be%d1%84%d0%b8%d0%b8-%d0%b8-%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bd%d0%b0%d1%83%d1%87/"
+  },
+  {
+   "last_name": "Разакова",
+   "first_name": "Гүлшан Жалынбековна",
+   "department": "Философии и естественно-научных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%84%d0%b8%d0%bb%d0%be%d1%81%d0%be%d1%84%d0%b8%d0%b8-%d0%b8-%d0%b5%d1%81%d1%82%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be-%d0%bd%d0%b0%d1%83%d1%87/"
+  },
+  {
+   "last_name": "Юлдашов",
+   "first_name": "Кобилжан Камалидинович",
+   "department": "Юриспруденции",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Мажитов",
+   "first_name": "Бакыт Омурзакович",
+   "department": "Юриспруденции",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Токтоболотова",
+   "first_name": "Салима Абдылдаевна",
+   "department": "Юриспруденции",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Улан уулу",
+   "first_name": "Авакан",
+   "department": "Юриспруденции",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Чонатаева",
+   "first_name": "Мээрим Салижанова",
+   "department": "Юриспруденции",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Кудаярова",
+   "first_name": "Барнохан Анваровна",
+   "department": "Юриспруденции",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Мадышева",
+   "first_name": "Ширин Икрамовна",
+   "department": "Юриспруденции",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Тойгонбаева",
+   "first_name": "Нуржамал Орозбековна",
+   "department": "Юриспруденции",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Кулуева",
+   "first_name": "Эльвира Ормонбековна",
+   "department": "Юриспруденции",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Нуркулов",
+   "first_name": "Алтынбек Канкыбаевич",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Качкынбаева",
+   "first_name": "Алмашай Сайфудиновна",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Сопубекова",
+   "first_name": "Айпери Шадыбековна",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Асилбеков",
+   "first_name": "Данияр Токсонбаевич",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Мелисбекова",
+   "first_name": "Умут Мелисбековна",
+   "department": "Юриспруденции",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8e%d1%80%d0%b8%d1%81%d0%bf%d1%80%d1%83%d0%b4%d0%b5%d0%bd%d1%86%d0%b8%d0%b8/"
+  },
+  {
+   "last_name": "Райымкул уулу",
+   "first_name": "Жакшылык",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Жумабаева",
+   "first_name": "Гүлбара Имамасановна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Абдраимов",
+   "first_name": "Кыязбек Айдарбекович",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Абдыгапарова",
+   "first_name": "Анаркан Мадановна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Рыскулова",
+   "first_name": "Назира Надырбековна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Авазова",
+   "first_name": "Эркайым Абдувалиевна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Айдарова",
+   "first_name": "Айжан Маматкадыровна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Артыкбаева",
+   "first_name": "Айымкан Калдарбековна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Атабаева",
+   "first_name": "Аселья Бараткановна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Бекташова",
+   "first_name": "Басархан Абдиваситовна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Зульпукарова",
+   "first_name": "Назира Досжановна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Имарова",
+   "first_name": "Мадина Сурабалдиевна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Исакбаева",
+   "first_name": "Гүлдана Рысалиевна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Шердакова",
+   "first_name": "Айгул Алимбековна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Кенжебаева",
+   "first_name": "Динара",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Козукеева",
+   "first_name": "Айгерим Туголбаевна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Кулушова",
+   "first_name": "Миргүл Камаловна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Кушбакова",
+   "first_name": "Сайкал Сайпидиновна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Мамарасулова",
+   "first_name": "Айгул Арстанбековна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Наржигитова",
+   "first_name": "Ширин Апилбаевна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Нурумбетова",
+   "first_name": "Зарина Камчыевна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Пратова",
+   "first_name": "Шарипа Курсановна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Токтогулова",
+   "first_name": "Венера Калбаевна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Ташбаева",
+   "first_name": "Нуржамал Кубатбековна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Молдомусаева",
+   "first_name": "Калыйма Талиповна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Умуркулова",
+   "first_name": "Чолпанай Жуманалиевна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Чоюнова",
+   "first_name": "Айжана Тургунбаевна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Эргешова",
+   "first_name": "Бурахима Абдраимовна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Эшмуратова",
+   "first_name": "Гулшан Досмахамадовна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Турдумаматова",
+   "first_name": "Айсулуу Турдумаматовна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Мадиярова",
+   "first_name": "Элвира Жунусалиевна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Арапбаев",
+   "first_name": "Максат Акматжанович",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Оружев",
+   "first_name": "Оруч Карамович",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Ырысбек уулу",
+   "first_name": "Сүйүн",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Мансуржан уулу",
+   "first_name": "Саййидолим",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Эрмекова",
+   "first_name": "Жазгул Миркасымовна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Айтиева",
+   "first_name": "Тынара",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Курбанбекова",
+   "first_name": "Гүлназ Жанышбековна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Орунбаева",
+   "first_name": "Тиллабү Абдиллаевна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Таалайбекова",
+   "first_name": "Чолпон Таалайбековна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Арзыкулова",
+   "first_name": "Жазгул Алишеровна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Зулпукарова",
+   "first_name": "Назира Досжановна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Бекташева",
+   "first_name": "Басархан Абдиваситовна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Абдугапарова",
+   "first_name": "Анаркан Мадановна",
+   "department": "Общеобразовательных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d0%b1%d1%89%d0%b5%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb/"
+  },
+  {
+   "last_name": "Кетирекеева",
+   "first_name": "Анара Сайдиллаевна",
+   "department": "Педагогики и методики преподавания",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8-%d0%b8-%d0%bc%d0%b5%d1%82%d0%be%d0%b4%d0%b8%d0%ba%d0%b8-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4/"
+  },
+  {
+   "last_name": "Абдымомунова",
+   "first_name": "Дилдехан Зулумовна",
+   "department": "Педагогики и методики преподавания",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8-%d0%b8-%d0%bc%d0%b5%d1%82%d0%be%d0%b4%d0%b8%d0%ba%d0%b8-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4/"
+  },
+  {
+   "last_name": "Иркеева",
+   "first_name": "Эльмира Давлатбаевна",
+   "department": "Педагогики и методики преподавания",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8-%d0%b8-%d0%bc%d0%b5%d1%82%d0%be%d0%b4%d0%b8%d0%ba%d0%b8-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4/"
+  },
+  {
+   "last_name": "Исманова",
+   "first_name": "Нурийла Каныбековна",
+   "department": "Педагогики и методики преподавания",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8-%d0%b8-%d0%bc%d0%b5%d1%82%d0%be%d0%b4%d0%b8%d0%ba%d0%b8-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4/"
+  },
+  {
+   "last_name": "Шатай кызы",
+   "first_name": "Нурила",
+   "department": "Педагогики и методики преподавания",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8-%d0%b8-%d0%bc%d0%b5%d1%82%d0%be%d0%b4%d0%b8%d0%ba%d0%b8-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4/"
+  },
+  {
+   "last_name": "Инамова",
+   "first_name": "Аширкан Анарбековна",
+   "department": "Педагогики и методики преподавания",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8-%d0%b8-%d0%bc%d0%b5%d1%82%d0%be%d0%b4%d0%b8%d0%ba%d0%b8-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4/"
+  },
+  {
+   "last_name": "Жакыпова",
+   "first_name": "Шахзада Орозалыевна",
+   "department": "Педагогики и методики преподавания",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d0%b5%d0%b4%d0%b0%d0%b3%d0%be%d0%b3%d0%b8%d0%ba%d0%b8-%d0%b8-%d0%bc%d0%b5%d1%82%d0%be%d0%b4%d0%b8%d0%ba%d0%b8-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d0%b4/"
+  },
+  {
+   "last_name": "Топчубаева",
+   "first_name": "Гулшайыр Иманкуловна",
+   "department": "Учетно — финансовых дисциплин",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%83%d1%87%d0%b5%d1%82%d0%bd%d0%be-%d1%84%d0%b8%d0%bd%d0%b0%d0%bd%d1%81%d0%be%d0%b2%d1%8b%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8%d0%bf%d0%bb%d0%b8/"
+  },
+  {
+   "last_name": "Толонов",
+   "first_name": "Талант Толонович",
+   "department": "Правоведения",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d0%b2%d0%b5%d0%b4%d0%b5%d0%bd%d0%b8%d1%8f/"
+  },
+  {
+   "last_name": "Сайпидинов",
+   "first_name": "Бакытбек Рысбаевич",
+   "department": "Правоведения",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d0%b2%d0%b5%d0%b4%d0%b5%d0%bd%d0%b8%d1%8f/"
+  },
+  {
+   "last_name": "Аттокурова",
+   "first_name": "Махабат Ураимовна",
+   "department": "Правоведения",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d0%b2%d0%b5%d0%b4%d0%b5%d0%bd%d0%b8%d1%8f/"
+  },
+  {
+   "last_name": "Досалиева",
+   "first_name": "Канышай Абдумуталиповна",
+   "department": "Правоведения",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d0%b2%d0%b5%d0%b4%d0%b5%d0%bd%d0%b8%d1%8f/"
+  },
+  {
+   "last_name": "Мустапакулова",
+   "first_name": "Урмат Абдыназаровна",
+   "department": "Правоведения",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d0%b2%d0%b5%d0%b4%d0%b5%d0%bd%d0%b8%d1%8f/"
+  },
+  {
+   "last_name": "Суйунбаев",
+   "first_name": "Тагайбек Таалайбекович",
+   "department": "Правоведения",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d0%b2%d0%b5%d0%b4%d0%b5%d0%bd%d0%b8%d1%8f/"
+  },
+  {
+   "last_name": "Раимбекова",
+   "first_name": "Салтанат Абдилбакыевна",
+   "department": "Правоведения",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d0%b2%d0%b5%d0%b4%d0%b5%d0%bd%d0%b8%d1%8f/"
+  },
+  {
+   "last_name": "Садирова",
+   "first_name": "Жазгүл Акылбековна",
+   "department": "Правоведения",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d0%b2%d0%b5%d0%b4%d0%b5%d0%bd%d0%b8%d1%8f/"
+  },
+  {
+   "last_name": "Сатиев",
+   "first_name": "Актилек Сулайманович",
+   "department": "Правоведения",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d0%b2%d0%b5%d0%b4%d0%b5%d0%bd%d0%b8%d1%8f/"
+  },
+  {
+   "last_name": "Кожобеков",
+   "first_name": "Амангелди Таанабаевич",
+   "department": "Правоведения",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d0%b2%d0%b5%d0%b4%d0%b5%d0%bd%d0%b8%d1%8f/"
+  },
+  {
+   "last_name": "Абышев",
+   "first_name": "Эрнис Абдыбекович",
+   "department": "Иностранных языков, теории перевода и практики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d0%be%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2-%d1%82%d0%b5%d0%be%d1%80%d0%b8%d0%b8-%d0%bf%d0%b5/"
+  },
+  {
+   "last_name": "Кулдашева",
+   "first_name": "Бахтигуль Абдималиковна",
+   "department": "Иностранных языков, теории перевода и практики",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d0%be%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2-%d1%82%d0%b5%d0%be%d1%80%d0%b8%d0%b8-%d0%bf%d0%b5/"
+  },
+  {
+   "last_name": "Абдыжапарова",
+   "first_name": "Акылай Абдыжапаровна",
+   "department": "Иностранных языков, теории перевода и практики",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d0%be%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2-%d1%82%d0%b5%d0%be%d1%80%d0%b8%d0%b8-%d0%bf%d0%b5/"
+  },
+  {
+   "last_name": "Адылова",
+   "first_name": "Элеонора Адыловна",
+   "department": "Иностранных языков, теории перевода и практики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d0%be%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2-%d1%82%d0%b5%d0%be%d1%80%d0%b8%d0%b8-%d0%bf%d0%b5/"
+  },
+  {
+   "last_name": "Жоробаев",
+   "first_name": "Султанмурат Узенович",
+   "department": "Иностранных языков, теории перевода и практики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d0%be%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2-%d1%82%d0%b5%d0%be%d1%80%d0%b8%d0%b8-%d0%bf%d0%b5/"
+  },
+  {
+   "last_name": "Алишерова",
+   "first_name": "Алмаш Алишеровна",
+   "department": "Иностранных языков, теории перевода и практики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d0%be%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2-%d1%82%d0%b5%d0%be%d1%80%d0%b8%d0%b8-%d0%bf%d0%b5/"
+  },
+  {
+   "last_name": "Алиева",
+   "first_name": "Наргиза Мыктыбековна",
+   "department": "Иностранных языков, теории перевода и практики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d0%be%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2-%d1%82%d0%b5%d0%be%d1%80%d0%b8%d0%b8-%d0%bf%d0%b5/"
+  },
+  {
+   "last_name": "Абжалилова",
+   "first_name": "Айпери Абжалиловна",
+   "department": "Иностранных языков, теории перевода и практики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d0%be%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2-%d1%82%d0%b5%d0%be%d1%80%d0%b8%d0%b8-%d0%bf%d0%b5/"
+  },
+  {
+   "last_name": "Тенирбердиева",
+   "first_name": "Айсулуу Камчыбековна",
+   "department": "Иностранных языков, теории перевода и практики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d0%be%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2-%d1%82%d0%b5%d0%be%d1%80%d0%b8%d0%b8-%d0%bf%d0%b5/"
+  },
+  {
+   "last_name": "Сюэ",
+   "first_name": "Цзяюй",
+   "department": "Иностранных языков, теории перевода и практики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d0%be%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2-%d1%82%d0%b5%d0%be%d1%80%d0%b8%d0%b8-%d0%bf%d0%b5/"
+  },
+  {
+   "last_name": "Масуда",
+   "first_name": "Йоко",
+   "department": "Иностранных языков, теории перевода и практики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d0%be%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2-%d1%82%d0%b5%d0%be%d1%80%d0%b8%d0%b8-%d0%bf%d0%b5/"
+  },
+  {
+   "last_name": "Шамшиева",
+   "first_name": "Нуриза Даниеровна",
+   "department": "Иностранных языков, теории перевода и практики",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%b8%d0%bd%d0%be%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2-%d1%82%d0%b5%d0%be%d1%80%d0%b8%d0%b8-%d0%bf%d0%b5/"
+  },
+  {
+   "last_name": "Абдыллазова",
+   "first_name": "Наргиза Уламсадировна",
+   "department": "Математики, информационных технологий и технико-технологических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b8-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82/"
+  },
+  {
+   "last_name": "Кенжебаев",
+   "first_name": "Ырысбай Хамдамович",
+   "department": "Математики, информационных технологий и технико-технологических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b8-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82/"
+  },
+  {
+   "last_name": "Сатыбалдиев",
+   "first_name": "Райимбек Нуралиевич",
+   "department": "Математики, информационных технологий и технико-технологических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b8-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82/"
+  },
+  {
+   "last_name": "Мейманбаева",
+   "first_name": "Эльмира Тутановна",
+   "department": "Математики, информационных технологий и технико-технологических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b8-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82/"
+  },
+  {
+   "last_name": "Анарматова",
+   "first_name": "Рахат Абдувахаповна",
+   "department": "Математики, информационных технологий и технико-технологических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b8-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82/"
+  },
+  {
+   "last_name": "Сайдакматова",
+   "first_name": "Чолпон Кадырбековна",
+   "department": "Математики, информационных технологий и технико-технологических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b8-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82/"
+  },
+  {
+   "last_name": "Артыкова",
+   "first_name": "Зиёдахон Абыджановна",
+   "department": "Математики, информационных технологий и технико-технологических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b8-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82/"
+  },
+  {
+   "last_name": "Максымбекова",
+   "first_name": "Бегайым Абдымомуновна",
+   "department": "Математики, информационных технологий и технико-технологических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b8-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82/"
+  },
+  {
+   "last_name": "Мадимарова",
+   "first_name": "Кумушай Тавалдыбековна",
+   "department": "Математики, информационных технологий и технико-технологических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b8-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82/"
+  },
+  {
+   "last_name": "Нуркулова",
+   "first_name": "Аселя Калиловна",
+   "department": "Математики, информационных технологий и технико-технологических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b8-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82/"
+  },
+  {
+   "last_name": "Абдирайымова",
+   "first_name": "Нуркан Анарбековна",
+   "department": "Математики, информационных технологий и технико-технологических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b8-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d1%85-%d1%82/"
+  },
+  {
+   "last_name": "Хурибаева",
+   "first_name": "Элмира Гайдаровна",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Абдыкулов",
+   "first_name": "Уланбек Аманбайевич",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Жолдошбаев",
+   "first_name": "Анвар Сатышевич",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "профессор",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Умаров",
+   "first_name": "Алымкул Мухтарович",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Дөөлөтбекова",
+   "first_name": "Гулжамал Султанбековна",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Жусупбекова",
+   "first_name": "Адина Жусупбековна",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Джусупова",
+   "first_name": "Назгуль Рысбековна",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Муллаева",
+   "first_name": "Карамат Тургуналиевна",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Алибаев",
+   "first_name": "Умуджон Хайбатиллаевич",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Курбанова",
+   "first_name": "Нургул Абийбилаевна",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Тиллебаева",
+   "first_name": "Тамара Кудайбердиевна",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Эргешова",
+   "first_name": "Нурзат Бурканбековна",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Абдурасулова",
+   "first_name": "Аксана Икрамжановна",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Назарова",
+   "first_name": "Гулзара Насирдиновна",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Сатыбалдиева",
+   "first_name": "Элиза Асеиновна",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Арзыбаева",
+   "first_name": "Айжамал Эркинбековна",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Куватов",
+   "first_name": "Анваржон Абдужалилович",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Дунанбаев",
+   "first_name": "Айкут Дунанбаевич",
+   "department": "Международных отношений и общетеоретических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d1%85-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b8-%d0%be%d0%b1/"
+  },
+  {
+   "last_name": "Юлдашев",
+   "first_name": "Давран Лутфуллаевич",
+   "department": "Экономики, менеджмента и туризма",
+   "title": "доцент",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%bc%d0%b5%d0%bd%d0%b5%d0%b4%d0%b6%d0%bc%d0%b5%d0%bd%d1%82%d0%b0-%d0%b8-%d1%82%d1%83%d1%80%d0%b8/"
+  },
+  {
+   "last_name": "Ахматалиева",
+   "first_name": "Саадат Сайитовна",
+   "department": "Экономики, менеджмента и туризма",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%bc%d0%b5%d0%bd%d0%b5%d0%b4%d0%b6%d0%bc%d0%b5%d0%bd%d1%82%d0%b0-%d0%b8-%d1%82%d1%83%d1%80%d0%b8/"
+  },
+  {
+   "last_name": "Атагозуев",
+   "first_name": "Жоомарт Мамажакыпович",
+   "department": "Экономики, менеджмента и туризма",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%bc%d0%b5%d0%bd%d0%b5%d0%b4%d0%b6%d0%bc%d0%b5%d0%bd%d1%82%d0%b0-%d0%b8-%d1%82%d1%83%d1%80%d0%b8/"
+  },
+  {
+   "last_name": "Замирбекова",
+   "first_name": "Перизат Замирбековна",
+   "department": "Экономики, менеджмента и туризма",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%bc%d0%b5%d0%bd%d0%b5%d0%b4%d0%b6%d0%bc%d0%b5%d0%bd%d1%82%d0%b0-%d0%b8-%d1%82%d1%83%d1%80%d0%b8/"
+  },
+  {
+   "last_name": "Селами",
+   "first_name": "Кариман",
+   "department": "Экономики, менеджмента и туризма",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%bc%d0%b5%d0%bd%d0%b5%d0%b4%d0%b6%d0%bc%d0%b5%d0%bd%d1%82%d0%b0-%d0%b8-%d1%82%d1%83%d1%80%d0%b8/"
+  },
+  {
+   "last_name": "Улугбек уулу",
+   "first_name": "Илимбек",
+   "department": "Экономики, менеджмента и туризма",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%bc%d0%b5%d0%bd%d0%b5%d0%b4%d0%b6%d0%bc%d0%b5%d0%bd%d1%82%d0%b0-%d0%b8-%d1%82%d1%83%d1%80%d0%b8/"
+  },
+  {
+   "last_name": "Дурмуш",
+   "first_name": "Билге Аккуш",
+   "department": "Экономики, менеджмента и туризма",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%bc%d0%b5%d0%bd%d0%b5%d0%b4%d0%b6%d0%bc%d0%b5%d0%bd%d1%82%d0%b0-%d0%b8-%d1%82%d1%83%d1%80%d0%b8/"
+  },
+  {
+   "last_name": "Нарбаев",
+   "first_name": "Асланбек Камилович",
+   "department": "Экономики, менеджмента и туризма",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d1%8d%d0%ba%d0%be%d0%bd%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d0%bc%d0%b5%d0%bd%d0%b5%d0%b4%d0%b6%d0%bc%d0%b5%d0%bd%d1%82%d0%b0-%d0%b8-%d1%82%d1%83%d1%80%d0%b8/"
+  },
+  {
+   "last_name": "Тухтакулова",
+   "first_name": "Зульфия",
+   "department": "Общемедицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%be%d0%b1%d1%89%d0%b5%d0%bc%d0%b5%d0%b4%d0%b8%d1%86%d0%b8%d0%bd%d1%81%d0%ba%d0%b8%d1%85-%d0%b4/"
+  },
+  {
+   "last_name": "Кубанычбек кызы",
+   "first_name": "Айгерим",
+   "department": "Общемедицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%be%d0%b1%d1%89%d0%b5%d0%bc%d0%b5%d0%b4%d0%b8%d1%86%d0%b8%d0%bd%d1%81%d0%ba%d0%b8%d1%85-%d0%b4/"
+  },
+  {
+   "last_name": "Нурбаева",
+   "first_name": "Зарина Паязовна",
+   "department": "Общемедицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%be%d0%b1%d1%89%d0%b5%d0%bc%d0%b5%d0%b4%d0%b8%d1%86%d0%b8%d0%bd%d1%81%d0%ba%d0%b8%d1%85-%d0%b4/"
+  },
+  {
+   "last_name": "Бактыбек кызы",
+   "first_name": "Гулбадам",
+   "department": "Общемедицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%be%d0%b1%d1%89%d0%b5%d0%bc%d0%b5%d0%b4%d0%b8%d1%86%d0%b8%d0%bd%d1%81%d0%ba%d0%b8%d1%85-%d0%b4/"
+  },
+  {
+   "last_name": "Исмайилбек кызы",
+   "first_name": "Альбина",
+   "department": "Общемедицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%be%d0%b1%d1%89%d0%b5%d0%bc%d0%b5%d0%b4%d0%b8%d1%86%d0%b8%d0%bd%d1%81%d0%ba%d0%b8%d1%85-%d0%b4/"
+  },
+  {
+   "last_name": "Эгембердиева",
+   "first_name": "Гулина",
+   "department": "Общемедицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%be%d0%b1%d1%89%d0%b5%d0%bc%d0%b5%d0%b4%d0%b8%d1%86%d0%b8%d0%bd%d1%81%d0%ba%d0%b8%d1%85-%d0%b4/"
+  },
+  {
+   "last_name": "Таирова",
+   "first_name": "Махпратхан Кариевна",
+   "department": "Общемедицинских дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%be%d0%b1%d1%89%d0%b5%d0%bc%d0%b5%d0%b4%d0%b8%d1%86%d0%b8%d0%bd%d1%81%d0%ba%d0%b8%d1%85-%d0%b4/"
+  },
+  {
+   "last_name": "Нармырзаева",
+   "first_name": "Гульнара",
+   "department": "Клинических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8/"
+  },
+  {
+   "last_name": "Абдукаимова",
+   "first_name": "Айнура",
+   "department": "Клинических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8/"
+  },
+  {
+   "last_name": "Ташболотова",
+   "first_name": "Сейил",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8/"
+  },
+  {
+   "last_name": "Джоробаев",
+   "first_name": "Абдималик",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8/"
+  },
+  {
+   "last_name": "Умаралиева",
+   "first_name": "Нуржамал",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8/"
+  },
+  {
+   "last_name": "Манапбаева",
+   "first_name": "Айдай Исмаиловна",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8/"
+  },
+  {
+   "last_name": "Эргешова",
+   "first_name": "Улара Набижановна",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8/"
+  },
+  {
+   "last_name": "Алишерова",
+   "first_name": "Алина Калыбаевна",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8/"
+  },
+  {
+   "last_name": "Жакипов",
+   "first_name": "Замирбек Назирбекович",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8/"
+  },
+  {
+   "last_name": "Жигиталиева",
+   "first_name": "Бурмагул Жигиталиевна",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8/"
+  },
+  {
+   "last_name": "Аманова",
+   "first_name": "Адина Алманбетовна",
+   "department": "Клинических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%ba%d0%b0%d1%84%d0%b5%d0%b4%d1%80%d0%b0-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d1%85-%d0%b4%d0%b8%d1%81%d1%86%d0%b8/"
+  },
+  {
+   "last_name": "Райымбек кызы",
+   "first_name": "Гулдана",
+   "department": "Международный Кыргызско-Турецкий институт им. Турана Язгана",
+   "title": "преподаватель",
+   "source_url": "https://edu.mnu.kg/%d0%bc%d0%b5%d0%b6%d0%b4%d1%83%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%bd%d1%8b%d0%b9-%d0%ba%d1%8b%d1%80%d0%b3%d1%8b%d0%b7%d1%81%d0%ba%d0%be-%d1%82%d1%83%d1%80%d0%b5%d1%86%d0%ba%d0%b8%d0%b9-%d0%b8%d0%bd/"
+  }
+ ]
+}

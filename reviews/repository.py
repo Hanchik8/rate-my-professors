@@ -88,6 +88,58 @@ class Review:
     reported: int = 0
 
 
+def normalize_person_name(first: str, last: str) -> str:
+    """Return a case- and whitespace-insensitive key for a person's name."""
+    return " ".join(f"{first} {last}".split()).casefold()
+
+
+def normalize_search_text(value: str | None) -> str:
+    """Normalize free-text search input, treating ``ё`` and ``е`` as equal."""
+    return (value or "").casefold().replace("ё", "е").strip()
+
+
+def search_terms(value: str | None) -> list[str]:
+    """Split normalized search input into words that must all match (AND)."""
+    return normalize_search_text(value).split()
+
+
+_LATIN_TO_CYRILLIC = {
+    "shch": "щ", "yo": "ё", "zh": "ж", "kh": "х", "ts": "ц",
+    "ch": "ч", "sh": "ш", "yu": "ю", "ya": "я",
+    "a": "а", "b": "б", "v": "в", "g": "г", "d": "д", "e": "е",
+    "z": "з", "i": "и", "j": "ж", "k": "к", "l": "л", "m": "м",
+    "n": "н", "o": "о", "p": "п", "r": "р", "s": "с", "t": "т",
+    "u": "у", "f": "ф", "h": "х", "c": "к", "y": "ы", "x": "кс",
+    "w": "в", "q": "к",
+}
+
+
+def transliterate_search_term(value: str) -> str:
+    """Convert a Latin search token to a simple Cyrillic approximation."""
+    value = value.casefold()
+    result = []
+    index = 0
+    tokens = sorted(_LATIN_TO_CYRILLIC, key=len, reverse=True)
+    while index < len(value):
+        for token in tokens:
+            if value.startswith(token, index):
+                result.append(_LATIN_TO_CYRILLIC[token])
+                index += len(token)
+                break
+        else:
+            result.append(value[index])
+            index += 1
+    return "".join(result)
+
+
+def search_terms_with_transliteration(value: str | None) -> list[str]:
+    """Return original and Latin-to-Cyrillic alternatives for each term."""
+    return [
+        "|".join(dict.fromkeys((term, normalize_search_text(transliterate_search_term(term)))))
+        for term in search_terms(value)
+    ]
+
+
 def _tone(overall: float) -> str:
     """Map an average overall score to the CSS tone token used by templates."""
     return "good" if overall >= 4 else "mid" if overall >= 3 else "bad"
@@ -133,10 +185,9 @@ class InMemoryRepository:
         status: str = "approved",
     ) -> Professor:
         """Create and store a professor, rejecting duplicates in the same school."""
-        # защита от дубля ФИО+вуз (case-insensitive)
-        for p in self._professors.values():
-            if p.school_id == school_id and p.full_name.lower() == f"{first} {last}".lower() and p.status != "rejected":
-                raise ValueError("duplicate professor")
+        # защита от дубля ФИО+вуз (регистр и лишние пробелы не важны)
+        if self.professor_by_name(school_id, first, last) is not None:
+            raise ValueError("duplicate professor")
         slug = slugify(f"{first} {last}", allow_unicode=True) or slugify(f"{first} {last}") or f"{first}-{last}".lower()
         # ensure unique slug
         base, i = slug, 1
@@ -240,9 +291,13 @@ class InMemoryRepository:
         """Return the sorted set of school cities."""
         return sorted({s.city for s in self._schools.values()})
 
-    def departments(self) -> list[str]:
-        """Return the sorted set of departments for approved professors."""
-        return sorted({p.department for p in self._professors.values() if p.status == "approved"})
+    def departments(self, school_slug: str = "") -> list[str]:
+        """Return the sorted set of departments for approved professors (optionally of one school)."""
+        school_ids = {s.id for s in self._schools.values() if s.slug == school_slug} if school_slug else None
+        return sorted({
+            p.department for p in self._professors.values()
+            if p.status == "approved" and (school_ids is None or p.school_id in school_ids)
+        })
 
     def school(self, school_id: str) -> School | None:
         """Return a school by id, or ``None`` if it does not exist."""
@@ -263,6 +318,19 @@ class InMemoryRepository:
     def professor_by_id(self, professor_id: str) -> Professor | None:
         """Return a professor by id, or ``None`` if it does not exist."""
         return self._professors.get(professor_id)
+
+    def professor_by_name(self, school_id: str, first: str, last: str) -> Professor | None:
+        """Return a non-rejected professor matching a normalized full name."""
+        key = normalize_person_name(first, last)
+        return next(
+            (
+                p for p in self._professors.values()
+                if p.school_id == school_id
+                and p.status != "rejected"
+                and normalize_person_name(p.first_name, p.last_name) == key
+            ),
+            None,
+        )
 
     def professors_for_school(self, school_id: str) -> list[Professor]:
         """Return approved professors belonging to a school."""
@@ -352,7 +420,7 @@ class InMemoryRepository:
         sort: str = "rating",
     ) -> list[dict[str, Any]]:
         """Search approved professors with optional filters and sorting."""
-        q = q.lower().strip()
+        terms = search_terms_with_transliteration(q)
         school_slug = school_slug.strip()
         city = city.strip()
         department = department.lower().strip()
@@ -367,7 +435,8 @@ class InMemoryRepository:
                 continue
             if department and p.department.lower().strip() != department:
                 continue
-            if q and q not in f"{p.full_name} {p.department}".lower():
+            haystack = normalize_search_text(f"{p.full_name} {p.department}")
+            if terms and not all(any(variant in haystack for variant in term.split("|")) for term in terms):
                 continue
             out.append({"prof": p, "school": school, "stats": self.stats(p.id)})
         out.sort(key=_search_sort_key(sort))

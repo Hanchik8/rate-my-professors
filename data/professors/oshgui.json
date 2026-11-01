@@ -1,0 +1,82 @@
+{
+ "code": "oshgui",
+ "university": "Ошский государственный юридический институт",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "http://web.archive.org/web/2022*/oshgui.kg/*",
+  "https://bilim.akipress.org/unews/un_post:23691",
+  "https://cyberleninka.ru/article/n/aktualnye-problemy-organizatsii-dorozhnoy-seti-na-primere-goroda-osh",
+  "https://famous-scientists.ru/anketa/kolsarieva-nazira-sharshenbekovna-15925",
+  "https://journals.bsu.ru/content/articles/2053.pdf",
+  "https://mftit.oshsu.kg/pages/page/26573",
+  "https://moluch.ru/authors/48803/",
+  "https://oshgui.kg",
+  "https://www.oshsu.kg/public/ru/announcement/1078"
+ ],
+ "notes": "ОшГЮИ в 2022 году присоединён к ОшГУ (реорганизация, см. https://www.oshsu.kg/public/ru/announcement/1078), его кафедры вошли в Историко-юридический институт ОшГУ (law.oshsu.kg). Домен oshgui.kg сейчас занят казино-сайтом. Архивные копии сайта 2016-2022 в Wayback Machine не содержат составов кафедр (страницы 'Профессорско-преподавательский состав' сохранены пустыми). Поэтому список собран из внешних источников с явной аффилиацией ОшГЮИ (новости вуза на bilim.akipress.org, научные статьи, профили авторов) и отражает состав до 2022 года. Действующих преподавателей бывшего ОшГЮИ следует искать в файле oshsu (Историко-юридический институт).",
+ "professors": [
+  {
+   "last_name": "Абытов",
+   "first_name": "Байболот Капарович",
+   "department": "",
+   "title": "профессор",
+   "source_url": "https://journals.bsu.ru/content/articles/2053.pdf"
+  },
+  {
+   "last_name": "Арстанбеков",
+   "first_name": "Мамасалы Сарбашович",
+   "department": "",
+   "title": "доцент",
+   "source_url": "https://bilim.akipress.org/unews/un_post:23691"
+  },
+  {
+   "last_name": "Джоробекова",
+   "first_name": "Айнагуль Мамаюнусовна",
+   "department": "",
+   "title": "доцент",
+   "source_url": "https://moluch.ru/authors/48803/"
+  },
+  {
+   "last_name": "Кудояров",
+   "first_name": "Жолборс Жеенбаевич",
+   "department": "",
+   "title": "старший преподаватель",
+   "source_url": "https://bilim.akipress.org/unews/un_post:23691"
+  },
+  {
+   "last_name": "Сайфутдинов",
+   "first_name": "Тахир Исмаилджанович",
+   "department": "",
+   "title": "профессор",
+   "source_url": "https://bilim.akipress.org/unews/un_post:23691"
+  },
+  {
+   "last_name": "Токторов",
+   "first_name": "Эгемберди Самидинович",
+   "department": "Ректорат",
+   "title": "профессор",
+   "source_url": "https://bilim.akipress.org/unews/un_post:23691"
+  },
+  {
+   "last_name": "Акматова",
+   "first_name": "Аманай Турсунбаевна",
+   "department": "Теории и истории государства и права",
+   "title": "доцент",
+   "source_url": "https://cyberleninka.ru/article/n/aktualnye-problemy-organizatsii-dorozhnoy-seti-na-primere-goroda-osh"
+  },
+  {
+   "last_name": "Жаанбаева",
+   "first_name": "Чолпон Каныбековна",
+   "department": "Теории и истории государства и права",
+   "title": "доцент",
+   "source_url": "https://mftit.oshsu.kg/pages/page/26573"
+  },
+  {
+   "last_name": "Колсариева",
+   "first_name": "Назира Шаршенбековна",
+   "department": "Теории и истории государства и права",
+   "title": "доцент",
+   "source_url": "https://famous-scientists.ru/anketa/kolsarieva-nazira-sharshenbekovna-15925"
+  }
+ ]
+}

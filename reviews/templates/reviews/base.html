@@ -1,40 +1,40 @@
-{% load static i18n %}<!doctype html>
-<html lang="{{ LANGUAGE_CODE }}" class="no-js">
+{% load static i18n %}{% get_current_language as LANGUAGE_CODE %}{% get_available_languages as LANGUAGES %}<!doctype html>
+<html lang="{{ LANGUAGE_CODE|default:'ru' }}" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-{% get_available_languages as LANGUAGES %}
-{% if request %}{% for code, name in LANGUAGES %}<link rel="alternate" hreflang="{{ code }}" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}?{% if request.META.QUERY_STRING %}{{ request.META.QUERY_STRING|urlencode }}&amp;{% endif %}language={{ code }}">{% endfor %}{% endif %}
-<title>{% block title %}ProfLens{% endblock %}</title>
-<meta name="description" content="{% block description %}{% translate "ProfLens — отзывы о преподавателях вузов Кыргызстана: рейтинги, сложность курсов и советы студентов." %}{% endblock %}">
-<meta property="og:title" content="{% block og_title %}ProfLens{% endblock %}">
-<meta property="og:description" content="{% block og_description %}{% translate "ProfLens — отзывы о преподавателях вузов Кыргызстана: рейтинги, сложность курсов и советы студентов." %}{% endblock %}">
+{% if request %}{% for code, name in LANGUAGES %}<link rel="alternate" hreflang="{{ code }}" href="{{ site_url }}{{ request.path }}?{% if request.alternate_query_string %}{{ request.alternate_query_string }}&amp;{% endif %}language={{ code }}">{% endfor %}{% endif %}
+<title>{% block title %}PrepodRate{% endblock %}</title>
+<meta name="description" content="{% block description %}{% translate "PrepodRate — отзывы о преподавателях вузов Кыргызстана: рейтинги, сложность курсов и советы студентов." %}{% endblock %}">
+<meta property="og:title" content="{% block og_title %}PrepodRate{% endblock %}">
+<meta property="og:description" content="{% block og_description %}{% translate "PrepodRate — отзывы о преподавателях вузов Кыргызстана: рейтинги, сложность курсов и советы студентов." %}{% endblock %}">
 <link rel="stylesheet" href="{% static 'reviews/style.css' %}">
 </head>
 <body>
 <a class="skip-link" href="#main-content">{% translate "Перейти к содержимому" %}</a>
 <header class="top">
   <div class="top-inner">
-    <a class="brand" href="{% url 'home' %}"><span class="brand-mark" aria-hidden="true">P</span>ProfLens</a>
+    <a class="brand" href="{% url 'home' %}"{% if request.resolver_match.url_name == 'home' %} aria-current="page"{% endif %}><span class="brand-mark" aria-hidden="true">P</span>PrepodRate</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="{% translate 'Меню' %}">
       <span class="burger" aria-hidden="true"></span>
     </button>
     <nav class="nav" id="site-nav" aria-label="{% translate 'Основная навигация' %}">
-      <a href="{% url 'rules' %}">{% translate "Правила" %}</a>
-      <a href="{% url 'add_professor' %}">{% translate "Добавить преподавателя" %}</a>
+      <a class="nav-cta" href="{% url 'home' %}#search">{% translate "Найти преподавателя" %}</a>
+      <a href="{% url 'top' %}"{% if request.resolver_match.url_name == 'top' %} aria-current="page"{% endif %}>{% translate "Лучшие" %}</a>
+      <a href="{% url 'rules' %}"{% if request.resolver_match.url_name == 'rules' %} aria-current="page"{% endif %}>{% translate "Правила" %}</a>
+      <a href="{% url 'add_professor' %}"{% if request.resolver_match.url_name == 'add_professor' %} aria-current="page"{% endif %}>{% translate "Добавить преподавателя" %}</a>
       {% if user.is_authenticated %}
-        <a href="{% url 'profile' %}">{% translate "Мой профиль" %}</a>
+        <a href="{% url 'profile' %}"{% if request.resolver_match.url_name == 'profile' %} aria-current="page"{% endif %}>{% translate "Мой профиль" %}</a>
         <span class="muted nav-user">{{ user.email|default:user.username }}</span>
         <form method="post" action="{% url 'logout' %}" class="inline">{% csrf_token %}<button class="link-btn" type="submit">{% translate "Выйти" %}</button></form>
       {% else %}
-        <a href="{% url 'login' %}">{% translate "Вход" %}</a>
-        <a href="{% url 'signup' %}">{% translate "Регистрация" %}</a>
+        <a href="{% url 'login' %}"{% if request.resolver_match.url_name == 'login' %} aria-current="page"{% endif %}>{% translate "Вход" %}</a>
+        <a href="{% url 'signup' %}"{% if request.resolver_match.url_name == 'signup' %} aria-current="page"{% endif %}>{% translate "Регистрация" %}</a>
       {% endif %}
       <form action="{% url 'set_language' %}" method="post" class="lang-switch">{% csrf_token %}
         <input name="next" type="hidden" value="{{ request.get_full_path }}">
         <select name="language" aria-label="{% translate 'Язык' %}">
-          {% get_current_language as LANGUAGE_CODE %}
           {% for code, name in LANGUAGES %}<option value="{{ code }}"{% if code == LANGUAGE_CODE %} selected{% endif %}>{{ name }}</option>{% endfor %}
         </select>
       </form>
@@ -44,7 +44,7 @@
 {% if messages %}<ul class="messages" role="list">{% for m in messages %}<li class="message {{ m.tags }}" role="{% if m.tags == 'error' %}alert{% else %}status{% endif %}" aria-live="{% if m.tags == 'error' %}assertive{% else %}polite{% endif %}"><span class="message-text">{{ m }}</span><button class="message-close" type="button" aria-label="{% translate 'Закрыть уведомление' %}">×</button></li>{% endfor %}</ul>{% endif %}
 <main id="main-content" tabindex="-1">{% block content %}{% endblock %}</main>
 <footer>
-  <a href="{% url 'rules' %}">{% translate "Правила" %}</a> · <a href="{% url 'about' %}">{% translate "О проекте" %}</a> · {% translate "Демо-данные сбрасываются при рестарте (memory-режим)." %}
+  <a href="{% url 'rules' %}">{% translate "Правила" %}</a> · <a href="{% url 'about' %}">{% translate "О проекте" %}</a>{% if is_memory_repo %} · {% translate "Демо-данные сбрасываются при рестарте (memory-режим)." %}{% endif %}
 </footer>
 {% block page_tools %}{% endblock %}
 <script src="{% static 'reviews/base.js' %}" defer></script>

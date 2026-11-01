@@ -1,0 +1,31 @@
+{
+ "code": "maupfib",
+ "university": "Международная академия управления, права, финансов и бизнеса (МАУПФиБ)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://maupfib.kg",
+  "https://maupfib.kg/kafedra-yazykov/",
+  "https://www.maupfib.kg/kafedra-estestvenno-nauchnyh-disciplin/",
+  "https://www.maupfib.kg/luchshiy-rektor-goda/",
+  "https://web.archive.org/web/20230705075646/https://maupfib.kg/"
+ ],
+ "notes": "Сайт закрыт Cloudflare WAF (403 и для fetch, и для браузера), глубокие копии в Wayback не открылись, часть снимков подменена казино. Две записи взяты из поисковых сниппетов страниц maupfib.kg (DuckDuckGo): заведующая кафедрой естественно-научных дисциплин и ректор-профессор (отчество в сниппете обрезано, поэтому только инициалы). Полных списков ППС получить не удалось.",
+ "professors": [
+  {
+   "last_name": "Искендерова",
+   "first_name": "Ж. А.",
+   "department": "Естественно-научные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://www.maupfib.kg/kafedra-estestvenno-nauchnyh-disciplin/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Назарматова",
+   "first_name": "К.",
+   "department": "Ректорат",
+   "title": "профессор",
+   "source_url": "https://www.maupfib.kg/luchshiy-rektor-goda/",
+   "initials_only": true
+  }
+ ]
+}

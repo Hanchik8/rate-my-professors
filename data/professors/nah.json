@@ -1,0 +1,240 @@
+{
+ "code": "nah",
+ "university": "Национальная академия художеств Кыргызской Республики имени Т. Садыкова",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://academyart.kg/index.php/kafedry",
+  "https://academyart.kg/index.php/strukturu-akademii",
+  "https://academyart.kg/index.php/disainpromyslenoigrafika",
+  "https://academyart.kg/index.php/dizajn-khudozhestvennogo-oformleniya-sredy",
+  "https://academyart.kg/index.php/dizajn-kostyuma",
+  "https://academyart.kg/index.php/khudozhestvennaya-keramika",
+  "https://academyart.kg/index.php/stankovaiasrluptura",
+  "https://academyart.kg/index.php/stankovaya-zhivopis"
+ ],
+ "notes": "Полные списки ППС есть только у кафедры художественной керамики; на остальных страницах кафедр преподаватели упомянуты в тексте (часто с одним инициалом) или как авторы методических материалов. Исторические упоминания (бывшие преподаватели) не включались. Давлетов К. (скульптура) и Давлетов А. К. (живопись) оставлены раздельно, так как инициалы различаются.",
+ "professors": [
+  {
+   "last_name": "Темирбекова",
+   "first_name": "Х.",
+   "department": "Дизайн промышленной графики",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/disainpromyslenoigrafika",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алыкулова",
+   "first_name": "Г.",
+   "department": "Дизайн промышленной графики",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/disainpromyslenoigrafika",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абсаттаров",
+   "first_name": "О.",
+   "department": "Дизайн промышленной графики",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/disainpromyslenoigrafika",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тилебалдиева",
+   "first_name": "Ж. К.",
+   "department": "Дизайн промышленной графики",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/disainpromyslenoigrafika",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чокотаева",
+   "first_name": "Д. А.",
+   "department": "Дизайн промышленной графики",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/disainpromyslenoigrafika",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ыбышева",
+   "first_name": "Н.",
+   "department": "Дизайн промышленной графики",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/disainpromyslenoigrafika",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бакирова",
+   "first_name": "Л. А.",
+   "department": "Дизайн промышленной графики",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/disainpromyslenoigrafika",
+   "initials_only": true
+  },
+  {
+   "last_name": "Казыбекова",
+   "first_name": "Д.",
+   "department": "Дизайн промышленной графики",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/disainpromyslenoigrafika",
+   "initials_only": true
+  },
+  {
+   "last_name": "Байсеркеев",
+   "first_name": "А.",
+   "department": "Дизайн художественного оформления среды",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/dizajn-khudozhestvennogo-oformleniya-sredy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кооманова",
+   "first_name": "А.",
+   "department": "Дизайн художественного оформления среды",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/dizajn-khudozhestvennogo-oformleniya-sredy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тилебалдиев",
+   "first_name": "С. О.",
+   "department": "Дизайн художественного оформления среды",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/dizajn-khudozhestvennogo-oformleniya-sredy",
+   "initials_only": true
+  },
+  {
+   "last_name": "Султанова",
+   "first_name": "Айчурек Мариповна",
+   "department": "Дизайн костюма",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/dizajn-kostyuma"
+  },
+  {
+   "last_name": "Каменский",
+   "first_name": "Алексей Николаевич",
+   "department": "Художественная керамика",
+   "title": "профессор",
+   "source_url": "https://academyart.kg/index.php/khudozhestvennaya-keramika"
+  },
+  {
+   "last_name": "Тенизбаева",
+   "first_name": "Бегаим Садыковна",
+   "department": "Художественная керамика",
+   "title": "доцент",
+   "source_url": "https://academyart.kg/index.php/khudozhestvennaya-keramika"
+  },
+  {
+   "last_name": "Аламанова",
+   "first_name": "Нагима Турганбековна",
+   "department": "Художественная керамика",
+   "title": "старший преподаватель",
+   "source_url": "https://academyart.kg/index.php/khudozhestvennaya-keramika"
+  },
+  {
+   "last_name": "Идирисов",
+   "first_name": "Ормонали Ташполотович",
+   "department": "Художественная керамика",
+   "title": "старший преподаватель",
+   "source_url": "https://academyart.kg/index.php/khudozhestvennaya-keramika"
+  },
+  {
+   "last_name": "Абдыраева",
+   "first_name": "Клара Карабаевна",
+   "department": "Художественная керамика",
+   "title": "старший преподаватель",
+   "source_url": "https://academyart.kg/index.php/khudozhestvennaya-keramika"
+  },
+  {
+   "last_name": "Илипов",
+   "first_name": "Замир Кочкунович",
+   "department": "Художественная керамика",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/khudozhestvennaya-keramika"
+  },
+  {
+   "last_name": "Колбаева",
+   "first_name": "Жамиля Мэлисовна",
+   "department": "Художественная керамика",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/khudozhestvennaya-keramika"
+  },
+  {
+   "last_name": "Макаева",
+   "first_name": "Кенжегуль Тохтаходжаевна",
+   "department": "Художественная керамика",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/khudozhestvennaya-keramika"
+  },
+  {
+   "last_name": "Жолоев",
+   "first_name": "Омурбек Досманбетович",
+   "department": "Художественная керамика",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/khudozhestvennaya-keramika"
+  },
+  {
+   "last_name": "Пазылов",
+   "first_name": "Р.",
+   "department": "Станковая скульптура",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/stankovaiasrluptura",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдиев",
+   "first_name": "Б.",
+   "department": "Станковая скульптура",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/stankovaiasrluptura",
+   "initials_only": true
+  },
+  {
+   "last_name": "Усукеев",
+   "first_name": "А.",
+   "department": "Станковая скульптура",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/stankovaiasrluptura",
+   "initials_only": true
+  },
+  {
+   "last_name": "Давлетов",
+   "first_name": "К.",
+   "department": "Станковая скульптура",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/stankovaiasrluptura",
+   "initials_only": true
+  },
+  {
+   "last_name": "Торобеков",
+   "first_name": "С. С.",
+   "department": "Станковая живопись",
+   "title": "профессор",
+   "source_url": "https://academyart.kg/index.php/stankovaya-zhivopis",
+   "initials_only": true
+  },
+  {
+   "last_name": "Нургазиев",
+   "first_name": "Д. Б.",
+   "department": "Станковая живопись",
+   "title": "профессор",
+   "source_url": "https://academyart.kg/index.php/stankovaya-zhivopis",
+   "initials_only": true
+  },
+  {
+   "last_name": "Огобаев",
+   "first_name": "Т. К.",
+   "department": "Станковая живопись",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/stankovaya-zhivopis",
+   "initials_only": true
+  },
+  {
+   "last_name": "Давлетов",
+   "first_name": "А. К.",
+   "department": "Станковая живопись",
+   "title": "преподаватель",
+   "source_url": "https://academyart.kg/index.php/stankovaya-zhivopis",
+   "initials_only": true
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "code": "isito",
+ "university": "Институт современных информационных технологий в образовании (ИСИТО)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://isito.kg/",
+  "https://isito.kg/struktura-isito/",
+  "https://isito.kg/vse-struktury/",
+  "https://isito.kg/vse-struktury/",
+  "https://isito.kg/biologiya-2/",
+  "https://isito.kg/lechebnoe-delo/",
+  "https://isito.kg/menedzhment/",
+  "https://isito.kg/pedagogika/",
+  "https://isito.kg/fakultet-pedagogicheskogo-masterstva/",
+  "https://isito.kg/030503-pravovedenie/",
+  "https://isito.kg/050709-prepodavanie-v-nachalnyx-klassax/",
+  "https://isito.kg/prikladnaya-informatika-2/",
+  "https://isito.kg/rukovoditel-programmy-lingvistiki-i-obshheobrazovatelnyx-disciplin/",
+  "https://isito.kg/fakultet-vysshego-professionalnogo-obrazovaniya-fvpo/",
+  "https://isito.kg/ekonomika-i-buxgalterskij-uchet/",
+  "https://isito.kg/vysshee-obrazovanie/",
+  "https://isito.kg/medicinskij-kolledzh/",
+  "https://isito.kg/istoriya/",
+  "https://isito.kg/redkollegiya/"
+ ],
+ "notes": "Сайт почти не публикует преподавателей: страницы программ (биология, лечебное дело, менеджмент, педагогика, правоведение, лингвистика, экономика) без списков ППС; страница \"Преподавание в начальных классах\" отдаёт 500. Состав редколлегии журнала и научного совета (внешние академики) не включён. Проректоры не включены.",
+ "professors": [
+  {
+   "last_name": "Суркеев",
+   "first_name": "Бахтыбек Таштемирович",
+   "department": "Прикладная информатика",
+   "title": "доцент",
+   "source_url": "https://isito.kg/prikladnaya-informatika-2/"
+  },
+  {
+   "last_name": "Дононбаева",
+   "first_name": "А. А.",
+   "department": "Прикладная информатика",
+   "title": "доцент",
+   "source_url": "https://isito.kg/prikladnaya-informatika-2/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Исмаилова",
+   "first_name": "Э.",
+   "department": "Прикладная информатика",
+   "title": "старший преподаватель",
+   "source_url": "https://isito.kg/prikladnaya-informatika-2/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ниязова",
+   "first_name": "Э. А.",
+   "department": "Факультет педагогического мастерства",
+   "title": "преподаватель",
+   "source_url": "https://isito.kg/fakultet-pedagogicheskogo-masterstva/",
+   "initials_only": true
+  }
+ ]
+}

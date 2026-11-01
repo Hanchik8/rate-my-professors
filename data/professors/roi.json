@@ -1,0 +1,217 @@
+{
+ "code": "roi",
+ "university": "Региональный образовательный институт (Институт инновационных технологий и энергетики), Таш-Кумыр",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://abbi.kg/ru/struktura-i-organy-upravleniya/",
+  "https://abbi.kg/ru/nauchno-informaczionnyj-zhurnal-obrazovanie-nauka-i-innovaczii/",
+  "https://abbi.kg/obrazovanie-nauka-i-innovaczii-ilimij-maalymattyk-zhurnaly/",
+  "https://abbi.kg/ru/"
+ ],
+ "notes": "РОИ (Региональный образовательный институт), ныне Институт инновационных технологий и энергетики (ИТЭИ/ИИТЭ), г. Таш-Кумыр, сайт abbi.kg (найден поиском). Основной источник: страница «Структура и органы управления» (Администрация и ППС трёх кафедр). Имена в разделе кафедры Педагогики набраны прописными, приведены к обычному регистру. Добавлена Сарыгулова К.Т. (автор журнала института, ст. преподаватель ИТЭИ). Алимкулова А.А. (нач. отдела кадров) включена, т.к. в журнале института указана как окутуучу ИТЭИ. Бухгалтерия/секретари исключены. avn.abbi.kg требует логина.",
+ "professors": [
+  {
+   "last_name": "Тагаева",
+   "first_name": "Букадича Абдыкадыровна",
+   "department": "Экономика и информатика",
+   "title": "старший преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Күзөбаев",
+   "first_name": "Нурис Жаныбекович",
+   "department": "Экономика и информатика",
+   "title": "доцент",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Садыралиева",
+   "first_name": "Гүлбайра Райымкуловна",
+   "department": "Экономика и информатика",
+   "title": "доцент",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Джуманазарова",
+   "first_name": "Апел Абдувалиевна",
+   "department": "Экономика и информатика",
+   "title": "старший преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Маталиева",
+   "first_name": "Назик Жаналиевна",
+   "department": "Экономика и информатика",
+   "title": "преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Аманова",
+   "first_name": "Айнура Алимжановна",
+   "department": "Экономика и информатика",
+   "title": "преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Тажибаева",
+   "first_name": "Нургул Тынарбековна",
+   "department": "Экономика и информатика",
+   "title": "преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Курбанкулова",
+   "first_name": "Динара Кабылбековна",
+   "department": "Экономика и информатика",
+   "title": "преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Алманбетов",
+   "first_name": "Айбек Абдрасилович",
+   "department": "Электроэнергетика",
+   "title": "старший преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Рыскулов",
+   "first_name": "Ильяс Рустанбекович",
+   "department": "Электроэнергетика",
+   "title": "старший преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Сооронбаев",
+   "first_name": "Манасбек Раишбекович",
+   "department": "Электроэнергетика",
+   "title": "профессор",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Дуйшенов",
+   "first_name": "Канатбек Райымбекович",
+   "department": "Электроэнергетика",
+   "title": "доцент",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Ороскулова",
+   "first_name": "Күмүшай Добулбековна",
+   "department": "Электроэнергетика",
+   "title": "преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Дуйшебаева",
+   "first_name": "Элиза Ызабековна",
+   "department": "Электроэнергетика",
+   "title": "старший преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Жуманалиева",
+   "first_name": "Мээрим Уметалиевна",
+   "department": "Электроэнергетика",
+   "title": "старший преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Турдалиев",
+   "first_name": "Шыйкыманар Эсенович",
+   "department": "Электроэнергетика",
+   "title": "доцент",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Токтомамбетова",
+   "first_name": "Жамилякан Сакибаевна",
+   "department": "Педагогика и гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Барпыбаев",
+   "first_name": "Турдумамбет Рысбекович",
+   "department": "Педагогика и гуманитарные дисциплины",
+   "title": "доцент",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Досматова",
+   "first_name": "Лира Абдыбахаповна",
+   "department": "Педагогика и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Мамытова",
+   "first_name": "Бүсайра Орозовна",
+   "department": "Педагогика и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Акбарова",
+   "first_name": "Чынара Эсенбаевна",
+   "department": "Педагогика и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Бакиева",
+   "first_name": "Динара Айдаралиевна",
+   "department": "Педагогика и гуманитарные дисциплины",
+   "title": "старший преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Ильгильдиева",
+   "first_name": "Айзада Абдурахмановна",
+   "department": "Педагогика и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Нуркулова",
+   "first_name": "Гүлзина Долоновна",
+   "department": "Педагогика и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Омуркулова",
+   "first_name": "Айсалкын Топчубековна",
+   "department": "Педагогика и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Абдыкасым кызы",
+   "first_name": "Гүлдана",
+   "department": "Педагогика и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Орозалиева",
+   "first_name": "Нурушкан Смайыловна",
+   "department": "Педагогика и гуманитарные дисциплины",
+   "title": "преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  },
+  {
+   "last_name": "Сарыгулова",
+   "first_name": "Кумаркан Төлөгөновна",
+   "department": "Региональный образовательный институт",
+   "title": "старший преподаватель",
+   "source_url": "https://abbi.kg/ru/nauchno-informaczionnyj-zhurnal-obrazovanie-nauka-i-innovaczii/"
+  },
+  {
+   "last_name": "Алимкулова",
+   "first_name": "Айжамал Ахмаджановна",
+   "department": "Региональный образовательный институт",
+   "title": "преподаватель",
+   "source_url": "https://abbi.kg/ru/struktura-i-organy-upravleniya/"
+  }
+ ]
+}

@@ -1,6 +1,39 @@
 """Application-specific HTTP middleware."""
 from django.conf import settings
+from django.http import QueryDict
+from django.utils import translation
 from django.utils.cache import patch_cache_control
+
+STATIC_CACHE_MAX_AGE = 3600
+
+
+class QueryLanguageMiddleware:
+    """Honor supported ``?language=`` values and persist the selection."""
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        selected = request.GET.get("language")
+        supported = {code for code, _ in settings.LANGUAGES}
+        if selected in supported:
+            translation.activate(selected)
+            request.LANGUAGE_CODE = selected
+        query = request.GET.copy()
+        query.pop("language", None)
+        request.alternate_query_string = query.urlencode()
+        response = self.get_response(request)
+        if selected in supported:
+            response.set_cookie(
+                settings.LANGUAGE_COOKIE_NAME, selected,
+                max_age=settings.LANGUAGE_COOKIE_AGE,
+                path=settings.LANGUAGE_COOKIE_PATH,
+                domain=settings.LANGUAGE_COOKIE_DOMAIN,
+                secure=settings.LANGUAGE_COOKIE_SECURE,
+                httponly=settings.LANGUAGE_COOKIE_HTTPONLY,
+                samesite=settings.LANGUAGE_COOKIE_SAMESITE,
+            )
+        return response
 
 
 class PermissionsPolicyMiddleware:
@@ -28,6 +61,7 @@ PRIVATE_CACHE_URL_NAMES = frozenset({
 
 PUBLIC_CACHE_URL_NAMES = frozenset({
     "home",
+    "robots_txt",
     "sitemap_index",
     "django.contrib.sitemaps.views.sitemap",
 })
@@ -51,6 +85,13 @@ class PrivateCacheControlMiddleware:
         match = request.resolver_match
         if match is not None and match.url_name in PRIVATE_CACHE_URL_NAMES:
             patch_cache_control(response, private=True, no_store=True)
+        elif (
+            request.path.startswith(settings.STATIC_URL)
+            and request.method == "GET"
+            and response.status_code == 200
+            and not request.user.is_authenticated
+        ):
+            patch_cache_control(response, public=True, max_age=STATIC_CACHE_MAX_AGE)
         elif (
             match is not None
             and match.url_name in PUBLIC_CACHE_URL_NAMES

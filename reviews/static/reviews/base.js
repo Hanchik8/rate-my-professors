@@ -13,6 +13,16 @@
   if (languageSelect) {
     languageSelect.addEventListener("change", function () { languageSelect.form.submit(); });
   }
+  // The department list belongs to the chosen university: reload it when the university changes.
+  var schoolSelects = document.querySelectorAll("form.search select[name=school]");
+  Array.prototype.forEach.call(schoolSelects, function (school) {
+    var dept = school.form && school.form.querySelector("select[name=department]");
+    if (!dept) { return; }
+    school.addEventListener("change", function () {
+      dept.value = "";
+      if (school.form.requestSubmit) { school.form.requestSubmit(); } else { school.form.submit(); }
+    });
+  });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
       toggle.setAttribute("aria-expanded", "false");

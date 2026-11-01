@@ -1,0 +1,910 @@
+{
+ "code": "asmi",
+ "university": "Азиатский международный университет им. С. Тентишева (бывш. Азиатский медицинский институт, АзМИ), Кант",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://asmi.kg (домен из базы сейчас ведёт на посторонний сайт казино)",
+  "https://www.aiust.kg (официальный русскоязычный сайт, просмотрен браузером: страницы кафедр ?page_id=4189, 5969, 6320, 67, 4119, 3832, 71)",
+  "https://asmi.edu.kg/wp-json/wp/v2/pages (англоязычный сайт, 48 страниц)",
+  "https://asmi.edu.kg/department-of-morphological-sciences/",
+  "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/",
+  "https://asmi.edu.kg/department-of-therapeutic-disciplines/",
+  "https://www.aiust.kg/?page_id=3832",
+  "https://www.aiust.kg/?page_id=4119",
+  "https://www.aiust.kg/?page_id=4189",
+  "https://www.aiust.kg/?page_id=5969",
+  "https://www.aiust.kg/?page_id=6320",
+  "https://www.aiust.kg/?page_id=67",
+  "https://www.aiust.kg/?page_id=71"
+ ],
+ "notes": "Домен asmi.kg из базы захвачен (казино). Официальные сайты вуза: www.aiust.kg (рус., Азиатский международный университет им. С. Тентишева, бывш. АзМИ; за JS-заглушкой, просмотрен браузером) и asmi.edu.kg (англ.). Приоритет кириллице с aiust.kg: полные составы есть только у кафедр хирургических и межпрофессиональных дисциплин (у хирургии только инициалы), на остальных кафедрах указаны лишь заведующие и завучи. Со старых англ. страниц кафедр asmi.edu.kg (естественно-гуманитарных, терапевтических, морфологических, данные 2016–2019 гг., могут быть устаревшими) добавлены латиницей те, кого нет в кириллических списках; совпадения по транслитерации фамилии отброшены (Osmonbaeva, Ryspekova, Turdubaeva, Nadim, Ryspekova, Kulambaev, Abdyldaev, Tulieva). Лаборанты и ассистенты кафедр исключены. Совместители (внешние) включены, т.к. ведут дисциплины на кафедре. Title Тулиевой и Курманалиева (Doctor of medicine) поставлен доцент условно.",
+ "professors": [
+  {
+   "last_name": "Abaeva",
+   "first_name": "Tunuk Abaevna",
+   "department": "Morphological Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-morphological-sciences/"
+  },
+  {
+   "last_name": "Burabaeva",
+   "first_name": "Anarkan Avazbekovna",
+   "department": "Morphological Sciences",
+   "title": "доцент",
+   "source_url": "https://asmi.edu.kg/department-of-morphological-sciences/"
+  },
+  {
+   "last_name": "Chokoev",
+   "first_name": "Asan Linarovich",
+   "department": "Morphological Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-morphological-sciences/"
+  },
+  {
+   "last_name": "Dayrbek uulu",
+   "first_name": "Djanarbek",
+   "department": "Morphological Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-morphological-sciences/"
+  },
+  {
+   "last_name": "Halilov",
+   "first_name": "Ilgar Zulfigarovich",
+   "department": "Morphological Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-morphological-sciences/"
+  },
+  {
+   "last_name": "Kasmambetova",
+   "first_name": "Shaiyrkul Karybaevna",
+   "department": "Morphological Sciences",
+   "title": "доцент",
+   "source_url": "https://asmi.edu.kg/department-of-morphological-sciences/"
+  },
+  {
+   "last_name": "Kurmanaliev",
+   "first_name": "Ernus Idrisovich",
+   "department": "Morphological Sciences",
+   "title": "доцент",
+   "source_url": "https://asmi.edu.kg/department-of-morphological-sciences/"
+  },
+  {
+   "last_name": "Kurmankulova",
+   "first_name": "Nazgul Tashtanbekovna",
+   "department": "Morphological Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-morphological-sciences/"
+  },
+  {
+   "last_name": "Muhammad",
+   "first_name": "Fayaz",
+   "department": "Morphological Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-morphological-sciences/"
+  },
+  {
+   "last_name": "Raiimbekov",
+   "first_name": "Nuseret Kubanychbekovich",
+   "department": "Morphological Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-morphological-sciences/"
+  },
+  {
+   "last_name": "Sadykova",
+   "first_name": "Kunduz Bayishbekovna",
+   "department": "Morphological Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-morphological-sciences/"
+  },
+  {
+   "last_name": "Saimamatov",
+   "first_name": "Nursultan Abbasbekovich",
+   "department": "Morphological Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-morphological-sciences/"
+  },
+  {
+   "last_name": "Tarik",
+   "first_name": "Ibad-ur Rekhman",
+   "department": "Morphological Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-morphological-sciences/"
+  },
+  {
+   "last_name": "Urmanbetov",
+   "first_name": "Mahmud Imashevich",
+   "department": "Morphological Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-morphological-sciences/"
+  },
+  {
+   "last_name": "Abdullaeva",
+   "first_name": "Nadira Abdumitalipovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Akmatova",
+   "first_name": "Rapiya Akmatovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "доцент",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Akunov",
+   "first_name": "Mairambek Kasievich",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Aliyeva",
+   "first_name": "Mahabat Beishekeevna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Berdibekova",
+   "first_name": "Medina Berdibekovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Didenko",
+   "first_name": "Victoriya Ivanovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Docturbekova",
+   "first_name": "Nazgul Docturbekovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Duishenbekova",
+   "first_name": "Umut Askarbekovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Hadjamberdiev",
+   "first_name": "Igor Vahabovich",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "доцент",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Jamgyrchieva",
+   "first_name": "Dinara Sovetbekovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Jeenbaeva",
+   "first_name": "Aizada Aalyaskarovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Jumashalieva",
+   "first_name": "Aigerim Urustembekovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Kachieva",
+   "first_name": "Shahriza Satkynovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Karagulova",
+   "first_name": "Meerim Sharypbekovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Kazakbaeva",
+   "first_name": "Rys Tabyldyevna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Knyazev",
+   "first_name": "Igor Aleksandrovich",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Koikelov",
+   "first_name": "Ulan Salmorbekovich",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Kojonalieva",
+   "first_name": "Jyldyz Zarlykovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Kulubaeva",
+   "first_name": "Akylai Mukashevna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Malikova",
+   "first_name": "Gulzat Kanatbekovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Omurzakova",
+   "first_name": "Meerim Kanybekovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Rysalieva",
+   "first_name": "Burul Absamatovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "старший преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Seitalieva",
+   "first_name": "Jaigul Temirovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Subanov",
+   "first_name": "Mirlan Turdubekovich",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Tashtanova",
+   "first_name": "Jazgul Muhtarovna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Tokusheva",
+   "first_name": "Tolobubu",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "доцент",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Yulgusheva",
+   "first_name": "Lyudmila Kuzminichna",
+   "department": "Natural and Humanitarian Sciences",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-natural-and-humanitarian-sciences/"
+  },
+  {
+   "last_name": "Adylbaev",
+   "first_name": "Marat Imankulovich",
+   "department": "Therapeutic Disciplines",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-therapeutic-disciplines/"
+  },
+  {
+   "last_name": "Aftab",
+   "first_name": "Konvar Sheikh",
+   "department": "Therapeutic Disciplines",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-therapeutic-disciplines/"
+  },
+  {
+   "last_name": "Djumashaliev",
+   "first_name": "Chyngyz",
+   "department": "Therapeutic Disciplines",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-therapeutic-disciplines/"
+  },
+  {
+   "last_name": "Dononbaeva",
+   "first_name": "Nasyikat Asylbekovna",
+   "department": "Therapeutic Disciplines",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-therapeutic-disciplines/"
+  },
+  {
+   "last_name": "Imanov",
+   "first_name": "Engel Danakeevich",
+   "department": "Therapeutic Disciplines",
+   "title": "профессор",
+   "source_url": "https://asmi.edu.kg/department-of-therapeutic-disciplines/"
+  },
+  {
+   "last_name": "Iqbal",
+   "first_name": "Mudasar",
+   "department": "Therapeutic Disciplines",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-therapeutic-disciplines/"
+  },
+  {
+   "last_name": "Joldoshev",
+   "first_name": "Omurbek Bakhridinovich",
+   "department": "Therapeutic Disciplines",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-therapeutic-disciplines/"
+  },
+  {
+   "last_name": "Kalujnyi",
+   "first_name": "Sergei Ivanovich",
+   "department": "Therapeutic Disciplines",
+   "title": "доцент",
+   "source_url": "https://asmi.edu.kg/department-of-therapeutic-disciplines/"
+  },
+  {
+   "last_name": "Kasymov",
+   "first_name": "Azamat Avazbekovich",
+   "department": "Therapeutic Disciplines",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-therapeutic-disciplines/"
+  },
+  {
+   "last_name": "Korshunova",
+   "first_name": "Ulya Vladimirovna",
+   "department": "Therapeutic Disciplines",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-therapeutic-disciplines/"
+  },
+  {
+   "last_name": "Kulov",
+   "first_name": "Bolot Beishenalievich",
+   "department": "Therapeutic Disciplines",
+   "title": "профессор",
+   "source_url": "https://asmi.edu.kg/department-of-therapeutic-disciplines/"
+  },
+  {
+   "last_name": "Shahanova",
+   "first_name": "Tamila Akhmatovna",
+   "department": "Therapeutic Disciplines",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-therapeutic-disciplines/"
+  },
+  {
+   "last_name": "Toktaliev",
+   "first_name": "Djenish Djumabaevich",
+   "department": "Therapeutic Disciplines",
+   "title": "доцент",
+   "source_url": "https://asmi.edu.kg/department-of-therapeutic-disciplines/"
+  },
+  {
+   "last_name": "Toktogulova",
+   "first_name": "N. A.",
+   "department": "Therapeutic Disciplines",
+   "title": "преподаватель",
+   "source_url": "https://asmi.edu.kg/department-of-therapeutic-disciplines/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Райымбердиева",
+   "first_name": "А. Р.",
+   "department": "Акушерства, гинекологии и педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=6320",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шарапидинова",
+   "first_name": "Аида Масхаридиновна",
+   "department": "Акушерства, гинекологии и педиатрии",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=6320"
+  },
+  {
+   "last_name": "Осмонбаева",
+   "first_name": "Мадина Тавалдиевна",
+   "department": "Естественно-гуманитарных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=67"
+  },
+  {
+   "last_name": "Аваис",
+   "first_name": "МД",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Ажиматова",
+   "first_name": "Мээрим Руслановна",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "доцент",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Аманкулова",
+   "first_name": "Бермет Зарылбековна",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Атаходжаев",
+   "first_name": "Шухратходжа Хаятиллаевич",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "доцент",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Ашыралиева",
+   "first_name": "Гулзада",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Балтабаева",
+   "first_name": "Эркингуль Жумабековна",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Биримкулова",
+   "first_name": "Кымбат Бакытовна",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Вычыгжанина",
+   "first_name": "Юлия Станиславовна",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Джапарова",
+   "first_name": "Лира Калысовна",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Исмаилов",
+   "first_name": "Нурлан Калыбекович",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "доцент",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Касымова",
+   "first_name": "Рано Оморовна",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "профессор",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Котова",
+   "first_name": "Анна Сергеевна",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Кошмуратов",
+   "first_name": "Алимжан Гафарович",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "доцент",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Куламбаев",
+   "first_name": "Бакыт Бекжанович",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "доцент",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Кхан",
+   "first_name": "Мах Нуур",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Лебузов",
+   "first_name": "Ильяз Ибрагимович",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Ли",
+   "first_name": "Кристина Евгеньевна",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Матисаков",
+   "first_name": "Аманбай Каримович",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Нурматов",
+   "first_name": "Зурудин Шарипович",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "профессор",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Ормонов",
+   "first_name": "Бакыт Абдухакимович",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Рахматов",
+   "first_name": "Улан Калыбекович",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Рыспекова",
+   "first_name": "Алтынай Эркинбековна",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Сагалиева",
+   "first_name": "Нурайым Дайыровна",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Серенова",
+   "first_name": "Астра Аскеровна",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Суйунбек кызы",
+   "first_name": "Акада",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Султангазиева",
+   "first_name": "Айдай Нурбековна",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Хусаин",
+   "first_name": "Имтеяз",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Чонкоева",
+   "first_name": "Асель Асанбековна",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "доцент",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Шераз",
+   "first_name": "Кхан",
+   "department": "Межпрофессиональных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=5969"
+  },
+  {
+   "last_name": "Тулиева",
+   "first_name": "Айгуль Калишпековна",
+   "department": "Морфологических дисциплин",
+   "title": "доцент",
+   "source_url": "https://www.aiust.kg/?page_id=4119"
+  },
+  {
+   "last_name": "Джапаркулова",
+   "first_name": "Аида Кубанычбековна",
+   "department": "Стоматологических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=3832"
+  },
+  {
+   "last_name": "Токтосунов",
+   "first_name": "Актилек Джанболотович",
+   "department": "Стоматологических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=3832"
+  },
+  {
+   "last_name": "Тхилаев",
+   "first_name": "Мурат Мизамович",
+   "department": "Терапевтических и специализированных дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=71"
+  },
+  {
+   "last_name": "Абдылдаев",
+   "first_name": "Т. А.",
+   "department": "Хирургических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абиров",
+   "first_name": "И. К.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Айдарбеков",
+   "first_name": "Б. И.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алымбаев",
+   "first_name": "И. Т.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Амира кызы",
+   "first_name": "М.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Даниленко",
+   "first_name": "Ю. Л.",
+   "department": "Хирургических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джумалиев",
+   "first_name": "Э. А.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жороев",
+   "first_name": "Э. Д.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жумабеков",
+   "first_name": "А. Ш.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ибраева",
+   "first_name": "М.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Карагулов",
+   "first_name": "А. Ш.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Каримов",
+   "first_name": "М. Б.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Каримова",
+   "first_name": "А. А.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кубатбек кызы",
+   "first_name": "Н.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Люхуров",
+   "first_name": "Р. Н.",
+   "department": "Хирургических дисциплин",
+   "title": "доцент",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мамырбаев",
+   "first_name": "А. Т.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Надим",
+   "first_name": "А.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Окилова",
+   "first_name": "М. Т.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "А. К.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Рустанов",
+   "first_name": "А. Р.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сагынбекова",
+   "first_name": "Г. С.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сердюкова",
+   "first_name": "Ю. В.",
+   "department": "Хирургических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сулумова",
+   "first_name": "З. А.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Суюндукова",
+   "first_name": "Б.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Темиров",
+   "first_name": "Э. К.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Турдубаева",
+   "first_name": "Э. К.",
+   "department": "Хирургических дисциплин",
+   "title": "старший преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тынаев",
+   "first_name": "Н. Р.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Усман",
+   "first_name": "Х. А.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Фролова",
+   "first_name": "И. Д.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шакиев",
+   "first_name": "Ж.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эсенбекова",
+   "first_name": "А. С.",
+   "department": "Хирургических дисциплин",
+   "title": "преподаватель",
+   "source_url": "https://www.aiust.kg/?page_id=4189",
+   "initials_only": true
+  }
+ ]
+}

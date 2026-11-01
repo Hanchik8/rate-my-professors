@@ -1,6 +1,7 @@
 import uuid
 
 from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import F, Q
 from django.db.models.functions import Lower
@@ -70,6 +71,8 @@ class Professor(models.Model):
             models.Index(fields=["school", "status"], name="prof_school_status_idx"),
             # Department filter + values_list(distinct) on the home page.
             models.Index(fields=["department"], name="prof_dept_idx"),
+            # Catalog searches commonly combine the approved status and department filters.
+            models.Index(fields=["status", "department"], name="prof_status_dept_idx"),
             # Default ordering (`last_name`, `first_name`) sorts by name.
             models.Index(fields=["last_name", "first_name"], name="prof_name_idx"),
         ]
@@ -130,14 +133,26 @@ class Review(models.Model):
         indexes = [
             # `reviews_for()` and every stats aggregate filter by this pair.
             models.Index(fields=["professor", "status"], name="review_prof_status_idx"),
+            # Professor page filters by professor/status and sorts by newest.
+            models.Index(
+                fields=["professor", "status", "-created_at"],
+                name="review_prof_status_created_idx",
+            ),
             # `all_reviews()` filters by status and the default order is -created_at.
             models.Index(fields=["status", "-created_at"], name="review_status_created_idx"),
+            # `reviews_for_user()` filters by author and sorts by newest.
+            models.Index(fields=["author", "-created_at"], name="review_author_created_idx"),
         ]
 
     def clean(self):
         # Defence in depth for admin/ORM writers: drop control characters and
         # normalise line endings before validation.
         self.comment = clean_text(self.comment)
+        if len(self.comment) > MAX_COMMENT_LENGTH:
+            raise ValidationError({
+                "comment": _("Отзыв должен содержать не более %(n)d символов.")
+                % {"n": MAX_COMMENT_LENGTH}
+            })
 
     def __str__(self):
         return f"{self.professor} {self.course} {self.overall}"
@@ -194,3 +209,27 @@ class Report(models.Model):
 @receiver([post_save, post_delete], sender=School)
 def _invalidate_catalog_on_write(sender, **kwargs):
     invalidate_catalog_cache()
+
+
+class EmailVerification(models.Model):
+    """Pending email confirmation for a freshly registered (inactive) user.
+
+    Only a keyed hash of the 6-digit code is stored, never the code itself.
+    """
+
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="email_verification",
+    )
+    code_hash = models.CharField(max_length=128, blank=True)
+    expires_at = models.DateTimeField()
+    attempts = models.PositiveSmallIntegerField(default=0)
+    last_sent_at = models.DateTimeField()
+
+    class Meta:
+        verbose_name = _("Подтверждение email")
+        verbose_name_plural = _("Подтверждения email")
+
+    def __str__(self):
+        return f"EmailVerification({self.user_id})"

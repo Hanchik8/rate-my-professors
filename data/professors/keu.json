@@ -1,0 +1,1181 @@
+{
+ "code": "keu",
+ "university": "Кыргызский экономический университет им. М. Рыскулбекова",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://www.keu.kg/site/menu-detail?mid=9",
+  "https://www.keu.kg/site/menu-detail?mid=34",
+  "https://www.keu.kg/site/menu-detail?mid=35",
+  "https://www.keu.kg/site/menu-detail?mid=36",
+  "https://www.keu.kg/site/menu-detail?mid=37",
+  "https://www.keu.kg/site/menu-detail?mid=38",
+  "https://www.keu.kg/site/menu-detail?mid=40",
+  "https://www.keu.kg/site/menu-detail?mid=41",
+  "https://www.keu.kg/site/menu-detail?mid=42",
+  "https://www.keu.kg/site/menu-detail?mid=53",
+  "https://www.keu.kg/site/menu-detail?mid=134",
+  "https://www.keu.kg/site/menu-detail?mid=181",
+  "https://www.keu.kg/site/menu-detail?mid=8"
+ ],
+ "notes": "На страницах кафедр в карточках ППС только инициалы, полные ФИО раскрыты там, где они встречаются в тексте страницы или в меню главной. На странице кафедры Бухгалтерский учет, анализ, аудит и статистика (mid=35) списка ППС нет. Раздел Документы отражающие ППС (mid=294) без списка.",
+ "professors": [
+  {
+   "last_name": "Кадыралиев",
+   "first_name": "Алмаз Токтобекович",
+   "department": "Экономика и международные экономические отношения",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9"
+  },
+  {
+   "last_name": "Камчыбеков",
+   "first_name": "Толобек Кадыралиевич",
+   "department": "Экономика и международные экономические отношения",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9"
+  },
+  {
+   "last_name": "Орунтаева",
+   "first_name": "А. Н.",
+   "department": "Экономика и международные экономические отношения",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мусакожоев",
+   "first_name": "Шайлобек Мусакожоевич",
+   "department": "Экономика и международные экономические отношения",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9"
+  },
+  {
+   "last_name": "Джумалиева",
+   "first_name": "Э. Б.",
+   "department": "Экономика и международные экономические отношения",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9",
+   "initials_only": true
+  },
+  {
+   "last_name": "Рыскулов",
+   "first_name": "Самар Курманалиевич",
+   "department": "Экономика и международные экономические отношения",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9"
+  },
+  {
+   "last_name": "Байжанова",
+   "first_name": "Гульмира Качкыновна",
+   "department": "Экономика и международные экономические отношения",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9"
+  },
+  {
+   "last_name": "Артыкбаева",
+   "first_name": "Гульмира Шайкыдиновна",
+   "department": "Экономика и международные экономические отношения",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9"
+  },
+  {
+   "last_name": "Алыбаева",
+   "first_name": "Г. Д.",
+   "department": "Экономика и международные экономические отношения",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9",
+   "initials_only": true
+  },
+  {
+   "last_name": "Асанбекова",
+   "first_name": "А. А.",
+   "department": "Экономика и международные экономические отношения",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алымсеитова",
+   "first_name": "Б. К.",
+   "department": "Экономика и международные экономические отношения",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9",
+   "initials_only": true
+  },
+  {
+   "last_name": "Нурматова",
+   "first_name": "А. А.",
+   "department": "Экономика и международные экономические отношения",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9",
+   "initials_only": true
+  },
+  {
+   "last_name": "Аджимидинов",
+   "first_name": "Н. Б.",
+   "department": "Экономика и международные экономические отношения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9",
+   "initials_only": true
+  },
+  {
+   "last_name": "Илипова",
+   "first_name": "Г. С.",
+   "department": "Экономика и международные экономические отношения",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9",
+   "initials_only": true
+  },
+  {
+   "last_name": "Рыспекова",
+   "first_name": "Н. А.",
+   "department": "Экономика и международные экономические отношения",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эсенаманова",
+   "first_name": "С. А.",
+   "department": "Экономика и международные экономические отношения",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9",
+   "initials_only": true
+  },
+  {
+   "last_name": "Койгелдиева",
+   "first_name": "К.",
+   "department": "Экономика и международные экономические отношения",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9",
+   "initials_only": true
+  },
+  {
+   "last_name": "Солтогулова",
+   "first_name": "М. У.",
+   "department": "Экономика и международные экономические отношения",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9",
+   "initials_only": true
+  },
+  {
+   "last_name": "Куканова",
+   "first_name": "Ч. А.",
+   "department": "Экономика и международные экономические отношения",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тюменбаев",
+   "first_name": "Ш. А.",
+   "department": "Экономика и международные экономические отношения",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=9",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сансызбаева",
+   "first_name": "Г. А.",
+   "department": "Финансы и экономическая безопасность",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ишенов",
+   "first_name": "Бейшенбек Чонмурунович",
+   "department": "Финансы и экономическая безопасность",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34"
+  },
+  {
+   "last_name": "Джолдошева",
+   "first_name": "Тамара Юлдашевна",
+   "department": "Финансы и экономическая безопасность",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34"
+  },
+  {
+   "last_name": "Узакбаева",
+   "first_name": "У. У.",
+   "department": "Финансы и экономическая безопасность",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токтосунова",
+   "first_name": "Чолпон Турсуналиевна",
+   "department": "Финансы и экономическая безопасность",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34"
+  },
+  {
+   "last_name": "Сатылганова",
+   "first_name": "Э. Ш.",
+   "department": "Финансы и экономическая безопасность",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жумалиева",
+   "first_name": "Ж. З.",
+   "department": "Финансы и экономическая безопасность",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34",
+   "initials_only": true
+  },
+  {
+   "last_name": "Елебесов",
+   "first_name": "А. Д.",
+   "department": "Финансы и экономическая безопасность",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34",
+   "initials_only": true
+  },
+  {
+   "last_name": "Назекова",
+   "first_name": "М. Т.",
+   "department": "Финансы и экономическая безопасность",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34",
+   "initials_only": true
+  },
+  {
+   "last_name": "Омургазиева",
+   "first_name": "Н. Б.",
+   "department": "Финансы и экономическая безопасность",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34",
+   "initials_only": true
+  },
+  {
+   "last_name": "Качкынбаева",
+   "first_name": "Ч. Д.",
+   "department": "Финансы и экономическая безопасность",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шаршеева",
+   "first_name": "Н. К.",
+   "department": "Финансы и экономическая безопасность",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осмонжанова",
+   "first_name": "Ж. А.",
+   "department": "Финансы и экономическая безопасность",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эсенаманова",
+   "first_name": "Н. Б.",
+   "department": "Финансы и экономическая безопасность",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34",
+   "initials_only": true
+  },
+  {
+   "last_name": "Советбекова",
+   "first_name": "А. С.",
+   "department": "Финансы и экономическая безопасность",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34",
+   "initials_only": true
+  },
+  {
+   "last_name": "Муратбекова",
+   "first_name": "М. К.",
+   "department": "Финансы и экономическая безопасность",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34",
+   "initials_only": true
+  },
+  {
+   "last_name": "Курманбекова",
+   "first_name": "Н. М.",
+   "department": "Финансы и экономическая безопасность",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=34",
+   "initials_only": true
+  },
+  {
+   "last_name": "Туголбаева",
+   "first_name": "Д. М.",
+   "department": "Туризм и менеджмент им. Чубуровой Ж.Т",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=36",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чубурова",
+   "first_name": "Ж. Т.",
+   "department": "Туризм и менеджмент им. Чубуровой Ж.Т",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=36",
+   "initials_only": true
+  },
+  {
+   "last_name": "Атышов",
+   "first_name": "К. А.",
+   "department": "Туризм и менеджмент им. Чубуровой Ж.Т",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=36",
+   "initials_only": true
+  },
+  {
+   "last_name": "Расулова",
+   "first_name": "Н. К.",
+   "department": "Туризм и менеджмент им. Чубуровой Ж.Т",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=36",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кочкорбаева",
+   "first_name": "М. Д.",
+   "department": "Туризм и менеджмент им. Чубуровой Ж.Т",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=36",
+   "initials_only": true
+  },
+  {
+   "last_name": "Байзаков",
+   "first_name": "К. О.",
+   "department": "Туризм и менеджмент им. Чубуровой Ж.Т",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=36",
+   "initials_only": true
+  },
+  {
+   "last_name": "Туребекова",
+   "first_name": "Б. О.",
+   "department": "Туризм и менеджмент им. Чубуровой Ж.Т",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=36",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бейшеева",
+   "first_name": "А. Ж.",
+   "department": "Туризм и менеджмент им. Чубуровой Ж.Т",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=36",
+   "initials_only": true
+  },
+  {
+   "last_name": "Татышов",
+   "first_name": "У. К.",
+   "department": "Туризм и менеджмент им. Чубуровой Ж.Т",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=36",
+   "initials_only": true
+  },
+  {
+   "last_name": "Эгембердиева",
+   "first_name": "Д. Э.",
+   "department": "Туризм и менеджмент им. Чубуровой Ж.Т",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=36",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ешеналиева",
+   "first_name": "А. Э.",
+   "department": "Туризм и менеджмент им. Чубуровой Ж.Т",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=36",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кулуева",
+   "first_name": "Ф. Ш.",
+   "department": "Экономико-математическое моделирование и цифровые технологии",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=37",
+   "initials_only": true
+  },
+  {
+   "last_name": "Керимкулов",
+   "first_name": "Т.",
+   "department": "Экономико-математическое моделирование и цифровые технологии",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=37",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бердимуратов",
+   "first_name": "А. М.",
+   "department": "Экономико-математическое моделирование и цифровые технологии",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=37",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ногоева",
+   "first_name": "Г. Д.",
+   "department": "Экономико-математическое моделирование и цифровые технологии",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=37",
+   "initials_only": true
+  },
+  {
+   "last_name": "Таникулов",
+   "first_name": "Н. Б.",
+   "department": "Экономико-математическое моделирование и цифровые технологии",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=37",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абыкеев",
+   "first_name": "К. Д.",
+   "department": "Экономико-математическое моделирование и цифровые технологии",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=37",
+   "initials_only": true
+  },
+  {
+   "last_name": "Касмалиев",
+   "first_name": "Т. К.",
+   "department": "Экономико-математическое моделирование и цифровые технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=37",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жекшенова",
+   "first_name": "А. А.",
+   "department": "Экономико-математическое моделирование и цифровые технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=37",
+   "initials_only": true
+  },
+  {
+   "last_name": "Элебесова",
+   "first_name": "Г.",
+   "department": "Экономико-математическое моделирование и цифровые технологии",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=37",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чертикеева",
+   "first_name": "Б. С.",
+   "department": "Экономико-математическое моделирование и цифровые технологии",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=37",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шакирова",
+   "first_name": "А. Т.",
+   "department": "Экономико-математическое моделирование и цифровые технологии",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=37",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токтогулова",
+   "first_name": "А. Н.",
+   "department": "Экономико-математическое моделирование и цифровые технологии",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=37",
+   "initials_only": true
+  },
+  {
+   "last_name": "Алымбеков",
+   "first_name": "Кенешбек Асанкожоевич",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38"
+  },
+  {
+   "last_name": "Турсуналиева",
+   "first_name": "Д. М.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джурупова",
+   "first_name": "Б. К.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джаманкулова",
+   "first_name": "Г. М.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ивакова",
+   "first_name": "З. А.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Борончиев",
+   "first_name": "Ш. И.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сатыбалдиева",
+   "first_name": "А. М.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Байгуттиев",
+   "first_name": "С. С.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Донченко",
+   "first_name": "О. А.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ишкеева",
+   "first_name": "А. К.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Козлова",
+   "first_name": "Л. П.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ниязалиева",
+   "first_name": "Б. К.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Турдиева",
+   "first_name": "Ф. А.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Айткеева",
+   "first_name": "Г. Д.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Осмонова",
+   "first_name": "Б. Б.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Вереничкина",
+   "first_name": "Л. И.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шаршембиева",
+   "first_name": "А. М.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Муратбекова",
+   "first_name": "А. Т.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сыдыкова",
+   "first_name": "Ж. А.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сатарова",
+   "first_name": "К. К.",
+   "department": "Товароведение, маркетинг и ресторанный бизнес",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=38",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жапаралиева",
+   "first_name": "Н. Ж.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бакчиев",
+   "first_name": "Т. А.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бийназарова",
+   "first_name": "Назгуль Суйунбековна",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40"
+  },
+  {
+   "last_name": "Турпанова",
+   "first_name": "Ж. А.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шералиева",
+   "first_name": "А. Ж.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ахметова",
+   "first_name": "С. Е.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Узбекова",
+   "first_name": "Г. А.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Каримова",
+   "first_name": "Б. А.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ногойбаева",
+   "first_name": "С. Б.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Калыбекова",
+   "first_name": "А. М.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бектурова",
+   "first_name": "Ч. Ж.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Иманканова",
+   "first_name": "Н. Ш.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кожомкулова",
+   "first_name": "Г. Э.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кулубаева",
+   "first_name": "А. М.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Садирова",
+   "first_name": "И. М.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ашырова",
+   "first_name": "Н. С.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Жолдошбекова",
+   "first_name": "Э. А.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Омурзакова",
+   "first_name": "К. Т.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Султанбекова",
+   "first_name": "М. Т.",
+   "department": "Государственный, официальный и иностранные языки",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=40",
+   "initials_only": true
+  },
+  {
+   "last_name": "Бексултанов",
+   "first_name": "Азисбек Абдилкариевич",
+   "department": "Прикладная экономика и управление",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=41"
+  },
+  {
+   "last_name": "Алманбетов",
+   "first_name": "Ш. Б.",
+   "department": "Прикладная экономика и управление",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=41",
+   "initials_only": true
+  },
+  {
+   "last_name": "Самигуллин",
+   "first_name": "Э. В.",
+   "department": "Прикладная экономика и управление",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=41",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мурзалиева",
+   "first_name": "З. К.",
+   "department": "Прикладная экономика и управление",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=41",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кабирова",
+   "first_name": "Э. С.",
+   "department": "Прикладная экономика и управление",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=41",
+   "initials_only": true
+  },
+  {
+   "last_name": "Соодонбекова",
+   "first_name": "А. Ж.",
+   "department": "Прикладная экономика и управление",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=41",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдыкадырова",
+   "first_name": "Б. У.",
+   "department": "Прикладная экономика и управление",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=41",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдыралиева",
+   "first_name": "Э. Т.",
+   "department": "Прикладная экономика и управление",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=41",
+   "initials_only": true
+  },
+  {
+   "last_name": "Мендекеев",
+   "first_name": "Р. А.",
+   "department": "Прикладная экономика и управление",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=41",
+   "initials_only": true
+  },
+  {
+   "last_name": "Назаркулова",
+   "first_name": "Г.",
+   "department": "Прикладная экономика и управление",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=41",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдукадырова",
+   "first_name": "Г. Т.",
+   "department": "Банковская деятельность и рынок ценных бумаг",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=42",
+   "initials_only": true
+  },
+  {
+   "last_name": "Токсобаев",
+   "first_name": "Б. Т.",
+   "department": "Банковская деятельность и рынок ценных бумаг",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=42",
+   "initials_only": true
+  },
+  {
+   "last_name": "Батырканова",
+   "first_name": "Г. Д.",
+   "department": "Банковская деятельность и рынок ценных бумаг",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=42",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сурамбаева",
+   "first_name": "А. Т.",
+   "department": "Банковская деятельность и рынок ценных бумаг",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=42",
+   "initials_only": true
+  },
+  {
+   "last_name": "Табышова",
+   "first_name": "А. К.",
+   "department": "Банковская деятельность и рынок ценных бумаг",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=42",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ибраимова",
+   "first_name": "Саида Маратовна",
+   "department": "Банковская деятельность и рынок ценных бумаг",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=42"
+  },
+  {
+   "last_name": "Алымбаева",
+   "first_name": "Ж. К.",
+   "department": "Банковская деятельность и рынок ценных бумаг",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=42",
+   "initials_only": true
+  },
+  {
+   "last_name": "Кулматова",
+   "first_name": "А. Т.",
+   "department": "Банковская деятельность и рынок ценных бумаг",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=42",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдыкеев",
+   "first_name": "Э. Ш.",
+   "department": "Банковская деятельность и рынок ценных бумаг",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=42",
+   "initials_only": true
+  },
+  {
+   "last_name": "Зарлыкова",
+   "first_name": "А. З.",
+   "department": "Банковская деятельность и рынок ценных бумаг",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=42",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тайлакова",
+   "first_name": "Салия Дженишбековна",
+   "department": "Философия и социально-гуманитарные науки",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=53"
+  },
+  {
+   "last_name": "Бейшенова",
+   "first_name": "А. Т.",
+   "department": "Философия и социально-гуманитарные науки",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=53",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джунушалиева",
+   "first_name": "Гульнара Дженишовна",
+   "department": "Философия и социально-гуманитарные науки",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=53"
+  },
+  {
+   "last_name": "Койчуманова",
+   "first_name": "Н. М.",
+   "department": "Философия и социально-гуманитарные науки",
+   "title": "профессор",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=53",
+   "initials_only": true
+  },
+  {
+   "last_name": "Урузбакиева",
+   "first_name": "Ф. К.",
+   "department": "Философия и социально-гуманитарные науки",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=53",
+   "initials_only": true
+  },
+  {
+   "last_name": "Темирбаев",
+   "first_name": "Б.",
+   "department": "Философия и социально-гуманитарные науки",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=53",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ли",
+   "first_name": "Ю. В.",
+   "department": "Философия и социально-гуманитарные науки",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=53",
+   "initials_only": true
+  },
+  {
+   "last_name": "Исмаилова",
+   "first_name": "Кульчаш Киясовна",
+   "department": "Философия и социально-гуманитарные науки",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=53"
+  },
+  {
+   "last_name": "Токтобаева",
+   "first_name": "А. Т.",
+   "department": "Философия и социально-гуманитарные науки",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=53",
+   "initials_only": true
+  },
+  {
+   "last_name": "Байкулов",
+   "first_name": "Нурлан Сатывалдиевич",
+   "department": "Центр физической культуры и спорта",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=134"
+  },
+  {
+   "last_name": "Иманалиев",
+   "first_name": "У. К.",
+   "department": "Центр физической культуры и спорта",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=134",
+   "initials_only": true
+  },
+  {
+   "last_name": "Миронов",
+   "first_name": "С. М.",
+   "department": "Центр физической культуры и спорта",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=134",
+   "initials_only": true
+  },
+  {
+   "last_name": "Онищенко",
+   "first_name": "В. Ф.",
+   "department": "Центр физической культуры и спорта",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=134",
+   "initials_only": true
+  },
+  {
+   "last_name": "Махмудов",
+   "first_name": "Улан Алымжанович",
+   "department": "Юриспруденция и международное право",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181"
+  },
+  {
+   "last_name": "Жамгырчиев",
+   "first_name": "Э. Э.",
+   "department": "Юриспруденция и международное право",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шейшеев",
+   "first_name": "А. Д.",
+   "department": "Юриспруденция и международное право",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абдрахманов",
+   "first_name": "К. С.",
+   "department": "Юриспруденция и международное право",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181",
+   "initials_only": true
+  },
+  {
+   "last_name": "Шевченко",
+   "first_name": "А. В.",
+   "department": "Юриспруденция и международное право",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181",
+   "initials_only": true
+  },
+  {
+   "last_name": "Тенизбекова",
+   "first_name": "Н. Т.",
+   "department": "Юриспруденция и международное право",
+   "title": "доцент",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181",
+   "initials_only": true
+  },
+  {
+   "last_name": "Урустемова",
+   "first_name": "Ж. Б.",
+   "department": "Юриспруденция и международное право",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181",
+   "initials_only": true
+  },
+  {
+   "last_name": "Чодобаев",
+   "first_name": "Э. Т.",
+   "department": "Юриспруденция и международное право",
+   "title": "старший преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181",
+   "initials_only": true
+  },
+  {
+   "last_name": "Ашырбекова",
+   "first_name": "А. А.",
+   "department": "Юриспруденция и международное право",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181",
+   "initials_only": true
+  },
+  {
+   "last_name": "Темиров",
+   "first_name": "Д. Б.",
+   "department": "Юриспруденция и международное право",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181",
+   "initials_only": true
+  },
+  {
+   "last_name": "Абсатарова",
+   "first_name": "Г. А.",
+   "department": "Юриспруденция и международное право",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181",
+   "initials_only": true
+  },
+  {
+   "last_name": "Махметкулов",
+   "first_name": "А. Д.",
+   "department": "Юриспруденция и международное право",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181",
+   "initials_only": true
+  },
+  {
+   "last_name": "Сальпиев",
+   "first_name": "Н. Б.",
+   "department": "Юриспруденция и международное право",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джитишикова",
+   "first_name": "Г. А.",
+   "department": "Юриспруденция и международное право",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181",
+   "initials_only": true
+  },
+  {
+   "last_name": "Джузбаев",
+   "first_name": "Д. Р.",
+   "department": "Юриспруденция и международное право",
+   "title": "преподаватель",
+   "source_url": "https://www.keu.kg/site/menu-detail?mid=181",
+   "initials_only": true
+  }
+ ]
+}

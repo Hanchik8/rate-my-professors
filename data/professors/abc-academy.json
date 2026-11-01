@@ -1,0 +1,94 @@
+{
+ "code": "abc-academy",
+ "university": "ABC Academy (Altamimi International University / Altamimi Bachelor Clinical University)",
+ "collected_at": "2026-10-31",
+ "sources_checked": [
+  "https://altamimiuniversity.com/",
+  "https://altamimiuniversity.com/faculty/",
+  "https://altamimiuniversity.com/departments/",
+  "https://altamimiuniversity.com/academic-index/",
+  "https://altamimiuniversity.com/about-institute/"
+ ],
+ "notes": "Официальный сайт определён поиском: altamimiuniversity.com (на сайте \"Rector of ABC Academy\", \"ABC Academy has received accreditation\"; ABC = Altamimi Bachelor Clinical). Страница Faculty только на английском, имена оставлены латиницей как на сайте, порядок слов как на сайте (первое слово как фамилия; у иностранных преподавателей это может быть имя). Senior Professor отнесён к \"профессор\", Assistant Professor к \"старший преподаватель\". Ректор, проректор по адм. работе, специалисты учебной части, международного отдела и студенческих ресурсов не включены.",
+ "professors": [
+  {
+   "last_name": "Amanbekov",
+   "first_name": "Akylbek",
+   "department": "Деканат",
+   "title": "преподаватель",
+   "source_url": "https://altamimiuniversity.com/faculty/"
+  },
+  {
+   "last_name": "Akmatova",
+   "first_name": "Asiya Adylbelovna",
+   "department": "Fundamental and Clinical Disciplines",
+   "title": "преподаватель",
+   "source_url": "https://altamimiuniversity.com/faculty/"
+  },
+  {
+   "last_name": "Kurmanbek",
+   "first_name": "Beksultan",
+   "department": "Surgery",
+   "title": "преподаватель",
+   "source_url": "https://altamimiuniversity.com/faculty/"
+  },
+  {
+   "last_name": "Hafiz",
+   "first_name": "Muhammad Arsalan",
+   "department": "Biochemistry",
+   "title": "старший преподаватель",
+   "source_url": "https://altamimiuniversity.com/faculty/"
+  },
+  {
+   "last_name": "Uraimov",
+   "first_name": "Elaman",
+   "department": "ENT and Ophthalmology",
+   "title": "профессор",
+   "source_url": "https://altamimiuniversity.com/faculty/"
+  },
+  {
+   "last_name": "Erkulova",
+   "first_name": "Gulmira",
+   "department": "Science",
+   "title": "преподаватель",
+   "source_url": "https://altamimiuniversity.com/faculty/"
+  },
+  {
+   "last_name": "Vallomova",
+   "first_name": "Kunduz",
+   "department": "Internal Illness",
+   "title": "старший преподаватель",
+   "source_url": "https://altamimiuniversity.com/faculty/"
+  },
+  {
+   "last_name": "Akbarova",
+   "first_name": "Zhibek Kylychbekovna",
+   "department": "Histology",
+   "title": "профессор",
+   "source_url": "https://altamimiuniversity.com/faculty/"
+  },
+  {
+   "last_name": "Umarbaeva",
+   "first_name": "Saule Abdukhamitovna",
+   "department": "Latin Language",
+   "title": "преподаватель",
+   "source_url": "https://altamimiuniversity.com/faculty/"
+  },
+  {
+   "last_name": "Toktomuscheva",
+   "first_name": "A. A.",
+   "department": "Surgery",
+   "title": "старший преподаватель",
+   "source_url": "https://altamimiuniversity.com/faculty/",
+   "initials_only": true
+  },
+  {
+   "last_name": "Buranhieva",
+   "first_name": "A. Dzh.",
+   "department": "Dermatology",
+   "title": "старший преподаватель",
+   "source_url": "https://altamimiuniversity.com/faculty/",
+   "initials_only": true
+  }
+ ]
+}
