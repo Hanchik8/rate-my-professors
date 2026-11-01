@@ -1,4 +1,4 @@
-/* PrepodRate — design system (no external assets, system fonts only).
+/* RateProfessor — design system (no external assets, system fonts only).
    Contrast pairs verified against WCAG 2.1 AA in the light theme (site is always light: white background, black buttons)
    (see reviews/tests.py: DesignContrastTests). */
 :root{

@@ -1,4 +1,4 @@
-"""HTTP views for the PrepodRate review app.
+"""HTTP views for the RateProfessor review app.
 
 Views stay thin: they translate request parameters into repository calls
 and render templates, so that no storage detail leaks into the request

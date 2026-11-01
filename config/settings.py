@@ -212,7 +212,7 @@ SECURE_REFERRER_POLICY = os.environ.get(
     "SECURE_REFERRER_POLICY", "strict-origin-when-cross-origin"
 )
 
-# PrepodRate does not use these browser features, so disable them by default.
+# RateProfessor does not use these browser features, so disable them by default.
 PERMISSIONS_POLICY = "camera=(), microphone=(), geolocation=()"
 
 # Minimal Content-Security-Policy: only same-origin resources are allowed and
@@ -420,7 +420,7 @@ else:
 CATALOG_CACHE_TIMEOUT = int(os.environ.get("CATALOG_CACHE_TIMEOUT", "300"))
 
 # Site name / public URL used in meta tags and emails.
-SITE_NAME = "PrepodRate"
+SITE_NAME = "RateProfessor"
 SITE_URL = os.environ.get("SITE_URL", "").rstrip("/")
 # Admin can live on a less obvious path in production, e.g. ADMIN_URL=manage-7f3k/
 ADMIN_URL = os.environ.get("ADMIN_URL", "admin/")
