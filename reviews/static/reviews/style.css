@@ -68,6 +68,7 @@ a:hover{color:var(--accent-strong)}
 .brand:hover{color:var(--ink)}
 .brand-mark{display:grid;place-items:center;width:2.1rem;height:2.1rem;border-radius:.65rem;
   background:var(--accent);color:var(--on-accent);font-size:1.1rem;font-weight:800;flex:none}
+.brand-logo{display:block;object-fit:cover;background:#111}
 .nav{display:flex;align-items:center;gap:.35rem;flex-wrap:wrap;font-size:.95rem}
 .nav a{color:var(--ink);text-decoration:none;padding:.45rem .7rem;border-radius:.55rem}
 .nav a:hover{background:var(--bg);color:var(--ink)}

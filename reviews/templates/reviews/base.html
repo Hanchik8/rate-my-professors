@@ -15,7 +15,7 @@
 <a class="skip-link" href="#main-content">{% translate "Перейти к содержимому" %}</a>
 <header class="top">
   <div class="top-inner">
-    <a class="brand" href="{% url 'home' %}"{% if request.resolver_match.url_name == 'home' %} aria-current="page"{% endif %}><span class="brand-mark" aria-hidden="true">P</span>RateProfessor</a>
+    <a class="brand" href="{% url 'home' %}"{% if request.resolver_match.url_name == 'home' %} aria-current="page"{% endif %}><img class="brand-mark brand-logo" src="{% static 'reviews/apple-touch-icon.png' %}" alt="" width="34" height="34">RateProfessor</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="{% translate 'Меню' %}">
       <span class="burger" aria-hidden="true"></span>
     </button>
