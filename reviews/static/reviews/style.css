@@ -347,3 +347,28 @@ textarea{resize:vertical}
 .nav a.nav-cta{background:var(--accent);color:var(--on-accent);padding:.45rem .95rem;border-radius:999px;font-weight:600;text-decoration:none;white-space:nowrap}
 .nav a.nav-cta:hover{background:var(--accent-strong);color:var(--on-accent)}
 #search{scroll-margin-top:5rem}
+
+/* University logo avatars (owner request 2026-11-01): every professor shows
+   the logo of the university they teach at instead of a bare dash. */
+.card-avatar{position:relative;flex:none;display:inline-flex}
+.school-logo{display:grid;place-items:center;width:3.4rem;height:3.4rem;border-radius:.9rem;flex:none;overflow:hidden;
+  background:#ffffff;border:1px solid var(--line)}
+.school-logo img{width:100%;height:100%;object-fit:contain;padding:.3rem;display:block}
+.school-logo.big{width:5.5rem;height:5.5rem;border-radius:1.25rem}
+.school-logo.small{width:2.6rem;height:2.6rem;border-radius:.7rem}
+.school-logo.monogram{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:800;font-size:1rem;letter-spacing:-.02em;line-height:1}
+.school-logo.monogram[data-len="4"]{font-size:.85rem}
+.school-logo.monogram[data-len="5"]{font-size:.72rem}
+.school-logo.monogram[data-len="6"]{font-size:.62rem}
+.school-logo.big.monogram{font-size:1.6rem}
+.school-logo.big.monogram[data-len="4"]{font-size:1.3rem}
+.school-logo.big.monogram[data-len="5"]{font-size:1.1rem}
+.school-logo.big.monogram[data-len="6"]{font-size:.95rem}
+.school-logo.small.monogram[data-len="5"],.school-logo.small.monogram[data-len="6"]{font-size:.55rem}
+.school-logo.small.monogram{font-size:.8rem}
+.tile-badge{position:absolute;right:-.45rem;bottom:-.45rem;min-width:1.9rem;padding:.12rem .35rem;border-radius:999px;font-size:.78rem;font-weight:800;text-align:center;
+  background:var(--none-bg);color:var(--none-ink);border:2px solid var(--surface)}
+.tile-badge.good{background:var(--good-bg);color:var(--good-ink)}
+.tile-badge.mid{background:var(--mid-bg);color:var(--mid-ink)}
+.tile-badge.bad{background:var(--bad-bg);color:var(--bad-ink)}
+@media (max-width:600px){.school-logo{width:3rem;height:3rem}.school-logo.big{width:4.5rem;height:4.5rem}}

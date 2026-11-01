@@ -335,7 +335,8 @@ class ReviewSummaryRenderTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn('class="review-summary"', html)
         self.assertIn('aria-label="Нет оценок"', html)
-        self.assertIn('class="tile small none">-<', html)
+        self.assertNotIn('class="tile small none">-<', html)
+        self.assertIn('class="school-logo small', html)
         self.assertIn('class="review-summary-count">Отзывов: 0<', html)
 
     def test_summary_labels_are_localized(self):

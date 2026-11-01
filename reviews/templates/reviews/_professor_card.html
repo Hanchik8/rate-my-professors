@@ -1,8 +1,8 @@
-{% load i18n l10n departments %}
+{% load i18n l10n departments school_logo %}
 <li>
   {% if place %}<span class="top-rank">{{ place }}.</span>{% endif %}
   <a class="card" href="{% url 'professor' r.prof.slug %}">
-    <span class="tile {{ r.stats.tone }}">{% if r.stats.count %}{{ r.stats.overall|floatformat:1|localize }}{% else %}-{% endif %}</span>
+    <span class="card-avatar">{% if r.school %}{% school_logo r.school %}{% else %}{% school_logo school %}{% endif %}{% if r.stats.count %}<span class="tile-badge {{ r.stats.tone }}">{{ r.stats.overall|floatformat:1|localize }}</span>{% endif %}</span>
     <span class="card-body">
       <span class="card-name">{{ r.prof.full_name }}</span>
       <span class="card-sub">{% translate_department r.prof.department %}{% if show_school %} — {{ r.school.display_name }}{% endif %}</span>
