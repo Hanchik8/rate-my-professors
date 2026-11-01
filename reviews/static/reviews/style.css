@@ -366,6 +366,8 @@ textarea{resize:vertical}
 .school-logo.big.monogram[data-len="6"]{font-size:.95rem}
 .school-logo.small.monogram[data-len="5"],.school-logo.small.monogram[data-len="6"]{font-size:.55rem}
 .school-logo.small.monogram{font-size:.8rem}
+.school-logo.monogram{white-space:nowrap}
+.school-logo.small.monogram[data-len="4"]{font-size:.62rem}
 .tile-badge{position:absolute;right:-.45rem;bottom:-.45rem;min-width:1.9rem;padding:.12rem .35rem;border-radius:999px;font-size:.78rem;font-weight:800;text-align:center;
   background:var(--none-bg);color:var(--none-ink);border:2px solid var(--surface)}
 .tile-badge.good{background:var(--good-bg);color:var(--good-ink)}
